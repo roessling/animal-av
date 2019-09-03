@@ -1,0 +1,13 @@
+Backtracking ist eine Strategie zum Finden von
+Lösungen für Probleme mit Nebenbedingungen. In der
+Regel ist dabei einer Reihe von Variablen jeweils ein Wert
+zuzuordnen, so dass am Ende alle Nebenbedingungen des Problems
+erfüllt sind.
+
+Backtracking versucht alle Kombinationen auszuprobieren,
+um so garantiert zu einer Lösung zu finden. Viele
+Implementierungen nutzen dabei "Tricks", um das vollständige
+Ausprobieren aller Lösungen zu vermeiden und damit das
+Verfahren an sich zu beschleunigen. Die Bezeichnung "Backtracking"
+stammt von dem amerikanischen Mathematiker D. H. Lehmer aus den
+Fünfziger Jahren.

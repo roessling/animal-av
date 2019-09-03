@@ -1,0 +1,11 @@
+Beispiel: Ein Koch arbeitet an einem perfekten Kuchenrezept, aber er weiß immer noch nicht genau, welche Zutaten er nun dafür nehmen soll.
+Er hat sich Notizen darüber gemacht, welche Zutaten seine vorherigen Kreationen hatten und ob die resultierenden Kuchen lecker waren
+oder nicht. Diese Daten sind in einer Tabelle organisiert (der 'Haupttabelle'). Ein Eintrag enthält Informationen darüber, ob
+Sahne eine Zutat war (SAHNE), ob Bananen im Kuchen waren (BANANE) und ob Schokolade eine Zutat war (SCHOKOLADE). Und schließlich 
+beschreibt der Wert der Klasse (ganz rechts, 'ja' oder 'nein'), ob der Kuchen lecker war.
+ID3 nimmt diese Beispiele als Eingabe und entwickelt ein allgemeines Konzept, welche Zutaten zu guten Kuchen führen.
+
+Mit dem erzeugten Baum kann der Koch prüfen, welche Zutatenkombinationen zu guten Kuchen führen und welche nicht.
+Und du kannst das auch:
+Mit dem Wurzelknoten beginnend folgt man den Kanten, die zu den entsprechenden Attributwerten einer Rezeptur/eines Kuchens 
+gehören; das Blatt, an dem man ankommt, gibt die Erwartung an (allerdings nur basierend auf den bisher gesehenen Beispiele).

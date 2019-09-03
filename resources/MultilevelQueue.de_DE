@@ -1,0 +1,186 @@
+noSuchKeyException=there is no ressource for the key {0}
+iconNotFound=Icon "{0}" not found
+
+DESCRIPTION=Eine Multi-Level Queue als Scheduler verwendet eine vordefinierte \
+Anzahl von Ebenen auf denen Prozesse eingereiht werden. Prozesse haben eine \
+feste Ebene. Prozesse höhere Ebenen werden also bevorzugt ausgeführt, \
+Prozesse einer Ebene mit geringerer Priorisierung werden erst ausgeführt, wenn \
+alle höheren Ebenen abgearbeitet sind. Dabei hat jede Ebene ein eigenes \
+Schedulingverfahren was mehr Anpassungsmöglichkeiten zulässt als ein einzelner \
+Scheduler mit mehreren Priorisierungen.
+\n\nIn diesem Beispiel wird jedem Prozess eine Ebene zugewiesen, in der er \
+nach seiner Ankuftszeit eingereiht wird. Jeder Prozess benötigt Rechenzeit, die \
+als Anzahl von Zeitfenstern angegeben wird. Der Algorithmus arbeitet, bis alle \
+Prozesse fertig sind. In jedem Schritt fügt der Algorithmus die ankommenden \
+Prozesse zum scheduler der jeweiligen Ebene hinzu und gewährt Rechenzeit für \
+den anstehenden Prozess in der höchsten Ebene, die nicht leer ist.
+
+SOURCE_CODE=WHILE sum(proc.work) != 0\
+\n   FOR process IN procList WHERE process.time == time\
+\n     queue = queueList[process.level]\
+\n     queue.add(process)\
+\n   FOR i FROM 0 TO (queueList.size - 1)\
+\n     IF queueList[i].current() != null\
+\n       queue = queueList[i]\
+\n       BREAK\
+\n   IF queue == null\
+\n     CONTINUE\
+\n   run(queue.current())\
+\n   IF queue.current().work == 0\
+\n     queue.removeCurrent()\
+\n   ELSE\
+\n     if(queue.useRoundRobin && queue.size > 1)\
+\n       temp = queue.current()\
+\n       queue.removeCurrent()\
+\n       queue.add(temp)
+
+TITLE=Multi-Level Queue
+DESCRIPTION_LN_1=Eine Multi-Level Queue als Scheduler verwendet eine vordefinierte Anzahl von Ebenen
+DESCRIPTION_LN_2=auf denen Prozesse eingereiht werden. Prozesse haben eine feste Ebene. Prozesse
+DESCRIPTION_LN_3=höhere Ebenen werden also bevorzugt ausgeführt. Prozesse einer Ebene mit geringerer
+DESCRIPTION_LN_4=Priorisierung werden erst ausgeführt, wenn alle höheren Ebenen abgearbeitet sind.
+DESCRIPTION_LN_5=Dabei hat jede Ebene ein eigenes Schedulingverfahren was mehr Anpassungsmöglichkeiten
+DESCRIPTION_LN_6=zulässt als ein einzelner Scheduler mit mehreren Priorisierungen.
+DESCRIPTION_LN_7=In diesem Beispiel wird jedem Prozess eine Ebene zugewiesen, in der er nach seiner
+DESCRIPTION_LN_8=Ankuftszeit eingereiht wird. Jeder Prozess benötigt Rechenzeit, die als Anzahl von 
+DESCRIPTION_LN_9=Zeitfenstern angegeben wird. Der Algorithmus arbeitet, bis alle Prozesse fertig
+DESCRIPTION_LN_10=sind. In jedem Schritt fügt der Algorithmus die ankommenden Prozesse zum scheduler
+DESCRIPTION_LN_11=der jeweiligen Ebene hinzu und gewährt Rechenzeit für den anstehenden Prozess in
+DESCRIPTION_LN_12=der höchsten Ebene, die nicht leer ist.
+
+SRC_0=WHILE sum(proc.work) != 0
+SRC_1=FOR process IN procList WHERE process.time == time
+SRC_2=queue = queueList[process.level]
+SRC_3=queue.add(process)
+SRC_4=FOR i FROM 0 TO (queueList.size - 1)
+SRC_5=IF queueList[i].first() != null
+SRC_6=queue = queueList[i]
+SRC_7=BREAK
+SRC_8=IF queue == null
+SRC_9=time++
+SRC_10=CONTINUE
+SRC_11=run(queue.first())
+SRC_12=IF queue.first().work == 0
+SRC_13=queue.removeFirst()
+SRC_14=ELSE
+SRC_15=if(queue.useRoundRobin && queue.size > 1)
+SRC_16=temp = queue.first()
+SRC_17=queue.removeFirst()
+SRC_18=queue.add(temp)
+
+ID=ID
+QUEUE=EBENE
+WORK=ARBEIT
+TIME=ANKUNFT
+CURRENTTIME=Aktuelle Zeit: {0}
+HEAD_MARKER=head
+TAIL_MARKER=tail
+QUEUETYPE_RR={0} (RR)
+QUEUETYPE_FIFO={0} (FIFO)
+QUEUENAME=Ebene {0}
+
+HINT=Hinweis: {0}
+HINT_REMAINING_WORK=Prüfe auf übrige Arbeit
+HINT_INCOMING_PROCESS=Prüfe auf ankommende Prozesse
+HINT_PROCESS_STARTS_NOW=Prozess {0} kommt an
+HINT_ADD_PROCESS_TO_QUEUE=Füge Prozess {0} zur Queue {1} hinzu
+HINT_REMOVE_PROCESS_FROM_QUEUE=Entferne Prozess {0} von Queue {1}
+HINT_SEARCH_FOR_QUEUE_TO_SCHEDULE=Finde die nicht-leere Queue mit der höchsten priorität
+HINT_CHECK_QUEUE=Prüfe Queue{0}
+HINT_QUEUE_HAS_PENDING_WORK=Queue {0} hat einen wartenden Prozess
+HINT_CHECK_FOR_QUEUE_TO_SCHEDULE=Suche nach einer Queue zum abarbeiten
+HINT_NO_QUEUE_HAS_PENDING_WORK=Alle Queues sind leer
+HINT_SCHEDULE_PROCESS_FROM_QUEUE=Bearbeite Prozess {0} aus Queue {1}
+HINT_CHECK_IF_WORK_LEFT=Prüfe ob der Prozess fertig ist
+HINT_PROCESS_HAS_NO_WORK_LEFT_REMOVE=Prozess ist fertig und wird von der Queue entfernt
+HINT_PROCESS_HAS_WORK_LEFT_RESCHEDULE=Prozess ist noch nicht fertig und wird erneut eingereiht
+HINT_TEMP_ROUND_ROBIN=Prozess wird zwischengespeichert
+HINT_NO_PROCESS_HAS_PENDING_WORK=Alle Prozesse sind fertig
+
+SECTION_DESCRIPTION=Beschreibung
+SECTION_ITERATION=Iteration {0}
+SECTION_CONCLUSION=Ergebnis
+
+VAR_KEY_TIME=Zeit
+VAR_KEY_COMPUTING_STEPS=Zeitfenster gearbeitet
+VAR_KEY_IDLING_STEPS=Zeitfenster im Leerlauf
+VAR_KEY_I=i
+VAR_KEY_QUEUE=Queue{0}
+VAR_KEY_PROCESS=Prozess{0}
+VAR_KEY_DUE=fällig
+VAR_VALUE_VOID=leer
+
+SUM_MLQ_TIMESLOTS=Diese Multi-Level Queue bearbeitete {0} Einheiten.
+SUM_PROC_IN_QUEUES={0} Prozesse wurden in {1} Queues bearbeitet.
+SUM_WORK_TIME=Arbeitszeit: {0}
+SUM_IDLE_TIME=Leerlaufzeit: {0}
+SUM_SCHEDULING_ORDER=Ausführungsreihenfolge: {0}
+
+VAL_INV_QUEUES=Ungültige Anzahl Queues ({0}). Muss zwischen 1 und {1} liegen.
+VAL_INV_PROCESSES=Ungültige Anzahl Prozesse ({0}). Muss zwischen 1 und {1} liegen.
+VAL_NO_SCHED=Fehler in Queue {0}: Scheduling-Strategie darf nicht leer sein.
+VAL_INV_SCHED=Fehler in Queue {0: '{1}' ist keine gültige Scheduling-Strategie.
+VAL_INV_FIELDS=Process {0} hat eine ungültige Anzahl an Werten. Prozesse müssen vier Werte haben (Name, Queue-ID, Arbeit, Ankunft)
+VAL_EMPTY_NAME=Fehler in Prozess {0}: Name darf nicht leer sein.
+VAL_PROC_WO_QUEUE=Fehler in Prozess {0}: Keine Queue angegeben.
+VAL_INV_QUEUE_ID=Fehler in Prozess {0}: Queue-ID '{1}' existiert nicht.
+VAL_MALF_QUEUE_ID=Fehler in Prozess {0}: '{1}' ist keine gültige Queue-ID.
+VAL_PROC_WO_WORK=Fehler in Prozess {0}: Arbeit nicht angegeben.
+VAL_MALF_WORK=Fehler in Prozess {0}: '{1}' ist keine gültige Arbeit. Muss zwischen 1 und {2} liegen.
+VAL_PROC_WO_ARRIVAL=Fehler in Prozess {0}: Ankuft nicht angegeben.
+VAL_MALF_ARRIVAL=Fehler in Prozess {0}: '{1}' ist keine gültige Ankunft. Muss zwischen 0 und {2} liegen.
+
+QST_SCHED=Welcher Prozess bekommt als nächstes Rechenzeit?
+ANS_SCHED_NONE=Keiner
+FB_SCHED_RIGHT=Richtig.
+FB_SCHED_WRONG=Falsch, {0} kommt als nächstes.
+
+QST_ENQ=Welcher Prozess wird in dieser Iteration einer Queue hinzugefügt?
+ANS_ENQ_NONE=Keiner
+FB_ENQ_RIGHT_ARRIVAL=Korrekt. Prozess {0} kommt zur Zeit {1} an.
+FB_ENQ_WRONG_ARRIVAL=Falsch, die aktuelle Zeit ist {0} und Prozess {1} kommt zur Zeit {2} an.
+FB_ENQ_RIGHT_NONE=Richtig. In dieser Iteration kommt kein Prozess an.
+FB_ENQ_WRONG_NONE=Falsch. Es gibt einen prozess, der in dieser Iteration ankommt.
+
+QST_NQ=Welche Queue wird in dieser Iteration ausgewählt?
+ANS_NQ_NONE=Keine
+FB_NQ_WRONG_NOT_FIRST=Falsch, {0} kommt zuerst.
+FB_NQ_WRONG_EMPTY=Falsch, diese Queue ist leer.
+FB_NQ_RIGHT_QUEUE=Richtig. {0} ist die erste nicht-leere Queue.
+FB_NQ_RIGHT_NONE=Richtig. Alle Queues sind leer.
+FB_NQ_WRONG_NONE=Falsch, {0} ist nicht leer und wird als nächstes ausgewählt.
+
+QST_RSCHED=Was passiert nun mit Prozess {0}?
+ANS_RSCHED_STAY=Prozess {0} bleibt an der Position tail.
+ANS_RSCHED_RE=Prozess {0} wird erneut bei head eingereiht.
+ANS_RSCHED_REM=Prozess {0} wird von der Queue entfernt.
+FB_RSCHED_RIGHT_NO_WORK=Richtig, denn der Prozess ist fertig.
+FB_RSCHED_WRONG_NO_WORK=Falsch, dieser Prozess ist fertig.
+FB_RSCHED_WRONG_WORK_LEFT=Falsch, dieser Prozess ist noch nicht fertig.
+FB_RSCHED_RIGHT_ONLY_ONE=Richtig, denn die Queue {0} hat nur einen Prozess.
+FB_RSCHED_WRONG_ONLY_ONE=Falsch, denn Queue {0} hat nur einen Prozess.
+FB_RSCHED_WRONG_RR=Falsch, denn Queue {0} verwendet Round-Robin.
+FB_RSCHED_RIGHT_RR=Richtig, denn Queue {0} verwendet Round-Robin.
+FB_RSCHED_RIGHT_FIFO=Richtig, denn Queue {0} verwendet das FIFO-Verfahren.
+FB_RSCHED_WRONG_FIFO=Falsch, denn Queue {0} verwendet das FIFO-Verfahren.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

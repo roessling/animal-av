@@ -1,0 +1,1408 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<ns2:exercise xmlns:ns2="http://www.algoanim.info/Animal2/">
+    <chainPath>/Sorting/Shell Sort/Java/de/Shell_Sort_[DE]</chainPath>
+    <description>Der Gedanke, der hinter ShellSort steht, kann wie folgt beschrieben werden: 1. Die Daten werden in eine zweidimensionale Matrix geschrieben 2. Die Spalten der Matrix werden einzeln sortiert Daraus resultiert eine grobe Sortierung. Dieser Schritt wird Ã¶fter wiederholt, wobei jeweils die Breite der Matrix verringert wird, bis die Matrix nur noch aus einer einzigen vollständig sortierten Spalte besteht. ShellSort arbeitet instabil und in-place.
+
+Gegeben ein Array [1,3,7,5,2,6,8,4]
+</description>
+    <generatorName>generators.sorting.GenericAnnotatedShellSort</generatorName>
+    <initialVariables>
+        <name>array</name>
+        <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">[1,3,7,5,2,6,8,4]</value>
+    </initialVariables>
+    <questionsList>
+        <decisionBox xsi:type="scriptBox" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+            <inputVariables>
+                <name>x</name>
+            </inputVariables>
+            <next xsi:type="assignBox">
+                <next xsi:type="assignBox">
+                    <next xsi:type="functionBox">
+                        <next xsi:type="functionBox">
+                            <next xsi:type="functionBox">
+                                <next xsi:type="functionBox">
+                                    <function xsi:type="ok"/>
+                                </next>
+                                <function xsi:type="check"/>
+                                <arguments xsi:type="constantValue">
+                                    <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">$x = $total</value>
+                                </arguments>
+                            </next>
+                            <function xsi:type="comment"/>
+                            <arguments xsi:type="constantValue">
+                                <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">Die korrekte Antwort ist 9.</value>
+                            </arguments>
+                        </next>
+                        <function xsi:type="debug"/>
+                    </next>
+                    <variableName>total</variableName>
+                    <expression xsi:type="functionBox">
+                        <function xsi:type="retrieve"/>
+                        <arguments xsi:type="constantValue">
+                            <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">count(/)</value>
+                        </arguments>
+                        <arguments xsi:type="valueOfIdentifier">
+                            <variableName>n</variableName>
+                        </arguments>
+                    </expression>
+                </next>
+                <variableName>n</variableName>
+                <expression xsi:type="functionBox">
+                    <function xsi:type="retrieve"/>
+                    <arguments xsi:type="constantValue">
+                        <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">events/switchEvent</value>
+                    </arguments>
+                </expression>
+            </next>
+            <AssignBox>
+                <next xsi:type="assignBox">
+                    <next xsi:type="functionBox">
+                        <next xsi:type="functionBox">
+                            <next xsi:type="functionBox">
+                                <next xsi:type="functionBox">
+                                    <function xsi:type="ok"/>
+                                </next>
+                                <function xsi:type="check"/>
+                                <arguments xsi:type="constantValue">
+                                    <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">$x = $total</value>
+                                </arguments>
+                            </next>
+                            <function xsi:type="comment"/>
+                            <arguments xsi:type="constantValue">
+                                <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">Die korrekte Antwort ist 9.</value>
+                            </arguments>
+                        </next>
+                        <function xsi:type="debug"/>
+                    </next>
+                    <variableName>total</variableName>
+                    <expression xsi:type="functionBox">
+                        <function xsi:type="retrieve"/>
+                        <arguments xsi:type="constantValue">
+                            <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">count(/)</value>
+                        </arguments>
+                        <arguments xsi:type="valueOfIdentifier">
+                            <variableName>n</variableName>
+                        </arguments>
+                    </expression>
+                </next>
+                <variableName>n</variableName>
+                <expression xsi:type="functionBox">
+                    <function xsi:type="retrieve"/>
+                    <arguments xsi:type="constantValue">
+                        <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">events/switchEvent</value>
+                    </arguments>
+                </expression>
+            </AssignBox>
+            <AssignBox>
+                <next xsi:type="functionBox">
+                    <next xsi:type="functionBox">
+                        <next xsi:type="functionBox">
+                            <next xsi:type="functionBox">
+                                <function xsi:type="ok"/>
+                            </next>
+                            <function xsi:type="check"/>
+                            <arguments xsi:type="constantValue">
+                                <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">$x = $total</value>
+                            </arguments>
+                        </next>
+                        <function xsi:type="comment"/>
+                        <arguments xsi:type="constantValue">
+                            <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">Die korrekte Antwort ist 9.</value>
+                        </arguments>
+                    </next>
+                    <function xsi:type="debug"/>
+                </next>
+                <variableName>total</variableName>
+                <expression xsi:type="functionBox">
+                    <function xsi:type="retrieve"/>
+                    <arguments xsi:type="constantValue">
+                        <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">count(/)</value>
+                    </arguments>
+                    <arguments xsi:type="valueOfIdentifier">
+                        <variableName>n</variableName>
+                    </arguments>
+                </expression>
+            </AssignBox>
+            <FunctionBox>
+                <next xsi:type="functionBox">
+                    <next xsi:type="functionBox">
+                        <next xsi:type="functionBox">
+                            <function xsi:type="ok"/>
+                        </next>
+                        <function xsi:type="check"/>
+                        <arguments xsi:type="constantValue">
+                            <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">$x = $total</value>
+                        </arguments>
+                    </next>
+                    <function xsi:type="comment"/>
+                    <arguments xsi:type="constantValue">
+                        <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">Die korrekte Antwort ist 9.</value>
+                    </arguments>
+                </next>
+                <function xsi:type="debug"/>
+            </FunctionBox>
+            <FunctionBox>
+                <next xsi:type="functionBox">
+                    <next xsi:type="functionBox">
+                        <function xsi:type="ok"/>
+                    </next>
+                    <function xsi:type="check"/>
+                    <arguments xsi:type="constantValue">
+                        <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">$x = $total</value>
+                    </arguments>
+                </next>
+                <function xsi:type="comment"/>
+                <arguments xsi:type="constantValue">
+                    <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">Die korrekte Antwort ist 9.</value>
+                </arguments>
+            </FunctionBox>
+            <FunctionBox>
+                <next xsi:type="functionBox">
+                    <function xsi:type="ok"/>
+                </next>
+                <function xsi:type="check"/>
+                <arguments xsi:type="constantValue">
+                    <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">$x = $total</value>
+                </arguments>
+            </FunctionBox>
+            <FunctionBox>
+                <function xsi:type="ok"/>
+            </FunctionBox>
+        </decisionBox>
+        <inputVariables>
+            <name>x</name>
+        </inputVariables>
+        <questionId>Question-3454406021295301081585</questionId>
+        <questionText>1. Wie viele Austausch benötigt insgesamt im gegebenen Array? </questionText>
+        <script>// No script
+n = Retrieve("events/switchEvent");
+total = Retrieve("count(/)",n);
+Debug();
+Comment("Die korrekte Antwort ist 9.");
+Check("$x = $total");
+Ok();</script>
+    </questionsList>
+    <questionsList>
+        <decisionBox xsi:type="scriptBox" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+            <inputVariables>
+                <name>x</name>
+            </inputVariables>
+            <next xsi:type="assignBox">
+                <next xsi:type="assignBox">
+                    <next xsi:type="functionBox">
+                        <next xsi:type="functionBox">
+                            <next xsi:type="functionBox">
+                                <next xsi:type="functionBox">
+                                    <function xsi:type="ok"/>
+                                </next>
+                                <function xsi:type="check"/>
+                                <arguments xsi:type="constantValue">
+                                    <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">$x = $total</value>
+                                </arguments>
+                            </next>
+                            <function xsi:type="comment"/>
+                            <arguments xsi:type="constantValue">
+                                <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">Die korrekte Antwort ist 1.</value>
+                            </arguments>
+                        </next>
+                        <function xsi:type="debug"/>
+                    </next>
+                    <variableName>total</variableName>
+                    <expression xsi:type="functionBox">
+                        <function xsi:type="retrieve"/>
+                        <arguments xsi:type="constantValue">
+                            <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">count(/)</value>
+                        </arguments>
+                        <arguments xsi:type="valueOfIdentifier">
+                            <variableName>n</variableName>
+                        </arguments>
+                    </expression>
+                </next>
+                <variableName>n</variableName>
+                <expression xsi:type="functionBox">
+                    <function xsi:type="retrieve"/>
+                    <arguments xsi:type="constantValue">
+                        <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">events/switchEvent[seqnr = 1]</value>
+                    </arguments>
+                </expression>
+            </next>
+            <AssignBox>
+                <next xsi:type="assignBox">
+                    <next xsi:type="functionBox">
+                        <next xsi:type="functionBox">
+                            <next xsi:type="functionBox">
+                                <next xsi:type="functionBox">
+                                    <function xsi:type="ok"/>
+                                </next>
+                                <function xsi:type="check"/>
+                                <arguments xsi:type="constantValue">
+                                    <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">$x = $total</value>
+                                </arguments>
+                            </next>
+                            <function xsi:type="comment"/>
+                            <arguments xsi:type="constantValue">
+                                <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">Die korrekte Antwort ist 1.</value>
+                            </arguments>
+                        </next>
+                        <function xsi:type="debug"/>
+                    </next>
+                    <variableName>total</variableName>
+                    <expression xsi:type="functionBox">
+                        <function xsi:type="retrieve"/>
+                        <arguments xsi:type="constantValue">
+                            <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">count(/)</value>
+                        </arguments>
+                        <arguments xsi:type="valueOfIdentifier">
+                            <variableName>n</variableName>
+                        </arguments>
+                    </expression>
+                </next>
+                <variableName>n</variableName>
+                <expression xsi:type="functionBox">
+                    <function xsi:type="retrieve"/>
+                    <arguments xsi:type="constantValue">
+                        <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">events/switchEvent[seqnr = 1]</value>
+                    </arguments>
+                </expression>
+            </AssignBox>
+            <AssignBox>
+                <next xsi:type="functionBox">
+                    <next xsi:type="functionBox">
+                        <next xsi:type="functionBox">
+                            <next xsi:type="functionBox">
+                                <function xsi:type="ok"/>
+                            </next>
+                            <function xsi:type="check"/>
+                            <arguments xsi:type="constantValue">
+                                <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">$x = $total</value>
+                            </arguments>
+                        </next>
+                        <function xsi:type="comment"/>
+                        <arguments xsi:type="constantValue">
+                            <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">Die korrekte Antwort ist 1.</value>
+                        </arguments>
+                    </next>
+                    <function xsi:type="debug"/>
+                </next>
+                <variableName>total</variableName>
+                <expression xsi:type="functionBox">
+                    <function xsi:type="retrieve"/>
+                    <arguments xsi:type="constantValue">
+                        <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">count(/)</value>
+                    </arguments>
+                    <arguments xsi:type="valueOfIdentifier">
+                        <variableName>n</variableName>
+                    </arguments>
+                </expression>
+            </AssignBox>
+            <FunctionBox>
+                <next xsi:type="functionBox">
+                    <next xsi:type="functionBox">
+                        <next xsi:type="functionBox">
+                            <function xsi:type="ok"/>
+                        </next>
+                        <function xsi:type="check"/>
+                        <arguments xsi:type="constantValue">
+                            <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">$x = $total</value>
+                        </arguments>
+                    </next>
+                    <function xsi:type="comment"/>
+                    <arguments xsi:type="constantValue">
+                        <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">Die korrekte Antwort ist 1.</value>
+                    </arguments>
+                </next>
+                <function xsi:type="debug"/>
+            </FunctionBox>
+            <FunctionBox>
+                <next xsi:type="functionBox">
+                    <next xsi:type="functionBox">
+                        <function xsi:type="ok"/>
+                    </next>
+                    <function xsi:type="check"/>
+                    <arguments xsi:type="constantValue">
+                        <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">$x = $total</value>
+                    </arguments>
+                </next>
+                <function xsi:type="comment"/>
+                <arguments xsi:type="constantValue">
+                    <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">Die korrekte Antwort ist 1.</value>
+                </arguments>
+            </FunctionBox>
+            <FunctionBox>
+                <next xsi:type="functionBox">
+                    <function xsi:type="ok"/>
+                </next>
+                <function xsi:type="check"/>
+                <arguments xsi:type="constantValue">
+                    <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">$x = $total</value>
+                </arguments>
+            </FunctionBox>
+            <FunctionBox>
+                <function xsi:type="ok"/>
+            </FunctionBox>
+        </decisionBox>
+        <inputVariables>
+            <name>x</name>
+        </inputVariables>
+        <questionId>Question-3454406021295301843577</questionId>
+        <questionText>2. Zuerst werden die Daten in eine Matrix mit vier Spalten eingetragen und spaltenweise sortiert. Wieviele Austausch benötigt hier?</questionText>
+        <script>// No script
+n = Retrieve("events/switchEvent[seqnr = 1]");
+total = Retrieve("count(/)",n);
+Debug();
+Comment("Die korrekte Antwort ist 1.");
+Check("$x = $total");
+Ok();</script>
+    </questionsList>
+    <questionsList>
+        <decisionBox xsi:type="scriptBox" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+            <inputVariables>
+                <name>x</name>
+            </inputVariables>
+            <next xsi:type="assignBox">
+                <next xsi:type="assignBox">
+                    <next xsi:type="assignBox">
+                        <next xsi:type="assignBox">
+                            <next xsi:type="assignBox">
+                                <next xsi:type="functionBox">
+                                    <next xsi:type="functionBox">
+                                        <next xsi:type="functionBox">
+                                            <next xsi:type="functionBox">
+                                                <function xsi:type="ok"/>
+                                            </next>
+                                            <function xsi:type="check"/>
+                                            <arguments xsi:type="constantValue">
+                                                <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">$x = $total2</value>
+                                            </arguments>
+                                        </next>
+                                        <function xsi:type="comment"/>
+                                        <arguments xsi:type="constantValue">
+                                            <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">Die korrekte Antwort ist 8.</value>
+                                        </arguments>
+                                    </next>
+                                    <function xsi:type="debug"/>
+                                </next>
+                                <variableName>total2</variableName>
+                                <expression xsi:type="functionBox">
+                                    <function xsi:type="retrieve"/>
+                                    <arguments xsi:type="constantValue">
+                                        <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">$total - $total1</value>
+                                    </arguments>
+                                </expression>
+                            </next>
+                            <variableName>total</variableName>
+                            <expression xsi:type="functionBox">
+                                <function xsi:type="retrieve"/>
+                                <arguments xsi:type="constantValue">
+                                    <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">count(/)</value>
+                                </arguments>
+                                <arguments xsi:type="valueOfIdentifier">
+                                    <variableName>n</variableName>
+                                </arguments>
+                            </expression>
+                        </next>
+                        <variableName>n</variableName>
+                        <expression xsi:type="functionBox">
+                            <function xsi:type="retrieve"/>
+                            <arguments xsi:type="constantValue">
+                                <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">events/switchEvent</value>
+                            </arguments>
+                        </expression>
+                    </next>
+                    <variableName>total1</variableName>
+                    <expression xsi:type="functionBox">
+                        <function xsi:type="retrieve"/>
+                        <arguments xsi:type="constantValue">
+                            <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">count(/)</value>
+                        </arguments>
+                        <arguments xsi:type="valueOfIdentifier">
+                            <variableName>n1</variableName>
+                        </arguments>
+                    </expression>
+                </next>
+                <variableName>n1</variableName>
+                <expression xsi:type="functionBox">
+                    <function xsi:type="retrieve"/>
+                    <arguments xsi:type="constantValue">
+                        <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">events/switchEvent[seqnr = 1]</value>
+                    </arguments>
+                </expression>
+            </next>
+            <AssignBox>
+                <next xsi:type="assignBox">
+                    <next xsi:type="assignBox">
+                        <next xsi:type="assignBox">
+                            <next xsi:type="assignBox">
+                                <next xsi:type="functionBox">
+                                    <next xsi:type="functionBox">
+                                        <next xsi:type="functionBox">
+                                            <next xsi:type="functionBox">
+                                                <function xsi:type="ok"/>
+                                            </next>
+                                            <function xsi:type="check"/>
+                                            <arguments xsi:type="constantValue">
+                                                <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">$x = $total2</value>
+                                            </arguments>
+                                        </next>
+                                        <function xsi:type="comment"/>
+                                        <arguments xsi:type="constantValue">
+                                            <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">Die korrekte Antwort ist 8.</value>
+                                        </arguments>
+                                    </next>
+                                    <function xsi:type="debug"/>
+                                </next>
+                                <variableName>total2</variableName>
+                                <expression xsi:type="functionBox">
+                                    <function xsi:type="retrieve"/>
+                                    <arguments xsi:type="constantValue">
+                                        <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">$total - $total1</value>
+                                    </arguments>
+                                </expression>
+                            </next>
+                            <variableName>total</variableName>
+                            <expression xsi:type="functionBox">
+                                <function xsi:type="retrieve"/>
+                                <arguments xsi:type="constantValue">
+                                    <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">count(/)</value>
+                                </arguments>
+                                <arguments xsi:type="valueOfIdentifier">
+                                    <variableName>n</variableName>
+                                </arguments>
+                            </expression>
+                        </next>
+                        <variableName>n</variableName>
+                        <expression xsi:type="functionBox">
+                            <function xsi:type="retrieve"/>
+                            <arguments xsi:type="constantValue">
+                                <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">events/switchEvent</value>
+                            </arguments>
+                        </expression>
+                    </next>
+                    <variableName>total1</variableName>
+                    <expression xsi:type="functionBox">
+                        <function xsi:type="retrieve"/>
+                        <arguments xsi:type="constantValue">
+                            <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">count(/)</value>
+                        </arguments>
+                        <arguments xsi:type="valueOfIdentifier">
+                            <variableName>n1</variableName>
+                        </arguments>
+                    </expression>
+                </next>
+                <variableName>n1</variableName>
+                <expression xsi:type="functionBox">
+                    <function xsi:type="retrieve"/>
+                    <arguments xsi:type="constantValue">
+                        <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">events/switchEvent[seqnr = 1]</value>
+                    </arguments>
+                </expression>
+            </AssignBox>
+            <AssignBox>
+                <next xsi:type="assignBox">
+                    <next xsi:type="assignBox">
+                        <next xsi:type="assignBox">
+                            <next xsi:type="functionBox">
+                                <next xsi:type="functionBox">
+                                    <next xsi:type="functionBox">
+                                        <next xsi:type="functionBox">
+                                            <function xsi:type="ok"/>
+                                        </next>
+                                        <function xsi:type="check"/>
+                                        <arguments xsi:type="constantValue">
+                                            <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">$x = $total2</value>
+                                        </arguments>
+                                    </next>
+                                    <function xsi:type="comment"/>
+                                    <arguments xsi:type="constantValue">
+                                        <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">Die korrekte Antwort ist 8.</value>
+                                    </arguments>
+                                </next>
+                                <function xsi:type="debug"/>
+                            </next>
+                            <variableName>total2</variableName>
+                            <expression xsi:type="functionBox">
+                                <function xsi:type="retrieve"/>
+                                <arguments xsi:type="constantValue">
+                                    <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">$total - $total1</value>
+                                </arguments>
+                            </expression>
+                        </next>
+                        <variableName>total</variableName>
+                        <expression xsi:type="functionBox">
+                            <function xsi:type="retrieve"/>
+                            <arguments xsi:type="constantValue">
+                                <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">count(/)</value>
+                            </arguments>
+                            <arguments xsi:type="valueOfIdentifier">
+                                <variableName>n</variableName>
+                            </arguments>
+                        </expression>
+                    </next>
+                    <variableName>n</variableName>
+                    <expression xsi:type="functionBox">
+                        <function xsi:type="retrieve"/>
+                        <arguments xsi:type="constantValue">
+                            <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">events/switchEvent</value>
+                        </arguments>
+                    </expression>
+                </next>
+                <variableName>total1</variableName>
+                <expression xsi:type="functionBox">
+                    <function xsi:type="retrieve"/>
+                    <arguments xsi:type="constantValue">
+                        <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">count(/)</value>
+                    </arguments>
+                    <arguments xsi:type="valueOfIdentifier">
+                        <variableName>n1</variableName>
+                    </arguments>
+                </expression>
+            </AssignBox>
+            <AssignBox>
+                <next xsi:type="assignBox">
+                    <next xsi:type="assignBox">
+                        <next xsi:type="functionBox">
+                            <next xsi:type="functionBox">
+                                <next xsi:type="functionBox">
+                                    <next xsi:type="functionBox">
+                                        <function xsi:type="ok"/>
+                                    </next>
+                                    <function xsi:type="check"/>
+                                    <arguments xsi:type="constantValue">
+                                        <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">$x = $total2</value>
+                                    </arguments>
+                                </next>
+                                <function xsi:type="comment"/>
+                                <arguments xsi:type="constantValue">
+                                    <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">Die korrekte Antwort ist 8.</value>
+                                </arguments>
+                            </next>
+                            <function xsi:type="debug"/>
+                        </next>
+                        <variableName>total2</variableName>
+                        <expression xsi:type="functionBox">
+                            <function xsi:type="retrieve"/>
+                            <arguments xsi:type="constantValue">
+                                <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">$total - $total1</value>
+                            </arguments>
+                        </expression>
+                    </next>
+                    <variableName>total</variableName>
+                    <expression xsi:type="functionBox">
+                        <function xsi:type="retrieve"/>
+                        <arguments xsi:type="constantValue">
+                            <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">count(/)</value>
+                        </arguments>
+                        <arguments xsi:type="valueOfIdentifier">
+                            <variableName>n</variableName>
+                        </arguments>
+                    </expression>
+                </next>
+                <variableName>n</variableName>
+                <expression xsi:type="functionBox">
+                    <function xsi:type="retrieve"/>
+                    <arguments xsi:type="constantValue">
+                        <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">events/switchEvent</value>
+                    </arguments>
+                </expression>
+            </AssignBox>
+            <AssignBox>
+                <next xsi:type="assignBox">
+                    <next xsi:type="functionBox">
+                        <next xsi:type="functionBox">
+                            <next xsi:type="functionBox">
+                                <next xsi:type="functionBox">
+                                    <function xsi:type="ok"/>
+                                </next>
+                                <function xsi:type="check"/>
+                                <arguments xsi:type="constantValue">
+                                    <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">$x = $total2</value>
+                                </arguments>
+                            </next>
+                            <function xsi:type="comment"/>
+                            <arguments xsi:type="constantValue">
+                                <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">Die korrekte Antwort ist 8.</value>
+                            </arguments>
+                        </next>
+                        <function xsi:type="debug"/>
+                    </next>
+                    <variableName>total2</variableName>
+                    <expression xsi:type="functionBox">
+                        <function xsi:type="retrieve"/>
+                        <arguments xsi:type="constantValue">
+                            <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">$total - $total1</value>
+                        </arguments>
+                    </expression>
+                </next>
+                <variableName>total</variableName>
+                <expression xsi:type="functionBox">
+                    <function xsi:type="retrieve"/>
+                    <arguments xsi:type="constantValue">
+                        <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">count(/)</value>
+                    </arguments>
+                    <arguments xsi:type="valueOfIdentifier">
+                        <variableName>n</variableName>
+                    </arguments>
+                </expression>
+            </AssignBox>
+            <AssignBox>
+                <next xsi:type="functionBox">
+                    <next xsi:type="functionBox">
+                        <next xsi:type="functionBox">
+                            <next xsi:type="functionBox">
+                                <function xsi:type="ok"/>
+                            </next>
+                            <function xsi:type="check"/>
+                            <arguments xsi:type="constantValue">
+                                <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">$x = $total2</value>
+                            </arguments>
+                        </next>
+                        <function xsi:type="comment"/>
+                        <arguments xsi:type="constantValue">
+                            <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">Die korrekte Antwort ist 8.</value>
+                        </arguments>
+                    </next>
+                    <function xsi:type="debug"/>
+                </next>
+                <variableName>total2</variableName>
+                <expression xsi:type="functionBox">
+                    <function xsi:type="retrieve"/>
+                    <arguments xsi:type="constantValue">
+                        <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">$total - $total1</value>
+                    </arguments>
+                </expression>
+            </AssignBox>
+            <FunctionBox>
+                <next xsi:type="functionBox">
+                    <next xsi:type="functionBox">
+                        <next xsi:type="functionBox">
+                            <function xsi:type="ok"/>
+                        </next>
+                        <function xsi:type="check"/>
+                        <arguments xsi:type="constantValue">
+                            <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">$x = $total2</value>
+                        </arguments>
+                    </next>
+                    <function xsi:type="comment"/>
+                    <arguments xsi:type="constantValue">
+                        <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">Die korrekte Antwort ist 8.</value>
+                    </arguments>
+                </next>
+                <function xsi:type="debug"/>
+            </FunctionBox>
+            <FunctionBox>
+                <next xsi:type="functionBox">
+                    <next xsi:type="functionBox">
+                        <function xsi:type="ok"/>
+                    </next>
+                    <function xsi:type="check"/>
+                    <arguments xsi:type="constantValue">
+                        <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">$x = $total2</value>
+                    </arguments>
+                </next>
+                <function xsi:type="comment"/>
+                <arguments xsi:type="constantValue">
+                    <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">Die korrekte Antwort ist 8.</value>
+                </arguments>
+            </FunctionBox>
+            <FunctionBox>
+                <next xsi:type="functionBox">
+                    <function xsi:type="ok"/>
+                </next>
+                <function xsi:type="check"/>
+                <arguments xsi:type="constantValue">
+                    <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">$x = $total2</value>
+                </arguments>
+            </FunctionBox>
+            <FunctionBox>
+                <function xsi:type="ok"/>
+            </FunctionBox>
+        </decisionBox>
+        <inputVariables>
+            <name>x</name>
+        </inputVariables>
+        <questionId>Question-3454406021295301994649</questionId>
+        <questionText>3. Die sortierte Vier-Spalten-Matrix wird nun in eine Spalte geschrieben und wieder sortiert mittels normalem Insertionsort. Wieviele Austausch benötigt hier?</questionText>
+        <script>// No script
+n1 = Retrieve("events/switchEvent[seqnr = 1]");
+total1 = Retrieve("count(/)",n1);
+n = Retrieve("events/switchEvent");
+total = Retrieve("count(/)",n);
+total2 = Retrieve("$total - $total1");
+Debug();
+Comment("Die korrekte Antwort ist 8.");
+Check("$x = $total2");
+Ok();</script>
+    </questionsList>
+    <questionsList>
+        <decisionBox xsi:type="scriptBox" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+            <inputVariables>
+                <name>x</name>
+            </inputVariables>
+            <next xsi:type="assignBox">
+                <next xsi:type="assignBox">
+                    <next xsi:type="assignBox">
+                        <next xsi:type="assignBox">
+                            <next xsi:type="assignBox">
+                                <next xsi:type="assignBox">
+                                    <next xsi:type="assignBox">
+                                        <next xsi:type="assignBox">
+                                            <next xsi:type="functionBox">
+                                                <next xsi:type="functionBox">
+                                                    <next xsi:type="functionBox">
+                                                        <function xsi:type="ok"/>
+                                                        <arguments xsi:type="valueOfIdentifier">
+                                                            <variableName>x</variableName>
+                                                        </arguments>
+                                                        <arguments xsi:type="valueOfIdentifier">
+                                                            <variableName>total</variableName>
+                                                        </arguments>
+                                                    </next>
+                                                    <function xsi:type="comment"/>
+                                                    <arguments xsi:type="constantValue">
+                                                        <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">Das Element 2 tauscht mit das Element 7, 4, 3.</value>
+                                                    </arguments>
+                                                </next>
+                                                <function xsi:type="debug"/>
+                                            </next>
+                                            <variableName>total</variableName>
+                                            <expression xsi:type="functionBox">
+                                                <function xsi:type="retrieve"/>
+                                                <arguments xsi:type="constantValue">
+                                                    <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">$total1 + $swap3</value>
+                                                </arguments>
+                                            </expression>
+                                        </next>
+                                        <variableName>total1</variableName>
+                                        <expression xsi:type="functionBox">
+                                            <function xsi:type="retrieve"/>
+                                            <arguments xsi:type="constantValue">
+                                                <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">$swap1 + $swap2</value>
+                                            </arguments>
+                                        </expression>
+                                    </next>
+                                    <variableName>swap3</variableName>
+                                    <expression xsi:type="functionBox">
+                                        <function xsi:type="retrieve"/>
+                                        <arguments xsi:type="constantValue">
+                                            <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">count(/)</value>
+                                        </arguments>
+                                        <arguments xsi:type="valueOfIdentifier">
+                                            <variableName>n3</variableName>
+                                        </arguments>
+                                    </expression>
+                                </next>
+                                <variableName>n3</variableName>
+                                <expression xsi:type="functionBox">
+                                    <function xsi:type="retrieve"/>
+                                    <arguments xsi:type="constantValue">
+                                        <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">events/switchEvent[seqnr=5] </value>
+                                    </arguments>
+                                </expression>
+                            </next>
+                            <variableName>swap2</variableName>
+                            <expression xsi:type="functionBox">
+                                <function xsi:type="retrieve"/>
+                                <arguments xsi:type="constantValue">
+                                    <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">count(/)</value>
+                                </arguments>
+                                <arguments xsi:type="valueOfIdentifier">
+                                    <variableName>n2</variableName>
+                                </arguments>
+                            </expression>
+                        </next>
+                        <variableName>n2</variableName>
+                        <expression xsi:type="functionBox">
+                            <function xsi:type="retrieve"/>
+                            <arguments xsi:type="constantValue">
+                                <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">events/switchEvent[seqnr=4] </value>
+                            </arguments>
+                        </expression>
+                    </next>
+                    <variableName>swap1</variableName>
+                    <expression xsi:type="functionBox">
+                        <function xsi:type="retrieve"/>
+                        <arguments xsi:type="constantValue">
+                            <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">count(/)</value>
+                        </arguments>
+                        <arguments xsi:type="valueOfIdentifier">
+                            <variableName>n1</variableName>
+                        </arguments>
+                    </expression>
+                </next>
+                <variableName>n1</variableName>
+                <expression xsi:type="functionBox">
+                    <function xsi:type="retrieve"/>
+                    <arguments xsi:type="constantValue">
+                        <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">events/switchEvent[seqnr=3] </value>
+                    </arguments>
+                </expression>
+            </next>
+            <AssignBox>
+                <next xsi:type="assignBox">
+                    <next xsi:type="assignBox">
+                        <next xsi:type="assignBox">
+                            <next xsi:type="assignBox">
+                                <next xsi:type="assignBox">
+                                    <next xsi:type="assignBox">
+                                        <next xsi:type="assignBox">
+                                            <next xsi:type="functionBox">
+                                                <next xsi:type="functionBox">
+                                                    <next xsi:type="functionBox">
+                                                        <function xsi:type="ok"/>
+                                                        <arguments xsi:type="valueOfIdentifier">
+                                                            <variableName>x</variableName>
+                                                        </arguments>
+                                                        <arguments xsi:type="valueOfIdentifier">
+                                                            <variableName>total</variableName>
+                                                        </arguments>
+                                                    </next>
+                                                    <function xsi:type="comment"/>
+                                                    <arguments xsi:type="constantValue">
+                                                        <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">Das Element 2 tauscht mit das Element 7, 4, 3.</value>
+                                                    </arguments>
+                                                </next>
+                                                <function xsi:type="debug"/>
+                                            </next>
+                                            <variableName>total</variableName>
+                                            <expression xsi:type="functionBox">
+                                                <function xsi:type="retrieve"/>
+                                                <arguments xsi:type="constantValue">
+                                                    <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">$total1 + $swap3</value>
+                                                </arguments>
+                                            </expression>
+                                        </next>
+                                        <variableName>total1</variableName>
+                                        <expression xsi:type="functionBox">
+                                            <function xsi:type="retrieve"/>
+                                            <arguments xsi:type="constantValue">
+                                                <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">$swap1 + $swap2</value>
+                                            </arguments>
+                                        </expression>
+                                    </next>
+                                    <variableName>swap3</variableName>
+                                    <expression xsi:type="functionBox">
+                                        <function xsi:type="retrieve"/>
+                                        <arguments xsi:type="constantValue">
+                                            <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">count(/)</value>
+                                        </arguments>
+                                        <arguments xsi:type="valueOfIdentifier">
+                                            <variableName>n3</variableName>
+                                        </arguments>
+                                    </expression>
+                                </next>
+                                <variableName>n3</variableName>
+                                <expression xsi:type="functionBox">
+                                    <function xsi:type="retrieve"/>
+                                    <arguments xsi:type="constantValue">
+                                        <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">events/switchEvent[seqnr=5] </value>
+                                    </arguments>
+                                </expression>
+                            </next>
+                            <variableName>swap2</variableName>
+                            <expression xsi:type="functionBox">
+                                <function xsi:type="retrieve"/>
+                                <arguments xsi:type="constantValue">
+                                    <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">count(/)</value>
+                                </arguments>
+                                <arguments xsi:type="valueOfIdentifier">
+                                    <variableName>n2</variableName>
+                                </arguments>
+                            </expression>
+                        </next>
+                        <variableName>n2</variableName>
+                        <expression xsi:type="functionBox">
+                            <function xsi:type="retrieve"/>
+                            <arguments xsi:type="constantValue">
+                                <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">events/switchEvent[seqnr=4] </value>
+                            </arguments>
+                        </expression>
+                    </next>
+                    <variableName>swap1</variableName>
+                    <expression xsi:type="functionBox">
+                        <function xsi:type="retrieve"/>
+                        <arguments xsi:type="constantValue">
+                            <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">count(/)</value>
+                        </arguments>
+                        <arguments xsi:type="valueOfIdentifier">
+                            <variableName>n1</variableName>
+                        </arguments>
+                    </expression>
+                </next>
+                <variableName>n1</variableName>
+                <expression xsi:type="functionBox">
+                    <function xsi:type="retrieve"/>
+                    <arguments xsi:type="constantValue">
+                        <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">events/switchEvent[seqnr=3] </value>
+                    </arguments>
+                </expression>
+            </AssignBox>
+            <AssignBox>
+                <next xsi:type="assignBox">
+                    <next xsi:type="assignBox">
+                        <next xsi:type="assignBox">
+                            <next xsi:type="assignBox">
+                                <next xsi:type="assignBox">
+                                    <next xsi:type="assignBox">
+                                        <next xsi:type="functionBox">
+                                            <next xsi:type="functionBox">
+                                                <next xsi:type="functionBox">
+                                                    <function xsi:type="ok"/>
+                                                    <arguments xsi:type="valueOfIdentifier">
+                                                        <variableName>x</variableName>
+                                                    </arguments>
+                                                    <arguments xsi:type="valueOfIdentifier">
+                                                        <variableName>total</variableName>
+                                                    </arguments>
+                                                </next>
+                                                <function xsi:type="comment"/>
+                                                <arguments xsi:type="constantValue">
+                                                    <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">Das Element 2 tauscht mit das Element 7, 4, 3.</value>
+                                                </arguments>
+                                            </next>
+                                            <function xsi:type="debug"/>
+                                        </next>
+                                        <variableName>total</variableName>
+                                        <expression xsi:type="functionBox">
+                                            <function xsi:type="retrieve"/>
+                                            <arguments xsi:type="constantValue">
+                                                <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">$total1 + $swap3</value>
+                                            </arguments>
+                                        </expression>
+                                    </next>
+                                    <variableName>total1</variableName>
+                                    <expression xsi:type="functionBox">
+                                        <function xsi:type="retrieve"/>
+                                        <arguments xsi:type="constantValue">
+                                            <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">$swap1 + $swap2</value>
+                                        </arguments>
+                                    </expression>
+                                </next>
+                                <variableName>swap3</variableName>
+                                <expression xsi:type="functionBox">
+                                    <function xsi:type="retrieve"/>
+                                    <arguments xsi:type="constantValue">
+                                        <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">count(/)</value>
+                                    </arguments>
+                                    <arguments xsi:type="valueOfIdentifier">
+                                        <variableName>n3</variableName>
+                                    </arguments>
+                                </expression>
+                            </next>
+                            <variableName>n3</variableName>
+                            <expression xsi:type="functionBox">
+                                <function xsi:type="retrieve"/>
+                                <arguments xsi:type="constantValue">
+                                    <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">events/switchEvent[seqnr=5] </value>
+                                </arguments>
+                            </expression>
+                        </next>
+                        <variableName>swap2</variableName>
+                        <expression xsi:type="functionBox">
+                            <function xsi:type="retrieve"/>
+                            <arguments xsi:type="constantValue">
+                                <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">count(/)</value>
+                            </arguments>
+                            <arguments xsi:type="valueOfIdentifier">
+                                <variableName>n2</variableName>
+                            </arguments>
+                        </expression>
+                    </next>
+                    <variableName>n2</variableName>
+                    <expression xsi:type="functionBox">
+                        <function xsi:type="retrieve"/>
+                        <arguments xsi:type="constantValue">
+                            <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">events/switchEvent[seqnr=4] </value>
+                        </arguments>
+                    </expression>
+                </next>
+                <variableName>swap1</variableName>
+                <expression xsi:type="functionBox">
+                    <function xsi:type="retrieve"/>
+                    <arguments xsi:type="constantValue">
+                        <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">count(/)</value>
+                    </arguments>
+                    <arguments xsi:type="valueOfIdentifier">
+                        <variableName>n1</variableName>
+                    </arguments>
+                </expression>
+            </AssignBox>
+            <AssignBox>
+                <next xsi:type="assignBox">
+                    <next xsi:type="assignBox">
+                        <next xsi:type="assignBox">
+                            <next xsi:type="assignBox">
+                                <next xsi:type="assignBox">
+                                    <next xsi:type="functionBox">
+                                        <next xsi:type="functionBox">
+                                            <next xsi:type="functionBox">
+                                                <function xsi:type="ok"/>
+                                                <arguments xsi:type="valueOfIdentifier">
+                                                    <variableName>x</variableName>
+                                                </arguments>
+                                                <arguments xsi:type="valueOfIdentifier">
+                                                    <variableName>total</variableName>
+                                                </arguments>
+                                            </next>
+                                            <function xsi:type="comment"/>
+                                            <arguments xsi:type="constantValue">
+                                                <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">Das Element 2 tauscht mit das Element 7, 4, 3.</value>
+                                            </arguments>
+                                        </next>
+                                        <function xsi:type="debug"/>
+                                    </next>
+                                    <variableName>total</variableName>
+                                    <expression xsi:type="functionBox">
+                                        <function xsi:type="retrieve"/>
+                                        <arguments xsi:type="constantValue">
+                                            <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">$total1 + $swap3</value>
+                                        </arguments>
+                                    </expression>
+                                </next>
+                                <variableName>total1</variableName>
+                                <expression xsi:type="functionBox">
+                                    <function xsi:type="retrieve"/>
+                                    <arguments xsi:type="constantValue">
+                                        <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">$swap1 + $swap2</value>
+                                    </arguments>
+                                </expression>
+                            </next>
+                            <variableName>swap3</variableName>
+                            <expression xsi:type="functionBox">
+                                <function xsi:type="retrieve"/>
+                                <arguments xsi:type="constantValue">
+                                    <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">count(/)</value>
+                                </arguments>
+                                <arguments xsi:type="valueOfIdentifier">
+                                    <variableName>n3</variableName>
+                                </arguments>
+                            </expression>
+                        </next>
+                        <variableName>n3</variableName>
+                        <expression xsi:type="functionBox">
+                            <function xsi:type="retrieve"/>
+                            <arguments xsi:type="constantValue">
+                                <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">events/switchEvent[seqnr=5] </value>
+                            </arguments>
+                        </expression>
+                    </next>
+                    <variableName>swap2</variableName>
+                    <expression xsi:type="functionBox">
+                        <function xsi:type="retrieve"/>
+                        <arguments xsi:type="constantValue">
+                            <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">count(/)</value>
+                        </arguments>
+                        <arguments xsi:type="valueOfIdentifier">
+                            <variableName>n2</variableName>
+                        </arguments>
+                    </expression>
+                </next>
+                <variableName>n2</variableName>
+                <expression xsi:type="functionBox">
+                    <function xsi:type="retrieve"/>
+                    <arguments xsi:type="constantValue">
+                        <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">events/switchEvent[seqnr=4] </value>
+                    </arguments>
+                </expression>
+            </AssignBox>
+            <AssignBox>
+                <next xsi:type="assignBox">
+                    <next xsi:type="assignBox">
+                        <next xsi:type="assignBox">
+                            <next xsi:type="assignBox">
+                                <next xsi:type="functionBox">
+                                    <next xsi:type="functionBox">
+                                        <next xsi:type="functionBox">
+                                            <function xsi:type="ok"/>
+                                            <arguments xsi:type="valueOfIdentifier">
+                                                <variableName>x</variableName>
+                                            </arguments>
+                                            <arguments xsi:type="valueOfIdentifier">
+                                                <variableName>total</variableName>
+                                            </arguments>
+                                        </next>
+                                        <function xsi:type="comment"/>
+                                        <arguments xsi:type="constantValue">
+                                            <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">Das Element 2 tauscht mit das Element 7, 4, 3.</value>
+                                        </arguments>
+                                    </next>
+                                    <function xsi:type="debug"/>
+                                </next>
+                                <variableName>total</variableName>
+                                <expression xsi:type="functionBox">
+                                    <function xsi:type="retrieve"/>
+                                    <arguments xsi:type="constantValue">
+                                        <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">$total1 + $swap3</value>
+                                    </arguments>
+                                </expression>
+                            </next>
+                            <variableName>total1</variableName>
+                            <expression xsi:type="functionBox">
+                                <function xsi:type="retrieve"/>
+                                <arguments xsi:type="constantValue">
+                                    <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">$swap1 + $swap2</value>
+                                </arguments>
+                            </expression>
+                        </next>
+                        <variableName>swap3</variableName>
+                        <expression xsi:type="functionBox">
+                            <function xsi:type="retrieve"/>
+                            <arguments xsi:type="constantValue">
+                                <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">count(/)</value>
+                            </arguments>
+                            <arguments xsi:type="valueOfIdentifier">
+                                <variableName>n3</variableName>
+                            </arguments>
+                        </expression>
+                    </next>
+                    <variableName>n3</variableName>
+                    <expression xsi:type="functionBox">
+                        <function xsi:type="retrieve"/>
+                        <arguments xsi:type="constantValue">
+                            <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">events/switchEvent[seqnr=5] </value>
+                        </arguments>
+                    </expression>
+                </next>
+                <variableName>swap2</variableName>
+                <expression xsi:type="functionBox">
+                    <function xsi:type="retrieve"/>
+                    <arguments xsi:type="constantValue">
+                        <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">count(/)</value>
+                    </arguments>
+                    <arguments xsi:type="valueOfIdentifier">
+                        <variableName>n2</variableName>
+                    </arguments>
+                </expression>
+            </AssignBox>
+            <AssignBox>
+                <next xsi:type="assignBox">
+                    <next xsi:type="assignBox">
+                        <next xsi:type="assignBox">
+                            <next xsi:type="functionBox">
+                                <next xsi:type="functionBox">
+                                    <next xsi:type="functionBox">
+                                        <function xsi:type="ok"/>
+                                        <arguments xsi:type="valueOfIdentifier">
+                                            <variableName>x</variableName>
+                                        </arguments>
+                                        <arguments xsi:type="valueOfIdentifier">
+                                            <variableName>total</variableName>
+                                        </arguments>
+                                    </next>
+                                    <function xsi:type="comment"/>
+                                    <arguments xsi:type="constantValue">
+                                        <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">Das Element 2 tauscht mit das Element 7, 4, 3.</value>
+                                    </arguments>
+                                </next>
+                                <function xsi:type="debug"/>
+                            </next>
+                            <variableName>total</variableName>
+                            <expression xsi:type="functionBox">
+                                <function xsi:type="retrieve"/>
+                                <arguments xsi:type="constantValue">
+                                    <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">$total1 + $swap3</value>
+                                </arguments>
+                            </expression>
+                        </next>
+                        <variableName>total1</variableName>
+                        <expression xsi:type="functionBox">
+                            <function xsi:type="retrieve"/>
+                            <arguments xsi:type="constantValue">
+                                <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">$swap1 + $swap2</value>
+                            </arguments>
+                        </expression>
+                    </next>
+                    <variableName>swap3</variableName>
+                    <expression xsi:type="functionBox">
+                        <function xsi:type="retrieve"/>
+                        <arguments xsi:type="constantValue">
+                            <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">count(/)</value>
+                        </arguments>
+                        <arguments xsi:type="valueOfIdentifier">
+                            <variableName>n3</variableName>
+                        </arguments>
+                    </expression>
+                </next>
+                <variableName>n3</variableName>
+                <expression xsi:type="functionBox">
+                    <function xsi:type="retrieve"/>
+                    <arguments xsi:type="constantValue">
+                        <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">events/switchEvent[seqnr=5] </value>
+                    </arguments>
+                </expression>
+            </AssignBox>
+            <AssignBox>
+                <next xsi:type="assignBox">
+                    <next xsi:type="assignBox">
+                        <next xsi:type="functionBox">
+                            <next xsi:type="functionBox">
+                                <next xsi:type="functionBox">
+                                    <function xsi:type="ok"/>
+                                    <arguments xsi:type="valueOfIdentifier">
+                                        <variableName>x</variableName>
+                                    </arguments>
+                                    <arguments xsi:type="valueOfIdentifier">
+                                        <variableName>total</variableName>
+                                    </arguments>
+                                </next>
+                                <function xsi:type="comment"/>
+                                <arguments xsi:type="constantValue">
+                                    <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">Das Element 2 tauscht mit das Element 7, 4, 3.</value>
+                                </arguments>
+                            </next>
+                            <function xsi:type="debug"/>
+                        </next>
+                        <variableName>total</variableName>
+                        <expression xsi:type="functionBox">
+                            <function xsi:type="retrieve"/>
+                            <arguments xsi:type="constantValue">
+                                <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">$total1 + $swap3</value>
+                            </arguments>
+                        </expression>
+                    </next>
+                    <variableName>total1</variableName>
+                    <expression xsi:type="functionBox">
+                        <function xsi:type="retrieve"/>
+                        <arguments xsi:type="constantValue">
+                            <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">$swap1 + $swap2</value>
+                        </arguments>
+                    </expression>
+                </next>
+                <variableName>swap3</variableName>
+                <expression xsi:type="functionBox">
+                    <function xsi:type="retrieve"/>
+                    <arguments xsi:type="constantValue">
+                        <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">count(/)</value>
+                    </arguments>
+                    <arguments xsi:type="valueOfIdentifier">
+                        <variableName>n3</variableName>
+                    </arguments>
+                </expression>
+            </AssignBox>
+            <AssignBox>
+                <next xsi:type="assignBox">
+                    <next xsi:type="functionBox">
+                        <next xsi:type="functionBox">
+                            <next xsi:type="functionBox">
+                                <function xsi:type="ok"/>
+                                <arguments xsi:type="valueOfIdentifier">
+                                    <variableName>x</variableName>
+                                </arguments>
+                                <arguments xsi:type="valueOfIdentifier">
+                                    <variableName>total</variableName>
+                                </arguments>
+                            </next>
+                            <function xsi:type="comment"/>
+                            <arguments xsi:type="constantValue">
+                                <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">Das Element 2 tauscht mit das Element 7, 4, 3.</value>
+                            </arguments>
+                        </next>
+                        <function xsi:type="debug"/>
+                    </next>
+                    <variableName>total</variableName>
+                    <expression xsi:type="functionBox">
+                        <function xsi:type="retrieve"/>
+                        <arguments xsi:type="constantValue">
+                            <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">$total1 + $swap3</value>
+                        </arguments>
+                    </expression>
+                </next>
+                <variableName>total1</variableName>
+                <expression xsi:type="functionBox">
+                    <function xsi:type="retrieve"/>
+                    <arguments xsi:type="constantValue">
+                        <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">$swap1 + $swap2</value>
+                    </arguments>
+                </expression>
+            </AssignBox>
+            <AssignBox>
+                <next xsi:type="functionBox">
+                    <next xsi:type="functionBox">
+                        <next xsi:type="functionBox">
+                            <function xsi:type="ok"/>
+                            <arguments xsi:type="valueOfIdentifier">
+                                <variableName>x</variableName>
+                            </arguments>
+                            <arguments xsi:type="valueOfIdentifier">
+                                <variableName>total</variableName>
+                            </arguments>
+                        </next>
+                        <function xsi:type="comment"/>
+                        <arguments xsi:type="constantValue">
+                            <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">Das Element 2 tauscht mit das Element 7, 4, 3.</value>
+                        </arguments>
+                    </next>
+                    <function xsi:type="debug"/>
+                </next>
+                <variableName>total</variableName>
+                <expression xsi:type="functionBox">
+                    <function xsi:type="retrieve"/>
+                    <arguments xsi:type="constantValue">
+                        <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">$total1 + $swap3</value>
+                    </arguments>
+                </expression>
+            </AssignBox>
+            <FunctionBox>
+                <next xsi:type="functionBox">
+                    <next xsi:type="functionBox">
+                        <function xsi:type="ok"/>
+                        <arguments xsi:type="valueOfIdentifier">
+                            <variableName>x</variableName>
+                        </arguments>
+                        <arguments xsi:type="valueOfIdentifier">
+                            <variableName>total</variableName>
+                        </arguments>
+                    </next>
+                    <function xsi:type="comment"/>
+                    <arguments xsi:type="constantValue">
+                        <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">Das Element 2 tauscht mit das Element 7, 4, 3.</value>
+                    </arguments>
+                </next>
+                <function xsi:type="debug"/>
+            </FunctionBox>
+            <FunctionBox>
+                <next xsi:type="functionBox">
+                    <function xsi:type="ok"/>
+                    <arguments xsi:type="valueOfIdentifier">
+                        <variableName>x</variableName>
+                    </arguments>
+                    <arguments xsi:type="valueOfIdentifier">
+                        <variableName>total</variableName>
+                    </arguments>
+                </next>
+                <function xsi:type="comment"/>
+                <arguments xsi:type="constantValue">
+                    <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">Das Element 2 tauscht mit das Element 7, 4, 3.</value>
+                </arguments>
+            </FunctionBox>
+            <FunctionBox>
+                <function xsi:type="ok"/>
+                <arguments xsi:type="valueOfIdentifier">
+                    <variableName>x</variableName>
+                </arguments>
+                <arguments xsi:type="valueOfIdentifier">
+                    <variableName>total</variableName>
+                </arguments>
+            </FunctionBox>
+        </decisionBox>
+        <inputVariables>
+            <name>x</name>
+        </inputVariables>
+        <questionId>Question-3454406021295864982968</questionId>
+        <questionText>4. Wie viele mal wurde das Element 2 getauscht?</questionText>
+        <script>// No script
+n1 = Retrieve("events/switchEvent[seqnr=3] ");
+swap1 = Retrieve("count(/)",n1);
+n2 = Retrieve("events/switchEvent[seqnr=4] ");
+swap2 = Retrieve("count(/)",n2);
+n3 = Retrieve("events/switchEvent[seqnr=5] ");
+swap3 = Retrieve("count(/)",n3);
+total1 = Retrieve("$swap1 + $swap2");
+total = Retrieve("$total1 + $swap3");
+Debug();
+Comment("Das Element 2 tauscht mit das Element 7, 4, 3.");
+Ok(x,total);</script>
+    </questionsList>
+    <subTitle>Output  Language: Java
+Author: Xiaofan Fan</subTitle>
+    <title>Shell Sort</title>
+</ns2:exercise>

@@ -1,0 +1,24 @@
+### Misc ###
+algoName=BTree Search
+description=This algorithm searches a B-Tree for a given key\nby recursively traversing through the nodes until the key is found or a leaf without the key is reached
+tutorial=To modify the B-Tree:\n• The rows of the matrix are all the nodes of the tree from left to right and top to bottom\n• You cant skip nodes, except they are the last on the whole tree\n• Nodes that should not be shown, that don't exist, are represented by a zero-line\n• Values that should no be show, keys that are not set, are any negative number
+endScreen=A B-tree is often used for databases and filesystems, since it can read and\nwrite in relatively large blocks of data. It keeps the logaritmic speed of binary tree and\nminimizes the amount of data read by not reading every node with just one key,\nbut nodes with a bigger ammount of keys. That way the amount of storage access\nis minimized.\n\nThe complexity of the traversal is logaritmic like binary trees O(log(n)). But\nadditionaly we have to search inside of each node. If this search is a linear search,\nlike we did, the complexity would be O(m). If its binary search, that would be used in big trees\nthe complexity would be O(log(m)).\nSo the total complexity of B-Tree Search would be:\nO(m * log(n)) for a linear search inside the nodes\nO(log(m) * log(n)) for a binary search inside the nodes
+resultTrue=The key was found in the tree
+resultFalse=The key was not found in the tree
+
+### Questions ###
+sortedTreeQuestionPrompt=Does the tree has to be sorted
+sortedTreeQuestionAnswerWrong=Wrong
+sortedTreeQuestionAnswerRight=Correct
+
+komplexQuestionPromt=Which complexity does this algorithm have?\nn stands for all elements\nm stands for the order of the tree (keys per node)
+komplexQuestionPromtAnswerOn=Wrong
+komplexQuestionPromtAnswerOlogn=Wrong, you also have to search in each node for the key
+komplexQuestionPromtAnswerOmlogn=Correct. In this version thats the correct answer. Especially in trees with a big number of keys per node a binary search would be better. Then the complexity would be O(log(m) * log(n))
+komplexQuestionPromtAnswerOlogmlogn=Wrong. At least for this version. Especially in trees with a big number of keys per node a binary search would be better. Then the complexity would be O(log(m) * log(n))
+
+### Errors ###
+negativeSearchKey=You can't search for a negative key
+unsortedTree=The tree has to be sorted
+unbalancedTree=The tree has to be balanced (all leafs at the same depth)
+emptyTree=The tree has to have at least one node

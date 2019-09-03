@@ -1,0 +1,40 @@
+﻿noSuchKeyException=Es  gibt  keine  Ressource  f\u00fcr  Eintrag{0}
+iconNotFound=Icon  ”{0}” not  found
+
+###Overview###
+overDesc=The First-Come-First-Serve algorithm is used to schedule I/O requests arriving from disk. \nThe requests are addressed in the order they arrived.
+overCode=1. Go to the next entry in the queue.\n2. Move head to the next position and process it. \n3. If there are any remaining requests, go to step 1, else terminate.
+
+###Title###
+title=Disk Scheduling: FCFS
+
+
+###Description###
+descheader=Description:
+desc1=The First-Come-First-Serve algorithm is used to schedule I/O requests arriving from disk.
+desc2=The requests are addressed in the order they arrived.
+
+###Code###
+codeheader=Pseudocode:
+code1=1. Go to the next entry.
+code2=2. Move head to the next position and process it.
+code3=3. If there are any remaining requests, go to step 1, else terminate.
+
+###Array###
+arr1=Distance: 
+arr2=Head starts at 
+arr3=Queue: 
+
+###Finish###
+finheader=Conclusion:
+fin1=After having processed all requests in the queue,
+fin2=the head moved 
+fin3= cylinders.
+
+###Summary###
+sumheader=Summary:
+sum1=First Come, First Serve is the simplest of all the Disk Scheduling Algorithms.
+sum2=In FCFS, the requests are addressed in the order they arrive in the disk queue.
+sum3=Every request gets a fair chance and there is 
+sum4=no starvation (a request is denied for nearly an infinite amount of time).
+sum5=However, the seek time is not optimized.

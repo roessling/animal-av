@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<PropertiesTreeModel xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="PropertiesTreeModel.xsd">
+	<Folder name="Root">
+		<Primitive type="int">
+			<name>S</name>
+			<value><int>5</int></value>
+			<description>Maximaler Elementwert (Wert zwischen 1 und 15 (aus Platzgründen))</description>
+		</Primitive>
+		<Primitive type="boolean">
+			<name>Random Method Selection</name>
+			<value><boolean value="false" /></value>
+			<description>Sollen die Operationen zufällig ausgeführt werden. Bei zufälliger Auswahl bitte auch die Anzahl der zufälligen Operationen unter dem entsprechenden Parameter angeben.</description>
+		</Primitive>
+		<Primitive type="StringMatrix">
+			<name>Operations</name>
+			<value><StringMatrix>insert, 4; insert, 3; insert, 1; number, -; insert, 3; extractMinimum, -; insert, 1; decreaseKey, 3->1; extractMinimum, -; extractMinimum, -</StringMatrix></value>
+			<description>Funktionsaufrufe mit eventuell dazugehörigen Funktionswert</description>
+		</Primitive>
+		<Primitive type="int">
+			<name>Anzahl der zufaelligen Operationen</name>
+			<value><int>10</int></value>
+			<description>Anzahl der zufälligen Operationen. Für diesen Parameter muss der Parameter "Random Method Selection" aktiviert sein.</description>
+		</Primitive>
+	</Folder>
+</PropertiesTreeModel>

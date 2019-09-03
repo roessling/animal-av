@@ -1,0 +1,8 @@
+Der Algorithmus in Worten
+
+1. Bestimme ein Pivotelement pivot
+2. Partitioniere so, dass alle Werte vor Position i kleiner,
+  alle Werte nach Position i größer als das Pivot sind
+3. Vertausche das Pivotelement mit dem Element an Position i
+4. Starte quicksort(l, i-1)
+5. Starte quicksort(i+1, r)

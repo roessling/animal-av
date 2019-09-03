@@ -1,0 +1,86 @@
+#Ueberpruefung
+noSuchKeyException=Es wurde keine Ressource für den Schlüssel {0}
+iconNotFound=Das Icon "{0}” wurde nicht gefunden
+
+
+
+#Title
+TITLE0=Einführung
+TITLE1=Schritt
+TITLE2=Zusammenfassung
+TITLE3=und
+
+#Introduction
+INTRO0=Der SHA-3 Algorithmus ist das neuste Mitglied der 'Security Hash Algorithm' (SHA) Familie,
+INTRO1=welche als Standard von der 'National Institute of Standards and Technology' (NIST) deklariert wird.
+INTRO2=Er ist der Gewinner eines Wettbewerbs und wurde auch im Rahmen eben dieses als neuer Standard eingeführt.
+INTRO3=SHA-3 ist eine Untergruppe von Algorithmen welche von Guido Bertoni, Joan Daemen, Michaël Peeters und Gilles Van Assche unter dem Namen 'Keccak' erfunden wurden.
+INTRO4=
+INTRO5=Die Standards vor SHA-3 waren MD5, SHA-1 und SHA-2. Alle diese Algorithmen
+INTRO6=haben eine 'Davies-Meyer-Struktur'. SHA-3 hingegen hat eine 'Sponge-Struktur' und unterscheidet sich somit sehr von seinen Vorgängern.
+INTRO7=Alle 'Sponge-Algorithmen' haben zwei Phasen.
+INTRO8=Zuerst wird die 'Absorbing-Phase' ausgeführt. Dabei wird ein beliebig langer Bit-Strom auf einen Bit-Block konstanter Länge 'gepadded' und schließlich einem 5x5 64bit State hinzugefügt.
+INTRO9=Danach folgt die 'Squeezing-Phase'. In dieser werden die Bits aus dem State entnommen und der eigentliche Hash erstellt.
+INTRO10=Eine der großen Stärken von 'Sponge-Funktionen' ist, dass sie einen beliebig langen Input-Strom entgegen nehmen können und daraus einen ebenfalls beliebig langen Output-Strom erzeugen (SHA-3 nutzt nur konstant lange Output-Ströme).
+INTRO11=
+INTRO12=SHA3 nutzt das 1*0*0....*0*1 Pattern um zu gewährleisten, dass jede Nachricht gleichmäßig unterteilt werden kann.
+INTRO13=Innerhalb der Blockpermutation nutzt SHA3 'XOR', 'AND' und 'NOT' Operatoren.
+INTRO14=Des Weiteren ist die Permutation unterteilt in die 5 Schritte θ, ρ, π, χ and ι.
+INTRO15=Im θ-Schritt wird die Parität jeder 5 bit Spalte des 'States' berechnet.
+INTRO16=Im ρ-Schritt wird jedes der 25 Wörter bitweise rotiert.
+INTRO17=Im π-Schritt werden die 25 Wörter permutiert.
+INTRO18=Im χ-Schritt kombiniert die Reihen bitweise. Dies ist die einzige nicht-linear operation von SHA3.
+INTRO19=Im ι-Schritt wird eine Rundenkonstante mit jedem Wort mit 'XOR' verrechnet.
+INTRO20=Jeder dieser Schritte wird in der folgenden Darstellung gezeigt und erklärt.
+INTRO21=
+INTRO22=Es gibt 2 Gründe warum die 'NIST' SHA-3 als neuen Standard eingeführt hat, obwohl SHA-2 noch als sicher gilt und es vermutlich auch in näherer Zukunft sein wird.
+INTRO23=Zum einen ist SHA-3 trotz der komplexen Struktur, dank effizienten Hardwareimplementierung, schneller als SHA-1 und SHA-2.
+INTRO24=Zum anderen ist es ziemlich sicher, dass ein erfolgreicher Angriff gegen SHA-2, wegen der unterschiedlichen Struktur, nicht auch SHA-3 gefährdet.
+
+#Zusammenfassung
+OUTRO0=Der SHA-3 Algorithmus ist eine effiziente Möglichkeit eine beliebige Nachricht zu hashen.
+OUTRO1=Die vorherigen Schritte zeigten wie Eingabenachricht:
+OUTRO2=
+OUTRO3=
+OUTRO4=
+OUTRO5=in den Hash transformiert wurde:
+OUTRO6=
+OUTRO7=
+OUTRO8=
+OUTRO9=Im folgenden Modus:
+OUTRO10=
+OUTRO11=
+
+#Explanations
+EXPLANATIONS=Die interne Status-Matrix
+EXPLANATIONS0=Die Werte jeder i-ten Reihe werden mit XOR zusammengerechnet und danach in das i-te Feld von C geschrieben
+EXPLANATIONS1=Jeweils zwei Felder von C werden mit XOR zusammengerechnet und in ein Feld von D geschrieben
+EXPLANATIONS2=Der i-te Wert von D wird mit XOR auf jeden Wert in der i-ten Reihe der Status-Matrix gerechnet
+EXPLANATIONS3=Die Dreieckszahlen
+EXPLANATIONS4=Zur Erhaltung der Einfachheit und Verständlichkeit werden nur die erste und letzte Iteration des Schrittes gezeigt
+EXPLANATIONS5=Hierbei wird jedes Feld des Arrays permutiert und bitweise um eine feste Dreieckszahl rotiert
+EXPLANATIONS6=Zu beachten ist, dass die erste und letzte Spalte analog zu den anderen Spalten vernetzt sind.
+EXPLANATIONS7=Diese Verbindungen wurden zur Bewahrung der Übersichtlichkeit weggelassen.
+EXPLANATIONS8=
+EXPLANATIONS9=In diesem Schritt wird jede Spalte der Status-Matrix der logischen Schaltung übergeben
+EXPLANATIONS10=und die Ergebnisse zurück in die Status-Matrix geschrieben.
+EXPLANATIONS11=In diesem Schritt wird die Nachricht in
+EXPLANATIONS12=bit große Blöcke unterteilt und
+EXPLANATIONS13=jeder dieser Blöcke wird mit Hilfe von der operation XOR dem uState hinzugefügt.
+EXPLANATIONS14=Es werden hier jeweils nur die ersten 15 Einträge von uState und uMessage angezeigt,
+EXPLANATIONS15=um die Übersichtlichkeit zu erhalten.
+
+#Keccak-F Explanations
+KF_EXPLANATION_1=Die Keccak-F Phase ist die wichtigste Phase des Algorithmus. Sie wird potentiell mehrmals ausgeführt.
+KF_EXPLANATION_2=Hier wird allerdings nur ein Durchlauf angezeigt.
+KF_EXPLANATION_3=
+KF_EXPLANATION_4=Zu Beginn der Phase wird die interne State-Matrix mit Werten des uState-Arrays gefüllt.
+KF_EXPLANATION_5=Dazu werden je 8 Elemente des Arrays entsprechend der aktuellen Zählervariablen ausgewählt (1. Highlight-Linie).
+KF_EXPLANATION_6=In einen 64bit Integer umgewandelt, wird dieser BigInteger nun in ein Feld der 5x5 State-Matrix geschrieben (2. Highlight-Linie).
+
+#Iota Phase
+IOTA_ROUND_CONSTANT_VARIABLE_NAME=Rundenkonstanten
+IOTA_EXPLANATION_1=Am Ende jeder Iteration wird das obere linke Element der internen Status-Matrix
+IOTA_EXPLANATION_2=mit einer Rundenkonstanten durch XOR verrechnet.
+IOTA_EXPLANATION_3=Dieses Element ist oben hervorgehoben.
+IOTA_EXPLANATION_4=Die Rundenkonstante für diese Iteration ist links hervorgehoben.

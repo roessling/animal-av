@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<PropertiesTreeModel xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="PropertiesTreeModel.xsd">
+	<Folder name="Root">
+		<Primitive type="int">
+			<name>ro</name>
+			<value><int>5</int></value>
+			<description>The maximum drain rate of the bucket.</description>
+		</Primitive>
+		<Primitive type="int">
+			<name>beta</name>
+			<value><int>20</int></value>
+			<description>The lenght of the bucket.</description>
+		</Primitive>
+		<Primitive type="int">
+			<name>inputLength</name>
+			<value><int>20</int></value>
+			<description>The number of incoming packets.</description>
+		</Primitive>
+		<Primitive type="int">
+			<name>ChanceForZeros</name>
+			<value><int>30</int></value>
+			<description>The chance for no incoming packet.</description>
+		</Primitive>
+		<Primitive type="int">
+			<name>MaxPacketLength</name>
+			<value><int>15</int></value>
+			<description>Max length of an arriving packet.</description>
+		</Primitive>
+	</Folder>
+</PropertiesTreeModel>

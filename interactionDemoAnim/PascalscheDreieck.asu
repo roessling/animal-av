@@ -1,0 +1,436 @@
+%Animal 2 1000*650
+title "Das Pascalsche Dreieck"
+author "Jan Stolzenburg <jan.stolzenburg@arcor.de>"
+{
+interactionDefinition "intDef20090103194348484.txt"
+text "title" "Das Pascalsche Dreieck - Konstruktion" (20, 30) color (0, 0, 0) depth 1 font SansSerif size 24 bold
+rectangle "titleBox" offset (-5, -5) from "title" NW offset (5, 5) from "title" SE color (0, 0, 0) depth 2 filled fillColor (255, 255, 255)
+}
+{
+interaction "Namensgebung"
+}
+{
+codegroup "Pascal Pseude Code" at (30, 80) color (0, 0, 0) highlightColor (255, 0, 0) contextColor (0, 0, 0) font SansSerif size 16 depth 1
+addCodeLine "1. Das einzige Element der ersten Zeile ist die 1." to "Pascal Pseude Code"
+text "arrowCode0" "-->" (5, 94) color (0, 0, 0) depth 1 font SansSerif size 12 hidden
+addCodeLine "2. Für die Konstruktion der zweiten Zeile denkt man sich jeweils eine 0 links und rechts neben die 1." to "Pascal Pseude Code"
+text "arrowCode1" "-->" (5, 114) color (0, 0, 0) depth 1 font SansSerif size 12 hidden
+addCodeLine "3. Nun addiert man jeweils zwei benachbarte Zahlen und fügt das Ergebnis darunter in die Mitte ein." to "Pascal Pseude Code"
+text "arrowCode2" "-->" (5, 134) color (0, 0, 0) depth 1 font SansSerif size 12 hidden
+addCodeLine "4. Man entfernt die gedachten Nullen wieder." to "Pascal Pseude Code"
+text "arrowCode3" "-->" (5, 154) color (0, 0, 0) depth 1 font SansSerif size 12 hidden
+addCodeLine "5. Für die Konstruktion der nächsten Zeile denkt man sich jeweils eine 0 links und rechts außen neben die 1en." to "Pascal Pseude Code"
+text "arrowCode4" "-->" (5, 174) color (0, 0, 0) depth 1 font SansSerif size 12 hidden
+addCodeLine "6. Nun addiert man jeweils zwei benachbarte Zahlen und fügt das Ergebnis darunter in die Mitte ein." to "Pascal Pseude Code"
+text "arrowCode5" "-->" (5, 194) color (0, 0, 0) depth 1 font SansSerif size 12 hidden
+addCodeLine "7. Man entfernt die gedachten Nullen wieder." to "Pascal Pseude Code"
+text "arrowCode6" "-->" (5, 214) color (0, 0, 0) depth 1 font SansSerif size 12 hidden
+addCodeLine "Die Anweisungen 5, 6 und 7 wiederholt man so lange, bis das Dreieck die gewünschte Größe hat." to "Pascal Pseude Code"
+text "arrowCode7" "-->" (5, 234) color (0, 0, 0) depth 1 font SansSerif size 12 hidden
+}
+{
+unhighlightCode on "Pascal Pseude Code" line 0
+highlightCode on "Pascal Pseude Code" line 0
+hide "arrowCode0" 
+show "arrowCode0" 
+}
+{
+text "FailureWorkaround" "FailureWorkaround" (0, 0) color (0, 0, 0) depth 1 font SansSerif size 18 bold hidden
+text "Row0Column1" "1" (400, 300) color (0, 0, 0) depth 1 font SansSerif size 18 bold
+}
+{
+unhighlightCode on "Pascal Pseude Code" line 0
+highlightCode on "Pascal Pseude Code" line 1
+hide "arrowCode0" 
+show "arrowCode1" 
+}
+{
+text "Row0ColumnFirst" "0" (340, 300) color (128, 128, 128) depth 1 font SansSerif size 18
+text "Row0ColumnLast" "0" (460, 300) color (128, 128, 128) depth 1 font SansSerif size 18
+}
+{
+unhighlightCode on "Pascal Pseude Code" line 1
+highlightCode on "Pascal Pseude Code" line 2
+hide "arrowCode1" 
+show "arrowCode2" 
+}
+{
+polyline "arrowLeftForRow1Column1" (351, 320) (374, 353) color (0, 0, 0) depth 1
+polyline "arrowRightForRow1Column1" (400, 320) (378, 353) color (0, 0, 0) depth 1
+}
+{
+text "Row1Column1" "1" (370, 350) color (0, 0, 0) depth 1 font SansSerif size 18 bold
+}
+{
+polyline "arrowLeftForRow1Column2" (411, 320) (434, 353) color (0, 0, 0) depth 1
+polyline "arrowRightForRow1Column2" (460, 320) (438, 353) color (0, 0, 0) depth 1
+}
+{
+text "Row1Column2" "1" (430, 350) color (0, 0, 0) depth 1 font SansSerif size 18 bold
+}
+{
+hide "arrowLeftForRow1Column1" 
+hide "arrowRightForRow1Column1" 
+hide "arrowLeftForRow1Column2" 
+hide "arrowRightForRow1Column2" 
+}
+{
+unhighlightCode on "Pascal Pseude Code" line 2
+highlightCode on "Pascal Pseude Code" line 3
+hide "arrowCode2" 
+show "arrowCode3" 
+}
+{
+hide "Row0ColumnFirst" 
+hide "Row0ColumnLast" 
+}
+{
+unhighlightCode on "Pascal Pseude Code" line 3
+highlightCode on "Pascal Pseude Code" line 4
+hide "arrowCode3" 
+show "arrowCode4" 
+}
+{
+text "Row1ColumnFirst" "0" (310, 350) color (128, 128, 128) depth 1 font SansSerif size 18
+text "Row1ColumnLast" "0" (490, 350) color (128, 128, 128) depth 1 font SansSerif size 18
+}
+{
+unhighlightCode on "Pascal Pseude Code" line 4
+highlightCode on "Pascal Pseude Code" line 5
+hide "arrowCode4" 
+show "arrowCode5" 
+}
+{
+polyline "arrowLeftForRow2Column1" (321, 370) (344, 403) color (0, 0, 0) depth 1
+polyline "arrowRightForRow2Column1" (370, 370) (348, 403) color (0, 0, 0) depth 1
+}
+{
+text "Row2Column1" "1" (340, 400) color (0, 0, 0) depth 1 font SansSerif size 18 bold
+}
+{
+polyline "arrowLeftForRow2Column2" (381, 370) (404, 403) color (0, 0, 0) depth 1
+polyline "arrowRightForRow2Column2" (430, 370) (408, 403) color (0, 0, 0) depth 1
+}
+{
+text "Row2Column2" "2" (400, 400) color (0, 0, 0) depth 1 font SansSerif size 18 bold
+}
+{
+polyline "arrowLeftForRow2Column3" (441, 370) (464, 403) color (0, 0, 0) depth 1
+polyline "arrowRightForRow2Column3" (490, 370) (468, 403) color (0, 0, 0) depth 1
+}
+{
+text "Row2Column3" "1" (460, 400) color (0, 0, 0) depth 1 font SansSerif size 18 bold
+}
+{
+hide "arrowLeftForRow2Column1" 
+hide "arrowRightForRow2Column1" 
+hide "arrowLeftForRow2Column2" 
+hide "arrowRightForRow2Column2" 
+hide "arrowLeftForRow2Column3" 
+hide "arrowRightForRow2Column3" 
+}
+{
+unhighlightCode on "Pascal Pseude Code" line 5
+highlightCode on "Pascal Pseude Code" line 6
+hide "arrowCode5" 
+show "arrowCode6" 
+}
+{
+hide "Row1ColumnFirst" 
+hide "Row1ColumnLast" 
+}
+{
+unhighlightCode on "Pascal Pseude Code" line 6
+highlightCode on "Pascal Pseude Code" line 4
+hide "arrowCode6" 
+show "arrowCode4" 
+}
+{
+text "Row2ColumnFirst" "0" (280, 400) color (128, 128, 128) depth 1 font SansSerif size 18
+text "Row2ColumnLast" "0" (520, 400) color (128, 128, 128) depth 1 font SansSerif size 18
+}
+{
+unhighlightCode on "Pascal Pseude Code" line 4
+highlightCode on "Pascal Pseude Code" line 5
+hide "arrowCode4" 
+show "arrowCode5" 
+}
+{
+interaction "nextRow4"
+}
+{
+polyline "arrowLeftForRow3Column1" (291, 420) (314, 453) color (0, 0, 0) depth 1
+polyline "arrowRightForRow3Column1" (340, 420) (318, 453) color (0, 0, 0) depth 1
+}
+{
+text "Row3Column1" "1" (310, 450) color (0, 0, 0) depth 1 font SansSerif size 18 bold
+}
+{
+polyline "arrowLeftForRow3Column2" (351, 420) (374, 453) color (0, 0, 0) depth 1
+polyline "arrowRightForRow3Column2" (400, 420) (378, 453) color (0, 0, 0) depth 1
+}
+{
+text "Row3Column2" "3" (370, 450) color (0, 0, 0) depth 1 font SansSerif size 18 bold
+}
+{
+polyline "arrowLeftForRow3Column3" (411, 420) (434, 453) color (0, 0, 0) depth 1
+polyline "arrowRightForRow3Column3" (460, 420) (438, 453) color (0, 0, 0) depth 1
+}
+{
+text "Row3Column3" "3" (430, 450) color (0, 0, 0) depth 1 font SansSerif size 18 bold
+}
+{
+polyline "arrowLeftForRow3Column4" (471, 420) (494, 453) color (0, 0, 0) depth 1
+polyline "arrowRightForRow3Column4" (520, 420) (498, 453) color (0, 0, 0) depth 1
+}
+{
+text "Row3Column4" "1" (490, 450) color (0, 0, 0) depth 1 font SansSerif size 18 bold
+}
+{
+hide "arrowLeftForRow3Column1" 
+hide "arrowRightForRow3Column1" 
+hide "arrowLeftForRow3Column2" 
+hide "arrowRightForRow3Column2" 
+hide "arrowLeftForRow3Column3" 
+hide "arrowRightForRow3Column3" 
+hide "arrowLeftForRow3Column4" 
+hide "arrowRightForRow3Column4" 
+}
+{
+unhighlightCode on "Pascal Pseude Code" line 5
+highlightCode on "Pascal Pseude Code" line 6
+hide "arrowCode5" 
+show "arrowCode6" 
+}
+{
+hide "Row2ColumnFirst" 
+hide "Row2ColumnLast" 
+}
+{
+unhighlightCode on "Pascal Pseude Code" line 6
+highlightCode on "Pascal Pseude Code" line 4
+hide "arrowCode6" 
+show "arrowCode4" 
+}
+{
+text "Row3ColumnFirst" "0" (250, 450) color (128, 128, 128) depth 1 font SansSerif size 18
+text "Row3ColumnLast" "0" (550, 450) color (128, 128, 128) depth 1 font SansSerif size 18
+}
+{
+unhighlightCode on "Pascal Pseude Code" line 4
+highlightCode on "Pascal Pseude Code" line 5
+hide "arrowCode4" 
+show "arrowCode5" 
+}
+{
+interaction "nextRow5"
+}
+{
+polyline "arrowLeftForRow4Column1" (261, 470) (284, 503) color (0, 0, 0) depth 1
+polyline "arrowRightForRow4Column1" (310, 470) (288, 503) color (0, 0, 0) depth 1
+polyline "arrowLeftForRow4Column2" (321, 470) (344, 503) color (0, 0, 0) depth 1
+polyline "arrowRightForRow4Column2" (370, 470) (348, 503) color (0, 0, 0) depth 1
+polyline "arrowLeftForRow4Column3" (381, 470) (404, 503) color (0, 0, 0) depth 1
+polyline "arrowRightForRow4Column3" (430, 470) (408, 503) color (0, 0, 0) depth 1
+polyline "arrowLeftForRow4Column4" (441, 470) (464, 503) color (0, 0, 0) depth 1
+polyline "arrowRightForRow4Column4" (490, 470) (468, 503) color (0, 0, 0) depth 1
+polyline "arrowLeftForRow4Column5" (501, 470) (524, 503) color (0, 0, 0) depth 1
+polyline "arrowRightForRow4Column5" (550, 470) (528, 503) color (0, 0, 0) depth 1
+}
+{
+text "Row4Column1" "1" (280, 500) color (0, 0, 0) depth 1 font SansSerif size 18 bold
+}
+{
+text "Row4Column2" "4" (340, 500) color (0, 0, 0) depth 1 font SansSerif size 18 bold
+}
+{
+text "Row4Column3" "6" (400, 500) color (0, 0, 0) depth 1 font SansSerif size 18 bold
+}
+{
+text "Row4Column4" "4" (460, 500) color (0, 0, 0) depth 1 font SansSerif size 18 bold
+}
+{
+text "Row4Column5" "1" (520, 500) color (0, 0, 0) depth 1 font SansSerif size 18 bold
+}
+{
+hide "arrowLeftForRow4Column1" 
+hide "arrowRightForRow4Column1" 
+hide "arrowLeftForRow4Column2" 
+hide "arrowRightForRow4Column2" 
+hide "arrowLeftForRow4Column3" 
+hide "arrowRightForRow4Column3" 
+hide "arrowLeftForRow4Column4" 
+hide "arrowRightForRow4Column4" 
+hide "arrowLeftForRow4Column5" 
+hide "arrowRightForRow4Column5" 
+}
+{
+unhighlightCode on "Pascal Pseude Code" line 5
+highlightCode on "Pascal Pseude Code" line 6
+hide "arrowCode5" 
+show "arrowCode6" 
+}
+{
+hide "Row3ColumnFirst" 
+hide "Row3ColumnLast" 
+}
+{
+unhighlightCode on "Pascal Pseude Code" line 6
+highlightCode on "Pascal Pseude Code" line 4
+hide "arrowCode6" 
+show "arrowCode4" 
+}
+{
+text "Row4ColumnFirst" "0" (220, 500) color (128, 128, 128) depth 1 font SansSerif size 18
+text "Row4ColumnLast" "0" (580, 500) color (128, 128, 128) depth 1 font SansSerif size 18
+}
+{
+unhighlightCode on "Pascal Pseude Code" line 4
+highlightCode on "Pascal Pseude Code" line 5
+hide "arrowCode4" 
+show "arrowCode5" 
+}
+{
+interaction "nextRow6"
+}
+{
+polyline "arrowLeftForRow5Column1" (231, 520) (254, 553) color (0, 0, 0) depth 1
+polyline "arrowRightForRow5Column1" (280, 520) (258, 553) color (0, 0, 0) depth 1
+polyline "arrowLeftForRow5Column2" (291, 520) (314, 553) color (0, 0, 0) depth 1
+polyline "arrowRightForRow5Column2" (340, 520) (318, 553) color (0, 0, 0) depth 1
+polyline "arrowLeftForRow5Column3" (351, 520) (374, 553) color (0, 0, 0) depth 1
+polyline "arrowRightForRow5Column3" (400, 520) (378, 553) color (0, 0, 0) depth 1
+polyline "arrowLeftForRow5Column4" (411, 520) (434, 553) color (0, 0, 0) depth 1
+polyline "arrowRightForRow5Column4" (460, 520) (438, 553) color (0, 0, 0) depth 1
+polyline "arrowLeftForRow5Column5" (471, 520) (494, 553) color (0, 0, 0) depth 1
+polyline "arrowRightForRow5Column5" (520, 520) (498, 553) color (0, 0, 0) depth 1
+polyline "arrowLeftForRow5Column6" (531, 520) (554, 553) color (0, 0, 0) depth 1
+polyline "arrowRightForRow5Column6" (580, 520) (558, 553) color (0, 0, 0) depth 1
+}
+{
+text "Row5Column1" "1" (250, 550) color (0, 0, 0) depth 1 font SansSerif size 18 bold
+}
+{
+text "Row5Column2" "5" (310, 550) color (0, 0, 0) depth 1 font SansSerif size 18 bold
+}
+{
+text "Row5Column3" "10" (370, 550) color (0, 0, 0) depth 1 font SansSerif size 18 bold
+}
+{
+text "Row5Column4" "10" (430, 550) color (0, 0, 0) depth 1 font SansSerif size 18 bold
+}
+{
+text "Row5Column5" "5" (490, 550) color (0, 0, 0) depth 1 font SansSerif size 18 bold
+}
+{
+text "Row5Column6" "1" (550, 550) color (0, 0, 0) depth 1 font SansSerif size 18 bold
+}
+{
+hide "arrowLeftForRow5Column1" 
+hide "arrowRightForRow5Column1" 
+hide "arrowLeftForRow5Column2" 
+hide "arrowRightForRow5Column2" 
+hide "arrowLeftForRow5Column3" 
+hide "arrowRightForRow5Column3" 
+hide "arrowLeftForRow5Column4" 
+hide "arrowRightForRow5Column4" 
+hide "arrowLeftForRow5Column5" 
+hide "arrowRightForRow5Column5" 
+hide "arrowLeftForRow5Column6" 
+hide "arrowRightForRow5Column6" 
+}
+{
+unhighlightCode on "Pascal Pseude Code" line 5
+highlightCode on "Pascal Pseude Code" line 6
+hide "arrowCode5" 
+show "arrowCode6" 
+}
+{
+hide "Row4ColumnFirst" 
+hide "Row4ColumnLast" 
+}
+{
+unhighlightCode on "Pascal Pseude Code" line 6
+highlightCode on "Pascal Pseude Code" line 4
+hide "arrowCode6" 
+show "arrowCode4" 
+}
+{
+text "Row5ColumnFirst" "0" (190, 550) color (128, 128, 128) depth 1 font SansSerif size 18
+text "Row5ColumnLast" "0" (610, 550) color (128, 128, 128) depth 1 font SansSerif size 18
+}
+{
+unhighlightCode on "Pascal Pseude Code" line 4
+highlightCode on "Pascal Pseude Code" line 5
+hide "arrowCode4" 
+show "arrowCode5" 
+}
+{
+interaction "nextRow7"
+}
+{
+polyline "arrowLeftForRow6Column1" (201, 570) (224, 603) color (0, 0, 0) depth 1
+polyline "arrowRightForRow6Column1" (250, 570) (228, 603) color (0, 0, 0) depth 1
+polyline "arrowLeftForRow6Column2" (261, 570) (284, 603) color (0, 0, 0) depth 1
+polyline "arrowRightForRow6Column2" (310, 570) (288, 603) color (0, 0, 0) depth 1
+polyline "arrowLeftForRow6Column3" (321, 570) (344, 603) color (0, 0, 0) depth 1
+polyline "arrowRightForRow6Column3" (370, 570) (348, 603) color (0, 0, 0) depth 1
+polyline "arrowLeftForRow6Column4" (381, 570) (404, 603) color (0, 0, 0) depth 1
+polyline "arrowRightForRow6Column4" (430, 570) (408, 603) color (0, 0, 0) depth 1
+polyline "arrowLeftForRow6Column5" (441, 570) (464, 603) color (0, 0, 0) depth 1
+polyline "arrowRightForRow6Column5" (490, 570) (468, 603) color (0, 0, 0) depth 1
+polyline "arrowLeftForRow6Column6" (501, 570) (524, 603) color (0, 0, 0) depth 1
+polyline "arrowRightForRow6Column6" (550, 570) (528, 603) color (0, 0, 0) depth 1
+polyline "arrowLeftForRow6Column7" (561, 570) (584, 603) color (0, 0, 0) depth 1
+polyline "arrowRightForRow6Column7" (610, 570) (588, 603) color (0, 0, 0) depth 1
+}
+{
+text "Row6Column1" "1" (220, 600) color (0, 0, 0) depth 1 font SansSerif size 18 bold
+}
+{
+text "Row6Column2" "6" (280, 600) color (0, 0, 0) depth 1 font SansSerif size 18 bold
+}
+{
+text "Row6Column3" "15" (340, 600) color (0, 0, 0) depth 1 font SansSerif size 18 bold
+}
+{
+text "Row6Column4" "20" (400, 600) color (0, 0, 0) depth 1 font SansSerif size 18 bold
+}
+{
+text "Row6Column5" "15" (460, 600) color (0, 0, 0) depth 1 font SansSerif size 18 bold
+}
+{
+text "Row6Column6" "6" (520, 600) color (0, 0, 0) depth 1 font SansSerif size 18 bold
+}
+{
+text "Row6Column7" "1" (580, 600) color (0, 0, 0) depth 1 font SansSerif size 18 bold
+}
+{
+hide "arrowLeftForRow6Column1" 
+hide "arrowRightForRow6Column1" 
+hide "arrowLeftForRow6Column2" 
+hide "arrowRightForRow6Column2" 
+hide "arrowLeftForRow6Column3" 
+hide "arrowRightForRow6Column3" 
+hide "arrowLeftForRow6Column4" 
+hide "arrowRightForRow6Column4" 
+hide "arrowLeftForRow6Column5" 
+hide "arrowRightForRow6Column5" 
+hide "arrowLeftForRow6Column6" 
+hide "arrowRightForRow6Column6" 
+hide "arrowLeftForRow6Column7" 
+hide "arrowRightForRow6Column7" 
+}
+{
+unhighlightCode on "Pascal Pseude Code" line 5
+highlightCode on "Pascal Pseude Code" line 6
+hide "arrowCode5" 
+show "arrowCode6" 
+}
+{
+hide "Row5ColumnFirst" 
+hide "Row5ColumnLast" 
+}
+{
+interaction "link"
+}

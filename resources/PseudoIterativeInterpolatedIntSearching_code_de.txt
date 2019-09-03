@@ -1,0 +1,17 @@
+int iterativeInterpolatedSearching(int[] array, int value): @CodeLabel("header")
+  If the array is null: @CodeLabel("ifNull")
+    return -1. @CodeLabel("invalid")
+  
+  Set nrElems = number of array elements. @CodeLabel("getArrayLength")
+  Set lower boundary lower = 0. @CodeLabel("installLMarker")
+  Set upper boundary upper = nrElems - 1. @CodeLabel("installRMarker")
+  Set current position mid = l + ((value - array[l]) * (r - l)) / (array[r] - array[l]). @CodeLabel("installMidMarker")
+  While (r > l and array[mid] != value): @CodeLabel("whileLoop")
+    If value < array[mid]: @CodeLabel("ifLess")
+      r = mid - 1. @CodeLabel("continueLeft")
+    Otherwise:
+      l = mid + 1. @CodeLabel("continueRight")
+    Set mid = l + ((value - array[l]) * (r - l)) / (array[r] - array[l]).; @CodeLabel("updateMidElem")
+  If array[mid] == value: @CodeLabel(" checkFound")
+    return mid. @CodeLabel("found")
+  return -1. @CodeLabel("notFound")

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<PropertiesTreeModel xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="PropertiesTreeModel.xsd">
+	<Folder name="Root">
+		<Primitive type="Color">
+			<name>nextProbed</name>
+			<value><Color>(255, 255, 0)</Color></value>
+		</Primitive>
+		<Primitive type="Color">
+			<name>entryFound</name>
+			<value><Color>(0, 255, 0)</Color></value>
+		</Primitive>
+		<Primitive type="Color">
+			<name>entryNotFound</name>
+			<value><Color>(255, 0, 0)</Color></value>
+		</Primitive>
+		<Primitive type="int">
+			<name>hashSize</name>
+			<value><int>23</int></value>
+		</Primitive>
+	</Folder>
+</PropertiesTreeModel>

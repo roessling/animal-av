@@ -1,0 +1,6 @@
+Anmerkungen zur Komplexität
+
+Mergesort ist sehr günstig und liegt in jedem Fall in O(n log n), 
+wobei es keine Unterscheidung zwischen 'best', 'average' oder 'worst case' gibt. 
+Allerdings benötigt MergeSort im Gegensatz zu den meisten anderen Verfahren 
+zusätzlichen Speicher (für das Hilfsfeld).

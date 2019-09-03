@@ -1,0 +1,13 @@
+noSuchKeyException=Es gibt keine Ressource f\u00fcr Eintrag {0}
+iconNotFound=Icon "{0}" not found
+
+noexit=Kein Ausgang. Durch das Erreichen von 540 Grad wissen wir, dass wir das Labyrinth ab hier schon einmal untersucht haben.\n Bei 360 Grad schauen wir in die Startrichtung.\n Bei 450 Grad schauen wir in die gleiche Richtung wie bei 90 Grad, können aber nicht sicher sein, die Kante komplett abgesucht zu haben, da wir nicht wissen, wo wir am Anfang bei 90 Grad angefangen haben.\n Ab 540 Grad wissen wir, dass wir uns im Kreis drehen.
+exit=Ausgang gefunden bei
+title=Pledge-Algorithmus
+error=Kein Startpunkt gefunden
+algoInfo=Was der Algo sieht.
+labyInfo=Das Labyrinth.
+explanation=Der Pledge-Algorithmus ist ein Algorithmus, mit dem man aus einem planaren Labyrinth entkommen kann.\nDabei ist keine Information über das Labyrinth nötig, außer zu wissen, ob links von einem eine Wand ist.\nDie Strategie die verfolgt wird ist einfach. \nMan läuft in dem Labyrinth so, dass immer links von einem eine Wand ist. Trifft man auf eine Wand vor sich, dreht man sich nach rechts und addiert die 90 Grad-Drehung auf die Gesamtdrehungen drauf.\nWenn links von einem keine Wand mehr ist und man mehr als 0 Grad auf dem Drehungszähler hat, dreht man sich nach links und zieht 90 Grad vom Drehungszähler ab.\nHat der Zähler 540 Grad erreicht und man hat keinen Ausgang gefunden, so gibt es auch keinen, wenn das Labyrinth planar ist.
+inputSpec=\n\nHinweis zu dem eigenen Input:\nDie Bedeutung der Zahlen in der Matrix:\n0 = Weg\n1 = Wand\n2 = Ausgang\n3 = Start
+pseudoCode=Setze Umdrehungszähler auf 0;\nrepeat\n      repeat\n            Gehe geradeaus;\n      until Wand erreicht;\n      Drehe nach rechts;\n      repeat\n            Folge dem Hindernis;\n      until Umdrehungszähler = 0;\nuntil Ausgang gefunden;
+name=Der Pledge-Algorithmus

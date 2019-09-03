@@ -1,0 +1,34 @@
+{
+text "f1-01" "Bubble Sort" at (120,50) color black font SansSerif size 32 bold
+}
+{
+text "f1-02a" "Bubble Sort is an elementary sorting algorithm, popular" at (20,100) color black font SansSerif size 24
+text "f1-02b" "in many introductory CS classes." at (20,130) color black font SansSerif size 24
+}
+{
+text "f1-03a" "The basic idea is to swap immediate neighboring elements" at (20,170) color black font SansSerif size 24
+text "f1-03b" "if they are not in order." at (20,200) color black font SansSerif size 24
+}
+{
+hideAll
+}
+{
+text "f2-01" "Verbal description" at (120,50) color black font SansSerif size 32 bold
+}
+{
+text "f2-02" "1. Set i=n" at (20,100) color black font SansSerif size 24
+}
+{
+text "f2-03" "2. Set j=1 and a boolean variable swapPerformed to false." at (20,140) color black font SansSerif size 24
+}
+{
+text "f2-04a" "3. Swap in a loop all elements a[j-1] and a[j]," at (20,180) color black font SansSerif size 24
+text "f2-04b" "    if a[j-1] > a[j], and set swapPerformed to true" at (20,210) color black font SansSerif size 24
+}
+{
+text "f2-05" "4. Increment j until j==i" at (20,250) color black font SansSerif size 24
+}
+{
+text "f2-06a" "5. Decrement i. If i==-1 or swapPerformed ==  false," at (20,290) color black font SansSerif size 24
+text "f2-06b" "    end the algorithm; otherwise go to step 2" at (20,320) color black font SansSerif size 24
+}

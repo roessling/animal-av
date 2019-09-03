@@ -1,0 +1,11 @@
+Sortieralgorithmen erhalten eine Datenmenge und sollen diese nach
+bestimmten Kriterien sortieren. Zur Illustration der Verfahren wird
+meist auf die Sortierung von int oder char-Werten in einem Feld
+zurückgegriffen, da hier die Vergleiche sowie die erwartete
+Anordnung für Menschen besonders "offensichtlich" ist.
+
+Die allgemeine Worst-Case-Komplexität für Sortiertung
+ist O(n^2), wobei n die Anzahl zu
+sortierender Elemente ist. Durch clevere Algorithmen kann diese
+Komplexität auf O(n log2 n) gesenkt
+werden.

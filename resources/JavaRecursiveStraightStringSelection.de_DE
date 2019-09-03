@@ -1,0 +1,22 @@
+algoName=Lineare Suche
+theName=Rekursive Lineare Suche (String)
+algoDesc=Dieser Algorithmus sucht in einem Array von int-Werten nach einem &uuml;bergebenen Wert. Wird der gesuchte Wert gefunden, so wird seine Position zur&uuml;ckgegeben, ansonsten der Wert -1.
+codeExample=public int search(String[] array, String value, int pos) {\n  if (array == null || value == null)\n    return -1;\n  if (pos >= array.length)\n    return -1;\n  if (value.equals(array[pos]))\n    return pos;\n  return search(array, value, pos + 1);\n}
+animTitle=Rekursive Lineare Suche (String)
+algoAuthor=Dr. Guido Rößling (roessling@acm.org>
+algoTitle=Rekursive Lineare Suche
+animDesc=Beschreibung des Algorithmus
+adForURL=Weitere Animationen finden Sie unter http://www.animal.ahrgr.de im Online-Repository
+nrSteps=Insgesamt verwendete der Algorithmus {0} Zuweisungen und {1} Vergleiche.
+description.filename=resources/JavaRecursiveStraightStringSelection_descr_de.txt
+description.level=2
+description.labelSymbol=#
+code.filename=resources/JavaRecursiveStraightStringSelection_code.txt
+code.level=2
+code.labelSymbol=#
+complexity.filename=resources/JavaRecursiveStraightStringSelection_complexity_de.txt
+complexity.level=2
+complexity.labelSymbol=#
+nrAss=Zuweisungen
+nrComp=Vergleiche
+result=Ergebnis: {0}

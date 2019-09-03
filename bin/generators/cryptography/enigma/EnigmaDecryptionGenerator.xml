@@ -1,0 +1,495 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<PropertiesTreeModel xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:noNamespaceSchemaLocation="PropertiesTreeModel.xsd">
+	<Folder name="Root">
+		<Folder name="Cypher">
+			<Primitive type="String">
+				<name>Chiffre</name>
+				<value>
+					<String>IDBDAAKGH</String>
+				</value>
+			</Primitive>
+		</Folder>
+		<Folder name="Walzen">
+			<Primitive type="StringArray">
+				<name>Walze A</name>
+				<value>
+					<StringArray>E,K,M,F,L,G,D,Q,V,Z,N,T,O,W,Y,H,X,U,S,P,A,I,B,R,C,J
+					</StringArray>
+				</value>
+			</Primitive>
+			<Primitive type="StringArray">
+				<name>Walze B</name>
+				<value>
+					<StringArray>A,J,D,K,S,I,R,U,X,B,L,H,W,T,M,C,Q,G,Z,N,P,Y,F,V,O,E
+					</StringArray>
+				</value>
+			</Primitive>
+			<Primitive type="StringArray">
+				<name>Walze C</name>
+				<value>
+					<StringArray>B,D,F,H,J,L,C,P,R,T,X,V,Z,N,Y,E,I,W,G,A,K,M,U,S,Q,O
+					</StringArray>
+				</value>
+			</Primitive>
+			<Primitive type="StringArray">
+				<name>Umkehrwalze</name>
+				<value>
+					<StringArray>Y,R,U,H,Q,S,L,D,P,X,N,G,O,K,M,I,E,B,F,Z,C,W,V,J,A,T
+					</StringArray>
+				</value>
+			</Primitive>
+		</Folder>
+		<Folder name="Steckerbrett">
+			<Primitive type="StringArray">
+				<name>Steckerbrett</name>
+				<value>
+					<StringArray>A,B,C,D,E,F,G,H,I,J,K,L,M,N,O,P,Q,R,S,T,U,V,W,X,Y,Z
+					</StringArray>
+				</value>
+			</Primitive>
+		</Folder>
+		<Folder name="Startpositionen">
+			<Primitive type="String">
+				<name>Startposition Walze A</name>
+				<value>
+					<String>A</String>
+				</value>
+			</Primitive>
+			<Primitive type="String">
+				<name>Startposition Walze B</name>
+				<value>
+					<String>A</String>
+				</value>
+			</Primitive>
+			<Primitive type="String">
+				<name>Startposition Walze C</name>
+				<value>
+					<String>A</String>
+				</value>
+			</Primitive>
+		</Folder>
+		<Folder name="Uebertragskerben">
+			<Primitive type="String">
+				<name>Uebertragskerbe Walze A</name>
+				<value>
+					<String>Q</String>
+				</value>
+			</Primitive>
+			<Primitive type="String">
+				<name>Uebertragskerbe Walze B</name>
+				<value>
+					<String>E</String>
+				</value>
+			</Primitive>
+			<Primitive type="String">
+				<name>Uebertragskerbe Walze C</name>
+				<value>
+					<String>V</String>
+				</value>
+			</Primitive>
+		</Folder>
+		<Folder name="AnimationProperties">
+			<!-- Cypher Array -->
+			<AnimationProperties type="ArrayProperties">
+				<AnimationPropertyItem type="ColorPropertyItem">
+					<name>fillColor</name>
+					<isEditable value="false" />
+					<label></label>
+					<value>
+						<Color>(255, 255, 255)</Color>
+					</value>
+				</AnimationPropertyItem>
+				<AnimationPropertyItem type="ColorPropertyItem">
+					<name>cellHighlight</name>
+					<isEditable value="true" />
+					<label>Current Cypher Letter</label>
+					<value>
+						<Color>(0, 204, 0)</Color>
+					</value>
+				</AnimationPropertyItem>
+				<AnimationPropertyItem type="IntegerPropertyItem">
+					<name>depth</name>
+					<isEditable value="false" />
+					<label></label>
+					<value>
+						<int>1</int>
+					</value>
+				</AnimationPropertyItem>
+				<AnimationPropertyItem type="ColorPropertyItem">
+					<name>color</name>
+					<isEditable value="false" />
+					<label></label>
+					<value>
+						<Color>(0, 0, 0)</Color>
+					</value>
+				</AnimationPropertyItem>
+				<AnimationPropertyItem type="BooleanPropertyItem">
+					<name>hidden</name>
+					<isEditable value="false" />
+					<label></label>
+					<value>
+						<boolean value="false" />
+					</value>
+				</AnimationPropertyItem>
+				<AnimationPropertyItem type="StringPropertyItem">
+					<name>name</name>
+					<isEditable value="true" />
+					<label></label>
+					<value>
+						<String>Cypher Array</String>
+					</value>
+				</AnimationPropertyItem>
+				<AnimationPropertyItem type="BooleanPropertyItem">
+					<name>filled</name>
+					<isEditable value="false" />
+					<label></label>
+					<value>
+						<boolean value="false" />
+					</value>
+				</AnimationPropertyItem>
+				<AnimationPropertyItem type="BooleanPropertyItem">
+					<name>vertical</name>
+					<isEditable value="false" />
+					<label></label>
+					<value>
+						<boolean value="false" />
+					</value>
+				</AnimationPropertyItem>
+				<AnimationPropertyItem type="ColorPropertyItem">
+					<name>elementColor</name>
+					<isEditable value="false" />
+					<label></label>
+					<value>
+						<Color>(0, 0, 0)</Color>
+					</value>
+				</AnimationPropertyItem>
+				<AnimationPropertyItem type="BooleanPropertyItem">
+					<name>cascaded</name>
+					<isEditable value="false" />
+					<label></label>
+					<value>
+						<boolean value="false" />
+					</value>
+				</AnimationPropertyItem>
+				<AnimationPropertyItem type="FontPropertyItem">
+					<name>font</name>
+					<isEditable value="false" />
+					<label></label>
+					<value>
+						<Font>SansSerif</Font>
+					</value>
+				</AnimationPropertyItem>
+				<AnimationPropertyItem type="ColorPropertyItem">
+					<name>elemHighlight</name>
+					<isEditable value="false" />
+					<label></label>
+					<value>
+						<Color>(0, 0, 0)</Color>
+					</value>
+				</AnimationPropertyItem>
+			</AnimationProperties>
+
+			<!-- Plaintext Array -->
+			<AnimationProperties type="ArrayProperties">
+				<AnimationPropertyItem type="ColorPropertyItem">
+					<name>fillColor</name>
+					<isEditable value="false" />
+					<label></label>
+					<value>
+						<Color>(255, 255, 255)</Color>
+					</value>
+				</AnimationPropertyItem>
+				<AnimationPropertyItem type="ColorPropertyItem">
+					<name>cellHighlight</name>
+					<isEditable value="true" />
+					<label>Current Plaintext Letter</label>
+					<value>
+						<Color>(204, 0, 0)</Color>
+					</value>
+				</AnimationPropertyItem>
+				<AnimationPropertyItem type="IntegerPropertyItem">
+					<name>depth</name>
+					<isEditable value="false" />
+					<label></label>
+					<value>
+						<int>1</int>
+					</value>
+				</AnimationPropertyItem>
+				<AnimationPropertyItem type="ColorPropertyItem">
+					<name>color</name>
+					<isEditable value="false" />
+					<label></label>
+					<value>
+						<Color>(0, 0, 0)</Color>
+					</value>
+				</AnimationPropertyItem>
+				<AnimationPropertyItem type="BooleanPropertyItem">
+					<name>hidden</name>
+					<isEditable value="false" />
+					<label></label>
+					<value>
+						<boolean value="false" />
+					</value>
+				</AnimationPropertyItem>
+				<AnimationPropertyItem type="StringPropertyItem">
+					<name>name</name>
+					<isEditable value="true" />
+					<label></label>
+					<value>
+						<String>Plaintext Array</String>
+					</value>
+				</AnimationPropertyItem>
+				<AnimationPropertyItem type="BooleanPropertyItem">
+					<name>filled</name>
+					<isEditable value="false" />
+					<label></label>
+					<value>
+						<boolean value="false" />
+					</value>
+				</AnimationPropertyItem>
+				<AnimationPropertyItem type="BooleanPropertyItem">
+					<name>vertical</name>
+					<isEditable value="false" />
+					<label></label>
+					<value>
+						<boolean value="false" />
+					</value>
+				</AnimationPropertyItem>
+				<AnimationPropertyItem type="ColorPropertyItem">
+					<name>elementColor</name>
+					<isEditable value="false" />
+					<label></label>
+					<value>
+						<Color>(0, 0, 0)</Color>
+					</value>
+				</AnimationPropertyItem>
+				<AnimationPropertyItem type="BooleanPropertyItem">
+					<name>cascaded</name>
+					<isEditable value="false" />
+					<label></label>
+					<value>
+						<boolean value="false" />
+					</value>
+				</AnimationPropertyItem>
+				<AnimationPropertyItem type="FontPropertyItem">
+					<name>font</name>
+					<isEditable value="false" />
+					<label></label>
+					<value>
+						<Font>SansSerif</Font>
+					</value>
+				</AnimationPropertyItem>
+				<AnimationPropertyItem type="ColorPropertyItem">
+					<name>elemHighlight</name>
+					<isEditable value="false" />
+					<label></label>
+					<value>
+						<Color>(0, 0, 0)</Color>
+					</value>
+				</AnimationPropertyItem>
+			</AnimationProperties>
+
+			<!-- Rotors Unreversed Array -->
+			<AnimationProperties type="ArrayProperties">
+				<AnimationPropertyItem type="ColorPropertyItem">
+					<name>fillColor</name>
+					<isEditable value="false" />
+					<label></label>
+					<value>
+						<Color>(255, 255, 255)</Color>
+					</value>
+				</AnimationPropertyItem>
+				<AnimationPropertyItem type="ColorPropertyItem">
+					<name>cellHighlight</name>
+					<isEditable value="true" />
+					<label>Highlight Unreversed Mapping</label>
+					<value>
+						<Color>(0, 255, 0)</Color>
+					</value>
+				</AnimationPropertyItem>
+				<AnimationPropertyItem type="IntegerPropertyItem">
+					<name>depth</name>
+					<isEditable value="false" />
+					<label></label>
+					<value>
+						<int>1</int>
+					</value>
+				</AnimationPropertyItem>
+				<AnimationPropertyItem type="ColorPropertyItem">
+					<name>color</name>
+					<isEditable value="false" />
+					<label></label>
+					<value>
+						<Color>(0, 0, 0)</Color>
+					</value>
+				</AnimationPropertyItem>
+				<AnimationPropertyItem type="BooleanPropertyItem">
+					<name>hidden</name>
+					<isEditable value="false" />
+					<label></label>
+					<value>
+						<boolean value="false" />
+					</value>
+				</AnimationPropertyItem>
+				<AnimationPropertyItem type="StringPropertyItem">
+					<name>name</name>
+					<isEditable value="true" />
+					<label></label>
+					<value>
+						<String>Rotor Arrays</String>
+					</value>
+				</AnimationPropertyItem>
+				<AnimationPropertyItem type="BooleanPropertyItem">
+					<name>filled</name>
+					<isEditable value="false" />
+					<label></label>
+					<value>
+						<boolean value="false" />
+					</value>
+				</AnimationPropertyItem>
+				<AnimationPropertyItem type="BooleanPropertyItem">
+					<name>vertical</name>
+					<isEditable value="false" />
+					<label></label>
+					<value>
+						<boolean value="false" />
+					</value>
+				</AnimationPropertyItem>
+				<AnimationPropertyItem type="ColorPropertyItem">
+					<name>elementColor</name>
+					<isEditable value="false" />
+					<label></label>
+					<value>
+						<Color>(0, 0, 0)</Color>
+					</value>
+				</AnimationPropertyItem>
+				<AnimationPropertyItem type="BooleanPropertyItem">
+					<name>cascaded</name>
+					<isEditable value="false" />
+					<label></label>
+					<value>
+						<boolean value="false" />
+					</value>
+				</AnimationPropertyItem>
+				<AnimationPropertyItem type="FontPropertyItem">
+					<name>font</name>
+					<isEditable value="false" />
+					<label></label>
+					<value>
+						<Font>SansSerif</Font>
+					</value>
+				</AnimationPropertyItem>
+				<AnimationPropertyItem type="ColorPropertyItem">
+					<name>elemHighlight</name>
+					<isEditable value="true" />
+					<label>Notch</label>
+					<value>
+						<Color>(0, 0, 255)</Color>
+					</value>
+				</AnimationPropertyItem>
+			</AnimationProperties>
+
+
+			<!-- Rotors Reversed Array -->
+			<AnimationProperties type="ArrayProperties">
+				<AnimationPropertyItem type="ColorPropertyItem">
+					<name>fillColor</name>
+					<isEditable value="false" />
+					<label></label>
+					<value>
+						<Color>(255, 255, 255)</Color>
+					</value>
+				</AnimationPropertyItem>
+				<AnimationPropertyItem type="ColorPropertyItem">
+					<name>cellHighlight</name>
+					<isEditable value="true" />
+					<label>Highlight Reversed Mapping</label>
+					<value>
+						<Color>(255, 0, 0)</Color>
+					</value>
+				</AnimationPropertyItem>
+				<AnimationPropertyItem type="IntegerPropertyItem">
+					<name>depth</name>
+					<isEditable value="false" />
+					<label></label>
+					<value>
+						<int>1</int>
+					</value>
+				</AnimationPropertyItem>
+				<AnimationPropertyItem type="ColorPropertyItem">
+					<name>color</name>
+					<isEditable value="false" />
+					<label></label>
+					<value>
+						<Color>(0, 0, 0)</Color>
+					</value>
+				</AnimationPropertyItem>
+				<AnimationPropertyItem type="BooleanPropertyItem">
+					<name>hidden</name>
+					<isEditable value="false" />
+					<label></label>
+					<value>
+						<boolean value="false" />
+					</value>
+				</AnimationPropertyItem>
+				<AnimationPropertyItem type="StringPropertyItem">
+					<name>name</name>
+					<isEditable value="true" />
+					<label></label>
+					<value>
+						<String>Rotor Arrays Reverse</String>
+					</value>
+				</AnimationPropertyItem>
+				<AnimationPropertyItem type="BooleanPropertyItem">
+					<name>filled</name>
+					<isEditable value="false" />
+					<label></label>
+					<value>
+						<boolean value="false" />
+					</value>
+				</AnimationPropertyItem>
+				<AnimationPropertyItem type="BooleanPropertyItem">
+					<name>vertical</name>
+					<isEditable value="false" />
+					<label></label>
+					<value>
+						<boolean value="false" />
+					</value>
+				</AnimationPropertyItem>
+				<AnimationPropertyItem type="ColorPropertyItem">
+					<name>elementColor</name>
+					<isEditable value="false" />
+					<label></label>
+					<value>
+						<Color>(0, 0, 0)</Color>
+					</value>
+				</AnimationPropertyItem>
+				<AnimationPropertyItem type="BooleanPropertyItem">
+					<name>cascaded</name>
+					<isEditable value="false" />
+					<label></label>
+					<value>
+						<boolean value="false" />
+					</value>
+				</AnimationPropertyItem>
+				<AnimationPropertyItem type="FontPropertyItem">
+					<name>font</name>
+					<isEditable value="false" />
+					<label></label>
+					<value>
+						<Font>SansSerif</Font>
+					</value>
+				</AnimationPropertyItem>
+				<AnimationPropertyItem type="ColorPropertyItem">
+					<name>elemHighlight</name>
+					<isEditable value="false" />
+					<label>Notch</label>
+					<value>
+						<Color>(0, 0, 255)</Color>
+					</value>
+				</AnimationPropertyItem>
+			</AnimationProperties>
+		</Folder>
+	</Folder>
+</PropertiesTreeModel>

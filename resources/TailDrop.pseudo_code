@@ -1,0 +1,13 @@
+FUNCTION_DEFINITION@def tail_drop(fifoCapacity):
+FIFO_DECLARATION@\tfifo = [fifoCapacity];@X
+INDEX_DECLARATION@\tindex = 0;@X
+INCOMING_PACKET_DECLARATION@\tpackets = receivePackets()@X
+FOR_PACKET_ITERATION@\tfor (packet in packets):@X
+CHECK_FIFO_CAPACITY@\t\tif (index >= fifoCapacity):@X
+DROP_PACKET@\t\t\tdropPacket(incomixngPacket)@X
+CHECK_FIFO_CAPACITY_ELSE@\t\telse:
+ENQUEUE_PACKET@\t\t\tenqueuePacket(incomingPacket)@X
+INCREMENT_INDEX@\t\t\tindex = index + 1@X
+UPDATE_FIFO_DROP_ENQ@\t\tupdateFIFO()@
+PROCESS_PACKET@\tprocessPacket()@X
+UPDATE_FIFO_END@\tupdateFIFO()@X

@@ -1,0 +1,55 @@
+noSuchKeyException=Es gibt keine Ressource f\u00fcr Eintrag {0}
+iconNotFound=Icon "{0}" not found
+
+algorithm_name=Value Difference Metric
+approach= Introduction
+description= There are many distance metrics such as the Manhattan distance or the Euclidean distance, which represents
+description1= the distance between two points. These metrics are based on numerical attributes and can not handle
+description2= symbolic attributes. The value difference metric is used in the classification of data mining algorithms, 
+description3= e.g. used in the k-Nearest-Neighbor algorithm or in the instance-based learning techniques
+description4= i.e. two symbolic values ​​are observed closer to their classifications.
+
+description5= The VDM defines the distance between two symbolic values ​​as follows:
+description6= - n1,c:
+description7= - n1:
+description8= is the number of examples of an attribute according to classification c
+description9= is the number of examples of an attribute 
+
+shortdes1= The value difference metric is a method for determining the distance between two or more attributes to a selected attribute according to the classifications.
+shortdes2= In the primitives you can specify a table with different attributes (1st column) and with the classifications (2nd column) \ "yes \" or \ "no \". In addition, you must then select an attribute for which the distance is to be calculated.
+shortdes3= In addition, you can influence the following properties:
+shortdes4= ♦ Color of Hightlight
+shortdes5= ♦ Color of Threshold/Graph
+shortdes6= ♦ Color of SourcCode
+shortdes7= ♦ and more..
+
+step1=1. Step: Input table  
+step2=2. Step: Frequency table
+step3=3. Step: Calculation
+step4=4. Step: Visual graph
+
+line1= public void vdm(Matrix matrix, Attribute att, int size)
+line2= Number of 1.columns -> frequency
+line3= Number of 2.columns -> frequency						
+line4= VDM calculation										
+line5= vdm(att, matrix[i][0]) = distance							
+line6= Visual distance (graph)
+
+label1=Frequency table
+label2=Calculation
+label3=Graph
+label4=Conclusion
+
+conclusion=* * * * * * * * * * * * * * * * * * * * * * * * * * * * Conclusion * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+conclusion1= The applied formula:
+conclusion2= Value Difference Metric 
+conclusion3= The distances from the selected attribute to other attributes are:: 
+conclusion4= The visual graph indicates the distance of the attributes to the selected attribute,
+conclusion5= the position being determined by the number of respective classifications.
+
+vaild1= The attribute is not included in the table.
+vaild2= The columns Number must be set to 2.
+vaild3= The table has no content.(null)
+vaild4= The classification in the table should be "no" or "yes"
+vaild5= The size of the attribute and the attribute of the table are to large.Should be smaller than 18.
+

@@ -1,0 +1,59 @@
+# Description
+description=BRIEF DESCRIPTION\nOS-SELECT(x, i) returns the node containing the i-th smallest key in the subtree rooted at node x.\n\nUSE CASE\nIf the i-smallest key in an ordered set should be determined efficiently, then OS-SELECT can be used.\n\nDETAILED DESCRIPTION\nThe algorithm OS-SELECT, as presented here, is taken from "Introduction to Algorithms" by Thomas H. Cormen, Charles E. Leiserson, Ronold Rivest, Clifford Stein.\nEfficiency of the algorithm is guaranteed by using an extended red-black tree, this enables to reach a complexity of O(lg(n)), because the height of a red-black tree is always O(lg(n)) where n is the number of nodes. OS-SELECT needs an additional attribute size which is added to each node x in the red-black tree. This attribute contains the number of inner nodes within the subtree rooted at node x plus 1 for x itself. \n\nx is the subtree rooted at node x of an extended red-black tree (as described above). It is possible to choose x as the root node of the tree.\n\ni is the rank of the node which should be determined by OS-SELECT. For example if i = 13, then OS-SELECT would return the node with the 13th smallest key of the tree.\n\nRank is the position of node x within the linear order of the tree`s nodes\n\nCUSTOMIZATION PROPERTIES\nAt Primitives->"Keys for tree nodes" it is possible to create an own red-black tree by providing the values for the keys in the tree. The generator will insert the keys in the tree by the given order and calculate the size attribute of each node.\n\nPrimitives->"Position of Root of subtree in intArray" is the parameter x of OS-SELECT(x, i) and defines which node provided at Primitives->"Keys for tree nodes" should be used as root of the subtree for the algorithm. Attention: The value x provided here is the index of the node in the intArray shown at Primitives->"Keys for tree nodes" and NOT the key of the node. The index starts counting by 0.\n\nAt Primitives->"The i-th smallest key to find" the parameter i of OS-SELECT(x, i)can be defined. i is the rank of the node which should be determined by OS-SELECT.\n\nThere are more options available, i. e. to modify the color or font style.
+
+# Startscreen
+# indicate in line1 the number of lines of this section 'startscreen.description' 
+startscreen.description.line1=24
+startscreen.description.line2=OS-SELECT(x, i) returns the node containing the i-th smallest key   
+startscreen.description.line3=in the subtree rooted at x. 
+startscreen.description.line4=\n STRATEGY
+startscreen.description.line5=Determine the node with the i-th smallest key by calling OS-SELECT 
+startscreen.description.line6=recursively till the i-th smallest node is found (recursion anchor).
+startscreen.description.line7=\n VARIABLES
+startscreen.description.line8=* x \t is the root of the subtree
+startscreen.description.line9=* i \t is the position (in linear order) of the node to determine 
+startscreen.description.line10=* r \t is the rank of node x
+startscreen.description.line11=\n FUNCTIONS 
+startscreen.description.line12=Explanation for a function call of OS-SELECT(x, i) with node x and number i
+startscreen.description.line13=* x.left    returns the left child of node x
+startscreen.description.line14=* x.right  returns the right child of node x 
+startscreen.description.line15=* x.size   returns the size of node x
+startscreen.description.line16=* x.key   returns the key of node x, e. g. 34|1 is key|size
+startscreen.description.line17=\n EXPLANATIONS
+startscreen.description.line18=(1) set r to the size of x`s left child plus 1  
+startscreen.description.line19=(2) if i equals r
+startscreen.description.line20=(3) return node x, this contains the i-th smallest key
+startscreen.description.line21=(4) else-if i is smaller than r
+startscreen.description.line22=(5) return OS-SELECT(x`s left child, i) [recursion] 
+startscreen.description.line23=(6) else return OS-SELECT(x`s right child, i-r) [recursion]
+startscreen.description.line24=\nSource: Introduction to Algorithms, Charles E. Leiserson, \nClifford Stein, Ronald L. Rivest, Thomas H. Cormen
+
+# Animation 
+sourcecode.Description.line1=Set r to size of x`s left child plus 1
+sourcecode.Description.line2=If i equals r
+sourcecode.Description.line3=Return node x, this contains the i smallest key 
+sourcecode.Description.line4=Else-if i is smaller than r
+sourcecode.Description.line5=Do recursive call: OS-SELECT(x.left, i)
+sourcecode.Description.line6=Else do recursive call: OS-SELECT(x.right, i-r)
+
+# Endscreen
+endscreen.description.line1=9
+endscreen.description.line2=COMPLEXITY
+endscreen.description.line3=Since each iteration of the while loop takes O(1) time, and y goes up
+endscreen.description.line4=Because each recursive call goes down one level in the order-statistic   
+endscreen.description.line5=tree, the total time for OS-SELECT is at worst proportional to the height
+endscreen.description.line6=of the tree. Since the tree is a red-black tree, its height is O(log n), 
+endscreen.description.line7=where n is the number of nodes. Thus, the running time of OS-SELECT is 
+endscreen.description.line8=O(log n) for a dynamic set of n elements.
+endscreen.description.line9=\nSource: Introduction to Algorithms, Charles E. Leiserson, \nClifford Stein, Ronald L. Rivest, Thomas H. Cormen
+
+# XML-file - EN
+KeysForTreeNodes=Keys for tree nodes
+x_PositionOfRootOfSubtree=Position of Root of subtree in intArray
+i_iThSmallestKeyToFind=The i-th smallest key to find
+textProperties_startEndScreen=[TextProperties] Start- and end-screen
+color_childrenNodes=[Color] Children nodes
+color_sourceCode=[Color] Source code
+color_sourceCodeHighlighting=[Color] Source code highlighting
+color_backgroundRectangles=[Color] Background of rectangles
+color_currentNode=[Color] Current node

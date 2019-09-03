@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<PropertiesTreeModel xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="PropertiesTreeModel.xsd">
+	<Folder name="Root">
+		<Primitive type="intMatrix">
+			<name>adjacencyMatrix</name>
+			<value><intMatrix>0, 1, 5, 0, 0, 0; 0, 0, 2, 0, 0, 2; 0, 0, 0, 1, 1, 0; 0, 0, 0, 0, 0, 0; 0, 0, 0, 0, 0, 0; 0, 0, 0, 0, 4, 0</intMatrix></value>
+		</Primitive>
+		<Primitive type="Color">
+			<name>highlightColorSource</name>
+			<value><Color>(255, 0, 0)</Color></value>
+		</Primitive>
+		<Primitive type="Color">
+			<name>highlightColorAdjacency</name>
+			<value><Color>(255, 0, 0)</Color></value>
+		</Primitive>
+	</Folder>
+</PropertiesTreeModel>

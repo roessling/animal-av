@@ -1,0 +1,84 @@
+title=Ray Casting (Point in Polygon)
+description=\
+Ray Casting is an approach to find out, if a point is located within a \
+polygon.\n\
+\n\
+The algorithm is known since 1962 and is sometimes referred to as \
+"crossing number" or "even-odd rule".\n\
+\n\
+The algorithm is in use in SVG vector graphics to fill shapes with color.\n\
+\n\
+The general idea is to construct a ray from the point in any direction and \
+count the intersections with the edges of the polygon. If the number of \
+intersections is odd the point is within the polygon, otherwise it isn''t.
+
+stepLabelIntro=Introduction
+stepLabelInit=Initialization
+stepLabelIteration=#{0} Iteration
+stepLabelReturn=Result
+stepLabelOutro=Conclusion
+
+intro1=\
+Ray Casting is an algorithm to find out, if a point is located within a\n\
+polygon.
+
+intro2=\
+First a ray is constructed from the point in any direction.\n\
+It is a good idea to construct the ray along the x-axis for simplicity.
+
+intro3=\
+Now each side of the polygon is tested for intersections with the\n\
+newly constructed ray. These intersections are counted.
+
+case.even=If the number of intersections is even, the point is outside of the polygon
+case.odd=If the number of intersections is odd, the point is within the polygon
+
+intro4=\
+There are two special cases, when the ray is going directly through a vertex\n\
+or lies directly on a side of the polygon. To solve that problem intersections\n\
+with a vertex are only counted, if the other vertex of that side is below the\n\
+ray.
+
+task=\
+For this example we will test if the point P = {0} is within a polygon\n\
+with the vertices V =[\n\
+{1}\n\
+]
+
+result.even={0} is even, therefore the point is outside
+result.odd={0} is odd, therefore the point is inside
+
+outro1=\
+With the Ray Casting method we could find out, that the point P = {0}\n\
+is {1}inside of the polygon V = [\n\
+{2}\n\
+]
+
+not=not
+
+outro2=\
+The approach is simple to implement and required {0} iterations,\n\
+one for each side of the polygon.
+
+outro3=\
+Therefore Ray Casting is an algorithm with O(n) complexity.
+
+questionPredictEdge.prompt=Which edge consisting of two vertices is tested next?
+questionPredictEdge.feedback.correct=Correct
+questionPredictEdge.feedback.wrong=Wrong, that happens in another iteration
+
+questionPredictIntersection.prompt=Does the edge intersect with the ray?
+questionPredictIntersection.feedback.correct=Correct
+questionPredictIntersection.feedback.wrong=No, it does not
+
+error=Input error
+error.fontSize=The fontsize cannot be smaller than 1
+error.scaling=The coordinate system scaling cannot be smaller than 1
+error.width=The coordinate system width cannot be smaller than 10
+error.height=The coordinate system height cannot be smaller than 10
+error.point.syntax=The point has to be declared with exactly 2 columns
+error.point.coords=The point has to be placed within the bounds of the coordinate system
+error.vertices.length=There have to be at least 3 vertices
+error.vertices.syntax=The vertices have to be declared with exactly 2 columns
+error.vertices.coords=The vertices have to be placed within the bounds of the coordinate system
+error.probability=The question probability has to be between 0 and 1

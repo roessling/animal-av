@@ -1,0 +1,6 @@
+Gnome sort puts items in order by comparing two neighbouring items.
+The basic idea is to start from the beginning of the array and
+to move to the next item until we find two items that are not in order.
+In that case we swap them and move to the previous item. That way
+the swapping gets propagated backwards until the item finds it's proper
+place.

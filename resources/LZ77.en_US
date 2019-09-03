@@ -1,0 +1,33 @@
+### Animation ###
+animDescription=The LZ77-algortihm (Lempel Ziv 77) compresses a text lossless. Two Arrays are used as preview buffer and as a dictionary. Using the properties the size of these two arrays and the text can be specified.
+animCodeExample=- search the dictionary for the longest matching string, corresponding to the preview buffer\n- if there is an agreement:\n-   return the triple (position of the string in the dictionary, length of the string, first non-matching character)\n-   shift the window by the length of the matching string + 1\n- if there is no agreement:\n-   return the triple (0, 0, first non-matching character)\n-   shift the window by 1
+
+### INTRO ###
+introText=The Lempel Ziv algorithm 77, shortly LZ77, is a simple compression algorithm for lossless\ncompression of text by using a dictionary. There are two in size limited arrays:\na 'dictionary' and a 'preview buffer'.\nThe text will be loaded into the 'preview buffer'. Then it will be checked, character by character,\nwhether the string already exists in the dictionary. If so, the number of characters\nis increased, until there is no more agreement. Then the triple (position of the string,\nlength of the string, first non-matching character) will be outputted and the text\nwill be moved by the length of the string in the dictionary. With the new letters, which\nare added into the preview buffer, the procedure will be the same.\n\nPseudocode:\n  search the dictionary for the longest matching string, corresponding to the preview buffer\n  if there is an agreement:\n    return the triple (position of the string in the dictionary, length of the string, first non-matching character)\n    shift the window by the length of the matching string + 1\n  if there is no agreement:\n    return the triple (0, 0, first non-matching character)\n    shift the window by 1\n
+
+### OUTRO ###
+outroText=In the previous animation LZ77 was graphed. Finally, here are some advantages and disadvantages:\n\nAdvantages:\n- compressing is possible without any knowledge of the (subsequent) text\n- is well suited as a pre-processor for other compression methods\n- runtime is O(n)\n\nDisadvantages:\n- with short or 'on-natural language' texts the compression factor is bad\n\nDecompression:\nCompared to compression, decompression is much easier, because no matching items must be searched,\nbut only the relevant parts of the dictionary are issued. The duration of the decompression is\nlike compression linear, that means, that there will be as many steps as characters.
+
+### Pseudocode ###
+pseudoText=Pseudocode:\n\n- search the dictionary for the longest matching string, corresponding to the preview buffer\n- if there is an agreement:\n-   return the triple (position of the string in the dictionary, length of the string, first non-matching character)\n-   shift the window by the length of the matching string + 1\n- if there is no agreement:\n-   return the triple (0, 0, first non-matching character)\n-   shift the window by 1\n
+
+### Überschriften ###
+woerterbuch=Dictionary
+vorschaupuffer=Preview Buffer
+text=Remaining Text
+ausgabe=Output:
+ende=END
+inhalt=processed
+
+### Beschreibungen ###
+beschreibung1=text is read
+beschreibung2=There is no agreement
+beschreibung3=Window will be shifted by
+beschreibung4=
+beschreibung5=There is an agreement: 
+beschreibung6=Special case: matching string protrudes\ninto the preview buffer! 
+
+noSuchKeyException=Keine Resource für {0} gefunden
+iconNotFound=Icon '{0}' nicht gefunden
+
+### n a t i v e 2 a s c i i a F i l e . t x t > msg . en US ###

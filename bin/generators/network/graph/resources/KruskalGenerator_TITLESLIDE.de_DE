@@ -1,0 +1,33 @@
+[block]
+	Der Algorithmus von Kruskal bestimmt den minimalen Spannbaum in einem
+	gewichteten Graphen. Hierzu muss der Graph zusätzlich zusammenhängend[br]
+	und endlich sein. Bei einem nicht zusammenhängenden Graphen berechnet
+	das Verfahren die minimalen Spannbäume der Zusammenhangskomponenten,[br]
+	die dann den minimalen aufspannenden Wald bilden.
+[/block]
+[block]
+	[h2]Der Algorithmus[/h2]
+	Der Algorithmus wurde erstmals von Joseph Kruskal im Jahr 1956 
+	beschrieben und arbeitet nicht deterministisch. Das bedeutet, dass bei[br]
+	mehrfacher Ausführung unterschiedliche Ergebnisse liefern kann.[br]
+	Der Algorithmus nutzt eine aufsteigend sortierte Liste der Kanten, aus
+	der bei jedem Schleifendurchlauf die erste Kante (mit minimalem Gewicht)[br]
+	entfernt und dem Spannbaum hinzugefügt wird, sofern die gewählte Kante 
+	keinen Zyklus im Spannbaum erzeugt. Ansonsten wird diese verworfen.[br] 
+	Die Laufzeit des Algorithmus setzt sich aus dem Sortieren der Liste 
+	und dem Prüfen auf Kreisfreiheit zusammen. Da jedoch die Detektion[br]
+	eines Zyklus wesentlich effizienter durchgeführt werden kann als die 
+	Sortierung, bestimmt letztere die Komplexität von O(|E| * log(|V|))[br]
+	des Algorithmus. Daher ist zum Beispiel der Algorithmus von Prim bei 
+	sehr vielen Kanten wesentlich effektiver.[br]
+	Durch den Einsatz einer priorisierten Warteschlange, um die Kanten
+	zu verwalten, kann jedoch eine praktisch lineare Laufzeit erreicht werden. 
+[/block]
+[block]
+	[h2]Die Animation[/h2]
+	Die Visualisierung arbeitet nur korrekt auf ungerichteten Graphen. Bei 
+	gerichteten Graphen werden durch die Sortierung der Kanten ohne[br]
+	Beachtung der Start- und Zielknoten eventuell Hin- und Rückkanten
+	zwischen den gleichen Knoten gewählt und der Algorithmus erzeugt[br]
+	dadurch keinen Spannbaum mehr.
+[/block]

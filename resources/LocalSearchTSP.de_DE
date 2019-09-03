@@ -1,0 +1,58 @@
+### Animation ###
+animTitle=Lokale Suche am TSP-Beispiel
+animName=Lokale Suche am TSP-Beispiel
+animAlgoName=Local Search
+animDescription=Mit Hilfe der Lokalen Suche wird versucht, ein Problem zu lösen, indem eine zufällig geratene Startlösung durch das Vergleichen 'benachbarter' Lösungen zu verbessern versucht wird.\n\nDiese Animation zeigt dies an Hand des Traveling Salesman Problems.\nMit Hilfe der Graph-Eigenschaft dieser Animation kann die initiale Lösung vorgegeben werden: Dazu setzt man den Startknoten, alle anderen Knoten folgen der Reihenfolge, in der sie definiert wurden. 
+animCodeExample=1. Rate eine beliebige erlaubte Lösung s\n2. Solange es eine Lösung s' mit \"s' ist Nachbar von s\" und \"Kosten von s' < Kosten von s\"\n     2.1 wähle ein solche Lösung s' und setzte s = s'\n3. Gibt s als finale Lösung aus
+
+### Table Of Contents ###
+tableOfContentsIntro=Einführung
+tableOfContentsOutro=Zusammenfassung
+tableOfContentsBestSolution=Beste gefunden Lösung
+
+### INTRO ###
+introHeadlineLocalSearch=Lokale Suche
+introLocalSearch=Lokale Suche ist ein Oberbegriff für verschiedene metaheuristische Suchverfahren, die in der kombinatorischen\nOptimierung eingesetzt werden. Bei Lokaler Suche wird versucht, ausgehend von einer (zufälligen) Initiallösung\nweitere, bessere Lösungen, die zu der aktuell besten Lösung benachbart sind, zu finden. Hierzu werden Lösungen\naus der Nachbarschaft der aktuell besten Lösung mit selbiger verglichen.\n\nAllgemeine Vorgehensweise:\n	1. Bestimme eine Startlösung aus der Menge aller möglichen Lösungen\n	2. Definiere eine Nachbarschaft der zu der Startlösung 'ähnlichen' Lösungen\n	3. Suche die gesamte (oder nur Teile der) Nachbarschaft nach möglicherweise besseren Lösungen ab
+introHeadlineTSP=Problem des Handelsreisenden
+introTSP=Beim Problem des Handelsreisenden (Traveling Salesman Problem [TSP]) gilt es, zu einer gegebenen Liste von Städten\nund den Distanzen zwischen allen Paaren zweier Städte, die kürzeste Route zu finden, die jede Stadt genau einmal\nbesucht und anschließend zum Ausgangspunkt zurückkehrt. TSP ist ein kombinatorisches Optimierungsproblem und liegt\nin der Klasse der NP-schweren Probleme.\nWir betrachten im folgende eine Lösung des TSPs mithilfe von Lokaler Suche. Die Städte werden als Knoten eines\ngewichteten, ungerichteten Graphen repräsentiert, die Gewichte stellen die Distanzen zwischen den jeweiligen\nStädten dar.\n\n\nIn der folgenden Animation wird eine Nachbarschaft wie folgt angenommen: Zwei Lösungen sind benachbart zu\neinandern, wenn höchstens ein Paar von Knoten den Platz getauscht hat. Zudem wird zum Bestimmen der be-\nnachbarten Lösungen zur leichteren Verständlichkeit eine deterministische Funktion eingesetzt.
+
+### OUTRO ###
+outroHeadline=Zusammenfassung
+outroText=In der vorherigen Animation haben wir gesehen, wie Lokale Suche am Traveling Salesman Problem angewandt werden\nkann. Weitere Anwendungsgebiete können\n       das Erfüllbarkeitsproblem der Aussagenlogik\n       das Facility Location Problem\nsein. Generell ist Lokale Suche in vielen schweren Berechnungsproblemen aus unter anderem den Bereichen der Informatik,\nMathematik und den Ingenieurswissenschaften zu finden.\n\nDer wichtigste Punkt, um Lokale Suche anwenden zu können, ist, dass es möglich ist, eine Nachbarschaft einer Lösung\nzu definieren, um in dieser nach besseren Lösungen suchen zu können.\n\nInsbesondere bei einer großen Nachbarschaft können die Anzahl möglicher Nachbarschaftlösungen schnell unüber-\nschaubar und unauswertbar groß werden. In diesem Fall hat man mehrere Möglichkeiten, nur Teile des Nachbar-\nschaftsraums zu betrachten: Zum Einen kann man einen 'Timer' einführen, der die Anzahl der betrachteten Lösungen\nzählt und die Suche bei Überschreitung eines Maximalwertes terminiert oder aber ein Zähler zählt die Lösungen\nseitdem eine neue beste Lösung gefunden wurde und die Suche terminiert ebenfalls bei Überschreitung dessen. Zum\nAnderen ist eine Möglichkeit innerhalb der Nachbarschaftsgebiete die beste Lösung ggf. mit einem anderen Algorithmus\nleicht und effizient zu finden und somit das Problem der Suche nach dem globalen Maximum in die Nachbarschaft\nauszulagern.
+
+### StepDescription ###
+stepDescriptionNewBestSolutionFound=Neue beste Lösung gefunden, übernehme diese.
+stepDescriptionNewBestSolution=Neue beste Lösung: {0}
+stepDescriptionNoBetterSolution=Berechnete Lösung nicht mehr besser. Beende.
+stepDescriptionCalculateNeighbourhood=Berechne nun eine neue Lösung aus der Nachbarschaft...
+stepDescriptionCalculateExchange=Berechne nun eine neue Lösung aus der Nachbarschaft: Tausche {0} mit {1}
+stepDescriptionRevise=Revidiere letzten Tausch.
+
+textCurrentBest=Aktuell beste Lösung: {0}
+textCurrentBestBest=Beste gefunden Lösung: {0}
+textComputation=Aktuell berechnete Lösung: {0}
+
+### PseudoCode ###
+pseudoCodeLocalSearch_0=function lokaleSuche(){
+pseudoCodeLocalSearch_1=Generiere eine Startlösung aus dem Lösungsraum
+pseudoCodeLocalSearch_2=Durchsuche Nachbarschaft nach besserer Lösung
+pseudoCodeLocalSearch_3=Setze diese als aktuell beste Lösung
+pseudoCodeLocalSearch_4=Wiederhole bis keine bessere Lösung mehr existiert
+pseudoCodeLocalSearch_5=}
+
+pseudoCodeSearchInNeighbourhood_0=function findeLösungInNachbarschaft(){
+pseudoCodeSearchInNeighbourhood_1=Tausche zwei Knoten für neue, benachbarte Lösung
+pseudoCodeSearchInNeighbourhood_2=Wenn neue Lösung besser
+pseudoCodeSearchInNeighbourhood_3=Gib diese zurück
+pseudoCodeSearchInNeighbourhood_4=Sonst
+pseudoCodeSearchInNeighbourhood_5=Stelle die 'alte' Lösung wiederher und wiederhole
+pseudoCodeSearchInNeighbourhood_6=Wenn keine bessere Lösung gefunden: beende.
+pseudoCodeSearchInNeighbourhood_7=}
+
+### Other ###
+headline=Lokale Suche am Problem des Handelsreisenden
+
+noSuchKeyException=Keine Resource für {0} gefunden
+iconNotFound=Icon '{0}' nicht gefunden
+
+### n a t i v e 2 a s c i i a F i l e . t x t > msg . de DE ###

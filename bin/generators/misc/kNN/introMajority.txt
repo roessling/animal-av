@@ -1,0 +1,21 @@
+﻿[block]
+[br]
+[br] k-Nearest-Neighbor ist ein Verfahren, welches die Problemstellung Klassifikation löst.
+[br] Kern dieser Problemstellung ist das Zuordnen eines Messwertes zu einer Klasse mit Hilfe
+[br] von bekannten Zuordnungen von Messwerten zu Klassen.
+[br] kNN benutzt hierzu die k nächsten Nachbarn des zu Klassifizierenden Messwertes.
+[br] In dieser Variante wird der neue Messwert zu der Klasse klassifizert, welche eine
+[br] Mehrheit unter den k-Nachbarn erreicht. Es besteht die Möglichkeit, die Stimmen
+[br] der Nachbarn abhängig von ihrer Distanz zum neuen Messwert zu gewichten. 
+[br] Bei diesem Vorgehen erhalten nähere Nachbarn mehr Stimmen und weiter entfernte weniger.
+[br]
+[br] In diesem Beispiel werden 2D Koordinaten als Messwerte und eine der folgenden
+[br] Normen als Abstand zwischen diesen verwendet.
+[br] 1. Euklidsche Norm : sqrt((x1-x2)²+(y1-y2)²)
+[br] 2. Manhattan Norm : |x1-x2|+|y1-y2|
+[br] 3. Maximums Norm : max(|x1-x2|, |y1-y2|)
+[br]
+[br] kNN wird zum klassifizieren unterschiedlicher Daten verwendet. Ein übliches Vorgehen ist
+[br] charakteristische Werte dieser Daten sogenannte Features
+[br] in einem Vektor zu speichern und diesen für die Distanz Berechnung zu verwenden
+[/block]

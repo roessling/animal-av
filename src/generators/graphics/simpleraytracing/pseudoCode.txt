@@ -1,0 +1,13 @@
+public void simpleRayTracing(){
+\t \t for each Pixel(i){
+\t \t \t \t ray = createRayFromPixelThroughCamera(Pixel i);
+\t \t \t \t interceptPoint = findClosestIntersectionOfRay(ray);
+\t \t \t \t color = getColorOfIntersectedObject();
+\t \t \t \t shadowRay = createRayFromIntereceptPointToLightSource(interceptPoint);
+\t \t \t \t shadowInterceptPoint = getFirstIntersectionOfShadowRay(shadowRay);
+\t \t \t \t if(shadowInterceptPoint != null){
+\t \t \t \t \t \t color = shadowTheColor(color);
+\t \t \t \t }
+\t \t \t \t updatePixelColor(pixel i, color);
+\t \t}
+}

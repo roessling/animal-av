@@ -1,0 +1,462 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<ns2:exercise xmlns:ns2="http://www.algoanim.info/Animal2/">
+    <chainPath>/Sorting/Selection Sort/Java/en/Selection_Sort_[EN]</chainPath>
+    <description>Selection sort is a sorting algorithm, specifically an in-place comparison sort. It has O(n2) complexity, making it inefficient on large lists, and generally performs worse than the similar insertion sort. Selection sort is noted for its simplicity, and also has performance advantages over more complicated algorithms in certain situations.
+</description>
+    <generatorName>generators.sorting.selectionsort.GenericAnnotatedSelectionSort</generatorName>
+    <initialVariables>
+        <name>array </name>
+        <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">[3,5,0,2,4,1]</value>
+    </initialVariables>
+    <questionsList>
+        <decisionBox xsi:type="scriptBox" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+            <inputVariables>
+                <name>swaps</name>
+            </inputVariables>
+            <next xsi:type="assignBox">
+                <next xsi:type="assignBox">
+                    <next xsi:type="functionBox">
+                        <next xsi:type="functionBox">
+                            <next xsi:type="functionBox">
+                                <next xsi:type="functionBox">
+                                    <function xsi:type="ok"/>
+                                </next>
+                                <function xsi:type="check"/>
+                                <arguments xsi:type="constantValue">
+                                    <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">$line &lt; $swaps +1</value>
+                                </arguments>
+                                <arguments xsi:type="constantValue">
+                                    <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">Too Low</value>
+                                </arguments>
+                            </next>
+                            <function xsi:type="check"/>
+                            <arguments xsi:type="constantValue">
+                                <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">$line &gt; $swaps -1</value>
+                            </arguments>
+                            <arguments xsi:type="constantValue">
+                                <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">Too High</value>
+                            </arguments>
+                        </next>
+                        <function xsi:type="animate"/>
+                        <arguments xsi:type="valueOfIdentifier">
+                            <variableName>event</variableName>
+                        </arguments>
+                    </next>
+                    <variableName>event</variableName>
+                    <expression xsi:type="functionBox">
+                        <function xsi:type="retrieve"/>
+                        <arguments xsi:type="constantValue">
+                            <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">events/swapEvent</value>
+                        </arguments>
+                    </expression>
+                </next>
+                <variableName>line</variableName>
+                <expression xsi:type="functionBox">
+                    <function xsi:type="retrieve"/>
+                    <arguments xsi:type="constantValue">
+                        <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">count(events/swapEvent)</value>
+                    </arguments>
+                </expression>
+            </next>
+            <AssignBox>
+                <next xsi:type="assignBox">
+                    <next xsi:type="functionBox">
+                        <next xsi:type="functionBox">
+                            <next xsi:type="functionBox">
+                                <next xsi:type="functionBox">
+                                    <function xsi:type="ok"/>
+                                </next>
+                                <function xsi:type="check"/>
+                                <arguments xsi:type="constantValue">
+                                    <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">$line &lt; $swaps +1</value>
+                                </arguments>
+                                <arguments xsi:type="constantValue">
+                                    <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">Too Low</value>
+                                </arguments>
+                            </next>
+                            <function xsi:type="check"/>
+                            <arguments xsi:type="constantValue">
+                                <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">$line &gt; $swaps -1</value>
+                            </arguments>
+                            <arguments xsi:type="constantValue">
+                                <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">Too High</value>
+                            </arguments>
+                        </next>
+                        <function xsi:type="animate"/>
+                        <arguments xsi:type="valueOfIdentifier">
+                            <variableName>event</variableName>
+                        </arguments>
+                    </next>
+                    <variableName>event</variableName>
+                    <expression xsi:type="functionBox">
+                        <function xsi:type="retrieve"/>
+                        <arguments xsi:type="constantValue">
+                            <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">events/swapEvent</value>
+                        </arguments>
+                    </expression>
+                </next>
+                <variableName>line</variableName>
+                <expression xsi:type="functionBox">
+                    <function xsi:type="retrieve"/>
+                    <arguments xsi:type="constantValue">
+                        <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">count(events/swapEvent)</value>
+                    </arguments>
+                </expression>
+            </AssignBox>
+            <AssignBox>
+                <next xsi:type="functionBox">
+                    <next xsi:type="functionBox">
+                        <next xsi:type="functionBox">
+                            <next xsi:type="functionBox">
+                                <function xsi:type="ok"/>
+                            </next>
+                            <function xsi:type="check"/>
+                            <arguments xsi:type="constantValue">
+                                <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">$line &lt; $swaps +1</value>
+                            </arguments>
+                            <arguments xsi:type="constantValue">
+                                <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">Too Low</value>
+                            </arguments>
+                        </next>
+                        <function xsi:type="check"/>
+                        <arguments xsi:type="constantValue">
+                            <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">$line &gt; $swaps -1</value>
+                        </arguments>
+                        <arguments xsi:type="constantValue">
+                            <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">Too High</value>
+                        </arguments>
+                    </next>
+                    <function xsi:type="animate"/>
+                    <arguments xsi:type="valueOfIdentifier">
+                        <variableName>event</variableName>
+                    </arguments>
+                </next>
+                <variableName>event</variableName>
+                <expression xsi:type="functionBox">
+                    <function xsi:type="retrieve"/>
+                    <arguments xsi:type="constantValue">
+                        <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">events/swapEvent</value>
+                    </arguments>
+                </expression>
+            </AssignBox>
+            <FunctionBox>
+                <next xsi:type="functionBox">
+                    <next xsi:type="functionBox">
+                        <next xsi:type="functionBox">
+                            <function xsi:type="ok"/>
+                        </next>
+                        <function xsi:type="check"/>
+                        <arguments xsi:type="constantValue">
+                            <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">$line &lt; $swaps +1</value>
+                        </arguments>
+                        <arguments xsi:type="constantValue">
+                            <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">Too Low</value>
+                        </arguments>
+                    </next>
+                    <function xsi:type="check"/>
+                    <arguments xsi:type="constantValue">
+                        <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">$line &gt; $swaps -1</value>
+                    </arguments>
+                    <arguments xsi:type="constantValue">
+                        <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">Too High</value>
+                    </arguments>
+                </next>
+                <function xsi:type="animate"/>
+                <arguments xsi:type="valueOfIdentifier">
+                    <variableName>event</variableName>
+                </arguments>
+            </FunctionBox>
+            <FunctionBox>
+                <next xsi:type="functionBox">
+                    <next xsi:type="functionBox">
+                        <function xsi:type="ok"/>
+                    </next>
+                    <function xsi:type="check"/>
+                    <arguments xsi:type="constantValue">
+                        <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">$line &lt; $swaps +1</value>
+                    </arguments>
+                    <arguments xsi:type="constantValue">
+                        <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">Too Low</value>
+                    </arguments>
+                </next>
+                <function xsi:type="check"/>
+                <arguments xsi:type="constantValue">
+                    <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">$line &gt; $swaps -1</value>
+                </arguments>
+                <arguments xsi:type="constantValue">
+                    <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">Too High</value>
+                </arguments>
+            </FunctionBox>
+            <FunctionBox>
+                <next xsi:type="functionBox">
+                    <function xsi:type="ok"/>
+                </next>
+                <function xsi:type="check"/>
+                <arguments xsi:type="constantValue">
+                    <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">$line &lt; $swaps +1</value>
+                </arguments>
+                <arguments xsi:type="constantValue">
+                    <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">Too Low</value>
+                </arguments>
+            </FunctionBox>
+            <FunctionBox>
+                <function xsi:type="ok"/>
+            </FunctionBox>
+        </decisionBox>
+        <inputVariables>
+            <name>swaps</name>
+        </inputVariables>
+        <questionId>Question-3454406021296505113093</questionId>
+        <questionText>How many swaps will be performed in the following array?
+[3,5,0,2,4,1]</questionText>
+        <script>// No script
+line = Retrieve("count(events/swapEvent)");
+event = Retrieve("events/swapEvent");
+Animate(event);
+Check("$line &gt; $swaps -1", "Too High");
+Check("$line &lt; $swaps +1", "Too Low");
+Ok();</script>
+    </questionsList>
+    <questionsList>
+        <decisionBox xsi:type="scriptBox" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+            <inputVariables>
+                <name>array</name>
+            </inputVariables>
+            <next xsi:type="assignBox">
+                <next xsi:type="assignBox">
+                    <next xsi:type="assignBox">
+                        <next xsi:type="functionBox">
+                            <next xsi:type="functionBox">
+                                <next xsi:type="functionBox">
+                                    <function xsi:type="ok"/>
+                                    <arguments xsi:type="constantValue">
+                                        <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">$count = $nrSwaps</value>
+                                    </arguments>
+                                </next>
+                                <function xsi:type="commentIf"/>
+                                <arguments xsi:type="constantValue">
+                                    <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">$count &lt; $nrSwaps</value>
+                                </arguments>
+                                <arguments xsi:type="constantValue">
+                                    <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">The given array could be sorted with less than %s swaps.</value>
+                                </arguments>
+                                <arguments xsi:type="valueOfIdentifier">
+                                    <variableName>nrSwaps</variableName>
+                                </arguments>
+                            </next>
+                            <function xsi:type="animate"/>
+                            <arguments xsi:type="valueOfIdentifier">
+                                <variableName>event</variableName>
+                            </arguments>
+                        </next>
+                        <variableName>event</variableName>
+                        <expression xsi:type="functionBox">
+                            <function xsi:type="retrieve"/>
+                            <arguments xsi:type="constantValue">
+                                <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">events/swapEvent</value>
+                            </arguments>
+                        </expression>
+                    </next>
+                    <variableName>count</variableName>
+                    <expression xsi:type="functionBox">
+                        <function xsi:type="retrieve"/>
+                        <arguments xsi:type="constantValue">
+                            <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">count(events/swapEvent)</value>
+                        </arguments>
+                    </expression>
+                </next>
+                <variableName>nrSwaps</variableName>
+                <expression xsi:type="constantValue">
+                    <value xsi:type="xs:int" xmlns:xs="http://www.w3.org/2001/XMLSchema">3</value>
+                </expression>
+            </next>
+            <AssignBox>
+                <next xsi:type="assignBox">
+                    <next xsi:type="assignBox">
+                        <next xsi:type="functionBox">
+                            <next xsi:type="functionBox">
+                                <next xsi:type="functionBox">
+                                    <function xsi:type="ok"/>
+                                    <arguments xsi:type="constantValue">
+                                        <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">$count = $nrSwaps</value>
+                                    </arguments>
+                                </next>
+                                <function xsi:type="commentIf"/>
+                                <arguments xsi:type="constantValue">
+                                    <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">$count &lt; $nrSwaps</value>
+                                </arguments>
+                                <arguments xsi:type="constantValue">
+                                    <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">The given array could be sorted with less than %s swaps.</value>
+                                </arguments>
+                                <arguments xsi:type="valueOfIdentifier">
+                                    <variableName>nrSwaps</variableName>
+                                </arguments>
+                            </next>
+                            <function xsi:type="animate"/>
+                            <arguments xsi:type="valueOfIdentifier">
+                                <variableName>event</variableName>
+                            </arguments>
+                        </next>
+                        <variableName>event</variableName>
+                        <expression xsi:type="functionBox">
+                            <function xsi:type="retrieve"/>
+                            <arguments xsi:type="constantValue">
+                                <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">events/swapEvent</value>
+                            </arguments>
+                        </expression>
+                    </next>
+                    <variableName>count</variableName>
+                    <expression xsi:type="functionBox">
+                        <function xsi:type="retrieve"/>
+                        <arguments xsi:type="constantValue">
+                            <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">count(events/swapEvent)</value>
+                        </arguments>
+                    </expression>
+                </next>
+                <variableName>nrSwaps</variableName>
+                <expression xsi:type="constantValue">
+                    <value xsi:type="xs:int" xmlns:xs="http://www.w3.org/2001/XMLSchema">3</value>
+                </expression>
+            </AssignBox>
+            <AssignBox>
+                <next xsi:type="assignBox">
+                    <next xsi:type="functionBox">
+                        <next xsi:type="functionBox">
+                            <next xsi:type="functionBox">
+                                <function xsi:type="ok"/>
+                                <arguments xsi:type="constantValue">
+                                    <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">$count = $nrSwaps</value>
+                                </arguments>
+                            </next>
+                            <function xsi:type="commentIf"/>
+                            <arguments xsi:type="constantValue">
+                                <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">$count &lt; $nrSwaps</value>
+                            </arguments>
+                            <arguments xsi:type="constantValue">
+                                <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">The given array could be sorted with less than %s swaps.</value>
+                            </arguments>
+                            <arguments xsi:type="valueOfIdentifier">
+                                <variableName>nrSwaps</variableName>
+                            </arguments>
+                        </next>
+                        <function xsi:type="animate"/>
+                        <arguments xsi:type="valueOfIdentifier">
+                            <variableName>event</variableName>
+                        </arguments>
+                    </next>
+                    <variableName>event</variableName>
+                    <expression xsi:type="functionBox">
+                        <function xsi:type="retrieve"/>
+                        <arguments xsi:type="constantValue">
+                            <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">events/swapEvent</value>
+                        </arguments>
+                    </expression>
+                </next>
+                <variableName>count</variableName>
+                <expression xsi:type="functionBox">
+                    <function xsi:type="retrieve"/>
+                    <arguments xsi:type="constantValue">
+                        <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">count(events/swapEvent)</value>
+                    </arguments>
+                </expression>
+            </AssignBox>
+            <AssignBox>
+                <next xsi:type="functionBox">
+                    <next xsi:type="functionBox">
+                        <next xsi:type="functionBox">
+                            <function xsi:type="ok"/>
+                            <arguments xsi:type="constantValue">
+                                <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">$count = $nrSwaps</value>
+                            </arguments>
+                        </next>
+                        <function xsi:type="commentIf"/>
+                        <arguments xsi:type="constantValue">
+                            <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">$count &lt; $nrSwaps</value>
+                        </arguments>
+                        <arguments xsi:type="constantValue">
+                            <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">The given array could be sorted with less than %s swaps.</value>
+                        </arguments>
+                        <arguments xsi:type="valueOfIdentifier">
+                            <variableName>nrSwaps</variableName>
+                        </arguments>
+                    </next>
+                    <function xsi:type="animate"/>
+                    <arguments xsi:type="valueOfIdentifier">
+                        <variableName>event</variableName>
+                    </arguments>
+                </next>
+                <variableName>event</variableName>
+                <expression xsi:type="functionBox">
+                    <function xsi:type="retrieve"/>
+                    <arguments xsi:type="constantValue">
+                        <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">events/swapEvent</value>
+                    </arguments>
+                </expression>
+            </AssignBox>
+            <FunctionBox>
+                <next xsi:type="functionBox">
+                    <next xsi:type="functionBox">
+                        <function xsi:type="ok"/>
+                        <arguments xsi:type="constantValue">
+                            <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">$count = $nrSwaps</value>
+                        </arguments>
+                    </next>
+                    <function xsi:type="commentIf"/>
+                    <arguments xsi:type="constantValue">
+                        <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">$count &lt; $nrSwaps</value>
+                    </arguments>
+                    <arguments xsi:type="constantValue">
+                        <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">The given array could be sorted with less than %s swaps.</value>
+                    </arguments>
+                    <arguments xsi:type="valueOfIdentifier">
+                        <variableName>nrSwaps</variableName>
+                    </arguments>
+                </next>
+                <function xsi:type="animate"/>
+                <arguments xsi:type="valueOfIdentifier">
+                    <variableName>event</variableName>
+                </arguments>
+            </FunctionBox>
+            <FunctionBox>
+                <next xsi:type="functionBox">
+                    <function xsi:type="ok"/>
+                    <arguments xsi:type="constantValue">
+                        <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">$count = $nrSwaps</value>
+                    </arguments>
+                </next>
+                <function xsi:type="commentIf"/>
+                <arguments xsi:type="constantValue">
+                    <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">$count &lt; $nrSwaps</value>
+                </arguments>
+                <arguments xsi:type="constantValue">
+                    <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">The given array could be sorted with less than %s swaps.</value>
+                </arguments>
+                <arguments xsi:type="valueOfIdentifier">
+                    <variableName>nrSwaps</variableName>
+                </arguments>
+            </FunctionBox>
+            <FunctionBox>
+                <function xsi:type="ok"/>
+                <arguments xsi:type="constantValue">
+                    <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">$count = $nrSwaps</value>
+                </arguments>
+            </FunctionBox>
+        </decisionBox>
+        <inputVariables>
+            <name>array</name>
+        </inputVariables>
+        <questionId>Question-3454406021296505174157</questionId>
+        <questionText>Write an array which will require 3 swaps to be sorted.</questionText>
+        <script>// Predefine the total number of swaps
+nrSwaps = 3;
+count = Retrieve("count(events/swapEvent)");
+
+event = Retrieve("events/swapEvent");
+Animate(event);
+
+CommentIf("$count &lt; $nrSwaps", "The given array could be sorted with less than %s swaps.",nrSwaps);
+Ok("$count = $nrSwaps");</script>
+    </questionsList>
+    <subTitle>by Jerome Saltmarsh</subTitle>
+    <title>Selection Sort Exercise</title>
+</ns2:exercise>

@@ -1,0 +1,308 @@
+%Animal 2 800*600
+title "Mutex mit Logical Clocks [DE]"
+author "Pascal Schardt"
+interactionDefinition "intDef20130625141209672.txt"
+interactionDefinition "intDef20130625141209672.txt"
+{
+  text "headerText" "Mutex mit Logical Clocks Animation" (20, 30) color (0, 0, 0) depth 1 font SansSerif size 12
+  rectangle "headerBorder" (10, 20) (215, 50) color (0, 0, 0) depth 1
+  codegroup "description" at (20, 65) color (0, 0, 0) highlightColor (255, 0, 0) contextColor (0, 0, 0) font SansSerif size 12 depth 1
+  addCodeLine "In verteilten System muss man haeufig bestimmen, welcher Prozess eine kritische Ressource erhaelt." to "description"
+  addCodeLine "Ein Mutex mit Locigal Clocks regelt den Zugriff auf diese kritische Ressource." to "description"
+  addCodeLine "Die folgende Animation soll die Funktionsweise dieses Algorithmus veranschaulichen." to "description"
+}
+{
+  graph "processes" size 4  color (0, 0, 0) bgColor (255, 255, 255) highlightColor (255, 255, 0) elemHighlightColor (0, 0, 0) nodeFontColor (0, 0, 0) edgeFontColor (0, 0, 0) directed  weighted nodes {"1" (200, 400), "2" (100, 300), "3" (199, 200), "4" (300, 300) } edges {(0, 0, "1") (0, 1, "1") (0, 2, "1") (0, 3, "1") (1, 0, "1") (1, 1, "1") (1, 2, "1") (1, 3, "1") (2, 0, "1") (2, 1, "1") (2, 2, "1") (2, 3, "1") (3, 0, "1") (3, 1, "1") (3, 2, "1") (3, 3, "1") }  depth 1
+  hide "processes" type "hideEdge (0, 0)"   
+  hide "processes" type "hideEdge (0, 1)"   
+  hide "processes" type "hideEdge (0, 2)"   
+  hide "processes" type "hideEdge (0, 3)"   
+  hide "processes" type "hideEdge (1, 0)"   
+  hide "processes" type "hideEdge (1, 1)"   
+  hide "processes" type "hideEdge (1, 2)"   
+  hide "processes" type "hideEdge (1, 3)"   
+  hide "processes" type "hideEdge (2, 0)"   
+  hide "processes" type "hideEdge (2, 1)"   
+  hide "processes" type "hideEdge (2, 2)"   
+  hide "processes" type "hideEdge (2, 3)"   
+  hide "processes" type "hideEdge (3, 0)"   
+  hide "processes" type "hideEdge (3, 1)"   
+  hide "processes" type "hideEdge (3, 2)"   
+  hide "processes" type "hideEdge (3, 3)"   
+  codegroup "sourceCode" at (500, 150) color (0, 0, 0) highlightColor (255, 0, 0) contextColor (0, 0, 0) font SansSerif size 12 depth 1
+  addCodeLine "Will ein Prozess X die kritische Ressource: " to "sourceCode"
+  addCodeLine " Setze STATE = WANTED" to "sourceCode" indentation 1
+  addCodeLine "	REQUEST an alle Prozesse mit Time Stamp" to "sourceCode" indentation 1
+  addCodeLine "	Sobald OK von allen Prozessen kam, nimm die Ressource und setze STATE = HELD" to "sourceCode" indentation 1
+  addCodeLine "" to "sourceCode"
+  addCodeLine "Beim Verlassen der kritischen Ressource: " to "sourceCode"
+  addCodeLine "	Setze STATE = RELEASED" to "sourceCode" indentation 1
+  addCodeLine "	OK an den Prozess mit kleinstem Time Stamp in Warteschlange " to "sourceCode" indentation 1
+  addCodeLine "" to "sourceCode"
+  addCodeLine "Wenn ein Prozess Y eine Anfrage bekommt: " to "sourceCode"
+  addCodeLine " Wenn Ressource frei, gib OK zurueck " to "sourceCode" indentation 1
+  addCodeLine "	Ansonsten Anfrage in Warteschlange einsortieren und OK an den Prozess mit kleinstem Time Stamp" to "sourceCode" indentation 1
+  addCodeLine "" to "sourceCode"
+  addCodeLine "Wenn ein Prozess Z die Ressource bekommt: " to "sourceCode"
+  addCodeLine "loesche diesen aus der Warteschlange und gib OK an kleinsten Time Stamp, wenn diese nicht leer ist " to "sourceCode"
+}
+{
+  text "currentEvent1" "" (20, 450) color (0, 0, 0) depth 1 font SansSerif size 12
+  text "Text2" "" (20, 470) color (0, 0, 0) depth 1 font SansSerif size 12
+  text "Text3" "" (20, 490) color (0, 0, 0) depth 1 font SansSerif size 12
+  setText of "currentEvent1" to "Prozess 3 hat die kritische Ressource"  
+}
+{
+  highlightNode on "processes" nodes 1  
+  setText of "currentEvent1" to "Prozess 2 will die kritische Ressource."  
+  highlightCode on "sourceCode" line 0 row 0  
+}
+{
+  unhighlightCode on "sourceCode" line 0 row 0  
+  setText of "currentEvent1" to "Prozess 2 will die kritische Ressource."  
+  highlightCode on "sourceCode" line 1 row 0  
+}
+{
+  unhighlightCode on "sourceCode" line 1 row 0  
+  setText of "Text3" to ""  
+  setText of "Text2" to ""  
+  setText of "currentEvent1" to ""  
+  highlightCode on "sourceCode" line 2 row 0  
+  setText of "currentEvent1" to "Prozess 2 sendet REQUESTS an Prozesse mit Time Stamp 8"  
+  setText of "processes" type "setEdgeWeight(1,0)" to "REQUEST 8"  
+  show "processes" type "showEdge (1, 0)"   
+  setText of "processes" type "setEdgeWeight(1,2)" to "REQUEST 8"  
+  show "processes" type "showEdge (1, 2)"   
+  setText of "processes" type "setEdgeWeight(1,3)" to "REQUEST 8"  
+  show "processes" type "showEdge (1, 3)"   
+  setText of "Text3" to "Es wurden bisher 3 Nachrichten versendet"  
+}
+{
+  hide "processes" type "hideEdge (0, 0)"   
+  hide "processes" type "hideEdge (0, 1)"   
+  hide "processes" type "hideEdge (0, 2)"   
+  hide "processes" type "hideEdge (0, 3)"   
+  hide "processes" type "hideEdge (1, 0)"   
+  hide "processes" type "hideEdge (1, 1)"   
+  hide "processes" type "hideEdge (1, 2)"   
+  hide "processes" type "hideEdge (1, 3)"   
+  hide "processes" type "hideEdge (2, 0)"   
+  hide "processes" type "hideEdge (2, 1)"   
+  hide "processes" type "hideEdge (2, 2)"   
+  hide "processes" type "hideEdge (2, 3)"   
+  hide "processes" type "hideEdge (3, 0)"   
+  hide "processes" type "hideEdge (3, 1)"   
+  hide "processes" type "hideEdge (3, 2)"   
+  hide "processes" type "hideEdge (3, 3)"   
+  unhighlightCode on "sourceCode" line 2 row 0  
+  highlightCode on "sourceCode" line 3 row 0  
+  setText of "Text3" to "Es wurden bisher 3 Nachrichten versendet"  
+}
+{
+  unhighlightCode on "sourceCode" line 3 row 0  
+  unhighlightNode on "processes" nodes 1  
+  highlightCode on "sourceCode" line 0 row 0  
+}
+{
+  highlightNode on "processes" nodes 3  
+  setText of "currentEvent1" to "Prozess 4 will die kritische Ressource."  
+  highlightCode on "sourceCode" line 0 row 0  
+}
+{
+  unhighlightCode on "sourceCode" line 0 row 0  
+  setText of "currentEvent1" to "Prozess 4 will die kritische Ressource."  
+  highlightCode on "sourceCode" line 1 row 0  
+}
+{
+  unhighlightCode on "sourceCode" line 1 row 0  
+  setText of "Text3" to ""  
+  setText of "Text2" to ""  
+  setText of "currentEvent1" to ""  
+  highlightCode on "sourceCode" line 2 row 0  
+  setText of "currentEvent1" to "Prozess 4 sendet REQUESTS an Prozesse mit Time Stamp 8"  
+  setText of "processes" type "setEdgeWeight(3,0)" to "REQUEST 16"  
+  show "processes" type "showEdge (3, 0)"   
+  setText of "processes" type "setEdgeWeight(3,1)" to "REQUEST 16"  
+  show "processes" type "showEdge (3, 1)"   
+  setText of "processes" type "setEdgeWeight(3,2)" to "REQUEST 16"  
+  show "processes" type "showEdge (3, 2)"   
+  setText of "Text3" to "Es wurden bisher 6 Nachrichten versendet"  
+}
+{
+  hide "processes" type "hideEdge (0, 0)"   
+  hide "processes" type "hideEdge (0, 1)"   
+  hide "processes" type "hideEdge (0, 2)"   
+  hide "processes" type "hideEdge (0, 3)"   
+  hide "processes" type "hideEdge (1, 0)"   
+  hide "processes" type "hideEdge (1, 1)"   
+  hide "processes" type "hideEdge (1, 2)"   
+  hide "processes" type "hideEdge (1, 3)"   
+  hide "processes" type "hideEdge (2, 0)"   
+  hide "processes" type "hideEdge (2, 1)"   
+  hide "processes" type "hideEdge (2, 2)"   
+  hide "processes" type "hideEdge (2, 3)"   
+  hide "processes" type "hideEdge (3, 0)"   
+  hide "processes" type "hideEdge (3, 1)"   
+  hide "processes" type "hideEdge (3, 2)"   
+  hide "processes" type "hideEdge (3, 3)"   
+  unhighlightCode on "sourceCode" line 2 row 0  
+  highlightCode on "sourceCode" line 3 row 0  
+  setText of "Text3" to "Es wurden bisher 6 Nachrichten versendet"  
+}
+{
+  unhighlightCode on "sourceCode" line 3 row 0  
+  unhighlightNode on "processes" nodes 3  
+  highlightCode on "sourceCode" line 0 row 0  
+}
+{
+  interaction "multipleChoiceQuestion"
+}
+{
+  setText of "currentEvent1" to "Die Anfragen werden von den Prozessen verarbeitet"  
+  setText of "Text2" to ""  
+  setText of "Text3" to "Es wurden bisher 6 Nachrichten versendet"  
+  highlightCode on "sourceCode" line 9 row 0  
+}
+{
+  unhighlightCode on "sourceCode" line 9 row 0  
+  setText of "currentEvent1" to "Die Anfragen werden von den Prozessen verarbeitet"  
+  setText of "processes" type "setEdgeWeight(0,1)" to "OK"  
+  show "processes" type "showEdge (0, 1)"   
+  setText of "processes" type "setEdgeWeight(3,1)" to "OK"  
+  show "processes" type "showEdge (3, 1)"   
+  setText of "Text2" to ""  
+  setText of "Text3" to "Es wurden bisher 8 Nachrichten versendet"  
+  highlightCode on "sourceCode" line 11 row 0  
+}
+{
+  unhighlightCode on "sourceCode" line 11 row 0  
+  setText of "Text3" to ""  
+  setText of "Text2" to ""  
+}
+{
+  highlightNode on "processes" nodes 2  
+  setText of "currentEvent1" to "Prozess 3 gibt die Ressource frei"  
+  highlightCode on "sourceCode" line 5 row 0  
+  setText of "Text3" to "Es wurden bisher 8 Nachrichten versendet"  
+}
+{
+  unhighlightCode on "sourceCode" line 5 row 0  
+  highlightCode on "sourceCode" line 6 row 0  
+  setText of "Text3" to "Es wurden bisher 8 Nachrichten versendet"  
+}
+{
+  unhighlightCode on "sourceCode" line 6 row 0  
+  highlightCode on "sourceCode" line 7 row 0  
+  setText of "processes" type "setEdgeWeight(2,1)" to "OK"  
+  show "processes" type "showEdge (2, 1)"   
+  setText of "Text3" to "Es wurden bisher 9 Nachrichten versendet"  
+}
+{
+  unhighlightNode on "processes" nodes 2  
+  hide "processes" type "hideEdge (0, 0)"   
+  hide "processes" type "hideEdge (0, 1)"   
+  hide "processes" type "hideEdge (0, 2)"   
+  hide "processes" type "hideEdge (0, 3)"   
+  hide "processes" type "hideEdge (1, 0)"   
+  hide "processes" type "hideEdge (1, 1)"   
+  hide "processes" type "hideEdge (1, 2)"   
+  hide "processes" type "hideEdge (1, 3)"   
+  hide "processes" type "hideEdge (2, 0)"   
+  hide "processes" type "hideEdge (2, 1)"   
+  hide "processes" type "hideEdge (2, 2)"   
+  hide "processes" type "hideEdge (2, 3)"   
+  hide "processes" type "hideEdge (3, 0)"   
+  hide "processes" type "hideEdge (3, 1)"   
+  hide "processes" type "hideEdge (3, 2)"   
+  hide "processes" type "hideEdge (3, 3)"   
+  unhighlightCode on "sourceCode" line 7 row 0  
+  highlightCode on "sourceCode" line 3 row 0  
+  highlightCode on "sourceCode" line 13 row 0  
+  highlightCode on "sourceCode" line 14 row 0  
+  highlightNode on "processes" nodes 1  
+  setText of "currentEvent1" to "Prozess 2 bekommt die Ressource"  
+  setText of "Text2" to "Prozess 2 wird aus den Warteschlangen der anderen Prozesse geloescht und diese geben neues OK"  
+  setText of "Text3" to "Es wurden bisher 9 Nachrichten versendet"  
+}
+{
+  setText of "currentEvent1" to "Die Anfragen werden von den Prozessen verarbeitet"  
+  setText of "Text2" to ""  
+  setText of "Text3" to "Es wurden bisher 9 Nachrichten versendet"  
+  highlightCode on "sourceCode" line 9 row 0  
+}
+{
+  unhighlightCode on "sourceCode" line 9 row 0  
+  setText of "currentEvent1" to "Die Anfragen werden von den Prozessen verarbeitet"  
+  setText of "processes" type "setEdgeWeight(0,3)" to "OK"  
+  show "processes" type "showEdge (0, 3)"   
+  setText of "processes" type "setEdgeWeight(2,3)" to "OK"  
+  show "processes" type "showEdge (2, 3)"   
+  setText of "Text2" to ""  
+  setText of "Text3" to "Es wurden bisher 11 Nachrichten versendet"  
+  highlightCode on "sourceCode" line 11 row 0  
+}
+{
+  unhighlightCode on "sourceCode" line 11 row 0  
+  setText of "Text3" to ""  
+  setText of "Text2" to ""  
+}
+{
+  highlightNode on "processes" nodes 1  
+  setText of "currentEvent1" to "Prozess 2 gibt die Ressource frei"  
+  highlightCode on "sourceCode" line 5 row 0  
+  setText of "Text3" to "Es wurden bisher 11 Nachrichten versendet"  
+}
+{
+  unhighlightCode on "sourceCode" line 5 row 0  
+  highlightCode on "sourceCode" line 6 row 0  
+  setText of "Text3" to "Es wurden bisher 11 Nachrichten versendet"  
+}
+{
+  unhighlightCode on "sourceCode" line 6 row 0  
+  highlightCode on "sourceCode" line 7 row 0  
+  setText of "processes" type "setEdgeWeight(1,3)" to "OK"  
+  show "processes" type "showEdge (1, 3)"   
+  setText of "Text3" to "Es wurden bisher 12 Nachrichten versendet"  
+}
+{
+  unhighlightNode on "processes" nodes 1  
+  hide "processes" type "hideEdge (0, 0)"   
+  hide "processes" type "hideEdge (0, 1)"   
+  hide "processes" type "hideEdge (0, 2)"   
+  hide "processes" type "hideEdge (0, 3)"   
+  hide "processes" type "hideEdge (1, 0)"   
+  hide "processes" type "hideEdge (1, 1)"   
+  hide "processes" type "hideEdge (1, 2)"   
+  hide "processes" type "hideEdge (1, 3)"   
+  hide "processes" type "hideEdge (2, 0)"   
+  hide "processes" type "hideEdge (2, 1)"   
+  hide "processes" type "hideEdge (2, 2)"   
+  hide "processes" type "hideEdge (2, 3)"   
+  hide "processes" type "hideEdge (3, 0)"   
+  hide "processes" type "hideEdge (3, 1)"   
+  hide "processes" type "hideEdge (3, 2)"   
+  hide "processes" type "hideEdge (3, 3)"   
+  unhighlightCode on "sourceCode" line 7 row 0  
+  highlightCode on "sourceCode" line 3 row 0  
+  highlightCode on "sourceCode" line 13 row 0  
+  highlightCode on "sourceCode" line 14 row 0  
+  highlightNode on "processes" nodes 3  
+  setText of "currentEvent1" to "Prozess 4 bekommt die Ressource"  
+  setText of "Text2" to "Prozess 4 wird aus den Warteschlangen der anderen Prozesse geloescht und diese geben neues OK"  
+  setText of "Text3" to "Es wurden bisher 12 Nachrichten versendet"  
+}
+{
+  unhighlightCode on "sourceCode" line 3 row 0  
+  unhighlightCode on "sourceCode" line 13 row 0  
+  unhighlightCode on "sourceCode" line 14 row 0  
+  setText of "Text3" to "Es wurden bisher 12 Nachrichten versendet"  
+}
+{
+}
+{
+  codegroup "sum" at (20, 65) color (0, 0, 0) highlightColor (255, 0, 0) contextColor (0, 0, 0) font SansSerif size 12 depth 1
+  addCodeLine "Alle Ressourcenanfragen wurden befriedigt" to "sum"
+  addCodeLine "" to "sum"
+  addCodeLine "Es wurden 12 Nachrichten geschickt, um 2 Prozessen die Ressource zu gewaehren" to "sum"
+  hide "description" "processes" "currentEvent1" "Text2" "Text3" "sourceCode" 
+}

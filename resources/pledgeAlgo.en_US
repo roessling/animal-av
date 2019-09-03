@@ -1,0 +1,13 @@
+noSuchKeyException=there is no resource for the key {0}
+iconNotFound=Icon ”{0}” not found
+
+noexit=No exit found. By reaching 540 degrees, we know that we have already seen the labyrinth from here.\nAt 360 degrees, we look in the start direction.\nAt 450 degrees, we look in the same direction like at 90 degrees, but we can not be sure to have searched this edge completely because we do not know where we started at 90 degrees.\nWhen reached 540 degrees, we know that we go around in circles.
+exit=Exit found at
+title=Pledge-algorithm
+error=No start point found
+algoInfo=The algorithm view.
+labyInfo=The labyrinth.
+explanation=The Pledge algorithm is an algorithm which allows you to escape from a planar labyrinth.\nNo information of the labyrinth is necessary except to know whether left from you is wall or not.\nThe strategy followed is simple.\nWhile going through the labyrinth make sure there is a wall to your left.\nWhen hitting a wall in front of you, turn to the right and add 90 degree to the total rotation count.\nIf there is no wall on left side of you and you have more than 0 degrees in the rotation counter, you turn to the left and subtract 90 degrees from the rotation counter.\nWhen the counter reaches 540 degrees and no exit was found, so there is no exit if the labyrinth is planar.
+inputSpec=\n\nHow to use manual input:\nThe meaning of the numbers in the matrix:\n0 = Path\n1 = Wall\n2 = Exit\n3 = Start
+pseudoCode=Set rotation counter to 0;\nrepeat\n      repeat\n            go forward;\n      until reached wall;\n      turn right;\n      repeat\n            follow the obstacle;\n      until rotation counter = 0;\nuntil exit found;
+name=The Pledge-algorithm

@@ -1,0 +1,98 @@
+noSuchKeyException=there is no ressource for the key {0}
+iconNotFound=Icon "{0}" not found
+TITLE=Local Outlier Factor
+SRC_0=for(Point p: points)
+SRC_1=p.knn = points.clone();
+SRC_2=p.knn.remove(p);
+SRC_3=p.knn.sort(distance);
+SRC_4=p.kDist = distance(p, p.knn.get(k));
+SRC_5=p.knn.removeIf(o -> distance(p,o) > p.kDist);
+SRC_6=for(Point p: points) 
+SRC_7=sum_rd = p.knn.stream()
+SRC_8=.mapToDouble(q -> rDist(p,q))
+SRC_9=.sum();
+SRC_10=p.lrd = 1 / (sum_rd ( p.knn.size())
+SRC_11=for(Point p: points)
+SRC_12=sum_lrd = p.knn.stream()
+SRC_13=.mapToDouble(q -> q.getLrd())
+SRC_14=.sum();
+SRC_15=p.lof = (sum_lrd / p.knn.size) / p.lrd
+
+DESC_0=The local outlier factor is an algorithm proposed by Markus M. Breunig, Hans-
+DESC_1=Peter Kriegel, Raymond T. Ng and Jörg Sander in 2000 for finding anomalous data
+DESC_2=points by measuring the local deviation of a given data point with respect to
+DESC_3=its neighbors.
+DESC_4=
+DESC_5=The algorithm starts with a constant k and a set of objects with a distance
+DESC_6=function. At first the distance to the k-th nearest neighbor will be determined
+DESC_7=for every object A ( k-distance(A) ), as well as a set of objects containing all
+DESC_8=objects within the k-distance of an object ( Nk(A) ).
+DESC_9=
+DESC_10=The next step is to calculate the local reachability density (LRD) for every
+DESC_11=object, wich is the inverse of the average reachability distance of an object
+DESC_12=from its neighbors, wich can be infinite at duplicate points.
+DESC_13
+DESC_14=Afterwards the local reachability densities will be compared with those of the
+DESC_15=neighbors, which is the average local reachability density of the neighbors
+DESC_16=divided by the objects own local reachability density. A value near 1 indicates
+DESC_17=that the object comparable to its neighbors, a value below 1 indicates a denser
+DESC_18=region, while values significantly larger than 1 indicate outliers.
+DESC_19=
+
+
+VAR_K=k
+VAR_CURRENT_POINT=currentPoint
+VAR_CP_KDST=p.kDst
+VAR_CP_KNN=p.kNN
+VAR_CP_LRD=p.lrd
+VAR_CP_LOF=p.lof
+VAR_SUM_RD=sumRD
+VAR_SUM_LRD=sumLRD
+
+LGND:Legend:
+LGND_CURRENT_POINT=Current Point
+LGND_NEIGHBOR_POINT=Neighbor Point
+LGND_KTH_NN=k-th Nearest Neighbor
+LGND_INLIER=Inlier
+LGND_DEF_INLIER=Definitive Inlier
+LGND_OUTLIER=Outlier
+
+HINT=Hint:
+HINT_KNN_KDST=Calculate K-Nearest-Neighbor list and K-Distance for every Point
+HINT_ALL_NEIGHBORS=Add all points exept {0} to neighbors and sort by distance to {0}
+HINT_NEW_KDIST=p.kDist is now the distance of the k-th nearest neighbor, that is {0}
+HINT_REMOVE_NOT_NEIGHBOR=Remove all neighbors outside of k-Distance from k-nearest-neighbors
+HINT_CALC_ALL_LRD=Calculate local reachability distance (LRD) for every point
+HINT_SUM_ALL_RD=The sum of the reachability distances to all neighbors of {0} is {1}
+HINT_CALC_LRD=Calculate LRD for {0} (1/ (sum_rd/KNN.size)) that is {1}
+HINT_CALC_ALL_LOF=Calculate LOF for every point, that is the average LRD of neighbors divided by own LRD
+HINT_SUM_ALL_LRD=The sum of LRDs of neighbors of {0} is {1} 
+HINT_CALC_LOF=Calculate LOF of {0} that is {1}
+
+SECTION_DESCRIPTION=Description
+SECTION_KDIST=Find K-Nearest-Neighbors and kDistance
+SECTION_LRD=Calculate Local Reachability Distance
+SECTION_LOF=Calculate Local Outlier Factor
+SECTION_SUMMARY=Summary
+
+INFO_DISTANCE=dst: {0}
+INFO_RDST=rDst: {0}
+INFO_KDST=kDst: {0}
+INFO_LRD=LRD: {0}
+INFO_LOF=LOF: {0}
+
+SUMM_INLIER=The following Points are strict inlier (LOF <= 1):
+SUMM_OUTLIER=The following Points are outlier (LOF > 1 + standard-deviation):
+SUMM_OTHER=The following Points are inlier (LOF <= 1 + standard-deviation):
+
+QST_NEIGHBORS=What will be the k-Nearest-Neighbors of Point {0}?
+QST_NEIGHBORS_FB_RIGHT=Thats right, Point {0} is within K-Distance.
+QST_NEIGHBORS_FB_WRONG=Thats not right, Point {0} is not within K-Distance.
+QST_KNN=What is the k-th nearest neighbor of Point {0}
+QST_KNN_FB_RIGHT=Thats right, Point {0} is the k-th nearest neighbor of Point {1}.
+QST_KNN_FB_WRONG=Thats not right. The k-th nearest neighbor of Point {0} is Point {1}.
+QST_OUTLIER=Point {0} is an outlier.
+
+
+
+

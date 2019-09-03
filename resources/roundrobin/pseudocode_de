@@ -1,0 +1,19 @@
+Prozedur Round-Robin-Scheduling
+ 
+tue für immer {
+falls (Warteschlange ist leer)
+warte eine Zeiteinheit lang;
+sonst
+zeitscheibe <- k;	
+solange (zeitscheibe > 0 && !(erster beendet)) {		
+führe erster eine Zeiteinheit lang aus;
+dekrementiere zeitscheibe;
+}
+falls (erster beendet)
+entferne erster aus der Warteschlange;
+sonst
+rotiere die Prozesse in der Warteschlange;
+ 
+ 
+}
+ 

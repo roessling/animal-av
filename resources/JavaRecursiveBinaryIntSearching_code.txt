@@ -1,0 +1,16 @@
+public int recursiveBinarySearch(int[] array, int value, int l, int r) { @CodeLabel("header")
+  if (array == null) { @CodeLabel("ifNull")
+    return -1; @CodeLabel("invalid")
+  }
+  if (l > r || l < 0 || r >= array.length) { @CodeLabel("invalidIndex")
+    return -1; @CodeLabel("invalidIndexReturn")
+  }
+  int mid = (l + r) / 2; @CodeLabel("installMidMarker")
+  if (array[mid] == value) @CodeLabel("checkFound")
+    return mid; @CodeLabel("found")
+  else if (value < array[mid]) @CodeLabel("ifLess")
+    return recursiveBinarySearch(array, value, l, mid - 1); @CodeLabel("continueLeft")
+
+  return recursiveBinarySearch(array, value, mid + 1, r); @CodeLabel("continueRight")
+
+}

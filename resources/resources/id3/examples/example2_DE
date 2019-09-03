@@ -1,0 +1,11 @@
+Beispiel: Eine Band möchte ein neues Album herausbringen mit einem super Titelsong darauf. Aber momentan kann sich keines der
+Bandmitglieder vorstellen, wie dieser Song sein soll. Der Gitarrist hat eine Idee: Er trägt Informationen zusammen über die
+bisherigen Titelsongs und ob sie Welthits wurden oder nicht (in der 'Haupttabelle'). Ein Eintrag enthält Informationen über den Musikstil
+(STIL), die Kreativität des Textes (KREATIVITÄT) und ob eine Geige wichtiger Aspekt des Liedes war (GEIGE). Und schließlich beschreibt der 
+Wert der Klasse (ganz rechts, 'ja' oder 'nein'), ob das Lied ein Welthit wurde oder nicht. ID3 nimmt diese Beispiele als Eingabe 
+und entwickelt ein allgemeines Konzept, wann Lieder dieser Band zu Welthits werden und wann nicht.
+
+Jetzt kann die Band sich Gedanken machen, wie der Hauptsong klingen soll. Der Baum ermöglicht Vorhersagen 
+darüber, ob das Lied ein Welthit wird. Und so ermittelt man eine Vorhersage:
+Mit dem Wurzelknoten beginnend folgt man den Kanten, die zu den entsprechenden Attributwerten dieses Liedes gehören; 
+das Blatt, an dem man ankommt, gibt die Erwartung an (allerdings nur basierend auf den bisher gesehenen Beispiele).

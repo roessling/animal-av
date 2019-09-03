@@ -1,0 +1,60 @@
+# Description
+description=KURZBESCHREIBUNG\nOS-RANK(T, x) gibt die Position (Rang) von Knoten x in der linearen Reihenfolge zurück, die durch eine Inorder-Traversierung von T bestimmt wird.\n\nANWENDUNGSFALL\nFalls effizient die Position eines Objekts bezüglich der totalen Ordnung einer Menge bestimmt werden soll, kann OS-RANK genutzt werden.\n\nERWEITERTE BESCHREIBUNG\nDer Algorithmus OS-RANK, wie er hier vorgestellt wird, stammt aus dem Buch "Algorithmen - Eine Einführung" von Thomas H.Cormen, Charles E. Leiserson, Ronold Rivest, Clifford Stein.\n\nDamit der Algorithmus möglichst effizient arbeitet, wird ein erweiterter Rot-Schwarz-Baum verwendet, da nur so eine Komplexität von O(lg(n)) erreicht werden kann, weil bei einem Rot-Schwarz-Baum die Höhe O(lg(n)) beträgt, wobei n die Anzahl der Knoten im Baum ist. Damit der Algorithmus korrekt arbeiten kann, muss jeder Knoten x des Rot-Schwarz-Baums um das Attribut Größe erweitert werden. Das Attribut Größe enthält hierbei die Anzahl der inneren Knoten des von x ausgehenden Teilbaums zzgl. 1 für x selbst.\n\nT ist ein Rot-Schwarz-Baum wie oben beschrieben\n\nx ist der Knoten, dessen Position(Rang) im Rot-Schwarz-Baum T bestimmt werden soll\n\nRang ist die Position eines Knoten x in der linearen Reihenfolge der Knoten eines Rot-Schwarz-Baums\n\nEINSTELLUNGSMÖGLICHKEITEN\nUnter Primitives->"Schlüssel für Baumknoten" kann ein eigener Rot-Schwarz-Baum erstellt werden. Hierzu müssen die Schlüssel für die Knoten eingegeben werden, die dem Rot-Schwarz-Baum hinzugfügt werden sollen. Anschließend wird der Rot-Schwarz-Baum automatisch generiert und auch das Attribut Größe wird automatisch berechnet.\n\nUnter Primitives->"Schlüssel für Inorder-Traversierung" kann der Schlüssel des Knotens festgelegt werden, von dem der Rang mittels OS-Rank bestimmt werden soll.\n\nAußerdem gibt es noch weitere Optionen, um z. B. Farbe oder Schriftgröße zu ändern.
+
+# Startscreen
+startscreen.description.line1=28
+startscreen.description.line2=OS-RANK(T, x) gibt die Position von Knoten x in linearer Reihenfolge
+startscreen.description.line3=zurück, die durch eine Inorder-Traversierung von T bestimmt werden würde. 
+startscreen.description.line4=Es wird die Größe der Knoten zur Bestimmung des Rangs genutzt.
+startscreen.description.line5=\n STRATEGIE
+startscreen.description.line6=Der Rang von Knoten x wird durch die Anzahl der Knoten, 
+startscreen.description.line7=die vor x in einer Inorder-Traversierung besucht werden, plus 1, bestimmt.
+startscreen.description.line8=\n VARIABLEN
+startscreen.description.line9=* T \t ist der Baum T, der Knoten x enthält
+startscreen.description.line10=* x \t ist der Knoten, dessen Rang bestimmt werden soll
+startscreen.description.line11=* y \t ist der aktuell betrachtete Knoten
+startscreen.description.line12=* r \t ist der Rang des aktuell betrachteten Knotens y
+startscreen.description.line13=\n FUNKTIONEN 
+startscreen.description.line14=Erklärungen für einen Funktionsaufruf OS-RANK(T, x) mit Baum T und Knoten x
+startscreen.description.line15=* x.left    gibt das linke Kind von Knoten x zurück
+startscreen.description.line16=* x.right  gibt das rechte Kind von Knoten x zurück
+startscreen.description.line17=* x.size   gibt die Größe des Knoten x zurück
+startscreen.description.line18=* x.p       gibt das Elter des Knoten x zurück
+startscreen.description.line19=* T.root  gibt die Wurzel des Baums T zurück
+startscreen.description.line20=\n ERLÄUTERUNGEN
+startscreen.description.line21=(1) Initialisiere x mit der Größe des linken Kindes von x plus 1
+startscreen.description.line22=(2) Setze aktuellen Knoten y auf x. Der Knoten x ist der Startpunkt der Inorder-Traversierung
+startscreen.description.line23=(3) Führe eine Inorder-Traversierung durch bis die Wurzel erreicht ist
+startscreen.description.line24=(4) Falls y das rechte Kind des Elter von y ist
+startscreen.description.line25=(5) Addiere zu r die Größe des linken Kindes des Elter von y plus 1
+startscreen.description.line26=(6) Setze den aktuellen Knoten y auf den Elter von y
+startscreen.description.line27=(7) Gebe den Wert r zurück, dies ist der ermittelte Rang von x
+startscreen.description.line28=\nQuelle: Algorithmen - Eine Einführung, Charles E. Leiserson, Clifford Stein, \nRonald L. Rivest, Thomas H. Cormen
+
+# Animation 
+sourcecode.Description.line1=Setze r auf die Größe des linken Kindes von x plus 1
+sourcecode.Description.line2=Setze y auf x
+sourcecode.Description.line3=Solange y ungleich der Wurzel des Baumes
+sourcecode.Description.line4=Wenn y das rechte Kind des Elternknoten von y ist
+sourcecode.Description.line5=Erhöhe r um die Größe des linken Kindes des Elter von y plus 1
+sourcecode.Description.line6=Setze y auf das Elter von y
+sourcecode.Description.line7=Gib r zurück
+
+# Endscreen
+endscreen.description.line1=7
+endscreen.description.line2=KOMPLEXITÄT
+endscreen.description.line3=Da jede Iteration der while-Schleife Zeit O(1) benötigt und y mit jeder  
+endscreen.description.line4=Iteration im Baum eine Ebene aufwärts bewegt wird, ist die Laufzeit von OS-RANK 
+endscreen.description.line5=im schlechtesten Fall proportional zur Höhe des Baumes, also O(log n) auf einem
+endscreen.description.line6=Ranggrößen-Baum mit n Knoten
+endscreen.description.line7=\nQuelle: Algorithmen - Eine Einführung, Charles E. Leiserson, Clifford Stein, \nRonald L. Rivest, Thomas H. Cormen
+
+# XML-file
+# values must be changed in XML file AND here
+color_sourceCodeHighlight=[Farbe] Hervorhebung Quelltext
+color_sourceCode=[Farbe] Quelltext
+color_currentNode=[Farbe] Aktueller Knoten
+textProperties_startEndScreen=[Texteigenschaften] Start- und Endseite
+color_rect=[Farbe] Hintergrund der Rechtecke
+t_nodeKeys=Schlüssel für Baumknoten
+x_KeyForInorderTreeWalk=Schlüssel für Inorder-Traversierung

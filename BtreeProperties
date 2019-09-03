@@ -1,0 +1,74 @@
+--deutsche Dokumentation B-Bäume
+
+-- Bei insert/remove/repair/split ist {0} der eingefügte/gelöschte Schlüssel. 
+-- Bei repair enthält {2} die benutzten Reorganisationsoperationen.
+-- Bei split enthält {2} die Anzahl an durchgeführten split Operationen.
+-- Die Schwierigkeitsgrade expert/intermediate/novice können jeweile 1/2/4 Zeilen 
+-- Dokumentation verarbeiten.
+
+insert.expert.de = Der Baum nach der Operation insert({0}).
+remove.expert.de = Der Baum nach der Operation remove({0}).
+repair.expert.de = Nach der Operation remove({0}) verletzt der rote Knoten die B-Baum Eigenschaften. 
+split.expert.de = Nach der Operation insert({0}) verletzt der rote Knoten die B-Baum Eigenschaften. 
+insert.intermediate1.de = Der Baum nach der Operation insert({0}).
+remove.intermediate1.de = Der Baum nach der Operation remove({0}).
+repair.intermediate1.de = Nach der Operation remove({0}) verletzt der rote Knoten die B-Baum Eigenschaften. 
+repair.intermediate2.de = Dieser Unterlauf muss durch Mischen oder Rotieren behoben werden.
+split.intermediate1.de = Nach der Operation insert({0}) verletzt der rote Knoten die B-Baum Eigenschaften. 
+split.intermediate2.de = Dieser Überlauf muss durch Splitten des Knoten behoben werden.
+insert.novice1.de = Nach {2}maliger Ausführung der Split Operation, 
+insert.novice2.de = entsteht nach der Operation insert({0}) dieser Baum. 
+remove.novice1.de = Der Baum nach der Operation remove({0}). Hier wurde {2} 
+remove.novice2.de = angewandt, um die B-Baum Eigenschaften zu erhalten.
+repair.novice1.de = Nach der Operation remove({0}) verletzt der rote Knoten die B-Baum Eigenschaften. Diese muss durch
+repair.novice2.de = Rotieren mit einem Knoten der mehr als Ordnung/2 Schlüssel hat behoben werden. Alternativ kann auch gemischt  
+repair.novice3.de = werden, wobei der Knoten mit Unterlauf, ein Knoten der minimal besetzt ist und der zugehörige Schlüssel aus dem  
+repair.novice4.de = Vaterknoten, zu einem voll besetzten Knoten zusammengefasst werden.
+split.novice1.de = Nach der Operation insert({0}) verletzt der rote Knoten nach {2} Split Operationen die B-Baum Eigenschaften.
+split.novice2.de = Um diese wieder herzustellen, wird der mittlere Schlüssel eine Ebene höher eingefügt. Sollte der Überlauf in der Wurzel 
+split.novice3.de = entstanden sein, entsteht hierbei eine neue Wurzel. Die Schlüssel links von diesem mittleren Element 
+split.novice4.de = ergeben den neuen linken Sohn und die Schlüssel rechts ergeben den neuen rechten Sohn.
+noOp.de = keine Reorganisation
+conjunction.de = und
+rotateRight.de = eine Rotation mit dem rechten Nachbarknoten
+rotateLeft.de = eine Rotation mit dem linken Nachbarknoten
+mixRight.de = eine Mischoperation mit dem rechten Nachbarknoten
+mixLeft.de = eine Mischoperation mit dem linken Nachbarn
+
+
+--english documentation b-tree
+
+-- For insert/remove/repair/split {0} is the inserted/removed key. 
+-- For repair {2} contains the operations that were performed.
+-- For split {2} is the number of split operations performed.
+-- The documentationlevels expert/intermediate/novice are able to work with
+-- 1/2/4 lines of documentation text.
+
+insert.expert.eng = B-Tree after operation insert({0}).
+remove.expert.eng = B-Tree after operation remove({0}).
+repair.expert.eng = After removing key {0} from the tree, the red node violates the b-tree properties.
+split.expert.eng = After inserting key {0}, the red node violates the b-tree properties.
+insert.intermediate1.eng = B-Tree after operation insert({0}).
+remove.intermediate1.eng = B-Tree after operation remove({0}).
+repair.intermediate1.eng = After removing key {0} from the tree, the red node violates the b-tree properties.
+repair.intermediate2.eng = The arisen underflow must be repaired by rotating or merging.
+split.intermediate1.eng = After inserting key {0}, the red node violates the b-tree properties. 
+split.intermediate2.eng = The arisen overflow must be repaired by splitting the node.
+insert.novice1.eng = After {2}splitting operations, the given tree originates from the operation 
+insert.novice2.eng = insert{0}.
+remove.novice1.eng = The tree after removing{0}. The tree originates from {2} to restore the
+remove.novice2.eng = b-tree properties.
+repair.novice1.eng = After removing key {0} from the tree, the red node violates the b-tree properties. These properties have to be
+repair.novice2.eng = repaired by rotating or merging. By rotating one neighbour node with more than order/2 keys hands one key over. 
+repair.novice3.eng = Alternativly the node can be merged with one neighbour by combining it with one minimal packed node with the associated   
+repair.novice4.eng = associated key from the father node into one full packed node.
+split.novice1.eng = After inserting key {0}, the red node violates the b-tree properties.
+split.novice2.eng = To rebuild these properties, the middle key is inserted one plane above. If the overflow occured in the root node, 
+split.novice3.eng = a new root node is build. The keys left from the middle make the new left son and right from the middle  
+split.novice4.eng = make the new right son of the middle key.
+noOp.eng = no reorganisation
+conjunction.eng = and
+rotateRight.eng = one rotation with the right neighbour
+rotateLeft.eng = one rotation with the left neighbour
+mixRight.eng = one merge operation with the right neighbour
+mixLeft.eng = one merge operation with the left neighbour

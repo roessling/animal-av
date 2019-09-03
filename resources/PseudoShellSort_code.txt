@@ -1,0 +1,11 @@
+ShellSort(int[] array) #header
+  Declare int i, j, dist, v; #variables
+  loop for dist = 1 until dist < array length / 9 with step dist = dist * 3 +1; #initDist
+  loop for dist until dist > 0 with step dist /= 3: #loop1
+    loop for i = dist until i < array length: #loop2
+      v = array[i]; #takeOut
+      j = i; #setJ
+      loop while j >= dist and v < array[j - dist]: #loop3
+        array[j] = array[j-dist]; #moveForward
+        j = j - dist; #decrementJ
+      array[j] = v; #insert

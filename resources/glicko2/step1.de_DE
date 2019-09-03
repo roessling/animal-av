@@ -1,0 +1,17 @@
+Wenn der Spieler noch nicht
+bewertet wurde, setzen wir
+die Wertung auf 1500, die
+Abweichung auf 350 und die
+Volatilität auf 0,06.
+
+Sonst benutzen wir die Werte aus
+der vorherigen Iteration.
+
+Details zur Umsetzung:
+Es ist wichtig, auf einer Kopie
+der Werte zu arbeiten, da wir 
+davon ausgehen, dass die Berechnungen 
+einer Iteration simultan durchgeführt
+werden und die neuen Werte der aktuellen
+Iteration keine anderen Spieler 
+beeinflussen sollen.

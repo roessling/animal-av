@@ -1,0 +1,45 @@
+#Ueberpruefung
+noSuchKeyException=Es wurde keine Ressource für den Schlüssel {0}
+iconNotFound=Das Icon "{0}” wurde nicht gefunden
+
+#Die Einführung
+
+INTRO0=Der Trial Division Algorithmus ist ein ineffizienter, aber auch sehr simpler Ansatz
+INTRO1=die Faktorisierung eines Integers zu berechnen.
+INTRO2=Trial Division überprüft für jeden Wert kleiner der zu faktorisierenden Zahl
+INTRO3=ob sie ein Divisor der übergebenen Zahl ist.
+INTRO4=Ist dies der Fall ist sie ein Faktor der Zahl und wird gespeichert.
+INTRO5=
+INTRO6=Die folgenden Schritte zeigen und erklären die Faktorisierung von
+
+#Die Erklaerungen
+EXPLANATIONS0=
+EXPLANATIONS1=Erklärung: Erstellen einer leeren Liste
+EXPLANATIONS2=Erklärung: Der erste mögliche Faktor
+EXPLANATIONS3=Erklärung: Solang es noch Faktoren gibt wird weiter gerechnet
+EXPLANATIONS4=Erklärung: Test ob n teilbar ist durch den aktuellen Wert
+EXPLANATIONS5=Erklärung: Hinzufügen des Faktors zur Liste
+EXPLANATIONS6=Erklärung: Entfernen des Faktors von n
+EXPLANATIONS7=Erklärung: Falls f kein Faktor von n ist
+EXPLANATIONS8=Erklärung: Der Faktor wird um 1 erhöht
+EXPLANATIONS9=Erklärung: Die fertige Liste an Faktoren
+
+#Die Zusammenfassung
+OUTRO0=In den vorherigen Schritten wurde gezeigt wie eine übergegene Zahl einfach faktorisiert werden kann.
+OUTRO1=In diesem Fall war die zu faktorisierende Zahl:
+OUTRO2=
+OUTRO3=und die dafür berechneten Faktoren:
+OUTRO4=
+OUTRO5=Man sieht, dass man die ursprüngliche Zahl erhält, wenn man alle Faktoren multiplitziert.
+OUTRO6=
+OUTRO7=Trial Division ist ein sehr einfacher aber leicht verständlicher Ansatz. Es gibt einige deutlich effizientere Algorithmen.
+OUTRO8=Der Algorithmus ist deterministisch, also auch bei mehrmaliger Ausführung werden die gleichen Faktoren berechnet.
+
+#Die einzelnen Schritte
+STEP0=Einführung
+STEP1=Faktorisierung von
+
+#Roles of Variables
+VAR_ROLE_p=List der bisher gefundendenen Primfaktoren.
+VAR_ROLE_f=Stetig inkrementierter Wert, der als potentieller Primfaktor überprüft wird.
+VAR_ROLE_n=Zahl die aktuell faktorisiert wird. Wird kleiner während des Durchlaufs.

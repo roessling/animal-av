@@ -1,0 +1,23 @@
+algoName=Interpolative Search
+theName=Iterative Interpolative Search (int, Pseudocode; EN)
+outputLanguage=Pseudo-Code
+algoDesc=This algorithm looks for a value passed in in a sorted array of int values. If the value is found, its position in the array is returned; otherwise, the result is -1.
+codeExample=int iterativeInterpolatedSearching(int[] array, int value):\n  if is null:\n    return -1;\n  Set nrElems = number of array elements.\n  Set lower partition boundary lower = 0.\n  Set upper partition boundary upper = nrElems - 1.;\n  Set current position mid = lower + ((value - array[lower]) * (upper - lower)) / (array[upper] - array[lower]).\n  while (upper > lower && array[mid] != value):\n    If (value < array[mid]):\n      Set upper = mid - 1.\n    Otherwise:\n      Set lower = mid + 1.\n    Set mid = lower + ((value - array[lower]) * (upper - lower)) / (array[upper] - array[lower]).\n  if (array[mid] == value):\n    return mid.\n  Otherwise: \n    return -1.
+animTitle=Iterative Interpolative Search (int)
+algoAuthor=Dr. Guido Rößling (roessling@acm.org>
+algoTitle=Interpolative Search
+animDesc=Description of the algorithm
+adForURL=Further animations can be found at http://www.animal.ahrgr.de in the online repository.
+nrSteps=The algorithm used a total of {0} assignments and {1} comparisons.
+description.filename=resources/PseudoIterativeInterpolatedIntSearching_descr_en.txt
+description.level=2
+description.labelSymbol=#
+code.filename=resources/PseudoIterativeInterpolatedIntSearching_code_en.txt
+code.level=2
+code.labelSymbol=#
+complexity.filename=resources/PseudoIterativeInterpolatedIntSearching_complexity_en.txt
+complexity.level=2
+complexity.labelSymbol=#
+nrAss=Assignments
+nrComp=Comparisons
+result=Result: {0}

@@ -1,0 +1,94 @@
+noSuchKeyException=Es gibt keine Ressource f\u00fcr Eintrag {0}
+iconNotFound=Icon "{0}" not found
+
+
+### Misc ###
+title=Sweep and Prune in 2D
+name=Sweep and Prune for Axis-aligned Bounding Boxes in 2D
+
+### Description One Test ###
+descriptionText=Sweep and Prune for AABBs is method for collision detection that can be used \n in simulations ans computer games. \n This algorithm is used in the broad phase of collision detection. \n In this phase collisions that can't happen are identified and excluded from the next phase. \n The advantage of this algorithm is its low complexity (O(n log n)) \n that can be pushed to an expected run time complexity of O(n) \n if the implementation exploits temporal coherence. \n \n The algorithm checks for each axis of the coordinate system if an overlap \n of the given objects on this axis is possible. Only pairs of objects that satisfy this for all axes \n are considered in the Narrow Phase for a detailed collision detection. \n \n Axis-Aligned Bounding Box means that not the actual form of the object is tested but \n cuboid that is aligned with the axes of the coordinate system and that completely encompasses the object. \n It also must have a minimal volume. \n This reduces the checks to once for each axis of  the coordinate system.
+
+### Pseudo-Code One Text ###
+pseudeCode=add all objets in scene to the considered objects \n create empty list for possible collisions for each axis \n foreach axis in coordinatesystem \n     create empty list for objects considered on next axis and empty list for currently possible collision partners \n     fill list of corner points with minimal and maximal points along current axis of all considered objects \n     sort corner points \n     foreach corner point \n         if point is minPoint \n             foreach currently possible collision partner \n                 add both objects to objects considered on next axis (if not already in there) \n                 add pair of both objects to possible collions of current axis \n             add object corresponding to the mininmal point to currently possible collision partners \n         if point is maximal point remove corresponding object from currently possible collision partners \n     set considered objects = objects considered on next axis \n return collsionpairs that appear in every list of possible collisons
+
+### Description lines ###
+descriptionline0=Sweep and Prune for AABBs is a method for collisiondetection that can be used
+descriptionline1=in simulations ans computer games. 
+descriptionline2=This algorithm is used in the broad phase of collision detection.
+descriptionline3=In this phase collisions that cant happen are identified and excluded from the next phase. 
+descriptionline4=The advantage of this algorithm is its low complexity (O(n log n)) 
+descriptionline5=that can be pushed to an expected run time complexity of O(n) 
+descriptionline6=if the implementation exploits temporal coherence. 
+descriptionline7=
+descriptionline8=
+descriptionline9=The algorithm checks for each axis of the coordinate system if an overlap 
+descriptionline10=of the given objects on this axis is possible. Only pairs of objects that satisfy this for all axes 
+descriptionline11=are considered in the Narrow Phase for a detailed collision detection. 
+descriptionline12=
+descriptionline13=Axis-Aligned Bounding Box means that not the actual form of the object is tested but 
+descriptionline14=cuboid that is aligned with the axes of the coordinate system and that completely encompasses the object. 
+descriptionline15=It also must have a minimal volume. 
+descriptionline16=This reduces the checks to once for each axis of  the coordinate system.
+
+### PseudoCode lines ###
+pseudocode0=add all objets in scene to the considered objects
+pseudocode1=create empty list for possible collisions for each axis
+pseudocode2=foreach axis in coordinatesystem
+pseudocode3=create empty list for objects considered on next axis and empty list for currently possible collision partners
+pseudocode4=fill list of corner points with minimal and maximal points along current axis of all considered objects
+pseudocode5=sort corner points
+pseudocode6=foreach corner point
+pseudocode7=if point is minimal Point
+pseudocode8=foreach currently possible collision partner
+pseudocode9=add both objects to objects considered on next axis (if not already in there)
+pseudocode10=add pair of both objects to possible collions of current axis
+pseudocode11=add object corresponding to the mininmal point to currently possible collision partners
+pseudocode12=if point is maximal point remove corresponding object from currently possible collision partners
+pseudocode13=set considered objects = objects considered on next axis
+pseudocode14=return collsionpairs that appear in every list of possible collisons
+
+### sections ###
+introduction=introduction
+xAxis=Test along x-axis
+yAxis=Test along y-axis
+conclusion=Conclusion
+
+### fields ###
+consideredList=considered objects
+possibleCollisionsList=possible collisons on 
+nextConsideredList=objects considered on next axis
+activeList=currently possible collision partners
+cornerList=corner points
+
+### questions ###
+and= and 
+whyunconsidered1=Why are the objects
+whyunconsidered2= no longer considered?
+unconsideredAnswer1=If there was no possible collision on the first axis, the objects are tested for collisions in more detail later anyways.
+unconsideredResult1=Wrong. There was no possible collision on the first axis.This means that no collision is possible.
+unconsideredAnswer2=They were not involved in any possible collision on the first axis.
+correct=Correct!
+unconsideredAnswer3=This is a trick question. They still are considered.
+unconsideredResult3=Wrong. There was no possible collision on the first axis.This means that no collision is possible.
+collisionQuestion=What is going to happen now?
+collisionAnswer1= are inserted to the list of objects considered next and a possible collision for this axis is recorded.
+collisionAnswer2a=A possible collision of  
+collisionAnswer2b= is identified.
+collisionResult2=They must be inserted to the list of objects considered next, so that they are tested on the next axis.
+collisionAnswer3= are inserted to the list of objects considered next, but a possible collision on this axis is only reported at the end of the algorithm.
+collisionResult3=The possible collision is reported rigth away.
+
+### Conclusion ###
+conclusionLine0=Conclusion:
+conclusionLine1=Not all pairs of objects have to be checked in the Narrow Phase.
+conclusionLine2a=
+conclusionLine2b= out of 
+conclusionLine2c= theoretically possible collisions could be eliminated.
+conclusionLine3a=Only 
+conclusionLine3b= tests had to be conducted to achieve this.
+conclusionLine4a=Only the collisions  
+conclusionLine4b= must be tested.
+
+### error messages ###
+illegalCollumns=Exactly four columns are required!

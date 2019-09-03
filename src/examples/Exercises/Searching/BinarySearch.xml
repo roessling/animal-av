@@ -1,0 +1,632 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<ns2:exercise xmlns:ns2="http://www.algoanim.info/Animal2/">
+    <chainPath>/Searching/Binary Search/Pseudo-Code/en/Recursive_Binary_Search_(int,_Pseudocode;_EN)</chainPath>
+    <description>This algorithm looks for a value passed in in a sorted array of int values. If the value is found, its position in the array is returned; otherwise, the result is -1
+
+Array = [1,4,6,9,15,17,12,15,20]
+SearchVal = 2</description>
+    <generatorName>generators.searching.binarysearching.GenericRecursiveBinaryIntSearching</generatorName>
+    <initialVariables>
+        <name>array</name>
+        <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">1, 4,6,9,15,17, 12, 15 ,20</value>
+    </initialVariables>
+    <questionsList>
+        <decisionBox xsi:type="scriptBox" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+            <inputVariables>
+                <name>lowerBoundary</name>
+            </inputVariables>
+            <inputVariables>
+                <name>higherBoundary</name>
+                <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema"></value>
+            </inputVariables>
+            <next xsi:type="assignBox">
+                <next xsi:type="assignBox">
+                    <next xsi:type="assignBox">
+                        <next xsi:type="functionBox">
+                            <next xsi:type="functionBox">
+                                <next xsi:type="functionBox">
+                                    <next xsi:type="functionBox">
+                                        <function xsi:type="ok"/>
+                                    </next>
+                                    <function xsi:type="debug"/>
+                                </next>
+                                <function xsi:type="check"/>
+                                <arguments xsi:type="constantValue">
+                                    <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">$higher = $higherBoundary</value>
+                                </arguments>
+                                <arguments xsi:type="constantValue">
+                                    <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">wrong higher, should be $higher</value>
+                                </arguments>
+                            </next>
+                            <function xsi:type="check"/>
+                            <arguments xsi:type="constantValue">
+                                <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">$lower = $lowerBoundary</value>
+                            </arguments>
+                            <arguments xsi:type="constantValue">
+                                <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">wrong lower, should be $lower</value>
+                            </arguments>
+                        </next>
+                        <variableName>higher</variableName>
+                        <expression xsi:type="functionBox">
+                            <function xsi:type="retrieve"/>
+                            <arguments xsi:type="constantValue">
+                                <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">/higherBound</value>
+                            </arguments>
+                            <arguments xsi:type="valueOfIdentifier">
+                                <variableName>first</variableName>
+                            </arguments>
+                        </expression>
+                    </next>
+                    <variableName>lower</variableName>
+                    <expression xsi:type="functionBox">
+                        <function xsi:type="retrieve"/>
+                        <arguments xsi:type="constantValue">
+                            <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">/lowerBound</value>
+                        </arguments>
+                        <arguments xsi:type="valueOfIdentifier">
+                            <variableName>first</variableName>
+                        </arguments>
+                    </expression>
+                </next>
+                <variableName>first</variableName>
+                <expression xsi:type="functionBox">
+                    <function xsi:type="retrieve"/>
+                    <arguments xsi:type="constantValue">
+                        <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">events/newIteration[seqnr = 2]</value>
+                    </arguments>
+                </expression>
+            </next>
+            <AssignBox>
+                <next xsi:type="assignBox">
+                    <next xsi:type="assignBox">
+                        <next xsi:type="functionBox">
+                            <next xsi:type="functionBox">
+                                <next xsi:type="functionBox">
+                                    <next xsi:type="functionBox">
+                                        <function xsi:type="ok"/>
+                                    </next>
+                                    <function xsi:type="debug"/>
+                                </next>
+                                <function xsi:type="check"/>
+                                <arguments xsi:type="constantValue">
+                                    <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">$higher = $higherBoundary</value>
+                                </arguments>
+                                <arguments xsi:type="constantValue">
+                                    <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">wrong higher, should be $higher</value>
+                                </arguments>
+                            </next>
+                            <function xsi:type="check"/>
+                            <arguments xsi:type="constantValue">
+                                <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">$lower = $lowerBoundary</value>
+                            </arguments>
+                            <arguments xsi:type="constantValue">
+                                <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">wrong lower, should be $lower</value>
+                            </arguments>
+                        </next>
+                        <variableName>higher</variableName>
+                        <expression xsi:type="functionBox">
+                            <function xsi:type="retrieve"/>
+                            <arguments xsi:type="constantValue">
+                                <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">/higherBound</value>
+                            </arguments>
+                            <arguments xsi:type="valueOfIdentifier">
+                                <variableName>first</variableName>
+                            </arguments>
+                        </expression>
+                    </next>
+                    <variableName>lower</variableName>
+                    <expression xsi:type="functionBox">
+                        <function xsi:type="retrieve"/>
+                        <arguments xsi:type="constantValue">
+                            <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">/lowerBound</value>
+                        </arguments>
+                        <arguments xsi:type="valueOfIdentifier">
+                            <variableName>first</variableName>
+                        </arguments>
+                    </expression>
+                </next>
+                <variableName>first</variableName>
+                <expression xsi:type="functionBox">
+                    <function xsi:type="retrieve"/>
+                    <arguments xsi:type="constantValue">
+                        <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">events/newIteration[seqnr = 2]</value>
+                    </arguments>
+                </expression>
+            </AssignBox>
+            <AssignBox>
+                <next xsi:type="assignBox">
+                    <next xsi:type="functionBox">
+                        <next xsi:type="functionBox">
+                            <next xsi:type="functionBox">
+                                <next xsi:type="functionBox">
+                                    <function xsi:type="ok"/>
+                                </next>
+                                <function xsi:type="debug"/>
+                            </next>
+                            <function xsi:type="check"/>
+                            <arguments xsi:type="constantValue">
+                                <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">$higher = $higherBoundary</value>
+                            </arguments>
+                            <arguments xsi:type="constantValue">
+                                <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">wrong higher, should be $higher</value>
+                            </arguments>
+                        </next>
+                        <function xsi:type="check"/>
+                        <arguments xsi:type="constantValue">
+                            <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">$lower = $lowerBoundary</value>
+                        </arguments>
+                        <arguments xsi:type="constantValue">
+                            <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">wrong lower, should be $lower</value>
+                        </arguments>
+                    </next>
+                    <variableName>higher</variableName>
+                    <expression xsi:type="functionBox">
+                        <function xsi:type="retrieve"/>
+                        <arguments xsi:type="constantValue">
+                            <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">/higherBound</value>
+                        </arguments>
+                        <arguments xsi:type="valueOfIdentifier">
+                            <variableName>first</variableName>
+                        </arguments>
+                    </expression>
+                </next>
+                <variableName>lower</variableName>
+                <expression xsi:type="functionBox">
+                    <function xsi:type="retrieve"/>
+                    <arguments xsi:type="constantValue">
+                        <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">/lowerBound</value>
+                    </arguments>
+                    <arguments xsi:type="valueOfIdentifier">
+                        <variableName>first</variableName>
+                    </arguments>
+                </expression>
+            </AssignBox>
+            <AssignBox>
+                <next xsi:type="functionBox">
+                    <next xsi:type="functionBox">
+                        <next xsi:type="functionBox">
+                            <next xsi:type="functionBox">
+                                <function xsi:type="ok"/>
+                            </next>
+                            <function xsi:type="debug"/>
+                        </next>
+                        <function xsi:type="check"/>
+                        <arguments xsi:type="constantValue">
+                            <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">$higher = $higherBoundary</value>
+                        </arguments>
+                        <arguments xsi:type="constantValue">
+                            <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">wrong higher, should be $higher</value>
+                        </arguments>
+                    </next>
+                    <function xsi:type="check"/>
+                    <arguments xsi:type="constantValue">
+                        <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">$lower = $lowerBoundary</value>
+                    </arguments>
+                    <arguments xsi:type="constantValue">
+                        <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">wrong lower, should be $lower</value>
+                    </arguments>
+                </next>
+                <variableName>higher</variableName>
+                <expression xsi:type="functionBox">
+                    <function xsi:type="retrieve"/>
+                    <arguments xsi:type="constantValue">
+                        <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">/higherBound</value>
+                    </arguments>
+                    <arguments xsi:type="valueOfIdentifier">
+                        <variableName>first</variableName>
+                    </arguments>
+                </expression>
+            </AssignBox>
+            <FunctionBox>
+                <next xsi:type="functionBox">
+                    <next xsi:type="functionBox">
+                        <next xsi:type="functionBox">
+                            <function xsi:type="ok"/>
+                        </next>
+                        <function xsi:type="debug"/>
+                    </next>
+                    <function xsi:type="check"/>
+                    <arguments xsi:type="constantValue">
+                        <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">$higher = $higherBoundary</value>
+                    </arguments>
+                    <arguments xsi:type="constantValue">
+                        <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">wrong higher, should be $higher</value>
+                    </arguments>
+                </next>
+                <function xsi:type="check"/>
+                <arguments xsi:type="constantValue">
+                    <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">$lower = $lowerBoundary</value>
+                </arguments>
+                <arguments xsi:type="constantValue">
+                    <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">wrong lower, should be $lower</value>
+                </arguments>
+            </FunctionBox>
+            <FunctionBox>
+                <next xsi:type="functionBox">
+                    <next xsi:type="functionBox">
+                        <function xsi:type="ok"/>
+                    </next>
+                    <function xsi:type="debug"/>
+                </next>
+                <function xsi:type="check"/>
+                <arguments xsi:type="constantValue">
+                    <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">$higher = $higherBoundary</value>
+                </arguments>
+                <arguments xsi:type="constantValue">
+                    <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">wrong higher, should be $higher</value>
+                </arguments>
+            </FunctionBox>
+            <FunctionBox>
+                <next xsi:type="functionBox">
+                    <function xsi:type="ok"/>
+                </next>
+                <function xsi:type="debug"/>
+            </FunctionBox>
+            <FunctionBox>
+                <function xsi:type="ok"/>
+            </FunctionBox>
+        </decisionBox>
+        <inputVariables>
+            <name>lowerBoundary</name>
+        </inputVariables>
+        <inputVariables>
+            <name>higherBoundary</name>
+            <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"></value>
+        </inputVariables>
+        <questionId>Question-3454406021289903519010</questionId>
+        <questionText>The binary search algorithm takes a lower and upper boundary as parameters, what will be the second boundaries used? </questionText>
+        <script>// No script
+first = Retrieve("events/newIteration[seqnr = 2]");
+lower = Retrieve("/lowerBound", first);
+higher = Retrieve("/higherBound", first);
+Check("$lower = $lowerBoundary", "wrong lower, should be $lower");
+Check("$higher = $higherBoundary", "wrong higher, should be $higher");
+Debug();
+Ok();</script>
+    </questionsList>
+    <questionsList>
+        <decisionBox xsi:type="scriptBox" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+            <inputVariables>
+                <name>array</name>
+            </inputVariables>
+            <next xsi:type="assignBox">
+                <next xsi:type="assignBox">
+                    <next xsi:type="assignBox">
+                        <next xsi:type="functionBox">
+                            <next xsi:type="functionBox">
+                                <next xsi:type="functionBox">
+                                    <next xsi:type="functionBox">
+                                        <function xsi:type="ok"/>
+                                    </next>
+                                    <function xsi:type="debug"/>
+                                </next>
+                                <function xsi:type="check"/>
+                                <arguments xsi:type="constantValue">
+                                    <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">$total = 3</value>
+                                </arguments>
+                                <arguments xsi:type="constantValue">
+                                    <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">Incorrect</value>
+                                </arguments>
+                            </next>
+                            <function xsi:type="check"/>
+                            <arguments xsi:type="constantValue">
+                                <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">$valFound = 8</value>
+                            </arguments>
+                            <arguments xsi:type="constantValue">
+                                <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">Array must contain an 8!</value>
+                            </arguments>
+                        </next>
+                        <variableName>valFound</variableName>
+                        <expression xsi:type="functionBox">
+                            <function xsi:type="retrieve"/>
+                            <arguments xsi:type="constantValue">
+                                <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">/midMarkValue</value>
+                            </arguments>
+                            <arguments xsi:type="valueOfIdentifier">
+                                <variableName>line</variableName>
+                            </arguments>
+                        </expression>
+                    </next>
+                    <variableName>line</variableName>
+                    <expression xsi:type="functionBox">
+                        <function xsi:type="retrieve"/>
+                        <arguments xsi:type="constantValue">
+                            <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">events/newIteration[seqnr = $total]</value>
+                        </arguments>
+                    </expression>
+                </next>
+                <variableName>total</variableName>
+                <expression xsi:type="functionBox">
+                    <function xsi:type="retrieve"/>
+                    <arguments xsi:type="constantValue">
+                        <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">count(events/newIteration)</value>
+                    </arguments>
+                </expression>
+            </next>
+            <AssignBox>
+                <next xsi:type="assignBox">
+                    <next xsi:type="assignBox">
+                        <next xsi:type="functionBox">
+                            <next xsi:type="functionBox">
+                                <next xsi:type="functionBox">
+                                    <next xsi:type="functionBox">
+                                        <function xsi:type="ok"/>
+                                    </next>
+                                    <function xsi:type="debug"/>
+                                </next>
+                                <function xsi:type="check"/>
+                                <arguments xsi:type="constantValue">
+                                    <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">$total = 3</value>
+                                </arguments>
+                                <arguments xsi:type="constantValue">
+                                    <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">Incorrect</value>
+                                </arguments>
+                            </next>
+                            <function xsi:type="check"/>
+                            <arguments xsi:type="constantValue">
+                                <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">$valFound = 8</value>
+                            </arguments>
+                            <arguments xsi:type="constantValue">
+                                <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">Array must contain an 8!</value>
+                            </arguments>
+                        </next>
+                        <variableName>valFound</variableName>
+                        <expression xsi:type="functionBox">
+                            <function xsi:type="retrieve"/>
+                            <arguments xsi:type="constantValue">
+                                <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">/midMarkValue</value>
+                            </arguments>
+                            <arguments xsi:type="valueOfIdentifier">
+                                <variableName>line</variableName>
+                            </arguments>
+                        </expression>
+                    </next>
+                    <variableName>line</variableName>
+                    <expression xsi:type="functionBox">
+                        <function xsi:type="retrieve"/>
+                        <arguments xsi:type="constantValue">
+                            <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">events/newIteration[seqnr = $total]</value>
+                        </arguments>
+                    </expression>
+                </next>
+                <variableName>total</variableName>
+                <expression xsi:type="functionBox">
+                    <function xsi:type="retrieve"/>
+                    <arguments xsi:type="constantValue">
+                        <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">count(events/newIteration)</value>
+                    </arguments>
+                </expression>
+            </AssignBox>
+            <AssignBox>
+                <next xsi:type="assignBox">
+                    <next xsi:type="functionBox">
+                        <next xsi:type="functionBox">
+                            <next xsi:type="functionBox">
+                                <next xsi:type="functionBox">
+                                    <function xsi:type="ok"/>
+                                </next>
+                                <function xsi:type="debug"/>
+                            </next>
+                            <function xsi:type="check"/>
+                            <arguments xsi:type="constantValue">
+                                <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">$total = 3</value>
+                            </arguments>
+                            <arguments xsi:type="constantValue">
+                                <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">Incorrect</value>
+                            </arguments>
+                        </next>
+                        <function xsi:type="check"/>
+                        <arguments xsi:type="constantValue">
+                            <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">$valFound = 8</value>
+                        </arguments>
+                        <arguments xsi:type="constantValue">
+                            <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">Array must contain an 8!</value>
+                        </arguments>
+                    </next>
+                    <variableName>valFound</variableName>
+                    <expression xsi:type="functionBox">
+                        <function xsi:type="retrieve"/>
+                        <arguments xsi:type="constantValue">
+                            <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">/midMarkValue</value>
+                        </arguments>
+                        <arguments xsi:type="valueOfIdentifier">
+                            <variableName>line</variableName>
+                        </arguments>
+                    </expression>
+                </next>
+                <variableName>line</variableName>
+                <expression xsi:type="functionBox">
+                    <function xsi:type="retrieve"/>
+                    <arguments xsi:type="constantValue">
+                        <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">events/newIteration[seqnr = $total]</value>
+                    </arguments>
+                </expression>
+            </AssignBox>
+            <AssignBox>
+                <next xsi:type="functionBox">
+                    <next xsi:type="functionBox">
+                        <next xsi:type="functionBox">
+                            <next xsi:type="functionBox">
+                                <function xsi:type="ok"/>
+                            </next>
+                            <function xsi:type="debug"/>
+                        </next>
+                        <function xsi:type="check"/>
+                        <arguments xsi:type="constantValue">
+                            <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">$total = 3</value>
+                        </arguments>
+                        <arguments xsi:type="constantValue">
+                            <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">Incorrect</value>
+                        </arguments>
+                    </next>
+                    <function xsi:type="check"/>
+                    <arguments xsi:type="constantValue">
+                        <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">$valFound = 8</value>
+                    </arguments>
+                    <arguments xsi:type="constantValue">
+                        <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">Array must contain an 8!</value>
+                    </arguments>
+                </next>
+                <variableName>valFound</variableName>
+                <expression xsi:type="functionBox">
+                    <function xsi:type="retrieve"/>
+                    <arguments xsi:type="constantValue">
+                        <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">/midMarkValue</value>
+                    </arguments>
+                    <arguments xsi:type="valueOfIdentifier">
+                        <variableName>line</variableName>
+                    </arguments>
+                </expression>
+            </AssignBox>
+            <FunctionBox>
+                <next xsi:type="functionBox">
+                    <next xsi:type="functionBox">
+                        <next xsi:type="functionBox">
+                            <function xsi:type="ok"/>
+                        </next>
+                        <function xsi:type="debug"/>
+                    </next>
+                    <function xsi:type="check"/>
+                    <arguments xsi:type="constantValue">
+                        <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">$total = 3</value>
+                    </arguments>
+                    <arguments xsi:type="constantValue">
+                        <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">Incorrect</value>
+                    </arguments>
+                </next>
+                <function xsi:type="check"/>
+                <arguments xsi:type="constantValue">
+                    <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">$valFound = 8</value>
+                </arguments>
+                <arguments xsi:type="constantValue">
+                    <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">Array must contain an 8!</value>
+                </arguments>
+            </FunctionBox>
+            <FunctionBox>
+                <next xsi:type="functionBox">
+                    <next xsi:type="functionBox">
+                        <function xsi:type="ok"/>
+                    </next>
+                    <function xsi:type="debug"/>
+                </next>
+                <function xsi:type="check"/>
+                <arguments xsi:type="constantValue">
+                    <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">$total = 3</value>
+                </arguments>
+                <arguments xsi:type="constantValue">
+                    <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">Incorrect</value>
+                </arguments>
+            </FunctionBox>
+            <FunctionBox>
+                <next xsi:type="functionBox">
+                    <function xsi:type="ok"/>
+                </next>
+                <function xsi:type="debug"/>
+            </FunctionBox>
+            <FunctionBox>
+                <function xsi:type="ok"/>
+            </FunctionBox>
+        </decisionBox>
+        <inputVariables>
+            <name>array</name>
+        </inputVariables>
+        <questionId>Question-3454406021290419353195</questionId>
+        <questionText>Provide an array in which the value 8 is found after 3 recursions. Remember that the array must be sorted from lowest to highest.</questionText>
+        <script>// No script
+total = Retrieve("count(events/newIteration)");
+line = Retrieve("events/newIteration[seqnr = $total]");
+
+valFound = Retrieve("/midMarkValue", line);
+Check("$valFound = 8", "Array must contain an 8!");
+Check("$total = 3", "Incorrect");
+Debug();
+Ok();</script>
+    </questionsList>
+    <questionsList>
+        <decisionBox xsi:type="scriptBox" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+            <inputVariables>
+                <name>iterations</name>
+                <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema"></value>
+            </inputVariables>
+            <next xsi:type="assignBox">
+                <next xsi:type="functionBox">
+                    <next xsi:type="functionBox">
+                        <next xsi:type="functionBox">
+                            <function xsi:type="ok"/>
+                        </next>
+                        <function xsi:type="check"/>
+                        <arguments xsi:type="constantValue">
+                            <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">$iterations = $info</value>
+                        </arguments>
+                    </next>
+                    <function xsi:type="debug"/>
+                </next>
+                <variableName>info</variableName>
+                <expression xsi:type="functionBox">
+                    <function xsi:type="retrieve"/>
+                    <arguments xsi:type="constantValue">
+                        <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">count(events/newIteration)</value>
+                    </arguments>
+                </expression>
+            </next>
+            <AssignBox>
+                <next xsi:type="functionBox">
+                    <next xsi:type="functionBox">
+                        <next xsi:type="functionBox">
+                            <function xsi:type="ok"/>
+                        </next>
+                        <function xsi:type="check"/>
+                        <arguments xsi:type="constantValue">
+                            <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">$iterations = $info</value>
+                        </arguments>
+                    </next>
+                    <function xsi:type="debug"/>
+                </next>
+                <variableName>info</variableName>
+                <expression xsi:type="functionBox">
+                    <function xsi:type="retrieve"/>
+                    <arguments xsi:type="constantValue">
+                        <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">count(events/newIteration)</value>
+                    </arguments>
+                </expression>
+            </AssignBox>
+            <FunctionBox>
+                <next xsi:type="functionBox">
+                    <next xsi:type="functionBox">
+                        <function xsi:type="ok"/>
+                    </next>
+                    <function xsi:type="check"/>
+                    <arguments xsi:type="constantValue">
+                        <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">$iterations = $info</value>
+                    </arguments>
+                </next>
+                <function xsi:type="debug"/>
+            </FunctionBox>
+            <FunctionBox>
+                <next xsi:type="functionBox">
+                    <function xsi:type="ok"/>
+                </next>
+                <function xsi:type="check"/>
+                <arguments xsi:type="constantValue">
+                    <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">$iterations = $info</value>
+                </arguments>
+            </FunctionBox>
+            <FunctionBox>
+                <function xsi:type="ok"/>
+            </FunctionBox>
+        </decisionBox>
+        <inputVariables>
+            <name>iterations</name>
+            <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"></value>
+        </inputVariables>
+        <questionId>Question-3454406021291542362072</questionId>
+        <questionText>How many iterations will it take to find the value 4</questionText>
+        <script>// No script
+info = Retrieve("count(events/newIteration)");
+Debug();
+Check("$iterations = $info");
+Ok();</script>
+    </questionsList>
+    <subTitle>by Jerome Saltmarsh</subTitle>
+    <title>Recursive Binary Search Exercise</title>
+</ns2:exercise>

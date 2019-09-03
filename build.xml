@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- WARNING: Eclipse auto-generated file.
+              Any modifications will be overwritten.
+              To include a user specific buildfile here, simply create one in the same
+              directory with the processing instruction <?eclipse.ant.import?>
+              as the first entry and export the buildfile again. -->
+
+<project basedir="." default="build" name="Animal">
+<taskdef name="jarbundler" classname="net.sourceforge.jarbundler.JarBundler" />
+    <property environment="env"/>
+    <property name="ECLIPSE_HOME" value="../../../Applications/eclipse"/>
+    <property name="debuglevel" value="source,lines,vars"/>
+    <property name="target" value="1.7"/>
+    <property name="source" value="1.7"/>
+    <path id="JUnit 4.libraryclasspath">
+        <pathelement location="../../../../../Applications/Development/eclipse/plugins/org.junit_4.10.0.v4_10_0_v20120426-0900/junit.jar"/>
+        <pathelement location="../../../../../Applications/Development/eclipse/plugins/org.hamcrest.core_1.1.0.v20090501071000.jar"/>
+    </path>
+    <path id="Animal.classpath">
+        <pathelement location="bin"/>
+        <path refid="JUnit 4.libraryclasspath"/>
+        <pathelement location="lib/jdom.jar"/>
+        <pathelement location="lib/jscheme_edit.jar"/>
+        <pathelement location="lib/miglayout-3.7.3.1.jar"/>
+        <pathelement location="lib/commons-beanutils-bean-collections-1.8.2.jar"/>
+        <pathelement location="lib/commons-collections-3.2.1.jar"/>
+        <pathelement location="lib/commons-jxpath-1.3.jar"/>
+        <pathelement location="lib/commons-logging-1.1.1.jar"/>
+        <pathelement location="lib/commons-beanutils-core-1.8.2.jar"/>
+    </path>
+    <target name="init">
+        <mkdir dir="bin"/>
+        <copy includeemptydirs="false" todir="bin">
+            <fileset dir=".">
+                <exclude name="**/*.launch"/>
+                <exclude name="**/*.uad"/>
+                <exclude name="**/*.ucd"/>
+                <exclude name="**/*.uld"/>
+                <exclude name="**/*.upd"/>
+                <exclude name="**/*.udd"/>
+                <exclude name="**/*.uod"/>
+                <exclude name="**/*.usd"/>
+                <exclude name="**/*.utd"/>
+                <exclude name="**/*.uud"/>
+                <exclude name="**/*.odd"/>
+                <exclude name="**/*.ead"/>
+                <exclude name="**/*.ecd"/>
+                <exclude name="**/*.eld"/>
+                <exclude name="**/*.epd"/>
+                <exclude name="**/*.edd"/>
+                <exclude name="**/*.eod"/>
+                <exclude name="**/*.esd"/>
+                <exclude name="**/*.etd"/>
+                <exclude name="**/*.eud"/>
+                <exclude name="**/*.urd"/>
+                <exclude name="**/*.uml"/>
+                <exclude name="**/*.ecore"/>
+                <exclude name="**/*.java"/>
+            </fileset>
+        </copy>
+    </target>
+    <target name="clean">
+        <delete dir="bin"/>
+    </target>
+    <target depends="clean" name="cleanall"/>
+    <target depends="build-subprojects,build-project" name="build"/>
+    <target name="build-subprojects"/>
+    <target depends="init" name="build-project">
+        <echo message="${ant.project.name}: ${ant.file}"/>
+        <javac debug="true" debuglevel="${debuglevel}" destdir="bin" includeantruntime="false" source="${source}" target="${target}">
+            <src path="."/>
+            <classpath refid="Animal.classpath"/>
+        </javac>
+    </target>
+    <target description="Build all projects which reference this project. Useful to propagate changes." name="build-refprojects"/>
+    <target description="copy Eclipse compiler jars to ant lib directory" name="init-eclipse-compiler">
+        <copy todir="${ant.library.dir}">
+            <fileset dir="${ECLIPSE_HOME}/plugins" includes="org.eclipse.jdt.core_*.jar"/>
+        </copy>
+        <unzip dest="${ant.library.dir}">
+            <patternset includes="jdtCompilerAdapter.jar"/>
+            <fileset dir="${ECLIPSE_HOME}/plugins" includes="org.eclipse.jdt.core_*.jar"/>
+        </unzip>
+    </target>
+    <target description="compile project with Eclipse compiler" name="build-eclipse-compiler">
+        <property name="build.compiler" value="org.eclipse.jdt.core.JDTCompilerAdapter"/>
+        <antcall target="build"/>
+    </target>
+    <target name="Animal (3)">
+        <java classname="animal.main.Animal" failonerror="true" fork="yes">
+            <classpath refid="Animal.classpath"/>
+        </java>
+    </target>
+    <target name="Animal">
+        <java classname="animal.main.Animal" failonerror="true" fork="yes">
+            <jvmarg line="-Xms256M -Xmx1024M"/>
+            <arg line="-generator language=de codelanguage=Java type=Sorting algorithm=&quot;Selection Sort&quot; generatorname=&quot;Selection Sort [DE]&quot;"/>
+            <classpath refid="Animal.classpath"/>
+        </java>
+    </target>
+    <target name="GeneratorTree">
+        <java classname="generator.GeneratorTree" failonerror="true" fork="yes">
+            <classpath refid="Animal.classpath"/>
+        </java>
+    </target>
+    <target name="GenGUI">
+        <java classname="generators.framework.GenGUI" failonerror="true" fork="yes">
+            <classpath refid="Animal.classpath"/>
+        </java>
+    </target>
+    <target name="GuidoTest">
+        <java classname="GuidoTest" failonerror="true" fork="yes">
+            <classpath refid="Animal.classpath"/>
+        </java>
+    </target>
+    <target name="I18NDemo (1)">
+        <java classname="I18NDemo" failonerror="true" fork="yes">
+            <classpath refid="Animal.classpath"/>
+        </java>
+    </target>
+    <target name="IntegerVariable">
+        <java classname="algoanim.variables.IntegerVariable" failonerror="true" fork="yes">
+            <classpath refid="Animal.classpath"/>
+        </java>
+    </target>
+    <target name="PropertiesGUI">
+        <java classname="generators.framework.PropertiesGUI" failonerror="true" fork="yes">
+            <classpath refid="Animal.classpath"/>
+        </java>
+    </target>
+    <target name="Test (1)">
+        <java classname="Test" failonerror="true" fork="yes">
+            <classpath refid="Animal.classpath"/>
+        </java>
+    </target>
+    <target name="VHDLAnalyzer">
+        <java classname="animal.vhdl.analyzer.VHDLAnalyzer" failonerror="true" fork="yes">
+            <classpath refid="Animal.classpath"/>
+        </java>
+    </target>
+    <target name="Bundle">
+      <jarbundler dir="."
+		  name="Animal"
+		  mainclass="animal.main.Animal"
+		  jar="animal.jar" />
+</target>
+</project>

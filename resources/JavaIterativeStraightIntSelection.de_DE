@@ -1,0 +1,8 @@
+@import=resources/GenericStraightSelection.de_DE
+theName=Iterative Lineare Suche (int; DE)
+codeExample=public int search(int[] array, int value) {\n  int nrElems = array.length;\n  int i = 0;\n  while (i < nrElems && a[i] != x)\n    i++;\n\n  if (i < nrElems)\n    return i;\n  return -1;\n}
+animTitle=Iterative Lineare Suche (int)
+algoTitle=Iterative Lineare Suche
+description.filename=resources/GenericStraightSelection_descr_de.txt
+code.filename=resources/JavaIterativeStraightIntSelection_code.txt
+complexity.filename=resources/GenericStraightSelection_complexity_de.txt

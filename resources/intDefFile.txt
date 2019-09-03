@@ -1,0 +1,76 @@
+tfQuestion "tfQ"
+  points 1
+  questionGroup "demo"
+"Did this work?"
+endtext
+  answer
+t
+endAnswer
+  comment
+"argh!"
+  endComment
+
+mcQuestion "mcq"
+  points 1
+  questionGroup "demo"
+"Which AV system can handle dynamic rewind?"
+endtext
+"JAWAA"
+endChoice
+  points -2
+  comment
+"Not at all!"
+  endComment
+"Animal"
+endChoice
+  points 1
+  comment
+"Good!"
+  endComment
+"GAIGS"
+endChoice
+  points -1
+  comment
+"Only static images, not dynamic"
+  endComment
+  answer
+2
+endAnswer
+
+mcQuestion "msq"
+  points 5
+  questionGroup "demo"
+"Which of the following AV systems can handle interaction?"
+endtext
+"JAWAA"
+endChoice
+  points 1
+  comment
+"Only in Guido's prototype..."
+  endComment
+"JHAVE"
+endChoice
+  points 2
+  comment
+"Yep."
+  endComment
+"Leonardo"
+endChoice
+  points -1
+  comment
+"Nope."
+  endComment
+"Animal"
+endChoice
+  points 2
+  comment
+"Right - I hope!"
+  endComment
+  answer
+null
+endAnswer
+
+documentation "link"
+"http://www.heise.de"
+endtext
+

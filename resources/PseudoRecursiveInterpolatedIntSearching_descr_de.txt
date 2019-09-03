@@ -1,0 +1,9 @@
+Die Interpolationssuche ist ein sehr effizientes Verfahren zum Finden eines
+gegebenen Elements in einem sortierten Feld.
+
+In jeder Iteration wird nur ein Teil des Feldes betrachtet (anfangs
+das gesamte Feld). Die Feldgrenzen werden in jeder Iteration angepasst,
+indem die aktuelle Position, der gesuchte Wert und die Grenzen sowie
+die Grenzwerte der aktuellen Position in Bezug zueinander gesetzt werden. 
+Wurde das gesuchte Element gefunden, so wird seine Position zurückgegeben, 
+sonst -1 als 'Fehlermarkierung'.

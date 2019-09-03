@@ -1,0 +1,19 @@
+[block]
+[br]
+[br]
+[br]
+In this Animation we learned how to interpolate functions with third order polynomials
+[br]
+and how we can lower the error by choosing the knot points close to each other 
+[br]
+and using smart boundary conditions.
+[/block]
+[block]
+You should note, that the knots don’t need to be equidistant. The error grows with the 
+[br]
+distance between the knots so they shouldn’t be to far away from each other.
+[br]
+However, if you choose to many knots close to each other the computation will take longer.
+[br]
+We need to compromise between precision and performance. 
+[/block]

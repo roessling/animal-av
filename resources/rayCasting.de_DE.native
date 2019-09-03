@@ -1,0 +1,87 @@
+title=Ray Casting (Point in Polygon)
+description=\
+Ray Casting ist eine Möglichkeit, um herauszufinden, ob sich ein \
+Punkt in einem Polygon befindet.\n\
+\n\
+Der Algorithmus ist seit 1962 bekannt und unter anderem unter den Namen \
+"crossing number" oder "even-odd rule" bekannt.\n\
+\n\
+In SVG Vektor Grafiken wird dieser Algorithmus zum ausfüllen von Flächen \
+verwendet.\n\
+\n\
+Der grundlegende Ansatz ist es einen Strahl von dem Punkt in Frage in eine \
+beliebige Richtung zu konstruieren und die Überschneidungen mit Seiten des \
+Polygons zu zählen. Bei ungerader Anzahl liegt der Punkt im Vieleck, \
+andernfalls außerhalb.
+
+stepLabelIntro=Einleitung
+stepLabelInit=Initialisierung
+stepLabelIteration={0}'te Iteration
+stepLabelReturn=Resultat
+stepLabelOutro=Fazit
+
+intro1=\
+Ray Casting ist ein Algorithmus, um herauszufinden, ob sich ein\n\
+Punkt in einem Polygon befindet.
+
+intro2=\
+Zunächst wird ein Strahl von dem Punkt aus in eine beliebige Richtung\n\
+konstruiert. Es bietet sich an diesen Strahl einfach entlang der X-Achse\n\
+vom Punkt aus nach rechts verlaufen zu lassen.
+
+intro3=\
+Anschließend werden alle Seiten des Polygons auf Schnittpunkte mit diesem\n\
+Strahl untersucht und gezählt.
+
+case.even=Bei gerader Anzahl an Schnittpunken ist der Punkt außerhalb des Polygons
+case.odd=Bei ungerader Anzahl an Schnittpunkten ist der Punkt innerhalb des Polygons
+
+intro4=\
+Es gibt allerdings zwei Sonderfälle, nämlich wenn der Strahl direkt durch einen\n\
+Eckpunkt oder auf einer Seite des Polygons liegt. Um dieses Problem zu lösen\n\
+wird ein Schnittpunkt mit einem Eckpunkt nur gezählt, wenn der zweite Ecktpunkt\n\
+der Seite unterhalb des Strahls liegt.
+
+task=\
+In diesem Beispiel untersuchen wir, ob sich der Punkt P = {0} in einem Polygon\n\
+mit den Eckpunkten V = [\n\
+{1}\n\
+] befindet.
+
+result.even={0} ist gerade, also liegt der Punkt außerhalb
+result.odd={0} ist ungerade, also liegt der Punkt innerhalb
+
+outro1=\
+Mit Hilfe von Ray Casting konnten wir herausfinden, dass sich der Punkt\n\
+P = {0} {1}in dem Polygon V = [\n\
+{2}\n\
+] befindet.
+
+not=nicht
+
+outro2=\
+Der Ansatz ist einfach umzusetzen und erforderte {0} Iterationen,\n\
+eine für jede Seite des Polygons.
+
+outro3=\
+Daher ist Ray Casting ein Algorithmus der O(n) Komplexitätsklasse.
+
+questionPredictEdge.prompt=Welche Kante bestehend aus zwei Eckpunkten wird als nächstes untersucht?
+questionPredictEdge.feedback.correct=Richtig
+questionPredictEdge.feedback.wrong=Falsch, das passiert in einer anderen Iteration
+
+questionPredictIntersection.prompt=Schneidet die Kante den Strahl?
+questionPredictIntersection.feedback.correct=Richtig
+questionPredictIntersection.feedback.wrong=Nein, sie schneidet den Strahl nicht
+
+error=Fehler in den Eingaben
+error.fontSize=Die Schriftgröße darf nicht 1 sein
+error.scaling=Die Skalierung des Koordinatensystems darf 1 sein
+error.width=Die Breite des Koordinatensystems darf 10 nicht unterschreiten
+error.height=Die Höhe des Koordinatensystems darf 10 nicht unterschreiten
+error.point.syntax=Der Punkt muss in genau 2 Spalten angegeben werden
+error.point.coords=Der Punkt muss innerhalb der Breite und Höhe des Koordinatensystems plaziert werden
+error.vertices.length=Es müssen mindestens 3 Eckpunkte gegeben sein
+error.vertices.syntax=Die Eckpunkte müssen in genau 2 Spalten angegeben werden
+error.vertices.coords=Die Eckpunkte müssen innerhalb der Breite und Höhe des Koordinatensystems plaziert werden
+error.probability=Die questionProbability muss zwischen 0 und 1 liegen

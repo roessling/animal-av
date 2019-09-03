@@ -1,0 +1,86 @@
+### exception handling ###
+
+	noSuchKeyException= There is no resource for the key {0}
+	iconNotFound = Icon "{0}" not found
+
+
+### texts ###
+
+	TITLE = Image Gradient (Prewitt Operator)
+	
+	DESCRIPTION = The gradient of an image can be used to extract information from an image. \nThe gradient is usually computed by convolution with a kernel. A pixel\nof the image gradient contains the change in intensity (like gradient of 1-dimensional \nfunction) of the pixel in the original image at the same coordinates.\n\nThis algorithm uses the prewitt operator for x-direction as the kernel for the convolution operation. \nVertical edges can be found mostly. Analogously we calculate the gradient for the y-direction.\nIn the end we need to use a appropriate norm (euclid) to get the final gradient image.\nUsuale the image gradient is used to extract the edges of\na given image. The approach is to connnect the pixel with the highest values\nto coherent lines. An example for a edge detection algorithm, that uses the gradient image, is the canny-edge-detector\n(https://en.wikipedia.org/wiki/Canny_edge_detector)
+		
+	FIRSTPAGETEXT_LENGTH = 28
+	FIRSTPAGETEXT_0 = The procedure can be split into 4 main steps:
+	FIRSTPAGETEXT_1 = In the first step the source matrix is being expanded. This is necessary
+	FIRSTPAGETEXT_2 = because this type of convolution uses the neighbor pixels. For example,
+	FIRSTPAGETEXT_3 = you want to calculate the value of the upper left pixel, then you need
+	FIRSTPAGETEXT_4 = the value of pixels outside of the matrix. This problem can be solved
+	FIRSTPAGETEXT_5 = by expanding the source matrix appropriately to the size of the kernel
+	FIRSTPAGETEXT_6 = Using the Perwitt operator, it is 1 in every direction.
+	FIRSTPAGETEXT_7 = The next question is, what to fill the new cells with?
+	FIRSTPAGETEXT_8 = 
+	FIRSTPAGETEXT_9 = There is a variation of approaches:
+	FIRSTPAGETEXT_10 = \u0020\u0020\u0020\u0020\u0020- Zero Padding, fill new cells with zeroes
+	FIRSTPAGETEXT_11 = \u0020\u0020\u0020\u0020\u0020- EXTEND, border pixels are copied
+	FIRSTPAGETEXT_12 = \u0020\u0020\u0020\u0020\u0020- Wrap, the pixels from each other edge are
+	FIRSTPAGETEXT_13 = \u0020\u0020\u0020\u0020\u0020  copied. Effectively, the matrix is being 'rolled up'
+	FIRSTPAGETEXT_14 = \u0020\u0020\u0020\u0020\u0020- Mirror, the pixels from each other edge are
+	FIRSTPAGETEXT_15 = \u0020\u0020\u0020\u0020\u0020  copied. Effectively the borders are mirrored.
+	FIRSTPAGETEXT_16 = \u0020\u0020\u0020\u0020\u0020- ...
+	FIRSTPAGETEXT_17 = 
+	FIRSTPAGETEXT_18 = In the second step, the core of the algorithm, the convolution is being
+	FIRSTPAGETEXT_19 = applied. For each pixel the gradient in x-direction is being calculated.
+	FIRSTPAGETEXT_20 = Vertical edges are being detected. Result G_x
+	FIRSTPAGETEXT_21 = In the third step, analogously to the second step, the convolution is being
+	FIRSTPAGETEXT_22 = applied with a kernel for the y-direction. Horizontal edges are being detected.
+	FIRSTPAGETEXT_23 = Result G_y
+	FIRSTPAGETEXT_24 = 
+	FIRSTPAGETEXT_25 = In the fourth step, a norm is being used, mostly euclid, to calculate the
+	FIRSTPAGETEXT_26 = final image gradient G_xy  
+	FIRSTPAGETEXT_27 = [(G_x)²+(G_y)²] = G_xy
+	
+	THIRDPAGETEXT_LENGTH = 2
+	THIRDPAGETEXT_0 = Now, analogously to step 2, the convolution with a kernel for the y-direction
+	THIRDPAGETEXT_1 = is being applied.
+	
+	FOURTHPAGETEXT_LENGTH = 2
+	FOURTHPAGETEXT_0 = Now, we apply euclid on the two matrices G_x and G_y to
+	FOURTHPAGETEXT_1 = calculate the final image gradient G_xy
+	
+### conclusion ###
+
+	CONCLUSION_0 = Using the perwitt-operator (K_x and K_y) we calculated for the image (Source Matrix)
+	CONCLUSION_1 = the gradients (G_x and G_y). By Applying euclid we got the
+	CONCLUSION_2 = final image gradient (G_xy)
+	CONCLUSION_3 = Now we could, using canny edge algorithm for example, extract the edges
+	
+### labels ###
+
+	LABEL_BORDER_HANDLING = Border Handling
+	LABEL_PREWITT_VERTICAL = Convolution with Prewitt - Detecting vertical edges
+	LABEL_PREWITT_HORIZONTAL = Convolution with Prewitt - Detecting horizontal edges
+	LABEL_CONCLUSION = Conclusion
+
+	
+### questions ###
+	Q0_WHAT_BORDER_VALUE = What value should the blue marked cell get?
+	Q1_WHAT_BORDER_HANDLING = What border handling is being used here?
+	Q2_WHAT_CONVOLUTE_VALUE = What value should the blue marked cell get? (ATTENTION: The calculation in the grey box is from the cell before!)
+	Q3_WHAT_IS_EUKLID = What is the formula of euclid?
+	Q4_WHAT_EUKLID_VALUE = What should the value of the first cell (upper left corner) be?
+	
+### answers ###
+	Q0_A1_CORRECT = That is correct!
+	
+	Q1_A1_ZERO_PADDING = Zero Padding was not used! 
+	Q1_A2_EXTEND = Extend is correct, also mirror because the matrix was extended by 1. 
+	Q1_A3_WRAP = Wrap was not used!
+	Q1_A4_MIRROR = Mirror is correct, also extend because the matrix was extended by 1. 
+	
+	Q2_A1_CORRECT = That is correct!
+	
+	Q3_A1_CORRECT = Correct!
+	Q3_A2_FALSE = Wrong. This is the manhatten norm.
+	
+	Q4_A1_CORRECT = Correct answer!

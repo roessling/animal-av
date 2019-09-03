@@ -1,0 +1,29 @@
+Insertion Sort is slow, because it can only move elements
+one position to the right with each step.
+Shellsort tries to move elements faster to their final position
+by using leaps.
+
+The data is h-sorted in each step. A set of data is
+h-sorted, if selecting every h-th element starting at position 0,..., h-1
+will always yield a sorted data set.
+
+Therefore, a h-sorted array consists of h independently sorted
+data sets interleaved in one array.
+
+To sort the data, Shell Sort performs a set of h-sorting steps
+for decreasing values of h, until it finally performs h-sorting for h==1.
+h==1 essentially equals Insertion Sort.
+The set of values to use for h is also called the increment order.
+
+Verbal Description:
+
+It can be proved, that h[i+1]=3*h[i]+1 yields good results.
+Using this, the algorithm can be adapted as follows:
+
+1. while h<=n/9, set h=3*h+1
+2. Set i=h
+3. Store Element a[i] in a variable v, and store i in j
+4. While j>h ist and a[j-h]>v, set a[j]=a[j-h] and j=j-h
+5. Set a[j]=v
+6. Increment i. If i<n, continue with step 3
+7. Set h=h/3 (integer division!). If h>0, continue with step 2

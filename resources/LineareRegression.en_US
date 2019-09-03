@@ -1,0 +1,60 @@
+noSuchKeyException=There is no resource for the key {0}
+iconNotFound=Icon "{0}" not found
+
+title=Linear Regression
+
+name=Linear regression line
+
+nopException=The amount of points is not in the given interval.
+lowException=The lower bound is not in the given interval.
+upException=The upper bound is not in the given interval.
+
+scFirst=Regressionline(points):
+
+label=Calculation
+
+description0=The following animation will show you how the statistical method of linear regression works.
+description1=In this scenario, an amount of two-dimensional measurement points is given as the input. From these, the algorithm will calculate the regression line.
+description2=The model of linear regression depends on two sizes. The predictor variable X and the criterion variable Y. The drawn line will show the correlation 
+description3=between the measurement points.
+description4=The line is described by the classical form y = ax + b.
+description5=The regression line is for analysing the course of the measurement.
+description6=Note to the input:
+description7=The variable numberOfPoints must be set. It indicates how many points will be generated (refers to the x-values).
+description8=numberOfPoints has to be in the interval [50,750].
+description9=With the variables lowerBound and upperBound you can determine the bounds in which the y-values will be generated randomly.
+description10=lowerBound shall be in the interval [0,350] and upperBound in the interval [50,350].
+description11=Please make sure that lowerBound is smaller than upperBound, otherwise no points will be generated.
+
+intro0=The regression line is for analysing the course of the measurement.
+intro1=Linear regression establishes the correlation between the predictor variable X and the criterion variable Y.
+intro2=The variables X and Y will be extracted from a set of two-dimensional measurement points. With the drawn line
+intro3=in the classical form y = ax + b, you can estimate the course and the error of the measurement.
+
+outro0=This animation showed you the statistical method of linear regression.
+outro1=The accuracy of the regression depends on the correlation between the predictor variable X
+outro2=and the criterion variable Y. The higher the correlation the more accurate is the forecast.
+outro3=With measurements from the reality it can not arise a perfect linear correlation.
+outro4=The data points form clouds from which a roughly correlation can be gathered
+outro5=but it is impossible to make a perfect statement.
+outro6=Many thanks for your attention!
+
+question1=Which order has the resulting function?
+answer11=1
+answer12=2
+answer13=3
+
+question2=The accuracy of the prodecure depends on...?
+answer21=The number of measuring points.
+answer22=The correlation of X and Y.
+answer23=Repeated computing of the line.
+
+question3=Given is the following scenario: Watermelons are measured on their size (X in cm) and their weight (Y in kg). The resulting regression line is y = 0.125x + 0.3. What is the prognosis of the weight of a watermelon which is 40cm? 
+answer31=4.7 kg
+answer32=5.3 kg
+answer33=4.3 kg
+
+right=Right!
+wrong1=Unfortunately wrong. The right answer is 1.
+wrong2=Unfortunately wrong. The correlation of X and Y is right.
+wrong3=Unfortunately wrong. The right answer is 5.3 kg.

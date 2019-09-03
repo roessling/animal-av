@@ -1,0 +1,10 @@
+Pseudocode
+		
+threshold(Array, k) {
+	while (t > g){
+		Do sorted access in parallel at all sorted Array columns
+		Compute T of current row
+		Do random access to get the missing attribute values of seen so far object R from Array
+		Compute G
+	}
+}

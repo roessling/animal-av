@@ -1,0 +1,9 @@
+@import=resources/GenericBubbleSort.de_DE
+theName=Bubble Sort
+codeExample={ TBubbleSort }\n\nprocedure TBubbleSortSort(var A: array of Integer);\nvar\n I, J, T: Integer;\nbegin\n for I := High(A) downto Low(A) do\n   for J := Low(A) to High(A) - 1 do\n     if A[J] > A[J + 1] then\n     begin\n       T := A[J];\n       A[J] := A[J + 1];\n       A[J + 1] := T;\n       if Terminated then Exit;\n     end;\nend;
+animTitle=Bubble Sort
+algoTitle=Bubble Sort
+description.filename=resources/DelphiBubbleSort_descr_de.txt
+code.filename=resources/DelphiBubbleSort_code.txt
+complexity.filename=resources/GenericBubbleSort_complexity_de.txt
+outputLanguage=DELPHI

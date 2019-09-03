@@ -1,0 +1,8 @@
+@import=resources/GenericInsertionSort.bg_BG
+theName=Insertion Sort [BG]
+codeExample=public void insertionSort(int[] array)\n{\n  int i, j, v;\n  for (i = 1; i &lt; array.length; i++)\n  {\n    v = array[i];\n    for (j = i; j &gt; 0 && v &lt; array[j - 1]; j--)\n      array[j] = array[j - 1];\n    array[j] = v;\n  }\n}
+animTitle=\u0421\u043E\u0440\u0442\u0438\u0440\u0430\u043D\u0435 \u0447\u0440\u0435\u0437 \u0432\u043C\u044A\u043A\u0432\u0430\u043D\u0435
+algoTitle=\u0421\u043E\u0440\u0442\u0438\u0440\u0430\u043D\u0435 \u0447\u0440\u0435\u0437 \u0432\u043C\u044A\u043A\u0432\u0430\u043D\u0435
+description.filename=resources/GenericInsertionSort_descr_bg.txt
+code.filename=resources/JavaInsertionSort_code.txt
+complexity.filename=resources/GenericInsertionSort_complexity_bg.txt

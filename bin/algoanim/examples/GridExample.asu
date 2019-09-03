@@ -1,0 +1,12 @@
+%Animal 2 640*480
+title "Quicksort Animation"
+author "Guido Rößling"
+{
+graph "demoGraph" size 4 color (0, 0, 0) bgColor (0, 255, 0) highlightColor (255, 0, 0) elemHighlightColor (0, 255, 0) nodeFontColor (255, 255, 0) edgeFontColor (0, 0, 255) directed weighted nodes {"A" (20,100), "B" (120,100), "C" (20,160), "D" (120,200) } edges {(0, 1, "1") (0, 3, "2") (1, 0, "2") (1, 3, "10") (2, 0, "17") (3, 2, "1") } depth 1 
+}
+{
+highlightEdge on "demoGraph" (0, 3) 
+}
+{
+highlightNode on "demoGraph" nodes 2
+}

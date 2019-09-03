@@ -1,0 +1,23 @@
+algoName=Binary Search
+theName=Iterative Binary Search (String, Pseudocode; EN)
+outputLanguage=Pseudo-Code
+algoDesc=This algorithm looks for a value passed in in a sorted array of String values. If the value is found, its position in the array is returned; otherwise, the result is -1.
+codeExample=int iterativeBinarySearch(int[] array, int value):\n  Test if the array exists and has a valid length.\n  Set nrElems = number of array elements.\n  Set lower boundary of current partition l = 0.\n  Set upper boundary of current partition r = nrElems - 1.\n  Set middle of current partition mid = (l + r) / 2.\n  While r > l and array[mid] != value:\n    If value < array[mid]:\n      Set r = mid - 1.\n    Otherwise:\n      Set l = mid + 1.\n    Set mid = (l + r) / 2.\n  If array[mid] = value:\n    return mid.\n  Otherwise:\n    return -1.
+animTitle=Iterative Binary Search (String)
+algoAuthor=Dr. Guido Rößling (roessling@acm.org>
+algoTitle=Binary Search
+animDesc=Description of the algorithm
+adForURL=Further animations can be found at http://www.animal.ahrgr.de in the online repository.
+nrSteps=The algorithm used a total of {0} assignments and {1} comparisons.
+description.filename=resources/PseudoIterativeBinaryStringSearching_descr_en.txt
+description.level=2
+description.labelSymbol=#
+code.filename=resources/PseudoIterativeBinaryStringSearching_code_en.txt
+code.level=2
+code.labelSymbol=#
+complexity.filename=resources/PseudoIterativeBinaryStringSearching_complexity_en.txt
+complexity.level=2
+complexity.labelSymbol=#
+nrAss=Assignments
+nrComp=Comparisons
+result=Result: {0}

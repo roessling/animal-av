@@ -1,0 +1,10 @@
+Beispiel: Jack ist Bergsteiger und plant einen weiteren Aufstieg. Sein Bruder Jim hilft ihm, diesen zu organisieren. 
+Er sammelte Informationen über Jacks bisherige Aufstiege und ob diese erfolgreich waren oder nicht. Sie stehen in einer
+Tabelle (der 'Haupttabelle'). Ein Eintrag erhält Informationen darüber, wie hoch der Berg war (HÖHE), wie die Steigung 
+war (STEIGUNG) und ob Schnee auf dem Berg lag (SCHNEE). Und schließlich beschreibt der Wert der Klasse 
+(ganz rechts), ob Jack den Aufstieg geschafft hat. ID3 nimmt diese Beispiele als Eingabe und entwickelt ein allgemeines 
+Konzept, wann Jack ein Aufstieg gelingt.
+
+Jack scheint ein recht erfolgreicher Bergsteiger zu sein. Die Vorhersage ist immer 'ja'.
+Allerdings baut dieser Baum auch nur auf drei Beispielen auf (s.u., erste Anmerkung).
+Dieser Baum besteht aus nur einem Blatt (als Wurzel).

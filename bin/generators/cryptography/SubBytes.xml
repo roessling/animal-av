@@ -1,0 +1,319 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PropertiesTreeModel xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="PropertiesTreeModel.xsd">
+	<Folder name="Root">
+		<Folder name="State">
+			<Primitive type="StringMatrix">
+				<name>State</name>
+				<value><StringMatrix>19, A0, 9A, E9; 3D, F4, C6, F8; E3, E2, 8D, 48; BE, 2B, 2A, 08</StringMatrix></value>
+			</Primitive>
+		</Folder>
+		<Folder name="Animation Properties">
+			<Primitive type="Color">
+				<name>Highlight Element Color</name>
+				<value><Color>(255, 255, 0)</Color></value>
+			</Primitive>
+			<Primitive type="Color">
+				<name>Highlight S-box Entry Color</name>
+				<value><Color>(255, 0, 0)</Color></value>
+			</Primitive>
+			<Primitive type="Color">
+				<name>Highlight Processed Entry Color</name>
+				<value><Color>(0, 255, 0)</Color></value>
+			</Primitive>
+			<Primitive type="Color">
+				<name>Highlight S-box Index Color</name>
+				<value><Color>(255, 0, 0)</Color></value>
+			</Primitive>
+			<Primitive type="boolean">
+				<name>Questions</name>
+				<value><boolean value="true" /></value>
+			</Primitive>			
+		</Folder>
+		<Folder name="Text Properties">
+			<AnimationProperties type="SourceCodeProperties">
+				<AnimationPropertyItem type="BooleanPropertyItem">
+					<name>bold</name>
+					<isEditable value="true" />
+					<label>Font Bold</label>
+					<value><boolean value="false" /></value>
+				</AnimationPropertyItem>
+				<AnimationPropertyItem type="ColorPropertyItem">
+					<name>color</name>
+					<isEditable value="true" />
+					<label>Font Color</label>
+					<value><Color>(0, 0, 0)</Color></value>
+				</AnimationPropertyItem>
+				<AnimationPropertyItem type="ColorPropertyItem">
+					<name>highlightColor</name>
+					<isEditable value="false" />
+					<label></label>
+					<value><Color>(0, 0, 0)</Color></value>
+				</AnimationPropertyItem>
+				<AnimationPropertyItem type="BooleanPropertyItem">
+					<name>hidden</name>
+					<isEditable value="false" />
+					<label></label>
+					<value><boolean value="false" /></value>
+				</AnimationPropertyItem>
+				<AnimationPropertyItem type="FontPropertyItem">
+					<name>font</name>
+					<isEditable value="true" />
+					<label>Font</label>
+					<value><Font>Monospaced</Font></value>
+				</AnimationPropertyItem>
+				<AnimationPropertyItem type="StringPropertyItem">
+					<name>name</name>
+					<isEditable value="true" />
+					<label></label>
+					<value><String>Text Properties</String></value>
+				</AnimationPropertyItem>
+				<AnimationPropertyItem type="ColorPropertyItem">
+					<name>contextColor</name>
+					<isEditable value="false" />
+					<label></label>
+					<value><Color>(0, 0, 0)</Color></value>
+				</AnimationPropertyItem>
+				<AnimationPropertyItem type="BooleanPropertyItem">
+					<name>italic</name>
+					<isEditable value="false" />
+					<label></label>
+					<value><boolean value="false" /></value>
+				</AnimationPropertyItem>
+				<AnimationPropertyItem type="IntegerPropertyItem">
+					<name>depth</name>
+					<isEditable value="false" />
+					<label></label>
+					<value><int>1</int></value>
+				</AnimationPropertyItem>
+				<AnimationPropertyItem type="IntegerPropertyItem">
+					<name>row</name>
+					<isEditable value="false" />
+					<label></label>
+					<value><int>0</int></value>
+				</AnimationPropertyItem>
+				<AnimationPropertyItem type="IntegerPropertyItem">
+					<name>size</name>
+					<isEditable value="true" />
+					<label>Font Size</label>
+					<value><int>12</int></value>
+				</AnimationPropertyItem>
+				<AnimationPropertyItem type="IntegerPropertyItem">
+					<name>indentation</name>
+					<isEditable value="false" />
+					<label></label>
+					<value><int>0</int></value>
+				</AnimationPropertyItem>
+			</AnimationProperties>
+		</Folder>
+		<Folder name="Code Properties">
+			<AnimationProperties type="SourceCodeProperties">
+				<AnimationPropertyItem type="BooleanPropertyItem">
+					<name>bold</name>
+					<isEditable value="true" />
+					<label>Font Bold</label>
+					<value><boolean value="true" /></value>
+				</AnimationPropertyItem>
+				<AnimationPropertyItem type="ColorPropertyItem">
+					<name>color</name>
+					<isEditable value="true" />
+					<label>Font Color</label>
+					<value><Color>(0, 0, 0)</Color></value>
+				</AnimationPropertyItem>
+				<AnimationPropertyItem type="ColorPropertyItem">
+					<name>highlightColor</name>
+					<isEditable value="true" />
+					<label>Highlight Color</label>
+					<value><Color>(255, 0, 0)</Color></value>
+				</AnimationPropertyItem>
+				<AnimationPropertyItem type="BooleanPropertyItem">
+					<name>hidden</name>
+					<isEditable value="false" />
+					<label></label>
+					<value><boolean value="false" /></value>
+				</AnimationPropertyItem>
+				<AnimationPropertyItem type="FontPropertyItem">
+					<name>font</name>
+					<isEditable value="true" />
+					<label>Font</label>
+					<value><Font>Monospaced</Font></value>
+				</AnimationPropertyItem>
+				<AnimationPropertyItem type="StringPropertyItem">
+					<name>name</name>
+					<isEditable value="true" />
+					<label></label>
+					<value><String>Code Properties</String></value>
+				</AnimationPropertyItem>
+				<AnimationPropertyItem type="ColorPropertyItem">
+					<name>contextColor</name>
+					<isEditable value="false" />
+					<label></label>
+					<value><Color>(0, 0, 0)</Color></value>
+				</AnimationPropertyItem>
+				<AnimationPropertyItem type="BooleanPropertyItem">
+					<name>italic</name>
+					<isEditable value="false" />
+					<label></label>
+					<value><boolean value="false" /></value>
+				</AnimationPropertyItem>
+				<AnimationPropertyItem type="IntegerPropertyItem">
+					<name>depth</name>
+					<isEditable value="false" />
+					<label></label>
+					<value><int>3</int></value>
+				</AnimationPropertyItem>
+				<AnimationPropertyItem type="IntegerPropertyItem">
+					<name>row</name>
+					<isEditable value="false" />
+					<label></label>
+					<value><int>0</int></value>
+				</AnimationPropertyItem>
+				<AnimationPropertyItem type="IntegerPropertyItem">
+					<name>size</name>
+					<isEditable value="true" />
+					<label>Font Size</label>
+					<value><int>12</int></value>
+				</AnimationPropertyItem>
+				<AnimationPropertyItem type="IntegerPropertyItem">
+					<name>indentation</name>
+					<isEditable value="false" />
+					<label></label>
+					<value><int>0</int></value>
+				</AnimationPropertyItem>
+			</AnimationProperties>
+		</Folder>
+		<Folder name="State Matrix Properties">
+			<Primitive type="Color">
+				<name>State Background Color</name>
+				<value><Color>(211, 211, 211)</Color></value>
+			</Primitive>
+			<Primitive type="Color">
+				<name>State Matrix Border Color</name>
+				<value><Color>(0, 0, 0)</Color></value>
+			</Primitive>
+			<AnimationProperties type="TextProperties">
+				<AnimationPropertyItem type="BooleanPropertyItem">
+					<name>centered</name>
+					<isEditable value="false" />
+					<label></label>
+					<value><boolean value="true" /></value>
+				</AnimationPropertyItem>
+				<AnimationPropertyItem type="ColorPropertyItem">
+					<name>color</name>
+					<isEditable value="true" />
+					<label>Font Color</label>
+					<value><Color>(0, 0, 0)</Color></value>
+				</AnimationPropertyItem>
+				<AnimationPropertyItem type="BooleanPropertyItem">
+					<name>hidden</name>
+					<isEditable value="false" />
+					<label></label>
+					<value><boolean value="false" /></value>
+				</AnimationPropertyItem>
+				<AnimationPropertyItem type="FontPropertyItem">
+					<name>font</name>
+					<isEditable value="true" />
+					<label>Font</label>
+					<value><Font>Monospaced</Font></value>
+				</AnimationPropertyItem>
+				<AnimationPropertyItem type="StringPropertyItem">
+					<name>name</name>
+					<isEditable value="true" />
+					<label></label>
+					<value><String>State Properties</String></value>
+				</AnimationPropertyItem>
+				<AnimationPropertyItem type="IntegerPropertyItem">
+					<name>depth</name>
+					<isEditable value="false" />
+					<label></label>
+					<value><int>1</int></value>
+				</AnimationPropertyItem>
+			</AnimationProperties>
+		</Folder>
+		<Folder name="S-box Matrix Properties">
+			<Primitive type="Color">
+				<name>S-box Background Color</name>
+				<value><Color>(211, 211, 211)</Color></value>
+			</Primitive>
+			<Primitive type="Color">
+				<name>S-box Matrix Border Color</name>
+				<value><Color>(0, 0, 0)</Color></value>
+			</Primitive>
+			<AnimationProperties type="TextProperties">
+				<AnimationPropertyItem type="BooleanPropertyItem">
+					<name>centered</name>
+					<isEditable value="false" />
+					<label></label>
+					<value><boolean value="true" /></value>
+				</AnimationPropertyItem>
+				<AnimationPropertyItem type="ColorPropertyItem">
+					<name>color</name>
+					<isEditable value="true" />
+					<label>Font Color</label>
+					<value><Color>(0, 0, 0)</Color></value>
+				</AnimationPropertyItem>
+				<AnimationPropertyItem type="BooleanPropertyItem">
+					<name>hidden</name>
+					<isEditable value="false" />
+					<label></label>
+					<value><boolean value="false" /></value>
+				</AnimationPropertyItem>
+				<AnimationPropertyItem type="FontPropertyItem">
+					<name>font</name>
+					<isEditable value="true" />
+					<label>Font</label>
+					<value><Font>Monospaced</Font></value>
+				</AnimationPropertyItem>
+				<AnimationPropertyItem type="StringPropertyItem">
+					<name>name</name>
+					<isEditable value="true" />
+					<label></label>
+					<value><String>S-box Properties</String></value>
+				</AnimationPropertyItem>
+				<AnimationPropertyItem type="IntegerPropertyItem">
+					<name>depth</name>
+					<isEditable value="false" />
+					<label></label>
+					<value><int>1</int></value>
+				</AnimationPropertyItem>
+			</AnimationProperties>
+			<AnimationProperties type="TextProperties">
+				<AnimationPropertyItem type="BooleanPropertyItem">
+					<name>centered</name>
+					<isEditable value="false" />
+					<label></label>
+					<value><boolean value="true" /></value>
+				</AnimationPropertyItem>
+				<AnimationPropertyItem type="ColorPropertyItem">
+					<name>color</name>
+					<isEditable value="true" />
+					<label>Font Color</label>
+					<value><Color>(0, 0, 0)</Color></value>
+				</AnimationPropertyItem>
+				<AnimationPropertyItem type="BooleanPropertyItem">
+					<name>hidden</name>
+					<isEditable value="false" />
+					<label></label>
+					<value><boolean value="false" /></value>
+				</AnimationPropertyItem>
+				<AnimationPropertyItem type="FontPropertyItem">
+					<name>font</name>
+					<isEditable value="true" />
+					<label>Font</label>
+					<value><Font>Monospaced</Font></value>
+				</AnimationPropertyItem>
+				<AnimationPropertyItem type="StringPropertyItem">
+					<name>name</name>
+					<isEditable value="true" />
+					<label></label>
+					<value><String>S-box Index Properties</String></value>
+				</AnimationPropertyItem>
+				<AnimationPropertyItem type="IntegerPropertyItem">
+					<name>depth</name>
+					<isEditable value="false" />
+					<label></label>
+					<value><int>1</int></value>
+				</AnimationPropertyItem>
+			</AnimationProperties>
+		</Folder>
+	</Folder>
+</PropertiesTreeModel>

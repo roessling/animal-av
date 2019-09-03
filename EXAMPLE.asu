@@ -1,0 +1,72 @@
+%Animal 2656*574
+{
+codeGroup "codeSource" at (835,60) color black highlightColor red
+addCodeLine "LIBRARY IEEE;" to "codeSource"
+addCodeLine "USE IEEE.STD_LOGIC_1164.ALL;" to "codeSource"
+addCodeLine "ENTITY EXAMPLE IS" to "codeSource"
+addCodeLine "PORT (a,b,c,d,CLK,rst: IN STD_LOGIC; co : OUT STD_LOGIC);" to "codeSource" indentation 1
+addCodeLine "END ENTITY EXAMPLE;" to "codeSource"
+addCodeLine "" to "codeSource"
+addCodeLine "ARCHITECTURE BEH OF EXAMPLE IS" to "codeSource"
+addCodeLine "SIGNAL s1,s2,s3:STD_LOGIC;" to "codeSource" indentation 1
+addCodeLine "BEGIN" to "codeSource" indentation 1
+addCodeLine "s1<=a and b;" to "codeSource" indentation 2
+addCodeLine "s2<=not((c and d) or (c and not d));" to "codeSource" indentation 2
+addCodeLine "s3<=s1 or s2;" to "codeSource" indentation 2
+addCodeLine "PROCESS(clk,rst)" to "codeSource" indentation 2
+addCodeLine "BEGIN" to "codeSource" indentation 3
+addCodeLine "IF(rst='1') THEN" to "codeSource" indentation 4
+addCodeLine "co<='0';" to "codeSource" indentation 5
+addCodeLine "ELSIF (clk'event and clk='1') THEN" to "codeSource" indentation 4
+addCodeLine "co<=s3;" to "codeSource" indentation 4
+addCodeLine "END IF" to "codeSource" indentation 3
+addCodeLine "END PROCESS" to "codeSource" indentation 2
+addCodeLine "END ARCHITECTURE BEH;" to "codeSource"
+addCodeLine "" to "codeSource"
+}
+{
+relRectangle "0" (45, 100) (740, 715)  color black depth 16
+text "0" "EXAMPLE" (45,85) color blue depth 16 font Monospaced size 14
+polyline "0" (30,176) (45,176) color black depth 16
+polyline "0" (30,226) (45,226) color black depth 16
+polyline "0" (30,374) (45,374) color black depth 16
+polyline "0" (30,522) (45,522) color black depth 16
+polyline "0" (785,198) (805,198) color black depth 16
+highlightCode on  "codeSource" line 2
+highlightCode on  "codeSource" line 3
+highlightCode on  "codeSource" line 4
+highlightCode on  "codeSource" line 5
+
+}
+
+{
+wire "wire_black" ( 30,176) ( 93,176) 
+wire "wire_black" ( 30,226) ( 93,226) 
+wire "wire_black" ( 30,374) ( 93,374) 
+wire "wire_black" ( 93,374) ( 55,374) ( 55,572) ( 93,572) 
+wire "wire_black" ( 30,522) ( 93,522) 
+wire "wire_black" ( 93,522) ( 50,522) ( 50,695) ( 93,695) 
+wire "wire_black" ( 762,198) ( 805,198) 
+unhighlightCode on  "codeSource" line 0
+unhighlightCode on  "codeSource" line 1
+unhighlightCode on  "codeSource" line 2
+unhighlightCode on  "codeSource" line 3
+unhighlightCode on  "codeSource" line 4
+unhighlightCode on  "codeSource" line 5
+unhighlightCode on  "codeSource" line 6
+unhighlightCode on  "codeSource" line 7
+unhighlightCode on  "codeSource" line 8
+unhighlightCode on  "codeSource" line 9
+unhighlightCode on  "codeSource" line 10
+unhighlightCode on  "codeSource" line 11
+unhighlightCode on  "codeSource" line 12
+unhighlightCode on  "codeSource" line 13
+unhighlightCode on  "codeSource" line 14
+unhighlightCode on  "codeSource" line 15
+unhighlightCode on  "codeSource" line 16
+unhighlightCode on  "codeSource" line 17
+unhighlightCode on  "codeSource" line 18
+unhighlightCode on  "codeSource" line 19
+unhighlightCode on  "codeSource" line 20
+highlightCode on  "codeSource" line 21
+}

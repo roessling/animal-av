@@ -1,0 +1,8 @@
+@import=resources/GenericSettings
+algoDesc=Dieser Generator sortiert das vom Nutzer eingegebene Array mittels Insertion Sort. Der Algorithmus entnimmt der unsortierten Eingabemenge ein beliebiges (z.B. das erste) Element und fügt es an richtiger Stelle in die (anfangs leere) Ausgabemenge ein. Das Verfahren arbeitet also in-place. Geht man in der Reihenfolge der ursprünglichen Menge vor, so ist es jedoch (etwa im Gegensatz zu Selection Sort) stabil. Wird auf einem Array gearbeitet, so müssen die Elemente nach dem neu eingefügten Element verschoben werden. Dies ist die eigentlich teure Operation von Insertionsort, da das Finden der richtigen Einfügeposition über eine binäre Suche vergleichsweise effizient erfolgen kann.
+algoAuthor=Krasimir Markov <kmarkov@gmail.com>
+adForURL=Weitere Animationen finden Sie unter http://www.algoanim.info/Animal2 im Online-Repository
+animDesc=Beschreibung des Algorithmus
+nrSteps=Insgesamt verwendete der Algorithmus {0} Zuweisungen und {1} Vergleiche.
+nrAss=Zuweisungen
+nrComp=Vergleiche

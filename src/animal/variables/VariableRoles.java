@@ -1,0 +1,16 @@
+package animal.variables;
+
+public enum VariableRoles {
+  UNKNOWN,
+  STEPPER,
+  TEMPORARY,
+  ORGANIZER,
+  FIXED_VALUE,
+  MOST_WANTED_HOLDER,
+  MOST_RECENT_HOLDER,
+  ONE_WAY_FLAG,
+  FOLLOWER,
+  GATHERER,
+  CONTAINER,
+  WALKER
+}

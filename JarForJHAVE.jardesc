@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<jardesc>
+    <jar path="C:/Java/jar/AnimalForJHAVE.jar"/>
+    <options buildIfNeeded="true" compress="true" descriptionLocation="/Animal/JarForJHAVE.jardesc" exportErrors="true" exportWarnings="true" includeDirectoryEntries="true" overwrite="false" saveDescription="true" storeRefactorings="false" useSourceFolders="false"/>
+    <refactoring endStamp="9223372036854775806" startStamp="1163512260608" structuralOnly="false"/>
+    <selectedProjects>
+        <project name="avInteraction"/>
+        <project name="I18N"/>
+        <project name="SharedComponents"/>
+    </selectedProjects>
+    <manifest generateManifest="false" manifestLocation="/Animal/META-INF/MANIFEST.MF" manifestVersion="1.0" reuseManifest="false" saveManifest="false" usesManifest="true">
+        <sealing sealJar="false">
+            <packagesToSeal/>
+            <packagesToUnSeal/>
+        </sealing>
+    </manifest>
+    <selectedElements exportClassFiles="true" exportJavaFiles="false" exportOutputFolder="false">
+        <javaElement handleIdentifier="=JHAVE/&lt;animal.main"/>
+        <javaElement handleIdentifier="=Animal/&lt;animalscript.extensions"/>
+        <file path="/Animal/AnimalResources.de_DE"/>
+        <file path="/Animal/languages.dat"/>
+        <javaElement handleIdentifier="=Animal/&lt;components"/>
+        <javaElement handleIdentifier="=Animal/&lt;animalscriptapi.primitives"/>
+        <javaElement handleIdentifier="=Animal/&lt;generator"/>
+        <file path="/Animal/GeneratorMsg.de_DE"/>
+        <javaElement handleIdentifier="=Animal/&lt;animal.animator"/>
+        <file path="/Animal/MwaySearchTreeProperties"/>
+        <file path="/Animal/animal.properties"/>
+        <javaElement handleIdentifier="=Animal/&lt;example"/>
+        <javaElement handleIdentifier="=Animal/&lt;animal.exchange"/>
+        <file path="/Animal/AnimalResourcesV2.en_US"/>
+        <file path="/Animal/graphDemo2.asu"/>
+        <folder path="/Animal/META-INF"/>
+        <file path="/Animal/bnf.txt"/>
+        <file path="/Animal/test.script"/>
+        <file path="/Animal/parser.config"/>
+        <file path="/Animal/.project"/>
+        <file path="/Animal/HeapSort"/>
+        <javaElement handleIdentifier="=Animal/&lt;de.ahrgr.animal.kohnert.generatorgui"/>
+        <file path="/Animal/BtreeProperties"/>
+        <javaElement handleIdentifier="=Animal/&lt;generatorImplementations"/>
+        <file path="/Animal/HeapSort.ptm"/>
+        <javaElement handleIdentifier="=Animal/&lt;animal.editor"/>
+        <javaElement handleIdentifier="=Animal/&lt;algorithm.fileHandler"/>
+        <javaElement handleIdentifier="=Animal/&lt;animal.exchange.animalscript"/>
+        <file path="/Animal/SearchTreeProperties"/>
+        <javaElement handleIdentifier="=Animal/&lt;anims"/>
+        <javaElement handleIdentifier="=Animal/&lt;animal.misc"/>
+        <javaElement handleIdentifier="=Animal/&lt;de.ahrgr.animal.kohnert.generators"/>
+        <javaElement handleIdentifier="=Animal/&lt;translator"/>
+        <javaElement handleIdentifier="=Animal/&lt;avinteraction"/>
+        <javaElement handleIdentifier="=Animal/&lt;algorithm.stringSearch"/>
+        <javaElement handleIdentifier="=Animal/&lt;algorithm.search"/>
+        <file path="/Animal/types.dat"/>
+        <javaElement handleIdentifier="=Animal/&lt;algorithm"/>
+        <javaElement handleIdentifier="=Animal/&lt;animal.exchange.animalascii"/>
+        <javaElement handleIdentifier="=Animal/&lt;"/>
+        <javaElement handleIdentifier="=Animal/&lt;generator.properties"/>
+        <javaElement handleIdentifier="=Animal/&lt;animalscriptapi.animalscript"/>
+        <javaElement handleIdentifier="=Animal/&lt;jhave.support"/>
+        <file path="/Animal/AnimalTutorial_de_DE.html"/>
+        <file path="/Animal/AnimalTutorial_en_US.html"/>
+        <javaElement handleIdentifier="=Animal/&lt;graphics"/>
+        <file path="/Animal/AnimalDistribution.jardesc"/>
+        <file path="/Animal/AnimalResources.de"/>
+        <file path="/Animal/build-user.xml"/>
+        <file path="/Animal/AnimalResources.en_US"/>
+        <javaElement handleIdentifier="=Animal/&lt;algorithm.animalTranslator.codeItems"/>
+        <file path="/Animal/interactionRes.de_DE"/>
+        <javaElement handleIdentifier="=Animal/&lt;interactionsupport.models.backend"/>
+        <javaElement handleIdentifier="=Animal/&lt;animal.dialog"/>
+        <javaElement handleIdentifier="=Animal/&lt;de.ahrgr.animal.ackermann.guicomponents"/>
+        <javaElement handleIdentifier="=Animal/&lt;animalscriptapi.examples"/>
+        <javaElement handleIdentifier="=Animal/&lt;animal.handler"/>
+        <javaElement handleIdentifier="=Animal/&lt;animalscriptapi.helpers"/>
+        <file path="/Animal/AnimalResources.en"/>
+        <file path="/Animal/AnimalResources"/>
+        <file path="/Animal/interactionRes.en_US"/>
+        <javaElement handleIdentifier="=Animal/&lt;algorithm.animalTranslator"/>
+        <file path="/Animal/AnimationPlayer.de_DE"/>
+        <javaElement handleIdentifier="=Animal/&lt;animalscriptapi.primitives.generators"/>
+        <file path="/Animal/posixInfo.txt"/>
+        <javaElement handleIdentifier="=Animal/&lt;animalscript.core"/>
+        <javaElement handleIdentifier="=Animal/&lt;animal.main"/>
+        <file path="/Animal/languages.default"/>
+        <file path="/Animal/GeneratorMsg"/>
+        <file path="/Animal/GeneratorMsg.en_US"/>
+        <file path="/Animal/components.dat.noArray"/>
+        <file path="/Animal/AnimalResources.es_SP"/>
+        <javaElement handleIdentifier="=Animal/&lt;animalscriptapi.properties.items"/>
+        <file path="/Animal/ToDo.jpage"/>
+        <javaElement handleIdentifier="=Animal/&lt;de.ahrgr.animal.kohnert.asugen.petri"/>
+        <javaElement handleIdentifier="=Animal/&lt;de.ahrgr.animal.kohnert.asugen"/>
+        <javaElement handleIdentifier="=Animal/&lt;animalscriptapi.exceptions"/>
+        <javaElement handleIdentifier="=Animal/&lt;algorithm.animalTranslator.library"/>
+        <javaElement handleIdentifier="=Animal/&lt;animalscriptapi.properties"/>
+        <file path="/Animal/bnf.html"/>
+        <javaElement handleIdentifier="=Animal/&lt;generator.types"/>
+        <file path="/Animal/BinaryTreeProperties"/>
+        <file path="/Animal/deltaResources"/>
+        <javaElement handleIdentifier="=Animal/&lt;net.algoanim.aads"/>
+        <javaElement handleIdentifier="=Animal/&lt;animal.gui"/>
+        <javaElement handleIdentifier="=Animal/&lt;animal.graphics"/>
+        <file path="/Animal/elementDefinitions"/>
+        <file path="/Animal/AnimalResources.es"/>
+        <file path="/Animal/generators.dat"/>
+        <file path="/Animal/components.dat"/>
+        <file path="/Animal/build.xml"/>
+        <file path="/Animal/JarForJHAVE.jardesc"/>
+        <file path="/Animal/javadoc.xml"/>
+        <file path="/Animal/default.properties"/>
+        <file path="/Animal/JarWithCompression.jardesc"/>
+        <file path="/Animal/.classpath"/>
+        <javaElement handleIdentifier="=Animal/&lt;de.ahrgr.animal.kohnert.asugen.property"/>
+        <javaElement handleIdentifier="=Animal/&lt;interactionsupport.parser"/>
+        <file path="/Animal/components.dat.AnimalArray"/>
+        <file path="/Animal/animationGenerator.jardesc"/>
+        <file path="/Animal/interactionRes"/>
+        <javaElement handleIdentifier="=Animal/&lt;generator.properties.tree"/>
+    </selectedElements>
+</jardesc>

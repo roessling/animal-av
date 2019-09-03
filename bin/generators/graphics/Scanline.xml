@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<PropertiesTreeModel xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="PropertiesTreeModel.xsd">
+	<Folder name="Root">
+		<Primitive type="intMatrix">
+			<name>Polygon1</name>
+			<value><intMatrix>2, 6; 8, 16; 12, 10</intMatrix></value>
+		</Primitive>
+		<Primitive type="intMatrix">
+			<name>Polygon2</name>
+			<value><intMatrix>6, 4; 12, 18; 16, 8</intMatrix></value>
+		</Primitive>
+		<Primitive type="Color">
+			<name>P1Color</name>
+			<value><Color>(0, 255, 0)</Color></value>
+		</Primitive>
+		<Primitive type="Color">
+			<name>P2Color</name>
+			<value><Color>(0, 0, 255)</Color></value>
+		</Primitive>
+		<Primitive type="Color">
+			<name>BackgroundColor</name>
+			<value><Color>(255, 224, 224)</Color></value>
+		</Primitive>
+	</Folder>
+</PropertiesTreeModel>

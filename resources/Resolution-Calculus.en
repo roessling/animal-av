@@ -1,0 +1,81 @@
+name=Resolution-Calculus
+
+expl1=Resolution takes in a set of so called clauses that are yet again
+expl2=sets containing so called literals (unnegated and negated boolean variables)
+expl3=The semantic behind that set of sets is that it represents a CNF-Formula in boolean logic:
+expl4=Build the disjunction of the literals for all clauses first, then the conjunction of all that formulas
+expl5=For example '{'p,s'}', '{'!p,q'}' is equivalent to the formula (p ∨ s) ∧ (!p ∨ q)
+expl6=However, strictly speaking, it is only possible to write down that formula if the set of clauses is finite
+expl7=Now, resolution is a SAT-Solver for that set of clauses, i.e. it will tell us whether there is an
+expl8=assignment for the boolean variables contained in all clauses that makes the set of clauses true
+expl9=The idea is that we continuously resolve new clauses out of older ones. These new clauses do not change satisfiability
+expl10=of the initial clauses, they only "make it more clear" what boolean values to assign to the variables.
+expl11=Now, if the algorithm does happen to resolve an "empty" clause, it can terminate and output unsatisfiable
+expl12=if it terminates because there are no new clauses to resolve it outputs satisfiable.
+expl13=Do note that SAT-Solving is generally the most trivial/known NP-complete problem! CNF-Formulas are no exception!
+expl14=For infinite sets of clauses unsatisfiability is at least semi-decidable (due to the compactness theorem)
+expl15=Do not get confused that this implementation manages clauses in old, new and next generations:
+expl16=That system is only in place to avoid redundant resolutions (all clauses in the old generation
+expl17=have already been resolved with each other, so that can be skipped in later iterations)
+
+wdwExpl1=Resolution is a calculus for SAT-Solving of boolean logic clauses.\n
+wdwExpl2=These clauses represent CNF-Formulas:\n
+wdwExpl3=For example '{'p,s'}', '{'!p,q'}' is equivalent to the formula (p ∨ s) ∧ (!p ∨ q)\n
+wdwExpl4=For more information, see the opening slide in the animation.\n\n
+wdwExpl5=Your input to the animation has to be created with the following grammar:\n
+wdwExpl6=Start non-terminal is S\n\nS -> Clause ("," Clause)*\n
+wdwExpl7=Clause -> "'{'" Literal ("," Literal)* "'}'"\nLiteral -> UnicodeCharacters*\n\n
+wdwExpl8=Examples:\n'{'p, q'}', '{'!p, s'}', '{'!s'}', '{'!q'}'\n
+wdwExpl9='{'!s, t'}', '{'s, t, q'}', '{'!q, p'}', '{'!q, !p'}', '{'!s, !q'}'\n
+wdwExpl10=Literals with a preceding ! are interpreted as negated variables and using spaces is okay.\n\n
+wdwExpl11=Caution: Resolution is NP-complete, moreover this naive implementation is quite slow! (A correct answer for the complexity question also gives a hint for improving that)
+
+satExpl0=Proof for satisfiability
+satExpl1=In the last iteration no new clauses have been resolved:
+satExpl2=We have now completely resolved all clauses there are to resolve
+satExpl3=without any one of them being empty.
+satExpl4=Because the Resolution-Calculus is correct and complete
+satExpl5=it then follows that your input must have been satisfiable.
+satExpl6=The generator now orders all clauses, you can therefore
+satExpl7=quite easily construct how one has to assign all variables
+satExpl8=to satisfy the clauses (or its representative formula)
+satExpl9=All input clauses have been highlighted!
+
+unsatExpl0=Proof for unsatisfiability
+unsatExpl1=Resolving the last two clauses resulted in the empty clause:
+unsatExpl2=Because the Resolution-Calculus is correct it then follows
+unsatExpl3=that your input must have been unsatisfiable.
+unsatExpl4=Be sure to also try out an input that is satisfiable!
+
+exmplRes=Example of Resolution
+
+correct=Correct
+wrong=Wrong
+
+emptyClauseQ0=After you read the introduction: Why should the algorithm stop and output unsatisfiable when it resolves the empty clause? (Pick the wrong statement!)
+emptyClauseQ1=The empty clause is equivalent to the logical constant 0
+emptyClauseQ2=Wrong answer: The empty clause is actually equivalent to 0
+emptyClauseQ3=Because the empty clause is unsatisfiable the whole clause set cannot be satisfiable
+emptyClauseQ4=Wrong answer: Remember that you can think of clause sets as a large conjunction, if the empty clause is already equivalent to 0, the conjunction cannot be satisfiable
+emptyClauseQ5=Because the empty clause is unsatisfiable it now makes the clause set unsatisfiable
+emptyClauseQ6=Correct answer: The input has already been unsatisfiable. Resolving the empty clause only shows, but does not make it, unsatisfiable
+emptyClauseQ7=Because then the rest of the clause set is unsatisfiable
+emptyClauseQ8=Wrong answer: Remember that resolving does not change satisfiability, if we could resolve the empty clause, the input must already have been unsatisfiable
+
+parallelResQ0=After you have seen the algorithm in action: What resolvents do you get from '{'p, q'}' with '{'!p, !q'}' ?
+parallelResQ1='{'q, !q'}', '{'p, !p'}'
+parallelResQ2='{'q, !q'}', '{'p, !p'}', '{''}'
+parallelResQ3=Wrong, '{'q, !q'}', '{'p, !p'}' will be resolved, but the calculus strictly does not allow to simultaneously resolve with two (or more) pairs of literals. In fact both clauses are equivalent to p XOR q, so they are already an example for that.
+parallelResQ4='{'p, !q'}', '{'!p, q'}'
+parallelResQ5='{'p, !q'}', '{'!p, q'}', '{''}'
+parallelResWrong=Wrong, '{'q, !q'}', '{'p, !p'}' is the correct answer
+
+runtimeQ0=What time and space complexity do you expect in the worst case scenario? (Input size n is the number of distinct literals in all clauses)
+runtimeQ1=Polynomial time, polynomial space
+runtimeQ2=Wrong, as shown in the introduction SAT is an NP-complete problem so exponential time is at least expected
+runtimeQ3=Exponential time, polynomial space
+runtimeQ4=Partially correct: Resolution can be implemented (based on decision trees) such that it only needs polynomial time. However for didactic reasons (and because those other approaches are quite complex) this generator caches all resolvents.
+runtimeQ5=Polynomial time, exponential space
+runtimeQ6=Wrong, that is also a theoretically impossible combination
+runtimeQ7=Exponential time, exponential space
+runtimeQ8=Correct, for this implementation. There are quite complex approaches for polynomial space resolution, however. In general those are also better for runtime and should be implemented for serious purposes. (Here: O(2^3n))

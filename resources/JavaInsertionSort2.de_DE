@@ -1,0 +1,8 @@
+@import=resources/GenericInsertionSort.de_DE
+theName=Insertion Sort 2 [DE]
+codeExample=public void insertionSort(int[] array)\n{\n  int i, j, temp;\n  for (i=1; i<array.length; i++)\n  {\n    j = i;\n    temp = array[i];\n    while (j > 0 && array[j-1] > temp){\n      array[j] = array[j-1];\n      j = j - 1;\n    }\n    array[j] = temp;\n  }\n}
+animTitle=Insertion Sort
+algoTitle=Insertion Sort
+description.filename=resources/GenericInsertionSort_descr_de.txt
+code.filename=resources/JavaInsertionSort2_code.txt
+complexity.filename=resources/GenericInsertionSort_complexity_de.txt

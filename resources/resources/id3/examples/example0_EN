@@ -1,0 +1,11 @@
+Example: An owner of a small bar is interested in the circumstances in which people play billiards in his bar. Therefore,
+he asks his guests questions about some aspects and stores the results in a table (called the 'main table'). One example 
+contains information about whether the person felt motivated (MOTIVATION), whether or not they were tired (TIRED) and how 
+much money they brought with them (MONEY). And finally, the class value (on the right, 'yes' or 'no') describes whether 
+the person played billiards or not. ID3 takes these examples as an input to come up with a general concept about what 
+causes people to (not) play billiards.
+
+When a new person enters the bar (with a certain motivation and a certain amount of money in their pockets, tired 
+or not tired) the bar owner (and you!) can try to forecast whether they will play billiards: 
+Starting at the root node, follow the edges that correspond to the attribute values of the person; the 
+leaf that you'll reach tells the expectation (but, of course, only based on the previously seen examples).

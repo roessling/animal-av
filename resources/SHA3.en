@@ -1,0 +1,86 @@
+#Ueberpruefung
+noSuchKeyException=There is no resource for the key {0}
+iconNotFound=Icon "{0}” not  found
+
+
+
+#Title
+TITLE0=Introduction
+TITLE1=Step
+TITLE2=Conclusion
+TITLE3=and
+
+#Introduction
+INTRO0=The SHA-3 algorithm is the latest entry of the 'Security Hash Algorithm' (SHA) family
+INTRO1=of hash algorithm standards released by 'National Institute of Standards and Technology' (NIST).
+INTRO2=It was introduced in a competition to determine the next standardised hash algorithm.
+INTRO3=Furthermore SHA-3 is a subset of the 'Keccak' algorithm family which is designed by Guido Bertoni, Joan Daemen, Michaël Peeters and Gilles Van Assche
+INTRO4=
+INTRO5=The algorithms prior to SHA-3 are MD5, SHA-1 and SHA-2. Those three algorithm all
+INTRO6=use a 'Davies-Meyer structure' but SHA-3 has a 'sponge structure'. Which means that they differ distinctly in structure.
+INTRO7=All sponge functions are characterised by two different phases.
+INTRO8=First there is the absorbing phase in which a input bit stream of variable length is padded into bit blocks of constant length using a padding function and then added to a 5x5 64bit state.
+INTRO9=Following this there is the squeezing phase. Now the portions of bits are added to the state again. Redoing this produces a new output bit stream of variable length.
+INTRO10=This means that sponge functions can take an input stream of any length and then produce an output stream of any length (SHA-3 uses fixed length output).
+INTRO11=
+INTRO12=SHA-3 uses the 1*0*0....*0*1 pattern in their padding function to ensure a message can be evenly divided.
+INTRO13=Within the block permutation of SHA-3 'XOR', 'AND' and 'NOT' operations are used.
+INTRO14=Furthermore, the permutation is split into 5 steps which go by the names of θ, ρ, π, χ and ι.
+INTRO15=The θ-step computes the parity of each 5b column.
+INTRO16=The ρ-step rotates bitwise each of the 25 words.
+INTRO17=The π-step permutes the 25 words.
+INTRO18=The χ-step combines along rows bitwise. This is the only non-linear operation in SHA-3.
+INTRO19=The ι-step XORs a round constant into one word of the state.
+INTRO20=These steps will be explained further in the following slides.
+INTRO21=
+INTRO22=There are two main reasons a new standardization was released by 'NIST' even though SHA-2 is not broken yet and experts claim it will be safe for several more years.
+INTRO23=Despite the complex structure SHA-3 is more efficient then SHA-1 and SHA-2 due to the very efficient hardware implementation and the overall algorithm design.
+INTRO24=Furthermore SHA-3 provides a different structure which means that a successful attack on SHA-2 will most likely be no thread to SHA-3.
+
+#Conclusion
+OUTRO0=The SHA-3 algorithm provides an efficient way to hash any message.
+OUTRO1=Within the before shown scenario the input message of:
+OUTRO2=
+OUTRO3=
+OUTRO4=
+OUTRO5=was transformed into the hash of:
+OUTRO6=
+OUTRO7=
+OUTRO8=
+OUTRO9=Using the parameters and the mode of:
+OUTRO10=
+OUTRO11=
+
+#Explanations
+EXPLANATIONS=The internal state matrix
+EXPLANATIONS0=Every row gets compressed together using XOR into the C array
+EXPLANATIONS1=Two C values get compressed together using XOR into the D array
+EXPLANATIONS2=The i-th value of D gets applied to the whole i-th row of the state matrix using XOR.
+EXPLANATIONS3=The triangular numbers
+EXPLANATIONS4=For simplicity reasons only the first and last iteration of the step are shown
+EXPLANATIONS5=Now each field of the Array is permuted and bitwise rotated for an fix triangular number
+EXPLANATIONS6=Please note that the first and last columns are cross-wired like the other columns.
+EXPLANATIONS7=These wires have been omitted for simplicity.
+EXPLANATIONS8=
+EXPLANATIONS9=In this step each column of the state matrix is put into this logical circuit
+EXPLANATIONS10=and the resulting values are written back into the state matrix.
+EXPLANATIONS11=In this step the input message is slit into
+EXPLANATIONS12=bit long blocks and
+EXPLANATIONS13=each of them is added to the uState using XOR.
+EXPLANATIONS14=Only the first 15 fields of uState and uMessage are shown for sake of clarity.
+EXPLANATIONS15=
+
+#Keccak-F Explanations
+KF_EXPLANATION_1=The Keccak-F Phase is the most important phase of the algorithm. Often it is executed multiple times.
+KF_EXPLANATION_2=Here only one execution is shown.
+KF_EXPLANATION_3=
+KF_EXPLANATION_4=At the beginning of the phase the internal state matrix is filled with values from the uState array.
+KF_EXPLANATION_5=For this purpose, 8 elements of the array are selected according to the current counter variables  (1st highlighted line).
+KF_EXPLANATION_6=Transformed into a 64bit integer, this BigInteger is written into a field of the 5x5 state matrix (2nd highlighted line).
+
+#Iota Phase
+IOTA_ROUND_CONSTANT_VARIABLE_NAME=Round Constants
+IOTA_EXPLANATION_1=At the end of each iteration a round constant is applied using XOR
+IOTA_EXPLANATION_2=to the left-topmost element of the state matrix.
+IOTA_EXPLANATION_3=The element in the state matrix is highlighted above.
+IOTA_EXPLANATION_4=The round constant for the current iteration is highlighted on the left.

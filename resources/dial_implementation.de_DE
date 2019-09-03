@@ -1,0 +1,55 @@
+noSuchKeyException=There is no ressource for the key {0}
+iconNotFound=Icon "{ }" not found
+
+
+descriptionGlobal=Die Dial-Implementierung ist eine Implementierung der beschr\u00e4nkten monotonen Priorit\u00e4tswarteschlange.\nDer Vorteil dieser Implementierung ist die konstante Zugriffszeit auf das Minimum der Warteschlange\nund die konstante Komplexit\u00e4t f\u00fcr das Einf\u00fcgen eines neuen Elements. Monoton ist diese Warteschlange,\nda die Elemente in einer totalen Ordnung gespeichert werden und zu jeder Zeit mit konstanter Komplexit\u00e4t\nauf das aktuelle Minimum zugegriffen werden kann.\nDie Schl\u00fcsselwerte, die in der Warteschlange gespeichert werden, m\u00fcssen numerischer Natur sein und die Modulo-\nOperation unterst\u00fctzen.\n\nDie Datenstruktur wird durch drei Objektvariablen definiert:\n1. S: Die Schl\u00fcsselwerte, die gespeichert werden, befinden sich in der Menge (0, ..., S - 1) \n2. A: In dem Array A der Gr\u00f6\u00dfe S werden die Schl\u00fcsselwerte gespeichert\n3. P: P enth\u00e4lt den Index des Arrays A, an der das jeweils aktuelle Minimum der Schl\u00fcsselwerte zu finden ist\n\nAn einer Position des Arrays k\u00f6nnen beliebig viele Elemente des gleichen Schl\u00fcsselwerts gespeichert werden.\nEine praktische Anwendung dieser Datenstruktur ist beispielsweise der Dijsktra-Algorithmus, bei dem die\njeweils n\u00e4chsten k\u00fcrzesten Kanten gespeichert werden m\u00fcssen. Nun kann es sein, dass es zwei Kanten a1 und a2\nderselben L\u00e4nge l geben kann. Der Schl\u00fcsselwert dieser beiden Kanten ist l und an A[l] sind dann a1 und a2 zu finden.
+
+summaryGlobal=In der Ausf\u00fchrung der aufeinanderfolgenden Operationen haben wir gesehen, dass alle Berechnungen in den Methoden\nnumber, insert und decreaseKey in konstanter Zeit durchgef\u00fchrt werden. Nur das Finden des neuen Minimums in der\nMethode extractMinimum ben\u00f6tigt im worst case S - 1 Operationen. Ein neues Minimum muss allerdings nur gefunden\nwerden, falls die Menge der Werte an der entsprechenden Position nach der Extraktion leer ist. Und auch der\nworst case tritt nur ein, falls die gespeicherten Schl\u00fcsselwerte maximal weit voneinander entfernt sind.\nUnd selbst im worst case hat die Datenstruktur noch eine lineare Komplexit\u00e4t, was sie f\u00fcr entsprechende Anwendungen\ndeutlich effizienter macht als \u00fcbliche Warteschlangen.\n\nDem aufmerksamen Betrachter wird aufgefallen sein, dass zu jeder Zeit zwischen den Operationen die folgende\nInvariante erf\u00fcllt ist:\nF\u00fcr eine Position i in der Menge (0, ..., S - 1) ist der Schl\u00fcsselwert an dieser Position gr\u00f6ßer als der\nSchl\u00fcsselwert an der Position P und zwar um genau (S + i - P) mod S.
+
+titleString=Dial-Implementierung
+
+initCodeLine0=1. Initialisierung des Arrays A der Gr\u00f6ße S = 
+initCodeLine1=2. Setzen der Minimumsposition P = 
+initCodeLine2= (aus anschaulichen Gr\u00fcnden zuf\u00e4llig gew\u00e4hlt)
+
+nextMethodLabel=N\u00e4chste Methoden:
+
+summaryTitle=Zusammenfassung
+
+initialization=Initialisierung
+
+ex1=S muss im Intervall von 1 bis 15 (aus Darstellungsgr\u00fcnden) liegen.
+
+ex2=Bei zuf\u00e4lliger Operationsfolge muss die Anzahl der Operationen wenigstens 1 sein.
+
+ex3=In der Liste der auszuf\u00fchrenden Operationen muss wenigstens eine Operation stehen.
+
+ex4=Jede Operation muss aus einem Funktionsnamen (erste Spalte) und einem Parameter bzw. einem - (zweite Spalte) bestehen.
+
+ex5=F\u00fcr das Entfernen eines Minimums muss mindestens ein Element enthalten sein.
+
+ex6=Der zu verringernde Wert muss in der Datenstruktur enthalten sein.
+
+theOperator=Der Operator
+
+ex7=wird nicht unterst\u00fctzt.
+
+ex8=verlangt ein "-" als Parameter.
+
+ex9=Der Parameter von "insert" muss eine normale Zahl sein, die kleiner als
+
+ex10=ist.
+
+ex11=Der Parameter der Operation "decreaseKey" muss die Form "normaleZahl->normaleZahl" haben.
+
+ex12=Der alte Wert von "decreaseKey" muss kleiner als
+
+ex13=sein.
+
+ex14=Der neue Wert von "decreaseKey" muss kleiner als der alte Wert sein.
+
+generatorDescription=Die W\u00e4hlscheibenimplementierung ist eine konkrete Implementierung der\nabstrakten Datenstruktur der \"beschr\u00e4nkten monotonen Priorit\u00e4tswarteschlange.\nIn ihr k\u00f6nnen beliebig viele Werte in einem angegebenen Intervall gespeichert\nwerden. Die Besonderheit dieser Implementierung ist die konstante Zugriffszeit auf\ndas jeweils aktuelle Minimum der Warteschlange zu jeder Zeit. Verf\u00fcgbare Operationen\ndieser Implementierung sind: insert, das Einf\u00fcgen eines Elements, extractMinimum, das\nEntfernen des Minimums, decreaseKey, das Verringern eines Wertes in der\nWarteschlange, sowie number, die Ausgabe der Anzahl der gespeicherten Elemente\nder Warteschlange.\n\n\nFolgende Parameter k\u00f6nnen eingestellt werden:\nS: Der maximale Elementwert, der in der Struktur gespeichert werden soll\nRandom Method Selection: Sollen zuf\u00e4llige Operationen auf der Struktur ausgef\u00fchrt werden? Wenn ja, bitte die Anzahl unter dem entsprechenden Parameter angeben (s. u.)\nOperations: Die Reihenfolge der Operatoren, die ausgef\u00fchrt werden sollen (keine zuf\u00e4llige Auswahl)\nAnzahl der zuf\u00e4lligen Operationen: Anzahl der Operationen, die in zuf\u00e4lliger Auswahl nacheinander ausgef\u00fchrt werden sollen
+
+introduction=Einf\u00fchrung
+
+summary=Zusammenfassung

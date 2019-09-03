@@ -1,0 +1,381 @@
+﻿%Animal 2 800*600
+title "DFS - Tiefentraversierung"
+author "Max Kolhagen,Patrick Lowin"
+interactionDefinition "intDef20130430152630490.txt"
+{
+  text "header" "DFS - Tiefentraversierung" (300, 30) color (255, 0, 0) depth 1 font SansSerif size 25 bold
+  rectangle "hRect" offset (-5, -5) from "header" NW offset (5, 5) from "header" SE color (0, 0, 0) depth 2 filled  fillColor (255, 200, 0)
+  text "header2" "Einleitung:" (50, 80) color (0, 0, 0) depth 1 font SansSerif size 20 bold
+  codegroup "intro" at offset (0, 3) from "header2" SW color (0, 0, 0) highlightColor (255, 0, 0) contextColor (0, 0, 0) font SansSerif size 14 depth 1
+  addCodeLine "Tiefensuche (DFS = Depth first search) ist ein Verfahren, um uninformiert festzustellen, ob" to "intro"
+  addCodeLine "ein Knoten in einem Graphen enthalten ist, indem seine Wegmarkierung nach Durchfuehrung true ist." to "intro"
+  addCodeLine "" to "intro"
+  addCodeLine "Der Algorithmus arbeitet wie folgt:" to "intro"
+  addCodeLine "" to "intro"
+  addCodeLine "1. Starte an die Suche an einem festgelegten Knoten" to "intro"
+  addCodeLine "2. Speichere alle unbesuchten Nachbarknoten in einem Stack (LIFO)" to "intro"
+  addCodeLine "3. Solange der Stack nicht leer ist" to "intro"
+  addCodeLine "- entnehme den zuletzten gespeicherten Knoten" to "intro" indentation 1
+  addCodeLine "- setze seinen Status auf 'besucht'" to "intro" indentation 1
+  addCodeLine "- fuehre fuer diesen Knoten selbiges Verfahren durch" to "intro" indentation 1
+}
+label "Introduction"
+{
+  setText of "header2" to "Pseudo Code:"  
+  codegroup "sourceCode" at offset (0, 3) from "header2" SW color (0, 0, 0) highlightColor (255, 0, 0) contextColor (0, 0, 0) font SansSerif size 14 depth 1
+  addCodeLine "DFS(Knoten Vs)" to "sourceCode"
+  addCodeLine "lege an Stack S = leerer Stack" to "sourceCode" indentation 1
+  addCodeLine "fuege ein Vs in S" to "sourceCode" indentation 1
+  addCodeLine "solange gilt <S ist nicht leer>" to "sourceCode" indentation 1
+  addCodeLine "entnehme Knoten Va aus S" to "sourceCode" indentation 2
+  addCodeLine "falls <Va.besucht = falsch>" to "sourceCode" indentation 2
+  addCodeLine "setze Va.besucht = wahr" to "sourceCode" indentation 3
+  addCodeLine "fuer <alle Nachbarknoten Vn = N(Va)>" to "sourceCode" indentation 3
+  addCodeLine "falls <Vn.besucht = falsch>" to "sourceCode" indentation 4
+  addCodeLine "fuege ein Vn in S" to "sourceCode" indentation 5
+  hide "intro" 
+}
+{
+  graph "graph" size 5  color (0, 0, 255) bgColor (255, 255, 0) highlightColor (0, 255, 0) elemHighlightColor (0, 255, 0) nodeFontColor (0, 0, 0) edgeFontColor (0, 0, 0)nodes {"A" (500, 80), "B" (800, 80), "C" (500, 380), "D" (800, 380), "E" (650, 225) } edges {(0, 1, "1") (0, 2, "1") (1, 3, "1") (2, 3, "1") }  depth 1
+  array "BesuchtArray" (400, 100) color (0, 0, 0) fillColor (255, 255, 255) elementColor (0, 0, 0) elemHighlight (0, 0, 255) cellHighlight (0, 255, 0) horizontal length 5 "A" "B" "C" "D" "E"  depth 1 font SansSerif size 12
+  text "isBesuchtHeader" "Besucht?: (gruen)" offset (-100, 5) from "BesuchtArray" NW color (0, 0, 0) depth 1 font SansSerif size 12
+  highlightCode on "sourceCode" line 0 row 0  
+}
+label "Initialization"
+{
+  unhighlightCode on "sourceCode" line 0 row 0  
+  highlightCode on "sourceCode" line 1 row 0  
+  array "stack" (400, 160) color (0, 0, 0) fillColor (255, 255, 255) elementColor (0, 0, 0) elemHighlight (0, 0, 0) cellHighlight (0, 255, 0) vertical length 5 "" "" "" "" ""  depth 1 font SansSerif size 12
+  text "stackHeader" "Stack:" offset (-10, -16) from "stack" NW color (0, 0, 0) depth 1 font SansSerif size 12
+}
+{
+  interaction "trueFalseQuestion"
+}
+{
+  arrayMarker "arrayMarker" on "BesuchtArray" atIndex 0 color (0, 0, 0) depth 1
+  arrayMarker "stackMarker" on "stack" atIndex 0 color (0, 0, 0) depth 1
+  unhighlightCode on "sourceCode" line 1 row 0  
+  highlightCode on "sourceCode" line 2 row 0  
+  highlightNode on "graph" nodes 0  
+  arrayPut "A" on "stack" position 0  
+  hide "arrayMarker" "stackMarker" 
+}
+{
+  unhighlightNode on "graph" nodes 0  
+  unhighlightCode on "sourceCode" line 2 row 0  
+  unhighlightCode on "sourceCode" line 7 row 0  
+  unhighlightCode on "sourceCode" line 8 row 0  
+  unhighlightCode on "sourceCode" line 9 row 0  
+  highlightCode on "sourceCode" line 3 row 0  
+  show "stackMarker" 
+}
+{
+  interaction "fillInBlanksQuestion4dc3bcf4-228d-4353-89cf-f1e5998893d4"
+}
+{
+  unhighlightCode on "sourceCode" line 3 row 0  
+  highlightCode on "sourceCode" line 4 row 0  
+  arrayPut "" on "stack" position 0  
+  arrayPut "" on "stack" position 1  
+  arrayPut "" on "stack" position 2  
+  arrayPut "" on "stack" position 3  
+  highlightNode on "graph" nodes 0  
+  moveArrayMarker "arrayMarker" to position 0   
+  hide "stackMarker" 
+}
+{
+  unhighlightCode on "sourceCode" line 4 row 0  
+  highlightCode on "sourceCode" line 5 row 0  
+  show "arrayMarker" 
+}
+{
+  unhighlightCode on "sourceCode" line 5 row 0  
+  highlightCode on "sourceCode" line 6 row 0  
+  highlightArrayCell on "BesuchtArray" position 0  
+}
+{
+  unhighlightCode on "sourceCode" line 6 row 0  
+  unhighlightCode on "sourceCode" line 8 row 0  
+  unhighlightCode on "sourceCode" line 9 row 0  
+  highlightCode on "sourceCode" line 7 row 0  
+  unhighlightCode on "sourceCode" line 6 row 0  
+  unhighlightCode on "sourceCode" line 8 row 0  
+  unhighlightCode on "sourceCode" line 9 row 0  
+  highlightCode on "sourceCode" line 7 row 0  
+  highlightEdge on "graph" (0, 1)   
+  highlightEdge on "graph" (0, 1)   
+  hide "arrayMarker" 
+}
+{
+  unhighlightCode on "sourceCode" line 7 row 0  
+  highlightCode on "sourceCode" line 8 row 0  
+  moveArrayMarker "arrayMarker" to position 1   
+  show "arrayMarker" 
+}
+{
+  unhighlightCode on "sourceCode" line 8 row 0  
+  highlightCode on "sourceCode" line 9 row 0  
+  arrayPut "" on "stack" position 4  
+  arrayPut "" on "stack" position 3  
+  arrayPut "" on "stack" position 2  
+  arrayPut "" on "stack" position 1  
+  arrayPut "B" on "stack" position 0  
+}
+{
+  unhighlightEdge on "graph" (0, 1)   
+  unhighlightEdge on "graph" (0, 1)   
+  unhighlightCode on "sourceCode" line 6 row 0  
+  unhighlightCode on "sourceCode" line 8 row 0  
+  unhighlightCode on "sourceCode" line 9 row 0  
+  highlightCode on "sourceCode" line 7 row 0  
+  highlightEdge on "graph" (0, 2)   
+  highlightEdge on "graph" (0, 2)   
+  hide "arrayMarker" 
+}
+{
+  unhighlightCode on "sourceCode" line 7 row 0  
+  highlightCode on "sourceCode" line 8 row 0  
+  moveArrayMarker "arrayMarker" to position 2   
+  show "arrayMarker" 
+}
+{
+  unhighlightCode on "sourceCode" line 8 row 0  
+  highlightCode on "sourceCode" line 9 row 0  
+  arrayPut "" on "stack" position 4  
+  arrayPut "" on "stack" position 3  
+  arrayPut "" on "stack" position 2  
+  arrayPut "B" on "stack" position 1  
+  arrayPut "C" on "stack" position 0  
+}
+{
+  unhighlightEdge on "graph" (0, 2)   
+  unhighlightEdge on "graph" (0, 2)   
+  unhighlightCode on "sourceCode" line 6 row 0  
+  unhighlightCode on "sourceCode" line 8 row 0  
+  unhighlightCode on "sourceCode" line 9 row 0  
+  highlightCode on "sourceCode" line 7 row 0  
+  unhighlightCode on "sourceCode" line 6 row 0  
+  unhighlightCode on "sourceCode" line 8 row 0  
+  unhighlightCode on "sourceCode" line 9 row 0  
+  highlightCode on "sourceCode" line 7 row 0  
+  unhighlightNode on "graph" nodes 0  
+  unhighlightCode on "sourceCode" line 2 row 0  
+  unhighlightCode on "sourceCode" line 7 row 0  
+  unhighlightCode on "sourceCode" line 8 row 0  
+  unhighlightCode on "sourceCode" line 9 row 0  
+  highlightCode on "sourceCode" line 3 row 0  
+  show "stackMarker" 
+  hide "arrayMarker" 
+}
+{
+  interaction "fillInBlanksQuestion36cee4cb-7cdf-4db9-a393-8e2f4465af2b"
+}
+{
+  unhighlightCode on "sourceCode" line 3 row 0  
+  highlightCode on "sourceCode" line 4 row 0  
+  arrayPut "B" on "stack" position 0  
+  arrayPut "" on "stack" position 1  
+  arrayPut "" on "stack" position 2  
+  arrayPut "" on "stack" position 3  
+  highlightNode on "graph" nodes 2  
+  moveArrayMarker "arrayMarker" to position 2   
+  hide "stackMarker" 
+}
+{
+  unhighlightCode on "sourceCode" line 4 row 0  
+  highlightCode on "sourceCode" line 5 row 0  
+  show "arrayMarker" 
+}
+{
+  unhighlightCode on "sourceCode" line 5 row 0  
+  highlightCode on "sourceCode" line 6 row 0  
+  highlightArrayCell on "BesuchtArray" position 2  
+}
+{
+  unhighlightCode on "sourceCode" line 6 row 0  
+  unhighlightCode on "sourceCode" line 8 row 0  
+  unhighlightCode on "sourceCode" line 9 row 0  
+  highlightCode on "sourceCode" line 7 row 0  
+  unhighlightCode on "sourceCode" line 6 row 0  
+  unhighlightCode on "sourceCode" line 8 row 0  
+  unhighlightCode on "sourceCode" line 9 row 0  
+  highlightCode on "sourceCode" line 7 row 0  
+  unhighlightCode on "sourceCode" line 6 row 0  
+  unhighlightCode on "sourceCode" line 8 row 0  
+  unhighlightCode on "sourceCode" line 9 row 0  
+  highlightCode on "sourceCode" line 7 row 0  
+  unhighlightCode on "sourceCode" line 6 row 0  
+  unhighlightCode on "sourceCode" line 8 row 0  
+  unhighlightCode on "sourceCode" line 9 row 0  
+  highlightCode on "sourceCode" line 7 row 0  
+  highlightEdge on "graph" (2, 3)   
+  highlightEdge on "graph" (2, 3)   
+  hide "arrayMarker" 
+}
+{
+  unhighlightCode on "sourceCode" line 7 row 0  
+  highlightCode on "sourceCode" line 8 row 0  
+  moveArrayMarker "arrayMarker" to position 3   
+  show "arrayMarker" 
+}
+{
+  unhighlightCode on "sourceCode" line 8 row 0  
+  highlightCode on "sourceCode" line 9 row 0  
+  arrayPut "" on "stack" position 4  
+  arrayPut "" on "stack" position 3  
+  arrayPut "" on "stack" position 2  
+  arrayPut "B" on "stack" position 1  
+  arrayPut "D" on "stack" position 0  
+}
+{
+  unhighlightEdge on "graph" (2, 3)   
+  unhighlightEdge on "graph" (2, 3)   
+  unhighlightCode on "sourceCode" line 6 row 0  
+  unhighlightCode on "sourceCode" line 8 row 0  
+  unhighlightCode on "sourceCode" line 9 row 0  
+  highlightCode on "sourceCode" line 7 row 0  
+  unhighlightNode on "graph" nodes 2  
+  unhighlightCode on "sourceCode" line 2 row 0  
+  unhighlightCode on "sourceCode" line 7 row 0  
+  unhighlightCode on "sourceCode" line 8 row 0  
+  unhighlightCode on "sourceCode" line 9 row 0  
+  highlightCode on "sourceCode" line 3 row 0  
+  show "stackMarker" 
+  hide "arrayMarker" 
+}
+{
+  interaction "fillInBlanksQuestionf5006368-42ab-4360-b519-6a179fc91e3c"
+}
+{
+  unhighlightCode on "sourceCode" line 3 row 0  
+  highlightCode on "sourceCode" line 4 row 0  
+  arrayPut "B" on "stack" position 0  
+  arrayPut "" on "stack" position 1  
+  arrayPut "" on "stack" position 2  
+  arrayPut "" on "stack" position 3  
+  highlightNode on "graph" nodes 3  
+  moveArrayMarker "arrayMarker" to position 3   
+  hide "stackMarker" 
+}
+{
+  unhighlightCode on "sourceCode" line 4 row 0  
+  highlightCode on "sourceCode" line 5 row 0  
+  show "arrayMarker" 
+}
+{
+  unhighlightCode on "sourceCode" line 5 row 0  
+  highlightCode on "sourceCode" line 6 row 0  
+  highlightArrayCell on "BesuchtArray" position 3  
+}
+{
+  unhighlightCode on "sourceCode" line 6 row 0  
+  unhighlightCode on "sourceCode" line 8 row 0  
+  unhighlightCode on "sourceCode" line 9 row 0  
+  highlightCode on "sourceCode" line 7 row 0  
+  unhighlightCode on "sourceCode" line 6 row 0  
+  unhighlightCode on "sourceCode" line 8 row 0  
+  unhighlightCode on "sourceCode" line 9 row 0  
+  highlightCode on "sourceCode" line 7 row 0  
+  unhighlightCode on "sourceCode" line 6 row 0  
+  unhighlightCode on "sourceCode" line 8 row 0  
+  unhighlightCode on "sourceCode" line 9 row 0  
+  highlightCode on "sourceCode" line 7 row 0  
+  unhighlightCode on "sourceCode" line 6 row 0  
+  unhighlightCode on "sourceCode" line 8 row 0  
+  unhighlightCode on "sourceCode" line 9 row 0  
+  highlightCode on "sourceCode" line 7 row 0  
+  unhighlightCode on "sourceCode" line 6 row 0  
+  unhighlightCode on "sourceCode" line 8 row 0  
+  unhighlightCode on "sourceCode" line 9 row 0  
+  highlightCode on "sourceCode" line 7 row 0  
+  unhighlightNode on "graph" nodes 3  
+  unhighlightCode on "sourceCode" line 2 row 0  
+  unhighlightCode on "sourceCode" line 7 row 0  
+  unhighlightCode on "sourceCode" line 8 row 0  
+  unhighlightCode on "sourceCode" line 9 row 0  
+  highlightCode on "sourceCode" line 3 row 0  
+  show "stackMarker" 
+  hide "arrayMarker" 
+}
+{
+  unhighlightCode on "sourceCode" line 3 row 0  
+  highlightCode on "sourceCode" line 4 row 0  
+  arrayPut "" on "stack" position 0  
+  arrayPut "" on "stack" position 1  
+  arrayPut "" on "stack" position 2  
+  arrayPut "" on "stack" position 3  
+  highlightNode on "graph" nodes 1  
+  moveArrayMarker "arrayMarker" to position 1   
+  hide "stackMarker" 
+}
+{
+  unhighlightCode on "sourceCode" line 4 row 0  
+  highlightCode on "sourceCode" line 5 row 0  
+  show "arrayMarker" 
+}
+{
+  unhighlightCode on "sourceCode" line 5 row 0  
+  highlightCode on "sourceCode" line 6 row 0  
+  highlightArrayCell on "BesuchtArray" position 1  
+}
+{
+  unhighlightCode on "sourceCode" line 6 row 0  
+  unhighlightCode on "sourceCode" line 8 row 0  
+  unhighlightCode on "sourceCode" line 9 row 0  
+  highlightCode on "sourceCode" line 7 row 0  
+  unhighlightCode on "sourceCode" line 6 row 0  
+  unhighlightCode on "sourceCode" line 8 row 0  
+  unhighlightCode on "sourceCode" line 9 row 0  
+  highlightCode on "sourceCode" line 7 row 0  
+  unhighlightCode on "sourceCode" line 6 row 0  
+  unhighlightCode on "sourceCode" line 8 row 0  
+  unhighlightCode on "sourceCode" line 9 row 0  
+  highlightCode on "sourceCode" line 7 row 0  
+  unhighlightCode on "sourceCode" line 6 row 0  
+  unhighlightCode on "sourceCode" line 8 row 0  
+  unhighlightCode on "sourceCode" line 9 row 0  
+  highlightCode on "sourceCode" line 7 row 0  
+  highlightEdge on "graph" (1, 3)   
+  highlightEdge on "graph" (1, 3)   
+  hide "arrayMarker" 
+}
+{
+  unhighlightCode on "sourceCode" line 7 row 0  
+  highlightCode on "sourceCode" line 8 row 0  
+  moveArrayMarker "arrayMarker" to position 3   
+  show "arrayMarker" 
+}
+{
+  unhighlightEdge on "graph" (1, 3)   
+  unhighlightEdge on "graph" (1, 3)   
+  unhighlightCode on "sourceCode" line 6 row 0  
+  unhighlightCode on "sourceCode" line 8 row 0  
+  unhighlightCode on "sourceCode" line 9 row 0  
+  highlightCode on "sourceCode" line 7 row 0  
+  unhighlightNode on "graph" nodes 1  
+  hide "arrayMarker" 
+}
+{
+  interaction "multipleChoiceQuestion"
+}
+label "Resumee"
+{
+  setText of "header2" to "Resumee:"  
+  codegroup "outtro" at offset (0, 3) from "header2" SW color (0, 0, 0) highlightColor (255, 0, 0) contextColor (0, 0, 0) font SansSerif size 14 depth 1
+  addCodeLine "Man sieht nun sowohl in dem " to "outtro"
+  addCodeLine "Array, als auch in dem" to "outtro"
+  addCodeLine "Graphen, welche Knoten durch" to "outtro"
+  addCodeLine "DFS traversiert wurden, und" to "outtro"
+  addCodeLine "" to "outtro"
+  addCodeLine "Die Komplexitaet von DFS betraegt O(n)" to "outtro"
+  addCodeLine "" to "outtro"
+  addCodeLine "Folgene Knoten wurden nicht traversiert:" to "outtro"
+  addCodeLine "[E]" to "outtro"
+  addCodeLine "" to "outtro"
+  addCodeLine "Es wurde auf 4 Knoten zugegriffen." to "outtro"
+  highlightNode on "graph" nodes 0  
+  highlightNode on "graph" nodes 1  
+  highlightNode on "graph" nodes 2  
+  highlightNode on "graph" nodes 3  
+  hide "sourceCode" "stack" "stackHeader" 
+}

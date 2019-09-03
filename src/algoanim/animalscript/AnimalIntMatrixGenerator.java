@@ -1,0 +1,367 @@
+package algoanim.animalscript;
+
+import java.awt.Color;
+import java.awt.Font;
+
+import algoanim.primitives.IntMatrix;
+import algoanim.primitives.generators.IntMatrixGenerator;
+import algoanim.properties.AnimationPropertiesKeys;
+import algoanim.properties.MatrixProperties;
+import algoanim.properties.items.EnumerationPropertyItem;
+import algoanim.util.Timing;
+
+/**
+ * @see algoanim.primitives.generators.IntMatrixGenerator
+ * @author Dr. Guido Roessling (roessling@acm.org>
+ * @version 0.4 2007-04-04
+ */
+public class AnimalIntMatrixGenerator extends AnimalGenerator implements
+    IntMatrixGenerator {
+  private static int count = 1;
+
+  /**
+   * @param as
+   *          the associated <code>Language</code> object.
+   */
+  public AnimalIntMatrixGenerator(AnimalScript as) {
+    super(as);
+  }
+
+  /**
+   * @see algoanim.primitives.generators.IntMatrixGenerator
+   *      #create(algoanim.primitives.IntMatrix)
+   */
+  public boolean create(IntMatrix aMatrix) {
+    if (isNameUsed(aMatrix.getName()) || aMatrix.getName().equals("")) {
+      aMatrix.setName("IntMatrix" + AnimalIntMatrixGenerator.count);
+      AnimalIntMatrixGenerator.count++;
+    }
+    lang.addItem(aMatrix);
+    // TODO really OK like this?
+    // lang.nextStep();
+
+    // grid <id> <nodeDefinition> [lines <n>] [colums <n>]
+    // [style = (plain|matrix|table|junctions)]
+    // [cellwidth <n>] [maxcellwidth <n>]
+    // [fixedcellsize]
+    // [color <color>] [textcolor <color>]
+    // [fillcolor <color>] [highlighttextcolor <color>]
+    // [highlightbackcolor <color>]
+    // [matrixstyle|tablestyle|junctions]
+    StringBuilder def = new StringBuilder(AnimalScript.INITIAL_GENBUFFER_SIZE);
+    def.append("grid \"").append(aMatrix.getName()).append("\" ");
+    def.append(AnimalGenerator.makeNodeDef(aMatrix.getUpperLeft()));
+    int nrRows = aMatrix.getNrRows(), nrCols = aMatrix.getNrCols();
+    def.append(" lines ").append(nrRows).append(" columns ");
+    def.append(nrCols).append(' ');
+
+    /* Properties */
+    MatrixProperties matrixProps = aMatrix.getProperties();
+    EnumerationPropertyItem styleItem = (EnumerationPropertyItem)matrixProps.getItem(AnimationPropertiesKeys.GRID_STYLE_PROPERTY);
+    if (styleItem != null)
+      def.append("style ").append(styleItem.getChoice()).append(' ');
+
+    final boolean scale = ((Integer) matrixProps.get(AnimationPropertiesKeys.CELL_WIDTH_PROPERTY)) == -1 ||
+        ((Integer) matrixProps.get(AnimationPropertiesKeys.CELL_HEIGHT_PROPERTY)) == -1;
+    if (!scale) {
+      addIntProperty(matrixProps, AnimationPropertiesKeys.CELL_WIDTH_PROPERTY, def);
+      addIntProperty(matrixProps, AnimationPropertiesKeys.CELL_HEIGHT_PROPERTY, def);
+    }
+    addColorOption(matrixProps, def);
+		addColorOption(matrixProps, AnimationPropertiesKeys.ELEMENTCOLOR_PROPERTY, " elementColor ", def);
+    addColorOption(matrixProps, AnimationPropertiesKeys.FILL_PROPERTY, " fillColor ", def);
+    addColorOption(matrixProps, AnimationPropertiesKeys.GRID_BORDER_COLOR_PROPERTY, " bordercolor ", def);
+    addColorOption(matrixProps, AnimationPropertiesKeys.ELEMHIGHLIGHT_PROPERTY, " highlightTextColor ", def);
+    addColorOption(matrixProps, AnimationPropertiesKeys.CELLHIGHLIGHT_PROPERTY, " highlightFillColor ", def);
+    addColorOption(matrixProps, AnimationPropertiesKeys.GRID_HIGHLIGHT_BORDER_COLOR_PROPERTY, " highlightBorderColor ", def);
+    addFontOption(matrixProps, AnimationPropertiesKeys.FONT_PROPERTY, " font ", def);
+    addAlignOption(matrixProps, AnimationPropertiesKeys.GRID_ALIGN_PROPERTY, " alignment ", def);
+    addIntOption(matrixProps, AnimationPropertiesKeys.DEPTH_PROPERTY, " depth ", def);
+
+    lang.addLine(def);
+    // generate the elements...
+    for (int row = 0; row < nrRows; row++) {
+      for (int col = 0; col < nrCols; col++) {
+        StringBuilder sb = new StringBuilder(128);
+        sb.append("setGridValue \"").append(aMatrix.getName());
+        sb.append("[").append(row).append("][").append(col);
+        sb.append("]\" \"").append(aMatrix.getElement(row, col));
+        sb.append("\"");
+        if (scale && row == nrRows - 1 && col == nrCols - 1)
+          sb.append(" refresh");
+        lang.addLine(sb.toString());
+      }
+    }
+    return scale;
+  }
+
+  /**
+   * @see algoanim.primitives.generators.IntMatrixGenerator
+   *      #put(algoanim.primitives.IntMatrix, int, int, int,
+   *      algoanim.util.Timing, algoanim.util.Timing)
+   */
+  public void put(IntMatrix intMatrix, int row, int col, int what,
+      Timing delay, Timing duration) {
+    // setgridvalue "<id>[<line>][<column>]" "<value>" [refresh]
+    // [within...] [after...]
+    StringBuilder sb = new StringBuilder(128);
+    sb.append("setGridValue \"").append(intMatrix.getName()).append("[");
+    sb.append(row).append("][").append(col).append("]\" \"");
+    sb.append(what).append('"');
+    if (intMatrix.scale) {
+      sb.append(" refresh ");
+    }
+    addWithTiming(sb, delay, duration);
+  }
+
+  /**
+   * @see algoanim.primitives.generators.IntMatrixGenerator#swap(algoanim.primitives.IntMatrix,
+   *      int, int, int, int, algoanim.util.Timing, algoanim.util.Timing)
+   */
+  public void swap(IntMatrix intMatrix, int sourceRow, int sourceCol,
+      int targetRow, int targetCol, Timing delay, Timing duration) {
+    // swapgridvalues "<id1>[<line1>][<column1>]" and
+    // "<id2>[<line2>][<column2>]"
+    // [refresh] [within...] [after...]
+    StringBuilder sb = new StringBuilder(128);
+    sb.append("swapGridValues \"").append(intMatrix.getName()).append("[");
+    sb.append(sourceRow).append("][").append(sourceCol);
+    sb.append("]\" and \"").append(intMatrix.getName()).append("[");
+    sb.append(targetRow).append("][").append(targetCol).append("]\"");
+    if (intMatrix.scale) {
+      sb.append(" refresh ");
+    }
+    addWithTiming(sb, delay, duration);
+  }
+
+  /**
+   * @see algoanim.primitives.generators.IntMatrixGenerator
+   *      #highlightCell(IntMatrix, int, int, algoanim.util.Timing,
+   *      algoanim.util.Timing)
+   */
+  public void highlightCell(IntMatrix intMatrix, int row, int col,
+      Timing offset, Timing duration) {
+    // highlightgridcell "<id>[<line>][<column>]" <boolean> [timing]
+
+    StringBuilder sb = new StringBuilder(128);
+    sb.append("highlightGridCell \"").append(intMatrix.getName());
+    sb.append("[").append(row).append("][").append(col).append("]\" ");
+    addWithTiming(sb, offset, duration);
+  }
+
+  /**
+   * @see algoanim.primitives.generators.IntMatrixGenerator
+   *      #highlightCellColumnRange(IntMatrix, int, int, int,
+   *      algoanim.util.Timing, algoanim.util.Timing)
+   */
+  public void highlightCellColumnRange(IntMatrix intMatrix, int row,
+      int startCol, int endCol, Timing offset, Timing duration) {
+    boolean cleverCode = false;
+    // highlightgridcell "<id>[<line>][<column>]" <boolean> [timing]
+    if (startCol == 0 && endCol == intMatrix.getNrCols() - 1 && cleverCode) {
+      StringBuilder sb = new StringBuilder(512);
+      sb.append("highlightGridCell \"").append(intMatrix.getName());
+      sb.append("[").append(row).append("][]\" ");
+      addWithTiming(sb, offset, duration);
+    } else {
+      for (int col = startCol; col <= endCol; col++) {
+        StringBuilder sb = new StringBuilder(512);
+        sb.append("highlightGridCell \"").append(intMatrix.getName());
+        sb.append("[").append(row).append("][").append(col).append("]\" ");
+        addWithTiming(sb, offset, duration);
+      }
+    }
+  }
+
+  /**
+   * @see algoanim.primitives.generators.IntMatrixGenerator
+   *      #highlightCellRowRange(IntMatrix, int, int, int, algoanim.util.Timing,
+   *      algoanim.util.Timing)
+   */
+  public void highlightCellRowRange(IntMatrix intMatrix, int startRow,
+      int endRow, int col, Timing offset, Timing duration) {
+    boolean cleverCode = false;
+    // highlightgridcell "<id>[<line>][<column>]" <boolean> [timing]
+    if (startRow == 0 && endRow == intMatrix.getNrRows() - 1 && cleverCode) {
+      StringBuilder sb = new StringBuilder(512);
+      sb.append("highlightGridCell \"").append(intMatrix.getName());
+      sb.append("[][").append(col).append("]\" ");
+      addWithTiming(sb, offset, duration);
+    } else {
+      for (int row = startRow; row <= endRow; row++) {
+        StringBuilder sb = new StringBuilder(512);
+        sb.append("highlightGridCell \"").append(intMatrix.getName());
+        sb.append("[").append(row).append("][").append(col).append("]\" ");
+        addWithTiming(sb, offset, duration);
+      }
+    }
+  }
+
+  /**
+   * @see algoanim.primitives.generators.IntMatrixGenerator
+   *      #highlightElem(IntMatrix, int, int, algoanim.util.Timing,
+   *      algoanim.util.Timing)
+   */
+  public void highlightElem(IntMatrix intMatrix, int row, int col,
+      Timing offset, Timing duration) {
+		// highlightgridelem "<id>[<line>][<column>]" <boolean> [timing]
+
+		StringBuilder sb = new StringBuilder(128);
+		sb.append("highlightGridElem \"").append(intMatrix.getName());
+		sb.append("[").append(row).append("][").append(col).append("]\" ");
+		addWithTiming(sb, offset, duration);
+	}
+
+  /**
+   * @see algoanim.primitives.generators.IntMatrixGenerator
+   *      #highlightElemColumnRange(IntMatrix, int, int, int,
+   *      algoanim.util.Timing, algoanim.util.Timing)
+   */
+  public void highlightElemColumnRange(IntMatrix intMatrix, int row,
+      int startCol, int endCol, Timing offset, Timing duration) {
+		for(int i=startCol ; i<endCol ; i++){
+			highlightElem(intMatrix, row, i, offset, duration);
+		}
+	}
+
+  /**
+   * @see algoanim.primitives.generators.IntMatrixGenerator
+   *      #highlightElemRowRange(IntMatrix, int, int, int, algoanim.util.Timing,
+   *      algoanim.util.Timing)
+   */
+  public void highlightElemRowRange(IntMatrix intMatrix, int startRow,
+      int endRow, int col, Timing offset, Timing duration) {
+		for(int i=startRow ; i<endRow ; i++){
+			highlightElem(intMatrix, i, col, offset, duration);
+		}
+  }
+
+  /**
+   * @see algoanim.primitives.generators.IntMatrixGenerator
+   *      #unhighlightCell(IntMatrix, int, int, algoanim.util.Timing,
+   *      algoanim.util.Timing)
+   */
+  public void unhighlightCell(IntMatrix intMatrix, int row, int col,
+      Timing offset, Timing duration) {
+    // unhighlightgridcell "<id>[<line>][<column>]" <boolean> [timing]
+    StringBuilder sb = new StringBuilder(128);
+    sb.append("unhighlightGridCell \"").append(intMatrix.getName());
+    sb.append("[").append(row).append("][").append(col).append("]\" ");
+    addWithTiming(sb, offset, duration);
+  }
+
+  /**
+   * @see algoanim.primitives.generators.IntMatrixGenerator
+   *      #unhighlightCell(IntMatrix, int, int, algoanim.util.Timing,
+   *      algoanim.util.Timing)
+   */
+  public void unhighlightCellColumnRange(IntMatrix intMatrix, int row,
+      int startCol, int endCol, Timing offset, Timing duration) {
+    // unhighlightgridcell "<id>[<line>][<column>]" <boolean> [timing]
+    if (startCol == 0 && endCol == intMatrix.getNrCols() - 1) {
+      StringBuilder sb = new StringBuilder(512);
+      sb.append("unhighlightGridCell \"").append(intMatrix.getName());
+      sb.append("[").append(row).append("][]\" ");
+      addWithTiming(sb, offset, duration);
+    } else {
+      for (int col = startCol; col <= endCol; col++) {
+        StringBuilder sb = new StringBuilder(512);
+        sb.append("unhighlightGridCell \"").append(intMatrix.getName());
+        sb.append("[").append(row).append("][").append(col).append("]\" ");
+        addWithTiming(sb, offset, duration);
+      }
+    }
+  }
+
+  /**
+   * @see algoanim.primitives.generators.IntMatrixGenerator
+   *      #unhighlightCell(IntMatrix, int, int, algoanim.util.Timing,
+   *      algoanim.util.Timing)
+   */
+  public void unhighlightCellRowRange(IntMatrix intMatrix, int startRow,
+      int endRow, int col, Timing offset, Timing duration) {
+    // unhighlightgridcell "<id>[<line>][<column>]" <boolean> [timing]
+    if (startRow == 0 && endRow == intMatrix.getNrRows() - 1) {
+      StringBuilder sb = new StringBuilder(512);
+      sb.append("unhighlightGridCell \"").append(intMatrix.getName());
+      sb.append("[][").append(col).append("]\" ");
+      addWithTiming(sb, offset, duration);
+    } else {
+      for (int row = startRow; row <= endRow; row++) {
+        StringBuilder sb = new StringBuilder(512);
+        sb.append("unhighlightGridCell \"").append(intMatrix.getName());
+        sb.append("[").append(row).append("][").append(col).append("]\" ");
+        addWithTiming(sb, offset, duration);
+      }
+    }
+  }
+
+  /**
+   * @see algoanim.primitives.generators.IntMatrixGenerator
+   *      #unhighlightElem(IntMatrix, int, int, algoanim.util.Timing,
+   *      algoanim.util.Timing)
+   */
+  public void unhighlightElem(IntMatrix intMatrix, int row, int col,
+      Timing offset, Timing duration) {
+		// unhighlightgridelem "<id>[<line>][<column>]" <boolean> [timing]
+		StringBuilder sb = new StringBuilder(128);
+		sb.append("unhighlightGridElem \"").append(intMatrix.getName());
+		sb.append("[").append(row).append("][").append(col).append("]\" ");
+		addWithTiming(sb, offset, duration);
+  }
+
+  /**
+   * @see algoanim.primitives.generators.IntMatrixGenerator
+   *      #unhighlightElemColumnRange(IntMatrix, int, int, int,
+   *      algoanim.util.Timing, algoanim.util.Timing)
+   */
+  public void unhighlightElemColumnRange(IntMatrix intMatrix, int row,
+      int startCol, int endCol, Timing offset, Timing duration) {
+		for(int i=startCol ; i<endCol ; i++){
+			unhighlightElem(intMatrix, row, i, offset, duration);
+		}
+  }
+
+  /**
+   * @see algoanim.primitives.generators.IntMatrixGenerator
+   *      #unhighlightElemRowRange(IntMatrix, int, int, int,
+   *      algoanim.util.Timing, algoanim.util.Timing)
+   */
+  public void unhighlightElemRowRange(IntMatrix intMatrix, int startRow, 
+			int endRow, int col, Timing offset, Timing duration) {
+		for(int i=startRow ; i<endRow ; i++){
+			unhighlightElem(intMatrix, i, col, offset, duration);
+		}
+  }
+
+	@Override
+	public void setGridColor(IntMatrix matrix, int row, int col, Color color, String kind, Timing offset, Timing duration) {
+		// setgridvalue "<id>[<line>][<column>]" "<value>" [refresh] 
+		// [within...] [after...]
+		StringBuilder sb = new StringBuilder(128);
+		sb.append("setGridColor \"").append(matrix.getName()).append("[");
+		sb.append(row).append("][").append(col).append("]\" ");
+		sb.append(kind).append(" ("+color.getRed()+","+color.getGreen()+","+color.getBlue()+")");
+//		if (matrix.scale) {
+//			sb.append(" refresh ");      
+//		}
+		addWithTiming(sb, offset, duration);
+	}
+	
+	@Override
+	public void setGridFont(IntMatrix matrix, int row, int col, Font font, Timing offset, Timing duration) {
+		StringBuilder sb = new StringBuilder(128);
+		sb.append("setGridFont \"").append(matrix.getName()).append("[");
+		sb.append(row).append("][").append(col).append("]\" ");
+	    if (font != null) {
+	      //   [font <fontNames>] [size fontSize] [bold] [italic]
+	    	sb.append(" font ").append(font.getName()).append(" size ");
+	    	sb.append(font.getSize());
+	      if (font.isBold())
+	    	  sb.append(" bold");
+	      if (font.isItalic())
+	    	  sb.append(" italic");
+	    }
+		addWithTiming(sb, offset, duration);
+	}
+}

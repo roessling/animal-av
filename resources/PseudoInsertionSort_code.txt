@@ -1,0 +1,7 @@
+InsertionSort(int[] array) @CodeLabel("header")
+  Declare int variables i, j, v; @CodeLabel("variables")
+  loop for i=1 until i < array length: @CodeLabel("outerLoop")
+    v = array[i]; @CodeLabel("takeOut")
+    loop for j=i until j>0 and v<array[j-1]: @CodeLabel("innerLoop")
+      array[j] = array[j-1]; @CodeLabel("moveForward")
+    array[j] = v; @CodeLabel("insert")

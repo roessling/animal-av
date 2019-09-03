@@ -1,0 +1,30 @@
+{complexityHeadLast
+Complexity of this simplified version
+}
+{complexityBodyLast
+\t \t Amount of Pixels * allLines
+\t \t allLines is the sum of the number of lines for every single polygon.
+}
+{c2
+\t \t  For each pixel a ray is created and intersections have to be calculated between the ray and each line in the scene.
+}
+{altLast
+Alternatives
+}
+{shadowLast
+\t \t Ray Tracing only with one ray for each pixel (no shadow rays).
+\t \t Can only be used to determine if a an object is concealed by an other object.
+}
+{rayshadowLast
+\t \t Ray Tracing: shadow rays (like the presented)
+\t \t With this it possible to determine wheather an object lies in the shadow of the light source.
+}
+{recursiveLast
+\t \t Recursive Ray Tracing: more than just shadow rays are used in order to have effects like reflection or transmission.
+}
+{distributedLast
+\t \t Distributed Ray Tracing: more rays with a more complex lighting model to get soft shadows and shininess in addition to the effect of Recursive Ray Tracing.
+}
+{pathLast
+\t \t Path Tracing: has an even more complex lighting model to gain a more realistic image.
+}

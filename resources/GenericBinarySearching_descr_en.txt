@@ -1,0 +1,23 @@
+Binary Search is an efficient algorithm for locating a given
+element in an array of sorted elements.
+
+Binary Search always regards only a certain partition of the array.
+The first partition covers the complete array. The partition is
+halved in each iteration by adapting the partition borders.
+If the value is found, its position is returned; otherwise, 
+the algorithm with return -1 as an 'error mark'.
+
+Pseudo code:
+
+Test if the array exists and has a valid length.
+Set the boundaries of the current partition: l = 0, r = array length - 1.
+Determine the partition's middle position mid = (l + r) / 2.
+While r > l and array[mid] != value:
+  If value < array[mid]:
+    Set r = mid - 1.
+  Otherwise:
+    Set l = mid + 1.
+  Set mid = (l + r) / 2.
+If array[mid] = value, return mid, else return -1.
+
+In the following animation, the current partition will be highlighted.

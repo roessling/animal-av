@@ -1,0 +1,24 @@
+Die Interpolationssuche ist ein sehr effizientes Verfahren zum Finden eines
+gegebenen Elements in einem sortierten Feld.
+
+In jeder Iteration wird nur ein Teil des Feldes betrachtet (anfangs
+das gesamte Feld). Die Feldgrenzen werden in jeder Iteration angepasst,
+indem die aktuelle Position, der gesuchte Wert und die Grenzen sowie
+die Grenzwerte der aktuellen Position in Bezug zueinander gesetzt werden. 
+Wurde das gesuchte Element gefunden, so wird seine Position zurückgegeben, 
+sonst -1 als 'Fehlermarkierung'.
+
+Der Algorithmus in Worten:
+
+Teste, ob das Feld existiert.
+Setze die Grenze des aktuellen Teilfelds: l = 0, r = Feldlänge - 1.
+Interpoliere eine Position 'mid' als Kandidat für das Element.
+Solange r > l und array[mid] != value:
+  Falls value < array[mid]:
+    Setze r = mid - 1.
+  Sonst
+    Setze l = mid + 1.
+  Interpoliere einen neuen Wert für 'mid' als Kandidat für das Element.
+Falls array[mid] = value, gib mid zurück, sonst -1.
+
+In der Animation wird das aktuelle Teilfeld farbig hervorgehoben.

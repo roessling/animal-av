@@ -1,0 +1,16 @@
+Bubble Sort is an elementary sorting algorithm taught in many
+introductory computer science course at schools and universities.
+
+The basic idea of Bubble Sort is swapping neighbouring elements
+so that they will then be in ascending order.
+
+A verbal description of Bubble Sort is as follows:
+
+If the input array is null, return.
+Declare variables i, j and set i to the last array position.
+While i >= 0:
+  Set j = 0 and while j <= i - 1:
+    Test if a[j-1] > a[j]:
+      If so, swap the elements
+    Increment j
+  Decrement i

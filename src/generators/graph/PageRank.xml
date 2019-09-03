@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<PropertiesTreeModel xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="PropertiesTreeModel.xsd">
+	<Folder name="Root">
+		<Primitive type="Graph">
+			<name>graph</name>
+			<value><Graph>%graphscript
+
+graph 4 directed weighted
+
+
+graphcoordinates at 0 50
+
+startknoten A
+zielknoten D
+
+node A at 250 150
+node B at 550 150
+node C at 250 350
+node D at 550 350
+
+edge A B weight 1
+edge A C weight 1
+edge C B weight 1
+edge D B weight 1
+
+
+</Graph></value>
+		</Primitive>
+		<Primitive type="Color">
+			<name>color_of_headertext</name>
+			<value><Color>(0, 0, 255)</Color></value>
+		</Primitive>
+		<Primitive type="Color">
+			<name>nodehighlightcolor</name>
+			<value><Color>(0, 255, 0)</Color></value>
+		</Primitive>
+		<Primitive type="Color">
+			<name>color_for_lowest_PRValue</name>
+			<value><Color>(255, 255, 255)</Color></value>
+		</Primitive>
+		<Primitive type="Color">
+			<name>color_for_highest_PRValue</name>
+			<value><Color>(255, 0, 0)</Color></value>
+		</Primitive>
+		<Primitive type="Color">
+			<name>color_of_edges</name>
+			<value><Color>(0, 0, 0)</Color></value>
+		</Primitive>
+		<AnimationProperties type="SourceCodeProperties">
+			<AnimationPropertyItem type="ColorPropertyItem">
+				<name>highlightColor</name>
+				<isEditable value="true" />
+				<label></label>
+				<value><Color>(255, 0, 0)</Color></value>
+			</AnimationPropertyItem>
+			<AnimationPropertyItem type="ColorPropertyItem">
+				<name>contextColor</name>
+				<isEditable value="true" />
+				<label></label>
+				<value><Color>(0, 0, 0)</Color></value>
+			</AnimationPropertyItem>
+			<AnimationPropertyItem type="IntegerPropertyItem">
+				<name>depth</name>
+				<isEditable value="false" />
+				<label></label>
+				<value><int>0</int></value>
+			</AnimationPropertyItem>
+			<AnimationPropertyItem type="IntegerPropertyItem">
+				<name>indentation</name>
+				<isEditable value="false" />
+				<label></label>
+				<value><int>1</int></value>
+			</AnimationPropertyItem>
+			<AnimationPropertyItem type="ColorPropertyItem">
+				<name>color</name>
+				<isEditable value="true" />
+				<label></label>
+				<value><Color>(0, 0, 255)</Color></value>
+			</AnimationPropertyItem>
+			<AnimationPropertyItem type="BooleanPropertyItem">
+				<name>hidden</name>
+				<isEditable value="true" />
+				<label></label>
+				<value><boolean value="false" /></value>
+			</AnimationPropertyItem>
+			<AnimationPropertyItem type="IntegerPropertyItem">
+				<name>size</name>
+				<isEditable value="true" />
+				<label></label>
+				<value><int>12</int></value>
+			</AnimationPropertyItem>
+			<AnimationPropertyItem type="StringPropertyItem">
+				<name>name</name>
+				<isEditable value="true" />
+				<label></label>
+				<value><String>sourceCode</String></value>
+			</AnimationPropertyItem>
+			<AnimationPropertyItem type="BooleanPropertyItem">
+				<name>bold</name>
+				<isEditable value="true" />
+				<label></label>
+				<value><boolean value="false" /></value>
+			</AnimationPropertyItem>
+			<AnimationPropertyItem type="IntegerPropertyItem">
+				<name>row</name>
+				<isEditable value="true" />
+				<label></label>
+				<value><int>1</int></value>
+			</AnimationPropertyItem>
+			<AnimationPropertyItem type="BooleanPropertyItem">
+				<name>italic</name>
+				<isEditable value="true" />
+				<label></label>
+				<value><boolean value="false" /></value>
+			</AnimationPropertyItem>
+			<AnimationPropertyItem type="FontPropertyItem">
+				<name>font</name>
+				<isEditable value="true" />
+				<label></label>
+				<value><Font>SansSerif</Font></value>
+			</AnimationPropertyItem>
+		</AnimationProperties>
+				<Primitive type="Color">
+			<name>edgehighlightcolor</name>
+			<value><Color>(0, 255, 0)</Color></value>
+		</Primitive>
+		<Primitive type="Color">
+			<name>color_of_dangling_nodes</name>
+			<value><Color>(0, 255, 255)</Color></value>
+		</Primitive>
+						<Primitive type="double">
+			<name>dampingFactor</name>
+			<value><double>0.85</double></value>
+		</Primitive>
+								<Primitive type="double">
+			<name>breakValue</name>
+			<value><double>0.05</double></value>
+		</Primitive>
+		<Primitive type="int">
+			<name>maxNumberOfCorrectAnsweredQuestions</name>
+			<value><int>2</int></value>
+		</Primitive>
+		
+	</Folder>
+</PropertiesTreeModel>

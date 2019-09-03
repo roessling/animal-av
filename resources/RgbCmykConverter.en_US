@@ -1,0 +1,60 @@
+noSuchKeyException=Es gibt keine Ressource f\u00fcr Eintrag {0}
+
+iconNotFound=Icon \u201d{0}\u201d not found
+
+
+### Misc ###
+name = RGB / CMYK Converter
+nameAlgorithm = RGB / CMYK Conversion
+
+headerRgbToCmyk = CMYK to RGB conversion
+headerCmykToRgb = RGB to CMYK conversion
+givenColor = Given color which is converted into the other color model
+descriptionHeader = Explanation:
+RGB-Values = RGB-Values: 
+CMYK-Values = CMYK-Values (in %):
+description = RGB color model:\n	Most used form to represent colors \n	The color contains a red, green and blue value, \n	between 0 and 255 \n \nCMYK color model:\n	Almost every printer uses this color model, the colors cyan (c), \n	magenta (m), yellow (y) & black (k) get mixed. The values\n	are between 0% and 100% \n \nConvertion:\n	The convertion is not excact, the color models have\n	different color spaces. So if there is not the exact same color \n	 in the other color model, it will be converted to the most similar color
+explanation1 = First, the RGB values get passed as 
+explanation2 = an array
+explanation3 = Then the values get divided by 255 and
+explanation4 = temporarly stored in 'r', 'g' & 'b'
+explanation5 = The array 'cmyk' gets defined with a length of 4 and
+explanation6 = the calculated values of the CMYK color model will
+explanation7 = stored in there
+explanation8 = First, the black value (k) gets calculated, cause
+explanation9 = it's used for the other calculations
+explanation10 = Then, cyan (c), magenta (m) and yellow (y) get
+explanation11 = calculated and stored in the array
+explanation12 = After that, the array 'cmyk' can be returned
+explanation13 = 
+
+explanation14 = First, the CMYK values get passed as
+explanation15 = an array
+explanation16 = The array 'rgb' gets defined with a length of 3 and
+explanation17 = the calculated values of the RGB color model will
+explanation18 = be stored in there
+explanation19 = The values red (r), green (g), and blue (b)
+explanation20 = get calculated and stored in the array
+explanation21 = After that, the array 'rgb' can be returned
+explanation22 = 
+
+summary1 = Conversion of: RGB (%d, %d, %d)
+summary2 = The conversion has shown, that the
+summary3 = following color in the CMYK color model
+summary4 = is (almost) the same: 
+summary5 = cyan:
+summary6 = magenta:
+summary7 = yellow:
+summary8 = black:
+summary9 = Conversion of: CMYK (%d%c, %d%c, %d%c, %d%c)
+summary10 = following color in the RGB color model
+summary11 = red:
+summary12 = green:
+summary13 = blue:
+
+error1 = If you want to convert from cmyk to rgb, all values in cmyk must be between 0 & 100
+error2 = If you want to convert from rgb to cmyk, all values in rgb must be between 0 & 255
+
+introduction = Introduction
+startAlgorithm = Start of the conversion
+end = Summary & result

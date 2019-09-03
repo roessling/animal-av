@@ -1,0 +1,381 @@
+noSuchKeyException=There is no resource for the key {0}
+iconNotFound=Icon "{0}" not found
+
+noTextInput=No text was entered.
+noPatternInput=No pattern was entered.
+label_Text=Text:
+label_Pattern=Pattern:
+
+algorithmName=Rot-Schwarzbäume - Löschen
+
+
+----- CASE TEXTS -----
+
+generalInformation=Allgemeine Informationen
+specificInformation=Spezifische Informationen
+allgemeineInformationen=Hier werden allgemeine Informationen zu sehen sein!
+spezifischeInformationen=Hier werden Informationen für spezifische Zeilen zu sehen sein!
+
+
+----- TABLE OF CONTENTS -----
+
+tableOfContentsStart=Anfang
+tableOfContentsDelete=Löschen des {0}. Knotens
+tableOfContentsFinished=Alle Knoten gelöscht
+tableOfContentsFinal=Fazit
+
+
+----- DESCRIPTION -----
+
+descriptionLine1=Rot-Schwarzbäume sind eine erweiterte Version der binären Suchbäume. Ein binärer Suchbaum mit Höhe h bietet die Komplexität O(h) für die Operationen Suche, Minimum, Maximum, Einfügen, Löschen.
+
+descriptionLine2=Es ist offensichtlich, dass ein Baum mit geringer Höhe schnellere Operationen liefert als ein Baum mit großer Höhe. Im schlimmsten Fall liefert dies Laufzeiten einer LinkedList. Um dies zu verhindern balanciert ein Rot-Schwarzbazm den Baum um so eine Komplexität von O(log n) für alle Operationen zu bieten, wobei n die Anzahl der Knoten im Baum ist.
+
+descriptionLine3=Rot-Schwarzbäume erweitern binäre Suchbäume um ein weiteres Bit pro Knoten, welches die Farbe des Knoten darstellt und entweder rot oder schwarz ist. Die Farben der Knoten auf Pfaden von einem Knoten bis zu einem Blatt werden eingeschränkt, sodass kein Pfad mehr als doppelt so lang ist als ein anderer Pfad. Dies balanciert den Baum.
+
+descriptionLine4=Jeder Knoten besitzt nun die Eigenschaften Farbe, Wert, Linkes Kind, Rechtes Kind und Elter. Sollte ein Kind oder das Elter nicht existieren so zeigen diese Eigenschaften auf schwarze Knoten mit dem Wert NULL. Jedes Blatt des Baums ist also ein schwarzer NULL Knoten und alle Knoten mit einem gültigen Wert sind interne Knoten. Das Elter der Wurzel verweist ebenfalls auf einen schwarzen NULL Knoten. Diese schwarzen NULL Knoten werden im Folgenden als ein einziger Knoten T.null dargestellt.
+
+----- PROPERTYS OF RB TREES -----
+
+propertyHead=Eigenschaften von Rot-Schwarzbäumen:
+
+property1=1. Jeder Knoten ist entweder rot oder schwarz.
+
+property2=2. Die Wurzel ist schwarz.
+
+property3=3. Jedes Blatt (NULL) ist schwarz.
+
+property4=4. Wenn ein Knoten rot ist, dann sind beide Kinder schwarz.
+
+property5=5. Für jeden Knoten gilt, dass alle einfachen Pfade von diesem Knoten zu
+property51=einem absteigenden Blatt die gleiche Anzahl von schwarzen Knoten enthalten.
+
+
+	----- INTRO -----
+
+intro01=Intro
+
+intro02=Die Operationen Löschen modifiziert den Rot-Schwarzbaum. Das Resultat verletzt möglicherweise eine
+intro03=der fünf notwendigen Eigenschaften von Rot-Schwarzbäumen. Um die Eigenschaften wieder herzustellen 
+intro04=müssen Farben und Verweise von Knoten verändert werden. 
+
+intro11=Delete
+intro12=Um einen Knoten z zu löschen werden wir einen Knoten y suchen und z durch ihn ersetzen. Ein dritter Knoten x wird die 
+intro13=ursprünglich Position von y einnehmen. Sollte z kein oder ein Kind haben so ist y z selber und x der Nullknoten oder
+intro14=das einzige Kind von z. Hat z dagegen zwei Kinder so wählen wir y als den direkten Nachfolger von z im Baum und x als
+intro15=das einzige Kind von y oder den Nullknoten. Da wir den Knoten y aus dem Baum löschen müssen wir uns seine Farbe merken,
+intro16=um in Abhängigkeit davon später eventuelle Verstöße gegen die Eigenschaften von Rot-Schwarzbäumen zu beheben. Da x den 
+intro17=Platz von y einnimmt führen wir an dieser Stelle im Baum die Fixupmethode aus. 
+
+
+intro21=Welche Eigenschaften können beim Löschen verletzt werden?
+
+intro22=Falls der Knoten y rot war sind alle Eigenschaften erfüllt, da sich die Anzahl der schwarzen Knoten auf keinem
+intro23=Pfad verändert hat, keine zwei roten Knoten adjazent gemacht wurden, da y als roter Knoten keine roten Kinder hatte
+intro24=und da y nicht die Wurzel sein konnte bleibt die Wurzel schwarz. 
+
+intro25=Falls y allerdings schwarz war können drei Probleme auftauchen. War y die Wurzel und ein rotes Kind von y wird die
+intro26=neue Wurzel, so verstoßen wir gegen Eigenschaft 2. Falls x und y.p rot sind haben wir eine Verletzung der 4. Eigenschaft eingeführt.
+intro27=Da wir y als schwarzen Knoten nach oben an die Stelle von z gezogen haben und y schwarz war fehlt nun auf jedem Pfad, der vorher
+intro28=den Knoten y enthielt ein schwarzer Knoten. Dies stellt eine Verletzung der fünften Eigenschaft dar. Um das Problem zu beheben
+intro29=ordnen wir dem Knoten x, der an die Stelle von y getreten ist, einen extra Schwarzwert zu, x zählt nun doppelt, allerdings ist 
+intro210=nun x weder schwarz noch rot, sondern entweder doppelt schwarz oder schwarz rot, dies ist eine Verletzung der ersten Eigenschaft.
+
+intro31=Fixup
+
+intro32=Die while-Schleife in der Fixupmethode stellt die 1. Eigenschaft wieder her, indem sie den extra Schwarzwert auf x wieder
+intro33=entfernt, die letzte Anweisung sorgt dafür, dass die Wurzel schwarz ist und x und x.p nicht beide rot sein können. 
+intro34=In der Schleife wird der zusätzliche Schwarzwert solange den Baum hochgereicht, bis x entweder auf einen schwarz-roten Knoten
+intro35=zeigt, dann wird x einfach schwarz gefärbt, x auf die Wurzel zeigt, hier kann die extra Farbe einfach entfernt werden oder
+intro36=nach passenden Rotationen und Umfärbungen die Schleife verlassen werden kann.
+
+intro41=Rotationen
+
+intro42=Rotationen ändern die Verweisstruktur ohne die Eigenschaften eines binären Suchbaumes zu verletzen. Zwei adjazente 
+intro43=Knoten werden miteinander vertauscht, dafür müssen die drei Unterbäume entsprechend mitvertauscht werden. Es gibt
+intro44=zwei Arten von Rotationen: Die Left-Rotation und die Right-Rotation. Beide benötigen eine konstante Anzahl von Schritten.
+
+intro51=Eigenschaften von Knoten
+intro52=Jeder Knoten besitzt nun die Eigenschaften Farbe, Wert, Linkes Kind, Rechtes Kind und Elter. Sollte ein Kind 
+intro53=oder das Elter nicht existieren so zeigen diese Eigenschaften auf schwarze Knoten mit dem Wert NULL.
+intro54=Jedes Blatt des Baums ist also ein schwarzer NULL Knoten und alle Knoten mit einem gültigen Wert sind
+intro55=interne Knoten. Das Elter der Wurzel verweist ebenfalls auf einen schwarzen NULL Knoten. Diese
+intro56=schwarzen NULL Knoten werden im Folgenden als ein einziger Knoten T.null dargestellt.
+
+intro61=Direkter Nachfolger
+
+intro62=Wir benötigen die Funktion TREE-SUCCESSOR(x) im Algorithmus. Diese gibt entweder den Knoten mit dem kleinsten Wert
+intro63=im rechten Unterbaum, dessen Wurzel x ist, oder den größten Wert im linken Unterbaum, dessen Wurzel x ist, aus. 
+intro64=Wir kriegen also den direkten Nachfolger oder Vorgänger im Baum von x, wenn wir alle Werte sortiert vorliegen hätten.
+
+
+	----- OUTRO -----
+
+outro00=Laufzeit von RB-DELETE
+
+outro10=Die Methode RB-DELETE(T, z) benötigt O(log n) Zeit.
+
+outro20=Delete
+outro21=Da die Höhe eines Rot-Schwarzbaumes in O(log n) liegt ist die Laufzeit der 
+outro22=RB-DELETE-Methode ohne den Aufruf der RB-DELETE-FIXUP-Methode ebenfalls in O(log n).
+
+outro30=Fixup 
+outro31=Die Fälle 1, 3 und 4 (5, 7 und 8) der RB-DELETE-FIXUP-Methode terminieren nach einer 
+outro32=konstanten Anzahl von Farbwechseln und höchstens drei Rotationen. Fall 2 (6) ist der 
+outro33=einzige Fall in dem die while-Schleife mehr als einmal durchlaufen wird. Der Zeiger x
+outro34=wandert im Folgenden im Baum nach oben, allerdings höchstens O(log n) mal.
+
+outro40=Rotationen
+outro41=Da alle Rotationen in konstanter Laufzeit ablaufen liegen die Funktionen
+outro42=LEFT-ROTATE und RIGHT-ROTATE in der Komplexitätsklasse O(1) und fügen 
+outro43=der Laufzeit des RB-DELETE nichts hinzu
+
+        ----- DELETE -----
+
+generalInformationDelete0=Wir suchen einen geeigneten Nachfolger y um z im Baum T zu überschreiben.
+generalInformationDelete1=Wir suchen nun einen geeigneten Ersatz x für den Knoten y.
+generalInformationDelete2=Wir werden nun den Knoten y mit dem Knoten x ersetzen.
+generalInformationDelete3=Der Knoten z ist aus dem Baum gelöscht worden.
+
+specificInformationDelete0=Der Baum T und der zu löschende Knoten z werden übergeben.
+specificInformationDelete1True=Der Knoten z hat höchstens ein Kind, betritt den if-Zweig.
+specificInformationDelete1False=Der Knoten z hat zwei Kinder, betritt den else-Zweig.
+specificInformationDelete3=Da z höchstens ein Kind hat können wir y als z selbst wählen.
+specificInformationDelete4=elseAnweisung
+specificInformationDelete5=Da z zwei Kinder hat wird y als der direkte Nachfolger von z gesetzt.
+specificInformationDelete6=Wir speichern die ursprüngliche Farbe von y zwischen.
+specificInformationDelete7True=Das linke Kind von y ist nicht T.null und damit das einzige Kind, betritt den if-Zweig.
+specificInformationDelete7False=Das rechte Kind von y ist entweder das einzige oder T.null, betritt den else-Zweig.
+specificInformationDelete8=Wir wählen das einzige Kind von y als x.
+specificInformationDelete9=elseAnweisung
+specificInformationDelete10=Wir wählen das einzige Kind von y oder T.null als x.
+specificInformationDelete11=Um an den Platz von y zu treten übernimmt x das Elter von y.
+specificInformationDelete12True=Das Elter von y ist T.null, y muss die Wurzel sein, betritt den if-Zweig.
+specificInformationDelete12False=Das Elter von y ist nicht T.null, y ist nicht die Wurzel, betritt den else-Zweig.
+specificInformationDelete13=Da y die Wurzel ist nimmt x nun den Platz als neue Wurzel ein.
+specificInformationDelete14=elseAnweisung
+specificInformationDelete15True=Knoten y ist nicht die Wurzel, aber ein linkes Kind, betritt den if-Zweig.
+specificInformationDelete15False=Knoten y ist nicht die Wurzel, aber ein rechtes Kind, betitt den else-Zweig.
+specificInformationDelete16=Setze x als neues linkes Kind des Elterknoten von y.
+specificInformationDelete17=elseAnweisung
+specificInformationDelete18=Setze x als neues rechtes Kind des Elterknoten von y.
+specificInformationDelete19True=Knoten z hatte zwei Kinder, y ist ungleich z, betritt den if-Zweig.
+specificInformationDelete19False=Knoten z hatte höchstens ein Kind, y ist gleich z, x wird z überschreiben.
+specificInformationDelete20=Wir überschreiben den Wert von z mit dem Wert von y und löschen z aus dem Baum.
+specificInformationDelete21True=Knoten y hatte ursprünglich die Farbe schwarz, betritt den if-Zweig.
+specificInformationDelete21False=Knoten y hatte ursprünglich die Farbe rot, überspringe den Fixup.
+specificInformationDelete22=Rufe die Fixup Methode auf, um mögliche Verstöße zu beheben.
+
+specificInformationDeleteLast=Wir haben den Knoten z erfolgreich aus dem Baum gelöscht.
+generalInformationDeleteLast=Die Fixupmethode hat alle Verstöße gegen die Eigenschaften behoben.
+
+generalInformationDeleteViolation=Der Baum verletzt {0} Eigenschaft.
+die1=die 1.
+die2=die 2.
+die4=die 4.
+
+        ----- FIXUP -----
+
+generalInformationDeleteFixupV1=Wir müssen den zusätzlichen Schwarzwert von x entfernen.
+specificInformationDeleteFixupV1=Falls x die Wurzel oder rot ist, ist dies einfach. 
+
+generalInformationDeleteFixupV2=Wir müssen die Wurzel wieder schwarz färben.
+specificInformationDeleteFixupV2=Wir können dies ohne Probleme tun.
+
+generalInformationDeleteFixupV4=Wir müssen einen der beiden adjazenten roten Knoten schwarz färben.
+specificInformationDeleteFixupV4=Wir können x einfach schwarz färben.
+
+generalInformationDeleteFixup10=Der Geschwisterknoten von x ist rot, dies ist Fall 1.
+generalInformationDeleteFixup11=Wir werden die Farben von w und x.p tauschen und rotieren.
+generalInformationDeleteFixup12=Nun haben wir Fall 1 nach Fall 2, 3 oder 4 überführt.
+
+generalInformationDeleteFixup20=Der Geschwisterknoten w und seine Kinder sind schwarz, dies ist Fall 2.
+generalInformationDeleteFixup21=Wir entfernen nun den extra Schwarzwert von x und von w und legen ihn auf x.p.
+generalInformationDeleteFixup22=Da nun x.p einen Schwarzwert zu viel hat wiederholen wir die Schleife mit x.p.
+
+generalInformationDeleteFixup30=Der Geschwisterknoten w und sein rechtes Kind sind schwarz, dies ist Fall 3.
+generalInformationDeleteFixup31=Wir tauschen die Farben von w und w.left und führen eine Rechtsrotation auf w durch.
+generalInformationDeleteFixup32=Durch das Umfärben und die Rotation haben wir Fall 3 nach Fall 4 überführt.
+
+generalInformationDeleteFixup40=Der Geschwisterknoten w ist schwarz und w.right ist rot, dies ist Fall 4.
+generalInformationDeleteFixup41=Wir werden Umfärbungen und eine Rotation vornehmen, um den extra Schwarzwert zu entfernen.
+generalInformationDeleteFixup42=Der extra Schwarzwert auf x kann ohne Verletzung der Eigenschaften entfernt werden.
+
+
+
+generalInformationDeleteFixup50=Der Geschwisterknoten von x ist rot, dies ist Fall 5.
+generalInformationDeleteFixup51=Wir werden die Farben von w und x.p tauschen und rotieren.
+generalInformationDeleteFixup52=Nun haben wir Fall 5 nach Fall 6, 7 oder 8 überführt.
+
+generalInformationDeleteFixup60=Der Geschwisterknoten w und seine Kinder sind schwarz, dies ist Fall 6.
+generalInformationDeleteFixup61=Wir entfernen nun den extra Schwarzwert von x und von w und legen ihn auf x.p.
+generalInformationDeleteFixup62=Da nun x.p einen Schwarzwert zu viel hat wiederholen wir die Schleife mit x.p.
+
+generalInformationDeleteFixup70=Der Geschwisterknoten w und sein rechtes Kind sind schwarz, dies ist Fall 7.
+generalInformationDeleteFixup71=Wir tauschen die Farben von w und w.left und führen eine Linksrotation auf w durch.
+generalInformationDeleteFixup72=Durch das Umfärben und die Rotation haben wir Fall 7 nach Fall 8 überführt.
+
+generalInformationDeleteFixup80=Der Geschwisterknoten w ist schwarz und w.right ist rot, dies ist Fall 8.
+generalInformationDeleteFixup81=Wir werden Umfärbungen und eine Rotation vornehmen, um den extra Schwarzwert zu entfernen.
+generalInformationDeleteFixup82=Der extra Schwarzwert auf x kann ohne Verletzung der Eigenschaften entfernt werden.
+
+
+specificInformationDeleteFixup1True=Knoten x ist nicht die Wurzel und schwarz, betritt die while-Schleife.
+specificInformationDeleteFixup1False=Knoten x ist die Wurzel oder nicht schwarz, überspringe die while-Schleife.
+specificInformationDeleteFixup3True=Knoten x ist ein linkes Kind, betritt den if-Zweig.
+specificInformationDeleteFixup3False=Knoten x ist ein rechtes Kind, betritt den else-Zweig.
+
+
+specificInformationDeleteFixup4=Wähle den Geschwisterknoten von x als Knoten w.
+specificInformationDeleteFixup5True=Der Geschwisterknoten von x (w) ist rot, nimm den if-Zweig.
+specificInformationDeleteFixup5False=Der Geschwisterknoten von x (w) ist schwarz, überspringe den if-Block.
+specificInformationDeleteFixup6=Färbe w von rot nach schwarz um.
+specificInformationDeleteFixup7=Färbe den Elterknoten von x von schwarz nach rot um.
+specificInformationDeleteFixup8=Führe eine Linksrotation aus, um x.p nach links unten zu rotieren.
+specificInformationDeleteFixup9=Die Rotation hat den Geschwisterknoten von x verändert, wir aktualisieren w.
+specificInformationDeleteFixup10True=Beide Kindsknoten von w sind schwarz, betritt den if-Zweig.
+specificInformationDeleteFixup10False=Mindestens ein Kind von w ist nicht schwarz, betritt den else-Zweig.
+specificInformationDeleteFixup12=Färbe w von schwarz auf rot, um einen Schwarzwert zu entfernen. 
+specificInformationDeleteFixup13=Setze den Elterknoten von x als neues x und wiederhole die Schleife.
+specificInformationDeleteFixup14=elseAnweisung
+specificInformationDeleteFixup15True=Knoten w und und w.right sind schwarz, w.left ist rot, betritt den if-Zweig.
+specificInformationDeleteFixup15False=Knoten w und w.left sind schwarz, w.right ist rot, überspringe den if-Zweig.
+specificInformationDeleteFixup16=Färbe das linke Kind von w von rot auf schwarz um.
+specificInformationDeleteFixup17=Färbe w von schwarz auf rot um.
+specificInformationDeleteFixup18=Führe eine Rechtsrotation aus, um w nach rechts unten zu rotieren.
+specificInformationDeleteFixup19=Die Rotation hat den Geschwisterknoten von x verändert, wir aktualisieren w.
+specificInformationDeleteFixup20=Färbe den Knoten w mit der Farbe seines Elternknotens.
+specificInformationDeleteFixup21=Färbe den Elternknoten von x schwarz.
+specificInformationDeleteFixup22=Färbe das rechte Kind von w schwarz.
+specificInformationDeleteFixup23=Rotiere den Elternknoten von x nach links unten.
+specificInformationDeleteFixup24=Wir setzen den Zeiger x auf die Wurzel des Baumes, um die Schleife zu terminieren.
+
+specificInformationDeleteFixup25=elseAnweisung
+
+specificInformationDeleteFixup26=Wähle den Geschwisterknoten von x als Knoten w.
+specificInformationDeleteFixup27True=Der Geschwisterknoten von x (w) ist rot, nimm den if-Zweig.
+specificInformationDeleteFixup27False=Der Geschwisterknoten von x (w) ist schawrz, überspringe den if-Block.
+specificInformationDeleteFixup28=Färbe w von rot nach schwarz um.
+specificInformationDeleteFixup29=Färbe den Elterknoten von x von schwarz nach rot um.
+specificInformationDeleteFixup30=Führe eine Rechtssrotation aus, um x.p nach rechts unten zu rotieren.
+specificInformationDeleteFixup31=Die Rotation hat den Geschwisterknoten von x verändert, wir aktualisieren w.
+specificInformationDeleteFixup32True=Beide Kindsknoten von w sind schwarz, betritt den if-Zweig.
+specificInformationDeleteFixup32False=Mindestens ein Kind von w ist nicht schwarz, betritt den else-Zweig.
+specificInformationDeleteFixup34=Färbe w von schwarz auf rot, um einen Schwarzwert zu entfernen. 
+specificInformationDeleteFixup35=Setze den Elterknoten von x als neues x und wiederhole die Schleife.
+specificInformationDeleteFixup36=elseAnweisung
+specificInformationDeleteFixup37True=Knoten w und und w.left sind schwarz, w.right ist rot, betritt den if-Zweig.
+specificInformationDeleteFixup37False=Knoten w und w.right sind schwarz, w.left ist rot, überspringe den if-Zweig.
+specificInformationDeleteFixup38=Färbe das recht Kind von w von rot auf schwarz um.
+specificInformationDeleteFixup39=Färbe w von schwarz auf rot um.
+specificInformationDeleteFixup40=Führe eine Linkssrotation aus, um w nach links unten zu rotieren.
+specificInformationDeleteFixup41=Die Rotation hat den Geschwisterknoten von x verändert, wir aktualisieren w.
+specificInformationDeleteFixup42=Färbe den Knoten w mit der Farbe seines Elternknotens.
+specificInformationDeleteFixup43=Färbe den Elternknoten von x schwarz.
+specificInformationDeleteFixup44=Färbe das linke Kind von w schwarz.
+specificInformationDeleteFixup45=Rotiere den Elternknoten von x nach rechts unten.
+specificInformationDeleteFixup46=Wir setzen den Zeiger x auf die Wurzel des Baumes, um die Schleife zu terminieren.
+
+specificInformationDeleteFixup47=Wir färben den Knoten x schwarz und stellen so alle Eigenschaften sicher.
+generalInformationDeleteFixup47=Der Knoten x ist entweder die Wurzel oder rot, wir können ihn sorglos schwärzen.
+
+	----- LEFT ROTATE -----
+
+generalInformationLeftRotate0=Wir rotieren, sodass das rechte Kind von x (y) den Platz von x einnimmt
+specificInformationLeftRotate0=Diese Methode verändert lediglich die Zeigerstruktur der Knoten x und y
+
+specificInformationLeftRotate1=Der Zeiger y wird als rechtes Kind von x initialisiert
+specificInformationLeftRotate2=Der neue rechte Unterbaum von x ist der alte linke Unterbaum von y
+specificInformationLeftRotate3True=Der linke Unterbaum von y zeigt nicht auf T.null, betritt den if Zweig
+specificInformationLeftRotate3False=Der linke Unterbaum von y zeigt auf T.null, überspringe die Anweisung
+specificInformationLeftRotate4=Der Knoten x wird das neue Elter des linken Kindes von y
+specificInformationLeftRotate5=Das neue Elter von y ist nun das Elter von x
+
+specificInformationLeftRotate6True=Das Elter von x ist T.null, x ist die Wurzel des Baumes, betritt den if-Zweig
+specificInformationLeftRotate6False=Das Elter von x ist nicht T.null, x ist nicht die Wurzel des Baumes, betritt den else-Zweig
+specificInformationLeftRotate7=Setze y als neue Wurzel des Baumes
+specificInformationLeftRotate8=elseAnweisung
+
+specificInformationLeftRotate9True=Knoten x war nicht die Wurzel und ist ein linkes Kind
+specificInformationLeftRotate9False=Knoten x war nicht die Wurzel und ist ein rechtes Kind
+specificInformationLeftRotate10=Der Knoten x ist ein linkes Kind und das neue linke Kind von x.p wird y, anstatt x
+specificInformationLeftRotate11=elseAnweisung
+specificInformationLeftRotate12=Der Knoten x ist ein rechtes Kind und das neue rechte Kind von x.p wird y, anstatt x
+specificInformationLeftRotate13=Knoten x wird das neue linke Kind von y, da y nach oben gewandert ist
+specificInformationLeftRotate14=Setze y als Elterknoten von x ein
+
+generalInformationLeftRotateLast=Knoten y wurde zur neuen Wurzel des Unterbaumes mit x als neuem linken Kind von y
+specificInformationLeftRotateLast=Das ehemals linke Kind von y ist nun das neue rechte Kind von x
+
+
+	----- RIGHT ROTATE -----
+
+generalInformationRightRotate0=Wir rotieren, sodass das linke Kind von x (y) den Platz von x einnimmt
+specificInformationRightRotate0=Diese Methode verändert lediglich die Zeigerstruktur der Knoten x und y
+
+specificInformationRightRotate1=Der Zeiger y wird als linkes Kind von x initialisiert
+specificInformationRightRotate2=Der neue linke Unterbaum von x ist der alte rechte Unterbaum von y
+specificInformationRightRotate3True=Der rechte Unterbaum von y zeigt nicht auf T.null, betritt den if Zweig
+specificInformationRightRotate3False=Der rechte Unterbaum von y zeigt auf T.null, überspringe die Anweisung
+specificInformationRightRotate4=Der Knoten x wird das neue Elter des rechten Kindes von y
+specificInformationRightRotate5=Das Elter von x ist nun das Elter von y
+
+specificInformationRightRotate6True=Das Elter von x ist T.null, x ist die Wurzel des Baumes, betritt den if-Zweig
+specificInformationRightRotate6False=Das Elter von x ist nicht T.null, x ist nicht die Wurzel des Baumes, betritt den else-Zweig
+specificInformationRightRotate7=Setze y als neue Wurzel des Baumes
+specificInformationRightRotate8=elseAnweisung
+
+specificInformationRightRotate9True=Knoten x war nicht die Wurzel und ist ein rechtes Kind, betritt den if-Zweig
+specificInformationRightRotate9False=Knoten x war nicht die Wurzel und ist ein linkes Kind, betritt den else-Zweig
+specificInformationRightRotate10=Der Knoten x ist ein rechtes Kind und das neue rechte Kind wird y, anstatt x
+specificInformationRightRotate11=elseAnweisung
+specificInformationRightRotate12=Der Knoten x ist ein linkes Kind und das neue linke Kind wird y, anstatt x
+specificInformationRightRotate13=Knoten x wird das neue rechte Kind von y, da y nach oben gewandert ist
+specificInformationRightRotate14=Setze y als Elterknoten von x ein
+
+generalInformationRightRotateLast=Knoten y wurde zur neuen Wurzel des Unterbaumes mit x als neuem rechten Kind von y
+specificInformationRightRotateLast=Das ehemals rechte Kind von y ist nun das neue linke Kind von x
+
+
+-=-
+
+	----- QUESTIONS -----
+
+
+----
+questionCorrectAnswerColor=Korrekt, die Farben sind rot und schwarz!
+questionWhichColor=Welche Farben hat ein Rot-Schwarzbaum?
+questionAnswer1=Schwarz
+questionAnswer2=Rot
+questionAnswer3=Grün
+questionAnswer4=Blau
+questionAnswer5=Weiß
+questionCorrectAnswerColor=Korrekt, die Farben sind rot und schwarz!
+
+questionWrongAnswer=Falsch, die richtige Antwort wäre {0} 
+
+questionand=und
+
+---
+
+questionRuntime=Welche Laufzeit hat die Löschmethode in Rot-Schwarzbäumen?
+
+questionCorrectAnswerRuntime=Richtig, Löschen liegt in O(log n)!
+questionWrongAnswerRuntime=Falsch, Löschen liegt in O(log n)!
+
+
+----
+
+
+------ QUESTIONS ------
+
+questionCorrectAnswer=Korrekt, {0} Eigenschaft wurde verletzt!
+
+questionWhichViolation=Welche Eigenschaft von Rot-Schwarzbäumen wird durch das Löschen von z verletzt?
+questionWrongAnswer=Falsch, die richtige Antwort wäre gewesen: {0}
+
+none=keine
+none2=keine
+d1=die 1. 
+d2=die 2. 
+d4=die 4. 

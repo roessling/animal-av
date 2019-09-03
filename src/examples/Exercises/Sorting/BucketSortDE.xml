@@ -1,0 +1,416 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<ns2:exercise xmlns:ns2="http://www.algoanim.info/Animal2/">
+    <chainPath>/Sorting/Bucket Sort/Java/de/Bucket_Sort</chainPath>
+    <description>Bucketsort z�hlt die H�ufigkeit jedes Schl�sselwertes in einer Liste. Daraus errechnet es die korrekte Position jedes Elements und f�gt es in einer zweiten Liste dort ein. Die H�ufigkeit der Schl�sselwerte wird in einem so genannten Histogramm gespeichert. Dies wird meist als Array implementiert, das so lang ist, wie es m�gliche Schl�sselwerte gibt; als Indizes werden dabei die Schl�sselwerte bzw. die ihnen zugeordneten ganzen Zahlen gew�hlt. Elemente mit gleichem Sortierschl�ssel werden dabei in Gruppen, so genannten Buckets, zusammengefasst.</description>
+    <generatorName>generators.sorting.bucketsort.BucketSortAF</generatorName>
+    <initialVariables>
+        <name>array</name>
+        <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">[-1,5,2,0,5,6]</value>
+    </initialVariables>
+    <questionsList>
+        <decisionBox xsi:type="scriptBox" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+            <inputVariables>
+                <name>ele1</name>
+            </inputVariables>
+            <inputVariables>
+                <name>ele2</name>
+                <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema"></value>
+            </inputVariables>
+            <next xsi:type="assignBox">
+                <next xsi:type="assignBox">
+                    <next xsi:type="functionBox">
+                        <next xsi:type="functionBox">
+                            <next xsi:type="functionBox">
+                                <function xsi:type="ok"/>
+                            </next>
+                            <function xsi:type="check"/>
+                            <arguments xsi:type="constantValue">
+                                <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">($ele1 = $n1) and ($ele2 = $n2)</value>
+                            </arguments>
+                        </next>
+                        <function xsi:type="debug"/>
+                    </next>
+                    <variableName>n2</variableName>
+                    <expression xsi:type="functionBox">
+                        <function xsi:type="retrieve"/>
+                        <arguments xsi:type="constantValue">
+                            <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">events/bucketInhalt [seqnr = 4]/value2</value>
+                        </arguments>
+                    </expression>
+                </next>
+                <variableName>n1</variableName>
+                <expression xsi:type="functionBox">
+                    <function xsi:type="retrieve"/>
+                    <arguments xsi:type="constantValue">
+                        <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">events/bucketInhalt [seqnr = 1]/index0</value>
+                    </arguments>
+                </expression>
+            </next>
+            <AssignBox>
+                <next xsi:type="assignBox">
+                    <next xsi:type="functionBox">
+                        <next xsi:type="functionBox">
+                            <next xsi:type="functionBox">
+                                <function xsi:type="ok"/>
+                            </next>
+                            <function xsi:type="check"/>
+                            <arguments xsi:type="constantValue">
+                                <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">($ele1 = $n1) and ($ele2 = $n2)</value>
+                            </arguments>
+                        </next>
+                        <function xsi:type="debug"/>
+                    </next>
+                    <variableName>n2</variableName>
+                    <expression xsi:type="functionBox">
+                        <function xsi:type="retrieve"/>
+                        <arguments xsi:type="constantValue">
+                            <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">events/bucketInhalt [seqnr = 4]/value2</value>
+                        </arguments>
+                    </expression>
+                </next>
+                <variableName>n1</variableName>
+                <expression xsi:type="functionBox">
+                    <function xsi:type="retrieve"/>
+                    <arguments xsi:type="constantValue">
+                        <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">events/bucketInhalt [seqnr = 1]/index0</value>
+                    </arguments>
+                </expression>
+            </AssignBox>
+            <AssignBox>
+                <next xsi:type="functionBox">
+                    <next xsi:type="functionBox">
+                        <next xsi:type="functionBox">
+                            <function xsi:type="ok"/>
+                        </next>
+                        <function xsi:type="check"/>
+                        <arguments xsi:type="constantValue">
+                            <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">($ele1 = $n1) and ($ele2 = $n2)</value>
+                        </arguments>
+                    </next>
+                    <function xsi:type="debug"/>
+                </next>
+                <variableName>n2</variableName>
+                <expression xsi:type="functionBox">
+                    <function xsi:type="retrieve"/>
+                    <arguments xsi:type="constantValue">
+                        <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">events/bucketInhalt [seqnr = 4]/value2</value>
+                    </arguments>
+                </expression>
+            </AssignBox>
+            <FunctionBox>
+                <next xsi:type="functionBox">
+                    <next xsi:type="functionBox">
+                        <function xsi:type="ok"/>
+                    </next>
+                    <function xsi:type="check"/>
+                    <arguments xsi:type="constantValue">
+                        <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">($ele1 = $n1) and ($ele2 = $n2)</value>
+                    </arguments>
+                </next>
+                <function xsi:type="debug"/>
+            </FunctionBox>
+            <FunctionBox>
+                <next xsi:type="functionBox">
+                    <function xsi:type="ok"/>
+                </next>
+                <function xsi:type="check"/>
+                <arguments xsi:type="constantValue">
+                    <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">($ele1 = $n1) and ($ele2 = $n2)</value>
+                </arguments>
+            </FunctionBox>
+            <FunctionBox>
+                <function xsi:type="ok"/>
+            </FunctionBox>
+        </decisionBox>
+        <inputVariables>
+            <name>ele1</name>
+        </inputVariables>
+        <inputVariables>
+            <name>ele2</name>
+            <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"></value>
+        </inputVariables>
+        <questionId>Question-3454406021295265186711</questionId>
+        <questionText>1. Geben Sie bitte alle Elemente, die im ersten " Bucket " gespeichert wurden. Aufpassen die Reihenfolge.</questionText>
+        <script>// No script
+n1 = Retrieve("events/bucketInhalt [seqnr = 1]/index0");
+n2 = Retrieve("events/bucketInhalt [seqnr = 4]/value2");
+Debug();
+Check("($ele1 = $n1) and ($ele2 = $n2)");
+Ok();</script>
+    </questionsList>
+    <questionsList>
+        <decisionBox xsi:type="scriptBox" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+            <inputVariables>
+                <name>ele1</name>
+            </inputVariables>
+            <next xsi:type="assignBox">
+                <next xsi:type="functionBox">
+                    <next xsi:type="functionBox">
+                        <next xsi:type="functionBox">
+                            <function xsi:type="ok"/>
+                        </next>
+                        <function xsi:type="check"/>
+                        <arguments xsi:type="constantValue">
+                            <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">$ele1 = $n1</value>
+                        </arguments>
+                    </next>
+                    <function xsi:type="debug"/>
+                </next>
+                <variableName>n1</variableName>
+                <expression xsi:type="functionBox">
+                    <function xsi:type="retrieve"/>
+                    <arguments xsi:type="constantValue">
+                        <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">events/bucketInhalt [seqnr = 3]/value1</value>
+                    </arguments>
+                </expression>
+            </next>
+            <AssignBox>
+                <next xsi:type="functionBox">
+                    <next xsi:type="functionBox">
+                        <next xsi:type="functionBox">
+                            <function xsi:type="ok"/>
+                        </next>
+                        <function xsi:type="check"/>
+                        <arguments xsi:type="constantValue">
+                            <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">$ele1 = $n1</value>
+                        </arguments>
+                    </next>
+                    <function xsi:type="debug"/>
+                </next>
+                <variableName>n1</variableName>
+                <expression xsi:type="functionBox">
+                    <function xsi:type="retrieve"/>
+                    <arguments xsi:type="constantValue">
+                        <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">events/bucketInhalt [seqnr = 3]/value1</value>
+                    </arguments>
+                </expression>
+            </AssignBox>
+            <FunctionBox>
+                <next xsi:type="functionBox">
+                    <next xsi:type="functionBox">
+                        <function xsi:type="ok"/>
+                    </next>
+                    <function xsi:type="check"/>
+                    <arguments xsi:type="constantValue">
+                        <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">$ele1 = $n1</value>
+                    </arguments>
+                </next>
+                <function xsi:type="debug"/>
+            </FunctionBox>
+            <FunctionBox>
+                <next xsi:type="functionBox">
+                    <function xsi:type="ok"/>
+                </next>
+                <function xsi:type="check"/>
+                <arguments xsi:type="constantValue">
+                    <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">$ele1 = $n1</value>
+                </arguments>
+            </FunctionBox>
+            <FunctionBox>
+                <function xsi:type="ok"/>
+            </FunctionBox>
+        </decisionBox>
+        <inputVariables>
+            <name>ele1</name>
+        </inputVariables>
+        <questionId>Question-3454406021297067900883</questionId>
+        <questionText>2. Geben Sie bitte das Element, die im zweiten " Bucket " gespeichert wurden.</questionText>
+        <script>// No script
+n1 = Retrieve("events/bucketInhalt [seqnr = 3]/value1");
+
+Debug();
+Check("$ele1 = $n1");
+Ok();</script>
+    </questionsList>
+    <questionsList>
+        <decisionBox xsi:type="scriptBox" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+            <inputVariables>
+                <name>ele1</name>
+            </inputVariables>
+            <inputVariables>
+                <name>ele2</name>
+                <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema"></value>
+            </inputVariables>
+            <inputVariables>
+                <name>ele3</name>
+                <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema"></value>
+            </inputVariables>
+            <next xsi:type="assignBox">
+                <next xsi:type="assignBox">
+                    <next xsi:type="assignBox">
+                        <next xsi:type="functionBox">
+                            <next xsi:type="functionBox">
+                                <next xsi:type="functionBox">
+                                    <function xsi:type="ok"/>
+                                </next>
+                                <function xsi:type="check"/>
+                                <arguments xsi:type="constantValue">
+                                    <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">($ele1 = $n1) and ($ele2 = $n2) and ($ele3 = $n3)</value>
+                                </arguments>
+                            </next>
+                            <function xsi:type="debug"/>
+                        </next>
+                        <variableName>n3</variableName>
+                        <expression xsi:type="functionBox">
+                            <function xsi:type="retrieve"/>
+                            <arguments xsi:type="constantValue">
+                                <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">events/bucketInhalt [seqnr = 6]/value2</value>
+                            </arguments>
+                        </expression>
+                    </next>
+                    <variableName>n2</variableName>
+                    <expression xsi:type="functionBox">
+                        <function xsi:type="retrieve"/>
+                        <arguments xsi:type="constantValue">
+                            <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">events/bucketInhalt [seqnr = 5]/value2</value>
+                        </arguments>
+                    </expression>
+                </next>
+                <variableName>n1</variableName>
+                <expression xsi:type="functionBox">
+                    <function xsi:type="retrieve"/>
+                    <arguments xsi:type="constantValue">
+                        <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">events/bucketInhalt [seqnr = 2]/value1</value>
+                    </arguments>
+                </expression>
+            </next>
+            <AssignBox>
+                <next xsi:type="assignBox">
+                    <next xsi:type="assignBox">
+                        <next xsi:type="functionBox">
+                            <next xsi:type="functionBox">
+                                <next xsi:type="functionBox">
+                                    <function xsi:type="ok"/>
+                                </next>
+                                <function xsi:type="check"/>
+                                <arguments xsi:type="constantValue">
+                                    <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">($ele1 = $n1) and ($ele2 = $n2) and ($ele3 = $n3)</value>
+                                </arguments>
+                            </next>
+                            <function xsi:type="debug"/>
+                        </next>
+                        <variableName>n3</variableName>
+                        <expression xsi:type="functionBox">
+                            <function xsi:type="retrieve"/>
+                            <arguments xsi:type="constantValue">
+                                <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">events/bucketInhalt [seqnr = 6]/value2</value>
+                            </arguments>
+                        </expression>
+                    </next>
+                    <variableName>n2</variableName>
+                    <expression xsi:type="functionBox">
+                        <function xsi:type="retrieve"/>
+                        <arguments xsi:type="constantValue">
+                            <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">events/bucketInhalt [seqnr = 5]/value2</value>
+                        </arguments>
+                    </expression>
+                </next>
+                <variableName>n1</variableName>
+                <expression xsi:type="functionBox">
+                    <function xsi:type="retrieve"/>
+                    <arguments xsi:type="constantValue">
+                        <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">events/bucketInhalt [seqnr = 2]/value1</value>
+                    </arguments>
+                </expression>
+            </AssignBox>
+            <AssignBox>
+                <next xsi:type="assignBox">
+                    <next xsi:type="functionBox">
+                        <next xsi:type="functionBox">
+                            <next xsi:type="functionBox">
+                                <function xsi:type="ok"/>
+                            </next>
+                            <function xsi:type="check"/>
+                            <arguments xsi:type="constantValue">
+                                <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">($ele1 = $n1) and ($ele2 = $n2) and ($ele3 = $n3)</value>
+                            </arguments>
+                        </next>
+                        <function xsi:type="debug"/>
+                    </next>
+                    <variableName>n3</variableName>
+                    <expression xsi:type="functionBox">
+                        <function xsi:type="retrieve"/>
+                        <arguments xsi:type="constantValue">
+                            <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">events/bucketInhalt [seqnr = 6]/value2</value>
+                        </arguments>
+                    </expression>
+                </next>
+                <variableName>n2</variableName>
+                <expression xsi:type="functionBox">
+                    <function xsi:type="retrieve"/>
+                    <arguments xsi:type="constantValue">
+                        <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">events/bucketInhalt [seqnr = 5]/value2</value>
+                    </arguments>
+                </expression>
+            </AssignBox>
+            <AssignBox>
+                <next xsi:type="functionBox">
+                    <next xsi:type="functionBox">
+                        <next xsi:type="functionBox">
+                            <function xsi:type="ok"/>
+                        </next>
+                        <function xsi:type="check"/>
+                        <arguments xsi:type="constantValue">
+                            <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">($ele1 = $n1) and ($ele2 = $n2) and ($ele3 = $n3)</value>
+                        </arguments>
+                    </next>
+                    <function xsi:type="debug"/>
+                </next>
+                <variableName>n3</variableName>
+                <expression xsi:type="functionBox">
+                    <function xsi:type="retrieve"/>
+                    <arguments xsi:type="constantValue">
+                        <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">events/bucketInhalt [seqnr = 6]/value2</value>
+                    </arguments>
+                </expression>
+            </AssignBox>
+            <FunctionBox>
+                <next xsi:type="functionBox">
+                    <next xsi:type="functionBox">
+                        <function xsi:type="ok"/>
+                    </next>
+                    <function xsi:type="check"/>
+                    <arguments xsi:type="constantValue">
+                        <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">($ele1 = $n1) and ($ele2 = $n2) and ($ele3 = $n3)</value>
+                    </arguments>
+                </next>
+                <function xsi:type="debug"/>
+            </FunctionBox>
+            <FunctionBox>
+                <next xsi:type="functionBox">
+                    <function xsi:type="ok"/>
+                </next>
+                <function xsi:type="check"/>
+                <arguments xsi:type="constantValue">
+                    <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">($ele1 = $n1) and ($ele2 = $n2) and ($ele3 = $n3)</value>
+                </arguments>
+            </FunctionBox>
+            <FunctionBox>
+                <function xsi:type="ok"/>
+            </FunctionBox>
+        </decisionBox>
+        <inputVariables>
+            <name>ele1</name>
+        </inputVariables>
+        <inputVariables>
+            <name>ele2</name>
+            <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"></value>
+        </inputVariables>
+        <inputVariables>
+            <name>ele3</name>
+            <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"></value>
+        </inputVariables>
+        <questionId>Question-3454406021297068246258</questionId>
+        <questionText>3. Geben Sie bitte alle Elemente, die im vierten " Bucket " gespeichert wurden. Aufpassen die Reihenfolge.</questionText>
+        <script>// No script
+n1 = Retrieve("events/bucketInhalt [seqnr = 2]/value1");
+n2 = Retrieve("events/bucketInhalt [seqnr = 5]/value2");
+n3 = Retrieve("events/bucketInhalt [seqnr = 6]/value2");
+Debug();
+Check("($ele1 = $n1) and ($ele2 = $n2) and ($ele3 = $n3)");
+Ok();</script>
+    </questionsList>
+    <subTitle>Output  Language: Java
+Author: Xiaofan Fan</subTitle>
+    <title>Bucket Sort</title>
+</ns2:exercise>

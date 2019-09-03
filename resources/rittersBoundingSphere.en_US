@@ -1,0 +1,74 @@
+title=Ritter''s bounding sphere
+description=\
+Ritter''s bounding sphere is an algorithm proposed in 1990 by \
+Jack Ritter to find a bounding sphere around a set of points.\n\
+\n\
+The approach by Ritter is not always giving the optimal \
+possible solution, but is still a popular method due to its \
+efficiency and easy implementation.
+
+stepLabelIntro=Introduction
+stepLabelInit=Initialization
+stepLabelX=Choose x
+stepLabelY=Find y
+stepLabelZ=Find z
+stepLabelCenter=Calculate centerpoint m
+stepLabelRadius=Calculate radius r
+stepLabelSphere=Construct bounding sphere
+stepLabelOutro=Conclusion
+
+intro1=\
+Ritter''s bounding sphere is an algorithm to find a sphere in the\n\
+n-dimensional space, that contains a given set of points P.
+
+intro2=\
+The approach is not optimal, as the resulting sphere is not always\n\
+the smallest possible bounding sphere.
+
+intro3=\
+The algorithm works in 4 steps:
+
+step1=Step 1: Select a point x in P
+step2=Step 2: Find a point y in P with maximum distance to x
+step3=Step 3: Find a point z in P with maximum distance to y
+step4=Step 4: Create a sphere at the center of y and z with radius of half their distance
+
+task=\
+Task: Find a bounding sphere for the points\n\
+P = [\n\
+{0}\n\
+]
+
+outro1=\
+Using Ritter''s algorithm we were able to find a bounding sphere\n\
+for the given points\n\
+P = [\n\
+{0}\n\
+]\n\
+at centerpoint m = {1} with radius r = {2}.
+
+outro2=\
+This approach is not always giving the best results, but in turn is a\n\
+very efficient solution to the bounding sphere problem.
+
+outro3=\
+To find this bounding sphere we had to find 2 maximum distance points\n\
+in 2 x {0} = {1}, which means O(2n), steps.
+
+questionX.prompt=Did we select x = p0 for a reason?
+questionX.feedback.wrong=No, the choice did not matter. We chose p0 for simplicity
+questionX.feedback.correct=That is correct, p0 was chosen for simplicity
+
+questionDistance.prompt=Which two points are tested now? (Check 1 or 2 boxes)
+questionDistance.feedback.correct=Correct
+questionDistance.feedback.wrong=No, that is in another iteration
+
+error=Input error
+error.fontSize=The fontsize cannot be smaller than 1
+error.scaling=The coordinate system scaling cannot be smaller than 1
+error.width=The coordinate system width cannot be smaller than 10
+error.height=The coordinate system height cannot be smaller than 10
+error.points.length=There have to be at least 2 points
+error.points.syntax=The points have to be declared with exactly 2 columns
+error.points.coords=The points have to be placed within the bounds of the coordinate system
+error.probability=The question probability has to be between 0 and 1

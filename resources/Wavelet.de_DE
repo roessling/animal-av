@@ -1,0 +1,49 @@
+noSuchKeyException=Es gibt keine Ressource f\u00fcr Eintrag {0}
+iconNotFound=Icon "{0}" not found
+
+algorithm_name=Wavelet-Tree
+approach= Einfuehrung
+description= Der Wavelet-Tree ist eine Datenstruktur, die eine rekursive Partition einer Sequenz S der Länge n
+description1= gemäss ihren Symbolen darstellt. Wenn E = (1, ... 0) das Alphabet der Symbole von S ist, hat der
+description2= Wavelet-Tree für S die Wurzel, die S selbst darstellt, und o-Blaetter, die die Positionen der Symbole darstellen:
+
+description4= ♦ Blatt c Elemet von E repraesentiert alle Positionen i, so dass S [i] = c und 1 < i > n.
+description5= ♦ Die internen Knoten beschreiben, wie die Symbole gruppiert sind.
+description6= ♦ Eingabe: Ein String S beliebiger Länge der aus Buchstaben besteht.
+
+description7= Der Wavelet Tree unterstuetzt die Operationen access, rang und select. Wir visualisieren hier
+description8= die Operationen access, rang und bilden aus der Eingabe den Wavelet Tree.
+
+step1=1. Schritt: Baum Darstellung 
+step2=2. Schritt: Acess-Methode
+step3=3. Schritt: Rang-Methode
+step4=4. Schritt: .....
+
+line1= Folgende Operationen wird verwendet:
+line2= - teile(baum)
+line3= - zugriff(i)						
+line4= - rang(baum)	
+
+line5= Folgender Rang wurde ermittelt:
+line6= Folgendes wurde von Access ermittelt:					
+								
+conclusion=* * * * * * * * * * * * * * * * * * * * * * * * * * * * Zusammenfassung * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+conclusion1= Aus der Eingabe:
+conclusion2= folgt folgender Wavelet Tree, anhand der Zeichenfolge.
+conclusion3= access 
+conclusion4= liefert aus dem Input, folgenden String:
+conclusion5= rang
+conclusion6= liefert aus dem Input, folgenden Wert:
+conclusion7= Die Operationen liefern folgendes:
+
+description10= Dieser Wavelet Tree zeigt die Operationen Acess(index) und Rang(Zeichen,index) an. In den Primitiven 
+description11=  können Sie nun eine Zeichenfolge, den Index für Access, sowie einen seperaten Index für Rang, sowie den Buchstaben angeben.
+description12= Zusätzlich können Sie folgende Properties beeinflussen:
+description13=♦ Farbe des ArrayMarkers
+description14=♦ Farbe des StringArray
+description15=♦ Farbe des SoruceCodes
+
+vaild1= Die Zeichenfolge ist zu lang und muss weniger als 21 Einträge sein.
+vaild3= Der Index ist zu gross, passe ihn nach der Grösse der Zeichenfolge an.
+vaild4= Grösse der Zeichenfolge:
+vaild5= Der Buchstabe den Sie ausgewählt haben, ist im String nicht vorhanden.

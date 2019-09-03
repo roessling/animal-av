@@ -1,0 +1,39 @@
+%Animal 2 620*480
+title "Warshall Animation"
+author "Dr. Guido Roessling"
+#grid "IntMatrix1" (70, 40) lines 3 columns 3 color (0, 0, 0) textColor (0, 0, 0) fillColor (255, 175, 175) highlightTextColor (255, 0, 0) highlightBackColor (255, 0, 255) depth 1 
+#grid "IntMatrix1" (70, 40) lines 3 columns 3
+#grid "IntMatrix1" (70, 40) lines 3 columns 3 align left
+#grid "IntMatrix1" (70, 40) lines 3 columns 3 align right
+grid "IntMatrix1" (70, 40) lines 3 columns 3 align center
+#grid "IntMatrix1" (70, 40) lines 3 columns 3 style matrix
+#grid "IntMatrix1" (70, 40) lines 3 columns 3 style plain
+#grid "IntMatrix1" (70, 40) lines 3 columns 3 style table
+#grid "IntMatrix1" (70, 40) lines 3 columns 3 style table align left
+#grid "IntMatrix1" (70, 40) lines 3 columns 3 style table align right
+#grid "IntMatrix1" (70, 40) lines 3 columns 3 style table align center
+#{
+setGridValue "IntMatrix1[0][0]" "0"
+setGridValue "IntMatrix1[0][1]" "1"
+setGridValue "IntMatrix1[0][2]" "0"
+setGridValue "IntMatrix1[1][0]" "0"
+setGridValue "IntMatrix1[1][1]" "0"
+setGridValue "IntMatrix1[1][2]" "9"
+setGridValue "IntMatrix1[2][0]" "1"
+setGridValue "IntMatrix1[2][1]" "0"
+setGridValue "IntMatrix1[2][2]" "3" refresh
+graph "gr" size 3 color (0, 0, 0) bgColor (128, 200, 128) highlightColor (200, 200, 200) elemHighlightColor (100, 100, 0) nodeFontColor (180, 0, 0) edgeFontColor (0, 200, 0) directed weighted nodes {"0" (350, 40), "1" (250, 140), "2" (350, 240) } edges {(0, 1, "1") (1, 2, "9") (2, 0, "1") (2, 2, "3") } depth 1 
+#}
+highlightGridCell "IntMatrix1[0][0]"  within 30 ticks after 30 ticks
+unhighlightGridCell "IntMatrix1[0][0]"  within 30 ticks after 30 ticks
+highlightGridCell "IntMatrix1[1][0]"  within 30 ticks after 30 ticks
+unhighlightGridCell "IntMatrix1[1][0]"  within 30 ticks after 30 ticks
+highlightGridCell "IntMatrix1[2][0]"  within 30 ticks
+highlightGridCell "IntMatrix1[0][0]"  within 30 ticks
+unhighlightGridCell "IntMatrix1[0][0]"  within 30 ticks
+highlightGridCell "IntMatrix1[0][1]"  within 30 ticks
+unhighlightGridCell "IntMatrix1[2][0]"  within 30 ticks after 30 ticks
+unhighlightGridCell "IntMatrix1[0][1]"  within 30 ticks after 30 ticks
+highlightGridCell "IntMatrix1[2][1]"  within 30 ticks after 30 ticks
+setGridValue "IntMatrix1[2][1]" "222" refresh  within 30 ticks
+highlightGridCell "IntMatrix1[2][1]"  within 30 ticks after 30 ticks

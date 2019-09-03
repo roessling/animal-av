@@ -1,0 +1,25 @@
+noSuchKeyException=There is no ressource for the key {0}
+iconNotFound=Icon "{0}" not found
+
+title=Link State Routing
+runde=Round
+Paket1=Nodes from which
+Paket2=receives packets
+
+Bschrbng=Link State Routing Protocol is a network protocol that provides each router with information about the entire topology of the network.
+Bschrbng1=This involves sending link state advertisements (LSA) with the network information. For this, each node creates LSA about its neighbors, which are sent on completion.
+Bschrbng2=Thereafter, each node receives packets and continues to send these packets until the node has received complete knowledge of the entire topology or abort command is executed.
+Bschrbng3=After completion of the protocol, each node should have knowledge of the entire topology and, for example, be able to decide with a Dijkstra algorithm, which is the shortest path to another node.
+cdExmpl1=1. The nodes recognize their neighbors and store information about them.
+cdExmpl2=2. Create link-state advertisements that are flooded into the network.
+cdExmpl3=3. Receive packages
+cdExmpl4=4. Send the received LSAs to all neighbors.
+cdExmpl5=5. Step 3 until the entire topology is known or an abort command is executed.
+einfhrung=Introduction
+initialisierung=Initialization finished
+fertig=finished
+protokollBeendetWissen=The protocol is finished. All nodes have knowledge of the entire topology. There were
+protokollBeendetWissen1=rounds executed.
+protokollBeendetRunden=The protocol is finished. The entered rounds
+protokollBeendetRunden1=are finished. Not all nodes have knowledge of the entire topology.
+error=The number of rounds must be greater than or equal to 0.

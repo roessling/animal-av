@@ -1,0 +1,1049 @@
+# Animal protocol 1
+4 object 1 Polyline color (0,0,0) fwArrow closed filled nodes: { (10,10) (160,10) (160,50) (10,50) (10,10)} fillColor (255,255,255) depth 2147483647
+2 object 2 Text at (20,40) color (0,0,0) font SansSerif style 0 size 24 text: "Binärbäume" depth 2147483647
+4 object 3 Polyline color (0,0,0) fwArrow closed filled nodes: { (20,60) (150,60) (150,90) (20,90) (20,60)} fillColor (255,255,255) depth 2147483647
+5 object 4 Arc center (180,130) rX 20 rY 20 color (0,0,0) fillColor (255,255,255) angle 720 starts 0 circle text: "0" textColor (0,0,0) Font {"SansSerif" 0 16 } depth 2147483647
+5 object 5 Arc center (100,200) rX 20 rY 20 color (0,0,0) fillColor (255,255,255) angle 720 starts 0 circle text: "1" textColor (0,0,0) Font {"SansSerif" 0 16 } depth 2147483647
+5 object 6 Arc center (260,200) rX 20 rY 20 color (0,0,0) fillColor (255,255,255) angle 720 starts 0 circle text: "2" textColor (0,0,0) Font {"SansSerif" 0 16 } depth 2147483647
+5 object 7 Arc center (140,270) rX 20 rY 20 color (0,0,0) fillColor (255,255,255) angle 720 starts 0 circle text: "4" textColor (0,0,0) Font {"SansSerif" 0 16 } depth 2147483647
+5 object 8 Arc center (60,270) rX 20 rY 20 color (0,0,0) fillColor (255,255,255) angle 720 starts 0 circle text: "3" textColor (0,0,0) Font {"SansSerif" 0 16 } depth 2147483647
+5 object 9 Arc center (220,270) rX 20 rY 20 color (0,0,0) fillColor (255,255,255) angle 720 starts 0 circle text: "5" textColor (0,0,0) Font {"SansSerif" 0 16 } depth 2147483647
+5 object 10 Arc center (300,270) rX 20 rY 20 color (0,0,0) fillColor (255,255,255) angle 720 starts 0 circle text: "6" textColor (0,0,0) Font {"SansSerif" 0 16 } depth 2147483647
+2 object 11 Text at (60,80) color (0,0,0) font SansSerif style 1 size 16 text: "Aufbau" depth 2147483647
+4 object 12 Polyline color (0,0,0) filled nodes: { (90,220) (60,250)} fillColor (255,255,255) depth 2147483647
+4 object 13 Polyline color (0,0,0) filled nodes: { (110,220) (140,250)} fillColor (255,255,255) depth 2147483647
+4 object 14 Polyline color (0,0,0) filled nodes: { (250,220) (220,250)} fillColor (255,255,255) depth 2147483647
+4 object 15 Polyline color (0,0,0) filled nodes: { (270,220) (300,250)} fillColor (255,255,255) depth 2147483647
+4 object 16 Polyline color (0,0,0) filled nodes: { (190,150) (260,180)} fillColor (255,255,255) depth 2147483647
+4 object 17 Polyline color (0,0,0) filled nodes: { (170,150) (100,180)} fillColor (255,255,255) depth 2147483647
+2 object 18 Text at (10,340) color (0,0,0) font SansSerif style 0 size 16 text: "Bei Binärbäumen hat jeder Knoten maximal zwei Nachfolger." depth 2147483647
+2 object 19 Text at (20,330) color (0,0,0) font SansSerif style 1 size 16 text: "Es gibt folgende Formen von Binärbäumen:" depth 2147483647
+2 object 20 Text at (50,80) color (0,0,0) font SansSerif style 1 size 16 text: "Formen" depth 2147483647
+2 object 21 Text at (60,380) color (0,0,0) font SansSerif style 1 size 16 text: "fast vollständige Binärbäume" depth 2147483647
+2 object 22 Text at (80,400) color (0,0,0) font SansSerif style 0 size 16 text: "Alle Blätter befinden sich auf den beiden untersten Stufen." depth 2147483647
+2 object 23 Text at (20,330) color (0,0,0) font SansSerif style 1 size 16 text: "Binärbäume bestehen aus" depth 2147483647
+2 object 24 Text at (70,360) color (0,0,0) font SansSerif style 1 size 16 text: "inneren Knoten" depth 2147483647
+2 object 25 Text at (90,380) color (0,0,0) font SansSerif style 0 size 16 text: "d.h. Knoten mit mindestens einem Nachfolger" depth 2147483647
+5 object 26 Arc center (180,130) rX 16 rY 16 color (255,0,0) fillColor (255,255,255) angle 720 starts 270 circle text: "" textColor (0,0,0) Font {"SansSerif" 0 12 } depth 2147483647
+5 object 27 Arc center (100,200) rX 16 rY 16 color (255,0,0) fillColor (255,255,255) angle 720 starts 270 circle text: "" textColor (0,0,0) Font {"SansSerif" 0 12 } depth 2147483647
+5 object 28 Arc center (260,200) rX 16 rY 16 color (255,0,0) fillColor (255,255,255) angle 720 starts 270 circle text: "" textColor (0,0,0) Font {"SansSerif" 0 12 } depth 2147483647
+2 object 29 Text at (70,410) color (0,0,0) font SansSerif style 1 size 16 text: "und Blättern" depth 2147483647
+2 object 30 Text at (90,430) color (0,0,0) font SansSerif style 0 size 16 text: "d.h. Knoten ohne Nachfolger" depth 2147483647
+5 object 31 Arc center (60,270) rX 16 rY 16 color (255,0,0) fillColor (255,255,255) angle 720 starts 270 circle text: "" textColor (0,0,0) Font {"SansSerif" 0 12 } depth 2147483647
+5 object 32 Arc center (140,270) rX 16 rY 16 color (255,0,0) fillColor (255,255,255) angle 720 starts 270 circle text: "" textColor (0,0,0) Font {"SansSerif" 0 12 } depth 2147483647
+5 object 33 Arc center (220,270) rX 16 rY 16 color (255,0,0) fillColor (255,255,255) angle 720 starts 270 circle text: "" textColor (0,0,0) Font {"SansSerif" 0 12 } depth 2147483647
+5 object 34 Arc center (300,270) rX 16 rY 16 color (255,0,0) fillColor (255,255,255) angle 720 starts 270 circle text: "" textColor (0,0,0) Font {"SansSerif" 0 12 } depth 2147483647
+5 object 35 Arc center (260,200) rX 16 rY 16 color (255,0,0) fillColor (255,255,255) angle 720 starts 270 circle text: "" textColor (0,0,0) Font {"SansSerif" 0 12 } depth 2147483647
+5 object 36 Arc center (60,270) rX 16 rY 16 color (255,0,0) fillColor (255,255,255) angle 720 starts 270 circle text: "" textColor (0,0,0) Font {"SansSerif" 0 12 } depth 2147483647
+5 object 37 Arc center (220,270) rX 16 rY 16 color (255,0,0) fillColor (255,255,255) angle 720 starts 270 circle text: "" textColor (0,0,0) Font {"SansSerif" 0 12 } depth 2147483647
+5 object 38 Arc center (300,270) rX 16 rY 16 color (255,0,0) fillColor (255,255,255) angle 720 starts 270 circle text: "" textColor (0,0,0) Font {"SansSerif" 0 12 } depth 2147483647
+5 object 39 Arc center (140,270) rX 16 rY 16 color (255,0,0) fillColor (255,255,255) angle 720 starts 270 circle text: "" textColor (0,0,0) Font {"SansSerif" 0 12 } depth 2147483647
+2 object 40 Text at (80,420) color (0,0,0) font SansSerif style 0 size 16 text: "Die vorletzte Stufe ist dabei voll; die unterste ist von links aufgefüllt." depth 2147483647
+2 object 41 Text at (330,90) color (0,0,0) font SansSerif style 1 size 16 text: "Stufe" depth 2147483647
+2 object 42 Text at (350,135) color (0,0,0) font SansSerif style 1 size 16 text: "0" depth 2147483647
+2 object 43 Text at (350,205) color (0,0,0) font SansSerif style 1 size 16 text: "1" depth 2147483647
+2 object 44 Text at (350,275) color (0,0,0) font SansSerif style 1 size 16 text: "2" depth 2147483647
+2 object 45 Text at (20,330) color (0,0,0) font SansSerif style 0 size 16 text: "Ein Binärbaum besteht aus Knoten und Kanten." depth 2147483647
+2 object 46 Text at (20,350) color (0,0,0) font SansSerif style 0 size 16 text: "Der oberste Knoten heißt " depth 2147483647
+2 object 47 Text at (210,350) color (0,0,0) font SansSerif style 1 size 16 text: "Wurzel. " depth 2147483647
+2 object 48 Text at (20,380) color (0,0,0) font SansSerif style 0 size 16 text: "Die" depth 2147483647
+2 object 49 Text at (50,380) color (0,0,0) font SansSerif style 1 size 16 text: "Stufe" depth 2147483647
+2 object 50 Text at (100,380) color (0,0,0) font SansSerif style 0 size 16 text: "eines Knotens ist der Abstand von der " depth 2147483647
+2 object 51 Text at (385,380) color (0,0,0) font SansSerif style 1 size 16 text: "Wurzel." depth 2147483647
+2 object 52 Text at (60,360) color (0,0,0) font SansSerif style 1 size 16 text: "vollständige Binärbäume" depth 2147483647
+2 object 53 Text at (80,380) color (0,0,0) font SansSerif style 0 size 16 text: "Jedes Blatt befindet sich auf der untersten Stufe" depth 2147483647
+5 object 54 Arc center (46,354) rX 4 rY 4 color (0,0,0) fillColor (0,0,0) angle 720 starts 0 filled circle closed text: "" textColor (0,0,0) Font {"SansSerif" 0 12 } depth 2147483647
+5 object 55 Arc center (300,270) rX 16 rY 16 color (255,0,0) fillColor (255,255,255) angle 720 starts 270 circle text: "" textColor (0,0,0) Font {"SansSerif" 0 12 } depth 2147483647
+5 object 56 Arc center (140,270) rX 16 rY 16 color (255,0,0) fillColor (255,255,255) angle 720 starts 270 circle text: "" textColor (0,0,0) Font {"SansSerif" 0 12 } depth 2147483647
+5 object 57 Arc center (60,270) rX 16 rY 16 color (255,0,0) fillColor (255,255,255) angle 720 starts 270 circle text: "" textColor (0,0,0) Font {"SansSerif" 0 12 } depth 2147483647
+5 object 58 Arc center (220,270) rX 16 rY 16 color (255,0,0) fillColor (255,255,255) angle 720 starts 270 circle text: "" textColor (0,0,0) Font {"SansSerif" 0 12 } depth 2147483647
+5 object 59 Arc center (300,270) rX 20 rY 20 color (0,0,0) fillColor (255,255,255) angle 720 starts 0 circle text: "6" textColor (0,0,0) Font {"SansSerif" 0 16 } depth 2147483647
+5 object 60 Arc center (300,270) rX 16 rY 16 color (255,0,0) fillColor (255,255,255) angle 720 starts 270 circle text: "" textColor (0,0,0) Font {"SansSerif" 0 12 } depth 2147483647
+4 object 61 Polyline color (0,0,0) filled nodes: { (270,220) (300,250)} fillColor (255,255,255) depth 2147483647
+5 object 62 Arc center (100,200) rX 16 rY 16 color (255,0,0) fillColor (0,0,0) angle 720 starts 270 circle text: "" textColor (0,0,0) Font {"SansSerif" 0 12 } depth 2147483647
+2 object 63 Text at (60,400) color (0,0,0) font SansSerif style 1 size 16 text: "strikte Binärbäume" depth 2147483647
+5 object 64 Arc center (46,374) rX 4 rY 4 color (0,0,0) fillColor (0,0,0) angle 720 starts 0 filled circle closed text: "0" textColor (0,0,0) Font {"SansSerif" 0 12 } depth 2147483647
+2 object 65 Text at (80,420) color (0,0,0) font SansSerif style 0 size 16 text: "Jeder Knoten ist ein Blatt oder hat genau zwei Nachfolger" depth 2147483647
+4 object 66 Polyline color (0,0,0) filled nodes: { (90,220) (80,230)} fillColor (255,255,255) depth 2147483647
+4 object 67 Polyline color (0,0,0) fwArrow filled nodes: { (90,250) (70,250) (70,170) (190,110) (190,130)} fillColor (255,255,255) depth 2147483647
+2 object 68 Text at (20,310) color (0,0,0) font SansSerif style 0 size 16 text: "Die Pfadlänge gibt die Entfernung der Knoten zur Wurzel an" depth 2147483647
+2 object 69 Text at (20,320) color (0,0,0) font SansSerif style 1 size 16 text: "Die Pfadlänge gibt die Entfernung der Knoten zur Wurzel an:" depth 2147483647
+2 object 70 Text at (30,350) color (0,0,0) font SansSerif style 1 size 16 text: "Knoten" depth 2147483647
+2 object 71 Text at (110,350) color (0,0,0) font SansSerif style 1 size 16 text: "Pfadlänge" depth 2147483647
+2 object 72 Text at (50,370) color (0,0,0) font SansSerif style 1 size 16 text: "0" depth 2147483647
+2 object 73 Text at (140,370) color (0,0,0) font SansSerif style 1 size 16 text: "0" depth 2147483647
+2 object 74 Text at (190,370) color (0,0,0) font SansSerif style 0 size 16 text: "Die Wurzel hat eine Entfernung von 0 zu sich selbst!" depth 2147483647
+5 object 75 Arc center (180,130) rX 16 rY 16 color (255,0,0) fillColor (255,255,255) angle 360 starts 270 circle text: "" textColor (0,0,0) Font {"SansSerif" 0 12 } depth 2147483647
+4 object 76 Polyline color (255,0,0) fwArrow filled nodes: { (170,150) (170,150)} fillColor (255,255,255) depth 2147483647
+4 object 77 Polyline color (255,0,0) fwArrow filled nodes: { (190,150) (190,150)} fillColor (255,255,255) depth 2147483647
+4 object 78 Polyline color (255,0,0) fwArrow filled nodes: { (170,150) (170,150)} fillColor (255,255,255) depth 2147483647
+4 object 79 Polyline color (255,0,0) fwArrow filled nodes: { (190,150) (190,150)} fillColor (255,255,255) depth 2147483647
+4 object 80 Polyline color (255,0,0) filled nodes: { (170,150) (170,150)} fillColor (255,255,255) depth 2147483647
+4 object 81 Polyline color (255,0,0) filled nodes: { (190,150) (190,150)} fillColor (255,255,255) depth 2147483647
+4 object 82 Polyline color (255,0,0) fwArrow filled nodes: { (170,150) (100,180)} fillColor (255,255,255) depth 2147483647
+4 object 83 Polyline color (255,0,0) fwArrow filled nodes: { (170,160) (100,190)} fillColor (255,255,255) depth 2147483647
+4 object 84 Polyline color (255,0,0) fwArrow filled nodes: { (190,160) (260,190)} fillColor (255,255,255) depth 2147483647
+2 object 85 Text at (50,390) color (0,0,0) font SansSerif style 1 size 16 text: "1" depth 2147483647
+2 object 86 Text at (140,390) color (0,0,0) font SansSerif style 1 size 16 text: "1" depth 2147483647
+2 object 87 Text at (140,410) color (0,0,0) font SansSerif style 1 size 16 text: "1" depth 2147483647
+2 object 88 Text at (50,410) color (0,0,0) font SansSerif style 1 size 16 text: "2" depth 2147483647
+5 object 89 Arc center (46,394) rX 4 rY 4 color (0,0,0) fillColor (0,0,0) angle 720 starts 0 filled circle closed text: "0" textColor (0,0,0) Font {"SansSerif" 0 12 } depth 2147483647
+2 object 90 Text at (50,390) color (0,0,0) font SansSerif style 1 size 16 text: "1" depth 2147483647
+2 object 91 Text at (140,390) color (0,0,0) font SansSerif style 1 size 16 text: "1" depth 2147483647
+2 object 92 Text at (140,410) color (0,0,0) font SansSerif style 1 size 16 text: "1" depth 2147483647
+2 object 93 Text at (50,410) color (0,0,0) font SansSerif style 1 size 16 text: "2" depth 2147483647
+5 object 94 Arc center (100,200) rX 16 rY 16 color (255,0,0) fillColor (255,255,255) angle 720 starts 270 circle text: "" textColor (0,0,0) Font {"SansSerif" 0 12 } depth 2147483647
+5 object 95 Arc center (260,200) rX 16 rY 16 color (255,0,0) fillColor (255,255,255) angle 720 starts 270 circle text: "" textColor (0,0,0) Font {"SansSerif" 0 12 } depth 2147483647
+4 object 96 Polyline color (0,0,0) filled nodes: { (170,150) (100,180)} fillColor (255,255,255) depth 2147483647
+4 object 97 Polyline color (255,0,0) filled nodes: { (190,150) (190,150)} fillColor (255,255,255) depth 2147483647
+4 object 98 Polyline color (255,0,0) fwArrow filled nodes: { (190,160) (260,190)} fillColor (255,255,255) depth 2147483647
+4 object 99 Polyline color (255,0,0) filled nodes: { (250,220) (250,220)} fillColor (255,255,255) depth 2147483647
+4 object 100 Polyline color (255,0,0) filled nodes: { (270,220) (270,220)} fillColor (255,255,255) depth 2147483647
+4 object 101 Polyline color (255,0,0) fwArrow filled nodes: { (240,220) (210,250)} fillColor (255,255,255) depth 2147483647
+4 object 102 Polyline color (255,0,0) fwArrow filled nodes: { (280,220) (310,250)} fillColor (255,255,255) depth 2147483647
+5 object 103 Arc center (220,270) rX 16 rY 16 color (255,0,0) fillColor (255,255,255) angle 720 starts 270 circle text: "" textColor (0,0,0) Font {"SansSerif" 0 12 } depth 2147483647
+5 object 104 Arc center (300,270) rX 16 rY 16 color (255,0,0) fillColor (255,255,255) angle 720 starts 270 circle text: "" textColor (0,0,0) Font {"SansSerif" 0 12 } depth 2147483647
+2 object 105 Text at (50,430) color (0,0,0) font SansSerif style 1 size 16 text: "5" depth 2147483647
+2 object 106 Text at (50,450) color (0,0,0) font SansSerif style 1 size 16 text: "6" depth 2147483647
+2 object 107 Text at (140,430) color (0,0,0) font SansSerif style 1 size 16 text: "2" depth 2147483647
+2 object 108 Text at (140,450) color (0,0,0) font SansSerif style 1 size 16 text: "2" depth 2147483647
+2 object 109 Text at (220,350) color (0,0,0) font SansSerif style 0 size 16 text: "Die" depth 2147483647
+2 object 110 Text at (250,350) color (0,0,0) font SansSerif style 1 size 16 text: "innere" depth 2147483647
+2 object 111 Text at (310,350) color (0,0,0) font SansSerif style 0 size 16 text: "Pfadlänge mißt nur die Pfade" depth 2147483647
+2 object 112 Text at (220,370) color (0,0,0) font SansSerif style 0 size 16 text: "zu inneren Knoten:" depth 2147483647
+4 object 113 Polyline color (0,0,0) filled nodes: { (190,150) (260,180)} fillColor (255,255,255) depth 2147483647
+4 object 114 Polyline color (0,0,0) filled nodes: { (250,220) (220,250)} fillColor (255,255,255) depth 2147483647
+4 object 115 Polyline color (0,0,0) filled nodes: { (270,220) (300,250)} fillColor (255,255,255) depth 2147483647
+2 object 116 Text at (20,320) color (0,0,0) font SansSerif style 1 size 16 text: "Die innere Pfadlänge berücksichtigt nur innere Knoten:" depth 2147483647
+5 object 117 Arc center (180,130) rX 16 rY 16 color (255,0,0) fillColor (255,255,255) angle 720 starts 270 circle text: "" textColor (0,0,0) Font {"SansSerif" 0 12 } depth 2147483647
+5 object 118 Arc center (260,200) rX 16 rY 16 color (255,0,0) fillColor (255,255,255) angle 720 starts 270 circle text: "" textColor (0,0,0) Font {"SansSerif" 0 12 } depth 2147483647
+4 object 119 Polyline color (255,0,0) closed nodes: { (30,355) (160,355) (160,376) (30,376) (30,355)} fillColor (255,255,255) depth 2147483647
+4 object 120 Polyline color (255,0,0) closed nodes: { (30,395) (160,395) (160,416) (30,416) (30,395)} fillColor (255,255,255) depth 2147483647
+2 object 121 Text at (199,411) color (0,0,0) font SansSerif style 1 size 16 text: "Innere Pfadlänge = 1" depth 2147483647
+2 object 122 Text at (20,320) color (0,0,0) font SansSerif style 1 size 16 text: "Die Pfadlänge des Baums ist die Summe aller Pfadlängen:" depth 2147483647
+2 object 123 Text at (200,410) color (0,0,0) font SansSerif style 1 size 16 text: "Pfadlänge = 1+1+2+2 = 6" depth 2147483647
+4 object 124 Polyline color (255,0,0) closed nodes: { (40,355) (158,355) (158,457) (40,457) (40,355)} fillColor (255,255,255) depth 2147483647
+5 object 125 Arc center (300,270) rX 16 rY 16 color (255,0,0) fillColor (255,255,255) angle 720 starts 270 circle text: "" textColor (0,0,0) Font {"SansSerif" 0 12 } depth 2147483647
+5 object 126 Arc center (220,270) rX 16 rY 16 color (255,0,0) fillColor (255,255,255) angle 720 starts 270 circle text: "" textColor (0,0,0) Font {"SansSerif" 0 12 } depth 2147483647
+5 object 127 Arc center (100,200) rX 16 rY 16 color (255,0,0) fillColor (255,255,255) angle 720 starts 270 circle text: "" textColor (0,0,0) Font {"SansSerif" 0 12 } depth 2147483647
+2 object 128 Text at (20,310) color (0,0,0) font SansSerif style 1 size 16 text: "Bei Speicherung in einem Array werden die Knoten einfach" depth 2147483647
+2 object 129 Text at (20,330) color (0,0,0) font SansSerif style 1 size 16 text: "die Stufen entlang von links nach rechts durchnummeriert:" depth 2147483647
+2 object 130 Text at (60,360) color (0,0,0) font SansSerif style 0 size 16 text: "0" depth 2147483647
+2 object 131 Text at (60,380) color (0,0,0) font SansSerif style 0 size 16 text: "1" depth 2147483647
+2 object 132 Text at (60,400) color (0,0,0) font SansSerif style 0 size 16 text: "2" depth 2147483647
+2 object 133 Text at (60,420) color (0,0,0) font SansSerif style 0 size 16 text: "3" depth 2147483647
+2 object 134 Text at (60,440) color (0,0,0) font SansSerif style 0 size 16 text: "4" depth 2147483647
+2 object 135 Text at (60,460) color (0,0,0) font SansSerif style 0 size 16 text: "5" depth 2147483647
+2 object 136 Text at (60,480) color (0,0,0) font SansSerif style 0 size 16 text: "6" depth 2147483647
+2 object 137 Text at (90,360) color (0,0,0) font SansSerif style 1 size 16 text: "0" depth 2147483647
+2 object 138 Text at (90,380) color (0,0,0) font SansSerif style 1 size 16 text: "1" depth 2147483647
+2 object 139 Text at (90,400) color (0,0,0) font SansSerif style 1 size 16 text: "2" depth 2147483647
+2 object 140 Text at (90,420) color (0,0,0) font SansSerif style 3 size 16 text: "null" depth 2147483647
+2 object 141 Text at (90,440) color (0,0,0) font SansSerif style 3 size 16 text: "null" depth 2147483647
+2 object 142 Text at (90,460) color (0,0,0) font SansSerif style 1 size 16 text: "5" depth 2147483647
+2 object 143 Text at (90,480) color (0,0,0) font SansSerif style 1 size 16 text: "6" depth 2147483647
+2 object 144 Text at (40,80) color (0,0,0) font SansSerif style 1 size 16 text: "Pfadlänge" depth 2147483647
+2 object 145 Text at (30,80) color (0,0,0) font SansSerif style 1 size 16 text: "Speicherung" depth 2147483647
+2 object 146 Text at (30,80) color (0,0,0) font SansSerif style 1 size 16 text: "Traversierung" depth 2147483647
+4 object 147 Polyline color (0,0,0) closed filled nodes: { (170,60) (280,60) (280,90) (170,90) (170,60)} fillColor (255,255,255) depth 2147483647
+2 object 148 Text at (190,80) color (0,0,0) font SansSerif style 1 size 16 text: "Preorder" depth 2147483647
+2 object 149 Text at (20,310) color (0,0,0) font SansSerif style 2 size 16 text: "public void preorderTraversal() {" depth 2147483647
+2 object 150 Text at (40,330) color (0,0,0) font SansSerif style 2 size 16 text: "visited(true);" depth 2147483647
+2 object 151 Text at (40,350) color (0,0,0) font SansSerif style 2 size 16 text: "if (hasLeftSon())" depth 2147483647
+2 object 152 Text at (50,370) color (0,0,0) font SansSerif style 2 size 16 text: "left.preorderTraversal();" depth 2147483647
+2 object 153 Text at (40,390) color (0,0,0) font SansSerif style 2 size 16 text: "if (hasRightSon())" depth 2147483647
+2 object 154 Text at (50,410) color (0,0,0) font SansSerif style 2 size 16 text: "right.preorderTraversal();" depth 2147483647
+2 object 155 Text at (20,430) color (0,0,0) font SansSerif style 2 size 16 text: "}" depth 2147483647
+5 object 156 Arc center (180,130) rX 16 rY 16 color (255,0,0) fillColor (255,255,255) angle 720 starts 270 circle text: "" textColor (0,0,0) Font {"SansSerif" 0 12 } depth 2147483647
+5 object 157 Arc center (180,130) rX 16 rY 16 color (0,255,0) fillColor (255,255,255) angle 720 starts 270 circle text: "" textColor (0,0,0) Font {"SansSerif" 0 12 } depth 2147483647
+2 object 158 Text at (330,130) color (0,0,0) font SansSerif style 1 size 16 text: "aktueller Knoten:" depth 2147483647
+2 object 159 Text at (480,130) color (0,0,0) font SansSerif style 1 size 16 text: "0" depth 2147483647
+5 object 160 Arc center (100,200) rX 16 rY 16 color (255,0,0) fillColor (255,255,255) angle 720 starts 270 circle text: "" textColor (0,0,0) Font {"SansSerif" 0 12 } depth 2147483647
+2 object 161 Text at (490,150) color (0,0,0) font SansSerif style 1 size 16 text: "1" depth 2147483647
+4 object 162 Polyline color (255,255,255) fwArrow filled nodes: { (330,130) (330,150)} fillColor (255,255,255) depth 2147483647
+5 object 163 Arc center (100,200) rX 16 rY 16 color (0,255,0) fillColor (255,255,255) angle 720 starts 270 circle text: "" textColor (0,0,0) Font {"SansSerif" 0 12 } depth 2147483647
+4 object 164 Polyline color (0,0,0) fwArrow nodes: { (330,150) (330,130)} fillColor (255,255,255) depth 2147483647
+2 object 165 Text at (490,170) color (0,0,0) font SansSerif style 1 size 16 text: "2" depth 2147483647
+4 object 166 Polyline color (0,0,0) fwArrow nodes: { (330,130) (330,170)} fillColor (255,255,255) depth 2147483647
+5 object 167 Arc center (100,200) rX 16 rY 16 color (0,255,0) fillColor (255,255,255) angle 720 starts 270 circle text: "" textColor (0,0,0) Font {"SansSerif" 0 12 } depth 2147483647
+5 object 168 Arc center (100,200) rX 16 rY 16 color (255,0,0) fillColor (255,255,255) angle 720 starts 270 circle text: "" textColor (0,0,0) Font {"SansSerif" 0 12 } depth 2147483647
+5 object 169 Arc center (260,200) rX 16 rY 16 color (255,0,0) fillColor (255,255,255) angle 720 starts 270 circle text: "" textColor (0,0,0) Font {"SansSerif" 0 12 } depth 2147483647
+5 object 170 Arc center (260,200) rX 16 rY 16 color (0,255,0) fillColor (255,255,255) angle 720 starts 270 circle text: "" textColor (0,0,0) Font {"SansSerif" 0 12 } depth 2147483647
+2 object 171 Text at (500,190) color (0,0,0) font SansSerif style 1 size 16 text: "5" depth 2147483647
+4 object 172 Polyline color (0,0,0) fwArrow nodes: { (330,170) (330,190)} fillColor (255,255,255) depth 2147483647
+5 object 173 Arc center (220,270) rX 16 rY 16 color (255,0,0) fillColor (255,255,255) angle 720 starts 270 circle text: "" textColor (0,0,0) Font {"SansSerif" 0 12 } depth 2147483647
+5 object 174 Arc center (220,270) rX 16 rY 16 color (0,255,0) fillColor (255,255,255) angle 720 starts 270 circle text: "" textColor (0,0,0) Font {"SansSerif" 0 12 } depth 2147483647
+4 object 175 Polyline color (0,0,0) fwArrow nodes: { (330,190) (330,170)} fillColor (255,255,255) depth 2147483647
+2 object 176 Text at (500,210) color (0,0,0) font SansSerif style 1 size 16 text: "6" depth 2147483647
+4 object 177 Polyline color (0,0,0) fwArrow nodes: { (330,170) (330,210)} fillColor (255,255,255) depth 2147483647
+2 object 178 Text at (500,210) color (0,0,0) font SansSerif style 1 size 16 text: "6" depth 2147483647
+5 object 179 Arc center (300,270) rX 16 rY 16 color (255,0,0) fillColor (255,255,255) angle 720 starts 270 circle text: "" textColor (0,0,0) Font {"SansSerif" 0 12 } depth 2147483647
+5 object 180 Arc center (300,270) rX 16 rY 16 color (0,255,0) fillColor (255,255,255) angle 720 starts 270 circle text: "" textColor (0,0,0) Font {"SansSerif" 0 12 } depth 2147483647
+4 object 181 Polyline color (0,0,0) fwArrow nodes: { (330,210) (330,170)} fillColor (255,255,255) depth 2147483647
+4 object 182 Polyline color (0,0,0) fwArrow nodes: { (330,170) (330,130)} fillColor (255,255,255) depth 2147483647
+2 object 183 Text at (330,230) color (0,0,0) font SansSerif style 1 size 16 text: "Ausgabe:" depth 2147483647
+2 object 184 Text at (420,230) color (0,0,0) font SansSerif style 1 size 16 text: "0" depth 2147483647
+2 object 185 Text at (440,230) color (0,0,0) font SansSerif style 1 size 16 text: "1" depth 2147483647
+2 object 186 Text at (460,230) color (0,0,0) font SansSerif style 1 size 16 text: "2" depth 2147483647
+2 object 187 Text at (480,230) color (0,0,0) font SansSerif style 1 size 16 text: "5" depth 2147483647
+2 object 188 Text at (500,230) color (0,0,0) font SansSerif style 1 size 16 text: "6" depth 2147483647
+2 object 189 Text at (20,310) color (0,0,0) font SansSerif style 2 size 16 text: "public void inorderTraversal() {" depth 2147483647
+2 object 190 Text at (20,310) color (0,0,0) font SansSerif style 2 size 16 text: "public void inorderTraversal() {" depth 2147483647
+4 object 191 Polyline color (0,0,0) fwArrow nodes: { (40,330) (40,370)} fillColor (255,255,255) depth 2147483647
+4 object 192 Polyline color (0,0,0) fwArrow nodes: { (30,350) (30,330)} fillColor (255,255,255) depth 2147483647
+4 object 193 Polyline color (0,0,0) fwArrow nodes: { (40,350) (40,330)} fillColor (255,255,255) depth 2147483647
+2 object 194 Text at (50,350) color (0,0,0) font SansSerif style 2 size 16 text: "left.inorderTraversal();" depth 2147483647
+2 object 195 Text at (50,410) color (0,0,0) font SansSerif style 2 size 16 text: "right.inorderTraversal();" depth 2147483647
+2 object 196 Text at (200,80) color (0,0,0) font SansSerif style 1 size 16 text: "Inorder" depth 2147483647
+2 object 197 Text at (480,130) color (0,0,0) font SansSerif style 1 size 16 text: "0" depth 2147483647
+5 object 198 Arc center (180,130) rX 16 rY 16 color (255,0,0) fillColor (255,255,255) angle 720 starts 270 circle text: "" textColor (0,0,0) Font {"SansSerif" 0 12 } depth 2147483647
+2 object 199 Text at (490,150) color (0,0,0) font SansSerif style 1 size 16 text: "1" depth 2147483647
+2 object 200 Text at (490,150) color (0,0,0) font SansSerif style 1 size 16 text: "1" depth 2147483647
+5 object 201 Arc center (180,130) rX 16 rY 16 color (0,0,255) fillColor (255,255,255) angle 720 starts 270 circle text: "" textColor (0,0,255) Font {"SansSerif" 0 12 } depth 2147483647
+4 object 202 Polyline color (0,0,0) fwArrow nodes: { (330,130) (330,150)} fillColor (255,255,255) depth 2147483647
+5 object 203 Arc center (100,200) rX 16 rY 16 color (255,0,0) fillColor (255,255,255) angle 720 starts 270 circle text: "" textColor (0,0,0) Font {"SansSerif" 0 12 } depth 2147483647
+5 object 204 Arc center (100,200) rX 16 rY 16 color (0,255,0) fillColor (255,255,255) angle 720 starts 270 circle text: "" textColor (0,0,0) Font {"SansSerif" 0 12 } depth 2147483647
+2 object 205 Text at (420,230) color (0,0,0) font SansSerif style 1 size 16 text: "1" depth 2147483647
+4 object 206 Polyline color (0,0,0) fwArrow nodes: { (330,150) (330,130)} fillColor (255,255,255) depth 2147483647
+5 object 207 Arc center (180,130) rX 16 rY 16 color (0,255,0) fillColor (255,255,255) angle 720 starts 270 circle text: "" textColor (0,0,0) Font {"SansSerif" 0 12 } depth 2147483647
+2 object 208 Text at (431,231) color (0,0,0) font SansSerif style 1 size 16 text: "0" depth 2147483647
+2 object 209 Text at (490,170) color (0,0,0) font SansSerif style 1 size 16 text: "2" depth 2147483647
+5 object 210 Arc center (260,200) rX 16 rY 16 color (255,0,0) fillColor (255,255,255) angle 720 starts 270 circle text: "" textColor (0,0,0) Font {"SansSerif" 0 12 } depth 2147483647
+4 object 211 Polyline color (0,0,0) fwArrow nodes: { (330,130) (330,170)} fillColor (255,255,255) depth 2147483647
+4 object 212 Polyline color (0,0,0) fwArrow nodes: { (330,150) (330,130)} fillColor (255,255,255) depth 2147483647
+5 object 213 Arc center (180,130) rX 16 rY 16 color (255,0,0) fillColor (255,255,255) angle 720 starts 270 circle text: "" textColor (0,0,0) Font {"SansSerif" 0 12 } depth 2147483647
+5 object 214 Arc center (220,270) rX 16 rY 16 color (255,0,0) fillColor (255,255,255) angle 720 starts 270 circle text: "" textColor (0,0,0) Font {"SansSerif" 0 12 } depth 2147483647
+5 object 215 Arc center (260,200) rX 16 rY 16 color (0,0,255) fillColor (255,255,255) angle 720 starts 270 circle text: "" textColor (0,0,255) Font {"SansSerif" 0 12 } depth 2147483647
+2 object 216 Text at (500,190) color (0,0,0) font SansSerif style 1 size 16 text: "5" depth 2147483647
+4 object 217 Polyline color (0,0,0) fwArrow nodes: { (330,170) (330,190)} fillColor (255,255,255) depth 2147483647
+5 object 218 Arc center (220,270) rX 16 rY 16 color (0,255,0) fillColor (255,255,255) angle 720 starts 270 circle text: "" textColor (0,0,0) Font {"SansSerif" 0 12 } depth 2147483647
+2 object 219 Text at (460,230) color (0,0,0) font SansSerif style 1 size 16 text: "5" depth 2147483647
+2 object 220 Text at (440,230) color (0,0,0) font SansSerif style 1 size 16 text: "0" depth 2147483647
+4 object 221 Polyline color (0,0,0) fwArrow nodes: { (330,190) (330,170)} fillColor (255,255,255) depth 2147483647
+5 object 222 Arc center (260,200) rX 16 rY 16 color (255,0,0) fillColor (255,255,255) angle 720 starts 270 circle text: "" textColor (0,0,0) Font {"SansSerif" 0 12 } depth 2147483647
+5 object 223 Arc center (260,200) rX 16 rY 16 color (255,0,0) fillColor (255,255,255) angle 720 starts 270 circle text: "" textColor (0,0,0) Font {"SansSerif" 0 12 } depth 2147483647
+5 object 224 Arc center (260,200) rX 16 rY 16 color (255,0,0) fillColor (255,255,255) angle 720 starts 270 circle text: "" textColor (0,0,0) Font {"SansSerif" 0 12 } depth 2147483647
+5 object 225 Arc center (260,200) rX 16 rY 16 color (0,255,0) fillColor (255,255,255) angle 720 starts 270 circle text: "" textColor (0,0,0) Font {"SansSerif" 0 12 } depth 2147483647
+2 object 226 Text at (480,230) color (0,0,0) font SansSerif style 1 size 16 text: "2" depth 2147483647
+2 object 227 Text at (500,210) color (0,0,0) font SansSerif style 1 size 16 text: "6" depth 2147483647
+2 object 228 Text at (500,210) color (0,0,0) font SansSerif style 1 size 16 text: "6" depth 2147483647
+5 object 229 Arc center (300,270) rX 16 rY 16 color (255,0,0) fillColor (255,255,255) angle 720 starts 270 circle text: "" textColor (0,0,0) Font {"SansSerif" 0 12 } depth 2147483647
+4 object 230 Polyline color (0,0,0) fwArrow nodes: { (330,170) (330,210)} fillColor (255,255,255) depth 2147483647
+5 object 231 Arc center (300,270) rX 16 rY 16 color (0,255,0) fillColor (255,255,255) angle 720 starts 270 circle text: "" textColor (0,0,0) Font {"SansSerif" 0 12 } depth 2147483647
+2 object 232 Text at (500,230) color (0,0,0) font SansSerif style 1 size 16 text: "6" depth 2147483647
+4 object 233 Polyline color (0,0,0) fwArrow nodes: { (330,210) (330,170)} fillColor (255,255,255) depth 2147483647
+4 object 234 Polyline color (0,0,0) fwArrow nodes: { (330,170) (330,130)} fillColor (255,255,255) depth 2147483647
+2 object 235 Text at (190,80) color (0,0,0) font SansSerif style 1 size 16 text: "Postorder" depth 2147483647
+4 object 236 Polyline color (0,0,0) fwArrow nodes: { (40,370) (40,410)} fillColor (255,255,255) depth 2147483647
+4 object 237 Polyline color (0,0,0) fwArrow nodes: { (40,390) (40,370)} fillColor (255,255,255) depth 2147483647
+2 object 238 Text at (50,350) color (0,0,0) font SansSerif style 2 size 16 text: "left.postorderTraversal();" depth 2147483647
+2 object 239 Text at (50,390) color (0,0,0) font SansSerif style 2 size 16 text: "right.postorderTraversal();" depth 2147483647
+2 object 240 Text at (20,310) color (0,0,0) font SansSerif style 2 size 16 text: "public void postorderTraversal() {" depth 2147483647
+5 object 241 Arc center (180,130) rX 16 rY 16 color (255,0,0) fillColor (255,255,255) angle 720 starts 270 circle text: "" textColor (0,0,0) Font {"SansSerif" 0 12 } depth 2147483647
+2 object 242 Text at (480,130) color (0,0,0) font SansSerif style 1 size 16 text: "0" depth 2147483647
+2 object 243 Text at (490,150) color (0,0,0) font SansSerif style 1 size 16 text: "1" depth 2147483647
+2 object 244 Text at (490,150) color (0,0,0) font SansSerif style 1 size 16 text: "1" depth 2147483647
+5 object 245 Arc center (180,130) rX 16 rY 16 color (0,0,255) fillColor (255,255,255) angle 720 starts 270 circle text: "" textColor (0,0,255) Font {"SansSerif" 0 12 } depth 2147483647
+5 object 246 Arc center (100,200) rX 16 rY 16 color (255,0,0) fillColor (255,255,255) angle 720 starts 270 circle text: "" textColor (0,0,0) Font {"SansSerif" 0 12 } depth 2147483647
+5 object 247 Arc center (100,200) rX 16 rY 16 color (0,255,0) fillColor (255,255,255) angle 720 starts 270 circle text: "" textColor (0,0,0) Font {"SansSerif" 0 12 } depth 2147483647
+2 object 248 Text at (410,230) color (0,0,0) font SansSerif style 1 size 16 text: "1" depth 2147483647
+4 object 249 Polyline color (0,0,0) fwArrow nodes: { (330,130) (330,150)} fillColor (255,255,255) depth 2147483647
+5 object 250 Arc center (180,130) rX 16 rY 16 color (255,0,0) fillColor (255,255,255) angle 720 starts 270 circle text: "" textColor (0,0,0) Font {"SansSerif" 0 12 } depth 2147483647
+4 object 251 Polyline color (0,0,0) fwArrow nodes: { (330,150) (330,130)} fillColor (255,255,255) depth 2147483647
+2 object 252 Text at (490,170) color (0,0,0) font SansSerif style 1 size 16 text: "2" depth 2147483647
+4 object 253 Polyline color (0,0,0) fwArrow nodes: { (330,130) (330,170)} fillColor (255,255,255) depth 2147483647
+5 object 254 Arc center (180,130) rX 16 rY 16 color (0,0,255) fillColor (255,255,255) angle 720 starts 270 circle text: "" textColor (0,0,255) Font {"SansSerif" 0 12 } depth 2147483647
+5 object 255 Arc center (260,200) rX 16 rY 16 color (255,0,0) fillColor (255,255,255) angle 720 starts 270 circle text: "" textColor (0,0,0) Font {"SansSerif" 0 12 } depth 2147483647
+2 object 256 Text at (500,190) color (0,0,0) font SansSerif style 1 size 16 text: "5" depth 2147483647
+4 object 257 Polyline color (0,0,0) fwArrow nodes: { (330,170) (330,190)} fillColor (255,255,255) depth 2147483647
+2 object 258 Text at (500,190) color (0,0,0) font SansSerif style 1 size 16 text: "5" depth 2147483647
+5 object 259 Arc center (260,200) rX 16 rY 16 color (0,0,255) fillColor (255,255,255) angle 720 starts 270 circle text: "" textColor (0,0,255) Font {"SansSerif" 0 12 } depth 2147483647
+5 object 260 Arc center (220,270) rX 16 rY 16 color (255,0,0) fillColor (255,255,255) angle 720 starts 270 circle text: "" textColor (0,0,0) Font {"SansSerif" 0 12 } depth 2147483647
+5 object 261 Arc center (220,270) rX 16 rY 16 color (0,255,0) fillColor (255,255,255) angle 720 starts 270 text: "" textColor (0,0,0) Font {"SansSerif" 0 12 } depth 2147483647
+2 object 262 Text at (430,230) color (0,0,0) font SansSerif style 1 size 16 text: "5" depth 2147483647
+4 object 263 Polyline color (0,0,0) fwArrow nodes: { (330,190) (330,170)} fillColor (255,255,255) depth 2147483647
+5 object 264 Arc center (260,200) rX 16 rY 16 color (255,0,0) fillColor (255,255,255) angle 720 starts 270 circle text: "" textColor (0,0,0) Font {"SansSerif" 0 12 } depth 2147483647
+4 object 265 Polyline color (0,0,0) fwArrow nodes: { (260,200) (300,270)} fillColor (255,255,255) depth 2147483647
+5 object 266 Arc center (260,200) rX 16 rY 16 color (0,0,255) fillColor (255,255,255) angle 720 starts 270 circle text: "" textColor (0,0,255) Font {"SansSerif" 0 12 } depth 2147483647
+2 object 267 Text at (500,210) color (0,0,0) font SansSerif style 1 size 16 text: "6" depth 2147483647
+4 object 268 Polyline color (0,0,0) fwArrow nodes: { (330,170) (330,210)} fillColor (255,255,255) depth 2147483647
+5 object 269 Arc center (300,270) rX 16 rY 16 color (0,255,0) fillColor (255,255,255) angle 720 starts 270 text: "" textColor (0,0,0) Font {"SansSerif" 0 12 } depth 2147483647
+2 object 270 Text at (450,230) color (0,0,0) font SansSerif style 1 size 16 text: "6" depth 2147483647
+4 object 271 Polyline color (0,0,0) fwArrow nodes: { (330,210) (330,170)} fillColor (255,255,255) depth 2147483647
+5 object 272 Arc center (260,200) rX 16 rY 16 color (255,0,0) fillColor (255,255,255) angle 720 starts 270 circle text: "" textColor (0,0,0) Font {"SansSerif" 0 12 } depth 2147483647
+5 object 273 Arc center (260,200) rX 16 rY 16 color (0,255,0) fillColor (255,255,255) angle 720 starts 270 circle text: "" textColor (0,0,0) Font {"SansSerif" 0 12 } depth 2147483647
+2 object 274 Text at (470,230) color (0,0,0) font SansSerif style 1 size 16 text: "2" depth 2147483647
+5 object 275 Arc center (180,130) rX 16 rY 16 color (255,0,0) fillColor (255,255,255) angle 720 starts 270 circle text: "" textColor (0,0,0) Font {"SansSerif" 0 12 } depth 2147483647
+4 object 276 Polyline color (0,0,0) fwArrow nodes: { (330,170) (330,130)} fillColor (255,255,255) depth 2147483647
+5 object 277 Arc center (180,130) rX 16 rY 16 color (0,255,0) fillColor (255,255,255) angle 720 starts 270 circle text: "" textColor (0,0,0) Font {"SansSerif" 0 12 } depth 2147483647
+2 object 278 Text at (490,230) color (0,0,0) font SansSerif style 1 size 16 text: "0" depth 2147483647
+2 object 279 Text at (20,310) color (0,0,0) font SansSerif style 2 size 16 text: "public void levelorderTraversal() {" depth 2147483647
+4 object 280 Polyline color (0,0,0) fwArrow nodes: { (20,320) (20,380) (20,380)} fillColor (255,255,255) depth 2147483647
+2 object 281 Text at (40,330) color (0,0,0) font SansSerif style 2 size 16 text: "Queue q = new Queue();" depth 2147483647
+2 object 282 Text at (40,350) color (0,0,0) font SansSerif style 2 size 16 text: "q.enqueue(this);" depth 2147483647
+2 object 283 Text at (40,370) color (0,0,0) font SansSerif style 2 size 16 text: "while (!q.isEmpty()) {" depth 2147483647
+2 object 284 Text at (50,390) color (0,0,0) font SansSerif style 2 size 16 text: "BinaryTree node = q.dequeue();" depth 2147483647
+2 object 285 Text at (180,80) color (0,0,0) font SansSerif style 1 size 16 text: "Levelorder" depth 2147483647
+2 object 286 Text at (10,320) color (0,0,0) font SansSerif style 1 size 16 text: "Zum Starten des Durchlaufs in Levelorder muß eine Queue angelegt werden." depth 2147483647
+2 object 287 Text at (330,270) color (0,0,0) font SansSerif style 1 size 16 text: "Queue:" depth 2147483647
+4 object 288 Polyline color (0,0,0) nodes: { (400,250) (580,250) (580,280) (400,280) (400,250)} fillColor (255,255,255) depth 2147483647
+4 object 289 Polyline color (0,0,0) nodes: { (430,250) (430,280)} fillColor (255,255,255) depth 2147483647
+4 object 290 Polyline color (0,0,0) nodes: { (460,280) (460,250)} fillColor (255,255,255) depth 2147483647
+4 object 291 Polyline color (0,0,0) nodes: { (490,250) (490,280)} fillColor (255,255,255) depth 2147483647
+4 object 292 Polyline color (0,0,0) nodes: { (520,250) (520,280)} fillColor (255,255,255) depth 2147483647
+4 object 293 Polyline color (0,0,0) nodes: { (550,250) (550,280)} fillColor (255,255,255) depth 2147483647
+4 object 294 Polyline color (0,0,0) fwArrow nodes: { (415,240) (415,250)} fillColor (255,255,255) depth 2147483647
+4 object 295 Polyline color (0,0,0) fwArrow nodes: { (415,291) (415,280)} fillColor (255,255,255) depth 2147483647
+2 object 296 Text at (10,350) color (0,0,0) font SansSerif style 1 size 16 text: "In die Queue wird die Wurzel des Baums eingetragen." depth 2147483647
+4 object 297 Polyline color (0,0,0) fwArrow nodes: { (410,280) (440,280)} fillColor (255,255,255) depth 2147483647
+2 object 298 Text at (10,380) color (0,0,0) font SansSerif style 1 size 16 text: "Nun kann der Durchlauf beginnen..." depth 2147483647
+2 object 299 Text at (20,320) color (0,0,0) font SansSerif style 2 size 16 text: "public void levelorderTraversal() {" depth 2147483647
+2 object 300 Text at (30,340) color (0,0,0) font SansSerif style 2 size 16 text: "while (!q.isEmpty()) {" depth 2147483647
+2 object 301 Text at (40,360) color (0,0,0) font SansSerif style 2 size 16 text: "BinaryTree node = (BinaryTree)q.dequeue();" depth 2147483647
+2 object 302 Text at (40,400) color (0,0,0) font SansSerif style 2 size 16 text: "if (node.hasLeftSon())" depth 2147483647
+2 object 303 Text at (40,420) color (0,0,0) font SansSerif style 2 size 16 text: "if (node.hasRightSon()) " depth 2147483647
+2 object 304 Text at (40,380) color (0,0,0) font SansSerif style 2 size 16 text: "node.visited(true);" depth 2147483647
+2 object 305 Text at (30,440) color (0,0,0) font SansSerif style 2 size 16 text: "}" depth 2147483647
+2 object 306 Text at (20,460) color (0,0,0) font SansSerif style 2 size 16 text: "}" depth 2147483647
+5 object 307 Arc center (180,130) rX 16 rY 16 color (255,0,0) fillColor (255,255,255) angle 720 starts 270 circle text: "" textColor (0,0,0) Font {"SansSerif" 0 12 } depth 2147483647
+4 object 308 Polyline color (0,0,0) fwArrow nodes: { (410,240) (440,240)} fillColor (255,255,255) depth 2147483647
+4 object 309 Polyline color (0,0,0) fwArrow nodes: { (410,260) (410,230) (480,230) (480,130) (480,130)} fillColor (255,255,255) depth 2147483647
+2 object 310 Text at (410,270) color (0,0,0) font SansSerif style 1 size 16 text: "0" depth 2147483647
+4 object 311 Polyline color (0,0,0) fwArrow nodes: { (410,260) (410,230) (480,230) (480,120)} fillColor (255,255,255) depth 2147483647
+4 object 312 Polyline color (0,0,0) fwArrow nodes: { (370,220) (370,180)} fillColor (255,255,255) depth 2147483647
+5 object 313 Arc center (180,130) rX 16 rY 16 color (0,255,0) fillColor (255,255,255) angle 720 starts 270 circle text: "" textColor (0,0,0) Font {"SansSerif" 0 12 } depth 2147483647
+2 object 314 Text at (420,190) color (0,0,0) font SansSerif style 1 size 16 text: "0" depth 2147483647
+2 object 315 Text at (220,400) color (0,0,0) font SansSerif style 2 size 16 text: "q.enqueue(node.left);" depth 2147483647
+2 object 316 Text at (220,420) color (0,0,0) font SansSerif style 2 size 16 text: "q.enqueue(node.right);" depth 2147483647
+2 object 317 Text at (220,420) color (0,0,0) font SansSerif style 2 size 16 text: "q.enqueue(node.right);" depth 2147483647
+2 object 318 Text at (220,400) color (0,0,0) font SansSerif style 2 size 16 text: "q.enqueue(node.left);" depth 2147483647
+2 object 319 Text at (440,270) color (0,0,0) font SansSerif style 1 size 16 text: "1" depth 2147483647
+4 object 320 Polyline color (0,0,0) fwArrow nodes: { (440,290) (470,290)} fillColor (255,255,255) depth 2147483647
+2 object 321 Text at (440,270) color (0,0,0) font SansSerif style 1 size 16 text: "1" depth 2147483647
+2 object 322 Text at (470,270) color (0,0,0) font SansSerif style 1 size 16 text: "2" depth 2147483647
+4 object 323 Polyline color (0,0,0) fwArrow nodes: { (460,290) (490,290)} fillColor (255,255,255) depth 2147483647
+4 object 324 Polyline color (0,0,0) fwArrow nodes: { (370,220) (400,220)} fillColor (255,255,255) depth 2147483647
+4 object 325 Polyline color (0,0,0) fwArrow nodes: { (450,270) (450,230) (480,230) (480,130)} fillColor (255,255,255) depth 2147483647
+5 object 326 Arc center (100,200) rX 16 rY 16 color (255,0,0) fillColor (255,255,255) angle 720 starts 270 circle text: "" textColor (0,0,0) Font {"SansSerif" 0 12 } depth 2147483647
+5 object 327 Arc center (100,200) rX 16 rY 16 color (0,255,0) fillColor (255,255,255) angle 720 starts 270 circle text: "" textColor (0,0,0) Font {"SansSerif" 0 12 } depth 2147483647
+2 object 328 Text at (440,190) color (0,0,0) font SansSerif style 1 size 16 text: "1" depth 2147483647
+5 object 329 Arc center (260,200) rX 16 rY 16 color (255,0,0) fillColor (255,255,255) angle 720 starts 270 circle text: "" textColor (0,0,0) Font {"SansSerif" 0 12 } depth 2147483647
+4 object 330 Polyline color (0,0,0) fwArrow nodes: { (370,210) (400,210)} fillColor (255,255,255) depth 2147483647
+4 object 331 Polyline color (0,0,0) fwArrow nodes: { (470,270) (470,130)} fillColor (255,255,255) depth 2147483647
+2 object 332 Text at (460,190) color (0,0,0) font SansSerif style 1 size 16 text: "2" depth 2147483647
+5 object 333 Arc center (260,200) rX 16 rY 16 color (0,255,0) fillColor (255,255,255) angle 720 starts 270 circle text: "" textColor (0,0,0) Font {"SansSerif" 0 12 } depth 2147483647
+2 object 334 Text at (500,270) color (0,0,0) font SansSerif style 1 size 16 text: "5" depth 2147483647
+4 object 335 Polyline color (0,0,0) fwArrow nodes: { (400,230) (430,230)} fillColor (255,255,255) depth 2147483647
+2 object 336 Text at (530,270) color (0,0,0) font SansSerif style 1 size 16 text: "6" depth 2147483647
+4 object 337 Polyline color (0,0,0) fwArrow nodes: { (260,150) (290,150)} fillColor (255,255,255) depth 2147483647
+4 object 338 Polyline color (0,0,0) fwArrow nodes: { (500,270) (500,170) (470,170) (470,130)} fillColor (255,255,255) depth 2147483647
+4 object 339 Polyline color (0,0,0) fwArrow nodes: { (350,210) (380,210)} fillColor (255,255,255) depth 2147483647
+5 object 340 Arc center (220,270) rX 16 rY 16 color (255,0,0) fillColor (255,255,255) angle 720 starts 270 circle text: "" textColor (0,0,0) Font {"SansSerif" 0 12 } depth 2147483647
+5 object 341 Arc center (220,270) rX 16 rY 16 color (0,255,0) fillColor (255,255,255) angle 720 starts 270 circle text: "" textColor (0,0,0) Font {"SansSerif" 0 12 } depth 2147483647
+2 object 342 Text at (480,190) color (0,0,0) font SansSerif style 1 size 16 text: "5" depth 2147483647
+4 object 343 Polyline color (0,0,0) fwArrow nodes: { (330,200) (360,200)} fillColor (255,255,255) depth 2147483647
+4 object 344 Polyline color (0,0,0) fwArrow nodes: { (530,270) (530,160) (470,160) (470,130)} fillColor (255,255,255) depth 2147483647
+5 object 345 Arc center (300,270) rX 16 rY 16 color (255,0,0) fillColor (255,255,255) angle 720 starts 270 circle text: "" textColor (0,0,0) Font {"SansSerif" 0 12 } depth 2147483647
+5 object 346 Arc center (300,270) rX 16 rY 16 color (0,255,0) fillColor (255,255,255) angle 720 starts 270 circle text: "" textColor (0,0,0) Font {"SansSerif" 0 12 } depth 2147483647
+2 object 347 Text at (500,190) color (0,0,0) font SansSerif style 1 size 16 text: "6" depth 2147483647
+4 object 348 Polyline color (0,0,0) fwArrow nodes: { (330,210) (330,170)} fillColor (0,0,0) depth 2147483647
+4 object 349 Polyline color (0,0,0) fwArrow nodes: { (330,170) (330,130)} fillColor (0,0,0) depth 2147483647
+STEPS:
+1 Link 1 next step 2 after key press
+2 Step 1 Show 1 2 by "show"
+2 Step 1 Show 3 4 5 6 7 8 9 10 11 by "show"
+2 Step 1 Show 12 13 14 15 16 17 by "show"
+2 Step 1 Show 41 42 43 44 by "show"
+2 Step 1 Show 45 46 47 48 49 50 51 by "show"
+1 Link 2 next step 3 after key press
+2 Step 2 Show 23 24 25 26 27 28 by "show"
+2 Step 2 Hide 45 46 47 48 49 50 51 by "hide"
+1 Link 3 next step 4 after key press
+2 Step 3 Show 29 30 by "show"
+2 Step 3 Hide 26 27 28 by "hide"
+2 Step 3 Show 31 by "show"
+2 Step 3 Show 32 33 34 by "show"
+1 Link 4 next step 5 after key press
+2 Step 4 Hide 18 by "hide"
+2 Step 4 Show 19 by "show"
+2 Step 4 Hide 11 by "hide"
+2 Step 4 Show 20 by "show"
+2 Step 4 Hide 31 32 33 34 by "hide"
+2 Step 4 Hide 23 24 25 29 30 by "hide"
+1 Link 5 next step 6 after key press
+2 Step 5 Show 52 53 54 by "show"
+2 Step 5 Show 55 56 57 by "show"
+2 Step 5 Show 58 by "show"
+1 Link 6 next step 7 after key press
+2 Step 6 Show 21 22 by "show"
+2 Step 6 Show 40 by "show"
+2 Step 6 Hide 53 by "hide"
+2 Step 6 Hide 10 15 55 by "hide"
+2 Step 6 Show 64 by "show"
+2 Step 6 Hide 35 by "hide"
+1 Link 7 next step 8 after key press
+2 Step 7 Show 59 60 by "show"
+2 Step 7 Show 61 by "show"
+2 Step 7 Hide 7 8 12 13 56 57 by "hide"
+2 Step 7 Show 62 by "show"
+2 Step 7 Show 63 by "show"
+2 Step 7 Hide 22 40 by "hide"
+2 Step 7 Show 65 by "show"
+2 Step 7 Show 89 by "show"
+1 Link 8 next step 9 after key press
+2 Step 8 Hide 58 60 62 65 by "hide"
+2 Step 8 Show 69 by "show"
+2 Step 8 Hide 19 21 52 54 63 64 by "hide"
+2 Step 8 Show 70 71 72 73 74 by "show"
+2 Step 8 Show 75 by "show"
+2 Step 8 Show 80 81 by "show"
+2 Step 8 Hide 89 by "hide"
+2 Step 8 Hide 20 by "hide"
+2 Step 8 Show 144 by "show"
+2 Step 8 Hide 35 by "hide"
+1 Link 9 next step 10 after time 0 ms
+2 Step 9 Move 80 by "translate #1" within 20 ticks via 83
+2 Step 9 Move 81 by "translate #1" within 20 ticks via 84
+2 Step 9 Hide 74 87 by "hide"
+2 Step 9 Hide 17 by "hide"
+2 Step 9 Hide 16 by "hide"
+2 Step 9 Hide 75 by "hide"
+1 Link 10 next step 11 after key press
+2 Step 10 Show 90 91 92 93 by "show"
+2 Step 10 Show 94 95 by "show"
+2 Step 10 Show 97 by "show"
+1 Link 11 next step 12 after time 0 ms
+2 Step 11 Hide 80 81 94 95 by "hide"
+2 Step 11 Show 96 by "show"
+2 Step 11 Move 97 by "translate #1" within 20 ticks via 98
+2 Step 11 Show 99 100 by "show"
+1 Link 12 next step 13 after time 0 ms
+2 Step 12 Hide 14 61 by "hide"
+2 Step 12 Move 99 by "translate #1" within 20 ticks via 101
+2 Step 12 Move 100 by "translate #1" within 20 ticks via 102
+1 Link 13 next step 14 after key press
+2 Step 13 Show 103 104 105 106 107 108 by "show"
+1 Link 14 next step 15 after key press
+2 Step 14 Hide 97 99 100 103 104 by "hide"
+2 Step 14 Show 113 114 115 by "show"
+2 Step 14 Hide 69 by "hide"
+2 Step 14 Show 116 117 118 119 120 121 by "show"
+1 Link 15 next step 16 after key press
+2 Step 15 Hide 116 119 120 121 by "hide"
+2 Step 15 Show 122 123 124 by "show"
+2 Step 15 Show 125 126 127 by "show"
+1 Link 16 next step 17 after key press
+2 Step 16 Hide 70 71 72 73 90 91 92 93 105 106 107 108 117 118 122 123 124 by "hide"
+2 Step 16 Hide 125 126 127 by "hide"
+2 Step 16 Show 128 129 130 131 132 133 134 135 136 137 138 139 140 141 142 143 by "show"
+2 Step 16 Show 145 by "show"
+2 Step 16 Hide 144 by "hide"
+1 Link 17 next step 18 after key press
+2 Step 17 Hide 128 129 130 131 132 133 134 135 136 137 138 139 140 141 142 143 by "hide"
+2 Step 17 Hide 145 by "hide"
+2 Step 17 Show 146 by "show"
+2 Step 17 Hide 41 42 43 44 by "hide"
+2 Step 17 Show 147 148 by "show"
+2 Step 17 Show 149 150 151 152 153 154 155 by "show"
+2 Step 17 Show 158 by "show"
+2 Step 17 Show 183 by "show"
+1 Link 18 next step 19 after key press
+2 Step 18 ColorChange 149 155 by "color" set to (255,0,0)
+1 Link 19 next step 20 after time 250 ms
+2 Step 19 ColorChange 150 by "color" set to (255,0,0)
+2 Step 19 Show 156 by "show"
+2 Step 19 Show 159 by "show"
+2 Step 19 ColorChange 149 155 by "color" set to (0,0,255)
+1 Link 20 next step 21 after key press
+2 Step 20 Hide 156 by "hide"
+2 Step 20 Show 157 by "show"
+2 Step 20 Show 184 by "show"
+1 Link 21 next step 22 after key press
+2 Step 21 ColorChange 150 by "color" set to (0,0,0)
+2 Step 21 ColorChange 96 151 by "color" set to (255,0,0)
+1 Link 22 next step 23 after key press
+2 Step 22 ColorChange 151 by "color" set to (0,0,255)
+2 Step 22 ColorChange 152 by "color" set to (255,0,0)
+1 Link 23 next step 24 after time 750 ms
+2 Step 23 ColorChange 96 151 152 by "color" set to (0,0,0)
+2 Step 23 Show 160 by "show"
+2 Step 23 Move 158 by "translate" via 162
+2 Step 23 Show 161 by "show"
+2 Step 23 ColorChange 149 155 by "color" set to (255,0,0)
+1 Link 24 next step 25 after time 750 ms
+2 Step 24 Hide 160 by "hide"
+2 Step 24 ColorChange 149 155 by "color" set to (0,0,255)
+2 Step 24 ColorChange 150 by "color" set to (255,0,0)
+2 Step 24 Show 168 by "show"
+1 Link 25 next step 26 after key press
+2 Step 25 Show 167 by "show"
+2 Step 25 Hide 168 by "hide"
+2 Step 25 Show 185 by "show"
+1 Link 26 next step 27 after key press
+2 Step 26 ColorChange 150 by "color" set to (0,0,0)
+2 Step 26 ColorChange 151 by "color" set to (255,0,0)
+1 Link 27 next step 28 after key press
+2 Step 27 ColorChange 151 by "color" set to (0,0,0)
+2 Step 27 ColorChange 153 by "color" set to (255,0,0)
+1 Link 28 next step 29 after key press
+2 Step 28 ColorChange 153 by "color" set to (0,0,0)
+2 Step 28 ColorChange 149 155 by "color" set to (255,0,0)
+1 Link 29 next step 30 after key press
+2 Step 29 Move 158 by "translate" via 164
+2 Step 29 ColorChange 96 149 151 152 155 by "color" set to (0,0,255)
+1 Link 30 next step 31 after key press
+2 Step 30 ColorChange 151 152 by "color" set to (0,0,0)
+2 Step 30 ColorChange 113 153 by "color" set to (255,0,0)
+1 Link 31 next step 32 after key press
+2 Step 31 ColorChange 153 by "color" set to (0,0,255)
+2 Step 31 ColorChange 154 by "color" set to (255,0,0)
+1 Link 32 next step 33 after key press
+2 Step 32 ColorChange 96 153 154 by "color" set to (0,0,0)
+2 Step 32 Move 158 by "translate" via 166
+2 Step 32 Show 165 by "show"
+2 Step 32 ColorChange 149 155 by "color" set to (255,0,0)
+2 Step 32 Show 169 by "show"
+2 Step 32 ColorChange 113 by "color" set to (0,0,0)
+1 Link 33 next step 34 after time 750 ms
+2 Step 33 ColorChange 149 155 by "color" set to (0,0,255)
+2 Step 33 ColorChange 150 by "color" set to (255,0,0)
+1 Link 34 next step 35 after key press
+2 Step 34 Hide 169 by "hide"
+2 Step 34 Show 170 by "show"
+2 Step 34 Show 186 by "show"
+1 Link 35 next step 36 after key press
+2 Step 35 ColorChange 150 by "color" set to (0,0,0)
+2 Step 35 ColorChange 114 151 by "color" set to (255,0,0)
+1 Link 36 next step 37 after key press
+2 Step 36 ColorChange 151 by "color" set to (0,0,255)
+2 Step 36 ColorChange 152 by "color" set to (255,0,0)
+1 Link 37 next step 38 after key press
+2 Step 37 ColorChange 114 151 152 by "color" set to (0,0,0)
+2 Step 37 ColorChange 149 155 by "color" set to (255,0,0)
+2 Step 37 Move 158 by "translate" via 172
+2 Step 37 Show 171 by "show"
+1 Link 38 next step 39 after time 750 ms
+2 Step 38 ColorChange 149 155 by "color" set to (0,0,255)
+2 Step 38 ColorChange 150 by "color" set to (255,0,0)
+2 Step 38 Show 173 by "show"
+1 Link 39 next step 40 after key press
+2 Step 39 Hide 173 by "hide"
+2 Step 39 Show 174 by "show"
+2 Step 39 Show 187 by "show"
+1 Link 40 next step 41 after key press
+2 Step 40 ColorChange 150 by "color" set to (0,0,0)
+2 Step 40 ColorChange 151 by "color" set to (255,0,0)
+1 Link 41 next step 42 after key press
+2 Step 41 ColorChange 151 by "color" set to (0,0,0)
+2 Step 41 ColorChange 153 by "color" set to (255,0,0)
+1 Link 42 next step 43 after key press
+2 Step 42 ColorChange 153 by "color" set to (0,0,0)
+2 Step 42 ColorChange 149 155 by "color" set to (255,0,0)
+1 Link 43 next step 44 after key press
+2 Step 43 ColorChange 114 149 151 152 155 by "color" set to (0,0,255)
+2 Step 43 Move 158 by "translate" via 175
+2 Step 43 ColorChange 115 153 by "color" set to (255,0,0)
+1 Link 44 next step 45 after key press
+2 Step 44 ColorChange 153 by "color" set to (0,0,255)
+2 Step 44 ColorChange 154 by "color" set to (255,0,0)
+2 Step 44 ColorChange 151 152 by "color" set to (0,0,0)
+1 Link 45 next step 46 after key press
+2 Step 45 Move 158 by "translate" via 177
+2 Step 45 Show 178 by "show"
+2 Step 45 ColorChange 114 115 151 152 153 154 by "color" set to (0,0,0)
+2 Step 45 ColorChange 149 155 by "color" set to (255,0,0)
+2 Step 45 Show 179 by "show"
+1 Link 46 next step 47 after time 750 ms
+2 Step 46 ColorChange 149 155 by "color" set to (0,0,255)
+2 Step 46 ColorChange 150 by "color" set to (255,0,0)
+1 Link 47 next step 48 after key press
+2 Step 47 Hide 179 by "hide"
+2 Step 47 Show 180 by "show"
+2 Step 47 Show 188 by "show"
+1 Link 48 next step 49 after key press
+2 Step 48 ColorChange 150 by "color" set to (0,0,0)
+2 Step 48 ColorChange 151 by "color" set to (255,0,0)
+1 Link 49 next step 50 after key press
+2 Step 49 ColorChange 151 by "color" set to (0,0,0)
+2 Step 49 ColorChange 153 by "color" set to (255,0,0)
+1 Link 50 next step 51 after key press
+2 Step 50 ColorChange 153 by "color" set to (0,0,0)
+2 Step 50 ColorChange 149 155 by "color" set to (255,0,0)
+1 Link 51 next step 52 after key press
+2 Step 51 ColorChange 114 115 149 153 154 155 by "color" set to (0,0,255)
+2 Step 51 Move 158 by "translate" via 181
+1 Link 52 next step 53 after key press
+2 Step 52 ColorChange 114 115 153 154 by "color" set to (0,0,0)
+2 Step 52 ColorChange 149 155 by "color" set to (255,0,0)
+1 Link 53 next step 54 after key press
+2 Step 53 Move 158 by "translate" via 182
+2 Step 53 ColorChange 96 113 149 153 154 155 by "color" set to (0,0,255)
+1 Link 54 next step 55 after key press
+2 Step 54 ColorChange 96 113 153 154 by "color" set to (0,0,0)
+2 Step 54 ColorChange 149 155 by "color" set to (255,0,0)
+1 Link 55 next step 56 after key press
+2 Step 55 ColorChange 149 155 by "color" set to (0,0,0)
+1 Link 56 next step 57 after key press
+2 Step 56 Hide 149 by "hide"
+2 Step 56 Hide 148 157 161 165 167 170 171 174 178 180 184 185 186 187 188 by "hide"
+2 Step 56 Show 190 by "show"
+2 Step 56 Move 150 by "translate" via 191
+2 Step 56 Move 151 by "translate" via 193
+2 Step 56 Hide 152 154 by "hide"
+2 Step 56 Hide 159 by "hide"
+2 Step 56 Show 194 195 196 by "show"
+1 Link 57 next step 58 after key press
+2 Step 57 ColorChange 155 190 by "color" set to (255,0,0)
+2 Step 57 Show 197 by "show"
+2 Step 57 Show 198 by "show"
+1 Link 58 next step 59 after key press
+2 Step 58 ColorChange 155 190 by "color" set to (0,0,255)
+2 Step 58 ColorChange 96 151 by "color" set to (255,0,0)
+1 Link 59 next step 60 after key press
+2 Step 59 ColorChange 151 by "color" set to (0,0,255)
+2 Step 59 ColorChange 194 by "color" set to (255,0,0)
+1 Link 60 next step 61 after key press
+2 Step 60 Show 200 by "show"
+2 Step 60 Hide 198 by "hide"
+2 Step 60 Show 201 by "show"
+2 Step 60 ColorChange 96 151 194 by "color" set to (0,0,0)
+2 Step 60 ColorChange 155 190 by "color" set to (255,0,0)
+2 Step 60 Move 158 by "translate" via 202
+2 Step 60 Show 203 by "show"
+1 Link 61 next step 62 after key press
+2 Step 61 ColorChange 155 190 by "color" set to (0,0,255)
+2 Step 61 ColorChange 151 by "color" set to (255,0,0)
+1 Link 62 next step 63 after time 750 ms
+2 Step 62 ColorChange 151 by "color" set to (0,0,0)
+2 Step 62 ColorChange 150 by "color" set to (255,0,0)
+1 Link 63 next step 64 after key press
+2 Step 63 Hide 203 by "hide"
+2 Step 63 Show 204 by "show"
+2 Step 63 Show 205 by "show"
+1 Link 64 next step 65 after key press
+2 Step 64 ColorChange 150 by "color" set to (0,0,0)
+2 Step 64 ColorChange 153 by "color" set to (255,0,0)
+1 Link 65 next step 66 after key press
+2 Step 65 ColorChange 153 by "color" set to (0,0,0)
+2 Step 65 ColorChange 155 190 by "color" set to (255,0,0)
+1 Link 66 next step 67 after key press
+2 Step 66 ColorChange 151 155 190 194 by "color" set to (0,0,255)
+2 Step 66 Move 158 by "translate" via 212
+2 Step 66 Hide 201 by "hide"
+2 Step 66 Show 213 by "show"
+1 Link 67 next step 68 after time 750 ms
+2 Step 67 ColorChange 150 by "color" set to (255,0,0)
+2 Step 67 ColorChange 151 194 by "color" set to (0,0,0)
+1 Link 68 next step 69 after key press
+2 Step 68 Hide 201 by "hide"
+2 Step 68 Show 207 by "show"
+2 Step 68 Show 220 by "show"
+1 Link 69 next step 70 after key press
+2 Step 69 ColorChange 150 by "color" set to (0,0,0)
+2 Step 69 ColorChange 113 153 by "color" set to (255,0,0)
+1 Link 70 next step 71 after key press
+2 Step 70 ColorChange 153 by "color" set to (0,0,255)
+2 Step 70 ColorChange 195 by "color" set to (255,0,0)
+1 Link 71 next step 72 after key press
+2 Step 71 ColorChange 96 113 151 153 194 195 by "color" set to (0,0,0)
+2 Step 71 ColorChange 155 190 by "color" set to (255,0,0)
+2 Step 71 Show 209 210 by "show"
+2 Step 71 Move 158 by "translate" via 211
+1 Link 72 next step 73 after key press
+2 Step 72 ColorChange 155 190 by "color" set to (0,0,255)
+2 Step 72 ColorChange 114 151 by "color" set to (255,0,0)
+1 Link 73 next step 74 after key press
+2 Step 73 ColorChange 151 by "color" set to (0,0,255)
+2 Step 73 ColorChange 194 by "color" set to (255,0,0)
+1 Link 74 next step 75 after key press
+2 Step 74 ColorChange 114 151 194 by "color" set to (0,0,0)
+2 Step 74 ColorChange 155 190 by "color" set to (255,0,0)
+2 Step 74 Hide 210 by "hide"
+2 Step 74 Show 214 by "show"
+2 Step 74 Show 215 by "show"
+2 Step 74 Show 216 by "show"
+2 Step 74 Move 158 by "translate" via 217
+1 Link 75 next step 76 after key press
+2 Step 75 ColorChange 155 190 by "color" set to (0,0,255)
+2 Step 75 ColorChange 151 by "color" set to (255,0,0)
+1 Link 76 next step 77 after time 750 ms
+2 Step 76 ColorChange 151 by "color" set to (0,0,0)
+2 Step 76 ColorChange 150 by "color" set to (255,0,0)
+1 Link 77 next step 78 after key press
+2 Step 77 Hide 214 by "hide"
+2 Step 77 Show 218 219 by "show"
+1 Link 78 next step 79 after key press
+2 Step 78 ColorChange 150 by "color" set to (0,0,0)
+2 Step 78 ColorChange 153 by "color" set to (255,0,0)
+1 Link 79 next step 80 after key press
+2 Step 79 ColorChange 153 by "color" set to (0,0,0)
+2 Step 79 ColorChange 155 190 by "color" set to (255,0,0)
+1 Link 80 next step 81 after key press
+2 Step 80 ColorChange 114 151 155 190 194 by "color" set to (0,0,255)
+2 Step 80 Move 158 by "translate" via 221
+2 Step 80 Hide 215 by "hide"
+2 Step 80 Show 224 by "show"
+1 Link 81 next step 82 after time 750 ms
+2 Step 81 ColorChange 151 194 by "color" set to (0,0,0)
+2 Step 81 ColorChange 150 by "color" set to (255,0,0)
+1 Link 82 next step 83 after key press
+2 Step 82 Hide 224 by "hide"
+2 Step 82 Show 225 226 by "show"
+1 Link 83 next step 84 after key press
+2 Step 83 ColorChange 115 153 by "color" set to (255,0,0)
+2 Step 83 ColorChange 150 by "color" set to (0,0,0)
+1 Link 84 next step 85 after key press
+2 Step 84 ColorChange 195 by "color" set to (255,0,0)
+2 Step 84 ColorChange 153 by "color" set to (0,0,255)
+1 Link 85 next step 86 after key press
+2 Step 85 ColorChange 114 115 153 195 by "color" set to (0,0,0)
+2 Step 85 Show 228 by "show"
+2 Step 85 ColorChange 155 190 by "color" set to (255,0,0)
+2 Step 85 Show 229 by "show"
+2 Step 85 Move 158 by "translate" via 230
+1 Link 86 next step 87 after key press
+2 Step 86 ColorChange 155 190 by "color" set to (0,0,255)
+2 Step 86 ColorChange 151 by "color" set to (255,0,0)
+1 Link 87 next step 88 after time 750 ms
+2 Step 87 ColorChange 151 by "color" set to (0,0,0)
+2 Step 87 ColorChange 150 by "color" set to (255,0,0)
+1 Link 88 next step 89 after key press
+2 Step 88 Hide 229 by "hide"
+2 Step 88 Show 231 232 by "show"
+1 Link 89 next step 90 after key press
+2 Step 89 ColorChange 150 by "color" set to (0,0,0)
+2 Step 89 ColorChange 153 by "color" set to (255,0,0)
+1 Link 90 next step 91 after key press
+2 Step 90 ColorChange 153 by "color" set to (0,0,0)
+2 Step 90 ColorChange 155 190 by "color" set to (255,0,0)
+1 Link 91 next step 92 after key press
+2 Step 91 ColorChange 114 115 153 155 190 195 by "color" set to (0,0,255)
+2 Step 91 Move 158 by "translate" via 233
+1 Link 92 next step 93 after key press
+2 Step 92 ColorChange 153 195 by "color" set to (0,0,0)
+2 Step 92 ColorChange 155 190 by "color" set to (255,0,0)
+1 Link 93 next step 94 after key press
+2 Step 93 ColorChange 96 113 153 155 190 195 by "color" set to (0,0,255)
+2 Step 93 ColorChange 114 115 by "color" set to (0,0,0)
+2 Step 93 Move 158 by "translate" via 234
+1 Link 94 next step 95 after key press
+2 Step 94 ColorChange 96 113 153 195 by "color" set to (0,0,0)
+2 Step 94 ColorChange 155 190 by "color" set to (255,0,0)
+1 Link 95 next step 96 after key press
+2 Step 95 Hide 190 194 195 197 200 204 205 207 209 216 218 219 220 225 226 228 231 232 by "hide"
+2 Step 95 Hide 196 by "hide"
+2 Step 95 Hide 213 by "hide"
+2 Step 95 Show 235 by "show"
+2 Step 95 Move 150 by "translate" via 236
+2 Step 95 Move 153 by "translate" via 237
+2 Step 95 ColorChange 155 by "color" set to (0,0,0)
+2 Step 95 Show 238 239 240 by "show"
+1 Link 96 next step 97 after key press
+2 Step 96 ColorChange 155 240 by "color" set to (255,0,0)
+2 Step 96 Show 241 242 by "show"
+1 Link 97 next step 98 after key press
+2 Step 97 ColorChange 155 240 by "color" set to (0,0,255)
+2 Step 97 ColorChange 96 151 by "color" set to (255,0,0)
+1 Link 98 next step 99 after key press
+2 Step 98 ColorChange 151 by "color" set to (0,0,255)
+2 Step 98 ColorChange 238 by "color" set to (255,0,0)
+1 Link 99 next step 100 after key press
+2 Step 99 ColorChange 96 151 238 by "color" set to (0,0,0)
+2 Step 99 Hide 241 by "hide"
+2 Step 99 ColorChange 155 240 by "color" set to (255,0,0)
+2 Step 99 Show 244 245 246 by "show"
+2 Step 99 Move 158 by "translate" via 249
+1 Link 100 next step 101 after key press
+2 Step 100 ColorChange 155 240 by "color" set to (0,0,255)
+2 Step 100 ColorChange 151 by "color" set to (255,0,0)
+1 Link 101 next step 102 after key press
+2 Step 101 ColorChange 151 by "color" set to (0,0,0)
+2 Step 101 ColorChange 153 by "color" set to (255,0,0)
+1 Link 102 next step 103 after time 750 ms
+2 Step 102 ColorChange 153 by "color" set to (0,0,0)
+2 Step 102 ColorChange 150 by "color" set to (255,0,0)
+1 Link 103 next step 104 after key press
+2 Step 103 Hide 246 by "hide"
+2 Step 103 Show 247 248 by "show"
+1 Link 104 next step 105 after key press
+2 Step 104 ColorChange 150 by "color" set to (0,0,0)
+2 Step 104 ColorChange 155 240 by "color" set to (255,0,0)
+1 Link 105 next step 106 after key press
+2 Step 105 Hide 245 by "hide"
+2 Step 105 ColorChange 151 155 238 240 by "color" set to (0,0,255)
+2 Step 105 Show 250 by "show"
+2 Step 105 Move 158 by "translate" via 251
+2 Step 105 ColorChange 113 153 by "color" set to (255,0,0)
+1 Link 106 next step 107 after key press
+2 Step 106 ColorChange 153 by "color" set to (0,0,255)
+2 Step 106 ColorChange 239 by "color" set to (255,0,0)
+1 Link 107 next step 108 after key press
+2 Step 107 ColorChange 113 151 153 238 239 by "color" set to (0,0,0)
+2 Step 107 Move 158 by "translate" via 253
+2 Step 107 Show 252 by "show"
+2 Step 107 ColorChange 155 240 by "color" set to (255,0,0)
+2 Step 107 Hide 250 by "hide"
+2 Step 107 Show 254 255 by "show"
+1 Link 108 next step 109 after key press
+2 Step 108 ColorChange 155 240 by "color" set to (0,0,255)
+2 Step 108 ColorChange 114 151 by "color" set to (255,0,0)
+1 Link 109 next step 110 after key press
+2 Step 109 ColorChange 151 by "color" set to (0,0,255)
+2 Step 109 ColorChange 238 by "color" set to (255,0,0)
+1 Link 110 next step 111 after key press
+2 Step 110 Move 158 by "translate" via 257
+2 Step 110 ColorChange 114 151 238 by "color" set to (0,0,0)
+2 Step 110 Show 258 by "show"
+2 Step 110 ColorChange 155 240 by "color" set to (255,0,0)
+2 Step 110 Hide 255 by "hide"
+2 Step 110 Show 259 by "show"
+2 Step 110 Show 260 by "show"
+1 Link 111 next step 112 after key press
+2 Step 111 ColorChange 155 240 by "color" set to (0,0,255)
+2 Step 111 ColorChange 151 by "color" set to (255,0,0)
+1 Link 112 next step 113 after key press
+2 Step 112 ColorChange 151 by "color" set to (0,0,0)
+2 Step 112 ColorChange 153 by "color" set to (255,0,0)
+1 Link 113 next step 114 after time 750 ms
+2 Step 113 ColorChange 153 by "color" set to (0,0,0)
+2 Step 113 ColorChange 150 by "color" set to (255,0,0)
+1 Link 114 next step 115 after key press
+2 Step 114 Hide 260 by "hide"
+2 Step 114 Show 261 262 by "show"
+1 Link 115 next step 116 after key press
+2 Step 115 ColorChange 150 by "color" set to (0,0,0)
+2 Step 115 ColorChange 155 240 by "color" set to (255,0,0)
+1 Link 116 next step 117 after key press
+2 Step 116 ColorChange 151 155 238 240 by "color" set to (0,0,255)
+2 Step 116 Move 158 by "translate" via 263
+2 Step 116 Hide 259 by "hide"
+2 Step 116 Show 264 by "show"
+1 Link 117 next step 118 after key press
+2 Step 117 ColorChange 151 238 by "color" set to (0,0,0)
+2 Step 117 ColorChange 153 by "color" set to (255,0,0)
+1 Link 118 next step 119 after key press
+2 Step 118 ColorChange 153 by "color" set to (0,0,255)
+2 Step 118 ColorChange 239 by "color" set to (255,0,0)
+1 Link 119 next step 120 after key press
+2 Step 119 ColorChange 115 151 153 238 239 by "color" set to (0,0,0)
+2 Step 119 ColorChange 155 240 by "color" set to (255,0,0)
+2 Step 119 Move 264 by "translate" via 265
+2 Step 119 Show 266 by "show"
+2 Step 119 Move 158 by "translate" via 268
+2 Step 119 Show 267 by "show"
+1 Link 120 next step 121 after key press
+2 Step 120 ColorChange 155 240 by "color" set to (0,0,255)
+2 Step 120 ColorChange 151 by "color" set to (255,0,0)
+1 Link 121 next step 122 after key press
+2 Step 121 ColorChange 151 by "color" set to (0,0,0)
+2 Step 121 ColorChange 153 by "color" set to (255,0,0)
+1 Link 122 next step 123 after time 750 ms
+2 Step 122 ColorChange 150 by "color" set to (255,0,0)
+2 Step 122 ColorChange 153 by "color" set to (0,0,0)
+1 Link 123 next step 124 after key press
+2 Step 123 Hide 264 by "hide"
+2 Step 123 Show 269 270 by "show"
+1 Link 124 next step 125 after key press
+2 Step 124 ColorChange 150 by "color" set to (0,0,0)
+2 Step 124 ColorChange 155 240 by "color" set to (255,0,0)
+1 Link 125 next step 126 after key press
+2 Step 125 ColorChange 114 115 153 155 239 240 by "color" set to (0,0,255)
+2 Step 125 Move 158 by "translate" via 348
+1 Link 126 next step 127 after time 750 ms
+2 Step 126 Hide 266 by "hide"
+2 Step 126 ColorChange 150 by "color" set to (255,0,0)
+2 Step 126 Show 272 by "show"
+2 Step 126 ColorChange 153 239 by "color" set to (0,0,0)
+1 Link 127 next step 128 after key press
+2 Step 127 Hide 272 by "hide"
+2 Step 127 Show 273 274 by "show"
+1 Link 128 next step 129 after key press
+2 Step 128 ColorChange 114 115 150 153 239 by "color" set to (0,0,0)
+2 Step 128 ColorChange 155 240 by "color" set to (255,0,0)
+1 Link 129 next step 130 after key press
+2 Step 129 ColorChange 96 113 153 155 239 240 by "color" set to (0,0,255)
+2 Step 129 Move 158 by "translate" via 349
+1 Link 130 next step 131 after key press
+2 Step 130 Hide 254 by "hide"
+2 Step 130 Show 275 by "show"
+2 Step 130 ColorChange 150 by "color" set to (255,0,0)
+2 Step 130 ColorChange 153 239 by "color" set to (0,0,0)
+1 Link 131 next step 132 after key press
+2 Step 131 Hide 275 by "hide"
+2 Step 131 ColorChange 96 113 153 239 by "color" set to (0,0,0)
+2 Step 131 Show 277 by "show"
+2 Step 131 Show 278 by "show"
+1 Link 132 next step 133 after key press
+2 Step 132 ColorChange 150 by "color" set to (0,0,0)
+2 Step 132 ColorChange 155 240 by "color" set to (255,0,0)
+1 Link 133 next step 134 after key press
+2 Step 133 Hide 150 151 153 155 238 239 240 242 244 247 248 252 258 261 262 267 269 270 273 274 277 278 by "hide"
+2 Step 133 Hide 235 by "hide"
+2 Step 133 Show 285 286 by "show"
+2 Step 133 Show 287 288 289 290 291 292 293 294 295 296 by "show"
+2 Step 133 Move 183 by "translate" via 312
+1 Link 134 next step 135 after key press
+2 Step 134 Move 295 by "translate" timed starting after 10 ticks within 50 ticks via 297
+2 Step 134 Show 310 by "show"
+1 Link 135 next step 136 after key press
+2 Step 135 Show 298 by "show"
+1 Link 136 next step 137 after key press
+2 Step 136 Hide 286 296 298 by "hide"
+2 Step 136 Show 299 by "show"
+2 Step 136 Show 300 301 302 303 304 305 306 by "show"
+2 Step 136 Show 317 318 by "show"
+1 Link 137 next step 138 after key press
+2 Step 137 ColorChange 299 306 by "color" set to (255,0,0)
+1 Link 138 next step 139 after key press
+2 Step 138 ColorChange 299 306 by "color" set to (0,0,255)
+2 Step 138 ColorChange 300 305 by "color" set to (255,0,0)
+1 Link 139 next step 140 after key press
+2 Step 139 ColorChange 300 305 by "color" set to (0,0,255)
+2 Step 139 ColorChange 301 by "color" set to (255,0,0)
+2 Step 139 Move 294 by "translate" via 308
+2 Step 139 Show 307 by "show"
+2 Step 139 Move 310 by "translate" within 50 ticks via 311
+1 Link 140 next step 141 after time 750 ms
+2 Step 140 ColorChange 301 by "color" set to (0,0,0)
+2 Step 140 ColorChange 304 by "color" set to (255,0,0)
+1 Link 141 next step 142 after key press
+2 Step 141 Hide 307 by "hide"
+2 Step 141 Show 313 by "show"
+2 Step 141 Show 314 by "show"
+1 Link 142 next step 143 after key press
+2 Step 142 ColorChange 304 by "color" set to (0,0,0)
+2 Step 142 ColorChange 96 302 by "color" set to (255,0,0)
+1 Link 143 next step 144 after key press
+2 Step 143 ColorChange 302 by "color" set to (0,0,255)
+2 Step 143 ColorChange 318 by "color" set to (255,0,0)
+1 Link 144 next step 145 after key press
+2 Step 144 Move 295 by "translate" via 320
+2 Step 144 Show 321 by "show"
+2 Step 144 ColorChange 96 318 by "color" set to (0,0,255)
+1 Link 145 next step 146 after key press
+2 Step 145 ColorChange 302 318 by "color" set to (0,0,0)
+2 Step 145 ColorChange 113 303 by "color" set to (255,0,0)
+1 Link 146 next step 147 after key press
+2 Step 146 ColorChange 303 by "color" set to (0,0,255)
+2 Step 146 ColorChange 317 by "color" set to (255,0,0)
+1 Link 147 next step 148 after key press
+2 Step 147 Move 295 by "translate" via 323
+2 Step 147 Show 322 by "show"
+2 Step 147 ColorChange 113 317 by "color" set to (0,0,255)
+1 Link 148 next step 149 after key press
+2 Step 148 ColorChange 96 113 303 317 by "color" set to (0,0,0)
+2 Step 148 ColorChange 300 305 by "color" set to (255,0,0)
+2 Step 148 Hide 310 by "hide"
+1 Link 149 next step 150 after key press
+2 Step 149 ColorChange 300 305 by "color" set to (0,0,255)
+2 Step 149 ColorChange 301 by "color" set to (255,0,0)
+1 Link 150 next step 151 after key press
+2 Step 150 Move 294 by "translate" via 324
+2 Step 150 Move 321 by "translate" via 325
+2 Step 150 Show 326 by "show"
+1 Link 151 next step 152 after key press
+2 Step 151 ColorChange 301 by "color" set to (0,0,0)
+2 Step 151 ColorChange 304 by "color" set to (255,0,0)
+1 Link 152 next step 153 after key press
+2 Step 152 Hide 326 by "hide"
+2 Step 152 Show 327 328 by "show"
+1 Link 153 next step 154 after key press
+2 Step 153 ColorChange 304 by "color" set to (0,0,0)
+2 Step 153 ColorChange 302 by "color" set to (255,0,0)
+1 Link 154 next step 155 after key press
+2 Step 154 ColorChange 302 by "color" set to (0,0,0)
+2 Step 154 ColorChange 303 by "color" set to (255,0,0)
+1 Link 155 next step 156 after key press
+2 Step 155 ColorChange 303 by "color" set to (0,0,0)
+2 Step 155 ColorChange 300 305 by "color" set to (255,0,0)
+1 Link 156 next step 157 after key press
+2 Step 156 ColorChange 300 305 by "color" set to (0,0,255)
+2 Step 156 ColorChange 301 by "color" set to (255,0,0)
+1 Link 157 next step 158 after key press
+2 Step 157 Move 294 by "translate" via 330
+2 Step 157 Move 322 by "translate" via 331
+2 Step 157 Hide 331 by "hide"
+2 Step 157 Hide 321 by "hide"
+1 Link 158 next step 159 after time 750 ms
+2 Step 158 ColorChange 301 by "color" set to (0,0,0)
+2 Step 158 ColorChange 304 by "color" set to (255,0,0)
+1 Link 159 next step 160 after key press
+2 Step 159 Hide 35 by "hide"
+2 Step 159 Show 332 by "show"
+2 Step 159 Show 333 by "show"
+1 Link 160 next step 161 after key press
+2 Step 160 ColorChange 304 by "color" set to (0,0,0)
+2 Step 160 ColorChange 114 302 by "color" set to (255,0,0)
+1 Link 161 next step 162 after key press
+2 Step 161 ColorChange 302 by "color" set to (0,0,255)
+2 Step 161 ColorChange 318 by "color" set to (255,0,0)
+1 Link 162 next step 163 after key press
+2 Step 162 Move 295 by "translate" via 335
+2 Step 162 Show 334 by "show"
+1 Link 163 next step 164 after key press
+2 Step 163 ColorChange 302 318 by "color" set to (0,0,0)
+2 Step 163 ColorChange 114 by "color" set to (0,0,255)
+2 Step 163 ColorChange 115 303 by "color" set to (255,0,0)
+1 Link 164 next step 165 after key press
+2 Step 164 ColorChange 303 by "color" set to (0,0,255)
+2 Step 164 ColorChange 317 by "color" set to (255,0,0)
+1 Link 165 next step 166 after key press
+2 Step 165 Move 295 by "translate" via 337
+2 Step 165 Show 336 by "show"
+1 Link 166 next step 167 after key press
+2 Step 166 ColorChange 114 115 303 317 by "color" set to (0,0,0)
+2 Step 166 ColorChange 300 305 by "color" set to (255,0,0)
+1 Link 167 next step 168 after key press
+2 Step 167 ColorChange 300 305 by "color" set to (0,0,255)
+2 Step 167 ColorChange 301 by "color" set to (255,0,0)
+1 Link 168 next step 169 after key press
+2 Step 168 Hide 321 322 by "hide"
+2 Step 168 Move 334 by "translate" via 338
+2 Step 168 Move 294 by "translate" via 339
+2 Step 168 Show 340 by "show"
+1 Link 169 next step 170 after key press
+2 Step 169 ColorChange 301 by "color" set to (0,0,0)
+2 Step 169 ColorChange 304 by "color" set to (255,0,0)
+1 Link 170 next step 171 after key press
+2 Step 170 Hide 340 by "hide"
+2 Step 170 Show 341 by "show"
+2 Step 170 Show 342 by "show"
+1 Link 171 next step 172 after key press
+2 Step 171 ColorChange 304 by "color" set to (0,0,0)
+2 Step 171 ColorChange 302 by "color" set to (255,0,0)
+1 Link 172 next step 173 after key press
+2 Step 172 ColorChange 302 by "color" set to (0,0,0)
+2 Step 172 ColorChange 303 by "color" set to (255,0,0)
+1 Link 173 next step 174 after key press
+2 Step 173 ColorChange 303 by "color" set to (0,0,0)
+2 Step 173 ColorChange 300 305 by "color" set to (255,0,0)
+1 Link 174 next step 175 after key press
+2 Step 174 ColorChange 300 305 by "color" set to (0,0,255)
+2 Step 174 ColorChange 301 by "color" set to (255,0,0)
+1 Link 175 next step 176 after key press
+2 Step 175 Move 294 by "translate" via 343
+2 Step 175 Hide 334 by "hide"
+2 Step 175 Move 336 by "translate" via 344
+2 Step 175 Show 345 by "show"
+1 Link 176 next step 177 after key press
+2 Step 176 ColorChange 301 by "color" set to (0,0,0)
+2 Step 176 ColorChange 304 by "color" set to (255,0,0)
+1 Link 177 next step 178 after key press
+2 Step 177 Hide 345 by "hide"
+2 Step 177 Show 346 347 by "show"
+1 Link 178 next step 179 after key press
+2 Step 178 ColorChange 304 by "color" set to (0,0,0)
+2 Step 178 ColorChange 302 by "color" set to (255,0,0)
+1 Link 179 next step 180 after key press
+2 Step 179 ColorChange 302 by "color" set to (0,0,0)
+2 Step 179 ColorChange 303 by "color" set to (255,0,0)
+1 Link 180 next step 181 after key press
+2 Step 180 ColorChange 303 by "color" set to (0,0,0)
+2 Step 180 ColorChange 300 305 by "color" set to (255,0,0)
+1 Link 181 next step 182 after key press
+2 Step 181 ColorChange 300 305 by "color" set to (0,0,0)
+2 Step 181 ColorChange 299 306 by "color" set to (255,0,0)
+1 Link 182 next step 2147483647 after key press
+2 Step 182 ColorChange 299 306 by "color" set to (0,0,0)
+1 Link END
+Next 350

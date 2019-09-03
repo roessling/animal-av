@@ -1,0 +1,12 @@
+@import=generators/network/resources/Generic.en_US
+ALGOCLASS=Graph Algorithms
+ALGONAME=Kruskal's Algorithm
+LBL_QS_TOTAL_WEIGHT=Question: Total weight
+QS_TOTAL_WEIGHT=What is the total weight of all edges in the minimum spanning tree?
+ANS_TOTAL_WEIGHT=The total weight of all edges in the minimum spanning tree is {0}
+LBL_QS_NEXT_EDGE=Question: Next edge
+QS_NEXT_EDGE=Which edge is added next?
+ANS_NEXT_EDGE=The next edge added is {0} with weight {1}
+ANS_NEXT_EDGE_WEIGHT_ERROR=The next edge added is {0} with weight {1}. The chosen edge has a higher weight and is therefore not selected.
+ANS_NEXT_EDGE_SORT_ERROR=The next edge added is {0} with weight {1}. The chosen edge has the same weight but the list order is different.
+ANS_NEXT_EDGE_LOOP_ERROR=The next edge added is {0} with weight {1}. The chosen edge creates a cycle which is not allowed in a spanning tree.

@@ -1,0 +1,19 @@
+procedure 'Round Robin Scheduling'
+ 
+do forever {
+if (queue is empty)
+wait 1 time unit;	
+else
+slice <- k;		
+while (slice > 0 && first is not finished) {		
+execute first for 1 time unit;
+decrement slice;
+}
+if (first is finished)
+remove first from the queue;
+else
+rotate the queue;
+ 
+ 
+} 
+ 

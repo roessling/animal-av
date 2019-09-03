@@ -1,0 +1,10 @@
+@import=resources/GenericGnomeSort.en_US
+theName=Gnome Sort (ICS2)
+algoName=Gnome Sort (ICS2)
+outputLanguage=Java
+codeExample=public void sort() {\n  gnome = 1;\n  while(gnome <= a.length - 1) {\n    if(a[gnome - 1] <= a[gnome]) {\n      gnome++;\n    } else {\n      int tmp = a[gnome - 1];\n      a[gnome - 1] = a[gnome];\n      a[gnome] = tmp;\n      gnome--;\n      if(gnome == 0)\n        gnome = 1;\n    }\n  }\n}
+animTitle=Gnome Sort (ICS2)
+algoTitle=Gnome Sort (ICS2
+description.filename=resources/JavaGnomeSortICS2_descr_en.txt
+code.filename=resources/JavaGnomeSortICS2_code_en.txt
+complexity.filename=resources/JavaGnomeSortICS2_complexity_en.txt

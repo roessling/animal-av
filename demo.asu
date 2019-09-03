@@ -1,0 +1,2765 @@
+%Animal 2 640*480
+title "GnomeSort Animation"
+author "hiuig"
+{
+text "title" "GnomeSort" (100, 20) color (0, 0, 0) depth 1 font Monospaced size 18
+}
+{
+codegroup "sourceCode" at (40, 160) color (0, 0, 144) highlightColor (255, 0, 0) contextColor (0, 0, 255) font SansSerif size 12 depth 1
+addCodeLine "void gnomesort() {" to "sourceCode"
+addCodeLine "int i = 0;" to "sourceCode" indentation 1
+addCodeLine "while (i < arraylaenge) {" to "sourceCode" indentation 1
+addCodeLine "if (i == 0  ||  Eintrag i-1 <= Eintrag i) {" to "sourceCode" indentation 2
+addCodeLine "i++;" to "sourceCode" indentation 3
+addCodeLine "}" to "sourceCode" indentation 2
+addCodeLine "else {" to "sourceCode" indentation 2
+addCodeLine "Tausche Eintrag i-1 und i;" to "sourceCode" indentation 3
+addCodeLine "i--;" to "sourceCode" indentation 3
+addCodeLine "}" to "sourceCode" indentation 2
+addCodeLine "}" to "sourceCode" indentation 1
+addCodeLine "}" to "sourceCode"
+}
+{
+array "intArray" (20, 120) color (0, 0, 0) fillColor (255, 255, 255) elementColor (0, 0, 0) elemHighlight (0, 0, 0) cellHighlight (255, 200, 0) horizontal length 16 "1" "2" "3" "4" "5" "6" "0" "0" "0" "0" "0" "0" "0" "0" "0" "0" depth 1 
+}
+{
+highlightCode on "sourceCode" line 0
+}
+{
+unhighlightCode on "sourceCode" line 0
+highlightCode on "sourceCode" line 1
+arrayMarker "i" on "intArray" atIndex 0 label "  i" color (0, 0, 0) depth 1
+}
+{
+unhighlightCode on "sourceCode" line 1
+highlightCode on "sourceCode" line 2
+}
+{
+unhighlightCode on "sourceCode" line 2
+highlightCode on "sourceCode" line 3
+}
+{
+unhighlightCode on "sourceCode" line 3
+highlightCode on "sourceCode" line 4
+moveArrayMarker "i" to position 1  
+}
+{
+unhighlightCode on "sourceCode" line 4
+highlightCode on "sourceCode" line 2
+}
+{
+unhighlightCode on "sourceCode" line 2
+highlightCode on "sourceCode" line 3
+}
+{
+unhighlightCode on "sourceCode" line 3
+highlightCode on "sourceCode" line 4
+moveArrayMarker "i" to position 2  
+}
+{
+unhighlightCode on "sourceCode" line 4
+highlightCode on "sourceCode" line 2
+}
+{
+unhighlightCode on "sourceCode" line 2
+highlightCode on "sourceCode" line 3
+}
+{
+unhighlightCode on "sourceCode" line 3
+highlightCode on "sourceCode" line 4
+moveArrayMarker "i" to position 3  
+}
+{
+unhighlightCode on "sourceCode" line 4
+highlightCode on "sourceCode" line 2
+}
+{
+unhighlightCode on "sourceCode" line 2
+highlightCode on "sourceCode" line 3
+}
+{
+unhighlightCode on "sourceCode" line 3
+highlightCode on "sourceCode" line 4
+moveArrayMarker "i" to position 4  
+}
+{
+unhighlightCode on "sourceCode" line 4
+highlightCode on "sourceCode" line 2
+}
+{
+unhighlightCode on "sourceCode" line 2
+highlightCode on "sourceCode" line 3
+}
+{
+unhighlightCode on "sourceCode" line 3
+highlightCode on "sourceCode" line 4
+moveArrayMarker "i" to position 5  
+}
+{
+unhighlightCode on "sourceCode" line 4
+highlightCode on "sourceCode" line 2
+}
+{
+unhighlightCode on "sourceCode" line 2
+highlightCode on "sourceCode" line 3
+}
+{
+unhighlightCode on "sourceCode" line 3
+highlightCode on "sourceCode" line 4
+moveArrayMarker "i" to position 6  
+}
+{
+unhighlightCode on "sourceCode" line 4
+highlightCode on "sourceCode" line 2
+}
+{
+unhighlightCode on "sourceCode" line 2
+highlightCode on "sourceCode" line 3
+}
+{
+unhighlightCode on "sourceCode" line 3
+highlightCode on "sourceCode" line 6
+}
+{
+unhighlightCode on "sourceCode" line 6
+highlightCode on "sourceCode" line 7
+highlightArrayCell on "intArray" position 6
+highlightArrayCell on "intArray" position 5
+}
+{
+arrayPut "6" on "intArray" position 6  
+arrayPut "0" on "intArray" position 5  
+}
+{
+unhighlightCode on "sourceCode" line 7
+highlightCode on "sourceCode" line 8
+unhighlightArrayCell on "intArray" position 6
+unhighlightArrayCell on "intArray" position 5
+moveArrayMarker "i" to position 5  
+}
+{
+unhighlightCode on "sourceCode" line 8
+highlightCode on "sourceCode" line 2
+}
+{
+unhighlightCode on "sourceCode" line 2
+highlightCode on "sourceCode" line 3
+}
+{
+unhighlightCode on "sourceCode" line 3
+highlightCode on "sourceCode" line 6
+}
+{
+unhighlightCode on "sourceCode" line 6
+highlightCode on "sourceCode" line 7
+highlightArrayCell on "intArray" position 5
+highlightArrayCell on "intArray" position 4
+}
+{
+arrayPut "5" on "intArray" position 5  
+arrayPut "0" on "intArray" position 4  
+}
+{
+unhighlightCode on "sourceCode" line 7
+highlightCode on "sourceCode" line 8
+unhighlightArrayCell on "intArray" position 5
+unhighlightArrayCell on "intArray" position 4
+moveArrayMarker "i" to position 4  
+}
+{
+unhighlightCode on "sourceCode" line 8
+highlightCode on "sourceCode" line 2
+}
+{
+unhighlightCode on "sourceCode" line 2
+highlightCode on "sourceCode" line 3
+}
+{
+unhighlightCode on "sourceCode" line 3
+highlightCode on "sourceCode" line 6
+}
+{
+unhighlightCode on "sourceCode" line 6
+highlightCode on "sourceCode" line 7
+highlightArrayCell on "intArray" position 4
+highlightArrayCell on "intArray" position 3
+}
+{
+arrayPut "4" on "intArray" position 4  
+arrayPut "0" on "intArray" position 3  
+}
+{
+unhighlightCode on "sourceCode" line 7
+highlightCode on "sourceCode" line 8
+unhighlightArrayCell on "intArray" position 4
+unhighlightArrayCell on "intArray" position 3
+moveArrayMarker "i" to position 3  
+}
+{
+unhighlightCode on "sourceCode" line 8
+highlightCode on "sourceCode" line 2
+}
+{
+unhighlightCode on "sourceCode" line 2
+highlightCode on "sourceCode" line 3
+}
+{
+unhighlightCode on "sourceCode" line 3
+highlightCode on "sourceCode" line 6
+}
+{
+unhighlightCode on "sourceCode" line 6
+highlightCode on "sourceCode" line 7
+highlightArrayCell on "intArray" position 3
+highlightArrayCell on "intArray" position 2
+}
+{
+arrayPut "3" on "intArray" position 3  
+arrayPut "0" on "intArray" position 2  
+}
+{
+unhighlightCode on "sourceCode" line 7
+highlightCode on "sourceCode" line 8
+unhighlightArrayCell on "intArray" position 3
+unhighlightArrayCell on "intArray" position 2
+moveArrayMarker "i" to position 2  
+}
+{
+unhighlightCode on "sourceCode" line 8
+highlightCode on "sourceCode" line 2
+}
+{
+unhighlightCode on "sourceCode" line 2
+highlightCode on "sourceCode" line 3
+}
+{
+unhighlightCode on "sourceCode" line 3
+highlightCode on "sourceCode" line 6
+}
+{
+unhighlightCode on "sourceCode" line 6
+highlightCode on "sourceCode" line 7
+highlightArrayCell on "intArray" position 2
+highlightArrayCell on "intArray" position 1
+}
+{
+arrayPut "2" on "intArray" position 2  
+arrayPut "0" on "intArray" position 1  
+}
+{
+unhighlightCode on "sourceCode" line 7
+highlightCode on "sourceCode" line 8
+unhighlightArrayCell on "intArray" position 2
+unhighlightArrayCell on "intArray" position 1
+moveArrayMarker "i" to position 1  
+}
+{
+unhighlightCode on "sourceCode" line 8
+highlightCode on "sourceCode" line 2
+}
+{
+unhighlightCode on "sourceCode" line 2
+highlightCode on "sourceCode" line 3
+}
+{
+unhighlightCode on "sourceCode" line 3
+highlightCode on "sourceCode" line 6
+}
+{
+unhighlightCode on "sourceCode" line 6
+highlightCode on "sourceCode" line 7
+highlightArrayCell on "intArray" position 1
+highlightArrayCell on "intArray" position 0
+}
+{
+arrayPut "1" on "intArray" position 1  
+arrayPut "0" on "intArray" position 0  
+}
+{
+unhighlightCode on "sourceCode" line 7
+highlightCode on "sourceCode" line 8
+unhighlightArrayCell on "intArray" position 1
+unhighlightArrayCell on "intArray" position 0
+moveArrayMarker "i" to position 0  
+}
+{
+unhighlightCode on "sourceCode" line 8
+highlightCode on "sourceCode" line 2
+}
+{
+unhighlightCode on "sourceCode" line 2
+highlightCode on "sourceCode" line 3
+}
+{
+unhighlightCode on "sourceCode" line 3
+highlightCode on "sourceCode" line 4
+moveArrayMarker "i" to position 1  
+}
+{
+unhighlightCode on "sourceCode" line 4
+highlightCode on "sourceCode" line 2
+}
+{
+unhighlightCode on "sourceCode" line 2
+highlightCode on "sourceCode" line 3
+}
+{
+unhighlightCode on "sourceCode" line 3
+highlightCode on "sourceCode" line 4
+moveArrayMarker "i" to position 2  
+}
+{
+unhighlightCode on "sourceCode" line 4
+highlightCode on "sourceCode" line 2
+}
+{
+unhighlightCode on "sourceCode" line 2
+highlightCode on "sourceCode" line 3
+}
+{
+unhighlightCode on "sourceCode" line 3
+highlightCode on "sourceCode" line 4
+moveArrayMarker "i" to position 3  
+}
+{
+unhighlightCode on "sourceCode" line 4
+highlightCode on "sourceCode" line 2
+}
+{
+unhighlightCode on "sourceCode" line 2
+highlightCode on "sourceCode" line 3
+}
+{
+unhighlightCode on "sourceCode" line 3
+highlightCode on "sourceCode" line 4
+moveArrayMarker "i" to position 4  
+}
+{
+unhighlightCode on "sourceCode" line 4
+highlightCode on "sourceCode" line 2
+}
+{
+unhighlightCode on "sourceCode" line 2
+highlightCode on "sourceCode" line 3
+}
+{
+unhighlightCode on "sourceCode" line 3
+highlightCode on "sourceCode" line 4
+moveArrayMarker "i" to position 5  
+}
+{
+unhighlightCode on "sourceCode" line 4
+highlightCode on "sourceCode" line 2
+}
+{
+unhighlightCode on "sourceCode" line 2
+highlightCode on "sourceCode" line 3
+}
+{
+unhighlightCode on "sourceCode" line 3
+highlightCode on "sourceCode" line 4
+moveArrayMarker "i" to position 6  
+}
+{
+unhighlightCode on "sourceCode" line 4
+highlightCode on "sourceCode" line 2
+}
+{
+unhighlightCode on "sourceCode" line 2
+highlightCode on "sourceCode" line 3
+}
+{
+unhighlightCode on "sourceCode" line 3
+highlightCode on "sourceCode" line 4
+moveArrayMarker "i" to position 7  
+}
+{
+unhighlightCode on "sourceCode" line 4
+highlightCode on "sourceCode" line 2
+}
+{
+unhighlightCode on "sourceCode" line 2
+highlightCode on "sourceCode" line 3
+}
+{
+unhighlightCode on "sourceCode" line 3
+highlightCode on "sourceCode" line 6
+}
+{
+unhighlightCode on "sourceCode" line 6
+highlightCode on "sourceCode" line 7
+highlightArrayCell on "intArray" position 7
+highlightArrayCell on "intArray" position 6
+}
+{
+arrayPut "6" on "intArray" position 7  
+arrayPut "0" on "intArray" position 6  
+}
+{
+unhighlightCode on "sourceCode" line 7
+highlightCode on "sourceCode" line 8
+unhighlightArrayCell on "intArray" position 7
+unhighlightArrayCell on "intArray" position 6
+moveArrayMarker "i" to position 6  
+}
+{
+unhighlightCode on "sourceCode" line 8
+highlightCode on "sourceCode" line 2
+}
+{
+unhighlightCode on "sourceCode" line 2
+highlightCode on "sourceCode" line 3
+}
+{
+unhighlightCode on "sourceCode" line 3
+highlightCode on "sourceCode" line 6
+}
+{
+unhighlightCode on "sourceCode" line 6
+highlightCode on "sourceCode" line 7
+highlightArrayCell on "intArray" position 6
+highlightArrayCell on "intArray" position 5
+}
+{
+arrayPut "5" on "intArray" position 6  
+arrayPut "0" on "intArray" position 5  
+}
+{
+unhighlightCode on "sourceCode" line 7
+highlightCode on "sourceCode" line 8
+unhighlightArrayCell on "intArray" position 6
+unhighlightArrayCell on "intArray" position 5
+moveArrayMarker "i" to position 5  
+}
+{
+unhighlightCode on "sourceCode" line 8
+highlightCode on "sourceCode" line 2
+}
+{
+unhighlightCode on "sourceCode" line 2
+highlightCode on "sourceCode" line 3
+}
+{
+unhighlightCode on "sourceCode" line 3
+highlightCode on "sourceCode" line 6
+}
+{
+unhighlightCode on "sourceCode" line 6
+highlightCode on "sourceCode" line 7
+highlightArrayCell on "intArray" position 5
+highlightArrayCell on "intArray" position 4
+}
+{
+arrayPut "4" on "intArray" position 5  
+arrayPut "0" on "intArray" position 4  
+}
+{
+unhighlightCode on "sourceCode" line 7
+highlightCode on "sourceCode" line 8
+unhighlightArrayCell on "intArray" position 5
+unhighlightArrayCell on "intArray" position 4
+moveArrayMarker "i" to position 4  
+}
+{
+unhighlightCode on "sourceCode" line 8
+highlightCode on "sourceCode" line 2
+}
+{
+unhighlightCode on "sourceCode" line 2
+highlightCode on "sourceCode" line 3
+}
+{
+unhighlightCode on "sourceCode" line 3
+highlightCode on "sourceCode" line 6
+}
+{
+unhighlightCode on "sourceCode" line 6
+highlightCode on "sourceCode" line 7
+highlightArrayCell on "intArray" position 4
+highlightArrayCell on "intArray" position 3
+}
+{
+arrayPut "3" on "intArray" position 4  
+arrayPut "0" on "intArray" position 3  
+}
+{
+unhighlightCode on "sourceCode" line 7
+highlightCode on "sourceCode" line 8
+unhighlightArrayCell on "intArray" position 4
+unhighlightArrayCell on "intArray" position 3
+moveArrayMarker "i" to position 3  
+}
+{
+unhighlightCode on "sourceCode" line 8
+highlightCode on "sourceCode" line 2
+}
+{
+unhighlightCode on "sourceCode" line 2
+highlightCode on "sourceCode" line 3
+}
+{
+unhighlightCode on "sourceCode" line 3
+highlightCode on "sourceCode" line 6
+}
+{
+unhighlightCode on "sourceCode" line 6
+highlightCode on "sourceCode" line 7
+highlightArrayCell on "intArray" position 3
+highlightArrayCell on "intArray" position 2
+}
+{
+arrayPut "2" on "intArray" position 3  
+arrayPut "0" on "intArray" position 2  
+}
+{
+unhighlightCode on "sourceCode" line 7
+highlightCode on "sourceCode" line 8
+unhighlightArrayCell on "intArray" position 3
+unhighlightArrayCell on "intArray" position 2
+moveArrayMarker "i" to position 2  
+}
+{
+unhighlightCode on "sourceCode" line 8
+highlightCode on "sourceCode" line 2
+}
+{
+unhighlightCode on "sourceCode" line 2
+highlightCode on "sourceCode" line 3
+}
+{
+unhighlightCode on "sourceCode" line 3
+highlightCode on "sourceCode" line 6
+}
+{
+unhighlightCode on "sourceCode" line 6
+highlightCode on "sourceCode" line 7
+highlightArrayCell on "intArray" position 2
+highlightArrayCell on "intArray" position 1
+}
+{
+arrayPut "1" on "intArray" position 2  
+arrayPut "0" on "intArray" position 1  
+}
+{
+unhighlightCode on "sourceCode" line 7
+highlightCode on "sourceCode" line 8
+unhighlightArrayCell on "intArray" position 2
+unhighlightArrayCell on "intArray" position 1
+moveArrayMarker "i" to position 1  
+}
+{
+unhighlightCode on "sourceCode" line 8
+highlightCode on "sourceCode" line 2
+}
+{
+unhighlightCode on "sourceCode" line 2
+highlightCode on "sourceCode" line 3
+}
+{
+unhighlightCode on "sourceCode" line 3
+highlightCode on "sourceCode" line 4
+moveArrayMarker "i" to position 2  
+}
+{
+unhighlightCode on "sourceCode" line 4
+highlightCode on "sourceCode" line 2
+}
+{
+unhighlightCode on "sourceCode" line 2
+highlightCode on "sourceCode" line 3
+}
+{
+unhighlightCode on "sourceCode" line 3
+highlightCode on "sourceCode" line 4
+moveArrayMarker "i" to position 3  
+}
+{
+unhighlightCode on "sourceCode" line 4
+highlightCode on "sourceCode" line 2
+}
+{
+unhighlightCode on "sourceCode" line 2
+highlightCode on "sourceCode" line 3
+}
+{
+unhighlightCode on "sourceCode" line 3
+highlightCode on "sourceCode" line 4
+moveArrayMarker "i" to position 4  
+}
+{
+unhighlightCode on "sourceCode" line 4
+highlightCode on "sourceCode" line 2
+}
+{
+unhighlightCode on "sourceCode" line 2
+highlightCode on "sourceCode" line 3
+}
+{
+unhighlightCode on "sourceCode" line 3
+highlightCode on "sourceCode" line 4
+moveArrayMarker "i" to position 5  
+}
+{
+unhighlightCode on "sourceCode" line 4
+highlightCode on "sourceCode" line 2
+}
+{
+unhighlightCode on "sourceCode" line 2
+highlightCode on "sourceCode" line 3
+}
+{
+unhighlightCode on "sourceCode" line 3
+highlightCode on "sourceCode" line 4
+moveArrayMarker "i" to position 6  
+}
+{
+unhighlightCode on "sourceCode" line 4
+highlightCode on "sourceCode" line 2
+}
+{
+unhighlightCode on "sourceCode" line 2
+highlightCode on "sourceCode" line 3
+}
+{
+unhighlightCode on "sourceCode" line 3
+highlightCode on "sourceCode" line 4
+moveArrayMarker "i" to position 7  
+}
+{
+unhighlightCode on "sourceCode" line 4
+highlightCode on "sourceCode" line 2
+}
+{
+unhighlightCode on "sourceCode" line 2
+highlightCode on "sourceCode" line 3
+}
+{
+unhighlightCode on "sourceCode" line 3
+highlightCode on "sourceCode" line 4
+moveArrayMarker "i" to position 8  
+}
+{
+unhighlightCode on "sourceCode" line 4
+highlightCode on "sourceCode" line 2
+}
+{
+unhighlightCode on "sourceCode" line 2
+highlightCode on "sourceCode" line 3
+}
+{
+unhighlightCode on "sourceCode" line 3
+highlightCode on "sourceCode" line 6
+}
+{
+unhighlightCode on "sourceCode" line 6
+highlightCode on "sourceCode" line 7
+highlightArrayCell on "intArray" position 8
+highlightArrayCell on "intArray" position 7
+}
+{
+arrayPut "6" on "intArray" position 8  
+arrayPut "0" on "intArray" position 7  
+}
+{
+unhighlightCode on "sourceCode" line 7
+highlightCode on "sourceCode" line 8
+unhighlightArrayCell on "intArray" position 8
+unhighlightArrayCell on "intArray" position 7
+moveArrayMarker "i" to position 7  
+}
+{
+unhighlightCode on "sourceCode" line 8
+highlightCode on "sourceCode" line 2
+}
+{
+unhighlightCode on "sourceCode" line 2
+highlightCode on "sourceCode" line 3
+}
+{
+unhighlightCode on "sourceCode" line 3
+highlightCode on "sourceCode" line 6
+}
+{
+unhighlightCode on "sourceCode" line 6
+highlightCode on "sourceCode" line 7
+highlightArrayCell on "intArray" position 7
+highlightArrayCell on "intArray" position 6
+}
+{
+arrayPut "5" on "intArray" position 7  
+arrayPut "0" on "intArray" position 6  
+}
+{
+unhighlightCode on "sourceCode" line 7
+highlightCode on "sourceCode" line 8
+unhighlightArrayCell on "intArray" position 7
+unhighlightArrayCell on "intArray" position 6
+moveArrayMarker "i" to position 6  
+}
+{
+unhighlightCode on "sourceCode" line 8
+highlightCode on "sourceCode" line 2
+}
+{
+unhighlightCode on "sourceCode" line 2
+highlightCode on "sourceCode" line 3
+}
+{
+unhighlightCode on "sourceCode" line 3
+highlightCode on "sourceCode" line 6
+}
+{
+unhighlightCode on "sourceCode" line 6
+highlightCode on "sourceCode" line 7
+highlightArrayCell on "intArray" position 6
+highlightArrayCell on "intArray" position 5
+}
+{
+arrayPut "4" on "intArray" position 6  
+arrayPut "0" on "intArray" position 5  
+}
+{
+unhighlightCode on "sourceCode" line 7
+highlightCode on "sourceCode" line 8
+unhighlightArrayCell on "intArray" position 6
+unhighlightArrayCell on "intArray" position 5
+moveArrayMarker "i" to position 5  
+}
+{
+unhighlightCode on "sourceCode" line 8
+highlightCode on "sourceCode" line 2
+}
+{
+unhighlightCode on "sourceCode" line 2
+highlightCode on "sourceCode" line 3
+}
+{
+unhighlightCode on "sourceCode" line 3
+highlightCode on "sourceCode" line 6
+}
+{
+unhighlightCode on "sourceCode" line 6
+highlightCode on "sourceCode" line 7
+highlightArrayCell on "intArray" position 5
+highlightArrayCell on "intArray" position 4
+}
+{
+arrayPut "3" on "intArray" position 5  
+arrayPut "0" on "intArray" position 4  
+}
+{
+unhighlightCode on "sourceCode" line 7
+highlightCode on "sourceCode" line 8
+unhighlightArrayCell on "intArray" position 5
+unhighlightArrayCell on "intArray" position 4
+moveArrayMarker "i" to position 4  
+}
+{
+unhighlightCode on "sourceCode" line 8
+highlightCode on "sourceCode" line 2
+}
+{
+unhighlightCode on "sourceCode" line 2
+highlightCode on "sourceCode" line 3
+}
+{
+unhighlightCode on "sourceCode" line 3
+highlightCode on "sourceCode" line 6
+}
+{
+unhighlightCode on "sourceCode" line 6
+highlightCode on "sourceCode" line 7
+highlightArrayCell on "intArray" position 4
+highlightArrayCell on "intArray" position 3
+}
+{
+arrayPut "2" on "intArray" position 4  
+arrayPut "0" on "intArray" position 3  
+}
+{
+unhighlightCode on "sourceCode" line 7
+highlightCode on "sourceCode" line 8
+unhighlightArrayCell on "intArray" position 4
+unhighlightArrayCell on "intArray" position 3
+moveArrayMarker "i" to position 3  
+}
+{
+unhighlightCode on "sourceCode" line 8
+highlightCode on "sourceCode" line 2
+}
+{
+unhighlightCode on "sourceCode" line 2
+highlightCode on "sourceCode" line 3
+}
+{
+unhighlightCode on "sourceCode" line 3
+highlightCode on "sourceCode" line 6
+}
+{
+unhighlightCode on "sourceCode" line 6
+highlightCode on "sourceCode" line 7
+highlightArrayCell on "intArray" position 3
+highlightArrayCell on "intArray" position 2
+}
+{
+arrayPut "1" on "intArray" position 3  
+arrayPut "0" on "intArray" position 2  
+}
+{
+unhighlightCode on "sourceCode" line 7
+highlightCode on "sourceCode" line 8
+unhighlightArrayCell on "intArray" position 3
+unhighlightArrayCell on "intArray" position 2
+moveArrayMarker "i" to position 2  
+}
+{
+unhighlightCode on "sourceCode" line 8
+highlightCode on "sourceCode" line 2
+}
+{
+unhighlightCode on "sourceCode" line 2
+highlightCode on "sourceCode" line 3
+}
+{
+unhighlightCode on "sourceCode" line 3
+highlightCode on "sourceCode" line 4
+moveArrayMarker "i" to position 3  
+}
+{
+unhighlightCode on "sourceCode" line 4
+highlightCode on "sourceCode" line 2
+}
+{
+unhighlightCode on "sourceCode" line 2
+highlightCode on "sourceCode" line 3
+}
+{
+unhighlightCode on "sourceCode" line 3
+highlightCode on "sourceCode" line 4
+moveArrayMarker "i" to position 4  
+}
+{
+unhighlightCode on "sourceCode" line 4
+highlightCode on "sourceCode" line 2
+}
+{
+unhighlightCode on "sourceCode" line 2
+highlightCode on "sourceCode" line 3
+}
+{
+unhighlightCode on "sourceCode" line 3
+highlightCode on "sourceCode" line 4
+moveArrayMarker "i" to position 5  
+}
+{
+unhighlightCode on "sourceCode" line 4
+highlightCode on "sourceCode" line 2
+}
+{
+unhighlightCode on "sourceCode" line 2
+highlightCode on "sourceCode" line 3
+}
+{
+unhighlightCode on "sourceCode" line 3
+highlightCode on "sourceCode" line 4
+moveArrayMarker "i" to position 6  
+}
+{
+unhighlightCode on "sourceCode" line 4
+highlightCode on "sourceCode" line 2
+}
+{
+unhighlightCode on "sourceCode" line 2
+highlightCode on "sourceCode" line 3
+}
+{
+unhighlightCode on "sourceCode" line 3
+highlightCode on "sourceCode" line 4
+moveArrayMarker "i" to position 7  
+}
+{
+unhighlightCode on "sourceCode" line 4
+highlightCode on "sourceCode" line 2
+}
+{
+unhighlightCode on "sourceCode" line 2
+highlightCode on "sourceCode" line 3
+}
+{
+unhighlightCode on "sourceCode" line 3
+highlightCode on "sourceCode" line 4
+moveArrayMarker "i" to position 8  
+}
+{
+unhighlightCode on "sourceCode" line 4
+highlightCode on "sourceCode" line 2
+}
+{
+unhighlightCode on "sourceCode" line 2
+highlightCode on "sourceCode" line 3
+}
+{
+unhighlightCode on "sourceCode" line 3
+highlightCode on "sourceCode" line 4
+moveArrayMarker "i" to position 9  
+}
+{
+unhighlightCode on "sourceCode" line 4
+highlightCode on "sourceCode" line 2
+}
+{
+unhighlightCode on "sourceCode" line 2
+highlightCode on "sourceCode" line 3
+}
+{
+unhighlightCode on "sourceCode" line 3
+highlightCode on "sourceCode" line 6
+}
+{
+unhighlightCode on "sourceCode" line 6
+highlightCode on "sourceCode" line 7
+highlightArrayCell on "intArray" position 9
+highlightArrayCell on "intArray" position 8
+}
+{
+arrayPut "6" on "intArray" position 9  
+arrayPut "0" on "intArray" position 8  
+}
+{
+unhighlightCode on "sourceCode" line 7
+highlightCode on "sourceCode" line 8
+unhighlightArrayCell on "intArray" position 9
+unhighlightArrayCell on "intArray" position 8
+moveArrayMarker "i" to position 8  
+}
+{
+unhighlightCode on "sourceCode" line 8
+highlightCode on "sourceCode" line 2
+}
+{
+unhighlightCode on "sourceCode" line 2
+highlightCode on "sourceCode" line 3
+}
+{
+unhighlightCode on "sourceCode" line 3
+highlightCode on "sourceCode" line 6
+}
+{
+unhighlightCode on "sourceCode" line 6
+highlightCode on "sourceCode" line 7
+highlightArrayCell on "intArray" position 8
+highlightArrayCell on "intArray" position 7
+}
+{
+arrayPut "5" on "intArray" position 8  
+arrayPut "0" on "intArray" position 7  
+}
+{
+unhighlightCode on "sourceCode" line 7
+highlightCode on "sourceCode" line 8
+unhighlightArrayCell on "intArray" position 8
+unhighlightArrayCell on "intArray" position 7
+moveArrayMarker "i" to position 7  
+}
+{
+unhighlightCode on "sourceCode" line 8
+highlightCode on "sourceCode" line 2
+}
+{
+unhighlightCode on "sourceCode" line 2
+highlightCode on "sourceCode" line 3
+}
+{
+unhighlightCode on "sourceCode" line 3
+highlightCode on "sourceCode" line 6
+}
+{
+unhighlightCode on "sourceCode" line 6
+highlightCode on "sourceCode" line 7
+highlightArrayCell on "intArray" position 7
+highlightArrayCell on "intArray" position 6
+}
+{
+arrayPut "4" on "intArray" position 7  
+arrayPut "0" on "intArray" position 6  
+}
+{
+unhighlightCode on "sourceCode" line 7
+highlightCode on "sourceCode" line 8
+unhighlightArrayCell on "intArray" position 7
+unhighlightArrayCell on "intArray" position 6
+moveArrayMarker "i" to position 6  
+}
+{
+unhighlightCode on "sourceCode" line 8
+highlightCode on "sourceCode" line 2
+}
+{
+unhighlightCode on "sourceCode" line 2
+highlightCode on "sourceCode" line 3
+}
+{
+unhighlightCode on "sourceCode" line 3
+highlightCode on "sourceCode" line 6
+}
+{
+unhighlightCode on "sourceCode" line 6
+highlightCode on "sourceCode" line 7
+highlightArrayCell on "intArray" position 6
+highlightArrayCell on "intArray" position 5
+}
+{
+arrayPut "3" on "intArray" position 6  
+arrayPut "0" on "intArray" position 5  
+}
+{
+unhighlightCode on "sourceCode" line 7
+highlightCode on "sourceCode" line 8
+unhighlightArrayCell on "intArray" position 6
+unhighlightArrayCell on "intArray" position 5
+moveArrayMarker "i" to position 5  
+}
+{
+unhighlightCode on "sourceCode" line 8
+highlightCode on "sourceCode" line 2
+}
+{
+unhighlightCode on "sourceCode" line 2
+highlightCode on "sourceCode" line 3
+}
+{
+unhighlightCode on "sourceCode" line 3
+highlightCode on "sourceCode" line 6
+}
+{
+unhighlightCode on "sourceCode" line 6
+highlightCode on "sourceCode" line 7
+highlightArrayCell on "intArray" position 5
+highlightArrayCell on "intArray" position 4
+}
+{
+arrayPut "2" on "intArray" position 5  
+arrayPut "0" on "intArray" position 4  
+}
+{
+unhighlightCode on "sourceCode" line 7
+highlightCode on "sourceCode" line 8
+unhighlightArrayCell on "intArray" position 5
+unhighlightArrayCell on "intArray" position 4
+moveArrayMarker "i" to position 4  
+}
+{
+unhighlightCode on "sourceCode" line 8
+highlightCode on "sourceCode" line 2
+}
+{
+unhighlightCode on "sourceCode" line 2
+highlightCode on "sourceCode" line 3
+}
+{
+unhighlightCode on "sourceCode" line 3
+highlightCode on "sourceCode" line 6
+}
+{
+unhighlightCode on "sourceCode" line 6
+highlightCode on "sourceCode" line 7
+highlightArrayCell on "intArray" position 4
+highlightArrayCell on "intArray" position 3
+}
+{
+arrayPut "1" on "intArray" position 4  
+arrayPut "0" on "intArray" position 3  
+}
+{
+unhighlightCode on "sourceCode" line 7
+highlightCode on "sourceCode" line 8
+unhighlightArrayCell on "intArray" position 4
+unhighlightArrayCell on "intArray" position 3
+moveArrayMarker "i" to position 3  
+}
+{
+unhighlightCode on "sourceCode" line 8
+highlightCode on "sourceCode" line 2
+}
+{
+unhighlightCode on "sourceCode" line 2
+highlightCode on "sourceCode" line 3
+}
+{
+unhighlightCode on "sourceCode" line 3
+highlightCode on "sourceCode" line 4
+moveArrayMarker "i" to position 4  
+}
+{
+unhighlightCode on "sourceCode" line 4
+highlightCode on "sourceCode" line 2
+}
+{
+unhighlightCode on "sourceCode" line 2
+highlightCode on "sourceCode" line 3
+}
+{
+unhighlightCode on "sourceCode" line 3
+highlightCode on "sourceCode" line 4
+moveArrayMarker "i" to position 5  
+}
+{
+unhighlightCode on "sourceCode" line 4
+highlightCode on "sourceCode" line 2
+}
+{
+unhighlightCode on "sourceCode" line 2
+highlightCode on "sourceCode" line 3
+}
+{
+unhighlightCode on "sourceCode" line 3
+highlightCode on "sourceCode" line 4
+moveArrayMarker "i" to position 6  
+}
+{
+unhighlightCode on "sourceCode" line 4
+highlightCode on "sourceCode" line 2
+}
+{
+unhighlightCode on "sourceCode" line 2
+highlightCode on "sourceCode" line 3
+}
+{
+unhighlightCode on "sourceCode" line 3
+highlightCode on "sourceCode" line 4
+moveArrayMarker "i" to position 7  
+}
+{
+unhighlightCode on "sourceCode" line 4
+highlightCode on "sourceCode" line 2
+}
+{
+unhighlightCode on "sourceCode" line 2
+highlightCode on "sourceCode" line 3
+}
+{
+unhighlightCode on "sourceCode" line 3
+highlightCode on "sourceCode" line 4
+moveArrayMarker "i" to position 8  
+}
+{
+unhighlightCode on "sourceCode" line 4
+highlightCode on "sourceCode" line 2
+}
+{
+unhighlightCode on "sourceCode" line 2
+highlightCode on "sourceCode" line 3
+}
+{
+unhighlightCode on "sourceCode" line 3
+highlightCode on "sourceCode" line 4
+moveArrayMarker "i" to position 9  
+}
+{
+unhighlightCode on "sourceCode" line 4
+highlightCode on "sourceCode" line 2
+}
+{
+unhighlightCode on "sourceCode" line 2
+highlightCode on "sourceCode" line 3
+}
+{
+unhighlightCode on "sourceCode" line 3
+highlightCode on "sourceCode" line 4
+moveArrayMarker "i" to position 10  
+}
+{
+unhighlightCode on "sourceCode" line 4
+highlightCode on "sourceCode" line 2
+}
+{
+unhighlightCode on "sourceCode" line 2
+highlightCode on "sourceCode" line 3
+}
+{
+unhighlightCode on "sourceCode" line 3
+highlightCode on "sourceCode" line 6
+}
+{
+unhighlightCode on "sourceCode" line 6
+highlightCode on "sourceCode" line 7
+highlightArrayCell on "intArray" position 10
+highlightArrayCell on "intArray" position 9
+}
+{
+arrayPut "6" on "intArray" position 10  
+arrayPut "0" on "intArray" position 9  
+}
+{
+unhighlightCode on "sourceCode" line 7
+highlightCode on "sourceCode" line 8
+unhighlightArrayCell on "intArray" position 10
+unhighlightArrayCell on "intArray" position 9
+moveArrayMarker "i" to position 9  
+}
+{
+unhighlightCode on "sourceCode" line 8
+highlightCode on "sourceCode" line 2
+}
+{
+unhighlightCode on "sourceCode" line 2
+highlightCode on "sourceCode" line 3
+}
+{
+unhighlightCode on "sourceCode" line 3
+highlightCode on "sourceCode" line 6
+}
+{
+unhighlightCode on "sourceCode" line 6
+highlightCode on "sourceCode" line 7
+highlightArrayCell on "intArray" position 9
+highlightArrayCell on "intArray" position 8
+}
+{
+arrayPut "5" on "intArray" position 9  
+arrayPut "0" on "intArray" position 8  
+}
+{
+unhighlightCode on "sourceCode" line 7
+highlightCode on "sourceCode" line 8
+unhighlightArrayCell on "intArray" position 9
+unhighlightArrayCell on "intArray" position 8
+moveArrayMarker "i" to position 8  
+}
+{
+unhighlightCode on "sourceCode" line 8
+highlightCode on "sourceCode" line 2
+}
+{
+unhighlightCode on "sourceCode" line 2
+highlightCode on "sourceCode" line 3
+}
+{
+unhighlightCode on "sourceCode" line 3
+highlightCode on "sourceCode" line 6
+}
+{
+unhighlightCode on "sourceCode" line 6
+highlightCode on "sourceCode" line 7
+highlightArrayCell on "intArray" position 8
+highlightArrayCell on "intArray" position 7
+}
+{
+arrayPut "4" on "intArray" position 8  
+arrayPut "0" on "intArray" position 7  
+}
+{
+unhighlightCode on "sourceCode" line 7
+highlightCode on "sourceCode" line 8
+unhighlightArrayCell on "intArray" position 8
+unhighlightArrayCell on "intArray" position 7
+moveArrayMarker "i" to position 7  
+}
+{
+unhighlightCode on "sourceCode" line 8
+highlightCode on "sourceCode" line 2
+}
+{
+unhighlightCode on "sourceCode" line 2
+highlightCode on "sourceCode" line 3
+}
+{
+unhighlightCode on "sourceCode" line 3
+highlightCode on "sourceCode" line 6
+}
+{
+unhighlightCode on "sourceCode" line 6
+highlightCode on "sourceCode" line 7
+highlightArrayCell on "intArray" position 7
+highlightArrayCell on "intArray" position 6
+}
+{
+arrayPut "3" on "intArray" position 7  
+arrayPut "0" on "intArray" position 6  
+}
+{
+unhighlightCode on "sourceCode" line 7
+highlightCode on "sourceCode" line 8
+unhighlightArrayCell on "intArray" position 7
+unhighlightArrayCell on "intArray" position 6
+moveArrayMarker "i" to position 6  
+}
+{
+unhighlightCode on "sourceCode" line 8
+highlightCode on "sourceCode" line 2
+}
+{
+unhighlightCode on "sourceCode" line 2
+highlightCode on "sourceCode" line 3
+}
+{
+unhighlightCode on "sourceCode" line 3
+highlightCode on "sourceCode" line 6
+}
+{
+unhighlightCode on "sourceCode" line 6
+highlightCode on "sourceCode" line 7
+highlightArrayCell on "intArray" position 6
+highlightArrayCell on "intArray" position 5
+}
+{
+arrayPut "2" on "intArray" position 6  
+arrayPut "0" on "intArray" position 5  
+}
+{
+unhighlightCode on "sourceCode" line 7
+highlightCode on "sourceCode" line 8
+unhighlightArrayCell on "intArray" position 6
+unhighlightArrayCell on "intArray" position 5
+moveArrayMarker "i" to position 5  
+}
+{
+unhighlightCode on "sourceCode" line 8
+highlightCode on "sourceCode" line 2
+}
+{
+unhighlightCode on "sourceCode" line 2
+highlightCode on "sourceCode" line 3
+}
+{
+unhighlightCode on "sourceCode" line 3
+highlightCode on "sourceCode" line 6
+}
+{
+unhighlightCode on "sourceCode" line 6
+highlightCode on "sourceCode" line 7
+highlightArrayCell on "intArray" position 5
+highlightArrayCell on "intArray" position 4
+}
+{
+arrayPut "1" on "intArray" position 5  
+arrayPut "0" on "intArray" position 4  
+}
+{
+unhighlightCode on "sourceCode" line 7
+highlightCode on "sourceCode" line 8
+unhighlightArrayCell on "intArray" position 5
+unhighlightArrayCell on "intArray" position 4
+moveArrayMarker "i" to position 4  
+}
+{
+unhighlightCode on "sourceCode" line 8
+highlightCode on "sourceCode" line 2
+}
+{
+unhighlightCode on "sourceCode" line 2
+highlightCode on "sourceCode" line 3
+}
+{
+unhighlightCode on "sourceCode" line 3
+highlightCode on "sourceCode" line 4
+moveArrayMarker "i" to position 5  
+}
+{
+unhighlightCode on "sourceCode" line 4
+highlightCode on "sourceCode" line 2
+}
+{
+unhighlightCode on "sourceCode" line 2
+highlightCode on "sourceCode" line 3
+}
+{
+unhighlightCode on "sourceCode" line 3
+highlightCode on "sourceCode" line 4
+moveArrayMarker "i" to position 6  
+}
+{
+unhighlightCode on "sourceCode" line 4
+highlightCode on "sourceCode" line 2
+}
+{
+unhighlightCode on "sourceCode" line 2
+highlightCode on "sourceCode" line 3
+}
+{
+unhighlightCode on "sourceCode" line 3
+highlightCode on "sourceCode" line 4
+moveArrayMarker "i" to position 7  
+}
+{
+unhighlightCode on "sourceCode" line 4
+highlightCode on "sourceCode" line 2
+}
+{
+unhighlightCode on "sourceCode" line 2
+highlightCode on "sourceCode" line 3
+}
+{
+unhighlightCode on "sourceCode" line 3
+highlightCode on "sourceCode" line 4
+moveArrayMarker "i" to position 8  
+}
+{
+unhighlightCode on "sourceCode" line 4
+highlightCode on "sourceCode" line 2
+}
+{
+unhighlightCode on "sourceCode" line 2
+highlightCode on "sourceCode" line 3
+}
+{
+unhighlightCode on "sourceCode" line 3
+highlightCode on "sourceCode" line 4
+moveArrayMarker "i" to position 9  
+}
+{
+unhighlightCode on "sourceCode" line 4
+highlightCode on "sourceCode" line 2
+}
+{
+unhighlightCode on "sourceCode" line 2
+highlightCode on "sourceCode" line 3
+}
+{
+unhighlightCode on "sourceCode" line 3
+highlightCode on "sourceCode" line 4
+moveArrayMarker "i" to position 10  
+}
+{
+unhighlightCode on "sourceCode" line 4
+highlightCode on "sourceCode" line 2
+}
+{
+unhighlightCode on "sourceCode" line 2
+highlightCode on "sourceCode" line 3
+}
+{
+unhighlightCode on "sourceCode" line 3
+highlightCode on "sourceCode" line 4
+moveArrayMarker "i" to position 11  
+}
+{
+unhighlightCode on "sourceCode" line 4
+highlightCode on "sourceCode" line 2
+}
+{
+unhighlightCode on "sourceCode" line 2
+highlightCode on "sourceCode" line 3
+}
+{
+unhighlightCode on "sourceCode" line 3
+highlightCode on "sourceCode" line 6
+}
+{
+unhighlightCode on "sourceCode" line 6
+highlightCode on "sourceCode" line 7
+highlightArrayCell on "intArray" position 11
+highlightArrayCell on "intArray" position 10
+}
+{
+arrayPut "6" on "intArray" position 11  
+arrayPut "0" on "intArray" position 10  
+}
+{
+unhighlightCode on "sourceCode" line 7
+highlightCode on "sourceCode" line 8
+unhighlightArrayCell on "intArray" position 11
+unhighlightArrayCell on "intArray" position 10
+moveArrayMarker "i" to position 10  
+}
+{
+unhighlightCode on "sourceCode" line 8
+highlightCode on "sourceCode" line 2
+}
+{
+unhighlightCode on "sourceCode" line 2
+highlightCode on "sourceCode" line 3
+}
+{
+unhighlightCode on "sourceCode" line 3
+highlightCode on "sourceCode" line 6
+}
+{
+unhighlightCode on "sourceCode" line 6
+highlightCode on "sourceCode" line 7
+highlightArrayCell on "intArray" position 10
+highlightArrayCell on "intArray" position 9
+}
+{
+arrayPut "5" on "intArray" position 10  
+arrayPut "0" on "intArray" position 9  
+}
+{
+unhighlightCode on "sourceCode" line 7
+highlightCode on "sourceCode" line 8
+unhighlightArrayCell on "intArray" position 10
+unhighlightArrayCell on "intArray" position 9
+moveArrayMarker "i" to position 9  
+}
+{
+unhighlightCode on "sourceCode" line 8
+highlightCode on "sourceCode" line 2
+}
+{
+unhighlightCode on "sourceCode" line 2
+highlightCode on "sourceCode" line 3
+}
+{
+unhighlightCode on "sourceCode" line 3
+highlightCode on "sourceCode" line 6
+}
+{
+unhighlightCode on "sourceCode" line 6
+highlightCode on "sourceCode" line 7
+highlightArrayCell on "intArray" position 9
+highlightArrayCell on "intArray" position 8
+}
+{
+arrayPut "4" on "intArray" position 9  
+arrayPut "0" on "intArray" position 8  
+}
+{
+unhighlightCode on "sourceCode" line 7
+highlightCode on "sourceCode" line 8
+unhighlightArrayCell on "intArray" position 9
+unhighlightArrayCell on "intArray" position 8
+moveArrayMarker "i" to position 8  
+}
+{
+unhighlightCode on "sourceCode" line 8
+highlightCode on "sourceCode" line 2
+}
+{
+unhighlightCode on "sourceCode" line 2
+highlightCode on "sourceCode" line 3
+}
+{
+unhighlightCode on "sourceCode" line 3
+highlightCode on "sourceCode" line 6
+}
+{
+unhighlightCode on "sourceCode" line 6
+highlightCode on "sourceCode" line 7
+highlightArrayCell on "intArray" position 8
+highlightArrayCell on "intArray" position 7
+}
+{
+arrayPut "3" on "intArray" position 8  
+arrayPut "0" on "intArray" position 7  
+}
+{
+unhighlightCode on "sourceCode" line 7
+highlightCode on "sourceCode" line 8
+unhighlightArrayCell on "intArray" position 8
+unhighlightArrayCell on "intArray" position 7
+moveArrayMarker "i" to position 7  
+}
+{
+unhighlightCode on "sourceCode" line 8
+highlightCode on "sourceCode" line 2
+}
+{
+unhighlightCode on "sourceCode" line 2
+highlightCode on "sourceCode" line 3
+}
+{
+unhighlightCode on "sourceCode" line 3
+highlightCode on "sourceCode" line 6
+}
+{
+unhighlightCode on "sourceCode" line 6
+highlightCode on "sourceCode" line 7
+highlightArrayCell on "intArray" position 7
+highlightArrayCell on "intArray" position 6
+}
+{
+arrayPut "2" on "intArray" position 7  
+arrayPut "0" on "intArray" position 6  
+}
+{
+unhighlightCode on "sourceCode" line 7
+highlightCode on "sourceCode" line 8
+unhighlightArrayCell on "intArray" position 7
+unhighlightArrayCell on "intArray" position 6
+moveArrayMarker "i" to position 6  
+}
+{
+unhighlightCode on "sourceCode" line 8
+highlightCode on "sourceCode" line 2
+}
+{
+unhighlightCode on "sourceCode" line 2
+highlightCode on "sourceCode" line 3
+}
+{
+unhighlightCode on "sourceCode" line 3
+highlightCode on "sourceCode" line 6
+}
+{
+unhighlightCode on "sourceCode" line 6
+highlightCode on "sourceCode" line 7
+highlightArrayCell on "intArray" position 6
+highlightArrayCell on "intArray" position 5
+}
+{
+arrayPut "1" on "intArray" position 6  
+arrayPut "0" on "intArray" position 5  
+}
+{
+unhighlightCode on "sourceCode" line 7
+highlightCode on "sourceCode" line 8
+unhighlightArrayCell on "intArray" position 6
+unhighlightArrayCell on "intArray" position 5
+moveArrayMarker "i" to position 5  
+}
+{
+unhighlightCode on "sourceCode" line 8
+highlightCode on "sourceCode" line 2
+}
+{
+unhighlightCode on "sourceCode" line 2
+highlightCode on "sourceCode" line 3
+}
+{
+unhighlightCode on "sourceCode" line 3
+highlightCode on "sourceCode" line 4
+moveArrayMarker "i" to position 6  
+}
+{
+unhighlightCode on "sourceCode" line 4
+highlightCode on "sourceCode" line 2
+}
+{
+unhighlightCode on "sourceCode" line 2
+highlightCode on "sourceCode" line 3
+}
+{
+unhighlightCode on "sourceCode" line 3
+highlightCode on "sourceCode" line 4
+moveArrayMarker "i" to position 7  
+}
+{
+unhighlightCode on "sourceCode" line 4
+highlightCode on "sourceCode" line 2
+}
+{
+unhighlightCode on "sourceCode" line 2
+highlightCode on "sourceCode" line 3
+}
+{
+unhighlightCode on "sourceCode" line 3
+highlightCode on "sourceCode" line 4
+moveArrayMarker "i" to position 8  
+}
+{
+unhighlightCode on "sourceCode" line 4
+highlightCode on "sourceCode" line 2
+}
+{
+unhighlightCode on "sourceCode" line 2
+highlightCode on "sourceCode" line 3
+}
+{
+unhighlightCode on "sourceCode" line 3
+highlightCode on "sourceCode" line 4
+moveArrayMarker "i" to position 9  
+}
+{
+unhighlightCode on "sourceCode" line 4
+highlightCode on "sourceCode" line 2
+}
+{
+unhighlightCode on "sourceCode" line 2
+highlightCode on "sourceCode" line 3
+}
+{
+unhighlightCode on "sourceCode" line 3
+highlightCode on "sourceCode" line 4
+moveArrayMarker "i" to position 10  
+}
+{
+unhighlightCode on "sourceCode" line 4
+highlightCode on "sourceCode" line 2
+}
+{
+unhighlightCode on "sourceCode" line 2
+highlightCode on "sourceCode" line 3
+}
+{
+unhighlightCode on "sourceCode" line 3
+highlightCode on "sourceCode" line 4
+moveArrayMarker "i" to position 11  
+}
+{
+unhighlightCode on "sourceCode" line 4
+highlightCode on "sourceCode" line 2
+}
+{
+unhighlightCode on "sourceCode" line 2
+highlightCode on "sourceCode" line 3
+}
+{
+unhighlightCode on "sourceCode" line 3
+highlightCode on "sourceCode" line 4
+moveArrayMarker "i" to position 12  
+}
+{
+unhighlightCode on "sourceCode" line 4
+highlightCode on "sourceCode" line 2
+}
+{
+unhighlightCode on "sourceCode" line 2
+highlightCode on "sourceCode" line 3
+}
+{
+unhighlightCode on "sourceCode" line 3
+highlightCode on "sourceCode" line 6
+}
+{
+unhighlightCode on "sourceCode" line 6
+highlightCode on "sourceCode" line 7
+highlightArrayCell on "intArray" position 12
+highlightArrayCell on "intArray" position 11
+}
+{
+arrayPut "6" on "intArray" position 12  
+arrayPut "0" on "intArray" position 11  
+}
+{
+unhighlightCode on "sourceCode" line 7
+highlightCode on "sourceCode" line 8
+unhighlightArrayCell on "intArray" position 12
+unhighlightArrayCell on "intArray" position 11
+moveArrayMarker "i" to position 11  
+}
+{
+unhighlightCode on "sourceCode" line 8
+highlightCode on "sourceCode" line 2
+}
+{
+unhighlightCode on "sourceCode" line 2
+highlightCode on "sourceCode" line 3
+}
+{
+unhighlightCode on "sourceCode" line 3
+highlightCode on "sourceCode" line 6
+}
+{
+unhighlightCode on "sourceCode" line 6
+highlightCode on "sourceCode" line 7
+highlightArrayCell on "intArray" position 11
+highlightArrayCell on "intArray" position 10
+}
+{
+arrayPut "5" on "intArray" position 11  
+arrayPut "0" on "intArray" position 10  
+}
+{
+unhighlightCode on "sourceCode" line 7
+highlightCode on "sourceCode" line 8
+unhighlightArrayCell on "intArray" position 11
+unhighlightArrayCell on "intArray" position 10
+moveArrayMarker "i" to position 10  
+}
+{
+unhighlightCode on "sourceCode" line 8
+highlightCode on "sourceCode" line 2
+}
+{
+unhighlightCode on "sourceCode" line 2
+highlightCode on "sourceCode" line 3
+}
+{
+unhighlightCode on "sourceCode" line 3
+highlightCode on "sourceCode" line 6
+}
+{
+unhighlightCode on "sourceCode" line 6
+highlightCode on "sourceCode" line 7
+highlightArrayCell on "intArray" position 10
+highlightArrayCell on "intArray" position 9
+}
+{
+arrayPut "4" on "intArray" position 10  
+arrayPut "0" on "intArray" position 9  
+}
+{
+unhighlightCode on "sourceCode" line 7
+highlightCode on "sourceCode" line 8
+unhighlightArrayCell on "intArray" position 10
+unhighlightArrayCell on "intArray" position 9
+moveArrayMarker "i" to position 9  
+}
+{
+unhighlightCode on "sourceCode" line 8
+highlightCode on "sourceCode" line 2
+}
+{
+unhighlightCode on "sourceCode" line 2
+highlightCode on "sourceCode" line 3
+}
+{
+unhighlightCode on "sourceCode" line 3
+highlightCode on "sourceCode" line 6
+}
+{
+unhighlightCode on "sourceCode" line 6
+highlightCode on "sourceCode" line 7
+highlightArrayCell on "intArray" position 9
+highlightArrayCell on "intArray" position 8
+}
+{
+arrayPut "3" on "intArray" position 9  
+arrayPut "0" on "intArray" position 8  
+}
+{
+unhighlightCode on "sourceCode" line 7
+highlightCode on "sourceCode" line 8
+unhighlightArrayCell on "intArray" position 9
+unhighlightArrayCell on "intArray" position 8
+moveArrayMarker "i" to position 8  
+}
+{
+unhighlightCode on "sourceCode" line 8
+highlightCode on "sourceCode" line 2
+}
+{
+unhighlightCode on "sourceCode" line 2
+highlightCode on "sourceCode" line 3
+}
+{
+unhighlightCode on "sourceCode" line 3
+highlightCode on "sourceCode" line 6
+}
+{
+unhighlightCode on "sourceCode" line 6
+highlightCode on "sourceCode" line 7
+highlightArrayCell on "intArray" position 8
+highlightArrayCell on "intArray" position 7
+}
+{
+arrayPut "2" on "intArray" position 8  
+arrayPut "0" on "intArray" position 7  
+}
+{
+unhighlightCode on "sourceCode" line 7
+highlightCode on "sourceCode" line 8
+unhighlightArrayCell on "intArray" position 8
+unhighlightArrayCell on "intArray" position 7
+moveArrayMarker "i" to position 7  
+}
+{
+unhighlightCode on "sourceCode" line 8
+highlightCode on "sourceCode" line 2
+}
+{
+unhighlightCode on "sourceCode" line 2
+highlightCode on "sourceCode" line 3
+}
+{
+unhighlightCode on "sourceCode" line 3
+highlightCode on "sourceCode" line 6
+}
+{
+unhighlightCode on "sourceCode" line 6
+highlightCode on "sourceCode" line 7
+highlightArrayCell on "intArray" position 7
+highlightArrayCell on "intArray" position 6
+}
+{
+arrayPut "1" on "intArray" position 7  
+arrayPut "0" on "intArray" position 6  
+}
+{
+unhighlightCode on "sourceCode" line 7
+highlightCode on "sourceCode" line 8
+unhighlightArrayCell on "intArray" position 7
+unhighlightArrayCell on "intArray" position 6
+moveArrayMarker "i" to position 6  
+}
+{
+unhighlightCode on "sourceCode" line 8
+highlightCode on "sourceCode" line 2
+}
+{
+unhighlightCode on "sourceCode" line 2
+highlightCode on "sourceCode" line 3
+}
+{
+unhighlightCode on "sourceCode" line 3
+highlightCode on "sourceCode" line 4
+moveArrayMarker "i" to position 7  
+}
+{
+unhighlightCode on "sourceCode" line 4
+highlightCode on "sourceCode" line 2
+}
+{
+unhighlightCode on "sourceCode" line 2
+highlightCode on "sourceCode" line 3
+}
+{
+unhighlightCode on "sourceCode" line 3
+highlightCode on "sourceCode" line 4
+moveArrayMarker "i" to position 8  
+}
+{
+unhighlightCode on "sourceCode" line 4
+highlightCode on "sourceCode" line 2
+}
+{
+unhighlightCode on "sourceCode" line 2
+highlightCode on "sourceCode" line 3
+}
+{
+unhighlightCode on "sourceCode" line 3
+highlightCode on "sourceCode" line 4
+moveArrayMarker "i" to position 9  
+}
+{
+unhighlightCode on "sourceCode" line 4
+highlightCode on "sourceCode" line 2
+}
+{
+unhighlightCode on "sourceCode" line 2
+highlightCode on "sourceCode" line 3
+}
+{
+unhighlightCode on "sourceCode" line 3
+highlightCode on "sourceCode" line 4
+moveArrayMarker "i" to position 10  
+}
+{
+unhighlightCode on "sourceCode" line 4
+highlightCode on "sourceCode" line 2
+}
+{
+unhighlightCode on "sourceCode" line 2
+highlightCode on "sourceCode" line 3
+}
+{
+unhighlightCode on "sourceCode" line 3
+highlightCode on "sourceCode" line 4
+moveArrayMarker "i" to position 11  
+}
+{
+unhighlightCode on "sourceCode" line 4
+highlightCode on "sourceCode" line 2
+}
+{
+unhighlightCode on "sourceCode" line 2
+highlightCode on "sourceCode" line 3
+}
+{
+unhighlightCode on "sourceCode" line 3
+highlightCode on "sourceCode" line 4
+moveArrayMarker "i" to position 12  
+}
+{
+unhighlightCode on "sourceCode" line 4
+highlightCode on "sourceCode" line 2
+}
+{
+unhighlightCode on "sourceCode" line 2
+highlightCode on "sourceCode" line 3
+}
+{
+unhighlightCode on "sourceCode" line 3
+highlightCode on "sourceCode" line 4
+moveArrayMarker "i" to position 13  
+}
+{
+unhighlightCode on "sourceCode" line 4
+highlightCode on "sourceCode" line 2
+}
+{
+unhighlightCode on "sourceCode" line 2
+highlightCode on "sourceCode" line 3
+}
+{
+unhighlightCode on "sourceCode" line 3
+highlightCode on "sourceCode" line 6
+}
+{
+unhighlightCode on "sourceCode" line 6
+highlightCode on "sourceCode" line 7
+highlightArrayCell on "intArray" position 13
+highlightArrayCell on "intArray" position 12
+}
+{
+arrayPut "6" on "intArray" position 13  
+arrayPut "0" on "intArray" position 12  
+}
+{
+unhighlightCode on "sourceCode" line 7
+highlightCode on "sourceCode" line 8
+unhighlightArrayCell on "intArray" position 13
+unhighlightArrayCell on "intArray" position 12
+moveArrayMarker "i" to position 12  
+}
+{
+unhighlightCode on "sourceCode" line 8
+highlightCode on "sourceCode" line 2
+}
+{
+unhighlightCode on "sourceCode" line 2
+highlightCode on "sourceCode" line 3
+}
+{
+unhighlightCode on "sourceCode" line 3
+highlightCode on "sourceCode" line 6
+}
+{
+unhighlightCode on "sourceCode" line 6
+highlightCode on "sourceCode" line 7
+highlightArrayCell on "intArray" position 12
+highlightArrayCell on "intArray" position 11
+}
+{
+arrayPut "5" on "intArray" position 12  
+arrayPut "0" on "intArray" position 11  
+}
+{
+unhighlightCode on "sourceCode" line 7
+highlightCode on "sourceCode" line 8
+unhighlightArrayCell on "intArray" position 12
+unhighlightArrayCell on "intArray" position 11
+moveArrayMarker "i" to position 11  
+}
+{
+unhighlightCode on "sourceCode" line 8
+highlightCode on "sourceCode" line 2
+}
+{
+unhighlightCode on "sourceCode" line 2
+highlightCode on "sourceCode" line 3
+}
+{
+unhighlightCode on "sourceCode" line 3
+highlightCode on "sourceCode" line 6
+}
+{
+unhighlightCode on "sourceCode" line 6
+highlightCode on "sourceCode" line 7
+highlightArrayCell on "intArray" position 11
+highlightArrayCell on "intArray" position 10
+}
+{
+arrayPut "4" on "intArray" position 11  
+arrayPut "0" on "intArray" position 10  
+}
+{
+unhighlightCode on "sourceCode" line 7
+highlightCode on "sourceCode" line 8
+unhighlightArrayCell on "intArray" position 11
+unhighlightArrayCell on "intArray" position 10
+moveArrayMarker "i" to position 10  
+}
+{
+unhighlightCode on "sourceCode" line 8
+highlightCode on "sourceCode" line 2
+}
+{
+unhighlightCode on "sourceCode" line 2
+highlightCode on "sourceCode" line 3
+}
+{
+unhighlightCode on "sourceCode" line 3
+highlightCode on "sourceCode" line 6
+}
+{
+unhighlightCode on "sourceCode" line 6
+highlightCode on "sourceCode" line 7
+highlightArrayCell on "intArray" position 10
+highlightArrayCell on "intArray" position 9
+}
+{
+arrayPut "3" on "intArray" position 10  
+arrayPut "0" on "intArray" position 9  
+}
+{
+unhighlightCode on "sourceCode" line 7
+highlightCode on "sourceCode" line 8
+unhighlightArrayCell on "intArray" position 10
+unhighlightArrayCell on "intArray" position 9
+moveArrayMarker "i" to position 9  
+}
+{
+unhighlightCode on "sourceCode" line 8
+highlightCode on "sourceCode" line 2
+}
+{
+unhighlightCode on "sourceCode" line 2
+highlightCode on "sourceCode" line 3
+}
+{
+unhighlightCode on "sourceCode" line 3
+highlightCode on "sourceCode" line 6
+}
+{
+unhighlightCode on "sourceCode" line 6
+highlightCode on "sourceCode" line 7
+highlightArrayCell on "intArray" position 9
+highlightArrayCell on "intArray" position 8
+}
+{
+arrayPut "2" on "intArray" position 9  
+arrayPut "0" on "intArray" position 8  
+}
+{
+unhighlightCode on "sourceCode" line 7
+highlightCode on "sourceCode" line 8
+unhighlightArrayCell on "intArray" position 9
+unhighlightArrayCell on "intArray" position 8
+moveArrayMarker "i" to position 8  
+}
+{
+unhighlightCode on "sourceCode" line 8
+highlightCode on "sourceCode" line 2
+}
+{
+unhighlightCode on "sourceCode" line 2
+highlightCode on "sourceCode" line 3
+}
+{
+unhighlightCode on "sourceCode" line 3
+highlightCode on "sourceCode" line 6
+}
+{
+unhighlightCode on "sourceCode" line 6
+highlightCode on "sourceCode" line 7
+highlightArrayCell on "intArray" position 8
+highlightArrayCell on "intArray" position 7
+}
+{
+arrayPut "1" on "intArray" position 8  
+arrayPut "0" on "intArray" position 7  
+}
+{
+unhighlightCode on "sourceCode" line 7
+highlightCode on "sourceCode" line 8
+unhighlightArrayCell on "intArray" position 8
+unhighlightArrayCell on "intArray" position 7
+moveArrayMarker "i" to position 7  
+}
+{
+unhighlightCode on "sourceCode" line 8
+highlightCode on "sourceCode" line 2
+}
+{
+unhighlightCode on "sourceCode" line 2
+highlightCode on "sourceCode" line 3
+}
+{
+unhighlightCode on "sourceCode" line 3
+highlightCode on "sourceCode" line 4
+moveArrayMarker "i" to position 8  
+}
+{
+unhighlightCode on "sourceCode" line 4
+highlightCode on "sourceCode" line 2
+}
+{
+unhighlightCode on "sourceCode" line 2
+highlightCode on "sourceCode" line 3
+}
+{
+unhighlightCode on "sourceCode" line 3
+highlightCode on "sourceCode" line 4
+moveArrayMarker "i" to position 9  
+}
+{
+unhighlightCode on "sourceCode" line 4
+highlightCode on "sourceCode" line 2
+}
+{
+unhighlightCode on "sourceCode" line 2
+highlightCode on "sourceCode" line 3
+}
+{
+unhighlightCode on "sourceCode" line 3
+highlightCode on "sourceCode" line 4
+moveArrayMarker "i" to position 10  
+}
+{
+unhighlightCode on "sourceCode" line 4
+highlightCode on "sourceCode" line 2
+}
+{
+unhighlightCode on "sourceCode" line 2
+highlightCode on "sourceCode" line 3
+}
+{
+unhighlightCode on "sourceCode" line 3
+highlightCode on "sourceCode" line 4
+moveArrayMarker "i" to position 11  
+}
+{
+unhighlightCode on "sourceCode" line 4
+highlightCode on "sourceCode" line 2
+}
+{
+unhighlightCode on "sourceCode" line 2
+highlightCode on "sourceCode" line 3
+}
+{
+unhighlightCode on "sourceCode" line 3
+highlightCode on "sourceCode" line 4
+moveArrayMarker "i" to position 12  
+}
+{
+unhighlightCode on "sourceCode" line 4
+highlightCode on "sourceCode" line 2
+}
+{
+unhighlightCode on "sourceCode" line 2
+highlightCode on "sourceCode" line 3
+}
+{
+unhighlightCode on "sourceCode" line 3
+highlightCode on "sourceCode" line 4
+moveArrayMarker "i" to position 13  
+}
+{
+unhighlightCode on "sourceCode" line 4
+highlightCode on "sourceCode" line 2
+}
+{
+unhighlightCode on "sourceCode" line 2
+highlightCode on "sourceCode" line 3
+}
+{
+unhighlightCode on "sourceCode" line 3
+highlightCode on "sourceCode" line 4
+moveArrayMarker "i" to position 14  
+}
+{
+unhighlightCode on "sourceCode" line 4
+highlightCode on "sourceCode" line 2
+}
+{
+unhighlightCode on "sourceCode" line 2
+highlightCode on "sourceCode" line 3
+}
+{
+unhighlightCode on "sourceCode" line 3
+highlightCode on "sourceCode" line 6
+}
+{
+unhighlightCode on "sourceCode" line 6
+highlightCode on "sourceCode" line 7
+highlightArrayCell on "intArray" position 14
+highlightArrayCell on "intArray" position 13
+}
+{
+arrayPut "6" on "intArray" position 14  
+arrayPut "0" on "intArray" position 13  
+}
+{
+unhighlightCode on "sourceCode" line 7
+highlightCode on "sourceCode" line 8
+unhighlightArrayCell on "intArray" position 14
+unhighlightArrayCell on "intArray" position 13
+moveArrayMarker "i" to position 13  
+}
+{
+unhighlightCode on "sourceCode" line 8
+highlightCode on "sourceCode" line 2
+}
+{
+unhighlightCode on "sourceCode" line 2
+highlightCode on "sourceCode" line 3
+}
+{
+unhighlightCode on "sourceCode" line 3
+highlightCode on "sourceCode" line 6
+}
+{
+unhighlightCode on "sourceCode" line 6
+highlightCode on "sourceCode" line 7
+highlightArrayCell on "intArray" position 13
+highlightArrayCell on "intArray" position 12
+}
+{
+arrayPut "5" on "intArray" position 13  
+arrayPut "0" on "intArray" position 12  
+}
+{
+unhighlightCode on "sourceCode" line 7
+highlightCode on "sourceCode" line 8
+unhighlightArrayCell on "intArray" position 13
+unhighlightArrayCell on "intArray" position 12
+moveArrayMarker "i" to position 12  
+}
+{
+unhighlightCode on "sourceCode" line 8
+highlightCode on "sourceCode" line 2
+}
+{
+unhighlightCode on "sourceCode" line 2
+highlightCode on "sourceCode" line 3
+}
+{
+unhighlightCode on "sourceCode" line 3
+highlightCode on "sourceCode" line 6
+}
+{
+unhighlightCode on "sourceCode" line 6
+highlightCode on "sourceCode" line 7
+highlightArrayCell on "intArray" position 12
+highlightArrayCell on "intArray" position 11
+}
+{
+arrayPut "4" on "intArray" position 12  
+arrayPut "0" on "intArray" position 11  
+}
+{
+unhighlightCode on "sourceCode" line 7
+highlightCode on "sourceCode" line 8
+unhighlightArrayCell on "intArray" position 12
+unhighlightArrayCell on "intArray" position 11
+moveArrayMarker "i" to position 11  
+}
+{
+unhighlightCode on "sourceCode" line 8
+highlightCode on "sourceCode" line 2
+}
+{
+unhighlightCode on "sourceCode" line 2
+highlightCode on "sourceCode" line 3
+}
+{
+unhighlightCode on "sourceCode" line 3
+highlightCode on "sourceCode" line 6
+}
+{
+unhighlightCode on "sourceCode" line 6
+highlightCode on "sourceCode" line 7
+highlightArrayCell on "intArray" position 11
+highlightArrayCell on "intArray" position 10
+}
+{
+arrayPut "3" on "intArray" position 11  
+arrayPut "0" on "intArray" position 10  
+}
+{
+unhighlightCode on "sourceCode" line 7
+highlightCode on "sourceCode" line 8
+unhighlightArrayCell on "intArray" position 11
+unhighlightArrayCell on "intArray" position 10
+moveArrayMarker "i" to position 10  
+}
+{
+unhighlightCode on "sourceCode" line 8
+highlightCode on "sourceCode" line 2
+}
+{
+unhighlightCode on "sourceCode" line 2
+highlightCode on "sourceCode" line 3
+}
+{
+unhighlightCode on "sourceCode" line 3
+highlightCode on "sourceCode" line 6
+}
+{
+unhighlightCode on "sourceCode" line 6
+highlightCode on "sourceCode" line 7
+highlightArrayCell on "intArray" position 10
+highlightArrayCell on "intArray" position 9
+}
+{
+arrayPut "2" on "intArray" position 10  
+arrayPut "0" on "intArray" position 9  
+}
+{
+unhighlightCode on "sourceCode" line 7
+highlightCode on "sourceCode" line 8
+unhighlightArrayCell on "intArray" position 10
+unhighlightArrayCell on "intArray" position 9
+moveArrayMarker "i" to position 9  
+}
+{
+unhighlightCode on "sourceCode" line 8
+highlightCode on "sourceCode" line 2
+}
+{
+unhighlightCode on "sourceCode" line 2
+highlightCode on "sourceCode" line 3
+}
+{
+unhighlightCode on "sourceCode" line 3
+highlightCode on "sourceCode" line 6
+}
+{
+unhighlightCode on "sourceCode" line 6
+highlightCode on "sourceCode" line 7
+highlightArrayCell on "intArray" position 9
+highlightArrayCell on "intArray" position 8
+}
+{
+arrayPut "1" on "intArray" position 9  
+arrayPut "0" on "intArray" position 8  
+}
+{
+unhighlightCode on "sourceCode" line 7
+highlightCode on "sourceCode" line 8
+unhighlightArrayCell on "intArray" position 9
+unhighlightArrayCell on "intArray" position 8
+moveArrayMarker "i" to position 8  
+}
+{
+unhighlightCode on "sourceCode" line 8
+highlightCode on "sourceCode" line 2
+}
+{
+unhighlightCode on "sourceCode" line 2
+highlightCode on "sourceCode" line 3
+}
+{
+unhighlightCode on "sourceCode" line 3
+highlightCode on "sourceCode" line 4
+moveArrayMarker "i" to position 9  
+}
+{
+unhighlightCode on "sourceCode" line 4
+highlightCode on "sourceCode" line 2
+}
+{
+unhighlightCode on "sourceCode" line 2
+highlightCode on "sourceCode" line 3
+}
+{
+unhighlightCode on "sourceCode" line 3
+highlightCode on "sourceCode" line 4
+moveArrayMarker "i" to position 10  
+}
+{
+unhighlightCode on "sourceCode" line 4
+highlightCode on "sourceCode" line 2
+}
+{
+unhighlightCode on "sourceCode" line 2
+highlightCode on "sourceCode" line 3
+}
+{
+unhighlightCode on "sourceCode" line 3
+highlightCode on "sourceCode" line 4
+moveArrayMarker "i" to position 11  
+}
+{
+unhighlightCode on "sourceCode" line 4
+highlightCode on "sourceCode" line 2
+}
+{
+unhighlightCode on "sourceCode" line 2
+highlightCode on "sourceCode" line 3
+}
+{
+unhighlightCode on "sourceCode" line 3
+highlightCode on "sourceCode" line 4
+moveArrayMarker "i" to position 12  
+}
+{
+unhighlightCode on "sourceCode" line 4
+highlightCode on "sourceCode" line 2
+}
+{
+unhighlightCode on "sourceCode" line 2
+highlightCode on "sourceCode" line 3
+}
+{
+unhighlightCode on "sourceCode" line 3
+highlightCode on "sourceCode" line 4
+moveArrayMarker "i" to position 13  
+}
+{
+unhighlightCode on "sourceCode" line 4
+highlightCode on "sourceCode" line 2
+}
+{
+unhighlightCode on "sourceCode" line 2
+highlightCode on "sourceCode" line 3
+}
+{
+unhighlightCode on "sourceCode" line 3
+highlightCode on "sourceCode" line 4
+moveArrayMarker "i" to position 14  
+}
+{
+unhighlightCode on "sourceCode" line 4
+highlightCode on "sourceCode" line 2
+}
+{
+unhighlightCode on "sourceCode" line 2
+highlightCode on "sourceCode" line 3
+}
+{
+unhighlightCode on "sourceCode" line 3
+highlightCode on "sourceCode" line 4
+moveArrayMarker "i" to position 15  
+}
+{
+unhighlightCode on "sourceCode" line 4
+highlightCode on "sourceCode" line 2
+}
+{
+unhighlightCode on "sourceCode" line 2
+highlightCode on "sourceCode" line 3
+}
+{
+unhighlightCode on "sourceCode" line 3
+highlightCode on "sourceCode" line 6
+}
+{
+unhighlightCode on "sourceCode" line 6
+highlightCode on "sourceCode" line 7
+highlightArrayCell on "intArray" position 15
+highlightArrayCell on "intArray" position 14
+}
+{
+arrayPut "6" on "intArray" position 15  
+arrayPut "0" on "intArray" position 14  
+}
+{
+unhighlightCode on "sourceCode" line 7
+highlightCode on "sourceCode" line 8
+unhighlightArrayCell on "intArray" position 15
+unhighlightArrayCell on "intArray" position 14
+moveArrayMarker "i" to position 14  
+}
+{
+unhighlightCode on "sourceCode" line 8
+highlightCode on "sourceCode" line 2
+}
+{
+unhighlightCode on "sourceCode" line 2
+highlightCode on "sourceCode" line 3
+}
+{
+unhighlightCode on "sourceCode" line 3
+highlightCode on "sourceCode" line 6
+}
+{
+unhighlightCode on "sourceCode" line 6
+highlightCode on "sourceCode" line 7
+highlightArrayCell on "intArray" position 14
+highlightArrayCell on "intArray" position 13
+}
+{
+arrayPut "5" on "intArray" position 14  
+arrayPut "0" on "intArray" position 13  
+}
+{
+unhighlightCode on "sourceCode" line 7
+highlightCode on "sourceCode" line 8
+unhighlightArrayCell on "intArray" position 14
+unhighlightArrayCell on "intArray" position 13
+moveArrayMarker "i" to position 13  
+}
+{
+unhighlightCode on "sourceCode" line 8
+highlightCode on "sourceCode" line 2
+}
+{
+unhighlightCode on "sourceCode" line 2
+highlightCode on "sourceCode" line 3
+}
+{
+unhighlightCode on "sourceCode" line 3
+highlightCode on "sourceCode" line 6
+}
+{
+unhighlightCode on "sourceCode" line 6
+highlightCode on "sourceCode" line 7
+highlightArrayCell on "intArray" position 13
+highlightArrayCell on "intArray" position 12
+}
+{
+arrayPut "4" on "intArray" position 13  
+arrayPut "0" on "intArray" position 12  
+}
+{
+unhighlightCode on "sourceCode" line 7
+highlightCode on "sourceCode" line 8
+unhighlightArrayCell on "intArray" position 13
+unhighlightArrayCell on "intArray" position 12
+moveArrayMarker "i" to position 12  
+}
+{
+unhighlightCode on "sourceCode" line 8
+highlightCode on "sourceCode" line 2
+}
+{
+unhighlightCode on "sourceCode" line 2
+highlightCode on "sourceCode" line 3
+}
+{
+unhighlightCode on "sourceCode" line 3
+highlightCode on "sourceCode" line 6
+}
+{
+unhighlightCode on "sourceCode" line 6
+highlightCode on "sourceCode" line 7
+highlightArrayCell on "intArray" position 12
+highlightArrayCell on "intArray" position 11
+}
+{
+arrayPut "3" on "intArray" position 12  
+arrayPut "0" on "intArray" position 11  
+}
+{
+unhighlightCode on "sourceCode" line 7
+highlightCode on "sourceCode" line 8
+unhighlightArrayCell on "intArray" position 12
+unhighlightArrayCell on "intArray" position 11
+moveArrayMarker "i" to position 11  
+}
+{
+unhighlightCode on "sourceCode" line 8
+highlightCode on "sourceCode" line 2
+}
+{
+unhighlightCode on "sourceCode" line 2
+highlightCode on "sourceCode" line 3
+}
+{
+unhighlightCode on "sourceCode" line 3
+highlightCode on "sourceCode" line 6
+}
+{
+unhighlightCode on "sourceCode" line 6
+highlightCode on "sourceCode" line 7
+highlightArrayCell on "intArray" position 11
+highlightArrayCell on "intArray" position 10
+}
+{
+arrayPut "2" on "intArray" position 11  
+arrayPut "0" on "intArray" position 10  
+}
+{
+unhighlightCode on "sourceCode" line 7
+highlightCode on "sourceCode" line 8
+unhighlightArrayCell on "intArray" position 11
+unhighlightArrayCell on "intArray" position 10
+moveArrayMarker "i" to position 10  
+}
+{
+unhighlightCode on "sourceCode" line 8
+highlightCode on "sourceCode" line 2
+}
+{
+unhighlightCode on "sourceCode" line 2
+highlightCode on "sourceCode" line 3
+}
+{
+unhighlightCode on "sourceCode" line 3
+highlightCode on "sourceCode" line 6
+}
+{
+unhighlightCode on "sourceCode" line 6
+highlightCode on "sourceCode" line 7
+highlightArrayCell on "intArray" position 10
+highlightArrayCell on "intArray" position 9
+}
+{
+arrayPut "1" on "intArray" position 10  
+arrayPut "0" on "intArray" position 9  
+}
+{
+unhighlightCode on "sourceCode" line 7
+highlightCode on "sourceCode" line 8
+unhighlightArrayCell on "intArray" position 10
+unhighlightArrayCell on "intArray" position 9
+moveArrayMarker "i" to position 9  
+}
+{
+unhighlightCode on "sourceCode" line 8
+highlightCode on "sourceCode" line 2
+}
+{
+unhighlightCode on "sourceCode" line 2
+highlightCode on "sourceCode" line 3
+}
+{
+unhighlightCode on "sourceCode" line 3
+highlightCode on "sourceCode" line 4
+moveArrayMarker "i" to position 10  
+}
+{
+unhighlightCode on "sourceCode" line 4
+highlightCode on "sourceCode" line 2
+}
+{
+unhighlightCode on "sourceCode" line 2
+highlightCode on "sourceCode" line 3
+}
+{
+unhighlightCode on "sourceCode" line 3
+highlightCode on "sourceCode" line 4
+moveArrayMarker "i" to position 11  
+}
+{
+unhighlightCode on "sourceCode" line 4
+highlightCode on "sourceCode" line 2
+}
+{
+unhighlightCode on "sourceCode" line 2
+highlightCode on "sourceCode" line 3
+}
+{
+unhighlightCode on "sourceCode" line 3
+highlightCode on "sourceCode" line 4
+moveArrayMarker "i" to position 12  
+}
+{
+unhighlightCode on "sourceCode" line 4
+highlightCode on "sourceCode" line 2
+}
+{
+unhighlightCode on "sourceCode" line 2
+highlightCode on "sourceCode" line 3
+}
+{
+unhighlightCode on "sourceCode" line 3
+highlightCode on "sourceCode" line 4
+moveArrayMarker "i" to position 13  
+}
+{
+unhighlightCode on "sourceCode" line 4
+highlightCode on "sourceCode" line 2
+}
+{
+unhighlightCode on "sourceCode" line 2
+highlightCode on "sourceCode" line 3
+}
+{
+unhighlightCode on "sourceCode" line 3
+highlightCode on "sourceCode" line 4
+moveArrayMarker "i" to position 14  
+}
+{
+unhighlightCode on "sourceCode" line 4
+highlightCode on "sourceCode" line 2
+}
+{
+unhighlightCode on "sourceCode" line 2
+highlightCode on "sourceCode" line 3
+}
+{
+unhighlightCode on "sourceCode" line 3
+highlightCode on "sourceCode" line 4
+moveArrayMarker "i" to position 15  
+}
+{
+unhighlightCode on "sourceCode" line 4
+highlightCode on "sourceCode" line 2
+}
+{
+unhighlightCode on "sourceCode" line 2
+highlightCode on "sourceCode" line 3
+}
+{
+unhighlightCode on "sourceCode" line 3
+highlightCode on "sourceCode" line 4
+}
+{
+unhighlightCode on "sourceCode" line 4
+highlightCode on "sourceCode" line 2
+unhighlightCode on "sourceCode" line 2
+highlightCode on "sourceCode" line 11
+}

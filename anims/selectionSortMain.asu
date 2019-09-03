@@ -1,0 +1,348 @@
+%Animal 2.0
+title "Selection Sort Animation"
+author "Jens Falk <Jens.Falk@epost.de>"
+embed "selectionSortHeader.asu"
+hideAll
+{
+  array "array" (20, 80) color black fillColor white elementColor black elemHighlight blue cellHighlight light Gray length 6 "6" "1" "4" "3" "2" "5"
+  codegroup "selectionCode" at (20,140) color black highlightColor red contextColor black font Monospaced size 11
+  addCodeLine "public void selectionSort(int[] a)" to "selectionCode" indentation 0
+  addCodeLine "{" to "selectionCode" indentation 0
+  addCodeLine " int i, j;                       // Schleifenzaehler" to "selectionCode" indentation 0
+  addCodeLine " int minIndex;                   // Index des kleinsten Elements" to "selectionCode" indentation 0
+  addCodeLine " for (i=0; i<a.length-1; i++)    // Suche i-t kleinstes Element" to "selectionCode" indentation 0
+  addCodeLine " {" to "selectionCode" indentation 0
+  addCodeLine "  minIndex = i;                  // bisheriges Minimum" to "selectionCode" indentation 0
+  addCodeLine "  for (j=i+1; j<a.length; j++)   // Suche Rest ab" to "selectionCode" indentation 0
+  addCodeLine "  {" to "selectionCode" indentation 0
+  addCodeLine "   if (a[j] < a[minIndex])" to "selectionCode" indentation 0
+  addCodeLine "   {" to "selectionCode" indentation 0
+  addCodeLine "    minIndex = j;                // neues Minimum" to "selectionCode" indentation 0
+  addCodeLine "   }" to "selectionCode" indentation 0
+  addCodeLine "  }" to "selectionCode" indentation 0
+  addCodeLine "  swap(a, i , minIndex);         // vertausche a[i] und a[minIndex]" to "selectionCode" indentation 0
+  addCodeLine " }" to "selectionCode" indentation 0
+  addCodeLine "}" to "selectionCode" indentation 0
+}
+highlightCode on "selectionCode" line 0
+{
+  unhighlightCode on "selectionCode" line 0
+  arraymarker "i" on "array" atIndex 0 label "i" color black
+  arraymarker "j" on "array" atIndex 0 label "j" color gray
+  highlightCode on "selectionCode" line 2
+}
+{
+  unhighlightCode on "selectionCode" line 2
+  highlightCode on "selectionCode" line 3
+}
+{
+  unhighlightCode on "selectionCode" line 3
+  movemarker "i" to position 0 within 5 ticks
+  highlightCode on "selectionCode" line 4
+}
+{
+  unhighlightCode on "selectionCode" line 4
+  highlightArrayElem on "array" position 0 within 0 ticks
+  highlightCode on "selectionCode" line 6
+}
+{
+  unhighlightCode on "selectionCode" line 6
+  movemarker "j" to position 1 within 5 ticks
+  highlightCode on "selectionCode" line 7
+}
+{
+  unhighlightCode on "selectionCode" line 7
+  highlightCode on "selectionCode" line 9
+}
+{
+  unhighlightCode on "selectionCode" line 9
+  unhighlightArrayElem on "array" position 0 within 0 ticks
+  highlightArrayElem on "array" position 1 within 0 ticks
+  highlightCode on "selectionCode" line 11
+}
+{
+  unhighlightCode on "selectionCode" line 11
+  movemarker "j" to position 2 within 5 ticks
+  highlightCode on "selectionCode" line 7
+}
+{
+  unhighlightCode on "selectionCode" line 7
+  highlightCode on "selectionCode" line 9
+}
+{
+  unhighlightCode on "selectionCode" line 9
+  movemarker "j" to position 3 within 5 ticks
+  highlightCode on "selectionCode" line 7
+}
+{
+  unhighlightCode on "selectionCode" line 7
+  highlightCode on "selectionCode" line 9
+}
+{
+  unhighlightCode on "selectionCode" line 9
+  movemarker "j" to position 4 within 5 ticks
+  highlightCode on "selectionCode" line 7
+}
+{
+  unhighlightCode on "selectionCode" line 7
+  highlightCode on "selectionCode" line 9
+}
+{
+  unhighlightCode on "selectionCode" line 9
+  movemarker "j" to position 5 within 5 ticks
+  highlightCode on "selectionCode" line 7
+}
+{
+  unhighlightCode on "selectionCode" line 7
+  highlightCode on "selectionCode" line 9
+}
+{
+  unhighlightCode on "selectionCode" line 9
+  highlightCode on "selectionCode" line 7
+}
+{
+  unhighlightCode on "selectionCode" line 7
+  highlightArrayElem on "array" position 0 within 0 ticks
+  arraySwap on "array" position 0 with 1 within 10 ticks
+  highlightCode on "selectionCode" line 14
+}
+{
+  unhighlightArrayElem on "array" position 0 within 0 ticks
+  unhighlightArrayElem on "array" position 1 within 0 ticks
+}
+{
+  unhighlightCode on "selectionCode" line 14
+  highlightArrayCell on "array" position 0 within 0 ticks
+  movemarker "i" to position 1 within 4 ticks
+  highlightCode on "selectionCode" line 4
+}
+{
+  unhighlightCode on "selectionCode" line 4
+  highlightArrayElem on "array" position 1 within 0 ticks
+  highlightCode on "selectionCode" line 6
+}
+{
+  unhighlightCode on "selectionCode" line 6
+  movemarker "j" to position 2 within 5 ticks
+  highlightCode on "selectionCode" line 7
+}
+{
+  unhighlightCode on "selectionCode" line 7
+  highlightCode on "selectionCode" line 9
+}
+{
+  unhighlightCode on "selectionCode" line 9
+  unhighlightArrayElem on "array" position 1 within 0 ticks
+  highlightArrayElem on "array" position 2 within 0 ticks
+  highlightCode on "selectionCode" line 11
+}
+{
+  unhighlightCode on "selectionCode" line 11
+  movemarker "j" to position 3 within 5 ticks
+  highlightCode on "selectionCode" line 7
+}
+{
+  unhighlightCode on "selectionCode" line 7
+  highlightCode on "selectionCode" line 9
+}
+{
+  unhighlightCode on "selectionCode" line 9
+  unhighlightArrayElem on "array" position 2 within 0 ticks
+  highlightArrayElem on "array" position 3 within 0 ticks
+  highlightCode on "selectionCode" line 11
+}
+{
+  unhighlightCode on "selectionCode" line 11
+  movemarker "j" to position 4 within 5 ticks
+  highlightCode on "selectionCode" line 7
+}
+{
+  unhighlightCode on "selectionCode" line 7
+  highlightCode on "selectionCode" line 9
+}
+{
+  unhighlightCode on "selectionCode" line 9
+  unhighlightArrayElem on "array" position 3 within 0 ticks
+  highlightArrayElem on "array" position 4 within 0 ticks
+  highlightCode on "selectionCode" line 11
+}
+{
+  unhighlightCode on "selectionCode" line 11
+  movemarker "j" to position 5 within 5 ticks
+  highlightCode on "selectionCode" line 7
+}
+{
+  unhighlightCode on "selectionCode" line 7
+  highlightCode on "selectionCode" line 9
+}
+{
+  unhighlightCode on "selectionCode" line 9
+  highlightCode on "selectionCode" line 7
+}
+{
+  unhighlightCode on "selectionCode" line 7
+  highlightArrayElem on "array" position 1 within 0 ticks
+  arraySwap on "array" position 1 with 4 within 10 ticks
+  highlightCode on "selectionCode" line 14
+}
+{
+  unhighlightArrayElem on "array" position 1 within 0 ticks
+  unhighlightArrayElem on "array" position 4 within 0 ticks
+}
+{
+  unhighlightCode on "selectionCode" line 14
+  highlightArrayCell on "array" position 1 within 0 ticks
+  movemarker "i" to position 2 within 4 ticks
+  highlightCode on "selectionCode" line 4
+}
+{
+  unhighlightCode on "selectionCode" line 4
+  highlightArrayElem on "array" position 2 within 0 ticks
+  highlightCode on "selectionCode" line 6
+}
+{
+  unhighlightCode on "selectionCode" line 6
+  movemarker "j" to position 3 within 5 ticks
+  highlightCode on "selectionCode" line 7
+}
+{
+  unhighlightCode on "selectionCode" line 7
+  highlightCode on "selectionCode" line 9
+}
+{
+  unhighlightCode on "selectionCode" line 9
+  unhighlightArrayElem on "array" position 2 within 0 ticks
+  highlightArrayElem on "array" position 3 within 0 ticks
+  highlightCode on "selectionCode" line 11
+}
+{
+  unhighlightCode on "selectionCode" line 11
+  movemarker "j" to position 4 within 5 ticks
+  highlightCode on "selectionCode" line 7
+}
+{
+  unhighlightCode on "selectionCode" line 7
+  highlightCode on "selectionCode" line 9
+}
+{
+  unhighlightCode on "selectionCode" line 9
+  movemarker "j" to position 5 within 5 ticks
+  highlightCode on "selectionCode" line 7
+}
+{
+  unhighlightCode on "selectionCode" line 7
+  highlightCode on "selectionCode" line 9
+}
+{
+  unhighlightCode on "selectionCode" line 9
+  highlightCode on "selectionCode" line 7
+}
+{
+  unhighlightCode on "selectionCode" line 7
+  highlightArrayElem on "array" position 2 within 0 ticks
+  arraySwap on "array" position 2 with 3 within 10 ticks
+  highlightCode on "selectionCode" line 14
+}
+{
+  unhighlightArrayElem on "array" position 2 within 0 ticks
+  unhighlightArrayElem on "array" position 3 within 0 ticks
+}
+{
+  unhighlightCode on "selectionCode" line 14
+  highlightArrayCell on "array" position 2 within 0 ticks
+  movemarker "i" to position 3 within 4 ticks
+  highlightCode on "selectionCode" line 4
+}
+{
+  unhighlightCode on "selectionCode" line 4
+  highlightArrayElem on "array" position 3 within 0 ticks
+  highlightCode on "selectionCode" line 6
+}
+{
+  unhighlightCode on "selectionCode" line 6
+  movemarker "j" to position 4 within 5 ticks
+  highlightCode on "selectionCode" line 7
+}
+{
+  unhighlightCode on "selectionCode" line 7
+  highlightCode on "selectionCode" line 9
+}
+{
+  unhighlightCode on "selectionCode" line 9
+  movemarker "j" to position 5 within 5 ticks
+  highlightCode on "selectionCode" line 7
+}
+{
+  unhighlightCode on "selectionCode" line 7
+  highlightCode on "selectionCode" line 9
+}
+{
+  unhighlightCode on "selectionCode" line 9
+  highlightCode on "selectionCode" line 7
+}
+{
+  unhighlightCode on "selectionCode" line 7
+  highlightArrayElem on "array" position 3 within 0 ticks
+  arraySwap on "array" position 3 with 3 within 10 ticks
+  highlightCode on "selectionCode" line 14
+}
+{
+  unhighlightArrayElem on "array" position 3 within 0 ticks
+  unhighlightArrayElem on "array" position 3 within 0 ticks
+}
+{
+  unhighlightCode on "selectionCode" line 14
+  highlightArrayCell on "array" position 3 within 0 ticks
+  movemarker "i" to position 4 within 4 ticks
+  highlightCode on "selectionCode" line 4
+}
+{
+  unhighlightCode on "selectionCode" line 4
+  highlightArrayElem on "array" position 4 within 0 ticks
+  highlightCode on "selectionCode" line 6
+}
+{
+  unhighlightCode on "selectionCode" line 6
+  movemarker "j" to position 5 within 5 ticks
+  highlightCode on "selectionCode" line 7
+}
+{
+  unhighlightCode on "selectionCode" line 7
+  highlightCode on "selectionCode" line 9
+}
+{
+  unhighlightCode on "selectionCode" line 9
+  unhighlightArrayElem on "array" position 4 within 0 ticks
+  highlightArrayElem on "array" position 5 within 0 ticks
+  highlightCode on "selectionCode" line 11
+}
+{
+  unhighlightCode on "selectionCode" line 11
+  highlightCode on "selectionCode" line 7
+}
+{
+  unhighlightCode on "selectionCode" line 7
+  highlightArrayElem on "array" position 4 within 0 ticks
+  arraySwap on "array" position 4 with 5 within 10 ticks
+  highlightCode on "selectionCode" line 14
+}
+{
+  unhighlightArrayElem on "array" position 4 within 0 ticks
+  unhighlightArrayElem on "array" position 5 within 0 ticks
+}
+{
+  unhighlightCode on "selectionCode" line 14
+  highlightCode on "selectionCode" line 4
+}
+{
+  unhighlightCode on "selectionCode" line 4
+  highlightArrayCell on "array" position 5 within 0 ticks
+  highlightArrayCell on "array" position 4 within 0 ticks
+}
+{
+  variable "nrComparisons"
+  assign "nrComparisons" = 15
+  variable "nrAssignments"
+  assign "nrAssignments" = 15
+}
+embed "selectionSortFooter.asu"

@@ -1,0 +1,35 @@
+algorithmName=Find-G (Symbolic) [EN]
+generatorName=Find-G (Symbolic) [EN]
+dataset=Training data:
+cs=Coordinate system:
+hypo=Hypothesis:
+explanation=Explanation:
+start=Start with the most general hypothesis h = <?, ?, ..., ?> that covers all examples. ? is the disjunction with each attribute value for the attribute: 
+noConcept=noConcept=A positive example is not covered. So there is no target concept and no hypothesis. The algorithm converges.
+foreach=Each example has to be checked for the classification. 
+negative=The current example is negative. For any condition of h, check whether it can be negated so that the current example is no longer covered and all previous positives are covered.
+positive=The current example is positive and is covered by the hypothesis. So it can be ignored.
+negate1=The negation of the value
+negate2=leads to the example not being covered and all previous positive are covered.
+noNegationPossible1=There is no negation for this attribute that covers all previous positives.
+newHypo=The new hypothesis is:
+noNegationPossible2=It does not exist a specification that covers not this negative example.\nTherefore a negative example is covered. So it exists no target concept.
+notCovered=The current example is negative and is already not covered. So h will not be specificated.
+terminates=The algorithm terminates because all examples have been checked and all positives are covered.\nThe final hypothesis is: {0}
+description=Find-G corresponds to Find-S and finds the most general hypothesis, which does not covers a negative example yet. The algorithm starts with the most general hypothesis h = <?,?,...,?> and covers all examples at the beginning.\nIf there is a negative example covered by the hypothesis, it has to be specified in order to no longer cover the instance. In case of symbolic attributes the algorithm checks whether any condition in the example is part of h.\nIf not, it is tested whether the condition can be negated with another value assignment, so that previous positives are still covered. If this is not possible, another (random) condition is being searched.  If a negative example cannot\nbe covered by the hypothesis, no changes are made. Positives are being ignored. Here, a crucial disadvantage is the procedure of specification. A chosen random attribute leads to exclusion of a negative example. However, there are further\nattributes which are suitable. If a false attribute is chosen, the Target Concept cannot be found anymore, although it exists. A solution for this problem is the extended Find-G-Set algorithm.
+
+introQuestion=Which statement is correct? 
+introQuestionAnswer1=Find-G covers as many positive examples as possible.
+introQuestionFeedback1=Wrong! Find-G covers all positive examples.
+introQuestionAnswer2=Find-G covers all positive examples.
+introQuestionFeedback2=Correct!
+introQuestionAnswer3=Find-G covers as few negative examples as possible.
+introQuestionFeedback3=Wrong! Find-G covers no negative examples.
+
+outroQuestion=What is the maximum number of specifications that can be performed by the algorithm?
+outroQuestionAnswer1=min( |attributes| + 1, |positive examples| )
+outroQuestionFeedback1=Correct!
+outroQuestionAnswer2=min( |attributes| + 1, |negative examples| )
+outroQuestionFeedback2=Wrong! Changes are only made with negative examples.
+outroQuestionAnswer3=min( |attributes| + 1, |examples| )
+outroQuestionFeedback3=Wrong! Changes are only made with positive examples.

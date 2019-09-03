@@ -1,0 +1,67 @@
+noSuchKeyException=Übersetzung fehlt {0}
+
+
+### Algorithm ###
+algo.name=3NF Synthese
+algo.algoName=Erzeugung dritter Normalform (3NF)
+algo.desc=Der Synthesealgorithmus beschreibt, wie aus einem relationalen Datenbankschema ein Relationenschema der dritten Normalform wird. Das besondere an diesem Algorithmus ist, dass er im Gegensatz zu der intuitiven Zerlegung des Schemas in die dritte Normalform die Abhängigkeitserhaltung in jedem Fall garantiert.
+
+### Generator ###
+requiredSteps=Auszuführende Schritte
+init=Funktionale Abhängigkeiten zu Beginn:
+left=Linksreduzierte funktionale Abhängigkeiten:
+right=Rechtsreduzierte funktionale Abhängigkeiten:
+empty=Funktionale Abhängigkeiten ohne leere Klauseln:
+assembled=Zusammengefügte funktionale Abhängigkeiten:
+textBegin=Der Synthesealgorithmus beschreibt, wie aus einem relationalen Datenbankschema ein\nRelationenschema der dritten Normalform wird. Das besondere an diesem Algorithmus ist,\ndass er im Gegensatz zu der intuitiven Zerlegung des Schemas in die dritte Normalform\ndie Abhängigkeitserhaltung in jedem Fall garantiert. \n \nEin alternativer Algorithmus ist der Zerlegungsalgorithmus, welcher in die\nBoyce-Codd-Normalform (BCNF) transferiert. Dabei können allerdings Abhängigkeiten\nverloren gehen (nicht abhängigkeitstreu). Er ist insofern eine Alternative, als dass\njedes relationale Schema, welches in BCNF transformiert wird, dann auch automatisch\nin dritter Normalform vorliegt.
+textSteps=1.Schritt: Reduktion der funktionalen Abhängigkeiten, d. h. die Bestimmung der kanonischen Überdeckung.\n           1.1 Linksreduzierung\n           1.2 Rechtsreduzierung\n           1.3 Entfernen leerer Klauseln\n           1.4 Zusammenfassen gleicher Determinanten\n2.Schritt: Erzeugen der neuen Relationenschemata aus der kanonischen Überdeckung.\n3.Schritt: Ggf. die Hinzunahme einer Relation, die nur den Ursprungsschlüssel enthält.\n \n \nAnmerkung: Der Algorithmus ist nicht eindeutig, da die Reihenfolge in der die einzelnen \nElemente betrachtet werden eine Auswirkung auf das Ergebnis hat. In dieser Variante wird über die \nZeilen von oben nach unten und innerhalb der Zeilen von links nach rechts über die Elemente iteriert.
+titleFinal=Die finalen Relationen sehen wie folgt aus:
+closureOf=Attributhülle von
+relations=Relationen:
+titleReduceLeft=Reduktion - 1.Schritt: Linksreduktion
+key=Schlüssel
+removedLeftNotInClosure=wird auf der linken Seite entfernt, \nda da er Teilmenge der Attributhülle von
+isdot=ist.
+remainsDueNotInClosure=bleibt, da es nicht Teilmenge der Attributhülle ist.
+onlyOneCanSkip=Nur ein Attribut auf der linken Seite. Daher kann es übersprungen werden.
+redMarkedWereRemoved=Die rot markierten Attribute auf der linken Seite wurden entfernt.
+
+titleReduceRight=Reduktion - 2.Schritt: Rechtsreduktion
+unnecessaryValue=Unnötiger wert
+willBeRemovedBecauseKeyClosure=wird entfernt, da es sich in einer der Attributhüllen der Schlüssel befindet.
+willRemainBecauseNotPartKeyClosure=bleibt, da es sich in keiner der Attributhüllen der Schlüssel befindet.
+redMarkedRemovedFromRight=Die rot markierten Attribute auf der rechten Seite wurden entfernt.
+
+titleRemoveEmpty=Reduktion - 3.Schritt: Leere Klauseln entfernen
+mayRemainRightNotEmpty=Die markierte Zeile kann bleiben, da die rechte Seite nicht leer ist.
+removeBecauseRightEmpty=Entferne markierte Zeile, da die rechte Seite leer ist.
+
+titleAssembleRelations=Reduktion - 4.Schritt: Zusammenfassen der Klauseln
+redDependencyIsAlreadyAssembled=Die rot markierte funktionale Abhängigkeit ist bereits zusammengefasst.
+redDependenciesAreBeingAssembled=Die rot markierten funktionalen Abhängigkeiten werden zusammengefasst.
+
+titleCreateNewRelations=Erzeugen der neuen Relationsschemata
+
+titleAddBinderRelation=Ggf. Hinzunahme einer Relation, die nur den Ursprungsschlüssel enthalten
+iterateUntilPkCovered=Es wird über alle Relationen iteriert. Dabei wird die Vereinigung \nder Kandidatenschlüssel aus der jetzigen und allen vorrigen Iterationen, \ndie die Attributhülle dieser Vereinigung erweitert haben. 
+theClosureOf=Die Attributehülle von
+coversPkCreatingBinderRelation=umfasst alle globalen Attribute. \nDaher wird eine entsprechende Relation hinzugefügt um eine Beziehung \nzwischen den bestehenden Relationen aufzubauen.
+doesntCoverNeedMorePk=umfasst nicht alle globalen Attribute.\nDaher müssen die Primärschlüssel der nächsten Relation
+bringInNotPartClosure=mitbetrachtet werden, \ndie nicht Teil der bisherigen Attributhülle sind.
+allSteps=1.Schritt: Reduktion der funktionalen Abhängigkeiten, d. h. die Bestimmung der kanonischen Überdeckung.\n2.Schritt: Erzeugen der neuen Relationenschemata aus der kanonischen Überdeckung.\n3.Schritt: Ggf. die Hinzunahme einer Relation, die nur den Ursprungsschlüssel enthält.
+finalInfo=Nachdem eine Relation gefunden wurde, dessen Attributhülle der Schlüssel\nalle globalen Attribute umfasst, terminiert der Synthesealgorithmus.\nSomit sind die zu sehenden Relationen in dritter Normalform.
+emptyQPrompt=Wieviele leere Klauseln müssen entfernt werden?
+assembledQPrompt=Wieviele funktionale Abhängigkeiten exisiteren nach dem Zusammenfassen?
+stepQPrompt=Welcher dieser Teilschritte gehört nicht zur Bestimmung der kanonischen Überdeckung?
+rightAnswer=Das ist die richtige Antwort.
+wrongAnswer=Das ist die falsche Antwort.
+leftReduction=Linksreduktion.
+rightReduction=Rechtsreduktion.
+emptyReduction=Entfernen leerer Klauseln.
+assembledReduction=Zusammenfassen von funktionalen Abhängigkeiten mit gleicher linker Seite.
+wrongReduction=Zerlegen von funktionalen Abhängigkeiten mit gleicher rechter Seite.
+
+explanationLeft=Die Bestimmung der kanonischen Überdeckung beginnt mit der Linksreduktion. \nHierbei wird über alle Determinanten der funktionalen Abhängigkeiten iteriert. \nEs wird für jedes Attribut der Determinante die Attributhülle berechnet und geschaut,\nob die restlichen Attribute der Determinante sich darin befinden.\nSollte dies der Fall sein, werden die entsprechenden Attribute entfernt.\nSollte eine Determinate nur aus einem Attribut bestehen wird die entsprechende\nfunktionale Abhängigkeiten übersprungen.
+explanationRight=Die Rechtsreduktion prüft bei jeder funktionalen Abhängigkeit jedes Attribut \nder rechten Seite, ob sich dieses transitiv mithilfe der Attributhülle der linken \nSeite der funktionalen Abhängigkeit errechnen lässt(Die betrachtete funktionale \nAbhängigkeit wird ohne das betrachtete Attribut verwendet). Sollte \ndies der Fall sein, wird das Attribut auf der rechten Seite entfernt.
+explanationEmpty=Das Entfernen leerer Klauseln bedeutet, dass alle funktionalen Abhängigkeiten \nentfernt werden, deren rechte Seite leer ist. Ist dies wird die funktionale Abhängigkeit entfernt.
+explanationAssembled=Das Zusammenfassen prüft welche funktionalen Abhängigkeiten die selbe Determinante \nhaben und bildet eine neue funktionale Abhängigkeit mit der Vereinigung der entsprechenden rechten Seite.

@@ -1,0 +1,57 @@
+fibQuestion "fib"
+nrRepeats 2
+points 4
+questiongroup "test"
+"In sorting a[l...r], which element will be the pivot in our Quicksort implementation?"
+endtext
+answer
+"r"
+"The last"
+endanswer
+comment
+"Please review the code of our implementation carefully."
+endcomment
+
+mcQuestion "mc"
+points 6
+questiongroup "test"
+"Which of the following sorting algorithms is not quadratic in at least some cases?"
+endtext
+"Quicksort"
+endchoice
+comment
+"Quicksort has a quadratic worst-case complexity."
+endcomment
+"Bubble Sort"
+endchoice
+comment
+"Bubble Sort is indeed quadratic."
+endcomment
+"Selection Sort"
+endchoice
+comment
+"Selection Sort is always quadratic - even for ordered data!"
+endcomment
+"MergeSort"
+endchoice
+comment
+"Correct -- Mergesort has a worst-case complexity of O(n log(n))!"
+endcomment
+answer
+4
+endanswer
+
+tfQuestion "tf"
+points 5
+"The complexity of Quicksort always lies in O(n*n)"
+endtext
+answer
+f
+endanswer
+comment
+"This is only correct for the worst case! In other cases, Quicksort is O(n log(n))"
+endcomment
+
+documentation "baz"
+"http://www.tk.informatik.tu-darmstadt.de/Forschung/AV/welcome.html"
+endtext

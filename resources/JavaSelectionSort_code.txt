@@ -1,0 +1,12 @@
+public void selectionSort(int[] array) #header
+{
+  int i, j, minIndex; #variables
+  for (i=0; i<array.length - 1; i++) #outerLoop
+  {
+    minIndex = i; #setMinIndex
+    for (j=i+1; j<array.length; j++) #innerLoop
+      if (array[j] < array[minIndex]) #compare
+        minIndex = j; #minFound
+    swap(array, i, minIndex); #swap
+  }
+}

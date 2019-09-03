@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<PropertiesTreeModel xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="PropertiesTreeModel.xsd">
+	<Folder name="Root">
+		<Primitive type="int">
+			<name>maxPrim</name>
+			<value><int>42</int></value>
+		</Primitive>
+		<Folder name="Graphical customisation">
+			<Folder name="Colors">
+			
+				<Folder name="Texts">
+					<Primitive type="Color">
+						<name>headlineBgColor</name>
+						<value><Color>(255, 255, 255)</Color></value>
+					</Primitive>
+					<Primitive type="Color">
+						<name>codeHighlihgtColor</name>
+						<value><Color>(0, 0, 255)</Color></value>
+					</Primitive>
+					<Primitive type="Color">
+						<name>sourceCodeHighlightColor</name>
+						<value><Color>(0, 0, 255)</Color></value>
+					</Primitive>
+				</Folder>
+				<Folder name="Matrix">
+					<Primitive type="Color">
+						<name>matrixIsPrime</name>
+						<value><Color>(0, 255, 0)</Color></value>
+					</Primitive>
+					<Primitive type="Color">
+						<name>matrixIsNotPrime</name>
+						<value><Color>(255, 0, 0)</Color></value>
+					</Primitive>
+					<Primitive type="Color">
+						<name>matrixIsBlacked</name>
+						<value><Color>(0, 0, 0)</Color></value>
+					</Primitive>
+					<Primitive type="Color">
+						<name>matrixFillColor</name>
+						<value><Color>(255, 255, 255)</Color></value>
+					</Primitive>
+				</Folder>
+				<Folder name ="Counter">
+					<Primitive type="Color">
+						<name>counterViewColor</name>
+						<value><Color>(255, 255, 0)</Color></value>
+					</Primitive>
+					<Primitive type="Color">
+						<name>counterFillColor</name>
+						<value><Color>(255, 255, 255)</Color></value>
+					</Primitive>
+				</Folder>
+				<Folder name="Array">
+					<Primitive type="Color">
+						<name>arrayMarkerColor</name>
+						<value><Color>(0, 0, 255)</Color></value>
+					</Primitive>
+					<Primitive type="Color">
+						<name>arrayFillColor</name>
+						<value><Color>(255, 255, 255)</Color></value>
+					</Primitive>
+				</Folder>
+			</Folder>
+		</Folder>
+	</Folder>
+</PropertiesTreeModel>

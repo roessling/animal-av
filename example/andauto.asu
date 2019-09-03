@@ -1,0 +1,25 @@
+%Animal 2513*494
+{
+  reland "a" (28, 114) (135, 107) input in0 input in1 output out color black depth 0
+  
+}
+{  
+  relrs "b" (251, 321) (173, 173) input inS input inR output outQ output out^Q color black depth 0
+  
+}
+{  
+  relnot "c" (359, 53) (126, 109) input in0 output out color black depth 0
+  
+}
+{  
+  wire "d" (161,167) (225,167) (225,387) (250,387) color black depth 0
+  
+}
+{  
+  wire "e" (485,106) (513,106) (513,285) (159,285) (159,425) (251,425) color black depth 0
+  
+}
+{  
+  wire "f" (160,168) (255,168) (255,107) (360,107) color black depth 0
+  
+}

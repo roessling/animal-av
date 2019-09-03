@@ -1,0 +1,24 @@
+### Misc ###
+algoName=B-Baum Suche
+description=Dieser Algorithmus durchsucht einen B-Baum, indem er ihn immer weiter absteigt,\nbis er entweder den gesuchten Wert gefunden hat,\noder ein Blatt erreicht hat und nicht mehr weiter absteigen kann.
+tutorial=Um den B-Baum zu verändern, ist folgendes zu beachten:\n• Die Zeilen der Matrix entsprechen den Knoten des Baums von Links nach Rechts und von Oben nach Unten\n• Es dürfen keine Knoten weggelassen werden, außer es sind die letzten des ganzen Baums\n• Knoten die nicht angezeigt werden sollen, also nicht existente Knoten, werden alls 0-Zeile dargestellt\n• Werte die nicht angezeigt werden sollen, also keys die noch nicht gesetzt wurden, sind eine negative Zahl
+endScreen=Der B-Baum wird häufig in Datenbanken genutzt, da er in großen Blöcken liest und schreibt.\nDas hat den Vorteil, dass nicht der gesammte Baum im Speicher geladen sein muss,\nsondern nur ein Teilbaum. Da die Anzahl der Keys pro Knoten sehr groß gewählt werden können,\nfindet man hier den Kompromiss aus Speicherverbrauch und der extra Zeit, die benötigt wird\num die Daten von einem Sekundärspeicher (zBsp: Festplatte) einzulesen.\n\nDie Komplexität des Absteigens ist wie bei einem Binär-Baum logarithmisch O(log(n)).\nHinzu kommt noch der Zusätzliche Aufwand des durchsuchens eines Knotens. Diese ist\nentweder, wie in unserem Fall, linear. Also O(n). Vor allem bei großen m (Anzahl der\nSchlüssel pro Knoten) bietet sich allerdings auch eine binäre Suche an, da die Schlüssel\nschon sortiert vorliegen. Also O(log(m)).\nWenn man diese beiden Schritte nun also Kombiniert erhält man:\nFür lineares Suchen innerhalb der Knoten: O(m * log(n))\nFür binäres Suchen innerhalb der Knoten: O(log(m) * log(n))
+resultTrue=Der Key wurde also im Baum gefunden
+resultFalse=Der Key wurde nicht im Baum gefunen
+
+### Questions ###
+sortedTreeQuestionPrompt=Muss der Baum korrekt aufgebaut sein? Also sortiert.
+sortedTreeQuestionAnswerWrong=Falsch
+sortedTreeQuestionAnswerRight=Richtig
+
+komplexQuestionPromt=Welche Komplexität hat der hier vorgestellte Algorithmus\nn entspricht allen Elementen im Baum\nm entspricht den maximalen Schlüsseln pro Knoten
+komplexQuestionPromtAnswerOn=Falsch
+komplexQuestionPromtAnswerOlogn=Falsch, da in jedem Knoten auch noch die Keys durchsucht werden müssen
+komplexQuestionPromtAnswerOmlogn=Richtig. In dieser Version ist das die richtige Antwort. Vor allem bei sehr großen m ist es allerdings sinnvoll die Suche innerhalb der Knoten als binäre Suche zu implementieren. Damit wäre die Komplexität dann O(log(m) * log(n))
+komplexQuestionPromtAnswerOlogmlogn=Falsch. Zumindest in dieser Version des Algorithmus. Vor allem bei sehr großen m ist es allerdings sinnvoll die Suche innerhalb der Knoten als binäre Suche zu implementieren. Damit wäre die Komplexität dann O(log(m) * log(n))
+
+### Errors ###
+negativeSearchKey=Du hast einen negativen SearchKey angegeben
+unsortedTree=Der B-Baum muss sortiert sein
+unbalancedTree=Der B-Baum muss vollständig balancierter sein (alle Blätter auf einer Tiefe)
+emptyTree=Der Baum muss aus mindestens einem Knoten bestehen

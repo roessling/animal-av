@@ -1,0 +1,13 @@
+<html><body>
+<h1>Dijkstra-Algorithmus</h1>
+<p>Diese Animation verwendet den <em>Dijkstra-Algorithmus</em>,
+der alle kürzesten Wege von einem Startknoten zu allen anderen Knoten eines Graphen
+berechnet. Das Ziel der Berechnung ist das Bestimmen des <em>minimal spannenden
+Baums</em>, der alle Knoten mit dem Startknoten mit minimalen Gesamtkosten verbindet.</p>
+<p>In der Animation werden die bereits besuchten Knoten rot markiert. Für diese wurden
+bereits die minimalen Kosten ausgehend vom Startknoten berechnet.</p>
+<p>Die Animation erlaubt leider keine Eingabe eigener Startwerte, sondert arbeitet
+mit dem vordefinierten Graphen.</p>
+<p><em>Anmerkung:</em> Der Graph darf keine Kanten mit negativem Gewicht enthalten;
+andernfalls erzeugt der Algorithmus potenziell nicht das korrekte Ergebnis.</p>  
+</body></html>

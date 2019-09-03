@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<PropertiesTreeModel xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="PropertiesTreeModel.xsd">
+	<Folder name="Root">
+		<Folder name="Abbruchbedingungen">
+			<Primitive type="int">
+				<name>maxSteps</name>
+				<value><int>75</int></value>
+			</Primitive>
+			<Primitive type="double">
+				<name>abortDist</name>
+				<value><double>0.3</double></value>
+			</Primitive>
+			<Primitive type="int">
+				<name>abortSteps</name>
+				<value><int>5</int></value>
+			</Primitive>
+		</Folder>
+		<Folder name="Farben">
+			<Primitive type="Color">
+				<name>color1</name>
+				<value><Color>(0, 255, 0)</Color></value>
+			</Primitive>
+			<Primitive type="Color">
+				<name>color2</name>
+				<value><Color>(0, 0, 255)</Color></value>
+			</Primitive>
+			<Primitive type="Color">
+				<name>colorError</name>
+				<value><Color>(255, 0, 0)</Color></value>
+			</Primitive>
+		</Folder>
+		<Folder name="Nadeln">
+			<Primitive type="intMatrix">
+				<name>needles1</name>
+				<value><intMatrix>2, 30, 1, -30, 2; 1, 120, 1, 120, 1; 1, 135, 1, 0, 0; 1, 0, 0, 0, 0</intMatrix></value>
+			</Primitive>
+			<Primitive type="intMatrix">
+				<name>needles2</name>
+				<value><intMatrix>1, 30, 3, -30, 1; 1, 15, 1, 0, 0; 1, 90, 9, 0, 0</intMatrix></value>
+			</Primitive>
+		</Folder>
+		<Primitive type="boolean">
+			<name>withExplanation</name>
+			<value><boolean value="true" /></value>
+		</Primitive>
+		<Primitive type="boolean">
+			<name>stepwise</name>
+			<value><boolean value="false" /></value>
+		</Primitive>
+	</Folder>
+</PropertiesTreeModel>

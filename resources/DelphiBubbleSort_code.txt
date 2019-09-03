@@ -1,0 +1,15 @@
+{ TBubbleSort }
+
+procedure TBubbleSortSort(var A: array of Integer); @CodeLabel("header")
+var I, J, T: Integer; @CodeLabel("variables")
+begin
+ for I := High(A) downto Low(A) do @CodeLabel("outerLoop")
+   for J := Low(A) to High(A) - 1 do @CodeLabel("innerLoop")
+     if A[J] > A[J + 1] then @CodeLabel("if")
+     begin
+       T := A[J]; @CodeLabel("copy")
+       A[J] := A[J + 1]; @CodeLabel("replicate")
+       A[J + 1] := T; @CodeLabel("insertCopy")
+       if Terminated then Exit; @CodeLabel("checkDone")
+     end; @CodeLabel("endif")
+end; @CodeLabel("end")

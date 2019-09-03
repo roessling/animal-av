@@ -1,0 +1,263 @@
+de=German
+en=English
+Java=Java
+Pseudo-Code=Pseudo Code
+1=Sorting
+2=Searching
+4=Trees
+8=Graphs
+16=Data Structures
+32=Hashing
+64=Compression
+128=Cryptography
+256=Backtracking
+512=Mathematics
+1024=Hardware
+2048=Networking
+4096=Graphics
+1073741824=Misc
+browse=Browse
+mainWindowTitle=Animation Content Generators
+invalidFilename="{0}"\nis not a valid name for a file. Please choose another name.
+unwritableFilename="{0}"\nis not the name for a writable file. Please choose another name.
+overwriteFile="{0}"\nalready exists. Are you sure that you want to overwrite it?
+exitNow=The file has successfully been written.\nDo you want to exit Animal Generator?
+errorWriting=An error occurred while writing to\n"{0}"\nPlease try to choose another name!
+noSuchKeyException=There is no translation for the message with key {0}.
+filenamePrompt=Please enter a file name:
+fileHelp=Note: if run inside Animal, simply press confirm to directly run the animation.
+animalGenerator=Algorithm Animation Generator
+Generators=<h1>Generator Framework</h1>\n\n<p>Welcome to the content generation front-end!</p>\n\n\
+<p>Using this front-end, you can easily generate animation content by navigating \
+the tree nodes shown to the left.</p>\n\n<p>Generation follows these steps:</p>\n\n\
+<ol>\n  <li>Choose the top-level container,</li>\
+\n  <li>Choose the output language for the generator, e.g. English or German,</li>\
+\n  <li>Choose the underlying programming language, e.g. Java,</li>\
+\n  <li>Choose the algorithm category, such as <em>Sorting</em> or <em>Searching</em>,</li>\
+\n  <li>Choose the target algorithm, e.g. <em>Bubble Sort</em>,</li>\
+\n  <li>Choose the concrete generator, e.g. a <em>Bubble Sort with early termination</em>.</li>\n</ol>
+languageChoice=<h1>Language Choice</h1>\n\n<p>The node you choose at this level determines \
+the output language of the animation.\nIt only affects animations that provide some textual \
+output,\n e.g. information about the complexity or the fundamental approach taken.\n\
+The output language choice is <em>not</em> connected with the underlying programming language\n\
+used for the animation.</p>\n\n\n<p>The tree node you have chosen is labeled <em>{0}</em>\n\
+and represents content that uses <em>{1}</em> as the output language.</p>
+plChoice=<h1>Programming Language Choice</h1>\n\n<p>The node you choose at this level determines\n\
+the programming language used for illustrating the implementation of the algorithm inside\n\
+the animation.\nIt only affects animations that provide some implementation details about \
+the algorithm.</p>\n\
+<p>The programming language choice is <em>not</em> connected with the choice of the underlying\n\
+language used for showing comments about complexity or other textual information.</p>\
+\n\n<p>The tree node you have chosen represents animation that use\n\
+<em>{0}</em> as the programming language.</p>
+Sorting=<h1>Sorting Algorithms</h1>\n\n\
+<p><em>Taken from Wikipedia, the free encyclopedia:</em></p>\n\n\
+<blockquote>In computer science and mathematics, a sorting algorithm is\n\
+an algorithm that puts elements of a list in a certain order.\n\
+The most used orders are numerical order and lexicographical order.\n\
+Efficient sorting is important to optimizing the use of other\n\
+algorithms (such as search and merge algorithms) that require\n\
+sorted lists to work correctly. It is also often useful for\n\
+canonicalizing data and for producing human-readable output.</blockquote>
+Searching=<h1>Searching Algorithms</h1>\n\n\
+<p><em>Taken from Wikipedia, the free encyclopedia:</em></p>\
+\n\n<blockquote>In computer science, a search algorithm, broadly speaking,\n\
+is an algorithm that takes a problem as input and returns a\n\
+solution to the problem, usually after evaluating a number of\n\
+possible solutions. Most of the algorithms studied by computer\n\
+scientists that solve problems are kinds of search algorithms.\n\
+The set of all possible solutions to a problem is called the\n\
+search space.</blockquote>\n\n\
+<blockquote>Brute-force search or "naive"/uninformed search algorithms\n\
+use the simplest, most intuitive method of searching through\n\
+the search space, whereas informed search algorithms use\n\
+heuristics to apply knowledge about the structure of the\n\
+search space to try to reduce the amount of time spent searching.</blockquote>
+Trees=<h1>Trees and Tree Algorithms</h1>\n\n\
+<p><em>Taken from Wikipedia, the free encyclopedia:</em></p>\n\
+\n<blockquote>In computer science, a tree is a widely-used computer data\n\
+structure that emulates a tree structure with a set of linked\n\
+<em>nodes</em>. Each node has zero or more <em>child nodes</em>,\n\
+which are below it in the tree (in computer science, unlike\n\
+in nature, trees grow down, not up). A node that has a child\n\
+is called the child's <em>parent node</em>. A child has at\n\
+most one parent; a node without a parent is called the\n\
+<em>root node</em> (or <em>root</em>). Nodes with no children\n\
+are called <em>leaf nodes</em> or <em>leaves</em>.</blockquote>\n\n\
+<blockquote>In graph theory, a tree is a <em>connected acyclic graph</em>.\n\
+A <em>rooted tree</em> is such a graph with a vertex singled\n\
+out as the root. In this case, any two vertices connected by\n\
+an edge inherit a parent-child relationship. An acyclic graph\n\
+with multiple connected components or a set of rooted trees\n\
+is sometimes called a <em>forest</em>.</blockquote>\n\n\
+<p>There are two basic types of tree. In an <em>unordered tree</em>,\n\
+there is no distinction between the various children of a node\n\
+- none is the "first child" or "last child". A tree in which\n\
+such distinctions are made is called an <em>ordered tree</em>,\n\
+and data structures built on them are called ordered tree data\n\
+structures. Ordered trees are by far the most common form of\n\
+tree data structure.</blockquote>
+Graphs=<h1>Graphs and Graph Algorithms</h1>\n\n\
+<p><em>Taken from Wikipedia, the free encyclopedia:</em></p>\n\n\
+<blockquote>Informally, a graph is a set of objects called <em>vertices</em>\n\
+(or <em>nodes</em>) connected by links called <em>edges</em>\n\
+(or <em>arcs</em>), which can also have associated directions.\n\
+Typically, a graph is depicted as a set of dots (i.e., vertices)\n\
+connected by lines (i.e., edges), with an arrowhead on a line\n\
+representing a directed edge.</blockquote>\n\n\
+<blockquote>Such graphs can used to represent and analyze a variety of\n\
+systems and problems, including colorability problems, shortest\n\
+path algorithms and spanning trees.</blockquote>
+Data Structures=<h1>Data Structures</h1>\n\n\
+<p><em>Taken from Wikipedia, the free encyclopedia:</em></p>\n\
+<blockquote>In computer science, a data structure is a way of storing\n\
+data in a computer so that it can be used efficiently. Often,\n\
+a carefully chosen data structure will allow a more efficient\n\
+algorithm to be used. The choice of the data structure often\n\
+begins from the choice of an abstract data structure. A\n\
+well-designed data structure allows a variety of critical\n\
+operations to be performed on using as little resources, both\n\
+execution time and memory space, as possible.</blockquote>
+Hashing=<h1>Hashing</h1>\n\n\
+<p><em>Taken from Wikipedia, the free encyclopedia:</em></p>\n\
+<blockquote>A fundamental property of all hash functions is that if\n\
+two hashes (according to the same function) are different,\n\
+then the two inputs were different in some way. This property\n\
+is a consequence of hash functions being deterministic,\n\
+mathematical functions, but they are generally not one-to-one,\n\
+with a large domain and smaller range. Consequently, the\n\
+equality of two hash values does not guarantee the two\n\
+inputs were the same, but in some cases, probability theoretic\n\
+or computability theoretic guarantees apply.</blockquote>
+Compression=<h1>Compression Algorithms</h1>\n\n\
+<p><em>Taken from Wikipedia, the free encyclopedia:</em></p>\n\
+<blockquote>In computer science, data compression or source coding\n\
+is the process of encoding information using fewer bits\n\
+(or other information-bearing units) than a more obvious\n\
+representation would use, through use of specific\n\
+encoding schemes.</blockquote>
+Cryptography=<h1>Cryptography</h1>\n\n\
+<p><em>Taken from Wikipedia, the free encyclopedia:</em></p>\n\n\
+<blockquote>Cryptography is the field concerned with linguistic and\n\
+mathematical techniques for securing information, particularly\n\
+in communications. Historically, cryptography was concerned\n\
+solely with encryption; that is, means of converting information\n\
+from its normal, comprehensible form into an incomprehensible\n\
+format, rendering it unreadable without secret knowledge.\n\
+Encryption was used primarily to ensure secrecy in important\n\
+communications, such as those of spies, military leaders,\n\
+and diplomats.</blockquote>\n\n\
+<blockquote>In recent decades, however, the field of cryptography has\n\
+expanded its remit: modern cryptography provides mechanisms for\n\
+more than just keeping secrets and has a variety of applications\n\
+including, for example, authentication, digital signatures,\n\
+electronic voting and digital cash. Moreover, people without\n\
+extraordinary needs for secrecy use cryptographic technology,\n\
+which is often built transparently into much of computing and\n\
+telecommunications infrastructure.</blockquote>
+Backtracking=<h1>Backtracking and other Strategies</h1>\n\n\
+<p><em>Taken from Wikipedia, the free encyclopedia:</em></p>\n\
+<blockquote>Backtracking is a strategy for finding solutions to\n\
+constraint satisfaction problems. These are problems\n\
+with a complete solution, whereby the order of elements\n\
+does not matter. The problems consist of a set of variables\n\
+each of which must be assigned a value, subject to the\n\
+particular constraints of the problem.</blockquote>\n\n\
+<blockquote>Backtracking attempts to try all the combinations in\n\
+order to obtain a solution. Its strength is that many\n\
+implementations avoid trying many partial combinations,\n\
+thus speeding up the running-time. The term "backtrack"\n\
+was coined by the American mathematician D. H. Lehmer\n\
+in the 1950s.</blockquote>\n
+Backtracking=<h1>Backtracking</h1>\
+<p>A backtracking algorithm will try one solution, and if this does \
+not solve the problem, will step back to the last decision taken \
+and try a different decision. For example, if the last node allowed \
+the user to choose one of ten possible values, and the first possible \
+value was chosen, the algorithm will now try to solve the problem \
+by choosing the second possible value.\n\
+The individual solutions are compared to figure out why leads to a better \
+result.
+Networking=<h1>Networking</h1>\
+Netzwerke und insbesondere das Internet bilden die Grundlage der \
+modernen Kommunikation sowohl zwischen Menschen als auch zwischen \
+Maschinen. Daher gehören die eingesetzten Technologien und Verfahren \
+zu den Grundlagen eines Informatikstudiums. Insbesondere den Graphenalgorithmen, \
+die die Grundlage des Datenaustauschs in den paketvermittelnden Netzen bilden, \
+kommt hier ein besonderes Augenmerk zu. Mit diesen Methoden können die schnellsten \
+oder auch günstigsten Verbindungen zwischen zwei Endpunkten innerhalb des Netzwerkes \
+gefunden und flexibel auf Ausfälle oder Störungen reagiert werden. Weiterhin dienen \
+die Algorithmen zur Planung von neuen Übertragungswegen und zur effizienten Einrichtung \
+von Knoten, die Datenpakete entgegennehmen und weiter verteilen.\n
+Aufbauend auf diesen Graphenalgorithmen werden im Internet spezielle Routingverfahren \
+eingesetzt, die einen Datenaustausch auch über mehrere Knoten erlauben und dabei die \
+optimale Route des Datenpakets, abhängig von der aktuellen Netzwerksituation, dynamisch \
+bestimmen. Hierzu nutzen die Knoten im Netzwerk eigene Tabellen, in denen der optimale Weg \
+eines Daten- pakets beschrieben ist und die nächsten Zwischenschritte auf dem Weg zum \
+Zielknoten festgelegt sind. Diese Verfahren kommen insbesondere dann zum Einsatz, wenn die \
+gesamte Netzwerktopo- logie nicht oder nur unzureichend bekannt ist oder sich das Netzwerk \
+dynamisch verändert. Dies tritt insbesondere bei mobilen und ad–hoc Netzwerken auf, die \
+zwischen mehreren Endgeräten ohne eine zentrale Verwaltungsinstanz oft nur kurzzeitig \
+hergestellt werden.\n
+Neben diesen Routingverfahren kommen noch weitere Dienste zum Einsatz, ohne die eine \
+Kommunikation in Netzwerken gar nicht oder nur schwer möglich wäre. Insbesondere der Auflösung \
+von Rechnernamen zu IP–Adressen durch das Domain Name System kommt hier eine zentrale Rolle \
+zu. Der Dienst erlaubt eine effiziente Zuordnung von Rechnernamen zu Netzwerkadressen und \
+bietet darüber hinaus weitreichende Funktionen zur Verwaltung und Organisation des Netzwerks. \
+Die dezentrale Struktur des Domain Name Systems ermöglicht dabei sowohl einen ausfallsicheren \
+Betrieb der beteiligten Rechner als auch eine Verwaltung der Einträge direkt durch den Betreiber \
+der Endgeräte oder lokalen Netze.
+Misc=<h1>Miscellaneous Content</h1>\n\n\
+<p>This category covers "other topics" do not fit to the other listed topics.\n\
+By definition, no better definition than this can be given for this field.</p>
+seeConcreteGenerator=<h1>Chosen Content Topic: <em>{0}</em></h1>\n\
+<p>Please see the concrete generators for a description of the type of content\n\
+to expect. To access the concrete generators, please open this tree node and select\n\
+a subnode of this node.</p>
+algoTemplate=<h1>{0}</h1>\n\n\
+<ul>\n\
+  <li>Basic Algorithm: <em>{1}</em></li>\n\
+  <li>Output Language: <code>{2}</code></li>\n\
+  <li>Content Locale: <code>{3}</code></li>\n\
+  <li>File Extension: <code>{4}</code></li>\n\
+  <li>Author: <em>{5}</em></li>\n\
+  <li>Class name: <em>{8}</em></li>\n\
+</ul>\
+\n\n<h2>Description</h2>\n\n\
+<p>{6}</p>\
+\n\n<h2>Code Example</h2>\n\n\
+<pre>\n\
+{7}\
+</pre>
+htmlHead=<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"\n\
+  "http://www.w3.org/TR/html4/loose.dtd">\n\
+<html>\n\
+<head>\n\
+  <title>Animal Generator Framework Docu Page</title>\n\
+  <!--meta http-equiv="Content-Type" content="text/html;charset=iso-8859-1" -->\n\
+</head>\n\
+<body>
+confirmGen.iconName=
+confirmGen.label=Confirm
+confirmGen.mnemonic=c
+confirmGen.toolTipText=Confirm the current choice and continue
+#
+# Button definition for going backwards
+#
+backGen.iconName=
+backGen.label=Go back
+backGen.mnemonic=b
+backGen.toolTipText=Go back to the previous step
+quitGen.iconName=
+quitGen.label=Quit
+quitGen.mnemonic=q
+quitGen.toolTipText=Quit the content generator
+iconNotFound=The icon {0} was not found
+DELPHI=Delphi
+Graphics=Graphics
+Mathematics=Mathematics
+VHDL=VHDL
+Matlab=Matlab
+Data Structures=Data Structures
+Hardware=Hardware
+C=C

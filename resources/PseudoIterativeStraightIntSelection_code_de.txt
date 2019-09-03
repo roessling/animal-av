@@ -1,0 +1,11 @@
+int straightSelection(int[] data, int value): @CodeLabel("header")
+  Falls das Eingabefeld leer ist @CodeLabel("ifNull")
+    return -1;
+  Setze nrElems = Anzahl Feldelemente; @CodeLabel("getArrayLength")
+  Deklariere Variable i = 0; @CodeLabel("installMarker")
+  Solange i < nrElems und Feldelement an Position i != value: @CodeLabel("whileLoop")
+    Zähle i um eins hoch; @CodeLabel("moveMarker")
+  
+  Falls i < nrElems: @CodeLabel("outerIf")
+    return i; @CodeLabel("return value")
+  return -1; @CodeLabel("notFound")

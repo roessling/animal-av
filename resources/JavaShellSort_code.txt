@@ -1,0 +1,15 @@
+public void shellSort(int[] array) { #header
+  int i, j, dist, v; #variables
+  for (dist = 1; dist < array.length / 9; dist = dist * 3 +1); #initDist
+  for (; dist > 0; dist /= 3) { #loop1
+    for (i = dist; i < array.length; i++) { #loop2
+      v = array[i]; #takeOut
+      j = i; #setJ
+      while (j >= dist && v < array[j - dist]) { #loop3
+        array[j] = array[j-dist]; #moveForward
+        j = j - dist; #decrementJ
+      }
+      array[j] = v; #insert
+    }
+  }
+}

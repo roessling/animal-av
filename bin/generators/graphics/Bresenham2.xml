@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<PropertiesTreeModel xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="PropertiesTreeModel.xsd">
+	<Folder name="Root">
+		<Folder name="Startpunkt (0, ..., 13)">
+			<Primitive type="int">
+				<name>xstart</name>
+				<value><int>2</int></value>
+			</Primitive>
+			<Primitive type="int">
+				<name>ystart</name>
+				<value><int>4</int></value>
+			</Primitive>
+		</Folder>
+		<Folder name="Endpunkt (Startpunkt, ..., 13)">
+			<Primitive type="int">
+				<name>xend</name>
+				<value><int>8</int></value>
+			</Primitive>
+			<Primitive type="int">
+				<name>yend</name>
+				<value><int>11</int></value>
+			</Primitive>
+		</Folder>
+		<Folder name="Farben">
+			<Primitive type="Color">
+				<name>linie</name>
+				<value><Color>(255, 0, 0)</Color></value>
+			</Primitive>
+			<Primitive type="Color">
+				<name>highlight</name>
+				<value><Color>(255, 255, 0)</Color></value>
+			</Primitive>
+			<Primitive type="Color">
+				<name>pixel</name>
+				<value><Color>(0, 255, 0)</Color></value>
+			</Primitive>
+		</Folder>
+	</Folder>
+</PropertiesTreeModel>

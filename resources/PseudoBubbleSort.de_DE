@@ -1,0 +1,10 @@
+@import=resources/GenericBubbleSort.de_DE
+theName=Bubble Sort (Pseudocode) [DE]
+outputLanguage=Pseudo-Code
+codeExample=bubbleSort(int[] array):\n  declare variables i, j;\n  set swapPerformed = true;\n  loop for i = array.length until i==0 or swapPerformed == false:\n    set swapPerformed = false;\n    loop for j = 1 to j == i:\n      if array[j - 1] > array[j]\n        swap array position j-1, j\n        set swapPerformed = true;
+animTitle=Bubble Sort
+algoTitle=Bubble Sort
+animDesc=Beschreibung des Algorithmus
+description.filename=resources/PseudoBubbleSort_descr_de.txt
+code.filename=resources/PseudoBubbleSort_code_de.txt
+complexity.filename=resources/GenericBubbleSort_complexity_de.txt

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<PropertiesTreeModel xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="PropertiesTreeModel.xsd">
+	<Folder name="Root">
+		<Primitive type="int">
+			<name>Anzahl der Zeilen (mindestens 4)</name>
+			<value><int>7</int></value>
+		</Primitive>
+		<Primitive type="int">
+			<name>Anzahl der Zeilen, deren Werte einzeln berechnet werden (mindestens 3)</name>
+			<value><int>4</int></value>
+		</Primitive>
+		<Primitive type="boolean">
+			<name>Pfeilspitzen anzeigen?</name>
+			<value><boolean value="false" /></value>
+		</Primitive>
+		<Primitive type="boolean">
+			<name>Die aktuelle Codezeile mit einem Pfeil markieren?</name>
+			<value><boolean value="true" /></value>
+		</Primitive>
+		<Primitive type="Color">
+			<name>Farbe der Hilfsnullen?</name>
+			<value><Color>(128, 128, 128)</Color></value>
+		</Primitive>
+	</Folder>
+</PropertiesTreeModel>

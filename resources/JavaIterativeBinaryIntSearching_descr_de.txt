@@ -1,0 +1,21 @@
+Die Binäre Suche ist ein effizientes Verfahren zum Finden eines
+gegebenen Elements in einem sortierten Feld.
+
+In jeder Iteration wird nur ein Teil des Feldes betrachtet (anfangs
+das gesamte Feld). Die Feldgrenzen werden in jeder Iteration angepasst,
+wobei das Feld immer halbiert wird. Wurde das gesuchte Element gefunden,
+so wird seine Position zurückgegeben, sonst -1 als 'Fehlermarkierung'.
+
+Der Algorithmus in Worten:
+
+Teste, ob das Feld existiert.
+Teste, ob die übergebenen Grenzen beide im Feld liegen.
+Berechne die Mitte mid = (l + r) / 2.
+Falls array[mid] = value:
+  Gib die Position mid als Ergebnis aus.
+Falls value < array[mid]:
+  return search(array, value, l, mid - 1).
+Sonst
+  return search(array, value, mid + 1, r).
+
+In der Animation wird das aktuelle Teilfeld farbig hervorgehoben.

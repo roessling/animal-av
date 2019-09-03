@@ -1,0 +1,5 @@
+Anmerkungen zur Komplexitä
+
+Die Effizienz von Quicksort liegt darin, dass es Elemente aus gro?er 
+Distanz miteinander vertauscht. Je kurzer die zu sortierende Liste wird, 
+desto ineffizienter arbeitet Quicksort, da es sich einer Komplexitat von O(n2) nahert.

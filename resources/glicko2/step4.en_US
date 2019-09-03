@@ -1,0 +1,7 @@
+Now we calculate the estimated improvement
+in the rating of our current player. Note that now
+we are considering the round results against the opponents.
+s_j is the result (loss := 0, win := 1, draw := 0.5) of
+our current player against player j. 
+
+    set Delta := ny * [SUM from j=1 to m (g(Phi_j)*(s_j - E(my, my_j, Phi_j))]

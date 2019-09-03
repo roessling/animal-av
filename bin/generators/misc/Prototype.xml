@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<PropertiesTreeModel xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="PropertiesTreeModel.xsd">
+	<Folder name="Root">
+		<Primitive type="Graph">
+			<name>graph1</name>
+			<value><Graph>%graphscript
+
+graph 6 weighted
+graphcoordinates at 50 50
+
+startknoten A
+zielknoten F
+
+node A at 30 93
+node B at 30 268
+node C at 160 186
+node D at 307 186
+node E at 420 290
+node F at 420 97
+
+edge A B  weight 10
+edge A C weight 11
+edge B C weight 12
+edge C D weight  13
+edge D E weight 14
+edge D F weight 15
+edge E F weight 16
+
+</Graph></value>
+		</Primitive>
+		<Primitive type="Graph">
+			<name>graph2</name>
+			<value><Graph>%graphscript
+
+graph 6 weighted
+graphcoordinates at 50 50
+
+startknoten A
+zielknoten F
+
+node A at 30 150
+node B at 30 268
+node C at 160 186
+node D at 307 186
+node E at 420 290
+node F at 420 97
+
+edge A B  weight 10
+edge A C weight 11
+edge B C weight 12
+edge C D weight  13
+edge D E weight 14
+edge D F weight 15
+edge E F weight 16
+
+</Graph></value>
+		</Primitive>
+	
+	
+	</Folder>
+</PropertiesTreeModel>

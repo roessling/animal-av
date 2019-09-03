@@ -1,0 +1,270 @@
+de=Deutsch
+en=Englisch
+Java=Java
+Pseudo-Code=Pseudo Code
+1=Sortieralgorithmen
+2=Suchalgorithmen
+4=B\u00e4ume
+8=Graphen
+16=Datenstrukturen
+32=Hash-Verfahren
+64=Kompression
+128=Kryptografie
+256=Backtracking
+512=Mathematik
+2048=Netzwerke
+4096=Graphik
+1073741824=Verschiedenes
+browse=Durchsuchen...
+mainWindowTitle=Generatoren f\u00fcr Animationsinhalte
+invalidFilename="{0}"\nist kein g\u00fcltiger Dateiname. Bitte w\u00e4hlen Sie einen anderen Dateinamen.
+unwritableFilename="{0}"\nist kein g\u00fcltiger Name f\u00e4r eine schreibbare Datei. Bitte w\u00e4hlen Sie einen anderen Dateinamen.
+overwriteFile="{0}"\ngibt es bereits. Wollen Sie die Datei wirklich \u00fcberschreiben?
+exitNow=Die Datei wurde erfolgreich geschrieben.\nWollen Sie den Animationsgenerator nun verlassen?
+errorWriting=Beim Schreiben der Datei \n"{0}"\ntrat ein Fehler auf. Bitte w\u00e4hlen Sie einen anderen Dateinamen!
+noSuchKeyException=Es gibt leider keine \u00dcbersetzung mit Schl\u00fcssel {0}.
+filenamePrompt=Bitte geben Sie einen Dateinamen an:
+fileHelp=Hinweis: bei Ausf\u00fchrung innerhalb von Animal k\u00f6nnen einfach auf "Best\u00e4tigen" klicken, um die Animation direkt anzuzeigen.
+animalGenerator=Generator f\u00e4r Algorithmenanimationen
+Generators=<h1>Generator-Framework</h1>\n\n<p>Willkommen zur Schnittstelle zur Inhaltserstellung!</p>\n\n\
+<p>Mit diesem Werkzeug k&ouml;nnen Sie einfach Animationsinhalte erstellen, indem Sie &uuml;ber die \
+links angezeigten Baumknoten navigieren.</p>\n\n<p>Die Generierung besteht aus den folgenden Schritten:</p>\n\n\
+<ol>\n  <li>Auswahl des obersten Elements des Baumes,</li>\
+\n  <li>Auswahl der Ausgabesprache f&uuml;r den Generator, z.B. Englisch oder Deutsch,</li>\
+\n  <li>Auswahl der Programmiersprache der zu erstellenden Algorithmenanimation, z.B. Java,</li>\
+\n  <li>Auswahl der Algorithmenart, etwa <em>Sortieralgorithmen</em> oder <em>Suchalgorithmen</em>,</li>\
+\n  <li>Auswahl des gew&uuml;nschten Algorithmus, z.B. <em>Bubble Sort</em>,</li>\
+\n  <li>Auswahl des konkreten Generators, z.B. <em>Bubble Sort mit vorzeitigem Abbruch</em>.</li>\n</ol>
+languageChoice=<h1>Sprachauswahl</h1>\n\n<p>Der von Ihnen auf dieser Stufe ausgew&auml;hlte Knoten bestimmt \
+die Ausgabesprache der Animation.\nDas betrifft nur Animationen, die irgendeine Textausgabe jenseits des \
+Algorithmus machen, z.B. Informationen zur Komplexit&auml;t oder dem grunds&auml;tzlichen Vorgehen des Algorithmus.\n\
+Die Ausgabesprache h&auml;ngt <em>nicht</em> mit der zugrunde liegenden Programmiersprache zusammen.</p>\n\n\n\
+<p>Der von Ihnen gew&auml;hlte Baumknoten trauml;gt die Bezeichnung <em>{0}</em>\n\
+und steht f&uuml;r Inhalte, die als Ausgabesprache <em>{1}</em> verwenden.</p>
+plChoice=<h1>Auswahl der Programmiersprache</h1>\n\n<p>Der von Ihnen auf dieser Stufe ausgw&auml;hlte Knoten\n\
+bestimmt die Programmiersprache, die zur Illustration der Implementierung des Algorithmus in der\n\
+Animation genutzt wird.\nDie Auswahl betrifft nur Animationen, die eine Ansicht der Implementierung \
+umfassen.</p>\n\
+<p>Die Auswahl der Programmiersprache h&auml;ngt <em>nicht</em> mit der Auswahl der Ausgabesprache zusammen,\n\
+da letztere nur Textelemente wie Informationen zur Komplexit&auml;t oder dem gruns&auml;tzlichen Vorgehen betrifft.</p>\
+\n\n<p>Der von Ihnen gew&auml;hlte Knoten repr&auml;sentiert Anoimationen, die als Programmiersprache\n\
+<em>{0}</em> verwenden.</p>
+Sorting=<h1>Sortieralgorithmen</h1>\n\n\
+<p><em>Aus de.wikipedia.net, der freien Enzyclop&auml;die:</em></p>\n\n\
+<blockquote>Ein Sortierverfahren ist ein Algorithmus, der dazu dient, \
+eine Liste von Elementen zu sortieren. Voraussetzung ist, \ 
+dass auf der Menge der Elemente eine strenge schwache \
+Ordnung definiert ist, z.B. die lexikographische Ordnung \
+von Zeichenketten oder die numerische Ordnung von Zahlen.</blockquote>\n\n\
+<blockquote>Es gibt verschiedene Sortierverfahren, die unterschiedlich \
+effizient arbeiten. Die Komplexit&auml;t eines Algorithmus, also \
+die Anzahl der n&ouml;tigen Operationen, wird &uuml;blicherweise in \ 
+der Landau-Notation dargestellt. Einige Sortierverfahren\
+ben&ouml;tigen au&szlig;erdem neben dem zur Speicherung des Arrays \
+n&ouml;tigen noch weiteren Speicherplatz. Komplexit&auml;t und \
+Speicherbedarf h&auml;ngen bei einigen Sortierverfahren von der \
+anf&auml;nglichen Anordnung der Werte im Array ab; man \
+unterscheidet dann zwischen Best Case (bester Fall), \
+Average Case (Durchschnittsverhalten) und Worst Case \
+(schlechtester Fall).</blockquote>\n\n\
+<blockquote>Man unterscheidet zudem zwischen stabilen und instabilen \
+Sortierverfahren. Stabile Sortierverfahren sind solche, \
+die die relative Reihenfolge von Elementen, die bez&uuml;glich \
+der Ordnung &auml;quivalent sind, nicht ver&auml;ndern, w&auml;hrend instabile \ 
+Sortierverfahren dies nicht garantieren.</blockquote>\n\n\
+<blockquote>Zudem unterscheidet man zwischen Sortierverfahren, die \
+in-place (auch "in situ" genannt) arbeiten, d.h. die ohne zus&auml;tzlichen \
+Speicherplatz funktionieren, und solchen, die dies nicht tun.</p>\n\n\
+<p>Au&szlig;erdem unterscheidet man auch zwischen nat&uuml;rlichen Sortierverfahren, \
+die bei vorsortierten Daten nicht langsamer arbeiten als bei \
+unsortierten Daten, und solchen, die es nicht tun.</blockquote>
+Searching=<h1>Suchalgorithmen</h1>\n\n\
+<p><em>Aus de.wikipedia.net, der freien Enzyclop&auml;die:</em></p>\n\n\
+\n\n<blockquote>Suchalgorithmen erhalten im Allgemeinen ein Problem als Eingabe \
+und suchen nach einer geeigneten L&ouml;sung. In den hier \
+abgedeckten einfachen F&auml;llen ist das Problem das \
+Auffinden eines bestimmten Elements in einer Menge (zumeist \
+einem Array oder einer Zeichenfolge).</blockquote>\n\n\
+<blockquote>Falls bekannt ist, dass die Suchmenge sortiert ist, k&ouml;nnen\
+sehr effiziente Algorithmen eingesetzt werden.</nblockquote>
+Trees=<h1>B&auml;ume und Baumalgorithmen</h1>\n\n\
+<p><em>Aus de.wikipedia.net, der freien Enzyclop&auml;die:</em></p>\n\n\
+\n<blockquote><em>Entnommen aus Wikipedia, der freien Enzyclop&auml;die:</em></blockquote>\
+<blockquote>B&auml;ume sind eine der h&auml;ufigsten Datenstrukturen in der \
+Informatik. Ein Baum ist ein dabei ein spezieller <em>Graph</em>, \
+der aber anders repr&auml;sentiert wird als allgemeine Graphen. \
+Durch Entfernen einer Kante zerf&auml;llt ein Baum in zwei \
+Teilb&auml;ume und bildet damit einen <em>Wald</em>.</blockquote>\n\n \
+<blockquote>B&auml;ume bestehen aus einer Reihe von miteinander verkn&uuml;pften \
+<em>Knoten</em>. Jeder Knoten kann null oder mehr <em>Nachfolger</em> \
+haben, die im Baum unter dem Vorg&auml;nger dargestellt werden. \
+Dabei hat jeder Knoten au&szlig;er dem obersten Element, der \
+<em>Wurzel</em>, genau einen Vorg&auml;nger. Die Wurzel hat keinen \
+Vorg&auml;nger. Knoten ohne Nachfolger werden auch als \
+<em>Bl&auml;tter</em> bezeichnet.</blockquote>\n\n\
+<blockquote>Die B&auml;ume zerfallen in <em>ungeordnete B&auml;ume</em>, bei \
+denen es keine feste Reihenfolge zwischen den Nachfolgern eines \
+Knotens gibt. In <em>geordneten B&auml;umen</em> wird zwischen \
+dem "1. Nachfolger", dem "2. Nachfolger" etc. unterschieden.</blockquote>\n\n\
+<blockquote>In der Sonderform eines <em>Bin&auml;rbaums</em> hat jeder \
+Knoten <em>maximal zwei</em> Nachfolger, die als "linker" und \
+"rechter Sohn" bezeichnet werden.</blockquote>
+Graphs=<h1>Graphen und Graphenalgorithmen</h1>\n\n\
+<p><em>Aus de.wikipedia.net, der freien Enzyclop&auml;die:</em></p>\n\n\
+<blockquote>Ein Graph ist eine Datenstruktur, die aus einer Menge von \
+Objekten namens <em>Knoten</em> (auch: <em>Ecken</em>) besteht, \
+die miteinander durch <em>Kanten</em> verkn&uump;ft sind. Die \
+Kanten k&ouml;nnen dabei ein Gewicht haben oder gerichtet sein. \
+So kann eine Kante von Knoten A zu Knoten B existieren, ohne \
+dass es eine Kante von B zu A gibt.</blockquote>\n\n\
+<blockquote>Graphen werden in der Regel als eine Menge von Punkten \
+oder Kreisen dargestellt (f&uuml;r die Knoten), die mit Linien \
+verbunden sind (die Kanten). Gerichtete Kanten werden durch \
+eine Pfeilspitze am Ende dargestellt; bei gewichteten Kanten \
+wird das Gewicht neben die Kante geschrieben.</blockquote>\n\n\
+<blockquote>Graphen k&ouml;nnen f&uuml;r viele Probleme genutzt werden. Eine \
+Sonderform von Graphen sind die <em>B&auml;ume</em>, die ebenfalls \
+sehr h&auml;fig genutzt werden.</blockquote>
+Data Structures=<h1>Datenstrukturen</h1>\n\n\
+<p><em>Aus de.wikipedia.net, der freien Enzyclop&auml;die:</em></p>\n\n\
+<blockquote>Datenstrukturen dienen in der Informatik zum Speichern von \
+Informationen. Je nach Anforderung an die Daten kommen verschiedene \
+Datenstrukturen zum Einsatz, um die Aufgaben m&ouml;glichst \
+effektiv bew&auml;ltigen zu k&ouml;nnen - etwa eine besonders \
+schnelle Suche.</blockquote>\n\n\
+<blockquote>Datenstrukturen bieten oft eine Anzahl spezifischer Methoden, \
+mit denen bestimmte Operationen einfach und effizient ausgef&uuml;hrt \
+werden k&ouml;nnen.</blockquote>
+Hashing=<h1>Hash-Verfahren</h1>\n\n\
+<p><em>Aus de.wikipedia.net, der freien Enzyclop&auml;die:</em></p>\n\n\
+<blockquote>Eine <em>Hash-Funktion</em> oder <oder>Streuwertfunktion</em> ist eine \
+Funktion, die zu einer Eingabe aus einer (&uuml;blicherweise) gro&szlig;en \
+Quellmenge eine Ausgabe aus einer (im Allgemeinen) kleineren Zielmenge \
+(die Hashwerte, meist eine Teilmenge der nat&uuml;rlichen Zahlen) erzeugt.</blockquote>\n\n\
+<blockquote>Hashfunktionen unterscheiden sich in der Definitionsmenge ihrer Eingaben, \
+der Zielmenge der m&ouml;glichen Ausgaben und im Einfluss von Mustern \
+und &Auml;hnlichkeiten verschiedener Eingaben auf die Ausgabe.</blockquote>\n\n\
+<blockquote>Hash-Funktionen werden in <em>Hashtabellen</em>, der <em>Kryptologie</em> \
+und der Datenverarbeitung verwendet. Eine gute Hash-Funktion zeichnet \
+sich dadurch aus, dass sie f&uuml;r die Eingaben, f&uuml;r die sie \
+entworfen wurde, wenig <em>Kollisionen</em> erzeugt. Dadurch k&ouml;nnen \
+die meisten Eingaben an Hand ihres Hashwertes unterschieden werden.</blockquote>
+Compression=<h1>Kompressionsverfahren</h1>\n\n\
+<p><em>Aus de.wikipedia.net, der freien Enzyclop&auml;die:</em></p>\n\n\
+<blockquote>Kompressionsverfahren dienen dazu, bestimmte vorliegende \
+Informationen kompakter - also unter Nutzung von weniger \
+Bits als in der Ursprungsfassung - darzustellen. Dazu \
+werden verschiedene Verfahren eingesetzt, etwa Huffman-Codes, \
+Laufl&auml;ngencodierung oder W&ouml;rterb&uuml;cher.</blockquote>
+Cryptography=<h1>Kryptografie</h1>\n\n\
+<p><em>Aus de.wikipedia.net, der freien Enzyclop&auml;die:</em></p>\n\n\
+<<blockquote>Kryptographie ist ein Forschungsfeld, das sich mit \
+linguistischen und mathematischen Techniken zur Absicherung \
+von Informationen befasst, vor allem in der Kommunikation.</blockquote>\n\n\
+<blockquote>Urspr&uuml;nglich befasste sich die Kryptographie nur mit \
+der Konvertierung von "lesbaren" Informationen in eine f&uuml;r \
+Dritte unverst&auml;ndliche Form. Diese sollte m&ouml;glichst \
+ohne genaue Kenntnis der verwendeten Verfahren nicht in den \
+Ursprungstext abbildbar sein. Der Haupteinsatz der Kryptographie \
+lag daher auch im Bereich der Spionage, Milit&auml;roperationen \
+und Diplomatie.</blockquote>\n\n\
+<blockquote>In den letzten Jahrzehnten hat sich die Kryptographie auch \
+auf andere Gebiete ausgedeht, etwa Authentisierung, digitale \
+Signaturen, elektronische Abstimmungen und e-Payment.</blockquote>
+Backtracking=<h1>Backtracking und andere Strategien</h1>\n\n\
+<p><em>Aus de.wikipedia.net, der freien Enzyclop&auml;die:</em></p>\n\n\
+<blockquote>Backtracking ist eine Strategie zum Finden von \
+L&ouml;sungen f&uuml;r Probleme mit Nebenbedingungen. In der \
+Regel ist dabei einer Reihe von Variablen jeweils ein Wert \
+zuzuordnen, so dass am Ende alle Nebenbedingungen des Problems \
+erf&uuml;llt sind.</blockquote>\n\n\
+<blockquote>Backtracking versucht alle Kombinationen auszuprobieren, \
+um so garantiert zu einer L&ouml;sung zu finden. Viele \
+Implementierungen nutzen dabei "Tricks", um das vollst&auml;ndige \
+Ausprobieren aller L&ouml;sungen zu vermeiden und damit das \
+Verfahren an sich zu beschleunigen. Die Bezeichnung "Backtracking" \
+stammt von dem amerikanischen Mathematiker D. H. Lehmer aus den \
+F&uuml;nfziger Jahren.</blockquote>\n
+Netzwerke=<h1>Netzwerke</h1>\
+Netzwerke und insbesondere das Internet bilden die Grundlage der \
+modernen Kommunikation sowohl zwischen Menschen als auch zwischen \
+Maschinen. Daher gehören die eingesetzten Technologien und Verfahren \
+zu den Grundlagen eines Informatikstudiums. Insbesondere den Graphenalgorithmen, \
+die die Grundlage des Datenaustauschs in den paketvermittelnden Netzen bilden, \
+kommt hier ein besonderes Augenmerk zu. Mit diesen Methoden können die schnellsten \
+oder auch günstigsten Verbindungen zwischen zwei Endpunkten innerhalb des Netzwerkes \
+gefunden und flexibel auf Ausfälle oder Störungen reagiert werden. Weiterhin dienen \
+die Algorithmen zur Planung von neuen Übertragungswegen und zur effizienten Einrichtung \
+von Knoten, die Datenpakete entgegennehmen und weiter verteilen.<br />
+Aufbauend auf diesen Graphenalgorithmen werden im Internet spezielle Routingverfahren \
+eingesetzt, die einen Datenaustausch auch über mehrere Knoten erlauben und dabei die \
+optimale Route des Datenpakets, abhängig von der aktuellen Netzwerksituation, dynamisch \
+bestimmen. Hierzu nutzen die Knoten im Netzwerk eigene Tabellen, in denen der optimale Weg \
+eines Daten- pakets beschrieben ist und die nächsten Zwischenschritte auf dem Weg zum \
+Zielknoten festgelegt sind. Diese Verfahren kommen insbesondere dann zum Einsatz, wenn die \
+gesamte Netzwerktopo- logie nicht oder nur unzureichend bekannt ist oder sich das Netzwerk \
+dynamisch verändert. Dies tritt insbesondere bei mobilen und ad–hoc Netzwerken auf, die \
+zwischen mehreren Endgeräten ohne eine zentrale Verwaltungsinstanz oft nur kurzzeitig \
+hergestellt werden.<br />
+Neben diesen Routingverfahren kommen noch weitere Dienste zum Einsatz, ohne die eine \
+Kommunikation in Netzwerken gar nicht oder nur schwer möglich wäre. Insbesondere der Auflösung \
+von Rechnernamen zu IP–Adressen durch das Domain Name System kommt hier eine zentrale Rolle \
+zu. Der Dienst erlaubt eine effiziente Zuordnung von Rechnernamen zu Netzwerkadressen und \
+bietet darüber hinaus weitreichende Funktionen zur Verwaltung und Organisation des Netzwerks. \
+Die dezentrale Struktur des Domain Name Systems ermöglicht dabei sowohl einen ausfallsicheren \
+Betrieb der beteiligten Rechner als auch eine Verwaltung der Einträge direkt durch den Betreiber \
+der Endgeräte oder lokalen Netze.
+Misc=<h1>Verschiedenes</h1>\n\n\
+<blockquote>"Sonstige Algorithmen" geh&ouml;ren per Definition \
+keiner der anderen Kategorien an und k&ouml;nnen daher nicht \
+n&auml;her beschrieben werden.</blockquote>
+seeConcreteGenerator=<h1>Gew&auml;hlter Inhalt: <em>{0}</em></h1>\n\
+<p>Bitte greifen Sie auf einen konkreten Generator zu, um eine Beschreibung der zu erwartenden Inhalte \
+zu erhalten. Um auf einen konkreten Generator zuzugreifen, &ouml;ffnen Sie bitte (falls nicht bereits erfolgt) \
+diesen Baumknoten und w&auml;hlen Sie einen Unterknoten dieses Baums durch Anklicke aus.</p>
+algoTemplate=<h1>{0}</h1>\n\n\
+<ul>\n\
+  <li>Zugrunde liegender Algorithmus: <em>{1}</em></li>\n\
+  <li>Programmiersprache: <code>{2}</code></li>\n\
+  <li>Ausgabesprache: <code>{3}</code></li>\n\
+  <li>Dateiendung: <code>{4}</code></li>\n\
+  <li>Autor(en): <em>{5}</em></li>\n\
+  <li>Klassenname: <code>{8}</code></li>\n\
+</ul>\
+\n\n<h2>Inhaltsbeschreibung</h2>\n\n\
+<p>{6}</p>\
+\n\n<h2>Code-Beispiel</h2>\n\n\
+<pre>\n\
+{7}\
+</pre>
+htmlHead=<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"\n\
+  "http://www.w3.org/TR/html4/loose.dtd">\n\
+<html>\n\
+<head>\n\
+  <title>Animal Generator Framework Docu Page</title>\n\
+  <!--meta http-equiv="Content-Type" content="text/html;charset=iso-8859-1" -->\n\
+</head>\n\
+<body>
+confirmGen.iconName=
+confirmGen.label=Confirm
+confirmGen.mnemonic=c
+confirmGen.toolTipText=Confirm the current choice and continue
+#
+# Button definition for going backwards
+#
+backGen.iconName=
+backGen.label=Zur�ck
+backGen.mnemonic=z
+backGen.toolTipText=Geht zum vorherigen Schritt zur�ck
+quitGen.iconName=
+quitGen.label=Quit
+quitGen.mnemonic=q
+quitGen.toolTipText=Quit the content generator
+DELPHI=Delphi
+Graphics=Graphik
+Mathematics=Mathematik
+VHDL=VHDL
+Matlab=Matlab
+Data Structures=Datenstrukturen
+Hardware=Hardware
+C=C

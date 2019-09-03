@@ -1,0 +1,61 @@
+### Animation ###
+animTitle=Local Search using the example of TSP
+animName=Local Search using the example of TSP
+animAlgoName=Local Search
+animDescription=The algorithm Local Search tries to solve a problem by using the neighborhood of an initial solution. For each solution found (starting with an initial solution) the algorithm searches in the neighborhood of this solution for a better solution.\n\nThe following animation shows Local Search using the Traveling Salesman Problem as an example problem\nYou could affect the initial solution by changing the start node and the order of the node defining the graph in the properties.
+animCodeExample=1. Choose an initial solution s\n2. While a solution s' exists with \"s' is neighbor of s\" and \"Costs(s') <  Costs(s)\"\n        2.1 choose this solution s' and set s = s'\n3. Return s as final solution
+
+### Table Of Contents ###
+tableOfContentsIntro=Introduction
+tableOfContentsOutro=Summary
+tableOfContentsBestSolution=Best solution found
+
+### INTRO ###
+introHeadlineLocalSearch=Local Search
+
+introLocalSearch=There exist several metaheuristic searchproblems which are summerized by Local Search, which is used in\ncombinatorial optimization methods. Local Search attempts to find a better solution in comparison to an\ninitial solution. The solution which will replace the current best solution has to be a neighbor of the\ncurrent best one.\n\nGeneral procedure:\n       1) Select an initial solution from the set of all possible solutions\n       2) Define a neighborhood\n       3) Search the neigborhood of the initial solution for a better one
+
+introHeadlineTSP=Traveling Salesman Problem
+introTSP=The Traveling Salesman Problem (TSP) describes the problem, where the algorithm has to find the shortest\nway visiting all cities/nodes given by a undirected, weighted graph and returning to the startpoint after\nvisiting each city exactly once. TSP is a combinatorial optimization problem and belongs to the NP-hard\nproblems.\nIn the following animation we will focus on solving the TSP using Local Search. The towns will be represented\nas nodes of a weighted, undirected Graph. The weights represent the distance between each pair of towns.\n\nFor ease of understanding we will use a deterministic function for selecting the neighbors - two solutions\nare neighbors, exactly if they only differ in one pair of towns (which exchanged their places).
+
+
+### OUTRO ###
+outroHeadline=Summary
+outroText=In the previous animation we saw how Local Search works for the Taveling Salesman Problem. Other areas of\napplication could be\n       the boolean satisfiability problem\n       the facility location problem\n\nIn general Local Search is used for many hard calculation problems out of the fields of computer science,\nmathematics, engineering and bioinformatics.\n\nThe main point which has to be defined so that Local Search can be used is the concept of neighborhood.\nIf a neighborhood can be defined for every solution, the algorithm can search for a better solution in the neighborhood.\n\nEspecially if the neighborhood is very large the number of possible solutions in a neighborhood can grow beyond\nmanageability. In this case there are several possibilities to consider only parts of the neighborhood. One of them\nis to use an other algorithm to find the best solution in the set of solutions of the neighborhood, and solve this\nproblem quickly. Another solution could be to terminate after n tries, since the last better solution was found.
+
+### StepDescription ###
+stepDescriptionNewBestSolutionFound=New best solution found, accept this one.
+stepDescriptionNewBestSolution=New best solution: {0}
+stepDescriptionNoBetterSolution=No better solution found. Terminating.
+stepDescriptionCalculateNeighbourhood=Calculate a neighboring solution
+stepDescriptionCalculateExchange=Calculate a neighboring solution: Exchange {0} with {1}
+stepDescriptionRevise=Revise last exchange.
+
+textCurrentBest=Current best solution: {0}
+textCurrentBestBest=Best solution found: {0}
+textComputation=Current calculated solution: {0}
+
+### PseudoCode ###
+pseudoCodeLocalSearch_0=function localSearch(){
+pseudoCodeLocalSearch_1=Generate an initial solution
+pseudoCodeLocalSearch_2=Search in neighborhood for a better solution
+pseudoCodeLocalSearch_3=Choose this as current solution
+pseudoCodeLocalSearch_4=Repeat until no better solution is found
+pseudoCodeLocalSearch_5=}
+
+pseudoCodeSearchInNeighbourhood_0=function findBetterSolutionInNeighborhood(){
+pseudoCodeSearchInNeighbourhood_1=exchange two nodes to get a new, neighboring solution
+pseudoCodeSearchInNeighbourhood_2=if new solution is better
+pseudoCodeSearchInNeighbourhood_3=return this one
+pseudoCodeSearchInNeighbourhood_4=else
+pseudoCodeSearchInNeighbourhood_5=revise last exchange and repeat
+pseudoCodeSearchInNeighbourhood_6=if there is no better solution, return old one 
+pseudoCodeSearchInNeighbourhood_7=}
+
+### Other ###
+headline=Local Search using the TSP-Example
+
+noSuchKeyException=No resource for {0} found
+iconNotFound=Icon '{0}' not found
+
+### n a t i v e 2 a s c i i a F i l e . t x t > msg . en US ###

@@ -1,0 +1,34 @@
+start1#The algorithm starts.
+start2# 
+endtree1#This tree is the result of the algorithm.
+endtree2# 
+end1#The algorithm ends.
+end2# 
+checkedoneclass1#It is checked if all examples share one class.
+checkedoneclass2#In that case, a leaf would be created and the recursion would end.
+onlyoneclass1#There is only one class: '§'.
+onlyoneclass2# 
+notoneclass1#There are examples for 'yes' and 'no'. The recursion does not end yet.
+notoneclass2# 
+onlyoneclassrecend1#There is only one class: '§'.
+onlyoneclassrecend2#Recursion ends. A leaf is created.
+retleaf1#Returning the newly created tree (a leaf) to higher context.
+retleaf2# 
+measure1#A feature which tells the classes apart is very useful for the tree generation.
+measure2#The measure '§' is used to determine such a feature.
+featurechosen1#The feature '§' has been chosen (§ value with §).
+featurechosen2# 
+createnode1#A new node is created and labeled with '§'.
+createnode2#As there are examples of different classes in the current table, a recursive descent is needed.
+allvalues1#All occurring values for '§' have to be taken into account.
+allvalues2#These are: 	 §.
+allvaluescurrent1#All values for '§' have to be taken into account.
+allvaluescurrent2#These are: 	 §. 		Current value is '§'.
+reccall1#Recursive call for '§ : §'.
+reccall2# 
+reccreatetemptable1#A tree is recursively created for all examples that reach the newly created node '§'
+reccreatetemptable2#and have the value '§' for this feature. The temporary table above contains these examples.
+attach1#Now, in order to create a subtree, all recursively created subtrees for '§'
+attach2#are attached to the node '§'. This yields a tree, which is returned.
+highest#highest
+lowest#lowest

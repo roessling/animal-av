@@ -1,0 +1,78 @@
+<html><body><h1>Visualizing <em>How to Design Programs Teaching Languages</h1><p>Visualized expression(s) and definition(s):</p><p><pre>
+;; How to design a program
+;; profit: number -> number
+;; determine the profit of a cinema for a given ticket price
+;; example: (profit 5) should be 415.2
+(define (profit ticket-price)
+  (- (revenue ticket-price)
+       (cost ticket-price)))
+
+;; Tests
+(check-expect (profit 0) -214.8)
+(check-expect (profit 1) 511.2)
+(check-expect (profit 1.5) 761.7)
+(check-expect (profit 2) 937.2)
+(check-expect (profit 2.5) 1037.7)
+(check-expect (profit 2.92) 1064.16)
+(check-expect (profit 3) 1063.2)
+(check-expect (profit 3.5) 1013.7)
+(check-expect (profit 4) 889.2)
+(check-expect (profit 5) 415.2)
+
+;; revenue: number -> number
+;; determine the income for a given ticket price, based on
+;; the number of attendees
+;; example: (revenue 3) should be 1260
+(define (revenue ticket-price)
+  (* (attendees ticket-price) ticket-price))
+
+;; Tests
+(check-expect (revenue 1) 720)
+(check-expect (revenue 1.5) 967.5)
+(check-expect (revenue 2) 1140)
+(check-expect (revenue 2.5) 1237.5)
+(check-expect (revenue 2.92) 1261.44)
+(check-expect (revenue 3) 1260)
+(check-expect (revenue 3.5) 1207.5)
+(check-expect (revenue 4) 1080)
+(check-expect (revenue 5) 600)
+(check-expect (revenue 6) 0)
+
+;; cost: number -> number
+;; determines the cost for a show at the given ticket price
+;; example: (cost 3) should be 196.8
+(define (cost ticket-price)
+  (+ 180
+        (* .04 (attendees ticket-price))))
+
+;; Tests
+(check-expect (cost 1) 208.8)
+(check-expect (cost 1.5) 205.8)
+(check-expect (cost 2) 202.8)
+(check-expect (cost 2.5) 199.8)
+(check-expect (cost 2.92) 197.28)
+(check-expect (cost 3) 196.8)
+(check-expect (cost 3.5) 193.8)
+(check-expect (cost 4) 190.8)
+(check-expect (cost 5) 184.8)
+(check-expect (cost 6) 180)
+
+;; attendees: number -> number
+;; determine the number of attendees for a given ticket price
+;; example: (attendees 3) should be 420
+(define (attendees ticket-price)
+  (max 0
+     (+ 120
+           (* (/ 15 .10) (- 5.00 ticket-price)))))
+
+;; Tests
+(check-expect (attendees 1) 720)
+(check-expect (attendees 1.5) 645)
+(check-expect (attendees 2) 570)
+(check-expect (attendees 2.5) 495)
+(check-expect (attendees 2.92) 432)
+(check-expect (attendees 3) 420)
+(check-expect (attendees 3.5) 345)
+(check-expect (attendees 4) 270)
+(check-expect (attendees 5) 120)
+(check-expect (attendees 6) 0)</pre></body></html>

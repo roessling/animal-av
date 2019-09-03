@@ -1,0 +1,72 @@
+title=Glicko-2 Rating Algorithm
+description=Glicko-2 is an advanced player rating algorithm used in competitive sports and games.
+
+rating=Rating
+rd_short=R. Deviation
+volatility=Volatility
+ratedOrNot=Rated?
+
+player=Player
+playerRating=Player Ratings Visualization
+
+win=win
+loss=loss
+draw=draw
+
+### STEPS ###
+overview=Overview
+init_round=Initialization | Round 
+step2=Conversion to Glicko-Scale
+step3=Calculation of estimated variance
+step4=Calculation of estimated improvement
+step5=Calculation of new volatility
+step6=Calculation of new RD
+step7=Update new rating and RD values
+step8=Conversion back to Glicko-2 scale
+sumupOfPlayer=Summary of Player 
+wrapup=Wrap Up
+
+wonMatches=Matches won
+lostMatches=Matches lost
+drawMatches=Matches drawn
+ratingChange=Change in rating
+rdChange=Change in rating deviation
+volChange=Change in volatility
+
+
+### QUESTIONS ###
+q1_prompt=What are the improvements to the original Elo-System?
+q4_prompt=Why was the volatility measure introduced in Glicko-2?
+q2_prompt=When a player competes during a rating period, his RD will always go down. True or false?
+q3_prompt=When tau is set to a high value (e.g. > 1) the volatility is not going to change at all. True or false?
+
+q1_o1=Addition of a rating deviation value.
+q1_o2=Addition of a volatility value.
+q1_o3=Addition of a skill-to-rating distribution function.
+q1_o4=Representing the player's strength as an interval instead of a single value.
+q1_f1=Correct!
+q1_f2=Correct!
+q1_f3=No, this function does not even exist. (yet)
+q1_f4=Correct!
+
+q4_o1=In order to prevent players who cheated to gain a high rating.
+q4_o2=To prevent erratic performances from placing the player at a too high rating.
+q4_o3=To make chess and games accessible to less skilled people as they would loose less rating, when on a loosing streak.
+q4_f1=No, this does not prevent cheater from gaining a high rating. As they would consistently win almost all games.
+q4_f2=Correct!
+q4_f3=No, this was not made to games more accessible to less skilled players. But it is a nice side effect, that a big loosing streak would not affect the rating much.
+
+### ERROR ###
+negativeRatingPeriod=The rating period must not be negative
+zeroRatingPeriod=The rating period must not be 0
+emptyPlayerStats=The player stats must no be empty
+doNotAddColumns=The column count must be 4
+atLeast2Players=You need at least 2 player
+ratingCannotBeNegativeAt=The rating must not be negative
+ratingDeviationCannotBeNegativeAt=The rating deviation must not be negative
+volatalityCannotBeNegativeAt=The volatility must not be negative
+mustBeTrueOrFalseAt=The value has to be a boolean
+emptyRoundResults=The rounds must not be empty
+columnsMustMatchPlayerCount=The column count must be equal to the player count
+invalidRowCount=The number of rows must be a multiple of the (playercount - 1)
+invalidResultInputAt=Invalid result at

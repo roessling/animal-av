@@ -1,0 +1,789 @@
+%Animal 2 620*480
+title "Warshall Animation"
+author "Dr. Guido Roessling"
+{
+circle "0" (800, 40) radius 15 color (0, 0, 0) depth 1 filled fillColor (255, 255, 255)
+circle "1" (700, 140) radius 15 color (0, 0, 0) depth 1 filled fillColor (255, 255, 255)
+circle "2" (800, 240) radius 15 color (0, 0, 0) depth 1 filled fillColor (255, 255, 255)
+polyline "Polyline1" (800, 40) (700, 140) color (0, 0, 0) depth 5
+polyline "Polyline2" (700, 140) (800, 240) color (0, 0, 0) depth 5
+polyline "Polyline3" (800, 240) (800, 40) color (0, 0, 0) depth 5
+polyline "Polyline4" (800, 240) (800, 240) color (0, 0, 0) depth 5
+}
+{
+#graph "gr" size 3 color (0, 0, 0) bgColor (0, 0, 0) highlightColor (0, 0, 0) elemHighlightColor (0, 0, 0) nodeFontColor (0, 0, 0) edgeFontColor (0, 0, 0) nodes {"0" (800, 40), "1" (700, 140), "2" (800, 240) } edges {(0, 1, "1") (1, 2, "9") (2, 0, "1") (2, 2, "3") } depth 1 
+#show "gr"  after 30 ticks
+text "text" "" (50, 200) color (0, 0, 255) depth 1 font Monospaced size 14 bold
+text "Text1" "" (180, 40) color (0, 0, 255) depth 1 font Monospaced size 14 bold
+text "Text2" "" (180, 70) color (0, 0, 255) depth 1 font Monospaced size 14 bold
+text "Text3" "" (180, 100) color (0, 0, 255) depth 1 font Monospaced size 14 bold
+text "Text4" "" (180, 130) color (0, 0, 255) depth 1 font Monospaced size 14 bold
+rectangle "matrix" (500, 300) (30, 20) color (0, 0, 0) depth 10 filled fillColor (255, 200, 0)
+}
+# grid "IntMatrix1" (70, 40) lines 3 columns 3 color (0, 0, 0) textColor (0, 0, 0) fillColor (255, 175, 175) highlightTextColor (255, 0, 0) highlightBackColor (255, 0, 255) depth 1 
+#grid "IntMatrix1" (70, 40) lines 3 columns 3
+#grid "IntMatrix1" (70, 40) lines 3 columns 3 align left
+#grid "IntMatrix1" (70, 40) lines 3 columns 3 align right
+#grid "IntMatrix1" (70, 40) lines 3 columns 3 align center
+grid "IntMatrix1" (70, 40) lines 3 columns 3 style matrix
+#grid "IntMatrix1" (70, 40) lines 3 columns 3 style plain
+#grid "IntMatrix1" (70, 40) lines 3 columns 3 style table
+#grid "IntMatrix1" (70, 40) lines 3 columns 3 style table align left
+#grid "IntMatrix1" (70, 40) lines 3 columns 3 style table align right
+#grid "IntMatrix1" (70, 40) lines 3 columns 3 style table align center
+{
+setGridValue "IntMatrix1[0][0]" "0"
+setGridValue "IntMatrix1[0][1]" "1"
+setGridValue "IntMatrix1[0][2]" "0"
+setGridValue "IntMatrix1[1][0]" "0"
+setGridValue "IntMatrix1[1][1]" "0"
+setGridValue "IntMatrix1[1][2]" "9"
+setGridValue "IntMatrix1[2][0]" "1"
+setGridValue "IntMatrix1[2][1]" "0"
+setGridValue "IntMatrix1[2][2]" "3" refresh
+}
+{
+codegroup "sourceCode" at (40, 300) color (0, 0, 0) highlightColor (255, 0, 0) contextColor (0, 255, 255) font Monospaced size 16 bold depth 1
+addCodeLine "public void Warshall(int[][]) {" to "sourceCode"
+addCodeLine "int N=a.length;" to "sourceCode" indentation 1
+addCodeLine "int y=0, x=0,j=0;" to "sourceCode" indentation 1
+addCodeLine "for (y= 0; y< N; y++) " to "sourceCode" indentation 1
+addCodeLine "for (x=0 ; x< N; x++)" to "sourceCode" indentation 2
+addCodeLine "if  (a[x][y]>0]" to "sourceCode" indentation 3
+addCodeLine "for (j=0; j<N ;j++)" to "sourceCode" indentation 4
+addCodeLine "if (a[y][j]>0)" to "sourceCode" indentation 5
+addCodeLine "if ((a[x][j]==0 || (a[x][y]+a[y][j]<a[x][j]))" to "sourceCode" indentation 5
+addCodeLine "a[x][j]= a[x][y]+a[y][j];" to "sourceCode" indentation 6
+addCodeLine "}" to "sourceCode"
+}
+{
+highlightCode on "sourceCode" line 0
+}
+{
+unhighlightCode on "sourceCode" line 0
+highlightCode on "sourceCode" line 1
+}
+{
+unhighlightCode on "sourceCode" line 1
+highlightCode on "sourceCode" line 2
+setText of "Text1" to "X= 0    Y= 0     J= 0" within 30 ticks
+}
+{
+unhighlightCode on "sourceCode" line 2
+highlightCode on "sourceCode" line 3
+highlightCode on "sourceCode" line 3
+setText of "Text1" to "X= 0    Y= 0     J= 0" within 30 ticks
+}
+{
+unhighlightCode on "sourceCode" line 3
+highlightCode on "sourceCode" line 4
+setText of "Text1" to "X= 0    Y= 0     J= 0" within 30 ticks
+}
+{
+unhighlightCode on "sourceCode" line 4
+highlightCode on "sourceCode" line 5
+highlightGridCell "IntMatrix1[0][0]"  within 30 ticks after 30 ticks
+setText of "Text2" to "A(x,y)=A(0,0)=0" after 30 ticks within 30 ticks
+setText of "text" to "A(x,y)=A(0,0) nicht groesser als null = 0" after 30 ticks within 30 ticks
+}
+{
+unhighlightGridCell "IntMatrix1[0][0]"  within 30 ticks after 30 ticks
+setText of "text" to ""
+setText of "Text2" to ""
+unhighlightCode on "sourceCode" line 5
+highlightCode on "sourceCode" line 4
+unhighlightCode on "sourceCode" line 6
+highlightCode on "sourceCode" line 4
+}
+{
+unhighlightCode on "sourceCode" line 3
+highlightCode on "sourceCode" line 4
+setText of "Text1" to "X= 1    Y= 0     J= 0" within 30 ticks
+}
+{
+unhighlightCode on "sourceCode" line 4
+highlightCode on "sourceCode" line 5
+highlightGridCell "IntMatrix1[1][0]"  within 30 ticks after 30 ticks
+setText of "Text2" to "A(x,y)=A(1,0)=0" after 30 ticks within 30 ticks
+setText of "text" to "A(x,y)=A(1,0) nicht groesser als null = 0" after 30 ticks within 30 ticks
+}
+{
+unhighlightGridCell "IntMatrix1[1][0]"  within 30 ticks after 30 ticks
+setText of "text" to ""
+setText of "Text2" to ""
+unhighlightCode on "sourceCode" line 5
+highlightCode on "sourceCode" line 4
+unhighlightCode on "sourceCode" line 6
+highlightCode on "sourceCode" line 4
+}
+{
+unhighlightCode on "sourceCode" line 3
+highlightCode on "sourceCode" line 4
+setText of "Text1" to "X= 2    Y= 0     J= 0" within 30 ticks
+}
+{
+unhighlightCode on "sourceCode" line 4
+highlightCode on "sourceCode" line 5
+setText of "Text2" to "A(x,y)=A(2,0)=1" after 30 ticks within 30 ticks
+setText of "text" to "A(x,y)=A(2,0) ist groesser als null = 1" after 30 ticks within 30 ticks
+highlightGridCell "IntMatrix1[2][0]"  within 30 ticks
+}
+{
+setText of "text" to ""
+unhighlightCode on "sourceCode" line 5
+highlightCode on "sourceCode" line 6
+setText of "Text1" to "X= 2    Y= 0     J= 0" within 30 ticks
+}
+{
+unhighlightCode on "sourceCode" line 6
+highlightCode on "sourceCode" line 7
+unhighlightCode on "sourceCode" line 6
+highlightCode on "sourceCode" line 7
+highlightGridCell "IntMatrix1[0][0]"  within 30 ticks
+setText of "Text3" to "A(y,j)= A(0,0)=0" within 30 ticks
+setText of "text" to "A(y,j)=A(0,0) ist nicht groesser als null = 0" within 30 ticks
+}
+{
+unhighlightGridCell "IntMatrix1[0][0]"  within 30 ticks
+setText of "Text3" to ""
+setText of "text" to ""
+unhighlightCode on "sourceCode" line 7
+highlightCode on "sourceCode" line 6
+unhighlightCode on "sourceCode" line 5
+highlightCode on "sourceCode" line 6
+setText of "Text1" to "X= 2    Y= 0     J= 1" within 30 ticks
+}
+{
+unhighlightCode on "sourceCode" line 6
+highlightCode on "sourceCode" line 7
+highlightCode on "sourceCode" line 7
+highlightGridCell "IntMatrix1[0][1]"  within 30 ticks
+setText of "Text3" to "A(y,j)= A(0,1)=1" within 30 ticks
+setText of "text" to "A(y,j)=A(0,1) ist groesser als null = 1" within 30 ticks
+}
+{
+setText of "text" to ""
+unhighlightCode on "sourceCode" line 7
+highlightCode on "sourceCode" line 8
+unhighlightGridCell "IntMatrix1[2][0]"  within 30 ticks after 30 ticks
+unhighlightGridCell "IntMatrix1[0][1]"  within 30 ticks after 30 ticks
+highlightGridCell "IntMatrix1[2][1]"  within 30 ticks after 30 ticks
+highlightCode on "sourceCode" line 8
+unhighlightCode on "sourceCode" line 7
+setText of "Text4" to "A(x,j)=A(2,1)=0" within 30 ticks
+}
+{
+unhighlightCode on "sourceCode" line 8
+highlightCode on "sourceCode" line 9
+setGridValue "IntMatrix1[2][1]" "2" refresh  within 30 ticks
+highlightGridCell "IntMatrix1[2][1]"  within 30 ticks after 30 ticks
+setText of "Text4" to "A(x,j)=A(2,1)=2" within 30 ticks
+setText of "text" to "A(x,j)=A(2,1)= A(2,0) +A(0,1) = 2" within 30 ticks
+}
+{
+setText of "Text4" to ""
+setText of "text" to ""
+unhighlightGridCell "IntMatrix1[2][1]"  within 30 ticks
+unhighlightCode on "sourceCode" line 9
+highlightCode on "sourceCode" line 6
+setText of "Text3" to ""
+unhighlightCode on "sourceCode" line 5
+highlightCode on "sourceCode" line 6
+setText of "Text1" to "X= 2    Y= 0     J= 2" within 30 ticks
+}
+{
+unhighlightCode on "sourceCode" line 6
+highlightCode on "sourceCode" line 7
+unhighlightCode on "sourceCode" line 6
+highlightCode on "sourceCode" line 7
+highlightGridCell "IntMatrix1[0][2]"  within 30 ticks
+setText of "Text3" to "A(y,j)= A(0,2)=0" within 30 ticks
+setText of "text" to "A(y,j)=A(0,2) ist nicht groesser als null = 0" within 30 ticks
+}
+{
+unhighlightGridCell "IntMatrix1[0][2]"  within 30 ticks
+setText of "Text3" to ""
+setText of "text" to ""
+unhighlightCode on "sourceCode" line 7
+highlightCode on "sourceCode" line 6
+setText of "Text2" to ""
+unhighlightCode on "sourceCode" line 6
+highlightCode on "sourceCode" line 4
+}
+{
+unhighlightCode on "sourceCode" line 4
+highlightCode on "sourceCode" line 3
+}
+{
+highlightCode on "sourceCode" line 3
+setText of "Text1" to "X= 0    Y= 1     J= 0" within 30 ticks
+}
+{
+unhighlightCode on "sourceCode" line 3
+highlightCode on "sourceCode" line 4
+setText of "Text1" to "X= 0    Y= 1     J= 0" within 30 ticks
+}
+{
+unhighlightCode on "sourceCode" line 4
+highlightCode on "sourceCode" line 5
+setText of "Text2" to "A(x,y)=A(0,1)=1" after 30 ticks within 30 ticks
+setText of "text" to "A(x,y)=A(0,1) ist groesser als null = 1" after 30 ticks within 30 ticks
+highlightGridCell "IntMatrix1[0][1]"  within 30 ticks
+}
+{
+setText of "text" to ""
+unhighlightCode on "sourceCode" line 5
+highlightCode on "sourceCode" line 6
+setText of "Text1" to "X= 0    Y= 1     J= 0" within 30 ticks
+}
+{
+unhighlightCode on "sourceCode" line 6
+highlightCode on "sourceCode" line 7
+unhighlightCode on "sourceCode" line 6
+highlightCode on "sourceCode" line 7
+highlightGridCell "IntMatrix1[1][0]"  within 30 ticks
+setText of "Text3" to "A(y,j)= A(1,0)=0" within 30 ticks
+setText of "text" to "A(y,j)=A(1,0) ist nicht groesser als null = 0" within 30 ticks
+}
+{
+unhighlightGridCell "IntMatrix1[1][0]"  within 30 ticks
+setText of "Text3" to ""
+setText of "text" to ""
+unhighlightCode on "sourceCode" line 7
+highlightCode on "sourceCode" line 6
+unhighlightCode on "sourceCode" line 5
+highlightCode on "sourceCode" line 6
+setText of "Text1" to "X= 0    Y= 1     J= 1" within 30 ticks
+}
+{
+unhighlightCode on "sourceCode" line 6
+highlightCode on "sourceCode" line 7
+unhighlightCode on "sourceCode" line 6
+highlightCode on "sourceCode" line 7
+highlightGridCell "IntMatrix1[1][1]"  within 30 ticks
+setText of "Text3" to "A(y,j)= A(1,1)=0" within 30 ticks
+setText of "text" to "A(y,j)=A(1,1) ist nicht groesser als null = 0" within 30 ticks
+}
+{
+unhighlightGridCell "IntMatrix1[1][1]"  within 30 ticks
+setText of "Text3" to ""
+setText of "text" to ""
+unhighlightCode on "sourceCode" line 7
+highlightCode on "sourceCode" line 6
+unhighlightCode on "sourceCode" line 5
+highlightCode on "sourceCode" line 6
+setText of "Text1" to "X= 0    Y= 1     J= 2" within 30 ticks
+}
+{
+unhighlightCode on "sourceCode" line 6
+highlightCode on "sourceCode" line 7
+highlightCode on "sourceCode" line 7
+highlightGridCell "IntMatrix1[1][2]"  within 30 ticks
+setText of "Text3" to "A(y,j)= A(1,2)=9" within 30 ticks
+setText of "text" to "A(y,j)=A(1,2) ist groesser als null = 9" within 30 ticks
+}
+{
+setText of "text" to ""
+unhighlightCode on "sourceCode" line 7
+highlightCode on "sourceCode" line 8
+unhighlightGridCell "IntMatrix1[0][1]"  within 30 ticks after 30 ticks
+unhighlightGridCell "IntMatrix1[1][2]"  within 30 ticks after 30 ticks
+highlightGridCell "IntMatrix1[0][2]"  within 30 ticks after 30 ticks
+highlightCode on "sourceCode" line 8
+unhighlightCode on "sourceCode" line 7
+setText of "Text4" to "A(x,j)=A(0,2)=0" within 30 ticks
+}
+{
+unhighlightCode on "sourceCode" line 8
+highlightCode on "sourceCode" line 9
+setGridValue "IntMatrix1[0][2]" "10" refresh  within 30 ticks
+highlightGridCell "IntMatrix1[0][2]"  within 30 ticks after 30 ticks
+setText of "Text4" to "A(x,j)=A(0,2)=10" within 30 ticks
+setText of "text" to "A(x,j)=A(0,2)= A(0,1) +A(1,2) = 10" within 30 ticks
+}
+{
+setText of "Text4" to ""
+setText of "text" to ""
+unhighlightGridCell "IntMatrix1[0][2]"  within 30 ticks
+unhighlightCode on "sourceCode" line 9
+highlightCode on "sourceCode" line 6
+setText of "Text3" to ""
+setText of "Text2" to ""
+unhighlightCode on "sourceCode" line 6
+highlightCode on "sourceCode" line 4
+}
+{
+unhighlightCode on "sourceCode" line 3
+highlightCode on "sourceCode" line 4
+setText of "Text1" to "X= 1    Y= 1     J= 0" within 30 ticks
+}
+{
+unhighlightCode on "sourceCode" line 4
+highlightCode on "sourceCode" line 5
+highlightGridCell "IntMatrix1[1][1]"  within 30 ticks after 30 ticks
+setText of "Text2" to "A(x,y)=A(1,1)=0" after 30 ticks within 30 ticks
+setText of "text" to "A(x,y)=A(1,1) nicht groesser als null = 0" after 30 ticks within 30 ticks
+}
+{
+unhighlightGridCell "IntMatrix1[1][1]"  within 30 ticks after 30 ticks
+setText of "text" to ""
+setText of "Text2" to ""
+unhighlightCode on "sourceCode" line 5
+highlightCode on "sourceCode" line 4
+unhighlightCode on "sourceCode" line 6
+highlightCode on "sourceCode" line 4
+}
+{
+unhighlightCode on "sourceCode" line 3
+highlightCode on "sourceCode" line 4
+setText of "Text1" to "X= 2    Y= 1     J= 0" within 30 ticks
+}
+{
+unhighlightCode on "sourceCode" line 4
+highlightCode on "sourceCode" line 5
+setText of "Text2" to "A(x,y)=A(2,1)=2" after 30 ticks within 30 ticks
+setText of "text" to "A(x,y)=A(2,1) ist groesser als null = 2" after 30 ticks within 30 ticks
+highlightGridCell "IntMatrix1[2][1]"  within 30 ticks
+}
+{
+setText of "text" to ""
+unhighlightCode on "sourceCode" line 5
+highlightCode on "sourceCode" line 6
+setText of "Text1" to "X= 2    Y= 1     J= 0" within 30 ticks
+}
+{
+unhighlightCode on "sourceCode" line 6
+highlightCode on "sourceCode" line 7
+unhighlightCode on "sourceCode" line 6
+highlightCode on "sourceCode" line 7
+highlightGridCell "IntMatrix1[1][0]"  within 30 ticks
+setText of "Text3" to "A(y,j)= A(1,0)=0" within 30 ticks
+setText of "text" to "A(y,j)=A(1,0) ist nicht groesser als null = 0" within 30 ticks
+}
+{
+unhighlightGridCell "IntMatrix1[1][0]"  within 30 ticks
+setText of "Text3" to ""
+setText of "text" to ""
+unhighlightCode on "sourceCode" line 7
+highlightCode on "sourceCode" line 6
+unhighlightCode on "sourceCode" line 5
+highlightCode on "sourceCode" line 6
+setText of "Text1" to "X= 2    Y= 1     J= 1" within 30 ticks
+}
+{
+unhighlightCode on "sourceCode" line 6
+highlightCode on "sourceCode" line 7
+unhighlightCode on "sourceCode" line 6
+highlightCode on "sourceCode" line 7
+highlightGridCell "IntMatrix1[1][1]"  within 30 ticks
+setText of "Text3" to "A(y,j)= A(1,1)=0" within 30 ticks
+setText of "text" to "A(y,j)=A(1,1) ist nicht groesser als null = 0" within 30 ticks
+}
+{
+unhighlightGridCell "IntMatrix1[1][1]"  within 30 ticks
+setText of "Text3" to ""
+setText of "text" to ""
+unhighlightCode on "sourceCode" line 7
+highlightCode on "sourceCode" line 6
+unhighlightCode on "sourceCode" line 5
+highlightCode on "sourceCode" line 6
+setText of "Text1" to "X= 2    Y= 1     J= 2" within 30 ticks
+}
+{
+unhighlightCode on "sourceCode" line 6
+highlightCode on "sourceCode" line 7
+highlightCode on "sourceCode" line 7
+highlightGridCell "IntMatrix1[1][2]"  within 30 ticks
+setText of "Text3" to "A(y,j)= A(1,2)=9" within 30 ticks
+setText of "text" to "A(y,j)=A(1,2) ist groesser als null = 9" within 30 ticks
+}
+{
+setText of "text" to ""
+unhighlightCode on "sourceCode" line 7
+highlightCode on "sourceCode" line 8
+unhighlightGridCell "IntMatrix1[2][1]"  within 30 ticks after 30 ticks
+unhighlightGridCell "IntMatrix1[1][2]"  within 30 ticks after 30 ticks
+highlightGridCell "IntMatrix1[2][2]"  within 30 ticks after 30 ticks
+highlightCode on "sourceCode" line 8
+unhighlightCode on "sourceCode" line 7
+setText of "Text4" to "A(x,j)=A(2,2)=3" within 30 ticks
+setText of "text" to "A(x,j)=A(2,2) ist nicht gleich null = 3" within 30 ticks
+}
+{
+unhighlightGridCell "IntMatrix1[2][2]"  within 30 ticks
+setText of "Text4" to ""
+setText of "text" to ""
+unhighlightCode on "sourceCode" line 8
+highlightCode on "sourceCode" line 6
+setText of "Text3" to ""
+setText of "Text2" to ""
+unhighlightCode on "sourceCode" line 6
+highlightCode on "sourceCode" line 4
+}
+{
+unhighlightCode on "sourceCode" line 4
+highlightCode on "sourceCode" line 3
+}
+{
+highlightCode on "sourceCode" line 3
+setText of "Text1" to "X= 0    Y= 2     J= 0" within 30 ticks
+}
+{
+unhighlightCode on "sourceCode" line 3
+highlightCode on "sourceCode" line 4
+setText of "Text1" to "X= 0    Y= 2     J= 0" within 30 ticks
+}
+{
+unhighlightCode on "sourceCode" line 4
+highlightCode on "sourceCode" line 5
+setText of "Text2" to "A(x,y)=A(0,2)=10" after 30 ticks within 30 ticks
+setText of "text" to "A(x,y)=A(0,2) ist groesser als null = 10" after 30 ticks within 30 ticks
+highlightGridCell "IntMatrix1[0][2]"  within 30 ticks
+}
+{
+setText of "text" to ""
+unhighlightCode on "sourceCode" line 5
+highlightCode on "sourceCode" line 6
+setText of "Text1" to "X= 0    Y= 2     J= 0" within 30 ticks
+}
+{
+unhighlightCode on "sourceCode" line 6
+highlightCode on "sourceCode" line 7
+highlightCode on "sourceCode" line 7
+highlightGridCell "IntMatrix1[2][0]"  within 30 ticks
+setText of "Text3" to "A(y,j)= A(2,0)=1" within 30 ticks
+setText of "text" to "A(y,j)=A(2,0) ist groesser als null = 1" within 30 ticks
+}
+{
+setText of "text" to ""
+unhighlightCode on "sourceCode" line 7
+highlightCode on "sourceCode" line 8
+unhighlightGridCell "IntMatrix1[0][2]"  within 30 ticks after 30 ticks
+unhighlightGridCell "IntMatrix1[2][0]"  within 30 ticks after 30 ticks
+highlightGridCell "IntMatrix1[0][0]"  within 30 ticks after 30 ticks
+highlightCode on "sourceCode" line 8
+unhighlightCode on "sourceCode" line 7
+setText of "Text4" to "A(x,j)=A(0,0)=0" within 30 ticks
+}
+{
+unhighlightCode on "sourceCode" line 8
+highlightCode on "sourceCode" line 9
+setGridValue "IntMatrix1[0][0]" "11" refresh  within 30 ticks
+highlightGridCell "IntMatrix1[0][0]"  within 30 ticks after 30 ticks
+setText of "Text4" to "A(x,j)=A(0,0)=11" within 30 ticks
+setText of "text" to "A(x,j)=A(0,0)= A(0,2) +A(2,0) = 11" within 30 ticks
+}
+{
+setText of "Text4" to ""
+setText of "text" to ""
+unhighlightGridCell "IntMatrix1[0][0]"  within 30 ticks
+unhighlightCode on "sourceCode" line 9
+highlightCode on "sourceCode" line 6
+setText of "Text3" to ""
+unhighlightCode on "sourceCode" line 5
+highlightCode on "sourceCode" line 6
+setText of "Text1" to "X= 0    Y= 2     J= 1" within 30 ticks
+}
+{
+unhighlightCode on "sourceCode" line 6
+highlightCode on "sourceCode" line 7
+highlightCode on "sourceCode" line 7
+highlightGridCell "IntMatrix1[2][1]"  within 30 ticks
+setText of "Text3" to "A(y,j)= A(2,1)=2" within 30 ticks
+setText of "text" to "A(y,j)=A(2,1) ist groesser als null = 2" within 30 ticks
+}
+{
+setText of "text" to ""
+unhighlightCode on "sourceCode" line 7
+highlightCode on "sourceCode" line 8
+unhighlightGridCell "IntMatrix1[0][2]"  within 30 ticks after 30 ticks
+unhighlightGridCell "IntMatrix1[2][1]"  within 30 ticks after 30 ticks
+highlightGridCell "IntMatrix1[0][1]"  within 30 ticks after 30 ticks
+highlightCode on "sourceCode" line 8
+unhighlightCode on "sourceCode" line 7
+setText of "Text4" to "A(x,j)=A(0,1)=1" within 30 ticks
+setText of "text" to "A(x,j)=A(0,1) ist nicht gleich null = 1" within 30 ticks
+}
+{
+unhighlightGridCell "IntMatrix1[0][1]"  within 30 ticks
+setText of "Text4" to ""
+setText of "text" to ""
+unhighlightCode on "sourceCode" line 8
+highlightCode on "sourceCode" line 6
+setText of "Text3" to ""
+unhighlightCode on "sourceCode" line 5
+highlightCode on "sourceCode" line 6
+setText of "Text1" to "X= 0    Y= 2     J= 2" within 30 ticks
+}
+{
+unhighlightCode on "sourceCode" line 6
+highlightCode on "sourceCode" line 7
+highlightCode on "sourceCode" line 7
+highlightGridCell "IntMatrix1[2][2]"  within 30 ticks
+setText of "Text3" to "A(y,j)= A(2,2)=3" within 30 ticks
+setText of "text" to "A(y,j)=A(2,2) ist groesser als null = 3" within 30 ticks
+}
+{
+setText of "text" to ""
+unhighlightCode on "sourceCode" line 7
+highlightCode on "sourceCode" line 8
+unhighlightGridCell "IntMatrix1[0][2]"  within 30 ticks after 30 ticks
+unhighlightGridCell "IntMatrix1[2][2]"  within 30 ticks after 30 ticks
+highlightGridCell "IntMatrix1[0][2]"  within 30 ticks after 30 ticks
+highlightCode on "sourceCode" line 8
+unhighlightCode on "sourceCode" line 7
+setText of "Text4" to "A(x,j)=A(0,2)=10" within 30 ticks
+setText of "text" to "A(x,j)=A(0,2) ist nicht gleich null = 10" within 30 ticks
+}
+{
+unhighlightGridCell "IntMatrix1[0][2]"  within 30 ticks
+setText of "Text4" to ""
+setText of "text" to ""
+unhighlightCode on "sourceCode" line 8
+highlightCode on "sourceCode" line 6
+setText of "Text3" to ""
+setText of "Text2" to ""
+unhighlightCode on "sourceCode" line 6
+highlightCode on "sourceCode" line 4
+}
+{
+unhighlightCode on "sourceCode" line 3
+highlightCode on "sourceCode" line 4
+setText of "Text1" to "X= 1    Y= 2     J= 0" within 30 ticks
+}
+{
+unhighlightCode on "sourceCode" line 4
+highlightCode on "sourceCode" line 5
+setText of "Text2" to "A(x,y)=A(1,2)=9" after 30 ticks within 30 ticks
+setText of "text" to "A(x,y)=A(1,2) ist groesser als null = 9" after 30 ticks within 30 ticks
+highlightGridCell "IntMatrix1[1][2]"  within 30 ticks
+}
+{
+setText of "text" to ""
+unhighlightCode on "sourceCode" line 5
+highlightCode on "sourceCode" line 6
+setText of "Text1" to "X= 1    Y= 2     J= 0" within 30 ticks
+}
+{
+unhighlightCode on "sourceCode" line 6
+highlightCode on "sourceCode" line 7
+highlightCode on "sourceCode" line 7
+highlightGridCell "IntMatrix1[2][0]"  within 30 ticks
+setText of "Text3" to "A(y,j)= A(2,0)=1" within 30 ticks
+setText of "text" to "A(y,j)=A(2,0) ist groesser als null = 1" within 30 ticks
+}
+{
+setText of "text" to ""
+unhighlightCode on "sourceCode" line 7
+highlightCode on "sourceCode" line 8
+unhighlightGridCell "IntMatrix1[1][2]"  within 30 ticks after 30 ticks
+unhighlightGridCell "IntMatrix1[2][0]"  within 30 ticks after 30 ticks
+highlightGridCell "IntMatrix1[1][0]"  within 30 ticks after 30 ticks
+highlightCode on "sourceCode" line 8
+unhighlightCode on "sourceCode" line 7
+setText of "Text4" to "A(x,j)=A(1,0)=0" within 30 ticks
+}
+{
+unhighlightCode on "sourceCode" line 8
+highlightCode on "sourceCode" line 9
+setGridValue "IntMatrix1[1][0]" "10" refresh  within 30 ticks
+highlightGridCell "IntMatrix1[1][0]"  within 30 ticks after 30 ticks
+setText of "Text4" to "A(x,j)=A(1,0)=10" within 30 ticks
+setText of "text" to "A(x,j)=A(1,0)= A(1,2) +A(2,0) = 10" within 30 ticks
+}
+{
+setText of "Text4" to ""
+setText of "text" to ""
+unhighlightGridCell "IntMatrix1[1][0]"  within 30 ticks
+unhighlightCode on "sourceCode" line 9
+highlightCode on "sourceCode" line 6
+setText of "Text3" to ""
+unhighlightCode on "sourceCode" line 5
+highlightCode on "sourceCode" line 6
+setText of "Text1" to "X= 1    Y= 2     J= 1" within 30 ticks
+}
+{
+unhighlightCode on "sourceCode" line 6
+highlightCode on "sourceCode" line 7
+highlightCode on "sourceCode" line 7
+highlightGridCell "IntMatrix1[2][1]"  within 30 ticks
+setText of "Text3" to "A(y,j)= A(2,1)=2" within 30 ticks
+setText of "text" to "A(y,j)=A(2,1) ist groesser als null = 2" within 30 ticks
+}
+{
+setText of "text" to ""
+unhighlightCode on "sourceCode" line 7
+highlightCode on "sourceCode" line 8
+unhighlightGridCell "IntMatrix1[1][2]"  within 30 ticks after 30 ticks
+unhighlightGridCell "IntMatrix1[2][1]"  within 30 ticks after 30 ticks
+highlightGridCell "IntMatrix1[1][1]"  within 30 ticks after 30 ticks
+highlightCode on "sourceCode" line 8
+unhighlightCode on "sourceCode" line 7
+setText of "Text4" to "A(x,j)=A(1,1)=0" within 30 ticks
+}
+{
+unhighlightCode on "sourceCode" line 8
+highlightCode on "sourceCode" line 9
+setGridValue "IntMatrix1[1][1]" "11" refresh  within 30 ticks
+highlightGridCell "IntMatrix1[1][1]"  within 30 ticks after 30 ticks
+setText of "Text4" to "A(x,j)=A(1,1)=11" within 30 ticks
+setText of "text" to "A(x,j)=A(1,1)= A(1,2) +A(2,1) = 11" within 30 ticks
+}
+{
+setText of "Text4" to ""
+setText of "text" to ""
+unhighlightGridCell "IntMatrix1[1][1]"  within 30 ticks
+unhighlightCode on "sourceCode" line 9
+highlightCode on "sourceCode" line 6
+setText of "Text3" to ""
+unhighlightCode on "sourceCode" line 5
+highlightCode on "sourceCode" line 6
+setText of "Text1" to "X= 1    Y= 2     J= 2" within 30 ticks
+}
+{
+unhighlightCode on "sourceCode" line 6
+highlightCode on "sourceCode" line 7
+highlightCode on "sourceCode" line 7
+highlightGridCell "IntMatrix1[2][2]"  within 30 ticks
+setText of "Text3" to "A(y,j)= A(2,2)=3" within 30 ticks
+setText of "text" to "A(y,j)=A(2,2) ist groesser als null = 3" within 30 ticks
+}
+{
+setText of "text" to ""
+unhighlightCode on "sourceCode" line 7
+highlightCode on "sourceCode" line 8
+unhighlightGridCell "IntMatrix1[1][2]"  within 30 ticks after 30 ticks
+unhighlightGridCell "IntMatrix1[2][2]"  within 30 ticks after 30 ticks
+highlightGridCell "IntMatrix1[1][2]"  within 30 ticks after 30 ticks
+highlightCode on "sourceCode" line 8
+unhighlightCode on "sourceCode" line 7
+setText of "Text4" to "A(x,j)=A(1,2)=9" within 30 ticks
+setText of "text" to "A(x,j)=A(1,2) ist nicht gleich null = 9" within 30 ticks
+}
+{
+unhighlightGridCell "IntMatrix1[1][2]"  within 30 ticks
+setText of "Text4" to ""
+setText of "text" to ""
+unhighlightCode on "sourceCode" line 8
+highlightCode on "sourceCode" line 6
+setText of "Text3" to ""
+setText of "Text2" to ""
+unhighlightCode on "sourceCode" line 6
+highlightCode on "sourceCode" line 4
+}
+{
+unhighlightCode on "sourceCode" line 3
+highlightCode on "sourceCode" line 4
+setText of "Text1" to "X= 2    Y= 2     J= 0" within 30 ticks
+}
+{
+unhighlightCode on "sourceCode" line 4
+highlightCode on "sourceCode" line 5
+setText of "Text2" to "A(x,y)=A(2,2)=3" after 30 ticks within 30 ticks
+setText of "text" to "A(x,y)=A(2,2) ist groesser als null = 3" after 30 ticks within 30 ticks
+highlightGridCell "IntMatrix1[2][2]"  within 30 ticks
+}
+{
+setText of "text" to ""
+unhighlightCode on "sourceCode" line 5
+highlightCode on "sourceCode" line 6
+setText of "Text1" to "X= 2    Y= 2     J= 0" within 30 ticks
+}
+{
+unhighlightCode on "sourceCode" line 6
+highlightCode on "sourceCode" line 7
+highlightCode on "sourceCode" line 7
+highlightGridCell "IntMatrix1[2][0]"  within 30 ticks
+setText of "Text3" to "A(y,j)= A(2,0)=1" within 30 ticks
+setText of "text" to "A(y,j)=A(2,0) ist groesser als null = 1" within 30 ticks
+}
+{
+setText of "text" to ""
+unhighlightCode on "sourceCode" line 7
+highlightCode on "sourceCode" line 8
+unhighlightGridCell "IntMatrix1[2][2]"  within 30 ticks after 30 ticks
+unhighlightGridCell "IntMatrix1[2][0]"  within 30 ticks after 30 ticks
+highlightGridCell "IntMatrix1[2][0]"  within 30 ticks after 30 ticks
+highlightCode on "sourceCode" line 8
+unhighlightCode on "sourceCode" line 7
+setText of "Text4" to "A(x,j)=A(2,0)=1" within 30 ticks
+setText of "text" to "A(x,j)=A(2,0) ist nicht gleich null = 1" within 30 ticks
+}
+{
+unhighlightGridCell "IntMatrix1[2][0]"  within 30 ticks
+setText of "Text4" to ""
+setText of "text" to ""
+unhighlightCode on "sourceCode" line 8
+highlightCode on "sourceCode" line 6
+setText of "Text3" to ""
+unhighlightCode on "sourceCode" line 5
+highlightCode on "sourceCode" line 6
+setText of "Text1" to "X= 2    Y= 2     J= 1" within 30 ticks
+}
+{
+unhighlightCode on "sourceCode" line 6
+highlightCode on "sourceCode" line 7
+highlightCode on "sourceCode" line 7
+highlightGridCell "IntMatrix1[2][1]"  within 30 ticks
+setText of "Text3" to "A(y,j)= A(2,1)=2" within 30 ticks
+setText of "text" to "A(y,j)=A(2,1) ist groesser als null = 2" within 30 ticks
+}
+{
+setText of "text" to ""
+unhighlightCode on "sourceCode" line 7
+highlightCode on "sourceCode" line 8
+unhighlightGridCell "IntMatrix1[2][2]"  within 30 ticks after 30 ticks
+unhighlightGridCell "IntMatrix1[2][1]"  within 30 ticks after 30 ticks
+highlightGridCell "IntMatrix1[2][1]"  within 30 ticks after 30 ticks
+highlightCode on "sourceCode" line 8
+unhighlightCode on "sourceCode" line 7
+setText of "Text4" to "A(x,j)=A(2,1)=2" within 30 ticks
+setText of "text" to "A(x,j)=A(2,1) ist nicht gleich null = 2" within 30 ticks
+}
+{
+unhighlightGridCell "IntMatrix1[2][1]"  within 30 ticks
+setText of "Text4" to ""
+setText of "text" to ""
+unhighlightCode on "sourceCode" line 8
+highlightCode on "sourceCode" line 6
+setText of "Text3" to ""
+unhighlightCode on "sourceCode" line 5
+highlightCode on "sourceCode" line 6
+setText of "Text1" to "X= 2    Y= 2     J= 2" within 30 ticks
+}
+{
+unhighlightCode on "sourceCode" line 6
+highlightCode on "sourceCode" line 7
+highlightCode on "sourceCode" line 7
+highlightGridCell "IntMatrix1[2][2]"  within 30 ticks
+setText of "Text3" to "A(y,j)= A(2,2)=3" within 30 ticks
+setText of "text" to "A(y,j)=A(2,2) ist groesser als null = 3" within 30 ticks
+}
+{
+setText of "text" to ""
+unhighlightCode on "sourceCode" line 7
+highlightCode on "sourceCode" line 8
+unhighlightGridCell "IntMatrix1[2][2]"  within 30 ticks after 30 ticks
+unhighlightGridCell "IntMatrix1[2][2]"  within 30 ticks after 30 ticks
+highlightGridCell "IntMatrix1[2][2]"  within 30 ticks after 30 ticks
+highlightCode on "sourceCode" line 8
+unhighlightCode on "sourceCode" line 7
+setText of "Text4" to "A(x,j)=A(2,2)=3" within 30 ticks
+setText of "text" to "A(x,j)=A(2,2) ist nicht gleich null = 3" within 30 ticks
+}
+{
+unhighlightGridCell "IntMatrix1[2][2]"  within 30 ticks
+setText of "Text4" to ""
+setText of "text" to ""
+unhighlightCode on "sourceCode" line 8
+highlightCode on "sourceCode" line 6
+setText of "Text3" to ""
+setText of "Text2" to ""
+unhighlightCode on "sourceCode" line 6
+highlightCode on "sourceCode" line 4
+}
+{
+unhighlightCode on "sourceCode" line 4
+highlightCode on "sourceCode" line 3
+}
+

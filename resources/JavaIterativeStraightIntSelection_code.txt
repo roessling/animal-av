@@ -1,0 +1,14 @@
+public int search(int[] array, int value) { @CodeLabel("header")
+  if (array == null) @CodeLabel("ifNull")
+    return -1;
+  int nrElems = array.length; @CodeLabel("getArrayLength")
+  int i = 0; @CodeLabel("installMarker")
+  while (i < nrElems && array[i] != x) { @CodeLabel("whileLoop")
+    i++; @CodeLabel("moveMarker")
+  }
+  
+  if (i < nrElems) { @CodeLabel("outerIf")
+    return i; @CodeLabel("return value")
+  }
+  return -1; @CodeLabel("notFound")
+}

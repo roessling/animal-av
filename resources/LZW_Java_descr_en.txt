@@ -1,0 +1,9 @@
+The Lempel-Ziv-Welch (LZW) algorithm is a lossless compression algorithm.
+It uses a dictionary to replace character sequences that occur multiple times
+in the text by a key. For the textual input demonstrated here, each character is
+represented by its ASCII value.
+
+One strength of the LZW algorithm is that no dictionary has to be transmitted,
+as the dictionary can be created at run-time both during the compression and the
+decompression phase. A given input sequence will be added to the dictionary if it
+is not contained in the dictionary, but its prefix already is in the dictionary.

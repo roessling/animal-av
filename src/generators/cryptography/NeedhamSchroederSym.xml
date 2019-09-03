@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<PropertiesTreeModel xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="PropertiesTreeModel.xsd">
+	<Folder name="Root">
+		<Folder name="Challenge Response">
+			<Primitive type="boolean">
+				<name>Challenge Response</name>
+				<value><boolean value="true" /></value>
+			</Primitive>
+			<Primitive type="String">
+				<name>Question</name>
+				<value><String>Wie alt sind Sie?</String></value>
+			</Primitive>
+			<Primitive type="String">
+				<name>Answer</name>
+				<value><String>23</String></value>
+			</Primitive>
+		</Folder>
+		<Folder name="Keys">
+			<Primitive type="Color">
+				<name>Keys Alice</name>
+				<value><Color>(255, 200, 0)</Color></value>
+			</Primitive>
+			<Primitive type="Color">
+				<name>Keys Bob</name>
+				<value><Color>(0, 255, 255)</Color></value>
+			</Primitive>
+			<Primitive type="Color">
+				<name>Keys T</name>
+				<value><Color>(0, 255, 0)</Color></value>
+			</Primitive>
+		</Folder>
+		<Folder name="Names">
+			<Primitive type="String">
+				<name>Name Alice</name>
+				<value><String>A</String></value>
+			</Primitive>
+			<Primitive type="String">
+				<name>Name Bob</name>
+				<value><String>B</String></value>
+			</Primitive>
+			<Primitive type="String">
+				<name>Name T</name>
+				<value><String>T</String></value>
+			</Primitive>
+			<Primitive type="Color">
+				<name>Color Alice</name>
+				<value><Color>(135, 206, 255)</Color></value>
+			</Primitive>
+			<Primitive type="Color">
+				<name>Color Bob</name>
+				<value><Color>(135, 206, 255)</Color></value>
+			</Primitive>
+			<Primitive type="Color">
+				<name>Color T</name>
+				<value><Color>(192, 192, 192)</Color></value>
+			</Primitive>
+		</Folder>
+		<Primitive type="Font">
+			<name>Font</name>
+			<value><Font>SansSerif</Font></value>
+		</Primitive>
+	</Folder>
+</PropertiesTreeModel>

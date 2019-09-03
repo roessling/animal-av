@@ -1,0 +1,91 @@
+noSuchKeyException=missing resource entry for {0}
+iconNotFound=Icon "{0}" not found
+
+###HTML###
+assert=assert: 
+
+xintroSize=5
+xintro0=norm IEEE 754 defines a standardized notation for binary floating point numbers in computers and 
+xintro1=formulates procedures for mathematical operations, notably for rounding.
+xintro2=
+xintro3=Bits are stored in following order: sign, exponent and mantissa.
+xintro4=special patterns exist for "not a Number", infinite, denormalized and zero.
+
+
+###UTF-8###
+title=IEEE 754 Converter
+
+introHeader=Introduction
+introSize=5
+intro0=Norm IEEE 754 defines a standardized notation for binary floating point numbers in computers and 
+intro1=formulates procedures for mathematical operations, notably for rounding.
+intro2=
+intro3=Bits are stored in following order: sign, exponent and mantissa.
+intro4=special patterns exist for "not a Number", infinite, denormalized and zero.
+
+calcHeader=Calculation
+
+NumberToIEEE754=Decimal Number to IEEE754
+NtI0=special cases
+NtI1=sign
+NtI2=transformation to fixed point
+NtI3=pre-decimal places
+NtI4=decimal places
+NtI5=shift
+NtI6=calculation of the characteristic
+NtI7=calculation of the mantissa
+
+IEEE754ToNumber=IEEE754 to Decimal Number
+ItoN0=special cases
+ItoN1=calculation of the exponent
+ItoN2=shift
+ItoN3=transformation to Number
+ItoN4=sign
+
+constants=constants:
+bias=bias: 
+size=total length: 
+lchar=length of the characteristic: 
+lmant=length of the mantissa: 
+
+NaN=not a number
+nNaN=a number
+Zero=the number is zero
+Pos=the number is positive
+Neg=the number is negative
+Inf=the number is infinite
+nInf=the number is not infinite
+underflow=the number is close to zero
+normal=normal case
+max=maximal characteristic
+min=minimal characteristic
+
+staticPoint=as static point: 
+floatingPoint=floating point: 
+exponent=exponent: 
+characteristic=characteristic: 
+number=result: 
+IEEEInput=IEEE754 Input:
+
+toBinaryHead=the decimal number {0} as binary number: 
+pref=decimal places of the 
+mantissa=Fill in the {0}floating point number from index {1} on, continuing with zeros.
+
+outroHeader=Summary
+
+outIeeeSize=7
+outIeee0=The IEEE754 number is made up of a sign bit, {4} characteristic bits and {5} mantissa bits.
+outIeee1=At first spacial cases are checked and corresponding parts of the bit chain are replaced with tabulated values.
+outIeee2=To visualize the process a static point number is calculated: {2} 
+outIeee3=which is getting normalized by shifting.
+outIeee4=The shift distance applied against the bias {3}, results in the characteristic.
+outIeee5=The floating point without the leading 1 is the mantissa.
+outIeee6=That way the number {1} was converted to the IEEE754 bit chain: {0}
+
+outDoubleSize=6
+outDouble0=The IEEE754 number is made up of a sign bit, {4} characteristic bits and {5} mantissa bits.
+outDouble1=At first spacial cases are checked, returning corresponding tabulated values.
+outDouble2=the exponent is calculated from the characteristic bits.
+outDouble3=The mantissa, concatinated with a leading 1, gets shifted according to the exponent: {2}
+outDouble4=The floating point is converted to a decimal number, which the sign gets applied to.
+outDouble5=That way the IEEE754 bit chain {0} was converted to the number: {1}

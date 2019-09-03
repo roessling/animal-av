@@ -1,0 +1,11 @@
+Example: Bill and Charlie often go to the candy store and try out new sugary delicacies. Based on some previous 
+candies which Bill tried out or didn't try, Charlie wants find out which kind of candies Bill likes. Charlie stored 
+information about these candies in a table (the 'main table'). One entry contains information about whether the candy 
+is sweet or sour (TYPE), its shape (SHAPE) and its taste (TASTE). And finally, the class value (on the right, 'yes' or 
+'no') describes whether Bill tried out the candy. ID3 takes these examples as an input to come up with a general 
+concept about which candies Bill likes and which he doesn't like.
+
+With the tree at hand, Charlie can predict which candies Bill will (probably) like and which he won't (probably) like.
+Bill seems to like lollipops. A prediction for a new candy can be achieved by doing the following:
+Starting at the root node, follow the edges that correspond to the attribute values of a candy; the 
+leaf that you'll reach tells the expectation (but, of course, only based on the previously seen examples).

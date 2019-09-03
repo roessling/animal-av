@@ -1,0 +1,21 @@
+noSuchKeyException=There is no resource for entry {0}
+iconNotFound=Icon "{0}" not found
+
+generatorName=Gauss-Jordan method for inverse of a matrix
+algoName=Gauss-Jordan method
+
+description=The Gauss-Jordan method solves linear equation systems and is comparable to the Gaussian elimination.\n\nIt consists of two major parts: The first part equals the Gaussian elimination with pivoting, but aggregates all operations applied to matrix A in a second matrix E, which is initialized with the identity matrix. Target of this step is to convert matrix A to the echelon form.\n\nThe second step is another elimination but in reverse order. The echelon form matrix from step one is now transformed to a diagonal matrix by elimination and then normalized to form the identity matrix. Again, every step is also applied to matrix E.\n\nOnce matrix A is equal to the identity matrix, E contains all steps necessary to transform matrix A to the identity matrix. Therefore, E is the inverse of the original matrix A.
+sourceCode=Outline of the Gauss-Jordan method for inverting a nxn-matrix\n    1. Initialize matrix E with the identity matrix\n    2. For k = 0, ... ,n-1:\n        2.1. Column pivoting: For i = k, ... , n-1: Find max|A[i][k]|.\n             If i != k: Swap rows i and k in both matrices.\n        2.2. Elimination: For i = k+1, ... , n-1 with factor Alpha = A[i][k] / A[k][k]\n            Subtract Alpha * A[k][] from row A[i][]\n            Subtract Alpha * E[k][] from row E[i][]\nOutline of the Gauss-Jordan method for inverting a nxn-matrix (continued)\n    3. For k = n-1, ..., 0:\n        3.1. Normalize: Divide row k by A[k][k] in both matrices\n        3.2. Elimination: For i = k-1, ... , 0 with factor Alpha = A[i][k] / A[k][k]\n            Subtract Alpha * A[k][] from row A[i][]\n            Subtract Alpha * E[k][] from row E[i][]\n    4. Matrix E represents the result
+sourceCode1=Outline of the Gauss-Jordan method for inverting a nxn-matrix\n\t1. Initialize matrix E with the identity matrix\n\t2. For k = 0, ... ,n-1:\n\t\t2.1. Column pivoting: For i = k, ... , n-1: Find max|A[i][k]|.\n\t\t\t If i != k: Swap rows i and k in both matrices.\n\t\t2.2. Elimination: For i = k+1, ... , n-1 with factor Alpha = A[i][k] / A[k][k]\n\t\t\tSubtract Alpha * A[k][] from row A[i][]\n\t\t\tSubtract Alpha * E[k][] from row E[i][]
+sourceCode2=Outline of the Gauss-Jordan method for inverting a nxn-matrix (continued)\n\t3. For k = n-1, ..., 0:\n\t\t3.1. Normalize: Divide row k by A[k][k] in both matrices\n\t\t3.2. Elimination: For i = k-1, ... , 0 with factor Alpha = A[i][k] / A[k][k]\n\t\t\tSubtract Alpha * A[k][] from row A[i][]\n\t\t\tSubtract Alpha * E[k][] from row E[i][]\n\t4. Matrix E represents the result
+conclusion=All steps necessary to transform matrix A to the identity matrix have been aggregated in matrix E. Therefore matrix E is equal to the inverse of the original matrix A.
+
+matrixA=Matrix A
+matrixE=Matrix E
+pivotMaximum=Maximum is {0} in row i = {1} (k = {2})
+swapRows=Swap rows i = {0} and k = {1} in both matrices
+eliminate=k = {0}, i = {1} -> Alpha = {2}
+normalize=Normalize row k = {0} => Divide by {1}
+
+errorMatrixAEmpty = Matrix A cannot be empty.
+errorMatrixANonSquare = Matrix A must be square.

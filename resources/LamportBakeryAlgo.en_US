@@ -1,0 +1,59 @@
+noSuchKeyException=There is no ressource for the key {0}
+iconNotFound=Icon "{0}" not found
+
+### Description ###
+description1=Lamport's bakery algorithm is a computer algorithm devised by computer scientist Leslie Lamport,
+description2=which is intended to improve the safety in the usage of shared resources among multiple threads by means of mutual exclusion.
+description3=In computer science, it is common for multiple threads to simultaneously access the same resources.
+description4=Data corruption can occur if two or more threads try to write into the same memory location,
+description5=or if one thread reads a memory location before another has finished writing into it
+description6=Lamport's bakery algorithm is one of many mutual exclusion algorithms designed to prevent concurrent threads
+description7=entering critical sections of code concurrently to eliminate the risk of data corruption.
+
+algo11=Lamport envisioned a bakery with a numbering machine at its entrance so each customer is given a unique number.
+algo12=Numbers increase by one as customers enter the store. A global counter displays the number of the customer that is currently being served.
+algo13=All other customers must wait in a queue until the baker finishes serving the current customer and the next number is displayed.
+algo14=When the customer is done shopping and has disposed of his or her number, the clerk increments the number, allowing the next customer to be served.
+algo15=That customer must draw another number from the numbering machine in order to shop again.
+
+### Explanations ###
+explanation1=In this example, all threads execute the same main function, Thread.
+explanation2=In real applications, different threads often have different main functions.
+explanation3=Also for the purpose of demonstration and to keep this animation short,
+explanation4=Every thread will execute his main function exactly once.
+
+explanation5=Once a thread has gotten assigned his number, he will enter this for loop,
+explanation6=and wait here until he is the next in line.
+explanation7=This loop, or rather the conditions in this loop, guarantee that only one thread is in the critical section at any given time.
+explanation8=Thus all other threads that have finished the processes of drawing a number will continue executing this loop.
+
+explanation9=Due to the limitations of computer architecture, some parts of Lamport's analogy need slight modification.
+explanation10=It is possible that more than one thread will get the same number n when they request it; this cannot be avoided.
+explanation11=Therefore, it is assumed that the thread identifier i is also a priority.
+explanation12=A lower value of i means a higher priority and threads with higher priority will enter the critical section first.
+
+### Ending ###
+ending1=All threads have now entered and finished their critical section in the right order.
+ending2=Normally this would go on for far longer and threads would keep on entering, but the principle stays the same.
+ending3=To simulate the undeterministic timing of threads, the order of threads entering and drawing numbers was randomised.
+ending4=Start a few more runs of this, to see how else it could play out!
+
+### Chapters ###
+explanationend=End of explanations
+
+conclusion=Conclusion
+
+unlock= has reached the critical section
+
+### Questions ###
+unlockquestion=One thread reached his critical section. Which one ?
+unlockanswer=will now enter his critical section.
+
+nextnumberquestion1=gets assigned his number. What is
+nextnumberquestion2=number ?
+nextnumberanswer=gets assigned the number
+
+### Legend ###
+legend1=Thread has not yet entered
+legend2=Thread has been assigned a number, but has not yet reached his critical section
+legend3=Thread has finished his main function

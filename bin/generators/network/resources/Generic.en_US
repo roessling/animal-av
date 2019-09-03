@@ -1,0 +1,14 @@
+HOSTNAME=Hostname
+ADJACENCY_MATRIX=Adjacency Matrix
+DISTANCE_FROM_NODE=Distance from node {0}
+DIRECTED_GRAPH_MESSAGE=<strong>Please note:</strong> For the correct operation of this algorithm a fully occupied matrix is necessary. Therefore a directed graph is generated. If you enter an undirected graph then the upper triangular matrix is mirrored on the first main diagonal before the algorithm is executed. The display of the animation is not changed.
+UNDIRECTED_GRAPH_MESSAGE=<strong>Please note:</strong> The algorithm only works correctly on undirected graphs. 
+LBL_TITLE_SLIDE=Title Slide
+LBL_ANIM_START=Animation Start
+LBL_ADD_EDGE=Add edge between node {0} and {1}
+LBL_SEARCH_SHORTEST_EDGE=Get closest neighbor for node {0}
+LBL_EXAMINE_EDGE=Examine edge between node {0} and {1}
+LBL_EXAMINE_NODE= Examine node {0}
+LBL_EXAMINE_DISTANCE=Examine distance between node {0} and {1}
+ANS_CORRECT=The answer is correct
+ANS_WRONG=The answer is wrong

@@ -1,0 +1,8 @@
+Verbal description:
+
+1. Determine a pivot element pivot
+2. Partition so that all values before index i are smaller,
+  all values after index i are bigger than pivot.
+3. Swap pivot with the element at position i, if needed
+4. Start quicksort(l, i-1)
+5. Start quicksort(i+1, r)

@@ -1,0 +1,24 @@
+function FloydWarshall (Graph)
+n := count_vertices(Graph) ;
+for k := 1 to n:
+	for i := 1 to n:
+		for j := 1 to n:
+			if path[i][k] + path[k][j] < path[i][j]:
+				path[i][j] := path[i][k]+path[k][j];
+				next[i][j] := k;
+			end if ;
+		end for ;
+	end for ;
+end function ;
+				
+function GetPath (i,j)
+	if path[i][j] = infinity:
+		return 'no path';
+	end if ;
+	int intermediate := next[i][j];
+	if intermediate = 'null':
+			return ' ';
+	else:
+		return GetPath(i,intermediate) + intermediate + GetPath(intermediate,j);
+	end if ;
+end function ;

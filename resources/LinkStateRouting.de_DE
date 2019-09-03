@@ -1,0 +1,25 @@
+noSuchKeyException=There is no ressource for the key {0}
+iconNotFound=Icon "{0}" not found
+
+title=Link State Routing
+runde=Runde
+Paket1=Knoten von denen
+Paket2=Pakete empfängt
+
+Bschrbng=Das Link State Routing Protokoll ist ein Netzwerkprotokoll, das jedem Router Informationen über die gesamte Topologie des Netzwerks liefert. 
+Bschrbng1=Dabei werden Link-State-Advertisements(LSA) mit den Netzwerkinformationen verschickt. Dafür erstellt jeder Knoten LSA über seine Nachbarn, die nach Fertigstellung losgeschickt werden.
+Bschrbng2=Danach empfängt jeder Knoten Pakete und sendet diese Pakete weiter, bis der Knoten das komplette Wissen über die gesamte Topologie erhalten hat oder Abbruchbefehl ausgeführt wird. Bschrbng3=
+Bschrbng3=Nach Beendigung des Protokolls sollte jeder Knoten Wissen über die gesamte Topologie haben und zum Beispiel mit einem Dijkstra Algorithmus entscheiden können, was der kürzeste Pfad zu einem anderen Knoten ist.
+cdExmpl1=1. Die Knoten erkennen ihre Nachbarn und speichern Informationen darüber.
+cdExmpl2=2. Erzeuge Link-State-Advertisements, die an alle anderen Knoten per Flooding gesendet werden.
+cdExmpl3=3. Empfange Pakete
+cdExmpl4=4. Sende die empfangenen LSAs weiter an alle Nachbarn.
+cdExmpl5=5. Zu 3 bis die gesamte Topologie bekannt ist oder ein Abbruchbefehl ausgeführt wird.
+einfhrung=Einführung  
+initialisierung=Initialisierung fertig
+fertig=fertig
+protokollBeendetWissen=Das Protokoll ist beendet. Alle Knoten haben Wissen über die gesamte Topologie. Es wurden
+protokollBeendetWissen1=Runden ausgeführt.
+protokollBeendetRunden=Das Protokoll ist beendet. Die eingegebenen Runden
+protokollBeendetRunden1=sind beendet. Nicht alle Knoten haben Wissen über die gesamte Topologie.
+error=Die Anzahl der Runden muss größer als oder gleich 0 sein.

@@ -1,0 +1,150 @@
+%Animal 2656*574
+{
+codeGroup "codeSource" at (471,60) color black highlightColor red
+addCodeLine "LIBRARY IEEE;" to "codeSource"
+addCodeLine "USE IEEE.STD_LOGIC_1164.ALL;" to "codeSource"
+addCodeLine "ENTITY D_FF IS" to "codeSource"
+addCodeLine "PORT (a,b,c,d,CLK,CE: IN STD_LOGIC; co : OUT STD_LOGIC);" to "codeSource" indentation 1
+addCodeLine "END ENTITY D_FF" to "codeSource"
+addCodeLine "" to "codeSource"
+addCodeLine "ARCHITECTURE dff1 OF D_FF IS" to "codeSource"
+addCodeLine "BEGIN" to "codeSource" indentation 1
+addCodeLine "CLK<=c and d;" to "codeSource" indentation 2
+addCodeLine "PROCESS(CLK)" to "codeSource" indentation 2
+addCodeLine "BEGIN" to "codeSource" indentation 3
+addCodeLine "IF(CLK'event and CLK='1') THEN" to "codeSource" indentation 4
+addCodeLine "IF CE='1' THEN" to "codeSource" indentation 5
+addCodeLine "co<=a and b;" to "codeSource" indentation 6
+addCodeLine "END IF" to "codeSource" indentation 5
+addCodeLine "END IF" to "codeSource" indentation 4
+addCodeLine "END PROCESS" to "codeSource" indentation 3
+addCodeLine "END ARCHITECTURE fh1;" to "codeSource"
+addCodeLine "" to "codeSource"
+}
+{
+relRectangle "0" (45, 100) (376, 351)  color black depth 23
+text "0" "D_FF" (45,85) color black depth 50 font Monospaced size 14
+polyline "0" (30,170) (45,170) color black depth 10
+polyline "0" (30,220) (45,220) color black depth 10
+polyline "0" (30,337) (45,337) color black depth 10
+polyline "0" (30,387) (45,387) color black depth 10
+polyline "0" (421,175) (441,175) color black depth 10
+highlightCode on  "codeSource" line 2
+highlightCode on  "codeSource" line 3
+highlightCode on  "codeSource" line 4
+highlightCode on  "codeSource" line 5
+
+}
+
+{
+reland "and27" (87, 117) (150, 150) input c input d output CLK color green4 depth 0 filled fillColor yellow
+unhighlightCode on  "codeSource" line 0
+unhighlightCode on  "codeSource" line 1
+unhighlightCode on  "codeSource" line 2
+unhighlightCode on  "codeSource" line 3
+unhighlightCode on  "codeSource" line 4
+unhighlightCode on  "codeSource" line 5
+unhighlightCode on  "codeSource" line 6
+unhighlightCode on  "codeSource" line 7
+highlightCode on  "codeSource" line 8
+unhighlightCode on  "codeSource" line 9
+unhighlightCode on  "codeSource" line 10
+unhighlightCode on  "codeSource" line 11
+unhighlightCode on  "codeSource" line 12
+unhighlightCode on  "codeSource" line 13
+unhighlightCode on  "codeSource" line 14
+unhighlightCode on  "codeSource" line 15
+unhighlightCode on  "codeSource" line 16
+unhighlightCode on  "codeSource" line 17
+unhighlightCode on  "codeSource" line 18
+
+}
+{
+
+color "and27" type "fillColor" cyan 
+color "and27" type "color" blue4 
+reland "and28" (87, 284) (150, 150) input a input b output D1 color green4 depth 0 filled fillColor yellow
+unhighlightCode on  "codeSource" line 0
+unhighlightCode on  "codeSource" line 1
+unhighlightCode on  "codeSource" line 2
+unhighlightCode on  "codeSource" line 3
+unhighlightCode on  "codeSource" line 4
+unhighlightCode on  "codeSource" line 5
+unhighlightCode on  "codeSource" line 6
+unhighlightCode on  "codeSource" line 7
+unhighlightCode on  "codeSource" line 8
+unhighlightCode on  "codeSource" line 9
+unhighlightCode on  "codeSource" line 10
+unhighlightCode on  "codeSource" line 11
+unhighlightCode on  "codeSource" line 12
+highlightCode on  "codeSource" line 13
+unhighlightCode on  "codeSource" line 14
+unhighlightCode on  "codeSource" line 15
+unhighlightCode on  "codeSource" line 16
+unhighlightCode on  "codeSource" line 17
+unhighlightCode on  "codeSource" line 18
+
+}
+{
+
+color "and28" type "fillColor" cyan 
+color "and28" type "color" blue4 
+reld "d1" (254, 117) (150, 150) input D1 output co clk CLK ce CE color dark Gray depth 50 filled fillColor cyan2
+unhighlightCode on  "codeSource" line 0
+unhighlightCode on  "codeSource" line 1
+unhighlightCode on  "codeSource" line 2
+unhighlightCode on  "codeSource" line 3
+unhighlightCode on  "codeSource" line 4
+unhighlightCode on  "codeSource" line 5
+unhighlightCode on  "codeSource" line 6
+unhighlightCode on  "codeSource" line 7
+unhighlightCode on  "codeSource" line 8
+unhighlightCode on  "codeSource" line 9
+unhighlightCode on  "codeSource" line 10
+unhighlightCode on  "codeSource" line 11
+unhighlightCode on  "codeSource" line 12
+highlightCode on  "codeSource" line 13
+unhighlightCode on  "codeSource" line 14
+unhighlightCode on  "codeSource" line 15
+unhighlightCode on  "codeSource" line 16
+unhighlightCode on  "codeSource" line 17
+unhighlightCode on  "codeSource" line 18
+
+}
+{
+wire "wire_and28-0->d1-0" ( 237,359) ( 242,359) ( 242,178) ( 254,178) 
+}
+{
+wire "wire_and27-0->d1-0" ( 237,192) ( 248,192) ( 248,272) ( 312,272) ( 312,267) 
+}
+{
+color "d1" type "fillColor" pink3 
+color "d1" type "color" magenta3 
+}
+
+{
+wire "wire_black" ( 30,170) ( 87,170) 
+wire "wire_black" ( 30,220) ( 87,220) 
+wire "wire_black" ( 30,337) ( 87,337) 
+wire "wire_black" ( 30,387) ( 87,387) 
+wire "wire_black" ( 404,175) ( 441,175) 
+unhighlightCode on  "codeSource" line 0
+unhighlightCode on  "codeSource" line 1
+unhighlightCode on  "codeSource" line 2
+unhighlightCode on  "codeSource" line 3
+unhighlightCode on  "codeSource" line 4
+unhighlightCode on  "codeSource" line 5
+unhighlightCode on  "codeSource" line 6
+unhighlightCode on  "codeSource" line 7
+unhighlightCode on  "codeSource" line 8
+unhighlightCode on  "codeSource" line 9
+unhighlightCode on  "codeSource" line 10
+unhighlightCode on  "codeSource" line 11
+unhighlightCode on  "codeSource" line 12
+unhighlightCode on  "codeSource" line 13
+unhighlightCode on  "codeSource" line 14
+unhighlightCode on  "codeSource" line 15
+unhighlightCode on  "codeSource" line 16
+unhighlightCode on  "codeSource" line 17
+highlightCode on  "codeSource" line 18
+}

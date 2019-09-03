@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<PropertiesTreeModel xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="PropertiesTreeModel.xsd">
+	<Folder name="Root">
+		<Primitive type="int">
+			<name>epsilon</name>
+			<value><int>1</int></value>
+			<description>Epsilon</description>
+		</Primitive>
+		<Primitive type="intArray">
+			<name>inputArray</name>
+			<value><intArray>2, 46, 32, 4, 5, 7,6,8 </intArray></value>
+			<description>Array wished to be sorted</description>
+		</Primitive>
+	</Folder>
+</PropertiesTreeModel>

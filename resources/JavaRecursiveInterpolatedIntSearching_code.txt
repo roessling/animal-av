@@ -1,0 +1,16 @@
+public int recursiveInterpolatedSearch(int[] array, int value) { @CodeLabel("header")
+  if (array == null || array.length == 0) { @CodeLabel("ifNull")
+    return -1; @CodeLabel("invalid")
+  }
+   if (l > r || l < 0 || r >= array.length) { @CodeLabel("invalidIndex")
+    return -1; @CodeLabel("invalidIndexReturn")
+  }
+  int mid = l + ((value - array[l]) * (r - l)) / (array[r] - array[l]); @CodeLabel("installMidMarker")
+  if (value == array[mid]) @CodeLabel("checkFound")
+    return mid; @CodeLabel("found")
+  else if (value < array[mid]) @CodeLabel("ifLess")
+    return recursiveInterpolatedSearch(array, value, l, mid - 1); @CodeLabel("continueLeft")
+
+  return recursiveInterpolatedSearch(array, value, mid + 1, r); @CodeLabel("continueRight")
+    
+}

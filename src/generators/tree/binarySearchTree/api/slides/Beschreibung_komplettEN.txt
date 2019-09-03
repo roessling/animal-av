@@ -1,0 +1,26 @@
+[block]
+A binary search tree is a tree, that consists of nodes with 0-2 childnodes each. Every node contains a key and references to its children.[br]
+All keys in the left subtree of a node N are less or equal than the key of N. Respectively, all keys in the right subtree of n are greater than the key of N.[br]
+The keys can be of any type that can be sorted.
+[/block]
+[block]
+[h2]Insert[/h2]
+To insert a key into the tree, it is compared to the current nodes key. If the new key is smaller, the insertion continues with the left child node. If the key is bigger, it continues with the right child node.[br]
+The insertion ends if there is no child node in the correct direction. Then a new node with the given key is inserted at the found position.
+[/block]
+[block]
+[h2]Delete[/h2]
+To delete a node from the tree, at first the parent of this node has to be searched, as it contains the reference to the node to delete.[br]
+There are three different possibilities to continue the deletion:
+[/block]
+[block]
+If the node to delete is a leaf, it can be deleted without further actions.
+[/block]
+[block]
+If the node to delete has exactly one child node, the node to delete is replaced by its child node.
+[/block]
+[block]
+If the node to delete has two child nodes, at first the biggest node in the left subtree has to be found.[br]
+This node is either a leaf or a node with exactly one child node.[br]
+This node has to be temporarily detached from the tree. Afterwards, the node to delete is replaced by the previously detached node.
+[/block]

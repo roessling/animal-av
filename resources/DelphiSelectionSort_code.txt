@@ -1,0 +1,15 @@
+{ TSelectionSort }
+
+procedure TSelectionSortSort(var A: array of Integer); @CodeLabel("header")
+var I, J, T: Integer; @CodeLabel("variables")
+begin
+ for I := Low(A) to High(A) - 1 do @CodeLabel("outerLoop")
+   for J := High(A) downto I + 1 do @CodeLabel("innerLoop")
+     if A[I] > A[J] then @CodeLabel("if")
+     begin
+       T := A[I]; @CodeLabel("copy")
+       A[I] := A[J]; @CodeLabel("replicate")
+       A[J] := T; @CodeLabel("insertCopy")
+       if Terminated then Exit; @CodeLabel("checkDone")
+     end; @CodeLabel("endif")
+end; @CodeLabel("end")

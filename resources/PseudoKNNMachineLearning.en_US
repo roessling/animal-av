@@ -1,0 +1,38 @@
+generatorName=k-Nearest-Neighbors [EN]
+algorithmName=k-Nearest-Neighbors [EN]
+dataset=Training data:
+explanation=Explanation:
+example=Example:
+calculation:Calculation:
+with=with
+and=and 
+biggestDiff=1.) First calculate the biggest difference = max(a) - min(a) \n     between two values for all numerical attributes. In this case it is 
+calcNum=2.) For numerical attributes calculate the distance with: 
+calcNom=\n     For nominal attributes calculate the distance with:
+calcEx=\n     Calculate the complete distance between two examples with: 
+sort=Sort your array by ascending distance to make it easier to find the nearest neighbors
+select=Select the first k = {0} examples and identify their classes.
+classDistribution=The k = {0} nearest examples are classified by\n{1} positive examples and {2} negative examples.
+moreNegative=There are more negative examples than positives. The example will be classified as negative.
+morePositive=There are more positive examples than negatives. The example will be classified as positive.
+equal=A classification is not possible with equivalent numbers of negatives and positives. Please choose another k
+normalizeDistanceDescription=(a1 - a2) / ( abs(max(a) - min(a)) )
+zeroOneDistanceDescription=If nominal attribute a1 and a2 are equal: distance = 0, else distance = 1
+manhattanDistanceDescription=Sum of all nominal and numerical distances
+description=k-Nearest Neighbor determines the k-nearest neighbors to use it for classification of an example. The user can choose the parameter k or it can be chosen by validation process.\nIf the value for k is too small, this can lead to a too strong adjustment to the data (overfitting); if it is too big, it can lead to a too broad generalization of the data (underfitting).\nIn order to determine the nearest neighbors, distance functions for attribute values and examples are used. The distance for every training object is calculated and the k examples with the least distance are chosen.\nAfterwards the class for the label is chosen by majority voting.
+
+introQuestion=Which statement is correct?
+introQuestionAnswer1=Overfitting is a too strong adjustment to the data.
+introQuestionFeedback1=Correct!
+introQuestionAnswer2=Overfitting is a too broad generalization of the data.
+introQuestionFeedback2=Wrong! Overfitting is too much adaptation to the data.
+introQuestionAnswer3=Underfitting is a too strong adjustment to the data.
+introQuestionFeedback3=Wrong! Underfitting is a too strong generalization on the data.
+
+outroQuestion=What is the difference between kNN and a rule learner?
+outroQuestionAnswer1=The learned knowledge is discarded after classification.
+outroQuestionFeedback1=Correct!
+outroQuestionAnswer2=The acquired knowledge is presented as a model and reused later.
+outroQuestionFeedback2=Wrong! A model will not be learned.
+outroQuestionAnswer3=All results are combined and give the final classification
+outroQuestionFeedback3=Wrong!

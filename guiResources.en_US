@@ -1,0 +1,638 @@
+# contains the resources for the US-English GUI elements
+# The basic format is the same as for Java properties files
+# each line has the format    key=value
+# where 'key' is the key used in the program to refer to an entry
+# and 'value' is the associated value
+#
+# The key for GUI resources typically has a set of common sub-keys,
+# separated by a full stop
+# Typical sub-keys are the following:
+#
+# .iconName: the name of the associated icon (may be left empty)
+#   if an icon is associated, it must be placed in the folder /graphics
+#
+# .label: the label (for a menu, menu item, button etc.)
+#    may be left empty if no label should be shown, e.g. for a toolbar button
+#
+# .mnemonic: the keyboard shortcut. Only a single character can be given.
+#
+# .targetCall: the invoked method when the element is actived
+#    DO NOT EDIT THIS ELEMENT IF IT IS PRESENT!
+#
+# .toolTipText: the tool tip text to be shown when the mouse hovers
+#    over the associated element
+#
+# Note that not all GUI elements will have all of these keys. If you
+# want to be on the safe side, translate only those elements you find
+# in your Animal distribution files.
+#
+# The "About" menu entry in the "Help" menu
+about.iconName=Help.gif
+about.label=About Animal
+about.mnemonic=b
+about.targetCall=showAboutDialog
+about.toolTipText=Shows information about Animal
+#
+# Adding an element to an indexed content chooser list (e.g., for a matrix)
+#
+addItem.iconName=
+addItem.label=Add Item
+addItem.mnemonic=a
+addItem.targetCall=
+addItem.toolTipText=Add Item to List
+#
+# The "About this Animation" menu entry in the "Help" menu
+#
+animInfo.iconName=Help.gif
+animInfo.label=About this Animation
+animInfo.mnemonic=t
+animInfo.targetCall=showAnimInfoDialog
+animInfo.toolTipText=Show info about the current animation
+#
+# The menu entry for showing the animation overview
+#
+animOverview.iconName=overview.gif
+animOverview.label=Show Animation Overview
+animOverview.mnemonic=n
+animOverview.toolTipText=Shows the animation overview window
+#
+# The menu entry for showing the animation window
+#
+animWin.iconName=animWindow.gif
+animWin.label=Show Animation Window
+animWin.mnemonic=a
+animWin.toolTipText=Shows the animation window
+#
+# The menu entry for showing the current size of the animation (window)
+#
+animWindowSize.iconName=Help.gif
+animWindowSize.label=AnimationWindow size
+animWindowSize.mnemonic=s
+animWindowSize.targetCall=showAnimWindowSize
+animWindowSize.toolTipText=Show the current size of the animation window
+#
+# Menu entry in the context menu for showing AnimalScript code for
+# the currently selected element(s)
+#
+animalScriptCode.label=AnimalScript Code
+animalScriptCode.mnemonic=l
+animalScriptCode.toolTipText=Shows AnimalScript code for the currently selected object(s)
+#
+# Menu entry for showing an HTML browser containing the AnimalScript definition
+#
+animalscript.iconName=Help.gif
+animalscript.label=AnimalScript Definition
+animalscript.mnemonic=d
+animalscript.targetCall=showAnimalScriptDef
+animalscript.toolTipText=Shows the AnimalScript definition
+#
+# Content menu entry for animating objects (opens a sub-menu)
+#
+animateMenu.label=Animate...
+animateMenu.mnemonic=a
+animateMenu.toolTipText=Animate select objects(s)...
+#
+# Menu entry for showing the annotation window
+#
+annotationWin.iconName=editcopy.gif
+annotationWin.label=Show Annotation Window
+annotationWin.mnemonic=n
+annotationWin.toolTipText=Shows the annotation window
+#
+# button for appending a new step to the current animation step
+#
+appendStep.iconName=append.gif
+appendStep.label=Append step
+appendStep.mnemonic=a
+appendStep.targetCall=appendStep
+appendStep.toolTipText=Inserts a step after the current step (append)
+#
+# Button definition for going backwards
+#
+backGen.iconName=
+backGen.label=Back
+backGen.mnemonic=b
+backGen.toolTipText=Go back to the previous step
+#
+# Element for toggling text as bold (or not)
+#
+bold.iconName=
+bold.label=bold
+bold.mnemonic=b
+bold.toolTipText=Toggle the bold attribute of the text
+#
+# menu entry for showing the bounding box calculation
+#
+boundingBox.iconName=boundingBox.gif
+boundingBox.label=Bounding Box...
+boundingBox.mnemonic=b
+boundingBox.targetCall=showBoundingBox
+boundingBox.toolTipText=Calculates the bounding box of the visualization
+#
+# Using the scale factor of the AnimationCanvas for exporting the animation
+# (only used in export options window)
+#
+canvasScale.iconName=
+canvasScale.label=As canvas
+canvasScale.mnemonic=c
+canvasScale.toolTipText=Use the scale of the AnimationCanvas for exporting
+#
+# used to set cell alignment to centered in the matrix editor
+#
+centeredAlignment.iconName=
+centeredAlignment.label=Centered alignment:
+centeredAlignment.mnemonic=c
+centeredAlignment.targetCall=
+centeredAlignment.toolTipText=
+#
+# 
+#
+copy.iconName=
+copy.label=Copy
+copy.mnemonic=c
+copy.targetCall=
+copy.toolTipText=Copy the input area
+copy=Copy
+paste.iconName=
+paste.label=Paste
+paste.mnemonic=c
+paste.targetCall=
+paste.toolTipText=Paste clipboard in the input area
+paste=Paste
+clearToolbar.iconName=DeleteX.gif
+clearToolbar.label=Clear Console
+clearToolbar.mnemonic=p
+clearToolbar.targetCall=clearConsole
+clearToolbar.toolTipText=Clear the Console
+uhookPlayer.iconName=uhookPlayer.png
+uhookPlayer.label=UHookPlayer
+uhookPlayer.mnemonic=p
+uhookPlayer.targetCall=uhookPlayer
+uhookPlayer.toolTipText=(un-)hook the Player
+#
+cancel.iconName=
+cancel.label=Cancel
+cancel.mnemonic=c
+cancel.targetCall=cancelOperation
+cancel.toolTipText=Cancel the operation and close window
+cancel=Cancel
+clear.iconName=new.gif
+clear.label=Clear
+clear.mnemonic=c
+clear.targetCall=
+clear.toolTipText=Clear the input area
+clone.iconName=clone.gif
+clone.label=
+clone.mnemonic=c
+clone.toolTipText=Clone currently selected object(s)
+cloneItem.label=Clone
+cloneItem.mnemonic=c
+cloneItem.toolTipText=Clones the currently selected object(s)
+closed.iconName=
+closed.label=closed
+closed.mnemonic=c
+closed.toolTipText=Toggles the closed attribute of the component
+compConf.iconName=
+compConf.label=Component Config
+compConf.mnemonic=c
+compConf.targetCall=configureComponents
+compConf.toolTipText=Select Animal's components
+confirmGen.iconName=
+confirmGen.label=Confirm
+confirmGen.mnemonic=c
+confirmGen.toolTipText=Confirm the current choice and continue
+copyItem.iconName=
+copyItem.label=Copy
+copyItem.mnemonic=c
+copyItem.targetCall=copyItem
+copyItem.toolTipText=Copies the currently selected item
+cutItem.iconName=
+cutItem.label=Cut
+cutItem.mnemonic=v
+cutItem.targetCall=cutItem
+cutItem.toolTipText=Cuts the currently selected item
+delete.iconName=delete.gif
+delete.label=
+delete.mnemonic=o
+delete.toolTipText=Delete currently selected object(s)
+deleteAnimator.iconName=delete.gif
+deleteAnimator.label=Delete
+deleteAnimator.mnemonic=d
+deleteAnimator.targetCall=deleteLine
+deleteAnimator.toolTipText=Delete currently selected animator(s) or step(s)
+deleteItem.label=Delete
+deleteItem.mnemonic=d
+deleteItem.toolTipText=Deletes the currently selected object(s)
+demoAnimation.iconName=demo.gif
+demoAnimation.label=Demo animation
+demoAnimation.mnemonic=d
+demoAnimation.targetCall=demoAnimation
+demoAnimation.toolTipText=Replaces the current animation by a demo
+deselect.label=Unselect
+deselect.mnemonic=u
+deselect.toolTipText=Unselects the currently selected object(s)
+direction.iconName=
+direction.label=directed
+direction.mnemonic=d
+direction.toolTipText=sets if the graph is directed 
+drawWin.iconName=drawWindow.gif
+drawWin.label=Show Drawing Window
+drawWin.mnemonic=d
+drawWin.toolTipText=Shows the drawing window
+dynamicEx.iconName=
+dynamicEx.label=Dynamic
+dynamicEx.mnemonic=d
+dynamicEx.toolTipText=Exports the steps with full dynamics
+edit.label=Edit
+edit.mnemonic=e
+edit.toolTipText=Allows turning the different editing windows on or off
+editAnimator.iconName=useEditors.gif
+editAnimator.label=Edit
+editAnimator.mnemonic=e
+editAnimator.targetCall=editLine
+editAnimator.toolTipText=Edit currently selected animator(s) or step(s)
+editItem.label=Edit
+editItem.mnemonic=e
+editItem.toolTipText=Edit the properties of the currently selected object(s)
+endButton.iconName=endStep.gif
+endButton.label=
+endButton.mnemonic=e
+endButton.targetCall=endOfAnimation
+endButton.toolTipText=Go to end of visualization
+export.iconName=export.gif
+export.label=Export...
+export.mnemonic=e
+export.targetCall=exportAnimation
+export.toolTipText=Export visualization from diverse formats
+file.label=File
+file.mnemonic=f
+file.toolTipText=Contains entries for animation loading and saving
+filled.iconName=
+filled.label=filled
+filled.mnemonic=f
+filled.toolTipText=Toggles the filled attribute of the component
+fullAnimEx.iconName=
+fullAnimEx.label=Complete animation
+fullAnimEx.mnemonic=f
+fullAnimEx.toolTipText=Export the full animation
+garbageCollection.iconName=
+garbageCollection.label=Garbage Collection
+garbageCollection.mnemonic=b
+garbageCollection.toolTipText=Collects garbage now. May take a while,\nbut may also free up system resources.
+generator.iconName=gears.gif
+generator.label=Generate...
+generator.mnemonic=g
+generator.toolTipText=Generate a new animation using the built-in generators
+generator.toolTipText.toolTipText=Generate a new animation using the built-in generators
+help.label=Help
+help.mnemonic=h
+help.toolTipText=Display various kinds of online help
+hideHidden.iconName=hide.gif
+hideHidden.label=Hide
+hideHidden.mnemonic=h
+hideHidden.targetCall=hideSelected
+hideHidden.toolTipText=Add a 'Hide' animator for the selected objects
+import.iconName=import.gif
+import.label=Import...
+import.mnemonic=i
+import.targetCall=importAnimation
+import.toolTipText=Import visualization from diverse formats
+inputScripting.iconName=notepad.gif
+inputScripting.label=AnimalScript Code
+inputScripting.mnemonic=c
+inputScripting.targetCall=initScriptingGUI
+inputScripting.toolTipText=Input AnimalScript code
+italic.iconName=
+italic.label=italic
+italic.mnemonic=i
+italic.toolTipText=Toggle the italics attribute of the text
+language.icon=en_US.gif
+language.label=English
+language.locale=en US
+language.tooltip=Translate system into English
+leftAlignment.iconName=
+leftAlignment.label=Left alignment:
+leftAlignment.mnemonic=l
+leftAlignment.targetCall=
+leftAlignment.toolTipText=
+locale.label=Language
+locale.mnemonic=l
+locale.toolTipText=Select one of the supported languages
+mergeAnn.iconName=
+mergeAnn.label=merge
+mergeAnn.mnemonic=m
+mergeAnn.toolTipText=Merge annotations
+mouseLMR.iconName=
+mouseLMR.label=3-Button Mouse
+mouseLMR.mnemonic=3
+mouseLMR.targetCall=setMouseType
+mouseLMR.toolTipText=Left click: set, middle: finish, right: cancel
+mouseLRM.iconName=
+mouseLRM.label=2-Button Mouse
+mouseLRM.mnemonic=2
+mouseLRM.targetCall=setMouseType
+mouseLRM.toolTipText=Left click: set, middle: cancel (or use delete), right: finish
+multiSelect.iconName=MultiSelection.gif
+multiSelect.label=
+multiSelect.mnemonic=m
+multiSelect.toolTipText=Toggle multiple object selection mode on/off
+new.iconName=new.gif
+new.label=New
+new.mnemonic=n
+new.targetCall=newFile
+new.toolTipText=Generate a new animation
+nextButton.iconName=next.gif
+nextButton.label=
+nextButton.mnemonic=n
+nextButton.targetCall=forwardAnimation
+nextButton.toolTipText=Go forward to next visualization step
+nextStep.iconName=nextStep.gif
+nextStep.label=
+nextStep.mnemonic=n
+nextStep.toolTipText=Go to next step
+normalScale.iconName=
+normalScale.label=100%
+normalScale.mnemonic=1
+normalScale.toolTipText=Export at original size (100% magnification)
+normalSpeed.iconName=
+normalSpeed.label=100%
+normalSpeed.mnemonic=p
+normalSpeed.toolTipText=Export at original speed (100%)
+normalizeDisplay.iconName=magButton.gif
+normalizeDisplay.label=
+normalizeDisplay.mnemonic=n
+normalizeDisplay.targetCall=normalizeScale
+normalizeDisplay.toolTipText=Set scale to 100%
+normalizeSpeed.iconName=speedButton.gif
+normalizeSpeed.label=
+normalizeSpeed.mnemonic=s
+normalizeSpeed.targetCall=normalizeSpeed
+normalizeSpeed.toolTipText=Set display speed to 100%
+objectsWin.iconName=objectsWindow.gif
+objectsWin.label=Show Objects Window
+objectsWin.mnemonic=o
+objectsWin.toolTipText=Shows the object window
+ok.iconName=
+ok.label=OK
+ok.mnemonic=o
+ok.toolTipText=Confirm the selection and close window
+ok=OK
+open.iconName=open.gif
+open.label=Open
+open.mnemonic=o
+open.targetCall=importAnimation
+open.toolTipText=Open an animation
+options.iconName=options.gif
+options.label=
+options.mnemonic=i
+options.toolTipText=Set the display options of Animal
+optionsMenu.iconName=options.gif
+optionsMenu.label=Options
+optionsMenu.mnemonic=p
+optionsMenu.toolTipText=Set the display options of Animal
+pasteItem.iconName=
+pasteItem.label=Paste
+pasteItem.mnemonic=p
+pasteItem.targetCall=pasteItem
+pasteItem.toolTipText=Pastes the last copied or cut item to the current position
+pauseButton.iconName=pause.gif
+pauseButton.label=
+pauseButton.mnemonic=a
+pauseButton.targetCall=pauseAnimation
+pauseButton.toolTipText=Pause the current animation
+playButton.iconName=play.gif
+playButton.label=
+playButton.mnemonic=p
+playButton.targetCall=playAnimation
+playButton.toolTipText=Play the visualization
+playReverseButton.iconName=reversePlay.gif
+playReverseButton.label=
+playReverseButton.mnemonic=r
+playReverseButton.targetCall=reversePlay
+playReverseButton.toolTipText=Play the visualization in reverse mode
+preferences.iconName=options.gif
+preferences.label=Preferences
+preferences.mnemonic=p
+preferences.targetCall=showOptionDialog
+preferences.toolTipText=Adjust the preferences of Animal
+prependStep.iconName=prepend.gif
+prependStep.label=Prepend step
+prependStep.mnemonic=v
+prependStep.targetCall=prependStep
+prependStep.toolTipText=Inserts a step before the current step (prepend)
+preselected.iconName=
+preselected.label=Preselected
+preselected.mnemonic=p
+preselected.toolTipText=Preselected answer
+prevButton.iconName=prev.gif
+prevButton.label=
+prevButton.mnemonic=b
+prevButton.targetCall=backwardAnimation
+prevButton.toolTipText=Go back to previous visualization step
+prevStep.iconName=prevStep.gif
+prevStep.label=
+prevStep.mnemonic=v
+prevStep.toolTipText=Go to previous step
+print.iconName=print.gif
+print.label=Print
+print.mnemonic=p
+print.targetCall=printAnimation
+print.toolTipText=Print the current stage of the animation
+quit.iconName=quit.gif
+quit.label=Quit
+quit.mnemonic=q
+quit.targetCall=quitAnimal
+quit.toolTipText=Quit Animal
+quitGen.iconName=
+quitGen.label=Quit
+quitGen.mnemonic=q
+quitGen.toolTipText=Quit the content generator
+quizResults.iconName=Help.gif
+quizResults.label=Quiz Results
+quizResults.mnemonic=q
+quizResults.toolTipText=Shows the results of the quizzes taken (if any)
+redo.iconName=Redo.gif
+redo.label=
+redo.mnemonic=o
+redo.toolTipText=Redo last action
+refresh.iconName=repaint.gif
+refresh.label=Refresh display
+refresh.mnemonic=r
+refresh.targetCall=initList
+refresh.toolTipText=Redraws the window
+reload.iconName=reload.gif
+reload.label=Reload
+reload.mnemonic=l
+reload.targetCall=reloadFile
+reload.toolTipText=Reload current animation
+reloadAnn.iconName=
+reloadAnn.label=reload
+reloadAnn.mnemonic=r
+reloadAnn.toolTipText=Reload annotations
+repAccept.iconName=
+repAccept.label=Retrieve
+repAccept.mnemonic=r
+repAccept.toolTipText=Accept the selection and retrieve the animation from the repository
+repCancel.iconName=
+repCancel.label=Cancel
+repCancel.mnemonic=c
+repCancel.toolTipText=Cancel the selection and close the window
+repRefresh.iconName=
+repRefresh.label=Update
+repRefresh.mnemonic=u
+repRefresh.toolTipText=Update the display
+repaint.iconName=repaint.gif
+repaint.label=
+repaint.mnemonic=r
+repaint.targetCall=repaintAll
+repaint.toolTipText=Repaint all components
+repositoryOpen.iconName=openRpst.gif
+repositoryOpen.label=Repository
+repositoryOpen.mnemonic=r
+repositoryOpen.targetCall=openRepository
+repositoryOpen.toolTipText=Open an animation from the repository
+revSlideShowButton.iconName=revSlideShow.gif
+revSlideShowButton.label=
+revSlideShowButton.mnemonic=v
+revSlideShowButton.targetCall=reverseSlideShow
+revSlideShowButton.toolTipText=Display the visualization in reverse slide-show mode
+rightAlignment.iconName=
+rightAlignment.label=Right alignment:
+rightAlignment.mnemonic=r
+rightAlignment.targetCall=
+rightAlignment.toolTipText=
+runStep.iconName=runStep.gif
+runStep.label=
+runStep.mnemonic=x
+runStep.toolTipText=Execute step in animation window
+save.iconName=save.gif
+save.label=Save
+save.mnemonic=s
+save.targetCall=saveAnimation
+save.toolTipText=Save current animation
+saveAnnAs.iconName=
+saveAnnAs.label=Save As...
+saveAnnAs.mnemonic=v
+saveAnnAs.toolTipText=Save annotations as...
+saveAs.iconName=saveAs.gif
+saveAs.label=Save As...
+saveAs.mnemonic=a
+saveAs.targetCall=exportAnimation
+saveAs.toolTipText=Save current animation as...
+selectedEx.iconName=
+selectedEx.label=Selected step(s)
+selectedEx.mnemonic=s
+selectedEx.toolTipText=Exports only the selected animation step(s)
+selectionOnOff.iconName=Selection.gif
+selectionOnOff.label=
+selectionOnOff.mnemonic=s
+selectionOnOff.toolTipText=Toggle selection mode on/off
+showEdit.iconName=useEditors.gif
+showEdit.label=
+showEdit.mnemonic=e
+showEdit.toolTipText=Toggle edit mode on/off
+showHidden.iconName=Show.gif
+showHidden.label=Show
+showHidden.mnemonic=s
+showHidden.targetCall=showSelected
+showHidden.toolTipText=Add a 'Show' animator for the selected objects
+showID.label=Show Object ID
+showID.mnemonic=i
+showID.toolTipText=Shows the IDs(s) for the currently selected object(s)
+showTempMode.iconName=ShowTempObjects.gif
+showTempMode.label=
+showTempMode.mnemonic=t
+showTempMode.toolTipText=Toggle display of temporary objects on/off
+slideShowButton.iconName=slideShow.gif
+slideShowButton.label=
+slideShowButton.mnemonic=w
+slideShowButton.targetCall=slideShow
+slideShowButton.toolTipText=Display the visualization in slide-show mode
+snapMode.iconName=Snap.gif
+snapMode.label=
+snapMode.mnemonic=p
+snapMode.toolTipText=Turns grid snap mode on/off
+startButton.iconName=start.gif
+startButton.label=
+startButton.mnemonic=s
+startButton.targetCall=startOfAnimation
+startButton.toolTipText=Start visualization in first step
+staticEx.iconName=
+staticEx.label=Static Snapshot(s)
+staticEx.mnemonic=p
+staticEx.toolTipText=Exports only a static view of the start of each exported step
+submit.iconName=
+submit.label=Submit
+submit.mnemonic=s
+submit.toolTipText=Submit the answer
+tfCancel.iconName=
+tfCancel.label=Cancel
+tfCancel.mnemonic=c
+tfCancel.toolTipText=Cancels the submission of a True/False answer
+tfFalse.iconName=
+tfFalse.label=false
+tfFalse.mnemonic=f
+tfFalse.toolTipText=Choose "false" as the correct answer
+tfPreselected.iconName=
+tfPreselected.label=n/a
+tfPreselected.mnemonic=n
+tfPreselected.toolTipText=Choose not to answer this question
+tfQuestion=True/False Question
+tfSubmit.iconName=
+tfSubmit.label=Submit
+tfSubmit.mnemonic=s
+tfSubmit.toolTipText=Submit True/False answer
+tfTrue.iconName=
+tfTrue.label=True
+tfTrue.mnemonic=t
+tfTrue.toolTipText=Choose "true" as the correct answer
+timeLineList.label=Labels for this animation:
+timeLineList.toolTipText=Click on an entry to jump to the associated step
+timeLineWin.iconName=timeLineWindow.gif
+timeLineWin.label=Show Table of Contents
+timeLineWin.mnemonic=t
+timeLineWin.toolTipText=Shows the table of contents (which may be empty)
+tutorial.iconName=Help.gif
+tutorial.label=Animal Tutorial
+tutorial.mnemonic=t
+tutorial.targetCall=showTutorial
+tutorial.toolTipText=Shows the Animal Tutorial
+undo.iconName=Undo.gif
+undo.label=
+undo.mnemonic=u
+undo.toolTipText=Undo last action
+weight.iconName=
+weight.label=weighted
+weight.mnemonic=w
+weight.toolTipText=sets if the graph is weighted
+windows.label=Windows
+windows.mnemonic=w
+windows.toolTipText=Provides access to the different windows used by Animal.
+writeBack.iconName=WriteBack.gif
+writeBack.label=
+writeBack.mnemonic=w
+writeBack.toolTipText=Write back current state to other windows
+zoomIn.iconName=zoomIn.gif
+zoomIn.label=zoomIn
+zoomIn.mnemonic=n
+zoomIn.targetCall=zoomIn
+zoomIn.toolTipText=magnifies the window
+zoomOut.iconName=zoomOut.gif
+zoomOut.label=zoomOut
+zoomOut.mnemonic=n
+zoomOut.targetCall=zoomOut
+zoomOut.toolTipText=decreases the window
+pdf.iconName=pdf.gif
+pdf.label=pdf
+pdf.mnemonic=n
+pdf.targetCall=pdf
+pdf.toolTipText=hides or unhides the pdf menu
+apply.iconName=
+apply.label=Apply
+apply.mnemonic=a
+options.iconName=options.gif
+options.label=
+options.mnemonic=i
+options.toolTipText=Set the display options of Animal
+options=Options
+chooseColor=Choose the {0}

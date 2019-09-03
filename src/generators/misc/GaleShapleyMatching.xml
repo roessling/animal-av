@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<PropertiesTreeModel xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="PropertiesTreeModel.xsd">
+	<Folder name="Root">
+		<Primitive type="StringArray">
+			<name>Men</name>
+			<value><StringArray>M1,M2,M3,M4,M5</StringArray></value>
+		</Primitive>
+		<Primitive type="StringArray">
+			<name>Women</name>
+			<value><StringArray>W1,W2,W3,W4,W5</StringArray></value>
+		</Primitive>
+		<Primitive type="StringMatrix">
+			<name>PrefMen</name>
+			<value><StringMatrix>W5,W2,W3,W4,W1; W2,W5,W1,W4,W3; W5,W3,W2,W1,W4 ; W1,W2,W3,W4,W5 ;W5,W2,W3,W4,W1 </StringMatrix></value>
+		</Primitive>
+		<Primitive type="StringMatrix">
+			<name>PrefWomen</name>
+			<value><StringMatrix>M5,M3,M4,M1,M2; M1,M2,M3,M5,M4; M4,M5,M3,M2,M1; M5,M2,M1,M4,M3; M3,M1,M4,M1,M5</StringMatrix></value>
+		</Primitive>
+	</Folder>
+</PropertiesTreeModel>

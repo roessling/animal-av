@@ -1,0 +1,53 @@
+noSuchKeyException=Es gibt keine Ressource f\u00fcr Eintrag {0}
+iconNotFound=Icon "{0}" not found
+
+algorithm_name=Value Difference Metric
+approach= Einführung
+description= Es gibt viele Distanz-Metriken wie z.B. die Manhattan-Distanz oder die Euklidische-Distanz, die die Distanz
+description1= zwischen zwei Punkten wiedergibt. Diese Metriken bassieren auf nummerische Attribute und k\u00f6nnen
+description2= mit symbolischen Attributen nicht umgehen. Hier kommt die Value Difference Metrik zum Einsatz, welche
+description3= bei der Klassifikation von Data mining Algorithmen wie z.B. dem kNN-Algorithmen verwendet wird,
+description4= d.h. zwei symbolische Werte werden anhand ihrer Klassifizierungen Näher betrachtet.
+description5= Die VDM definiert die Distanz zwischen zwei symbolischen Werten wie folgt:
+description6= - n1,c:
+description7= - n1:
+description8= ist die Anzahl der Beipiele eines Attributes nach Klassifikation c
+description9= ist die Anzahl der Beispiele eines Attributes 
+
+shortdes1= Die Value Difference Metric ist ein Verfahren, um den Abstand zwischen zwei oder mehreren Attributen zu einem gewählen Attribute nach der Klassifikationen zu bestimmen.
+shortdes2= In den Primitives können Sie eine Tabelle angeben mit verschiedenen Attributen (1.Spalte) derren Klassifikationen (2.Spalte) \"yes\" oder \"no\" sein müsssen. Zudem müssen Sie dann ein Attribute auswählen für welches die Distanz errechnet werden soll.
+shortdes3= Zusätzlich können Sie folgende Properties beeinflussen:
+shortdes4= ♦ Farbe des Hightlight
+shortdes5= ♦ Farbe des Threshold/Graph
+shortdes6= ♦ Farbe des SourcCode
+shortdes7= ♦ und weiteres
+
+step1=1. Schritt: Anzeige der Eingabedaten  
+step2=2. Schritt: Häufigkeitstabelle
+step3=3. Schritt: Berechnung
+step4=4. Schritt: Visueller Abstand (Graph)
+
+line1= public void vdm(Matrix matrix, Attribute att, int size)
+line2= Anzahl 1.Spalten -> Häufigkeit						
+line3= Anzahl 2.Spalten -> Häufigkeit						
+line4= Berechnung der VDM										
+line5= vdm(att, matrix[i][0]) = Abstand							
+line6= Visueller Abstand (Graph)
+
+label1=Häufigkeitstabelle
+label2=Berechnung
+label3=Graph
+label4=Schluss
+
+conclusion=* * * * * * * * * * * * * * * * * * * * * * * * * * * * Zusammenfassung * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+conclusion1= Die angewandte Formel:
+conclusion2= Value Difference Metric
+conclusion3= Die Abstände von dem ausgewählten Attribut zu anderen Attributen betragen: 
+conclusion4= Der visuelle Graph zeigt den Abstand der Attribute zu dem ausgewählten Attribut an,
+conclusion5= die Position wird durch die Anzahl der jeweiligen Klassifikationen bestimmt.
+
+vaild1= Das Attribut ist nicht in der Tabelle enthalten.
+vaild2= Die Spalten Anzahl muss auf 2 gesetzt sein.
+vaild3= Die Tabelle hat keinen Inhalt.
+vaild4= Die Klassifikation in der Tabelle sollte "no" oder "yes" beinhalten
+vaild5= Die Länge Attributes und der Attribute in der Tabelle sind zu groß. Sollte kleiner 18 sein.

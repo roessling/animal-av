@@ -1,0 +1,13 @@
+public void insertionSort(int[] args) { #header
+  int v = args[0]; #declare v
+  int i = 1, j = args.length - 1; #declare i,j
+  while (i < args.length) { #start while
+    v = args[i]; # set v
+    for (int j = i; j > -1; j--) { #start for
+      if (args[j - 1] > args[j]) { #inner if
+        args[j] = args[j - 1]; #copy
+      } #end if
+    } #end for
+    args[j] = v; #insert v
+  } #end while
+} #end

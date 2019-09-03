@@ -1,0 +1,23 @@
+algoName=Lineare Suche
+theName=Iterative Lineare Suche (String; Pseudocode)
+outputLanguage=Pseudo-Code
+algoDesc=Dieser Algorithmus sucht in einem Array von int-Werten nach einem &uuml;bergebenen Wert. Wird der gesuchte Wert gefunden, so wird seine Position zur&uuml;ckgegeben, ansonsten der Wert -1.
+codeExample=int straightSelection(String[] data, String value):\n  Falls das Eingabefeld leer ist\n    return -1;\n  Setze nrElems = Anzahl Feldelemente;\n  Deklariere Variable i = 0;\n  Solange i < nrElems und Feldelement an Position i != value:\n    Zähle i um eins hoch;\n\n  Falls i < nrElems:\n    return i;\n  return -1;
+animTitle=Iterative Lineare Suche
+algoAuthor=Dr. Guido Rößling (roessling@acm.org>
+algoTitle=Iterative Lineare Suche
+animDesc=Beschreibung des Algorithmus
+adForURL=Weitere Animationen finden Sie unter http://www.animal.ahrgr.de im Online-Repository
+nrSteps=Insgesamt verwendete der Algorithmus {0} Zuweisungen und {1} Vergleiche.
+description.filename=resources/PseudoIterativeStraightIntSelection_descr_de.txt
+description.level=2
+description.labelSymbol=#
+code.filename=resources/PseudoIterativeStraightIntSelection_code_de.txt
+code.level=2
+code.labelSymbol=#
+complexity.filename=resources/PseudoIterativeStraightIntSelection_complexity_de.txt
+complexity.level=2
+complexity.labelSymbol=#
+nrAss=Zuweisungen
+nrComp=Vergleiche
+result=Ergebnis: {0}

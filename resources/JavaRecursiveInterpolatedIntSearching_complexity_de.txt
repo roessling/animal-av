@@ -1,0 +1,11 @@
+Anmerkungen zur Komplexität
+
+Die Interpolationssuche hat eine doppelt logarithmische Komplexität 
+(zur Basis 2 - O(log(log(n))). 
+Um ein Element unter 256 Element zu finden, sind also maximal 3
+Iterationen erforderlich. Der Beweis zur Komplexität ist zu
+trickreich für diese Animation.
+
+Es ist wichtig, daran zu denken, dass die vorliegenden Daten sortiert
+sein müssen. Andernfalls liefert die Interpolationssuche nur zufällig das
+korrekte Ergebnis.

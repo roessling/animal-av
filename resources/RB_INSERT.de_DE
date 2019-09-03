@@ -1,0 +1,330 @@
+
+
+noSuchKeyException=There is no resource for the key {0}
+iconNotFound=Icon "{0}" not found
+
+noTextInput=No text was entered.
+noPatternInput=No pattern was entered.
+label_Text=Text:
+label_Pattern=Pattern:
+
+
+algorithmName=Rot-Schwarzbäume - Einfügen
+
+----- TABLE OF CONTENTS -----
+
+tableOfContentsStart=Anfang
+tableOfContentsInsert=Einfügen des {0}. Knotens
+tableOfContentsFinished=Alle Knoten eingefügt
+tableOfContentsFinal=Fazit
+
+----- DESCRIPTION -----
+
+descriptionLine1=Rot-Schwarzbäume sind eine erweiterte Version der binären Suchbäume. Ein binärer Suchbaum mit Höhe h bietet die Komplexität O(h) für die Operationen Suche, Minimum, Maximum, Einfügen, Löschen.
+
+descriptionLine2=Es ist offensichtlich, dass ein Baum mit geringer Höhe schnellere Operationen liefert als ein Baum mit großer Höhe. Im schlimmsten Fall liefert dies Laufzeiten einer LinkedList. Um dies zu verhindern balanciert ein Rot-Schwarzbaum den Baum um so eine Komplexität von O(log n) für alle Operationen zu bieten, wobei n die Anzahl der Knoten im Baum ist.
+
+descriptionLine3=Rot-Schwarzbäume erweitern binäre Suchbäume um ein weiteres Bit pro Knoten, welches die Farbe des Knoten darstellt und entweder rot oder schwarz ist. Die Farben der Knoten auf Pfaden von einem Knoten bis zu einem Blatt werden eingeschränkt, sodass kein Pfad mehr als doppelt so lang ist als ein anderer Pfad. Dies balanciert den Baum.
+
+descriptionLine4=Jeder Knoten besitzt nun die Eigenschaften Farbe, Wert, Linkes Kind, Rechtes Kind und Elter. Sollte ein Kind oder das Elter nicht existieren so zeigen diese Eigenschaften auf schwarze Knoten mit dem Wert NULL. Jedes Blatt des Baums ist also ein schwarzer NULL Knoten und alle Knoten mit einem gültigen Wert sind interne Knoten. Das Elter der Wurzel verweist ebenfalls auf einen schwarzen NULL Knoten. Diese schwarzen NULL Knoten werden im Folgenden als ein einziger Knoten T.null dargestellt.
+
+----- INTRO -----
+
+intro01=Intro
+
+intro02=Die Operationen Einfügen modifiziert den Rot-Schwarzbaum. Das Resultat verletzt möglicherweise eine
+intro03=der fünf notwendigen Eigenschaften von Rot-Schwarzbäumen. Um die Eigenschaften wieder herzustellen 
+intro04=müssen Farben und Verweise von Knoten verändert werden. 
+
+intro11=Rotationen
+
+intro12=Rotationen ändern die Verweisstruktur ohne die Eigenschaften eines binären Suchbaumes zu verletzen. Zwei
+intro13=adjazente Knoten werden miteinander vertauscht, dafür müssen die drei Unterbäume entsprechend mitvertauscht
+intro14=werden. Es gibt zwei Arten von Rotationen: Die Left-Rotation und die Right-Rotation. Beide benötigen eine
+intro15=konstante Anzahl von Schritten.
+
+intro21=Fixup
+
+intro22=Welche Eigenschaften können beim Einfügen gebrochen werden?
+intro23=Es ist möglich, dass Eigenschaft 2 und 4 gebrochen werden können, die restlichen 3 werden nicht verletzt.
+intro24=Beide Eigenschaften werden dadurch verletzt, dass z als roter Knoten eingefügt wird, da die Wurzel nicht
+intro25=rot sein darf und ein roter Knoten nicht auf ein rotes Kind verweisen darf. Die while-Schleife behebt 
+intro26=einen Verstoß gegen Eigenschaft 4, die letzte Anweisung in RB-INSERT-FIXUP einen gegen Eigenschaft 2.
+
+intro31=While Loop in Fixup
+intro32=Wir betrachten insgesamt 6 Fälle in der while-Schleife, allerdings sind die Fälle 1, 2 und 3 symmetrisch zu
+intro33=den Fällen 4, 5 und 6. Der Unterschied zwischen diesen besteht darin, dass z's Elternknoten einmal ein 
+intro34=linkes und einmal ein rechtes Kind ist. Der Fall 1 beziehungsweise 4 wird von 2, 3 und 5, 6 unterschieden je 
+intro35=nach dem welche Farbe der Geschwisterknoten des Elterknoten von z hat (z.p.p.left / z.p.p.right). Sollte 
+intro36=dieser Knoten rot sein so wird Fall 1 / 4 ausgeführt, sollte er schwarz sein so führen wir Fall 2, 3 oder 5,
+intro37=6 aus. Diese unterscheiden sich darin, ob z ein rechtes oder ein linkes Kind ist. Fall 2 wird daraufhin mit 
+intro38=Hilfe einer Rotation nach Fall 3 überführt und Fall 5 nach Fall 6. 
+
+intro41=Eigenschaften von Knoten
+intro42=Jeder Knoten besitzt nun die Eigenschaften Farbe, Wert, Linkes Kind, Rechtes Kind und Elter. Sollte ein Kind 
+intro43=oder das Elter nicht existieren so zeigen diese Eigenschaften auf schwarze Knoten mit dem Wert NULL.
+intro44=Jedes Blatt des Baums ist also ein schwarzer NULL Knoten und alle Knoten mit einem gültigen Wert sind
+intro45=interne Knoten. Das Elter der Wurzel verweist ebenfalls auf einen schwarzen NULL Knoten. Diese
+intro46=schwarzen NULL Knoten werden im Folgenden als ein einziger Knoten T.null dargestellt.
+
+
+
+----- OUTRO -----
+
+outro0=Laufzeit von RB-INSERT
+
+outro1=Die Methode RB-INSERT(T, z) benötigt O(log n) Zeit.
+
+outro105=Insert
+outro2=Die Einfügeoperation für Rot-Schwarzbäume liegt in O(log n), 
+outro3=da die Höhe eines Rot-Schwarzbaumes mit n Knoten ebenfalls in O(log n) liegt.
+
+outro4=Fixup
+outro5=Lediglich beim Eintreten des 1. oder 4. Falles wird die while-Schleife  
+outro6=mehr als einmal durchlaufen. In diesem Fall wandert der Zeiger z zwei Höhenlevel nach oben.
+
+outro7=Die Gesamtanzahl der Schleifendurchläufe liegt also ebenfalls in O(log n).
+
+outro8=Für jede Einfügeoperation werden niemals mehr als zwei Rotationen durchgeführt, 
+outro9=da nach Behandlung von Fall 2,3,5 und 6 die Schleife direkt verlassen wird.
+
+
+outro10=Rotationen
+outro11=Da alle Rotationen in konstanter Laufzeit ablaufen liegen die Funktionen
+outro12=LEFT-ROTATE und RIGHT-ROTATE in der Komplexitätsklasse O(1) und fügen 
+outro13=der Laufzeit des RB-INSERT nichts hinzu
+
+outro14=Dadurch ergibt sich eine Gesamtlaufzeit von O(log n). 
+
+
+----- PROPERTYS OF RB TREES -----
+
+propertyHead=Eigenschaften von Rot-Schwarzbäumen:
+
+property1=1. Jeder Knoten ist entweder rot oder schwarz.
+
+property2=2. Die Wurzel ist schwarz.
+
+property3=3. Jedes Blatt (NULL) ist schwarz.
+
+property4=4. Wenn ein Knoten rot ist, dann sind beide Kinder schwarz.
+
+property5=5. Für jeden Knoten gilt, dass alle einfachen Pfade von diesem Knoten zu
+property51=einem absteigenden Blatt die gleiche Anzahl von schwarzen Knoten enthalten.
+
+
+----- CASE TEXTS -----
+
+generalInformation=Allgemeine Informationen
+specificInformation=Spezifische Informationen
+
+
+------ INSERT -----
+
+generalInformationInsert=Wir suchen eine geeignete Stelle um z in den Baum T einzufügen
+
+specificInformationInsert0=Der Baum T und der einzufügende Knoten z werden übergeben 
+
+specificInformationInsert1=Der Zeiger y wird als T.null initialisiert
+specificInformationInsert2=Der Zeiger x wird als T.root initialisiert
+
+specificInformationInsert3True=x ist ungleich T.null, betritt die Schleife
+specificInformationInsert3False=x ist gleich T.null, überspringe die Schleife
+
+specificInformationInsert4=Der Zeiger y folgt dem Zeiger x im Baum
+
+specificInformationInsert5True=Der Wert von z ist kleiner als der Wert von x, steige nach links hinab
+specificInformationInsert5False=Der Wert von z ist größer als der Wert von x, steige nach rechts hinab
+
+specificInformationInsert9=Setze das Elter von z auf den Knoten auf den y zeigt
+
+specificInformationInsert10True=Zeiger y zeigt auf T.null, setze z als Wurzel des Baumes
+specificInformationInsert10False=Zeiger y zeigt nicht auf T.null, betritt den else-Zweig
+
+specificInformationInsert13True=Der Wert von z ist kleiner als der Wert von y, betritt den if-Zweig
+specificInformationInsert13False=Der Wert von z ist größer als der Wert von y, betritt den else-Zweig
+
+specificInformationInsert14=Setze z als linkes Kind von y mit beiden Kindern von z als T.null
+
+specificInformationInsert16=Setze z als rechtes Kind von y mit beiden Kindern von z als T.null
+
+specificInformation200=Rufe die Fixup Methode auf, um mögliche Verstöße zu beheben
+specificInformation20=Der Knoten z ist eingefügt, wir verlassen die Methode
+
+generalInformationReturnToInsert=Der Baum T erfüllt alle Eigenschaften eines Rot-Schwarzbaumes
+
+
+
+generalInformationFixupCall=Der Baum verletzt {0} Eigenschaft.
+
+keine=keine
+die2=mit z die 2.
+die4=mit z und z.p die 4.
+
+allgemeineInformationen=Hier werden allgemeine Informationen zu sehen sein!
+spezifischeInformationen=Hier werden Informationen für spezifische Zeilen zu sehen sein!
+
+
+
+	----- FIXUP -----
+
+generalInformationFixup0=
+specificInformationFixup1True=Das Elter von z ist rot, betritt die Schleife
+specificInformationFixup1False=Das Elter von z ist schwarz, überspringe die Schleife
+specificInformationFixup2True=Das Elter von z ist ein linkes Kind, betritt den if-Zweig
+specificInformationFixup2False=Das Elter von z ist ein rechtes Kind, betritt den else-Zweig
+
+specificInformationFixup3=Initialisiere y als rechten Onkel von z
+specificInformationFixup4True=Der Onkel von z ist rot, dies entspricht Fall 1. Betritt den if-Zweig
+specificInformationFixup4False=Der Onkel von z ist schwarz, betritt den else-Zweig.
+specificInformationFixup5=Ändere die Farbe von z's Elternknoten von Rot auf schwarz
+specificInformationFixup6=Ändere die Farbe von z's Onkelknoten von Rot auf schwarz
+specificInformationFixup7=Setze x's Großelternfarbe auf rot
+specificInformationFixup8=Setze z's Großelternknoten als neuen z Knoten und wiederhole die Schleife
+specificInformationFixup9=elseZweig
+specificInformationFixup10True=Knoten z ist ein rechtes Kind und z's Onkel ist schwarz, Fall 2
+specificInformationFixup10False=Knoten z ist ein linkes Kind und z's Onkel ist schwarz, Fall 3
+specificInformationFixup11=Setze z auf das Elter von z, um die Rotation vorzubereiten
+specificInformationFixup12=Durch eine Rotation wird z von einem rechten zu einem linken Kind
+specificInformationFixup13=Wir färben z's Elterknoten schwarz
+specificInformationFixup14=Wir färben z's Großelterknoten rot
+specificInformationFixup15=Wir rotieren z's Großelterknoten nach rechts
+
+generalInformationFixupCase1=Elter von z als auch z's Onkel sind rot, daher muss z's Großelter schwarz sein
+generalInformationFixupCase11=Wir kehren die Farben von z.p, z.p.p und z's Onkel um und beheben das Problem lokal
+generalInformationFixupCase12=Durch das Umfärben haben wir eventuell eine neue Verletzung eingeführt
+
+generalInformationFixupCase2=Onkel von z ist schwarz und z ist ein rechtes Kind
+generalInformationFixupCase21=Wir werden Fall 2 durch eine Rotation nach Fall 3 überführen
+generalInformationFixupCase22=Wir machen z zu einem linken Kind durch eine Linksrotation
+
+generalInformationFixupCase3=Onkel von z ist schwarz und z ist ein linkes Kind
+generalInformationFixupCase31=Wir invertieren die Farben von z's Elter und Großelterknoten
+generalInformationFixupCase32=Nun müssen wir nur noch eine Rechtsrotation ausführen um die Verletzung zu beheben
+
+specificInformationFixup16=elseZweig
+specificInformationFixup17=Initialisiere y als linken Onkel von z
+specificInformationFixup18True=Der Onkel von z ist rot, dies entspricht Fall 4. Betritt den if-Zweig
+specificInformationFixup18False=Der Onkel von z ist schwarz, betritt den else-Zweig
+specificInformationFixup19=Ändere die Farbe von z's Elternknoten von Rot auf Schwarz
+specificInformationFixup20=Ändere die Farbe von z's Onkelknoten von Rot auf Schwarz
+specificInformationFixup21=Setze x's Großelternfarbe auf rot
+specificInformationFixup22=Setze z's Großelternknoten als neuen z Knoten und wiederhole die Schleife
+specificInformationFixup23=elseZweig
+specificInformationFixup24True=Knoten z ist ein linkes Kind und z's Onkel ist schwarz, Fall 5
+specificInformationFixup24False=Knoten z ist ein rechtes Kind und z's Onkel ist schwarz, Fall 6
+specificInformationFixup25=Setze z auf das Elter von z, um die Rotation vorzubereiten
+specificInformationFixup26=Durch eine Rotation wird von einem linken zu einem rechten Kind
+specificInformationFixup27=Wir färben z's Elterknoten schwarz
+specificInformationFixup28=Wir färben z's Großelterknoten rot
+specificInformationFixup29=Wir rotieren z's Großelterknoten nach rechts
+
+
+specificInformationFixup30=Um Eigenschaft 2 sicherzustellen wird die Wurzel schwarz gefärbt
+
+generalInformationFixupCase4=Elter von z als auch z's Onkel sind rot, daher muss z's Großelter schwarz sein
+generalInformationFixupCase41=Wir kehren die Farben von z.p, z.p.p und z's Onkel um und beheben das Problem lokal
+generalInformationFixupCase42=Durch das Umfärben haben wir eventuell eine neue Verletzung eingeführt
+
+generalInformationFixupCase5=Onkel von z ist schwarz und z ist ein linkes Kind 
+generalInformationFixupCase51=Wir werden Fall 5 durch eine Rotation nach Fall 6 überführen
+generalInformationFixupCase52=Wir machen z zu einem rechten Kind durch eine Rechtsrotation
+
+generalInformationFixupCase6=Onkel von z ist schwarz und z ist ein rechtes Kind
+generalInformationFixupCase61=Wir invertieren die Farben von z's Elter und Großelterknoten
+generalInformationFixupCase62=Nun müssen wir nur noch eine Linksrotation ausführen um die Verletzung zu beheben
+
+
+
+	----- LEFT ROTATE -----
+
+generalInformationLeftRotate0=Wir rotieren, sodass das rechte Kind von x (y) den Platz von x einnimmt
+specificInformationLeftRotate0=Diese Methode verändert lediglich die Zeigerstruktur der Knoten x und y
+
+specificInformationLeftRotate1=Der Zeiger y wird als rechtes Kind von x initialisiert
+specificInformationLeftRotate2=Der neue rechte Unterbaum von x ist der alte linke Unterbaum von y
+specificInformationLeftRotate3True=Der linke Unterbaum von y zeigt nicht auf T.null, betritt den if Zweig
+specificInformationLeftRotate3False=Der linke Unterbaum von y zeigt auf T.null, überspringe die Anweisung
+specificInformationLeftRotate4=Der Knoten x wird das neue Elter des linken Kindes von y
+specificInformationLeftRotate5=Das neue Elter von y ist nun das Elter von x
+
+specificInformationLeftRotate6True=Das Elter von x ist T.null, x ist die Wurzel des Baumes, betritt den if-Zweig
+specificInformationLeftRotate6False=Das Elter von x ist nicht T.null, x ist nicht die Wurzel des Baumes, betritt den else-Zweig
+specificInformationLeftRotate7=Setze y als neue Wurzel des Baumes
+specificInformationLeftRotate8=elseAnweisung
+
+specificInformationLeftRotate9True=Knoten x war nicht die Wurzel und ist ein linkes Kind
+specificInformationLeftRotate9False=Knoten x war nicht die Wurzel und ist ein rechtes Kind
+specificInformationLeftRotate10=Der Knoten x ist ein linkes Kind und das neue linke Kind von x.p wird y, anstatt x
+specificInformationLeftRotate11=elseAnweisung
+specificInformationLeftRotate12=Der Knoten x ist ein rechtes Kind und das neue rechte Kind von x.p wird y, anstatt x
+specificInformationLeftRotate13=Knoten x wird das neue linke Kind von y, da y nach oben gewandert ist
+specificInformationLeftRotate14=Setze y als Elterknoten von x ein
+
+generalInformationLeftRotateLast=Knoten y wurde zur neuen Wurzel des Unterbaumes mit x als neuem linken Kind von y
+specificInformationLeftRotateLast=Das ehemals linke Kind von y ist nun das neue rechte Kind von x
+
+
+	----- RIGHT ROTATE -----
+
+generalInformationRightRotate0=Wir rotieren, sodass das linke Kind von x (y) den Platz von x einnimmt
+specificInformationRightRotate0=Diese Methode verändert lediglich die Zeigerstruktur der Knoten x und y
+
+specificInformationRightRotate1=Der Zeiger y wird als linkes Kind von x initialisiert
+specificInformationRightRotate2=Der neue linke Unterbaum von x ist der alte rechte Unterbaum von y
+specificInformationRightRotate3True=Der rechte Unterbaum von y zeigt nicht auf T.null, betritt den if Zweig
+specificInformationRightRotate3False=Der rechte Unterbaum von y zeigt auf T.null, überspringe die Anweisung
+specificInformationRightRotate4=Der Knoten x wird das neue Elter des rechten Kindes von y
+specificInformationRightRotate5=Das Elter von x ist nun das Elter von y
+
+specificInformationRightRotate6True=Das Elter von x ist T.null, x ist die Wurzel des Baumes, betritt den if-Zweig
+specificInformationRightRotate6False=Das Elter von x ist nicht T.null, x ist nicht die Wurzel des Baumes, betritt den else-Zweig
+specificInformationRightRotate7=Setze y als neue Wurzel des Baumes
+specificInformationRightRotate8=elseAnweisung
+
+specificInformationRightRotate9True=Knoten x war nicht die Wurzel und ist ein rechtes Kind, betritt den if-Zweig
+specificInformationRightRotate9False=Knoten x war nicht die Wurzel und ist ein linkes Kind, betritt den else-Zweig
+specificInformationRightRotate10=Der Knoten x ist ein rechtes Kind und das neue rechte Kind wird y, anstatt x
+specificInformationRightRotate11=elseAnweisung
+specificInformationRightRotate12=Der Knoten x ist ein linkes Kind und das neue linke Kind wird y, anstatt x
+specificInformationRightRotate13=Knoten x wird das neue rechte Kind von y, da y nach oben gewandert ist
+specificInformationRightRotate14=Setze y als Elterknoten von x ein
+
+generalInformationRightRotateLast=Knoten y wurde zur neuen Wurzel des Unterbaumes mit x als neuem rechten Kind von y
+specificInformationRightRotateLast=Das ehemals rechte Kind von y ist nun das neue linke Kind von x
+
+
+-=-
+
+
+------ QUESTIONS ------
+
+questionCorrectAnswer=Korrekt, {0} Eigenschaft wurde verletzt!
+
+questionWhichViolation=Welche Eigenschaft von Rot-Schwarzbäumen wurde durch das Einfügen von z verletzt?
+questionWrongAnswer=Falsch, die richtige Antwort wäre: {0}
+
+none=keine
+d2=die 2.
+d4=die 4.
+
+----
+questionCorrectAnswerColor=Korrekt, die Farben sind rot und schwarz!
+questionWhichColor=Welche Farben hat ein Rot-Schwarzbaum?
+questionAnswer1=Schwarz
+questionAnswer2=Rot
+questionAnswer3=Grün
+questionAnswer4=Blau
+questionAnswer5=Weiß
+questionCorrectAnswerColor=Korrekt, die Farben sind rot und schwarz!
+
+questionWrongAnswer=Falsch, die richtige Antwort wäre {0} 
+
+questionand=und
+
+---
+
+questionRuntime=Welche Laufzeit hat die Einfügemethode in Rot-Schwarzbäumen?
+
+questionCorrectAnswerRuntime=Richtig, Einfügen liegt in O(log n)!
+questionWrongAnswerRuntime=Falsch, Einfügen liegt in O(log n)!

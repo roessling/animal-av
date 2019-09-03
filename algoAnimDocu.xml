@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project default="javadoc">
+<target name="javadoc">
+<javadoc access="package" author="true" classpath="." destdir="../AnimalJavaDoc/doc" nodeprecated="false" nodeprecatedlist="false" noindex="false" nonavbar="false" notree="false" packagenames="algoanim.annotations,interactionsupport.models,algoanim.util,algoanim.properties.items,algoanim.primitives.updater,interactionsupport.models.generators,algoanim.variables,algoanim.executors.formulaparser,algoanim.executors,algoanim.examples,algoanim.animalscript,algoanim.properties,algoanim.exceptions,algoanim.primitives,algoanim.primitives.generators" source="1.6" sourcefiles="APIExample.java" sourcepath="." splitindex="true" use="true" version="true"/>
+</target>
+</project>

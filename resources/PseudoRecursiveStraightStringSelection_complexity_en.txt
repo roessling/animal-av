@@ -1,0 +1,14 @@
+Some comments about complexity
+
+Straight Selection is always linear (and is therefore also
+called 'Linear Search'). If it is safe to assume that the
+data is sorted, there are far better searching algorithms,
+such as binary or interpolative searching.
+
+If the data is unsorted, there may not be a better algorithm
+than Straight Selection - also depending on the type and
+source of the data. For example, data coming from a network
+connection has to be read in sequentially, usually without
+being easily able to jump forward or backward. Simply comparing
+the data with the target value as each piece of data is being
+read is both obvious and has a good performance.

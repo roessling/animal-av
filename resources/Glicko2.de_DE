@@ -1,0 +1,74 @@
+title=Glicko-2 Wertungs System
+description=Glicko-2 ist ein fortschrittlicher Wertungsalgorithmus, der zum Bewerten von Spielern in verschiedenen Sportarten, Schach und Online-Spielen entwickelt wurde.
+
+rating=Rating
+rd_short=RD
+volatility=Volatilität
+ratedOrNot=Bewertet?
+
+player=Player
+playerRating=Spieler-Rating Visualisierung
+
+win=win
+loss=loss
+draw=draw
+
+### STEPS ###
+overview=Übersicht
+init_round=Initialisierung | Runde 
+step2=Umwandlung zur Glicko-Skala
+step3=Berechnung der geschätzten Varianz
+step4=Berechnung der geschätzten Verbesserung
+step5=Berechnung der neuen Volatilität
+step6=Berechnung der neuen Abweichung
+step7=Update der neuen Rating- und RD-Werte
+step8=Rückumwandlung zur Glicko-2-Skala
+sumupOfPlayer=Zusammenfassung von Spieler 
+wrapup=Abschluss
+
+###WRAP UP###
+wonMatches=Spiele gewonnen
+lostMatches=Spiele verloren
+drawMatches=Spiele unentschieden
+ratingChange=Veränderung des Rating
+rdChange=Veränderung der Abweichung
+volChange=Veränderung der Volatilität
+
+
+### QUESTIONS ###
+q1_prompt=Was sind die Verbesserungen zum Elo-System?
+q4_prompt=Warum wurde die Volatilitätsmaße im Glicko-2-System eingeführt?
+q2_prompt=Wenn ein Spieler Spiele während einer Wertungsphase absolviert, so verringert sich sein RD immer. Wahr oder Falsch?
+q3_prompt=Wenn tau auf einen hohen Wert gesetzt wird (e.g. > 1), so wird sich die Volatilitä gar nicht mehr verändern. Wahr oder Falsch?
+
+q1_o1=Einführung einer rating-Abweichung.
+q1_o2=Einführung eines Volatilitätswerts.
+q1_o3=Einführung einer Stärke-zu-Rating Funktion.
+q1_o4=Die Stärke eines Spielers wird als Intervall statt einem einzigen Wert angegeben.
+q1_f1=Korrekt!
+q1_f2=Korrekt!
+q1_f3=Nein, diese Funktion gibt es überhaupt (noch) nicht!
+q1_f4=Korrekt!
+
+q4_o1=Um Schummler daran zu hindern einen hohen Rating-Wert zu erhalten.
+q4_o2=Um ungewöhnliche Leistungen daran zu hindern, einen Spieler zu hoch zu bewerten.
+q4_o3=Um Schach für Anfänger zugänglich zu machen, weil Niederlageserien sich nicht so negativ auf die Bewertung auswirken.
+q4_f1=Nein, das hindert Schummler auf keinem Fall daran ein hohes Rating zu erreichen, da sie konstant gute Leistung erzielen.
+q4_f2=Korrekt!
+q4_f3=Nein auch wenn es ein positiver Nebeneffekt ist, dass Niederlageserien sich nicht so stark auf das Rating auswirken.
+
+
+### ERROR ###
+negativeRatingPeriod=Die Wertungs-Periode darf nicht negativ sein
+zeroRatingPeriod=Die Wertungs-Periode darf nicht 0 sein
+emptyPlayerStats=Die Player-Stats dürfen nicht leer sein
+doNotAddColumns=Die Anzahl der Spalten ist nicht 4
+atLeast2Players=Man braucht mindestens 2 Spieler
+ratingCannotBeNegativeAt=Das Rating darf nicht negativ sein
+ratingDeviationCannotBeNegativeAt=Die Rating-Abweichung darf nicht negativ sein
+volatalityCannotBeNegativeAt=Die Volatilität darf nicht negativ sein
+mustBeTrueOrFalseAt=Der Wert muss ein boolean sein
+emptyRoundResults=Die Rounden dürfen nicht leer sein
+columnsMustMatchPlayerCount=Die Spalten-Zahl muss der Zahl der Spieler entsprechen
+invalidRowCount=Die Zeilenanzahl muss ein Vielfaches von der (Spieleranzahl - 1) sein
+invalidResultInputAt=Ungültiges Spiel-Ergebniss

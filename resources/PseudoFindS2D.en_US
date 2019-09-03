@@ -1,0 +1,30 @@
+algorithmName=Find-S (2D) [EN]
+generatorName=Find-S (2D) [EN]
+dataset=Training data:
+cs=Coordinate system:
+hypo=Hypothesis:
+explanation=Explanation:
+noConcept=A negative example is covered. So there is no target concept and no hypothesis. The algorithm converges.
+start=Start with the most specific hypothesis [a, b, c, d] = [false, false, false, false] that\ncovers no example. a and b are the interval boundaries for the x-axis.\nc and d for the y-axis.
+foreach=Each example has to be checked for the classification.
+negative=The current example is negative and is not covered by the hypothesis. So it can be ignored.
+generalize=The current example is positive and is not covered by the hypothesis.\nh has to be generalized so that all previous positive and the current example are covered.
+notGeneralize=The current example is positive and is already covered by the hypothesis.\nh has not to be generalized.
+terminates=The algorithm terminates because all examples have been checked and all positives are covered.\nThe final hypothesis is: {0}
+description=Find-S finds the most specific hypothesis, which covers all positives. The algorithm starts with the most specific  hypothesis h = [false, false, false, false] without covering examples.\nParticular examples of the training data are processed in the given order.If there is a positive example, which is not covered by the hypothesis, a generalization of h occurs. If there are numeric attributes\nthe interval is extended, so that the found value depicts an interval boundary. If the positive example is already covered by h, there are no alterations made. The algorithm ignores negative classified examples\nand does not implement additional alterations. If there is an existing Target Concept for a dataset which can be described with an hypothesis, Find-S provides a complete and consistent result.
+
+introQuestion=Which statement is correct? 
+introQuestionAnswer1=Find-S covers as many positive examples as possible.
+introQuestionFeedback1=Wrong! Find-S covers all positive examples.
+introQuestionAnswer2=Find-S covers all positive examples.
+introQuestionFeedback2=Correct!
+introQuestionAnswer3=Find-S covers as few negative examples as possible.
+introQuestionFeedback3=Wrong! Find-S covers no negative example.
+
+outroQuestion=What is the maximum number of generalizations that can be performed by the algorithm?
+outroQuestionAnswer1=|positive examples|
+outroQuestionFeedback1=Correct!
+outroQuestionAnswer2=min( |attributes| + 1, |negative examples| )
+outroQuestionFeedback2=Wrong! Changes are only made with positive examples.	
+outroQuestionAnswer3=|attributes| + 1										
+outroQuestionFeedback3=Wrong! Changes are only made with positive examples.	

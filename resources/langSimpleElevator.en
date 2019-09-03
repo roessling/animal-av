@@ -1,0 +1,68 @@
+noSuchKeyException=Es gibt keine Ressource f\u00fcr Eintrag{0}
+iconNotFound=Icon”{0}”not found
+
+
+### FINAL FRAME ####mation
+
+showFinalFrame.t1 = As we were able to see, all requests
+showFinalFrame.t2 = were scheduled with the simple elevator algorithm in
+showFinalFrame.t3 = steps.
+showFinalFrame.t4 = For Comparison, if all requests were scheduled in the
+showFinalFrame.t5 = order they appeared, we would have needed
+showFinalFrame.t6 = steps
+showFinalFrame.t7 = Thank You verry much for using our animation.
+
+### INITAL FRAME ###
+
+showInitialFrame.t1 = With the following animation, we want to show how the
+showInitialFrame.t2 = elevator behaves for the given input:
+showInitialFrame.t3 = (FROM,TO,TIME)
+showInitialFrame.t4 = The animation consists of the following parts:
+showInitialFrame.t5 = (1) In the top left corner a queue is animated, which will handle
+showInitialFrame.t6 = the requests, that were given by You (the user). At the given point
+showInitialFrame.t7 = in time they will appear in the middle of the drawing pane in form of a circle (2)
+showInitialFrame.t8 = with their corresponding floor number at which the request wants to travel.
+showInitialFrame.t9 = In the middle left, we will se the hearth of the animation. The elevator
+showInitialFrame.t10 = with its passengers inside (3).
+showInitialFrame.t11 = Obviusly they will stay with the elevator for the time of travel.
+showInitialFrame.t12 = Just beneathe we will be able to see the current status of the Elevator (4).
+showInitialFrame.t13 = Last but not least we got the pseudocode on the right (5),
+showInitialFrame.t14 = which will be helpfull for the understaning of the algorithm.
+showInitialFrame.t15 = We will focus on the pseudocody mainly, because the real code is too big to show
+showInitialFrame.t16 = and showing all little details will distract the observer
+showInitialFrame.t17 = from the main functionality of the elevator.
+
+### runElevator ###
+direction_up = DIRECTION: UP
+direction_down = DIRECTION: DOWN
+direction_none = DIRECTION: NONE
+timing = TIME
+stepcounter = STEPCOUNTER
+
+### DESCRIPTION ####
+description.t1 = This algorithm will show the scheduling of the simple elevator algorithm for
+description.t2 = the following rules:
+
+description.t3 = (1) Go to the next request in direction of travel
+description.t4 = (2) ONLY, change direction if there are NO further requests in direction of travel
+description.t5 = (3) If there are currently no request, wait
+
+description.t6 = A request is the command of a passanger to get picked up
+description.t7 = as well as being delivered to his desired destination 
+
+description.t8 = This simple elevator algorithm is not only beeing used for buildings, but as well for example hard drives.
+description.t9 = In there any change of direction has to be avoided if possible because they
+description.t10 = may lead reading do inaccuracy of the head of the disk.
+
+description.t11 = The is able to set the following variables:
+description.t12 = (a) the number of floor levels
+description.t13 = (b) the requests in form of (Source, Destination, Timing)
+description.t14 = (c) the maximum number of questions he will be asked
+
+### QUESITON###
+right = Right
+wrong = Wrong
+questionOne = In which direction does the elevator go?
+up = UP
+down = DOWN
+none = NONE

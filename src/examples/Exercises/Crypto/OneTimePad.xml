@@ -1,0 +1,302 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<ns2:exercise xmlns:ns2="http://www.algoanim.info/Animal2/">
+    <chainPath>/Crypt/One-Time Pad/Pseudo-Code/de/One-Time_Pad</chainPath>
+    <description>One-Time-Pad (oder abgekürzt OTP) ist ein symmetrisches Verschlüsselungsverfahren(beide Teilnehmer verwenden den gleichen Schlüssel). Das Verfahren ist theoretisch informationssicher und konnte bis dato nicht gebrochen werden. Es gibt eine Nachricht N und einen dazugehoerigen Schlüssel S. Dabei muss der Schlüssel genau so lang sein wie die Nachricht. In diesem Beispiel wird dies anhand der buchstabenweise Addition von dem Klartext und dem Schlüssel erbracht. In dem Fall werden die Buchstaben in Zahlen umgewandelt um die Addition bzw. Substitution zu erleichtern. In diesem Verfahren ist method eine boolean Variable welche mit dem Wert true den String verschlüsselt und mit dem Wert false den String Entschlüsselt. Beispiel 1) (A(1) + T(20)) Mod 26 = U(21) Beispiel 2) (X(24) + X(24)) Mod 26 = 48 Mod 26 = V(22)  Es gibt 3 Eingabeparameter: MessageArray - ASCII Zeichen A,B,...,Z die als Nachricht dienen. SchluesselArray - ASCII Zeichen A,B,...,Z die als Schlüssel dienn. method - Boolescher mit dem welchem man den ASCII Code verschlüsset (true) oder entschlüsselt (false).
+
+
+Code Beispiel:
+
+function OneTimePad (MessageArray, SchluesselArray, Methode)
+if SchluesselArray.length == MessageArray.length then
+                for i:=0 to MessageArray.length do
+                                if Methode == Verschluessen
+                                                output[i]=(MessageArray[i] + KeyArray[i]) % 26
+                                else if Methode == Entschluesseln
+                                                if (MessageArray[i] - SchluesselArray[i])  26 then
+                                                                output[i]=(26 + (MessageArray[i] - KeyArray[i]) % 26
+                                                else
+                                                                output[i]=(MessageArray[i] - KeyArray[i]) % 26
+                endfor
+ end</description>
+    <generatorName>generators.cryptography.onetimepad.OneTimePadString</generatorName>
+    <questionsList>
+        <decisionBox xsi:type="scriptBox" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+            <inputVariables>
+                <name>Message</name>
+            </inputVariables>
+            <next xsi:type="assignBox">
+                <next xsi:type="functionBox">
+                    <next xsi:type="functionBox">
+                        <next xsi:type="functionBox">
+                            <function xsi:type="ok"/>
+                        </next>
+                        <function xsi:type="check"/>
+                        <arguments xsi:type="constantValue">
+                            <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">$x1 = $Eingabewort</value>
+                        </arguments>
+                    </next>
+                    <function xsi:type="debug"/>
+                </next>
+                <variableName>x1</variableName>
+                <expression xsi:type="functionBox">
+                    <function xsi:type="retrieve"/>
+                    <arguments xsi:type="constantValue">
+                        <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">events/decryptEvent/entschluesselt</value>
+                    </arguments>
+                </expression>
+            </next>
+            <AssignBox>
+                <next xsi:type="functionBox">
+                    <next xsi:type="functionBox">
+                        <next xsi:type="functionBox">
+                            <function xsi:type="ok"/>
+                        </next>
+                        <function xsi:type="check"/>
+                        <arguments xsi:type="constantValue">
+                            <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">$x1 = $Eingabewort</value>
+                        </arguments>
+                    </next>
+                    <function xsi:type="debug"/>
+                </next>
+                <variableName>x1</variableName>
+                <expression xsi:type="functionBox">
+                    <function xsi:type="retrieve"/>
+                    <arguments xsi:type="constantValue">
+                        <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">events/decryptEvent/entschluesselt</value>
+                    </arguments>
+                </expression>
+            </AssignBox>
+            <FunctionBox>
+                <next xsi:type="functionBox">
+                    <next xsi:type="functionBox">
+                        <function xsi:type="ok"/>
+                    </next>
+                    <function xsi:type="check"/>
+                    <arguments xsi:type="constantValue">
+                        <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">$x1 = $Eingabewort</value>
+                    </arguments>
+                </next>
+                <function xsi:type="debug"/>
+            </FunctionBox>
+            <FunctionBox>
+                <next xsi:type="functionBox">
+                    <function xsi:type="ok"/>
+                </next>
+                <function xsi:type="check"/>
+                <arguments xsi:type="constantValue">
+                    <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">$x1 = $Eingabewort</value>
+                </arguments>
+            </FunctionBox>
+            <FunctionBox>
+                <function xsi:type="ok"/>
+            </FunctionBox>
+        </decisionBox>
+        <inputVariables>
+            <name>Message</name>
+        </inputVariables>
+        <questionId>Question-3454406021360766603544</questionId>
+        <questionText>Das Eingabewort "X" soll mittels One Time Pad mit dem Schlüssel "C" übertragen werden. Welcher Buchstabe kommen beim Empfänger an?</questionText>
+        <script>x1 = Retrieve ("events/decryptEvent/entschluesselt");
+Debug();
+Check("$x1 = $Eingabewort");
+Ok();</script>
+        <variables>
+            <name>Key</name>
+            <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">C</value>
+        </variables>
+        <variables>
+            <name>Eingabewort</name>
+            <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">X</value>
+        </variables>
+        <variables>
+            <name>method</name>
+            <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">false</value>
+        </variables>
+    </questionsList>
+    <questionsList>
+        <decisionBox xsi:type="scriptBox" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+            <inputVariables>
+                <name>Key</name>
+            </inputVariables>
+            <next xsi:type="assignBox">
+                <next xsi:type="functionBox">
+                    <next xsi:type="functionBox">
+                        <next xsi:type="functionBox">
+                            <function xsi:type="ok"/>
+                        </next>
+                        <function xsi:type="check"/>
+                        <arguments xsi:type="constantValue">
+                            <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">$erhalteneMessage = $x1</value>
+                        </arguments>
+                    </next>
+                    <function xsi:type="debug"/>
+                </next>
+                <variableName>x1</variableName>
+                <expression xsi:type="functionBox">
+                    <function xsi:type="retrieve"/>
+                    <arguments xsi:type="constantValue">
+                        <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">events/encyrptEvent/verschluesselt</value>
+                    </arguments>
+                </expression>
+            </next>
+            <AssignBox>
+                <next xsi:type="functionBox">
+                    <next xsi:type="functionBox">
+                        <next xsi:type="functionBox">
+                            <function xsi:type="ok"/>
+                        </next>
+                        <function xsi:type="check"/>
+                        <arguments xsi:type="constantValue">
+                            <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">$erhalteneMessage = $x1</value>
+                        </arguments>
+                    </next>
+                    <function xsi:type="debug"/>
+                </next>
+                <variableName>x1</variableName>
+                <expression xsi:type="functionBox">
+                    <function xsi:type="retrieve"/>
+                    <arguments xsi:type="constantValue">
+                        <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">events/encyrptEvent/verschluesselt</value>
+                    </arguments>
+                </expression>
+            </AssignBox>
+            <FunctionBox>
+                <next xsi:type="functionBox">
+                    <next xsi:type="functionBox">
+                        <function xsi:type="ok"/>
+                    </next>
+                    <function xsi:type="check"/>
+                    <arguments xsi:type="constantValue">
+                        <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">$erhalteneMessage = $x1</value>
+                    </arguments>
+                </next>
+                <function xsi:type="debug"/>
+            </FunctionBox>
+            <FunctionBox>
+                <next xsi:type="functionBox">
+                    <function xsi:type="ok"/>
+                </next>
+                <function xsi:type="check"/>
+                <arguments xsi:type="constantValue">
+                    <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">$erhalteneMessage = $x1</value>
+                </arguments>
+            </FunctionBox>
+            <FunctionBox>
+                <function xsi:type="ok"/>
+            </FunctionBox>
+        </decisionBox>
+        <inputVariables>
+            <name>Key</name>
+        </inputVariables>
+        <questionId>Question-3454406021361807779063</questionId>
+        <questionText>Alice versendet den Text „Hallo“ an Bob. Bob erhält die Buchstaben „JSVTD“. Wie lautete der One Time Pad Schlüssel? </questionText>
+        <script>x1 = Retrieve ("events/encyrptEvent/verschluesselt");
+Debug();
+Check ("$erhalteneMessage = $x1");
+Ok();</script>
+        <variables>
+            <name>Message</name>
+            <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">Hallo</value>
+        </variables>
+        <variables>
+            <name>erhalteneMessage</name>
+            <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">JSVTD</value>
+        </variables>
+    </questionsList>
+    <questionsList>
+        <decisionBox xsi:type="scriptBox" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+            <inputVariables>
+                <name>Message</name>
+            </inputVariables>
+            <next xsi:type="assignBox">
+                <next xsi:type="functionBox">
+                    <next xsi:type="functionBox">
+                        <next xsi:type="functionBox">
+                            <function xsi:type="ok"/>
+                        </next>
+                        <function xsi:type="check"/>
+                        <arguments xsi:type="constantValue">
+                            <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">$x1 = $bekommeneMessage</value>
+                        </arguments>
+                    </next>
+                    <function xsi:type="debug"/>
+                </next>
+                <variableName>x1</variableName>
+                <expression xsi:type="functionBox">
+                    <function xsi:type="retrieve"/>
+                    <arguments xsi:type="constantValue">
+                        <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">events/encyrptEvent/verschluesselt</value>
+                    </arguments>
+                </expression>
+            </next>
+            <AssignBox>
+                <next xsi:type="functionBox">
+                    <next xsi:type="functionBox">
+                        <next xsi:type="functionBox">
+                            <function xsi:type="ok"/>
+                        </next>
+                        <function xsi:type="check"/>
+                        <arguments xsi:type="constantValue">
+                            <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">$x1 = $bekommeneMessage</value>
+                        </arguments>
+                    </next>
+                    <function xsi:type="debug"/>
+                </next>
+                <variableName>x1</variableName>
+                <expression xsi:type="functionBox">
+                    <function xsi:type="retrieve"/>
+                    <arguments xsi:type="constantValue">
+                        <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">events/encyrptEvent/verschluesselt</value>
+                    </arguments>
+                </expression>
+            </AssignBox>
+            <FunctionBox>
+                <next xsi:type="functionBox">
+                    <next xsi:type="functionBox">
+                        <function xsi:type="ok"/>
+                    </next>
+                    <function xsi:type="check"/>
+                    <arguments xsi:type="constantValue">
+                        <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">$x1 = $bekommeneMessage</value>
+                    </arguments>
+                </next>
+                <function xsi:type="debug"/>
+            </FunctionBox>
+            <FunctionBox>
+                <next xsi:type="functionBox">
+                    <function xsi:type="ok"/>
+                </next>
+                <function xsi:type="check"/>
+                <arguments xsi:type="constantValue">
+                    <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">$x1 = $bekommeneMessage</value>
+                </arguments>
+            </FunctionBox>
+            <FunctionBox>
+                <function xsi:type="ok"/>
+            </FunctionBox>
+        </decisionBox>
+        <inputVariables>
+            <name>Message</name>
+        </inputVariables>
+        <questionId>Question-3454406021361811229403</questionId>
+        <questionText>Bob erhält von Alice das mittels One Time Pad verschlüsselte Wort „UOYPRSD“. Bob weiß, dass der Schlüssel „InfoKey“ ist. Was wollte Alice Bob sagen?</questionText>
+        <script>x1 = Retrieve ("events/encyrptEvent/verschluesselt");
+Debug();
+Check ("$x1 = $bekommeneMessage");
+Ok();</script>
+        <variables>
+            <name>method</name>
+            <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">true</value>
+        </variables>
+        <variables>
+            <name>bekommeneMessage</name>
+            <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">UOYPRSD</value>
+        </variables>
+        <variables>
+            <name>Key</name>
+            <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">Infokey</value>
+        </variables>
+    </questionsList>
+    <subTitle></subTitle>
+    <title>Exercise 03 - One Time Pad</title>
+</ns2:exercise>

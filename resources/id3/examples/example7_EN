@@ -1,0 +1,11 @@
+Example: A cook is working on a perfect cake recipe, but he is still not sure about which ingredients to pick. He made notes
+about his previous creations' ingredients and whether or not these cakes were tasty or not. This data is organized in a table
+(the 'main table'). One entry contains information about whether cream was an ingredient (CREAM), bananas were ingredients (BANANA)
+and whether chocolate was an ingredient (CHOCOLATE). And finally, the class value (on the right, 'yes' or 'no') describes whether 
+the resulting cake was tasty.
+ID3 takes these examples as an input to come up with a general concept about which ingredient combination leads to tasty cakes.
+
+With the generated tree the cook can check which ingredient combination leads to good results and which don't.
+And so can you:
+Starting at the root node, follow the edges that correspond to the attribute values of a recipe list/a cake; the 
+leaf that you'll reach tells the expectation (but, of course, only based on the previously seen examples).

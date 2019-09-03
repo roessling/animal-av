@@ -1,0 +1,45 @@
+noSuchKeyException=Es gibt keine Ressource f\u00fcr Eintrag {0}
+iconNotFound=Icon "{0}" not found
+
+### introduction ###
+	title = Chinesischer Restsatz
+	introduction = Einleitung
+	desc1 = Der Chinesische Restsatz wurde zwischen dem dritten und dem fünften Jahrhundert vom chinesischen Mathematiker Sun Tzu veröffentlicht.
+	desc2 = Der Satz berechnet eine Zahl, die ein geg. System von Kongruenzen gleichzeitig löst.
+	appsInCrypt = Anwendungen in Kryptographie:
+	app1 =  Der Chinesische Restsatz wird zur Optimierung der RSA entschlüsselung verwendet.
+	app2 = Des weiteren wird es für Secret Sharing verwendet, um ein Geheimniss von der geg. Anzahl der Shares zu berechnen.
+
+### problem ####
+	presentationOfProblem = Problemstellung
+
+	problem1 = Gegeben ist das folgende System von Kongruenzen, wo m1,....mn positive ganze Zahlen sowie teilerfremd sind und a1,..an positive ganze Zahlen.
+
+	problem2 = Der Chinesische Restsatz findet die eindeutige (nicht-negative) Lösung des  Systems von Kongruenzen
+
+	calSteps = Berechnungsschritte:
+	calSteps2 = Berechnungsschritte
+	step1 = 1. Im ersten Schritt wird M berechnet durch m1*m2*..*mn.
+	step2 = 2. Im zweiten Schritt berechnen wir M1= M/m1, M2=M/m2...Mn=M/mn 
+	step3 = 3. Im dritten Schritt bilden wir das Inverse y1,y2,...yn von (M1,M2,...Mn) mit dem erweiterten Euklid.
+	step4 = 4. Im letzten Schritt berechnen wir die gesuchte ganze Zahl, indem wir ai*yi*Mi mit (i = 1, . . n) aufaddieren und den Rest der Summe durch M bilden.	
+
+### sourcecode ###
+	note = Bemerkung:
+	noteText = Das gezeigte Beispiel zeigt ein System von drei Kongruenzen. Der Chinesische Restsatz funktioniert für Systeme von 2,..,n Kongruenzen 	
+
+### chineseRemainder ###
+	example = Beispiel:
+
+### summary ###
+	summary1= Fazit:
+	summary2= Fazit
+	summary3= Die berechnete Zahl x = 
+	summary4= ist die Lösung des geg. System von Kongruenzen.
+
+### references ###
+	ref1= Literatur:
+	ref2= Literatur
+
+### description ###
+	getdesc = Der Chinesische Restsatz berechnet eine Zahl, die ein geg. System von Kongruenzen gleichzeitig löst. \n\n Der Chinesische Restsatz wird zur Optimierung der RSA entschlüsselung verwendet.\n\n Des weiteren wird es für Secret Sharing verwendet, um ein Geheimniss von der geg. Anzahl der Shares zu berechnen.

@@ -1,0 +1,133 @@
+﻿noSuchKeyException=There is no ressource for the key {0}
+iconNotFound=Icon "{0}" not found
+
+###Titel###
+Titel = Wagner Within Algorithmus
+
+###Tabellenbeschriftung###
+Planungsperiode = Planungsperiode
+Prod.-periode = Prod.-periode
+Bedarf = Bedarf
+Prod.-kosten = Prod.-kosten
+Ruestkosten = Rüstkosten
+Lagerkosten = Lagerkosten
+
+###Textfelder###
+Berechnungstitel = Berechnungen und Hinweise
+prod.-in-Periode = Produktion in Periode
+verkuerzter-Horizont = Aufgrund des verkürzten Horizont nicht relevant
+InputCounter = Input Zähler
+OutputCounter = Output Zähler
+
+###Ergebnisseite###
+Ergebnistitel = Optimaler Produktionsplan
+Ergebnis1 = Produktion für Periode
+Ergebnis2 = in Periode
+Ergebnis3 = Menge
+Ergebnis4 = kumulierte Kosten
+
+###Beschreibung###
+desc1=Beschreibung:
+desc2=
+desc3=Das Wagner-Within-Verfahren ist ein Optimierungsverfahren für die Produktionsplanung. 
+desc4=Ziel dieses Verfahrens ist die Minimierung der Kosten, die in einem Planungszeitraum entstehen 
+desc5=und Bestimmung der optimalen Losgröße. Es werden neben dem Bedarf der Periode auch die Rüstkosten 
+desc6=und die Lagerhaltungskosten berücksichtigt und die daraus resultierenden Kosten minimiert. 
+desc7=Eine Wichtige Annahme dieses Verfahrens ist die Zero-Inventory-Property, die besagt, 
+desc8=dass nur dann produziert wird, wenn das Lager komplett leer ist. Der Bedarf kann also 
+desc9=nur vollständig aus dem Lagerbestand oder aus der Produktion der Periode gedeckt werden.
+desc10=Der Algorithmus geht von konstanten Produktionskosten pro Einheit über den gesamten 
+desc11=Planungszeitraum aus, sodass dieser nicht berücksichtigt wird. 
+desc12=Damit der Algorithmus effizient arbeitet und unnötige Rechenschritte vermeidet, wird der verkürzte 
+desc13=Horizont verwendet. Beim verkürzten Horizont werden Perioden, die nach der letzten
+desc14= optimalen Produktionsperiode liegen, nicht berücksichtigt. Hintergrund ist, dass 
+desc15=eine Produktion in einer Periode nicht kostenminimal sein kann, wenn diese in der 
+desc16=vorherigen Periode nicht kostenminimal gewesen ist.
+
+###PseudoCodegroß###
+Codeg1=Pseudo-Quellcode:
+Codeg2=
+Codeg3=1.Initialisierung in Planungsperiode t=1
+Codeg4=	a.Kosten für Planungsperiode 1 auf die Rüstkosten der Periode 1 setzen
+Codeg5=	b.Produktionsperiode für Planungsperiode t=1 auf 1 setzen
+Codeg6=2.Solange nicht am Ende des Planungszeitraums
+Codeg7=	a.nächste Planungsperiode betrachten
+Codeg8=		i.t=t+1
+Codeg9=		ii.Produktionsperiode p=1
+Codeg10=		iii.solange Produktionsperiode p <= aktuelle Planungsperiode t
+Codeg11=			1.wenn p < letzte Produktionsperiode
+Codeg12=				a.überspringen wegen verkürzten Horizonts
+Codeg13=			2.sonst wenn p >= letzte Produktionsperiode && p = t
+Codeg14=				a.Kosten = Kosten der letzten Produktionsperiode in vorangegangener Periode + Rüstkosten für Periode p
+Codeg15=			3.sonst wenn p >= letzte Produktionsperiode && p<t
+Codeg16=				a.Kosten = Kosten der Vorperiode (P-1) + Lagerhaltungskosten bis Periode t * Bedarf der aktuellen Periode t
+Codeg17=			4.p=p+1
+Codeg18=	b.optimale Produktionsperiode für Bedarf der Periode p bestimmen
+Codeg19=		i.Produktionsperiode i mit Minimalkosten bestimmen
+Codeg20=		ii.Produktionsperiode für Planungsperiode t auf i setzen
+
+###PseudoCodeklein###
+
+Codek1=1.Initialisierung in Planungsperiode t=1
+Codek2=a.Kosten für Planungsperiode 1 auf die Rüstkosten der Periode 1 setzen
+Codek3=b.Produktionsperiode für Planungsperiode t=1 auf 1 setzen
+Codek4=2.Solange nicht am Ende des Planungszeitraums
+Codek5=a.nächste Planungsperiode betrachten
+Codek6=i.t=t+1
+Codek7=ii.Produktionsperiode p=1
+Codek8=iii.solange Produktionsperiode p <= aktuelle Planungsperiode t
+Codek9=1.wenn p < letzte Produktionsperiode
+Codek10=a.überspringen wegen verkürzten Horizonts
+Codek11=2.sonst wenn p >= letzte Produktionsperiode && p = t
+Codek12=a.Kosten = Kosten der letzten Produktionsperiode in vorangegangener Periode + Rüstkosten für Periode p
+Codek13=3.sonst wenn p >= letzte Produktionsperiode && p<t
+Codek14=a.Kosten = Kosten der Vorperiode (P-1) + Lagerhaltungskosten bis Periode t * Bedarf der aktuellen Periode t
+Codek15=4.p=p+1
+Codek16=b.optimale Produktionsperiode für Bedarf der Periode p bestimmen
+Codek17=i.Produktionsperiode i mit Minimalkosten bestimmen
+Codek18=ii.Produktionsperiode für Planungsperiode t auf i setzen
+		
+###PseudoCode###
+Code1=1.Initialisierung in Planungsperiode t=1
+Code2=a.Kosten für Planungsperiode 1 auf die Rüstkosten der Periode 1 setzen
+Code3=b.Produktionsperiode für Planungsperiode t=1 auf 1 setzen
+Code4=2.Solange nicht am Ende des Planungszeitraums
+Code5=a.nächste Planungsperiode betrachten
+Code6=i.t=t+1
+Code7=ii.Produktionsperiode p=1
+Code8=iii.solange Produktionsperiode p <= aktuelle Planungsperiode t
+Code9=1.wenn p < letzte Produktionsperiode
+Code10=a.überspringen wegen verkürzten Horizonts
+Code11=2.sonst wenn p >= letzte Produktionsperiode && p = t
+Code12=a.Kosten = Kosten der letzten Produktionsperiode in vorangegangener Periode + Rüstkosten für Periode p
+Code13=3.sonst wenn p >= letzte Produktionsperiode && p<t
+Code14=a.Kosten = Kosten der Vorperiode (P-1) + Lagerhaltungskosten bis Periode t * Bedarf der aktuellen Periode t
+Code15=4.p=p+1
+Code16=b.optimale Produktionsperiode für Bedarf der Periode p bestimmen
+Code17=i.Produktionsperiode i mit Minimalkosten bestimmen
+Code18=ii.Produktionsperiode für Planungsperiode t auf i setzen
+
+###Inhaltsverzeichnis###
+Einleitung = Einleitung
+Quellcode = Pseudo-Quellcode
+Algorithmus = Algorithmus
+Iteration = Iteration
+Initialisierung = Initialisierung
+Ergebnis = Ergebnis
+Endergebnis = Endergebnis		
+		
+###Variablen###
+pvariable = p
+tvariable = t
+letztePeriode = letzte-Prod.-periode
+minimum = i
+		
+###Fehlermeldungen###
+falscheZeilenanzahl = Falsche Anzahl an Zeilen. Es müssen 4 Zeilen vorhanden sein!!!
+falscheSpaltenanzahl = Falsche Anzahl an Spalten. Es muss mind. 1 Spalte vorhanden sein!!!
+negativeZahlen = Keine negativen Zahlen erlaubt!!!
+Inputfehler = Fehlerhafter Input
+		
+		
+		
+		

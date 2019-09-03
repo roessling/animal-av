@@ -1,0 +1,8 @@
+@import=resources/GenericSettings
+algoDesc=Dieser Generator animiert die Sortierung mittels Mergesort.\nDie grundlegende Idee ist dabei, dass das zu sortierende (Teil-)Feld in jedem Schritt zunächst rekursiv halbiert wird, bis das Feld nur noch aus einem Element besteht. Auf dem Rückweg der Rekursion wird dann das zerlegte Teilfeld sortiert kopiert. Dazu wird ein Hilfsfeld angelegt und die Werte der beiden (vorsortierten) Feldhälften sortiert in dieses Hilfsfeld kopiert. Aus Effizienzgründen werden die Werte des linken Teilfelds aufsteigend, die des rechten Teilfelds absteigend sortiert in das Hilfsfeld übertragen.\nDas Hilfsfeld besteht also aus einer aufsteigend und einer absteigend sortierten Hälfte. Nun werden von beiden Enden des Felds beginnend die Werte sortiert in das Ursprungsfeld zurückkopiert.
+algoAuthor=Krasimir Markov <kmarkov@gmail.com>
+adForURL=Weitere Animationen finden Sie unter http://www.algoanim.info/Animal2 im Online-Repository
+animDesc=Beschreibung des Algorithmus
+nrSteps=Insgesamt verwendete der Algorithmus {0} Zuweisungen und {1} Vergleiche.
+nrAss=Zuweisungen
+nrComp=Vergleiche

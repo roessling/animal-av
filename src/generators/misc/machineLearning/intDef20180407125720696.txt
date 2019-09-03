@@ -1,0 +1,20 @@
+multipleChoiceQuestion "introQuestion"
+    prompt "Welche Aussage ist korrekt? "
+    numberOfTries 1
+    answer "0"
+        text "Find-S deckt möglichst viele positive Beispiele ab"
+        points 0
+        feedback "Falsch! Find-S deckt alle positiven Beispiele ab"
+    endAnswer
+    answer "1"
+        text "Find-S deckt alle positiven Beispiele ab"
+        points 1
+        feedback "Richtig!"
+    endAnswer
+    answer "2"
+        text "Find-S deckt möglichst wenig negative Beispiele ab"
+        points 0
+        feedback "Falsch! Find-S deckt kein negatives Beispiel ab"
+    endAnswer
+endQuestion
+

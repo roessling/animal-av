@@ -1,0 +1,38 @@
+[block]
+	Distance Vector Routing ist ein dynamisches Routing Protokoll, 
+	das hauptsächlich innerhalb eines Netzes benutzt wird. Im Internet[br]
+	wird das Verfahren beispielsweise im Routing Information Protocol (RIP)
+	und im Interior Gateway Routing Protocol (IGRP) eingesetzt. 
+[/block]
+[block]
+	[h2]Das Verfahren[/h2]
+	Beim Distance Vector Routing berechnet jeder Knoten im Netzwerk
+	seine Routingtabelle autonom und sendet danach die aktualisierten[br]
+	Einträge an seine direkten Nachbarn. Die empfangenen Updates werden 
+	dann in die eigenen Tabellen einberechnet und eventuell gefundene[br]
+	kürzere Routen wiederum an die Nachbarn versandt.[br]
+	Beim Distance Vector Routing speichert jeder Knoten im Netzwerk 
+	lediglich den nächsten (Zwischen-)Schritt auf einer Route und[br]
+	deren Gesamtlänge. Der gesamte Pfad ist also nicht bekannt, was 
+	zur Erzeugung von Schleifen führen kann. Dieses Problem wird[br]
+	durch Path Vector Routing adressiert, bei dem der komplette Weg
+	einer Route gespeichert wird und somit Schleifen erkannt[br]
+	werden können.[br]
+	Distance Vector Protokolle sind selbstorganisierend und bedürfen nahezu
+	keiner Wartung.
+[/block]
+[block]
+	[h2]Die Animation[/h2]
+	Während der Animation werden die Routingtabellen der Knoten dynamisch 
+	erzeugt und es sind nicht unbedingt alle Knoten im Netzwerk vorher[br]
+	bekannt. Durch dieses Verhalten kann sich die Sortierung der Ziele
+	in den Tabellen unterscheiden und muss nicht zwangsweise alphabetisch[br]
+	sein. Dieses Verhalten entspricht eher der Realität, in der weiter entfernte
+	Teilnehmer im Netzwerk nicht zwangsweise von Anfang an bekannt sind[br]
+	sondern dynamisch mit einer Aktualisierung der Routingtabellen hinzugefügt
+	werden.[br]
+	Die Animation arbeitet weiterhin rundenbasiert. Das bedeutet, dass zuerst 
+	alle Routingtabellen berechnet und danach erst die Aktualisierungen[br]
+	versendet werden. Die Updates werden dann erst in der nächsten Runde
+	berücksichtigt, auch wenn diese eventuell schon früher vorliegen.
+[/block]

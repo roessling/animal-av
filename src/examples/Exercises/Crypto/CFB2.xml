@@ -1,0 +1,1698 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<ns2:exercise xmlns:ns2="http://www.algoanim.info/Animal2/">
+    <chainPath>/Cryptography/Cipher Feedback Mode (CFB)/Pseudo-Code/de/Cipher_Feedback_Mode_Verschlüsselung</chainPath>
+    <description>Der CFB-Mode ist zum Verschlüsseln langer Nachrichten geeignet. Die Nachricht wird in Blöcke unterteilt und die einzelnen Blöcke werden entsprechend verschlüsselt. Die einzelnen verschlüsselten Blöcke ergeben den Geheimtext. Somit gehöhrt der CFB-Mode zu den Blockverschlüsselungen. Dabei haben alle Blöcke eine feste gleiche Länge.
+
+
+Algorithmus:
+
+1. Festlegen des Initialisierungsvektors IV = {0, 1}^n
+2. Festlegen der Blockgröße r mit 1 ≤ r ≤ n
+3. Festlegen des Schlüssels E. Dies kann zum Beispiel eine Permutation sein.
+4. Für 1 ≤ j ≤ u (wobei u der Anzahl der Nachrichten-Blöcke entspricht) :
+4.a) O_j = E(I_j)
+4.b) t_j : die ersten r Bits von O_j
+4.c) c_j = m_j XOR t_j
+4.d) I_(j+1) : Nehme O_j, lösche die ersten r Bits und hänge an die verbleibenden Bits hinten c_j an. Das heißt mathematisch I_(j+1) = 2^r * I_j + c_j mod 2^n
+
+Anmerkung: Ist m für die Unterteilung in die Blöcke zu klein, wird am Ende mit Nullen aufgefüllt. Das heißt die Nachricht 110 wird mit r=2 in zwei Blöcke aufgeteilt: m1 = 11 und m2 = 00.
+
+Beispiel 1)
+Gegeben seien die Nachricht m = 10, r = 2, IV = I_1 = 010 und E als Permutation (2,1,3).
+Die Nachricht wird in Blöcke der Größe r unterteilt. Hier gibt es nur einen Block m_1 = 10. Wir berechnen O_1 = E (I_1) = E (010) = 100. Also ist t_1 = 10 und c_1 = m_1 XOR t_1 = 10 XOR 10 = 00. Die verschlüsselte Nachricht von m = 10 lautet also c = 00.
+
+Beispiel 2)
+Gegeben seien die Grundvoraussetzungen wie in Beispiel 1, nur dass die Nachricht m = 1011 beträgt. Dadurch bekommen wir zwei Nachrichtenblöcke m_1 = 10 und m_2 = 11. Die Verschlüsselung des ersten Blocks wurde bereits in Beispiel 1 berechnet. Nun gilt für I_2 = 000, wobei das linke Bit dem letzten Bit von O_1 entspricht und der Rest c_1. Damit gilt O_2 = E (I_2) = 000. Also ist t_2 = 00 und c_2 = m_2 XOR t_2 = 11 XOR 00 = 11. Die verschlüsselte Nachricht von m = 1011 lautet also c = 0011.
+
+
+Übungsaufgaben:</description>
+    <generatorName>generators.cryptography.CFBModeEncrypt</generatorName>
+    <initialVariables>
+        <name>plainText</name>
+        <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">1101001</value>
+    </initialVariables>
+    <initialVariables>
+        <name>initialVector</name>
+        <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">111</value>
+    </initialVariables>
+    <questionsList>
+        <decisionBox xsi:type="scriptBox" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+            <inputVariables>
+                <name>t1</name>
+            </inputVariables>
+            <inputVariables>
+                <name>c1</name>
+                <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema"></value>
+            </inputVariables>
+            <next xsi:type="assignBox">
+                <next xsi:type="assignBox">
+                    <next xsi:type="functionBox">
+                        <next xsi:type="functionBox">
+                            <next xsi:type="functionBox">
+                                <next xsi:type="functionBox">
+                                    <function xsi:type="ok"/>
+                                </next>
+                                <function xsi:type="check"/>
+                                <arguments xsi:type="constantValue">
+                                    <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">$myc1 = $c1</value>
+                                </arguments>
+                                <arguments xsi:type="constantValue">
+                                    <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">c1 stimmt nicht!</value>
+                                </arguments>
+                            </next>
+                            <function xsi:type="check"/>
+                            <arguments xsi:type="constantValue">
+                                <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">$myt1 = $t1</value>
+                            </arguments>
+                            <arguments xsi:type="constantValue">
+                                <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">t1 stimmt nicht!</value>
+                            </arguments>
+                        </next>
+                        <function xsi:type="debug"/>
+                    </next>
+                    <variableName>myc1</variableName>
+                    <expression xsi:type="functionBox">
+                        <function xsi:type="retrieve"/>
+                        <arguments xsi:type="constantValue">
+                            <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">events/xorResultEvent[seqnr=1]/xorResult</value>
+                        </arguments>
+                    </expression>
+                </next>
+                <variableName>myt1</variableName>
+                <expression xsi:type="functionBox">
+                    <function xsi:type="retrieve"/>
+                    <arguments xsi:type="constantValue">
+                        <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">events/permutateSubstringEvent[seqnr=1]/permutatedSubstring</value>
+                    </arguments>
+                </expression>
+            </next>
+            <AssignBox>
+                <next xsi:type="assignBox">
+                    <next xsi:type="functionBox">
+                        <next xsi:type="functionBox">
+                            <next xsi:type="functionBox">
+                                <next xsi:type="functionBox">
+                                    <function xsi:type="ok"/>
+                                </next>
+                                <function xsi:type="check"/>
+                                <arguments xsi:type="constantValue">
+                                    <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">$myc1 = $c1</value>
+                                </arguments>
+                                <arguments xsi:type="constantValue">
+                                    <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">c1 stimmt nicht!</value>
+                                </arguments>
+                            </next>
+                            <function xsi:type="check"/>
+                            <arguments xsi:type="constantValue">
+                                <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">$myt1 = $t1</value>
+                            </arguments>
+                            <arguments xsi:type="constantValue">
+                                <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">t1 stimmt nicht!</value>
+                            </arguments>
+                        </next>
+                        <function xsi:type="debug"/>
+                    </next>
+                    <variableName>myc1</variableName>
+                    <expression xsi:type="functionBox">
+                        <function xsi:type="retrieve"/>
+                        <arguments xsi:type="constantValue">
+                            <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">events/xorResultEvent[seqnr=1]/xorResult</value>
+                        </arguments>
+                    </expression>
+                </next>
+                <variableName>myt1</variableName>
+                <expression xsi:type="functionBox">
+                    <function xsi:type="retrieve"/>
+                    <arguments xsi:type="constantValue">
+                        <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">events/permutateSubstringEvent[seqnr=1]/permutatedSubstring</value>
+                    </arguments>
+                </expression>
+            </AssignBox>
+            <AssignBox>
+                <next xsi:type="functionBox">
+                    <next xsi:type="functionBox">
+                        <next xsi:type="functionBox">
+                            <next xsi:type="functionBox">
+                                <function xsi:type="ok"/>
+                            </next>
+                            <function xsi:type="check"/>
+                            <arguments xsi:type="constantValue">
+                                <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">$myc1 = $c1</value>
+                            </arguments>
+                            <arguments xsi:type="constantValue">
+                                <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">c1 stimmt nicht!</value>
+                            </arguments>
+                        </next>
+                        <function xsi:type="check"/>
+                        <arguments xsi:type="constantValue">
+                            <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">$myt1 = $t1</value>
+                        </arguments>
+                        <arguments xsi:type="constantValue">
+                            <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">t1 stimmt nicht!</value>
+                        </arguments>
+                    </next>
+                    <function xsi:type="debug"/>
+                </next>
+                <variableName>myc1</variableName>
+                <expression xsi:type="functionBox">
+                    <function xsi:type="retrieve"/>
+                    <arguments xsi:type="constantValue">
+                        <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">events/xorResultEvent[seqnr=1]/xorResult</value>
+                    </arguments>
+                </expression>
+            </AssignBox>
+            <FunctionBox>
+                <next xsi:type="functionBox">
+                    <next xsi:type="functionBox">
+                        <next xsi:type="functionBox">
+                            <function xsi:type="ok"/>
+                        </next>
+                        <function xsi:type="check"/>
+                        <arguments xsi:type="constantValue">
+                            <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">$myc1 = $c1</value>
+                        </arguments>
+                        <arguments xsi:type="constantValue">
+                            <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">c1 stimmt nicht!</value>
+                        </arguments>
+                    </next>
+                    <function xsi:type="check"/>
+                    <arguments xsi:type="constantValue">
+                        <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">$myt1 = $t1</value>
+                    </arguments>
+                    <arguments xsi:type="constantValue">
+                        <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">t1 stimmt nicht!</value>
+                    </arguments>
+                </next>
+                <function xsi:type="debug"/>
+            </FunctionBox>
+            <FunctionBox>
+                <next xsi:type="functionBox">
+                    <next xsi:type="functionBox">
+                        <function xsi:type="ok"/>
+                    </next>
+                    <function xsi:type="check"/>
+                    <arguments xsi:type="constantValue">
+                        <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">$myc1 = $c1</value>
+                    </arguments>
+                    <arguments xsi:type="constantValue">
+                        <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">c1 stimmt nicht!</value>
+                    </arguments>
+                </next>
+                <function xsi:type="check"/>
+                <arguments xsi:type="constantValue">
+                    <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">$myt1 = $t1</value>
+                </arguments>
+                <arguments xsi:type="constantValue">
+                    <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">t1 stimmt nicht!</value>
+                </arguments>
+            </FunctionBox>
+            <FunctionBox>
+                <next xsi:type="functionBox">
+                    <function xsi:type="ok"/>
+                </next>
+                <function xsi:type="check"/>
+                <arguments xsi:type="constantValue">
+                    <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">$myc1 = $c1</value>
+                </arguments>
+                <arguments xsi:type="constantValue">
+                    <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">c1 stimmt nicht!</value>
+                </arguments>
+            </FunctionBox>
+            <FunctionBox>
+                <function xsi:type="ok"/>
+            </FunctionBox>
+        </decisionBox>
+        <inputVariables>
+            <name>t1</name>
+        </inputVariables>
+        <inputVariables>
+            <name>c1</name>
+            <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"></value>
+        </inputVariables>
+        <questionId>Question-3454406021367945535532</questionId>
+        <questionText>Die Nachricht "1101001" soll mit Hilfe des Cipher Feedback Mode verschlüsselt werden. Der Initiale Vektor ist "111" und die Variable r des Algorithmus hat den Wert "2". Der Schlüssel ist die Permutation "3, 1, 2". Welchen Wert haben t und c in der ersten Runde?</questionText>
+        <script>myt1 = Retrieve("events/permutateSubstringEvent[seqnr=1]/permutatedSubstring");
+myc1 = Retrieve("events/xorResultEvent[seqnr=1]/xorResult");
+
+Debug();
+
+Check ("$myt1 = $t1", "t1 stimmt nicht!");
+Check ("$myc1 = $c1", "c1 stimmt nicht!");
+Ok();</script>
+    </questionsList>
+    <questionsList>
+        <decisionBox xsi:type="scriptBox" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+            <inputVariables>
+                <name>t2</name>
+                <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema"></value>
+            </inputVariables>
+            <inputVariables>
+                <name>c2</name>
+                <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema"></value>
+            </inputVariables>
+            <next xsi:type="assignBox">
+                <next xsi:type="assignBox">
+                    <next xsi:type="functionBox">
+                        <next xsi:type="functionBox">
+                            <next xsi:type="functionBox">
+                                <next xsi:type="functionBox">
+                                    <function xsi:type="ok"/>
+                                </next>
+                                <function xsi:type="check"/>
+                                <arguments xsi:type="constantValue">
+                                    <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">$myc2 = $c2</value>
+                                </arguments>
+                                <arguments xsi:type="constantValue">
+                                    <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">Der Wert von c2 stimmt nicht.</value>
+                                </arguments>
+                            </next>
+                            <function xsi:type="check"/>
+                            <arguments xsi:type="constantValue">
+                                <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">$myt2 = $t2</value>
+                            </arguments>
+                            <arguments xsi:type="constantValue">
+                                <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">Der Wert von t2 stimmt nicht.</value>
+                            </arguments>
+                        </next>
+                        <function xsi:type="debug"/>
+                    </next>
+                    <variableName>myt2</variableName>
+                    <expression xsi:type="functionBox">
+                        <function xsi:type="retrieve"/>
+                        <arguments xsi:type="constantValue">
+                            <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">events/permutateSubstringEvent[seqnr=2]/permutatedSubstring</value>
+                        </arguments>
+                    </expression>
+                </next>
+                <variableName>myc2</variableName>
+                <expression xsi:type="functionBox">
+                    <function xsi:type="retrieve"/>
+                    <arguments xsi:type="constantValue">
+                        <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">events/xorResultEvent[seqnr=2]/xorResult</value>
+                    </arguments>
+                </expression>
+            </next>
+            <AssignBox>
+                <next xsi:type="assignBox">
+                    <next xsi:type="functionBox">
+                        <next xsi:type="functionBox">
+                            <next xsi:type="functionBox">
+                                <next xsi:type="functionBox">
+                                    <function xsi:type="ok"/>
+                                </next>
+                                <function xsi:type="check"/>
+                                <arguments xsi:type="constantValue">
+                                    <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">$myc2 = $c2</value>
+                                </arguments>
+                                <arguments xsi:type="constantValue">
+                                    <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">Der Wert von c2 stimmt nicht.</value>
+                                </arguments>
+                            </next>
+                            <function xsi:type="check"/>
+                            <arguments xsi:type="constantValue">
+                                <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">$myt2 = $t2</value>
+                            </arguments>
+                            <arguments xsi:type="constantValue">
+                                <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">Der Wert von t2 stimmt nicht.</value>
+                            </arguments>
+                        </next>
+                        <function xsi:type="debug"/>
+                    </next>
+                    <variableName>myt2</variableName>
+                    <expression xsi:type="functionBox">
+                        <function xsi:type="retrieve"/>
+                        <arguments xsi:type="constantValue">
+                            <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">events/permutateSubstringEvent[seqnr=2]/permutatedSubstring</value>
+                        </arguments>
+                    </expression>
+                </next>
+                <variableName>myc2</variableName>
+                <expression xsi:type="functionBox">
+                    <function xsi:type="retrieve"/>
+                    <arguments xsi:type="constantValue">
+                        <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">events/xorResultEvent[seqnr=2]/xorResult</value>
+                    </arguments>
+                </expression>
+            </AssignBox>
+            <AssignBox>
+                <next xsi:type="functionBox">
+                    <next xsi:type="functionBox">
+                        <next xsi:type="functionBox">
+                            <next xsi:type="functionBox">
+                                <function xsi:type="ok"/>
+                            </next>
+                            <function xsi:type="check"/>
+                            <arguments xsi:type="constantValue">
+                                <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">$myc2 = $c2</value>
+                            </arguments>
+                            <arguments xsi:type="constantValue">
+                                <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">Der Wert von c2 stimmt nicht.</value>
+                            </arguments>
+                        </next>
+                        <function xsi:type="check"/>
+                        <arguments xsi:type="constantValue">
+                            <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">$myt2 = $t2</value>
+                        </arguments>
+                        <arguments xsi:type="constantValue">
+                            <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">Der Wert von t2 stimmt nicht.</value>
+                        </arguments>
+                    </next>
+                    <function xsi:type="debug"/>
+                </next>
+                <variableName>myt2</variableName>
+                <expression xsi:type="functionBox">
+                    <function xsi:type="retrieve"/>
+                    <arguments xsi:type="constantValue">
+                        <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">events/permutateSubstringEvent[seqnr=2]/permutatedSubstring</value>
+                    </arguments>
+                </expression>
+            </AssignBox>
+            <FunctionBox>
+                <next xsi:type="functionBox">
+                    <next xsi:type="functionBox">
+                        <next xsi:type="functionBox">
+                            <function xsi:type="ok"/>
+                        </next>
+                        <function xsi:type="check"/>
+                        <arguments xsi:type="constantValue">
+                            <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">$myc2 = $c2</value>
+                        </arguments>
+                        <arguments xsi:type="constantValue">
+                            <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">Der Wert von c2 stimmt nicht.</value>
+                        </arguments>
+                    </next>
+                    <function xsi:type="check"/>
+                    <arguments xsi:type="constantValue">
+                        <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">$myt2 = $t2</value>
+                    </arguments>
+                    <arguments xsi:type="constantValue">
+                        <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">Der Wert von t2 stimmt nicht.</value>
+                    </arguments>
+                </next>
+                <function xsi:type="debug"/>
+            </FunctionBox>
+            <FunctionBox>
+                <next xsi:type="functionBox">
+                    <next xsi:type="functionBox">
+                        <function xsi:type="ok"/>
+                    </next>
+                    <function xsi:type="check"/>
+                    <arguments xsi:type="constantValue">
+                        <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">$myc2 = $c2</value>
+                    </arguments>
+                    <arguments xsi:type="constantValue">
+                        <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">Der Wert von c2 stimmt nicht.</value>
+                    </arguments>
+                </next>
+                <function xsi:type="check"/>
+                <arguments xsi:type="constantValue">
+                    <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">$myt2 = $t2</value>
+                </arguments>
+                <arguments xsi:type="constantValue">
+                    <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">Der Wert von t2 stimmt nicht.</value>
+                </arguments>
+            </FunctionBox>
+            <FunctionBox>
+                <next xsi:type="functionBox">
+                    <function xsi:type="ok"/>
+                </next>
+                <function xsi:type="check"/>
+                <arguments xsi:type="constantValue">
+                    <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">$myc2 = $c2</value>
+                </arguments>
+                <arguments xsi:type="constantValue">
+                    <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">Der Wert von c2 stimmt nicht.</value>
+                </arguments>
+            </FunctionBox>
+            <FunctionBox>
+                <function xsi:type="ok"/>
+            </FunctionBox>
+        </decisionBox>
+        <inputVariables>
+            <name>t2</name>
+            <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"></value>
+        </inputVariables>
+        <inputVariables>
+            <name>c2</name>
+            <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"></value>
+        </inputVariables>
+        <questionId>Question-3454406021367947944820</questionId>
+        <questionText>Gegeben seien die gleichen Grundvoraussetzungen wie in Aufgabe 1. Welchen Wert haben t und c in der zweiten Runde?</questionText>
+        <script>myc2 = Retrieve("events/xorResultEvent[seqnr=2]/xorResult");
+myt2 = Retrieve("events/permutateSubstringEvent[seqnr=2]/permutatedSubstring");
+
+Debug();
+
+Check ("$myt2 = $t2", "Der Wert von t2 stimmt nicht.");
+Check ("$myc2 = $c2", "Der Wert von c2 stimmt nicht.");
+Ok();</script>
+    </questionsList>
+    <questionsList>
+        <decisionBox xsi:type="scriptBox" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+            <inputVariables>
+                <name>O3</name>
+            </inputVariables>
+            <inputVariables>
+                <name>c3</name>
+                <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema"></value>
+            </inputVariables>
+            <inputVariables>
+                <name>t4</name>
+                <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema"></value>
+            </inputVariables>
+            <inputVariables>
+                <name>c4</name>
+                <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema"></value>
+            </inputVariables>
+            <next xsi:type="assignBox">
+                <next xsi:type="assignBox">
+                    <next xsi:type="assignBox">
+                        <next xsi:type="assignBox">
+                            <next xsi:type="assignBox">
+                                <next xsi:type="assignBox">
+                                    <next xsi:type="functionBox">
+                                        <next xsi:type="functionBox">
+                                            <next xsi:type="functionBox">
+                                                <next xsi:type="functionBox">
+                                                    <next xsi:type="functionBox">
+                                                        <next xsi:type="functionBox">
+                                                            <next xsi:type="functionBox">
+                                                                <next xsi:type="functionBox">
+                                                                    <function xsi:type="ok"/>
+                                                                </next>
+                                                                <function xsi:type="check"/>
+                                                                <arguments xsi:type="constantValue">
+                                                                    <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">$myc4 = $c4</value>
+                                                                </arguments>
+                                                                <arguments xsi:type="constantValue">
+                                                                    <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">Der Wert von c4 stimmt nicht.</value>
+                                                                </arguments>
+                                                            </next>
+                                                            <function xsi:type="check"/>
+                                                            <arguments xsi:type="constantValue">
+                                                                <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">$myt4 = $t4</value>
+                                                            </arguments>
+                                                        </next>
+                                                        <function xsi:type="check"/>
+                                                        <arguments xsi:type="constantValue">
+                                                            <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">$myc3 = $c3</value>
+                                                        </arguments>
+                                                        <arguments xsi:type="constantValue">
+                                                            <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">Der Wert von c3 stimmt nicht.</value>
+                                                        </arguments>
+                                                    </next>
+                                                    <function xsi:type="check"/>
+                                                    <arguments xsi:type="constantValue">
+                                                        <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">$myO3 = $O3</value>
+                                                    </arguments>
+                                                </next>
+                                                <function xsi:type="commentIf"/>
+                                                <arguments xsi:type="constantValue">
+                                                    <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">$myt4 != $t4</value>
+                                                </arguments>
+                                                <arguments xsi:type="constantValue">
+                                                    <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">Der Wert von t4 stimmt nicht. Hinweis: I_4 = %s</value>
+                                                </arguments>
+                                                <arguments xsi:type="valueOfIdentifier">
+                                                    <variableName>myI4</variableName>
+                                                </arguments>
+                                            </next>
+                                            <function xsi:type="commentIf"/>
+                                            <arguments xsi:type="constantValue">
+                                                <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">$myO3 != $O3</value>
+                                            </arguments>
+                                            <arguments xsi:type="constantValue">
+                                                <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">Der Wert von O3 stimmt nicht. Hinweis: I_3 = %s</value>
+                                            </arguments>
+                                            <arguments xsi:type="valueOfIdentifier">
+                                                <variableName>myI3</variableName>
+                                            </arguments>
+                                        </next>
+                                        <function xsi:type="debug"/>
+                                    </next>
+                                    <variableName>myI4</variableName>
+                                    <expression xsi:type="functionBox">
+                                        <function xsi:type="retrieve"/>
+                                        <arguments xsi:type="constantValue">
+                                            <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">events/nextIEvent[seqnr=4]/nextI</value>
+                                        </arguments>
+                                    </expression>
+                                </next>
+                                <variableName>myI3</variableName>
+                                <expression xsi:type="functionBox">
+                                    <function xsi:type="retrieve"/>
+                                    <arguments xsi:type="constantValue">
+                                        <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">events/nextIEvent[seqnr=3]/nextI</value>
+                                    </arguments>
+                                </expression>
+                            </next>
+                            <variableName>myc3</variableName>
+                            <expression xsi:type="functionBox">
+                                <function xsi:type="retrieve"/>
+                                <arguments xsi:type="constantValue">
+                                    <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">events/xorResultEvent[seqnr=3]/xorResult</value>
+                                </arguments>
+                            </expression>
+                        </next>
+                        <variableName>myO3</variableName>
+                        <expression xsi:type="functionBox">
+                            <function xsi:type="retrieve"/>
+                            <arguments xsi:type="constantValue">
+                                <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">events/permutatedEvent[seqnr=3]/permutated</value>
+                            </arguments>
+                        </expression>
+                    </next>
+                    <variableName>myt4</variableName>
+                    <expression xsi:type="functionBox">
+                        <function xsi:type="retrieve"/>
+                        <arguments xsi:type="constantValue">
+                            <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">events/permutateSubstringEvent[seqnr=4]/permutatedSubstring</value>
+                        </arguments>
+                    </expression>
+                </next>
+                <variableName>myc4</variableName>
+                <expression xsi:type="functionBox">
+                    <function xsi:type="retrieve"/>
+                    <arguments xsi:type="constantValue">
+                        <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">events/xorResultEvent[seqnr=4]/xorResult</value>
+                    </arguments>
+                </expression>
+            </next>
+            <AssignBox>
+                <next xsi:type="assignBox">
+                    <next xsi:type="assignBox">
+                        <next xsi:type="assignBox">
+                            <next xsi:type="assignBox">
+                                <next xsi:type="assignBox">
+                                    <next xsi:type="functionBox">
+                                        <next xsi:type="functionBox">
+                                            <next xsi:type="functionBox">
+                                                <next xsi:type="functionBox">
+                                                    <next xsi:type="functionBox">
+                                                        <next xsi:type="functionBox">
+                                                            <next xsi:type="functionBox">
+                                                                <next xsi:type="functionBox">
+                                                                    <function xsi:type="ok"/>
+                                                                </next>
+                                                                <function xsi:type="check"/>
+                                                                <arguments xsi:type="constantValue">
+                                                                    <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">$myc4 = $c4</value>
+                                                                </arguments>
+                                                                <arguments xsi:type="constantValue">
+                                                                    <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">Der Wert von c4 stimmt nicht.</value>
+                                                                </arguments>
+                                                            </next>
+                                                            <function xsi:type="check"/>
+                                                            <arguments xsi:type="constantValue">
+                                                                <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">$myt4 = $t4</value>
+                                                            </arguments>
+                                                        </next>
+                                                        <function xsi:type="check"/>
+                                                        <arguments xsi:type="constantValue">
+                                                            <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">$myc3 = $c3</value>
+                                                        </arguments>
+                                                        <arguments xsi:type="constantValue">
+                                                            <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">Der Wert von c3 stimmt nicht.</value>
+                                                        </arguments>
+                                                    </next>
+                                                    <function xsi:type="check"/>
+                                                    <arguments xsi:type="constantValue">
+                                                        <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">$myO3 = $O3</value>
+                                                    </arguments>
+                                                </next>
+                                                <function xsi:type="commentIf"/>
+                                                <arguments xsi:type="constantValue">
+                                                    <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">$myt4 != $t4</value>
+                                                </arguments>
+                                                <arguments xsi:type="constantValue">
+                                                    <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">Der Wert von t4 stimmt nicht. Hinweis: I_4 = %s</value>
+                                                </arguments>
+                                                <arguments xsi:type="valueOfIdentifier">
+                                                    <variableName>myI4</variableName>
+                                                </arguments>
+                                            </next>
+                                            <function xsi:type="commentIf"/>
+                                            <arguments xsi:type="constantValue">
+                                                <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">$myO3 != $O3</value>
+                                            </arguments>
+                                            <arguments xsi:type="constantValue">
+                                                <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">Der Wert von O3 stimmt nicht. Hinweis: I_3 = %s</value>
+                                            </arguments>
+                                            <arguments xsi:type="valueOfIdentifier">
+                                                <variableName>myI3</variableName>
+                                            </arguments>
+                                        </next>
+                                        <function xsi:type="debug"/>
+                                    </next>
+                                    <variableName>myI4</variableName>
+                                    <expression xsi:type="functionBox">
+                                        <function xsi:type="retrieve"/>
+                                        <arguments xsi:type="constantValue">
+                                            <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">events/nextIEvent[seqnr=4]/nextI</value>
+                                        </arguments>
+                                    </expression>
+                                </next>
+                                <variableName>myI3</variableName>
+                                <expression xsi:type="functionBox">
+                                    <function xsi:type="retrieve"/>
+                                    <arguments xsi:type="constantValue">
+                                        <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">events/nextIEvent[seqnr=3]/nextI</value>
+                                    </arguments>
+                                </expression>
+                            </next>
+                            <variableName>myc3</variableName>
+                            <expression xsi:type="functionBox">
+                                <function xsi:type="retrieve"/>
+                                <arguments xsi:type="constantValue">
+                                    <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">events/xorResultEvent[seqnr=3]/xorResult</value>
+                                </arguments>
+                            </expression>
+                        </next>
+                        <variableName>myO3</variableName>
+                        <expression xsi:type="functionBox">
+                            <function xsi:type="retrieve"/>
+                            <arguments xsi:type="constantValue">
+                                <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">events/permutatedEvent[seqnr=3]/permutated</value>
+                            </arguments>
+                        </expression>
+                    </next>
+                    <variableName>myt4</variableName>
+                    <expression xsi:type="functionBox">
+                        <function xsi:type="retrieve"/>
+                        <arguments xsi:type="constantValue">
+                            <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">events/permutateSubstringEvent[seqnr=4]/permutatedSubstring</value>
+                        </arguments>
+                    </expression>
+                </next>
+                <variableName>myc4</variableName>
+                <expression xsi:type="functionBox">
+                    <function xsi:type="retrieve"/>
+                    <arguments xsi:type="constantValue">
+                        <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">events/xorResultEvent[seqnr=4]/xorResult</value>
+                    </arguments>
+                </expression>
+            </AssignBox>
+            <AssignBox>
+                <next xsi:type="assignBox">
+                    <next xsi:type="assignBox">
+                        <next xsi:type="assignBox">
+                            <next xsi:type="assignBox">
+                                <next xsi:type="functionBox">
+                                    <next xsi:type="functionBox">
+                                        <next xsi:type="functionBox">
+                                            <next xsi:type="functionBox">
+                                                <next xsi:type="functionBox">
+                                                    <next xsi:type="functionBox">
+                                                        <next xsi:type="functionBox">
+                                                            <next xsi:type="functionBox">
+                                                                <function xsi:type="ok"/>
+                                                            </next>
+                                                            <function xsi:type="check"/>
+                                                            <arguments xsi:type="constantValue">
+                                                                <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">$myc4 = $c4</value>
+                                                            </arguments>
+                                                            <arguments xsi:type="constantValue">
+                                                                <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">Der Wert von c4 stimmt nicht.</value>
+                                                            </arguments>
+                                                        </next>
+                                                        <function xsi:type="check"/>
+                                                        <arguments xsi:type="constantValue">
+                                                            <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">$myt4 = $t4</value>
+                                                        </arguments>
+                                                    </next>
+                                                    <function xsi:type="check"/>
+                                                    <arguments xsi:type="constantValue">
+                                                        <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">$myc3 = $c3</value>
+                                                    </arguments>
+                                                    <arguments xsi:type="constantValue">
+                                                        <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">Der Wert von c3 stimmt nicht.</value>
+                                                    </arguments>
+                                                </next>
+                                                <function xsi:type="check"/>
+                                                <arguments xsi:type="constantValue">
+                                                    <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">$myO3 = $O3</value>
+                                                </arguments>
+                                            </next>
+                                            <function xsi:type="commentIf"/>
+                                            <arguments xsi:type="constantValue">
+                                                <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">$myt4 != $t4</value>
+                                            </arguments>
+                                            <arguments xsi:type="constantValue">
+                                                <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">Der Wert von t4 stimmt nicht. Hinweis: I_4 = %s</value>
+                                            </arguments>
+                                            <arguments xsi:type="valueOfIdentifier">
+                                                <variableName>myI4</variableName>
+                                            </arguments>
+                                        </next>
+                                        <function xsi:type="commentIf"/>
+                                        <arguments xsi:type="constantValue">
+                                            <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">$myO3 != $O3</value>
+                                        </arguments>
+                                        <arguments xsi:type="constantValue">
+                                            <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">Der Wert von O3 stimmt nicht. Hinweis: I_3 = %s</value>
+                                        </arguments>
+                                        <arguments xsi:type="valueOfIdentifier">
+                                            <variableName>myI3</variableName>
+                                        </arguments>
+                                    </next>
+                                    <function xsi:type="debug"/>
+                                </next>
+                                <variableName>myI4</variableName>
+                                <expression xsi:type="functionBox">
+                                    <function xsi:type="retrieve"/>
+                                    <arguments xsi:type="constantValue">
+                                        <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">events/nextIEvent[seqnr=4]/nextI</value>
+                                    </arguments>
+                                </expression>
+                            </next>
+                            <variableName>myI3</variableName>
+                            <expression xsi:type="functionBox">
+                                <function xsi:type="retrieve"/>
+                                <arguments xsi:type="constantValue">
+                                    <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">events/nextIEvent[seqnr=3]/nextI</value>
+                                </arguments>
+                            </expression>
+                        </next>
+                        <variableName>myc3</variableName>
+                        <expression xsi:type="functionBox">
+                            <function xsi:type="retrieve"/>
+                            <arguments xsi:type="constantValue">
+                                <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">events/xorResultEvent[seqnr=3]/xorResult</value>
+                            </arguments>
+                        </expression>
+                    </next>
+                    <variableName>myO3</variableName>
+                    <expression xsi:type="functionBox">
+                        <function xsi:type="retrieve"/>
+                        <arguments xsi:type="constantValue">
+                            <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">events/permutatedEvent[seqnr=3]/permutated</value>
+                        </arguments>
+                    </expression>
+                </next>
+                <variableName>myt4</variableName>
+                <expression xsi:type="functionBox">
+                    <function xsi:type="retrieve"/>
+                    <arguments xsi:type="constantValue">
+                        <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">events/permutateSubstringEvent[seqnr=4]/permutatedSubstring</value>
+                    </arguments>
+                </expression>
+            </AssignBox>
+            <AssignBox>
+                <next xsi:type="assignBox">
+                    <next xsi:type="assignBox">
+                        <next xsi:type="assignBox">
+                            <next xsi:type="functionBox">
+                                <next xsi:type="functionBox">
+                                    <next xsi:type="functionBox">
+                                        <next xsi:type="functionBox">
+                                            <next xsi:type="functionBox">
+                                                <next xsi:type="functionBox">
+                                                    <next xsi:type="functionBox">
+                                                        <next xsi:type="functionBox">
+                                                            <function xsi:type="ok"/>
+                                                        </next>
+                                                        <function xsi:type="check"/>
+                                                        <arguments xsi:type="constantValue">
+                                                            <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">$myc4 = $c4</value>
+                                                        </arguments>
+                                                        <arguments xsi:type="constantValue">
+                                                            <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">Der Wert von c4 stimmt nicht.</value>
+                                                        </arguments>
+                                                    </next>
+                                                    <function xsi:type="check"/>
+                                                    <arguments xsi:type="constantValue">
+                                                        <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">$myt4 = $t4</value>
+                                                    </arguments>
+                                                </next>
+                                                <function xsi:type="check"/>
+                                                <arguments xsi:type="constantValue">
+                                                    <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">$myc3 = $c3</value>
+                                                </arguments>
+                                                <arguments xsi:type="constantValue">
+                                                    <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">Der Wert von c3 stimmt nicht.</value>
+                                                </arguments>
+                                            </next>
+                                            <function xsi:type="check"/>
+                                            <arguments xsi:type="constantValue">
+                                                <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">$myO3 = $O3</value>
+                                            </arguments>
+                                        </next>
+                                        <function xsi:type="commentIf"/>
+                                        <arguments xsi:type="constantValue">
+                                            <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">$myt4 != $t4</value>
+                                        </arguments>
+                                        <arguments xsi:type="constantValue">
+                                            <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">Der Wert von t4 stimmt nicht. Hinweis: I_4 = %s</value>
+                                        </arguments>
+                                        <arguments xsi:type="valueOfIdentifier">
+                                            <variableName>myI4</variableName>
+                                        </arguments>
+                                    </next>
+                                    <function xsi:type="commentIf"/>
+                                    <arguments xsi:type="constantValue">
+                                        <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">$myO3 != $O3</value>
+                                    </arguments>
+                                    <arguments xsi:type="constantValue">
+                                        <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">Der Wert von O3 stimmt nicht. Hinweis: I_3 = %s</value>
+                                    </arguments>
+                                    <arguments xsi:type="valueOfIdentifier">
+                                        <variableName>myI3</variableName>
+                                    </arguments>
+                                </next>
+                                <function xsi:type="debug"/>
+                            </next>
+                            <variableName>myI4</variableName>
+                            <expression xsi:type="functionBox">
+                                <function xsi:type="retrieve"/>
+                                <arguments xsi:type="constantValue">
+                                    <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">events/nextIEvent[seqnr=4]/nextI</value>
+                                </arguments>
+                            </expression>
+                        </next>
+                        <variableName>myI3</variableName>
+                        <expression xsi:type="functionBox">
+                            <function xsi:type="retrieve"/>
+                            <arguments xsi:type="constantValue">
+                                <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">events/nextIEvent[seqnr=3]/nextI</value>
+                            </arguments>
+                        </expression>
+                    </next>
+                    <variableName>myc3</variableName>
+                    <expression xsi:type="functionBox">
+                        <function xsi:type="retrieve"/>
+                        <arguments xsi:type="constantValue">
+                            <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">events/xorResultEvent[seqnr=3]/xorResult</value>
+                        </arguments>
+                    </expression>
+                </next>
+                <variableName>myO3</variableName>
+                <expression xsi:type="functionBox">
+                    <function xsi:type="retrieve"/>
+                    <arguments xsi:type="constantValue">
+                        <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">events/permutatedEvent[seqnr=3]/permutated</value>
+                    </arguments>
+                </expression>
+            </AssignBox>
+            <AssignBox>
+                <next xsi:type="assignBox">
+                    <next xsi:type="assignBox">
+                        <next xsi:type="functionBox">
+                            <next xsi:type="functionBox">
+                                <next xsi:type="functionBox">
+                                    <next xsi:type="functionBox">
+                                        <next xsi:type="functionBox">
+                                            <next xsi:type="functionBox">
+                                                <next xsi:type="functionBox">
+                                                    <next xsi:type="functionBox">
+                                                        <function xsi:type="ok"/>
+                                                    </next>
+                                                    <function xsi:type="check"/>
+                                                    <arguments xsi:type="constantValue">
+                                                        <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">$myc4 = $c4</value>
+                                                    </arguments>
+                                                    <arguments xsi:type="constantValue">
+                                                        <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">Der Wert von c4 stimmt nicht.</value>
+                                                    </arguments>
+                                                </next>
+                                                <function xsi:type="check"/>
+                                                <arguments xsi:type="constantValue">
+                                                    <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">$myt4 = $t4</value>
+                                                </arguments>
+                                            </next>
+                                            <function xsi:type="check"/>
+                                            <arguments xsi:type="constantValue">
+                                                <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">$myc3 = $c3</value>
+                                            </arguments>
+                                            <arguments xsi:type="constantValue">
+                                                <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">Der Wert von c3 stimmt nicht.</value>
+                                            </arguments>
+                                        </next>
+                                        <function xsi:type="check"/>
+                                        <arguments xsi:type="constantValue">
+                                            <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">$myO3 = $O3</value>
+                                        </arguments>
+                                    </next>
+                                    <function xsi:type="commentIf"/>
+                                    <arguments xsi:type="constantValue">
+                                        <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">$myt4 != $t4</value>
+                                    </arguments>
+                                    <arguments xsi:type="constantValue">
+                                        <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">Der Wert von t4 stimmt nicht. Hinweis: I_4 = %s</value>
+                                    </arguments>
+                                    <arguments xsi:type="valueOfIdentifier">
+                                        <variableName>myI4</variableName>
+                                    </arguments>
+                                </next>
+                                <function xsi:type="commentIf"/>
+                                <arguments xsi:type="constantValue">
+                                    <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">$myO3 != $O3</value>
+                                </arguments>
+                                <arguments xsi:type="constantValue">
+                                    <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">Der Wert von O3 stimmt nicht. Hinweis: I_3 = %s</value>
+                                </arguments>
+                                <arguments xsi:type="valueOfIdentifier">
+                                    <variableName>myI3</variableName>
+                                </arguments>
+                            </next>
+                            <function xsi:type="debug"/>
+                        </next>
+                        <variableName>myI4</variableName>
+                        <expression xsi:type="functionBox">
+                            <function xsi:type="retrieve"/>
+                            <arguments xsi:type="constantValue">
+                                <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">events/nextIEvent[seqnr=4]/nextI</value>
+                            </arguments>
+                        </expression>
+                    </next>
+                    <variableName>myI3</variableName>
+                    <expression xsi:type="functionBox">
+                        <function xsi:type="retrieve"/>
+                        <arguments xsi:type="constantValue">
+                            <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">events/nextIEvent[seqnr=3]/nextI</value>
+                        </arguments>
+                    </expression>
+                </next>
+                <variableName>myc3</variableName>
+                <expression xsi:type="functionBox">
+                    <function xsi:type="retrieve"/>
+                    <arguments xsi:type="constantValue">
+                        <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">events/xorResultEvent[seqnr=3]/xorResult</value>
+                    </arguments>
+                </expression>
+            </AssignBox>
+            <AssignBox>
+                <next xsi:type="assignBox">
+                    <next xsi:type="functionBox">
+                        <next xsi:type="functionBox">
+                            <next xsi:type="functionBox">
+                                <next xsi:type="functionBox">
+                                    <next xsi:type="functionBox">
+                                        <next xsi:type="functionBox">
+                                            <next xsi:type="functionBox">
+                                                <next xsi:type="functionBox">
+                                                    <function xsi:type="ok"/>
+                                                </next>
+                                                <function xsi:type="check"/>
+                                                <arguments xsi:type="constantValue">
+                                                    <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">$myc4 = $c4</value>
+                                                </arguments>
+                                                <arguments xsi:type="constantValue">
+                                                    <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">Der Wert von c4 stimmt nicht.</value>
+                                                </arguments>
+                                            </next>
+                                            <function xsi:type="check"/>
+                                            <arguments xsi:type="constantValue">
+                                                <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">$myt4 = $t4</value>
+                                            </arguments>
+                                        </next>
+                                        <function xsi:type="check"/>
+                                        <arguments xsi:type="constantValue">
+                                            <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">$myc3 = $c3</value>
+                                        </arguments>
+                                        <arguments xsi:type="constantValue">
+                                            <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">Der Wert von c3 stimmt nicht.</value>
+                                        </arguments>
+                                    </next>
+                                    <function xsi:type="check"/>
+                                    <arguments xsi:type="constantValue">
+                                        <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">$myO3 = $O3</value>
+                                    </arguments>
+                                </next>
+                                <function xsi:type="commentIf"/>
+                                <arguments xsi:type="constantValue">
+                                    <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">$myt4 != $t4</value>
+                                </arguments>
+                                <arguments xsi:type="constantValue">
+                                    <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">Der Wert von t4 stimmt nicht. Hinweis: I_4 = %s</value>
+                                </arguments>
+                                <arguments xsi:type="valueOfIdentifier">
+                                    <variableName>myI4</variableName>
+                                </arguments>
+                            </next>
+                            <function xsi:type="commentIf"/>
+                            <arguments xsi:type="constantValue">
+                                <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">$myO3 != $O3</value>
+                            </arguments>
+                            <arguments xsi:type="constantValue">
+                                <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">Der Wert von O3 stimmt nicht. Hinweis: I_3 = %s</value>
+                            </arguments>
+                            <arguments xsi:type="valueOfIdentifier">
+                                <variableName>myI3</variableName>
+                            </arguments>
+                        </next>
+                        <function xsi:type="debug"/>
+                    </next>
+                    <variableName>myI4</variableName>
+                    <expression xsi:type="functionBox">
+                        <function xsi:type="retrieve"/>
+                        <arguments xsi:type="constantValue">
+                            <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">events/nextIEvent[seqnr=4]/nextI</value>
+                        </arguments>
+                    </expression>
+                </next>
+                <variableName>myI3</variableName>
+                <expression xsi:type="functionBox">
+                    <function xsi:type="retrieve"/>
+                    <arguments xsi:type="constantValue">
+                        <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">events/nextIEvent[seqnr=3]/nextI</value>
+                    </arguments>
+                </expression>
+            </AssignBox>
+            <AssignBox>
+                <next xsi:type="functionBox">
+                    <next xsi:type="functionBox">
+                        <next xsi:type="functionBox">
+                            <next xsi:type="functionBox">
+                                <next xsi:type="functionBox">
+                                    <next xsi:type="functionBox">
+                                        <next xsi:type="functionBox">
+                                            <next xsi:type="functionBox">
+                                                <function xsi:type="ok"/>
+                                            </next>
+                                            <function xsi:type="check"/>
+                                            <arguments xsi:type="constantValue">
+                                                <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">$myc4 = $c4</value>
+                                            </arguments>
+                                            <arguments xsi:type="constantValue">
+                                                <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">Der Wert von c4 stimmt nicht.</value>
+                                            </arguments>
+                                        </next>
+                                        <function xsi:type="check"/>
+                                        <arguments xsi:type="constantValue">
+                                            <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">$myt4 = $t4</value>
+                                        </arguments>
+                                    </next>
+                                    <function xsi:type="check"/>
+                                    <arguments xsi:type="constantValue">
+                                        <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">$myc3 = $c3</value>
+                                    </arguments>
+                                    <arguments xsi:type="constantValue">
+                                        <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">Der Wert von c3 stimmt nicht.</value>
+                                    </arguments>
+                                </next>
+                                <function xsi:type="check"/>
+                                <arguments xsi:type="constantValue">
+                                    <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">$myO3 = $O3</value>
+                                </arguments>
+                            </next>
+                            <function xsi:type="commentIf"/>
+                            <arguments xsi:type="constantValue">
+                                <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">$myt4 != $t4</value>
+                            </arguments>
+                            <arguments xsi:type="constantValue">
+                                <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">Der Wert von t4 stimmt nicht. Hinweis: I_4 = %s</value>
+                            </arguments>
+                            <arguments xsi:type="valueOfIdentifier">
+                                <variableName>myI4</variableName>
+                            </arguments>
+                        </next>
+                        <function xsi:type="commentIf"/>
+                        <arguments xsi:type="constantValue">
+                            <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">$myO3 != $O3</value>
+                        </arguments>
+                        <arguments xsi:type="constantValue">
+                            <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">Der Wert von O3 stimmt nicht. Hinweis: I_3 = %s</value>
+                        </arguments>
+                        <arguments xsi:type="valueOfIdentifier">
+                            <variableName>myI3</variableName>
+                        </arguments>
+                    </next>
+                    <function xsi:type="debug"/>
+                </next>
+                <variableName>myI4</variableName>
+                <expression xsi:type="functionBox">
+                    <function xsi:type="retrieve"/>
+                    <arguments xsi:type="constantValue">
+                        <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">events/nextIEvent[seqnr=4]/nextI</value>
+                    </arguments>
+                </expression>
+            </AssignBox>
+            <FunctionBox>
+                <next xsi:type="functionBox">
+                    <next xsi:type="functionBox">
+                        <next xsi:type="functionBox">
+                            <next xsi:type="functionBox">
+                                <next xsi:type="functionBox">
+                                    <next xsi:type="functionBox">
+                                        <next xsi:type="functionBox">
+                                            <function xsi:type="ok"/>
+                                        </next>
+                                        <function xsi:type="check"/>
+                                        <arguments xsi:type="constantValue">
+                                            <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">$myc4 = $c4</value>
+                                        </arguments>
+                                        <arguments xsi:type="constantValue">
+                                            <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">Der Wert von c4 stimmt nicht.</value>
+                                        </arguments>
+                                    </next>
+                                    <function xsi:type="check"/>
+                                    <arguments xsi:type="constantValue">
+                                        <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">$myt4 = $t4</value>
+                                    </arguments>
+                                </next>
+                                <function xsi:type="check"/>
+                                <arguments xsi:type="constantValue">
+                                    <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">$myc3 = $c3</value>
+                                </arguments>
+                                <arguments xsi:type="constantValue">
+                                    <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">Der Wert von c3 stimmt nicht.</value>
+                                </arguments>
+                            </next>
+                            <function xsi:type="check"/>
+                            <arguments xsi:type="constantValue">
+                                <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">$myO3 = $O3</value>
+                            </arguments>
+                        </next>
+                        <function xsi:type="commentIf"/>
+                        <arguments xsi:type="constantValue">
+                            <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">$myt4 != $t4</value>
+                        </arguments>
+                        <arguments xsi:type="constantValue">
+                            <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">Der Wert von t4 stimmt nicht. Hinweis: I_4 = %s</value>
+                        </arguments>
+                        <arguments xsi:type="valueOfIdentifier">
+                            <variableName>myI4</variableName>
+                        </arguments>
+                    </next>
+                    <function xsi:type="commentIf"/>
+                    <arguments xsi:type="constantValue">
+                        <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">$myO3 != $O3</value>
+                    </arguments>
+                    <arguments xsi:type="constantValue">
+                        <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">Der Wert von O3 stimmt nicht. Hinweis: I_3 = %s</value>
+                    </arguments>
+                    <arguments xsi:type="valueOfIdentifier">
+                        <variableName>myI3</variableName>
+                    </arguments>
+                </next>
+                <function xsi:type="debug"/>
+            </FunctionBox>
+            <FunctionBox>
+                <next xsi:type="functionBox">
+                    <next xsi:type="functionBox">
+                        <next xsi:type="functionBox">
+                            <next xsi:type="functionBox">
+                                <next xsi:type="functionBox">
+                                    <next xsi:type="functionBox">
+                                        <function xsi:type="ok"/>
+                                    </next>
+                                    <function xsi:type="check"/>
+                                    <arguments xsi:type="constantValue">
+                                        <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">$myc4 = $c4</value>
+                                    </arguments>
+                                    <arguments xsi:type="constantValue">
+                                        <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">Der Wert von c4 stimmt nicht.</value>
+                                    </arguments>
+                                </next>
+                                <function xsi:type="check"/>
+                                <arguments xsi:type="constantValue">
+                                    <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">$myt4 = $t4</value>
+                                </arguments>
+                            </next>
+                            <function xsi:type="check"/>
+                            <arguments xsi:type="constantValue">
+                                <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">$myc3 = $c3</value>
+                            </arguments>
+                            <arguments xsi:type="constantValue">
+                                <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">Der Wert von c3 stimmt nicht.</value>
+                            </arguments>
+                        </next>
+                        <function xsi:type="check"/>
+                        <arguments xsi:type="constantValue">
+                            <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">$myO3 = $O3</value>
+                        </arguments>
+                    </next>
+                    <function xsi:type="commentIf"/>
+                    <arguments xsi:type="constantValue">
+                        <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">$myt4 != $t4</value>
+                    </arguments>
+                    <arguments xsi:type="constantValue">
+                        <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">Der Wert von t4 stimmt nicht. Hinweis: I_4 = %s</value>
+                    </arguments>
+                    <arguments xsi:type="valueOfIdentifier">
+                        <variableName>myI4</variableName>
+                    </arguments>
+                </next>
+                <function xsi:type="commentIf"/>
+                <arguments xsi:type="constantValue">
+                    <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">$myO3 != $O3</value>
+                </arguments>
+                <arguments xsi:type="constantValue">
+                    <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">Der Wert von O3 stimmt nicht. Hinweis: I_3 = %s</value>
+                </arguments>
+                <arguments xsi:type="valueOfIdentifier">
+                    <variableName>myI3</variableName>
+                </arguments>
+            </FunctionBox>
+            <FunctionBox>
+                <next xsi:type="functionBox">
+                    <next xsi:type="functionBox">
+                        <next xsi:type="functionBox">
+                            <next xsi:type="functionBox">
+                                <next xsi:type="functionBox">
+                                    <function xsi:type="ok"/>
+                                </next>
+                                <function xsi:type="check"/>
+                                <arguments xsi:type="constantValue">
+                                    <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">$myc4 = $c4</value>
+                                </arguments>
+                                <arguments xsi:type="constantValue">
+                                    <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">Der Wert von c4 stimmt nicht.</value>
+                                </arguments>
+                            </next>
+                            <function xsi:type="check"/>
+                            <arguments xsi:type="constantValue">
+                                <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">$myt4 = $t4</value>
+                            </arguments>
+                        </next>
+                        <function xsi:type="check"/>
+                        <arguments xsi:type="constantValue">
+                            <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">$myc3 = $c3</value>
+                        </arguments>
+                        <arguments xsi:type="constantValue">
+                            <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">Der Wert von c3 stimmt nicht.</value>
+                        </arguments>
+                    </next>
+                    <function xsi:type="check"/>
+                    <arguments xsi:type="constantValue">
+                        <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">$myO3 = $O3</value>
+                    </arguments>
+                </next>
+                <function xsi:type="commentIf"/>
+                <arguments xsi:type="constantValue">
+                    <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">$myt4 != $t4</value>
+                </arguments>
+                <arguments xsi:type="constantValue">
+                    <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">Der Wert von t4 stimmt nicht. Hinweis: I_4 = %s</value>
+                </arguments>
+                <arguments xsi:type="valueOfIdentifier">
+                    <variableName>myI4</variableName>
+                </arguments>
+            </FunctionBox>
+            <FunctionBox>
+                <next xsi:type="functionBox">
+                    <next xsi:type="functionBox">
+                        <next xsi:type="functionBox">
+                            <next xsi:type="functionBox">
+                                <function xsi:type="ok"/>
+                            </next>
+                            <function xsi:type="check"/>
+                            <arguments xsi:type="constantValue">
+                                <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">$myc4 = $c4</value>
+                            </arguments>
+                            <arguments xsi:type="constantValue">
+                                <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">Der Wert von c4 stimmt nicht.</value>
+                            </arguments>
+                        </next>
+                        <function xsi:type="check"/>
+                        <arguments xsi:type="constantValue">
+                            <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">$myt4 = $t4</value>
+                        </arguments>
+                    </next>
+                    <function xsi:type="check"/>
+                    <arguments xsi:type="constantValue">
+                        <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">$myc3 = $c3</value>
+                    </arguments>
+                    <arguments xsi:type="constantValue">
+                        <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">Der Wert von c3 stimmt nicht.</value>
+                    </arguments>
+                </next>
+                <function xsi:type="check"/>
+                <arguments xsi:type="constantValue">
+                    <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">$myO3 = $O3</value>
+                </arguments>
+            </FunctionBox>
+            <FunctionBox>
+                <next xsi:type="functionBox">
+                    <next xsi:type="functionBox">
+                        <next xsi:type="functionBox">
+                            <function xsi:type="ok"/>
+                        </next>
+                        <function xsi:type="check"/>
+                        <arguments xsi:type="constantValue">
+                            <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">$myc4 = $c4</value>
+                        </arguments>
+                        <arguments xsi:type="constantValue">
+                            <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">Der Wert von c4 stimmt nicht.</value>
+                        </arguments>
+                    </next>
+                    <function xsi:type="check"/>
+                    <arguments xsi:type="constantValue">
+                        <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">$myt4 = $t4</value>
+                    </arguments>
+                </next>
+                <function xsi:type="check"/>
+                <arguments xsi:type="constantValue">
+                    <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">$myc3 = $c3</value>
+                </arguments>
+                <arguments xsi:type="constantValue">
+                    <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">Der Wert von c3 stimmt nicht.</value>
+                </arguments>
+            </FunctionBox>
+            <FunctionBox>
+                <next xsi:type="functionBox">
+                    <next xsi:type="functionBox">
+                        <function xsi:type="ok"/>
+                    </next>
+                    <function xsi:type="check"/>
+                    <arguments xsi:type="constantValue">
+                        <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">$myc4 = $c4</value>
+                    </arguments>
+                    <arguments xsi:type="constantValue">
+                        <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">Der Wert von c4 stimmt nicht.</value>
+                    </arguments>
+                </next>
+                <function xsi:type="check"/>
+                <arguments xsi:type="constantValue">
+                    <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">$myt4 = $t4</value>
+                </arguments>
+            </FunctionBox>
+            <FunctionBox>
+                <next xsi:type="functionBox">
+                    <function xsi:type="ok"/>
+                </next>
+                <function xsi:type="check"/>
+                <arguments xsi:type="constantValue">
+                    <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">$myc4 = $c4</value>
+                </arguments>
+                <arguments xsi:type="constantValue">
+                    <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">Der Wert von c4 stimmt nicht.</value>
+                </arguments>
+            </FunctionBox>
+            <FunctionBox>
+                <function xsi:type="ok"/>
+            </FunctionBox>
+        </decisionBox>
+        <inputVariables>
+            <name>O3</name>
+        </inputVariables>
+        <inputVariables>
+            <name>c3</name>
+            <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"></value>
+        </inputVariables>
+        <inputVariables>
+            <name>t4</name>
+            <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"></value>
+        </inputVariables>
+        <inputVariables>
+            <name>c4</name>
+            <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"></value>
+        </inputVariables>
+        <questionId>Question-3454406021367956957383</questionId>
+        <questionText>Gegeben seien die gleichen Grundvoraussetzungen wie in Aufgabe 1. Welchen Wert haben t und c in der vierten Runde? Bestimme hierzu als Zwischenwerte O_3 und c_3!!</questionText>
+        <script>myc4 = Retrieve("events/xorResultEvent[seqnr=4]/xorResult");
+myt4 = Retrieve("events/permutateSubstringEvent[seqnr=4]/permutatedSubstring");
+
+myO3 = Retrieve("events/permutatedEvent[seqnr=3]/permutated");
+myc3 = Retrieve("events/xorResultEvent[seqnr=3]/xorResult");
+
+myI3 = Retrieve("events/nextIEvent[seqnr=3]/nextI");
+myI4 = Retrieve("events/nextIEvent[seqnr=4]/nextI");
+
+Debug();
+
+CommentIf ("$myO3 != $O3", "Der Wert von O3 stimmt nicht. Hinweis: I_3 = %s", myI3);
+CommentIf ("$myt4 != $t4", "Der Wert von t4 stimmt nicht. Hinweis: I_4 = %s", myI4);
+
+Check ("$myO3 = $O3");
+Check ("$myc3 = $c3", "Der Wert von c3 stimmt nicht.");
+Check ("$myt4 = $t4");
+Check ("$myc4 = $c4", "Der Wert von c4 stimmt nicht.");
+Ok();</script>
+    </questionsList>
+    <questionsList>
+        <decisionBox xsi:type="scriptBox" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+            <inputVariables>
+                <name>Nachricht</name>
+            </inputVariables>
+            <next xsi:type="assignBox">
+                <next xsi:type="functionBox">
+                    <next xsi:type="functionBox">
+                        <next xsi:type="functionBox">
+                            <function xsi:type="ok"/>
+                        </next>
+                        <function xsi:type="check"/>
+                        <arguments xsi:type="constantValue">
+                            <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">$mymsg = $Nachricht</value>
+                        </arguments>
+                    </next>
+                    <function xsi:type="debug"/>
+                </next>
+                <variableName>mymsg</variableName>
+                <expression xsi:type="functionBox">
+                    <function xsi:type="retrieve"/>
+                    <arguments xsi:type="constantValue">
+                        <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">events/resultEvent/result</value>
+                    </arguments>
+                </expression>
+            </next>
+            <AssignBox>
+                <next xsi:type="functionBox">
+                    <next xsi:type="functionBox">
+                        <next xsi:type="functionBox">
+                            <function xsi:type="ok"/>
+                        </next>
+                        <function xsi:type="check"/>
+                        <arguments xsi:type="constantValue">
+                            <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">$mymsg = $Nachricht</value>
+                        </arguments>
+                    </next>
+                    <function xsi:type="debug"/>
+                </next>
+                <variableName>mymsg</variableName>
+                <expression xsi:type="functionBox">
+                    <function xsi:type="retrieve"/>
+                    <arguments xsi:type="constantValue">
+                        <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">events/resultEvent/result</value>
+                    </arguments>
+                </expression>
+            </AssignBox>
+            <FunctionBox>
+                <next xsi:type="functionBox">
+                    <next xsi:type="functionBox">
+                        <function xsi:type="ok"/>
+                    </next>
+                    <function xsi:type="check"/>
+                    <arguments xsi:type="constantValue">
+                        <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">$mymsg = $Nachricht</value>
+                    </arguments>
+                </next>
+                <function xsi:type="debug"/>
+            </FunctionBox>
+            <FunctionBox>
+                <next xsi:type="functionBox">
+                    <function xsi:type="ok"/>
+                </next>
+                <function xsi:type="check"/>
+                <arguments xsi:type="constantValue">
+                    <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">$mymsg = $Nachricht</value>
+                </arguments>
+            </FunctionBox>
+            <FunctionBox>
+                <function xsi:type="ok"/>
+            </FunctionBox>
+        </decisionBox>
+        <inputVariables>
+            <name>Nachricht</name>
+        </inputVariables>
+        <questionId>Question-3454406021367957263990</questionId>
+        <questionText>Gegeben seien die gleichen Grundvoraussetzungen wie in den vorigen Aufgaben. Wie lautet die komplette verschlüsselte Nachricht?</questionText>
+        <script>mymsg = Retrieve("events/resultEvent/result");
+Debug();
+Check ("$mymsg = $Nachricht");
+Ok();</script>
+    </questionsList>
+    <questionsList>
+        <decisionBox xsi:type="scriptBox" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+            <inputVariables>
+                <name>Anzahl</name>
+            </inputVariables>
+            <next xsi:type="assignBox">
+                <next xsi:type="functionBox">
+                    <next xsi:type="functionBox">
+                        <next xsi:type="functionBox">
+                            <next xsi:type="functionBox">
+                                <next xsi:type="functionBox">
+                                    <function xsi:type="ok"/>
+                                </next>
+                                <function xsi:type="check"/>
+                                <arguments xsi:type="constantValue">
+                                    <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">$rounds = $Anzahl</value>
+                                </arguments>
+                            </next>
+                            <function xsi:type="commentIf"/>
+                            <arguments xsi:type="constantValue">
+                                <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">$rounds &lt; $Anzahl</value>
+                            </arguments>
+                            <arguments xsi:type="constantValue">
+                                <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">CFB benötigt weniger Runden!</value>
+                            </arguments>
+                        </next>
+                        <function xsi:type="commentIf"/>
+                        <arguments xsi:type="constantValue">
+                            <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">$rounds &gt; $Anzahl</value>
+                        </arguments>
+                        <arguments xsi:type="constantValue">
+                            <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">CFB benötigt mehr Runden!</value>
+                        </arguments>
+                    </next>
+                    <function xsi:type="debug"/>
+                </next>
+                <variableName>rounds</variableName>
+                <expression xsi:type="functionBox">
+                    <function xsi:type="retrieve"/>
+                    <arguments xsi:type="constantValue">
+                        <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">count(events/permutatedEvent)</value>
+                    </arguments>
+                </expression>
+            </next>
+            <AssignBox>
+                <next xsi:type="functionBox">
+                    <next xsi:type="functionBox">
+                        <next xsi:type="functionBox">
+                            <next xsi:type="functionBox">
+                                <next xsi:type="functionBox">
+                                    <function xsi:type="ok"/>
+                                </next>
+                                <function xsi:type="check"/>
+                                <arguments xsi:type="constantValue">
+                                    <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">$rounds = $Anzahl</value>
+                                </arguments>
+                            </next>
+                            <function xsi:type="commentIf"/>
+                            <arguments xsi:type="constantValue">
+                                <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">$rounds &lt; $Anzahl</value>
+                            </arguments>
+                            <arguments xsi:type="constantValue">
+                                <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">CFB benötigt weniger Runden!</value>
+                            </arguments>
+                        </next>
+                        <function xsi:type="commentIf"/>
+                        <arguments xsi:type="constantValue">
+                            <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">$rounds &gt; $Anzahl</value>
+                        </arguments>
+                        <arguments xsi:type="constantValue">
+                            <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">CFB benötigt mehr Runden!</value>
+                        </arguments>
+                    </next>
+                    <function xsi:type="debug"/>
+                </next>
+                <variableName>rounds</variableName>
+                <expression xsi:type="functionBox">
+                    <function xsi:type="retrieve"/>
+                    <arguments xsi:type="constantValue">
+                        <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">count(events/permutatedEvent)</value>
+                    </arguments>
+                </expression>
+            </AssignBox>
+            <FunctionBox>
+                <next xsi:type="functionBox">
+                    <next xsi:type="functionBox">
+                        <next xsi:type="functionBox">
+                            <next xsi:type="functionBox">
+                                <function xsi:type="ok"/>
+                            </next>
+                            <function xsi:type="check"/>
+                            <arguments xsi:type="constantValue">
+                                <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">$rounds = $Anzahl</value>
+                            </arguments>
+                        </next>
+                        <function xsi:type="commentIf"/>
+                        <arguments xsi:type="constantValue">
+                            <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">$rounds &lt; $Anzahl</value>
+                        </arguments>
+                        <arguments xsi:type="constantValue">
+                            <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">CFB benötigt weniger Runden!</value>
+                        </arguments>
+                    </next>
+                    <function xsi:type="commentIf"/>
+                    <arguments xsi:type="constantValue">
+                        <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">$rounds &gt; $Anzahl</value>
+                    </arguments>
+                    <arguments xsi:type="constantValue">
+                        <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">CFB benötigt mehr Runden!</value>
+                    </arguments>
+                </next>
+                <function xsi:type="debug"/>
+            </FunctionBox>
+            <FunctionBox>
+                <next xsi:type="functionBox">
+                    <next xsi:type="functionBox">
+                        <next xsi:type="functionBox">
+                            <function xsi:type="ok"/>
+                        </next>
+                        <function xsi:type="check"/>
+                        <arguments xsi:type="constantValue">
+                            <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">$rounds = $Anzahl</value>
+                        </arguments>
+                    </next>
+                    <function xsi:type="commentIf"/>
+                    <arguments xsi:type="constantValue">
+                        <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">$rounds &lt; $Anzahl</value>
+                    </arguments>
+                    <arguments xsi:type="constantValue">
+                        <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">CFB benötigt weniger Runden!</value>
+                    </arguments>
+                </next>
+                <function xsi:type="commentIf"/>
+                <arguments xsi:type="constantValue">
+                    <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">$rounds &gt; $Anzahl</value>
+                </arguments>
+                <arguments xsi:type="constantValue">
+                    <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">CFB benötigt mehr Runden!</value>
+                </arguments>
+            </FunctionBox>
+            <FunctionBox>
+                <next xsi:type="functionBox">
+                    <next xsi:type="functionBox">
+                        <function xsi:type="ok"/>
+                    </next>
+                    <function xsi:type="check"/>
+                    <arguments xsi:type="constantValue">
+                        <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">$rounds = $Anzahl</value>
+                    </arguments>
+                </next>
+                <function xsi:type="commentIf"/>
+                <arguments xsi:type="constantValue">
+                    <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">$rounds &lt; $Anzahl</value>
+                </arguments>
+                <arguments xsi:type="constantValue">
+                    <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">CFB benötigt weniger Runden!</value>
+                </arguments>
+            </FunctionBox>
+            <FunctionBox>
+                <next xsi:type="functionBox">
+                    <function xsi:type="ok"/>
+                </next>
+                <function xsi:type="check"/>
+                <arguments xsi:type="constantValue">
+                    <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">$rounds = $Anzahl</value>
+                </arguments>
+            </FunctionBox>
+            <FunctionBox>
+                <function xsi:type="ok"/>
+            </FunctionBox>
+        </decisionBox>
+        <inputVariables>
+            <name>Anzahl</name>
+        </inputVariables>
+        <questionId>Question-3454406021367957363467</questionId>
+        <questionText>Gegeben sei die Nachricht "10111001011" und ein Initialer Vektor mit dem Wert "1001" und r = 2. Wie viele Runden benötigt die Verschlüsselung der Nachricht mittels Cipher Feedback Mode?</questionText>
+        <script>rounds = Retrieve ("count(events/permutatedEvent)");
+Debug();
+CommentIf("$rounds &gt; $Anzahl", "CFB benötigt mehr Runden!");
+CommentIf("$rounds &lt; $Anzahl", "CFB benötigt weniger Runden!");
+Check("$rounds = $Anzahl");
+Ok();</script>
+        <variables>
+            <name>plainText</name>
+            <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">10111001011</value>
+        </variables>
+        <variables>
+            <name>initialVector</name>
+            <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">1101</value>
+        </variables>
+    </questionsList>
+    <subTitle>Übungsblatt 02</subTitle>
+    <title>Cipher Feedback Mode (CFB-Mode)</title>
+</ns2:exercise>

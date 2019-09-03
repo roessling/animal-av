@@ -1,0 +1,10 @@
+Verbal description:
+
+1. Determine the middle of the current array
+2. Invoke mergesort(array, l, m)
+3. Invoke mergesort(array, m+1, r)
+4. Generate a temporary array of size n
+5. Copy the values from position l...m in the temporary array
+6. Copy the values from r...m+1 in the temporary array
+7. Compare the left and right index of the temporary array
+  and copy the smaller into the array

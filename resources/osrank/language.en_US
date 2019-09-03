@@ -1,0 +1,61 @@
+# Description
+description=BRIEF DESCRIPTION\nOS-RANK(T, x) returns the position of node x in the linear order determined by an inorder tree walk of Tree T.\n\nUSE CASE\nIf the position of an object in a total ordered set should be determined efficiently, then OS-RANK can be used.\n\nDETAILED DESCRIPTION\nThe algorithm OS-RANK, as presented here, is taken from "Introduction to Algorithms" by Thomas H.Cormen, Charles E. Leiserson, Ronold Rivest, Clifford Stein.\n\nEfficiency of the algorithm is guaranteed by using an extended red-black tree, this enables to reach a complexity of O(lg(n)), because the height of a red-black tree is always O(lg(n)) where n is the number of nodes. An additional attribute size is added to each node x in the red-black tree. This attribute contains the number of inner nodes within the subtree rooted at node x plus 1 for x itself. \n\nT is an extended red-black tree as described above\n\nx is the node whose position (rank) within the red-black tree T should be determined\n\nRank is the position of node x within the linear order of the tree`s nodes\n\nCUSTOMIZATION PROPERTIES\nAt Primitives->"Keys for tree nodes" it is possible to create an own red-black tree by providing the values for the keys in the tree. The generator will insert the keys in the tree by the given order and calculate the size attribute of each node.\n\nAt Primitives->"Key for inorder tree walk" the key of the node can be specified whose rank should be determined.\n\nThere are more options available, i. e. to modify the color or font style. 
+
+# Startscreen
+# indicate in line1 the number of lines of this section 'startscreen.description' 
+startscreen.description.line1=28
+startscreen.description.line2=OS-RANK(T, x) returns the position of node x in the linear order  
+startscreen.description.line3=determined by an inorder tree walk of Tree T. It uses the size of 
+startscreen.description.line4=the nodes to determine the rank.
+startscreen.description.line5=\n STRATEGY
+startscreen.description.line6=Determine rank of node x by the number of nodes preceding x in an 
+startscreen.description.line7=inorder tree walk, plus 1 for itself. 
+startscreen.description.line8=\n VARIABLES
+startscreen.description.line9=* T \t is the Tree T where node x is in
+startscreen.description.line10=* x \t is the node whose rank should be determined
+startscreen.description.line11=* y \t is the current processed node
+startscreen.description.line12=* r \t is the rank of the current processed node y
+startscreen.description.line13=\n FUNCTIONS 
+startscreen.description.line14=Explanation for a function call of OS-RANK(T, x) with Tree T and node x
+startscreen.description.line15=* x.left    returns the left child of node x
+startscreen.description.line16=* x.right  returns the right child of node x 
+startscreen.description.line17=* x.size   returns the size of node x
+startscreen.description.line18=* x.p       returns the parent of node x
+startscreen.description.line19=* T.root  returns the root of the tree T
+startscreen.description.line20=\n EXPLANATIONS
+startscreen.description.line21=(1) Initialize x with the size of x`s left child plus 1 
+startscreen.description.line22=(2) Set current node y to x. Node x is the start of inorder tree walk
+startscreen.description.line23=(3) Do an inorder tree walk till the root of the tree is reached 
+startscreen.description.line24=(4) If y is the right child of y`s parent
+startscreen.description.line25=(5) Then add to r the size of left child from y`s parent plus 1
+startscreen.description.line26=(6) Update current node y to the y`s parent
+startscreen.description.line27=(7) Return value r, this is the determined rank of x 
+startscreen.description.line28=\nSource: Introduction to Algorithms, Charles E. Leiserson, \nClifford Stein, Ronald L. Rivest, Thomas H. Cormen
+
+# Animation 
+sourcecode.Description.line1=Set r to size of left child of x plus 1
+sourcecode.Description.line2=Set y to x
+sourcecode.Description.line3=While y is not the root of the tree 
+sourcecode.Description.line4=If y is the right child of its parent 
+sourcecode.Description.line5=Add to r the size of the left child of the parent of y plus 1
+sourcecode.Description.line6=Set y to parent of y
+sourcecode.Description.line7=Return value r
+
+# Endscreen
+endscreen.description.line1=7
+endscreen.description.line2=COMPLEXITY
+endscreen.description.line3=Since each iteration of the while loop takes O(1) time, and y goes up 
+endscreen.description.line4=one level in the tree with each iteration, the running time of OS-RANK 
+endscreen.description.line5=is at worst proportional to the height of the tree: O(lg n) on an n-node 
+endscreen.description.line6=order-statistic tree.
+endscreen.description.line7=\nSource: Introduction to Algorithms, Charles E. Leiserson, \nClifford Stein, Ronald L. Rivest, Thomas H. Cormen
+
+# XML-file
+# values must be changed in XML file AND here
+color_sourceCodeHighlight=[Color] Source code highlighting
+color_sourceCode=[Color] Source code
+color_currentNode=[Color] Current node
+textProperties_startEndScreen=[TextProperties] Start- and end-screen
+color_rect=[Color] Background of rectangles
+t_nodeKeys=Keys for tree nodes
+x_KeyForInorderTreeWalk=Key for inorder tree walk

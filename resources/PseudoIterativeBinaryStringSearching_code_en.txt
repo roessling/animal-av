@@ -1,0 +1,17 @@
+int iterativeBinarySearch(String[] array, String value): @CodeLabel("header")
+  If the array or value do not exist:. @CodeLabel("ifNull")
+    return -1. @CodeLabel("invalid")
+  Set nrElems = number of array elements. @CodeLabel("getArrayLength")
+  Set lower boundary of current partition l = 0. @CodeLabel("installLMarker")
+  Set upper boundary of current partition r = nrElems - 1. @CodeLabel("installRMarker")
+  Set middle of current partition mid = (l + r) / 2. @CodeLabel("installMidMarker")
+  While r > l and array[mid] != value: @CodeLabel("whileLoop")
+    If value < array[mid]: @CodeLabel("ifLess")
+      Set r = mid - 1. @CodeLabel("continueLeft")
+    Otherwise:
+      Set l = mid + 1. @CodeLabel("continueRight")
+    Set mid = (l + r) / 2. @CodeLabel("updateMidElem")
+  If array[mid] = value: @CodeLabel("checkFound")
+    return mid. @CodeLabel("found")
+  Otherwise:
+    return -1. @CodeLabel("notFound")

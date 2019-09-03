@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<project default="create_run_jar" name="Create Runnable Jar for Project Animal with Jar-in-Jar Loader">
+    <!--this file was created by Eclipse Runnable JAR Export Wizard-->
+    <!--ANT 1.7 is required                                        -->
+    <target name="create_run_jar">
+        <jar destfile="/Users/roessling/Downloads/Animal-2.3.31.jar">
+            <manifest>
+                <attribute name="Main-Class" value="org.eclipse.jdt.internal.jarinjarloader.JarRsrcLoader"/>
+                <attribute name="Rsrc-Main-Class" value="animal.main.Animal"/>
+                <attribute name="Class-Path" value="."/>
+                <attribute name="Rsrc-Class-Path" value="./ junit.jar org.hamcrest.core_1.1.0.v20090501071000.jar jdom.jar jscheme_edit.jar miglayout-3.7.3.1.jar commons-beanutils-bean-collections-1.8.2.jar commons-collections-3.2.1.jar commons-jxpath-1.3.jar commons-logging-1.1.1.jar commons-beanutils-core-1.8.2.jar"/>
+            </manifest>
+            <zipfileset src="jar-in-jar-loader.zip"/>
+            <fileset dir="/Users/roessling/Documents/workspace/Animal/bin"/>
+            <zipfileset dir="/Applications/Development/eclipse/plugins/org.junit_4.10.0.v4_10_0_v20120426-0900" includes="junit.jar"/>
+            <zipfileset dir="/Applications/Development/eclipse/plugins" includes="org.hamcrest.core_1.1.0.v20090501071000.jar"/>
+            <zipfileset dir="/Users/roessling/Documents/workspace/Animal/lib" includes="jdom.jar"/>
+            <zipfileset dir="/Users/roessling/Documents/workspace/Animal/lib" includes="jscheme_edit.jar"/>
+            <zipfileset dir="/Users/roessling/Documents/workspace/Animal/lib" includes="miglayout-3.7.3.1.jar"/>
+            <zipfileset dir="/Users/roessling/Documents/workspace/Animal/lib" includes="commons-beanutils-bean-collections-1.8.2.jar"/>
+            <zipfileset dir="/Users/roessling/Documents/workspace/Animal/lib" includes="commons-collections-3.2.1.jar"/>
+            <zipfileset dir="/Users/roessling/Documents/workspace/Animal/lib" includes="commons-jxpath-1.3.jar"/>
+            <zipfileset dir="/Users/roessling/Documents/workspace/Animal/lib" includes="commons-logging-1.1.1.jar"/>
+            <zipfileset dir="/Users/roessling/Documents/workspace/Animal/lib" includes="commons-beanutils-core-1.8.2.jar"/>
+        </jar>
+    </target>
+</project>

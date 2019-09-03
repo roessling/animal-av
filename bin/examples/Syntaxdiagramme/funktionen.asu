@@ -1,0 +1,234 @@
+%Animal 2 775*296
+{
+  text "4" "static" (86,73) color black depth 0 font SansSerif size 12
+  text "5" "public" (22,71) color black depth 0 font SansSerif size 12
+  
+  relRectangle "obj2" (161, 26) (55, 31)  color black depth 23
+  text "6" "Typ" (179,34) color black depth 0 font SansSerif size 12
+  text "9" "void" (175,104) color black depth 0 font SansSerif size 12
+  ellipse "8" (186, 110) radius 22, 15) color black depth 16
+  line "10" (4,80) (16,80) color black depth 16
+  line "11" (122,80) (138,80) color black depth 16
+  line "12" (139,80) (139,41) color black depth 16
+  line "13" (139,41) (161,41) color black depth 16
+  line "14" (139,81) (139,111) color black depth 16
+  line "15" (140,111) (163,111) color black depth 16
+  line "16" (209,110) (240,110) color black depth 16
+  line "17" (240,111) (240,80) color black depth 16
+  line "18" (217,40) (240,40) color black depth 16
+  line "19" (240,40) (240,79) color black depth 16
+  line "20" (240,79) (263,79) color black depth 16
+  
+  text "22" "Name der" (271,63) color black depth 0 font SansSerif size 12
+  text "23" "Methode" (272,81) color black depth 0 font SansSerif size 12
+  relRectangle "obj2" (264, 58) (67, 45)  color black depth 23
+  
+  line "28" (332,79) (346,79) color black depth 16
+  circle "0" (360, 79) radius 13 color black depth 16
+  text "25" "(" (356,72) color black depth 0 font SansSerif size 12
+  text "29" "Parameter-" (402,63) color black depth 0 font SansSerif size 12
+  text "26" "liste" (417,78) color black depth 0 font SansSerif size 12
+  relRectangle "obj2" (397, 58) (73, 37)  color black depth 23
+  line "30" (374,80) (383,80) color black depth 16
+  line "31" (383,80) (383,117) color black depth 16
+  line "32" (383,117) (488,117) color black depth 16
+  line "33" (488,117) (488,81) color black depth 16
+  line "34" (382,80) (396,80) color black depth 16
+  line "35" (471,80) (488,80) color black depth 16
+  line "36" (488,80) (497,80) color black depth 16
+  
+  circle "37" (509, 80) radius 12 color black depth 16
+  text "38" ")" (507,73) color black depth 0 font SansSerif size 12
+  circle "39" (547, 80) radius 12 color black depth 16
+  text "40" "{" (545,72) color black depth 0 font SansSerif size 12
+  line "43" (522,80) (535,80) color black depth 16
+  text "44" "Anweisungen" (574,72) color black depth 0 font SansSerif size 12
+  relRectangle "obj2" (570, 67) (83, 25)  color black depth 23
+  line "46" (560,80) (571,80) color black depth 16
+  circle "41" (682, 79) radius 12 color black depth 16
+  text "42" "}" (681,70) color black depth 0 font SansSerif size 12
+  line "47" (654,80) (670,80) color black depth 16
+  line "48" (695,79) (721,79) color black depth 16
+  triangle "49" (488, 81) (483, 86) (494, 86) color black depth 16 filled fillColor black
+  triangle "50" (721, 72) (721, 85) (729, 79) color black depth 16 filled fillColor black
+  
+  text "54" "public" (36,181) color black depth 0 font SansSerif size 12 bold
+  text "51" "double" (124,181) color black depth 0 font SansSerif size 12 bold
+  text "56" "gibUmfang" (180,181) color black depth 0 font SansSerif size 12
+  text "57" "(" (250,182) color black depth 0 font SansSerif size 12
+  text "52" ")" (269,182) color black depth 0 font SansSerif size 12
+  text "53" "{" (290,182) color black depth 0 font SansSerif size 12
+  text "55" "2 * (Math.abs( x2 - x1 ) + Math.abs( y2 - y1 ));" (140,221) color black depth 0 font SansSerif size 12
+  text "58" "}" (80,261) color black depth 0 font SansSerif size 12
+  text "59" "return" (100,221) color black depth 0 font SansSerif size 12 bold
+  
+  text "64" "Parameterliste" (380,181) color black depth 0 font SansSerif size 12
+  text "65" "Typ" (500,201) color black depth 0 font SansSerif size 12
+  relRectangle "obj2" (489, 192) (44, 36)  color black depth 23
+  text "67" "Name des formalen" (573,195) color black depth 0 font SansSerif size 12
+  text "68" "Parameters" (593,210) color black depth 0 font SansSerif size 12
+  relRectangle "obj2" (569, 191) (118, 38)  color black depth 23
+  line "69" (427,208) (489,208) color black depth 16
+  line "70" (534,208) (568,208) color black depth 16
+  line "71" (687,207) (713,207) color black depth 16
+  line "72" (713,207) (713,259) color black depth 16
+  line "73" (713,259) (575,259) color black depth 16
+  circle "61" (561, 261) radius 14 color black depth 16
+  text "74" "," (558,250) color black depth 0 font SansSerif size 12 bold
+  line "75" (547,258) (460,258) color black depth 16
+  line "76" (460,258) (460,207) color black depth 16
+  line "77" (714,207) (775,207) color black depth 16
+  triangle "78" (460, 207) (452, 219) (469, 219) color black depth 16 filled fillColor black
+  triangle "79" (775, 207) (764, 201) (764, 214) color black depth 16 filled fillColor black
+  
+  ellipse "8" (39, 79) radius 22, 15) color black depth 16
+  
+  ellipse "8" (100, 80) radius 22, 15) color black depth 16
+  line "10" (62,80) (76,80) color black depth 16
+  
+  text "116" "static" (79,181) color black depth 0 font SansSerif size 12 bold
+  
+}
+{  
+  color "4" "5" "10" "54" red offset 10 ms within 10 ms
+  color "4" black offset 10 ms within 10 ms
+  color "8" red offset 10 ms within 10 ms
+}
+{  
+  color "5" "10" "54" "8" black offset 10 ms within 10 ms
+  color "4" "8" "10" "116" red offset 10 ms within 10 ms
+}
+{  
+  color "4" "5" "10" "54" black offset 10 ms within 10 ms
+  color "6" "obj2" "11" "12" "13" "51" red offset 10 ms within 10 ms
+  color "8" "10" "116" black offset 10 ms within 10 ms
+}
+{  
+  color "6" "obj2" "11" "12" "13" "51" black offset 10 ms within 10 ms
+  color "18" "19" "20" "obj2" "22" "23" "56" red offset 10 ms within 10 ms
+}
+{  
+  color "18" "19" "20" "obj2" "22" "23" "56" black offset 10 ms within 10 ms
+  color "0" "25" "28" "57" red offset 10 ms within 10 ms
+}
+{  
+  color "0" "25" "28" "57" black offset 10 ms within 10 ms
+  color "30" "31" "32" "33" "36" "49" red offset 10 ms within 10 ms
+  color "37" "38" "52" red offset 10 ms within 10 ms
+}
+{  
+  color "30" "31" "32" "33" "37" "38" "49" "52" black offset 10 ms within 10 ms
+  color "36" black offset 10 ms within 10 ms
+  color "39" "40" "43" "53" red offset 10 ms within 10 ms
+}
+{  
+  color "39" "40" "43" "53" black offset 10 ms within 10 ms
+  color "44" "obj2" "46" "55" "59" red offset 10 ms within 10 ms
+}
+{  
+  color "44" "obj2" "46" "55" "59" black offset 10 ms within 10 ms
+  color "41" "42" "47" "48" "50" "58" red offset 10 ms within 10 ms
+}
+{  
+  color "41" "42" "47" "48" "50" "58" black offset 10 ms within 10 ms
+}
+{  
+  hide "51" "52" "53" "54" "55" "56" "57" "58" "59"
+  hide "116"
+}
+{  
+  text "96" "public" (4,181) color black depth 0 font SansSerif size 12 bold
+  text "97" "void" (80,181) color black depth 0 font SansSerif size 12 bold
+  text "95" "verschiebe" (110,181) color black depth 0 font SansSerif size 12
+  text "98" "(" (180,181) color black depth 0 font SansSerif size 12
+  text "99" "int" (200,181) color black depth 0 font SansSerif size 12 bold
+  text "100" "x" (220,181) color black depth 0 font SansSerif size 12
+  text "101" "," (240,181) color black depth 0 font SansSerif size 12
+  text "102" "int" (260,181) color black depth 0 font SansSerif size 12 bold
+  text "103" "y" (280,181) color black depth 0 font SansSerif size 12
+  text "104" ")" (300,181) color black depth 0 font SansSerif size 12
+  text "105" "{" (320,181) color black depth 0 font SansSerif size 12
+  text "106" "x1 = x1 + x;" (60,201) color black depth 0 font SansSerif size 12
+  text "107" "y1 = y1 + y;" (60,221) color black depth 0 font SansSerif size 12
+  text "108" "x2 = x2 + x;" (60,241) color black depth 0 font SansSerif size 12
+  text "109" "y2 = y2 + y;" (60,261) color black depth 0 font SansSerif size 12
+  text "110" "}" (40,281) color black depth 0 font SansSerif size 12
+  
+  text "117" "static" (42,181) color black depth 0 font SansSerif size 12 bold
+  
+}
+{  
+  color "4" "5" "10" "96" red offset 10 ms within 10 ms
+  color "4" black offset 10 ms within 10 ms
+  color "8" red offset 10 ms within 10 ms
+}
+{  
+  color "4" "8" "10" "117" red offset 10 ms within 10 ms
+  color "5" "10" "96" "8" black offset 10 ms within 10 ms
+}
+{  
+  color "4" "5" "10" "96" black offset 10 ms within 10 ms
+  color "8" "9" "11" "14" "15" "97" red offset 10 ms within 10 ms
+  color "8" "10" "117" black offset 10 ms within 10 ms
+}
+{  
+  color "8" "9" "11" "14" "15" "97" black offset 10 ms within 10 ms
+  color "16" "17" "20" "obj2" "22" "23" "95" red offset 10 ms within 10 ms
+}
+{  
+  color "16" "17" "20" "obj2" "22" "23" "95" black offset 10 ms within 10 ms
+  color "0" "25" "28" "98" red offset 10 ms within 10 ms
+}
+{  
+  color "0" "25" "28" "98" black offset 10 ms within 10 ms
+  color "26" "obj2" "29" "30" "34" "64" red offset 10 ms within 10 ms
+}
+{  
+  color "65" "obj2" "69" "99" red offset 10 ms within 10 ms
+}
+{  
+  color "65" "obj2" "69" "99" black offset 10 ms within 10 ms
+  color "obj2" "67" "68" "70" "100" red offset 10 ms within 10 ms
+}
+{  
+  color "obj2" "67" "68" "70" "100" black offset 10 ms within 10 ms
+  color "61" "71" "72" "73" "74" "101" red offset 10 ms within 10 ms
+}
+{  
+  color "61" "71" "72" "73" "74" "101" black offset 10 ms within 10 ms
+  line "69" (461,208) (487,208) color black depth 16
+  
+  color "65" "obj2" "75" "76" "78" "69" red offset 10 ms within 10 ms
+  color "102" red offset 10 ms within 10 ms
+}
+{  
+  color "65" "obj2" "75" "76" "78" "102" "69" black offset 10 ms within 10 ms
+  color "obj2" "67" "68" "70" "103" red offset 10 ms within 10 ms
+}
+{  
+  color "obj2" "67" "68" "70" "103" black offset 10 ms within 10 ms
+  color "71" "77" "79" red offset 10 ms within 10 ms
+}
+{  
+  color "26" "obj2" "29" "30" "34" "64" "71" "77" "79" black offset 10 ms within 10 ms
+  color "35" "36" "37" "38" "104" red offset 10 ms within 10 ms
+}
+{  
+  color "35" "36" "37" "38" "104" black offset 10 ms within 10 ms
+  color "39" "40" "43" "105" red offset 10 ms within 10 ms
+}
+{  
+  color "39" "40" "43" "105" black offset 10 ms within 10 ms
+  color "44" "obj2" "46" "106" "107" "108" "109" red offset 10 ms within 10 ms
+}
+{  
+  color "44" "obj2" "46" "106" "107" "108" "109" black offset 10 ms within 10 ms
+  color "41" "42" "47" "110" red offset 10 ms within 10 ms
+}
+{  
+  color "41" "42" "47" "110" black offset 10 ms within 10 ms
+  color "48" "50" red offset 10 ms within 10 ms
+}
+{  
+  color "48" "50" black offset 10 ms within 10 ms
+}

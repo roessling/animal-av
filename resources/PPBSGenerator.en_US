@@ -1,0 +1,59 @@
+noSuchKeyException=There i s no r e s s o u r c e f o r the key {0}
+iconNotFound=Ic on ” {0} ” not found
+
+### name ###
+name = Pivot Partitioning By Scanning [EN]
+
+
+### algo related ###
+iter = # iterations
+res = result
+
+
+
+### intro header ###
+in0 = Introduction
+
+### intro text ###
+in1 = Pivot Partitioning by Scanning (PPbS) rearranges the elements in an array A around a given pivot element in place,
+in2 = much like the partitioning procedure used in the Quicksort algorithm, e.g. the one shown in the famous CLRS book.
+in3 = There are some differences though: whereas the algorithm from CLRS partitions the array into two parts (elements <= pivot and elements > pivot), 
+in4 = given a pivot element which always is the last element in the array, PPbS partitions the array into three parts (<, ==, and > than the pivot)
+in5 = with a freely chosable pivot. PPbS, however, suffers from nested loops, so its time complexity is worse.
+
+in6 = PPbS returns two pointers, m1 and m2, that satisfy the following conditions:
+in7 =   1. There are m1 many elements that have a value < pivot
+in8 =   2. There are (m2 - m1) many elements that have a value == pivot
+in9 =   3. There are (n - m2) many elements that have a value > pivot, where n == A.length.
+
+
+
+
+### outro header ###
+out0 = Final Words
+
+### outro text ###
+out1 = For more information regarding PPbS (e.g. loop invariant, variant, etc.), visit
+out2 =     https://wiki.algo.informatik.tu-darmstadt.de/Pivot_partitioning_by_scanning
+
+out3 = Nabla offers a problem generator for PPbS, which you could solve with this animation.
+out4 =     https://nabla.algo.informatik.tu-darmstadt.de/
+
+out5 = Beware, though, that both sources mentioned above use a different indexing (starting from 1 instead of 0), so you'll have to adjust.
+
+
+
+### description ###
+d1 = Pivot Partitioning by Scanning (PPbS) rearranges the elements in an array A around a given 
+d2 = pivot element in place, much like the partitioning procedure used in the Quicksort algorithm,
+d3 = e.g. the one shown in the famous CLRS book.                                
+d4 = There are some differences though: whereas the algorithm from CLRS partitions the array into two parts
+d5 = (elements <= pivot and elements > pivot), given a pivot element which always is the last element in 
+d6 = the array, PPbS partitions the array into three parts (<, ==, and > than the pivot) with a freely chosable 
+d7 = pivot. PPbS, however, suffers from nested loops, so its time complexity is worse.                              
+
+
+d8 = PPbS returns two pointers, m1 and m2, that satisfy the following conditions:                
+d9 =  1. There are m1 many elements that have a value < pivot        
+d10 =  2. There are (m2 - m1) many elements that have a value == pivot     
+d11 =  3. There are (n - m2) many elements that have a value > pivot, where n == A.length. 

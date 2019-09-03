@@ -1,0 +1,6 @@
+1. Create a routing table with entries for the direct neighbors
+	An entry consists of the total distance and the next hop
+2. Send each new entry to all neighbors if the entry contains the shortest distance to the destination
+3. Receive all updated entries from the neighbors
+4. Update routing tables with the received data
+5. If entries were updated goto 2.

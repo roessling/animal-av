@@ -1,0 +1,34 @@
+The Glicko-2 algorithm is an advanced rating algorithm
+used in various sports, chess and online games.
+
+Glicko-2 is based on the Glicko algorithm developed
+by Professor Mark Glickman from the Boston University.
+Glicko-2 was published on November 30th of 2013.
+
+The algorithm assigns each player a specific rating (r),
+a rating deviation (RD) and the new volatility (sigma) value. A higher
+rating value indicates a higher ranked player. 
+
+The improvement to the Elo-System is the integration
+of a rating deviation value. As it is better to measure
+a player's strength by reporting an interval instead
+of a single rating value. We use a 95% confidence interval:
+Lowest value at player's rating minus twice the RD;
+Highest value at player's rating plus twice the RD.
+
+The volatility measure is the improvement to the original Glicko. 
+It indicates the degree of expected fluctuation 
+in a player's rating. The volatility measure 
+is high when a player has erratic performances (e.g., when
+the player has had exceptionally strong results after 
+a period of stability), and the volatility measure 
+is low when the player performs at a consistent level.
+
+Implementation details:
+The back-end implementation of this algorithm is
+using an object-oriented-approach, where each player
+is represented by a single Player-object. It stores
+the rating, rating deviation, volatility and if the
+player has been yet rated or not. It also provides
+various utility functions to calculate e.g. the
+g and E.

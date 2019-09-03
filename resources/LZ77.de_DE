@@ -1,0 +1,33 @@
+### Animation ###
+animDescription= Mit Hilfe des LZ77-Algorithmus (Lempel Ziv 77) wird ein Text verlustfrei komprimiert. Dazu werden zwei Arrays als Vorschaubuffer und als Wörterbuch verwendet.\nMithilfe der Eigenschaften können die Größe dieser beiden Arrays sowie die zu komprimierende Zeichenkette festgelegt werden.
+animCodeExample=- Durchsuche das Wörterbuch nach der längsten übereinstimmenden Zeichenkette entsprechend des Vorschaupuffers\n- Wurde eine Übereinstimmung gefunden:\n-   Gib das Tripel (Position der Zeichenkette, Länge der Zeichenkette, erstes nicht übereinstimmendes Zeichen) aus\n-   Verschiebe das Fenster um die Länge der Zeichenkette + 1\n- Wurde keine Übereinstimmung gefunden:\n-   Gib das Tripel (0, 0, erstes nicht übereinstimmendes Zeichen) aus\n-   Verschiebe das Fenster um 1
+
+### INTRO ###
+introText=Der Lempel Ziv 77-Algorithmus, kurz LZ77, ist ein einfacher Kompressionsalgorithmus zur verlustfreien\nKompression eines Textes mithilfe eines Wörterbuches. Dabei werden zwei in der Größe begrenzten Arrays\nverwendet: ein 'Wörterbuch' und ein 'Vorschaupuffer'.\nDer Text wird in den 'Vorschaupuffer' geladen. Danach wird zeichenweise überprüft, ob der String bereits\nim Wörterbuch vorhanden ist. Wenn ja, wird die Anzahl der Zeichen solange erhöht, bis es keine\nÜbereinstimmung mehr gibt. Dann wird das Tripel\n(Position der Zeichenkette, Länge der Zeichenkette, erstes nicht übereinstimmendes Zeichen) ausgegeben\nund der Text um die Länge der Zeichenkette in das Wörterbuch verschoben.\nMit den neuen in den Vorschaupuffer hinzugefügten Buchstaben wird ebenso verfahren.\n\nPseudocode:\n- Durchsuche das Wörterbuch nach der längsten übereinstimmenden Zeichenkette entsprechend des Vorschaupuffers\n- Wurde eine Übereinstimmung gefunden:\n-   Gib das Tripel (Position der Zeichenkette, Länge der Zeichenkette, erstes nicht übereinstimmendes Zeichen) aus\n-   Verschiebe das Fenster um die Länge der Zeichenkette + 1\n- Sonst:\n-   Gib das Tripel (0, 0, erstes nicht übereinstimmendes Zeichen) aus\n-   Verschiebe das Fenster um 1\n
+
+### OUTRO ###
+outroText=In der vorherigen Animation wurde LZ77 grafisch dargestellt. Zum Abschluss werden hier\neinige Vor- und Nachteile aufgelistet:\nVorteile\n- das Komprimieren ist ohne jegliche Kenntnis des (nachfolgenden) Textes möglich\n- eignet sich sehr gut als Preprozessor für andere Kompressionsverfahren- Laufzeit liegt bei O(n)Nachteile\n- bei kurzen oder nicht natürlichsprachlichen Texten ist der Kompressionsfaktor nicht gut\n\nDekompression\nIm Vergleich zu Kompression ist die Dekompression deutlich einfacher, denn hierbei müssen\nkeine Übereinstimmungen gesucht werden, sondern lediglich die entsprechenden Teile des\nWörterbuchs ausgegeben werden. Die Laufzeit der Dekompression ist, ebenso wie die der\nKompression, linear, benötigt also genauso viele Schritte, wie es Zeichen gibt.
+
+### Pseudocode ###
+pseudoText=Pseudocode:\n\n- Durchsuche das Wörterbuch nach der längsten übereinstimmenden Zeichenkette entsprechend des Vorschaupuffers\n- Wurde eine Übereinstimmung gefunden:\n-   Gib das Tripel (Position der Zeichenkette, Länge der Zeichenkette, erstes nicht übereinstimmendes Zeichen) aus\n-   Verschiebe das Fenster um die Länge der Zeichenkette + 1\n- Wurde keine Übereinstimmung gefunden:\n-   Gib das Tripel (0, 0, erstes nicht übereinstimmendes Zeichen) aus\n-   Verschiebe das Fenster um 1\n
+
+### Überschriften ###
+woerterbuch=Wörterbuch
+vorschaupuffer=Vorschaupuffer
+text=Verbleibender Text
+ausgabe=Ausgabe
+ende=ENDE
+inhalt=verarbeitet
+
+### Beschreibungen ###
+beschreibung1=Text wird eingelesen
+beschreibung2=Es wurde keine Übereinstimmung gefunden
+beschreibung3=Fenster wird um die Länge
+beschreibung4=verschoben
+beschreibung5=Es wurde eine Übereinstimmung gefunden: 
+beschreibung6=Sonderfall: übereinstimmende Zeichenkette\nragt in das Vorschaufenster hinein! 
+
+noSuchKeyException=Keine Resource für {0} gefunden
+iconNotFound=Icon '{0}' nicht gefunden
+
+### n a t i v e 2 a s c i i a F i l e . t x t > msg . de DE ###

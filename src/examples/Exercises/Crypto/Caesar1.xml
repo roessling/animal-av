@@ -1,0 +1,484 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<ns2:exercise xmlns:ns2="http://www.algoanim.info/Animal2/">
+    <chainPath>/Cryptography/Caesar Cipher/Java/de/CaesarChiffre</chainPath>
+    <description>Bei der Cäsar-Chiffre handelt es sich um eine monoalphabetische Substitution (Vertauschung). Dabei wird jedem Buchstaben eines Textes ein anderer, eindeutiger Buchstabe zugeordnet. Diese Zuordnung ist nicht willkürlich, sondern basiert auf der zyklischen Rotation des Alphabets um k Zeichen. Hier wird als Schlüssel ein Buchstabe angegeben, wobei ein Schlüssel a einer zyklischen Alphabets-Rotation um ein Zeichen enspricht, b einer Rotation um zwei Zeichen, usw.
+
+Beispiel 1) Nachricht "a" wird mit Schlüssel b zu Chiffretext "c"
+Beispiel 2) Nachricht "ab" wird mit Schlüssel b zu Chiffretext "cd"
+
+Übungsaufgaben:
+</description>
+    <generatorName>generators.cryptography.caesarcipher.CaesarTC</generatorName>
+    <initialVariables>
+        <name>Eingabewort</name>
+        <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">Informatik</value>
+    </initialVariables>
+    <initialVariables>
+        <name>Eingabeschluessel</name>
+        <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">c</value>
+    </initialVariables>
+    <questionsList>
+        <decisionBox xsi:type="scriptBox" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+            <inputVariables>
+                <name>Loesungsvorschlag</name>
+            </inputVariables>
+            <next xsi:type="assignBox">
+                <next xsi:type="functionBox">
+                    <next xsi:type="functionBox">
+                        <next xsi:type="functionBox">
+                            <next xsi:type="functionBox">
+                                <function xsi:type="ok"/>
+                            </next>
+                            <function xsi:type="check"/>
+                            <arguments xsi:type="constantValue">
+                                <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">$Loesungsvorschlag = $x</value>
+                            </arguments>
+                        </next>
+                        <function xsi:type="debug"/>
+                        <arguments xsi:type="constantValue">
+                            <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">x</value>
+                        </arguments>
+                    </next>
+                    <function xsi:type="debug"/>
+                </next>
+                <variableName>x</variableName>
+                <expression xsi:type="functionBox">
+                    <function xsi:type="retrieve"/>
+                    <arguments xsi:type="constantValue">
+                        <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">events/verschluesseltesErgebnisEvent/ergebnis</value>
+                    </arguments>
+                </expression>
+            </next>
+            <AssignBox>
+                <next xsi:type="functionBox">
+                    <next xsi:type="functionBox">
+                        <next xsi:type="functionBox">
+                            <next xsi:type="functionBox">
+                                <function xsi:type="ok"/>
+                            </next>
+                            <function xsi:type="check"/>
+                            <arguments xsi:type="constantValue">
+                                <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">$Loesungsvorschlag = $x</value>
+                            </arguments>
+                        </next>
+                        <function xsi:type="debug"/>
+                        <arguments xsi:type="constantValue">
+                            <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">x</value>
+                        </arguments>
+                    </next>
+                    <function xsi:type="debug"/>
+                </next>
+                <variableName>x</variableName>
+                <expression xsi:type="functionBox">
+                    <function xsi:type="retrieve"/>
+                    <arguments xsi:type="constantValue">
+                        <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">events/verschluesseltesErgebnisEvent/ergebnis</value>
+                    </arguments>
+                </expression>
+            </AssignBox>
+            <FunctionBox>
+                <next xsi:type="functionBox">
+                    <next xsi:type="functionBox">
+                        <next xsi:type="functionBox">
+                            <function xsi:type="ok"/>
+                        </next>
+                        <function xsi:type="check"/>
+                        <arguments xsi:type="constantValue">
+                            <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">$Loesungsvorschlag = $x</value>
+                        </arguments>
+                    </next>
+                    <function xsi:type="debug"/>
+                    <arguments xsi:type="constantValue">
+                        <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">x</value>
+                    </arguments>
+                </next>
+                <function xsi:type="debug"/>
+            </FunctionBox>
+            <FunctionBox>
+                <next xsi:type="functionBox">
+                    <next xsi:type="functionBox">
+                        <function xsi:type="ok"/>
+                    </next>
+                    <function xsi:type="check"/>
+                    <arguments xsi:type="constantValue">
+                        <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">$Loesungsvorschlag = $x</value>
+                    </arguments>
+                </next>
+                <function xsi:type="debug"/>
+                <arguments xsi:type="constantValue">
+                    <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">x</value>
+                </arguments>
+            </FunctionBox>
+            <FunctionBox>
+                <next xsi:type="functionBox">
+                    <function xsi:type="ok"/>
+                </next>
+                <function xsi:type="check"/>
+                <arguments xsi:type="constantValue">
+                    <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">$Loesungsvorschlag = $x</value>
+                </arguments>
+            </FunctionBox>
+            <FunctionBox>
+                <function xsi:type="ok"/>
+            </FunctionBox>
+        </decisionBox>
+        <inputVariables>
+            <name>Loesungsvorschlag</name>
+        </inputVariables>
+        <questionId>Question-3454406021359034748666</questionId>
+        <questionText>Das Eingabewort "Informatik" soll mittels Cäsar-Chiffre mit dem Eingabeschlüssel "c" übertragen werden. Welche Buchstaben kommen beim Empfänger an? (Lösung in Kleinschreibung)</questionText>
+        <script>x = Retrieve ("events/verschluesseltesErgebnisEvent/ergebnis");
+Debug();
+Debug("x");
+Check("$Loesungsvorschlag = $x");
+Ok();</script>
+    </questionsList>
+    <questionsList>
+        <decisionBox xsi:type="scriptBox" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+            <inputVariables>
+                <name>Eingabeschluessel</name>
+            </inputVariables>
+            <next xsi:type="assignBox">
+                <next xsi:type="assignBox">
+                    <next xsi:type="functionBox">
+                        <next xsi:type="functionBox">
+                            <next xsi:type="functionBox">
+                                <next xsi:type="functionBox">
+                                    <function xsi:type="ok"/>
+                                </next>
+                                <function xsi:type="check"/>
+                                <arguments xsi:type="constantValue">
+                                    <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">$sollErgebnis = $ergebnis</value>
+                                </arguments>
+                            </next>
+                            <function xsi:type="commentIf"/>
+                            <arguments xsi:type="constantValue">
+                                <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">$sollErgebnis != $ergebnis</value>
+                            </arguments>
+                            <arguments xsi:type="constantValue">
+                                <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">Mit diesem Schlüssel würde 'Informatik' zu '%s' verschlüsselt werden.</value>
+                            </arguments>
+                            <arguments xsi:type="valueOfIdentifier">
+                                <variableName>ergebnis</variableName>
+                            </arguments>
+                        </next>
+                        <function xsi:type="debug"/>
+                    </next>
+                    <variableName>ergebnis</variableName>
+                    <expression xsi:type="functionBox">
+                        <function xsi:type="retrieve"/>
+                        <arguments xsi:type="constantValue">
+                            <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">events/verschluesseltesErgebnisEvent/ergebnis</value>
+                        </arguments>
+                    </expression>
+                </next>
+                <variableName>geratenerKey</variableName>
+                <expression xsi:type="functionBox">
+                    <function xsi:type="retrieve"/>
+                    <arguments xsi:type="constantValue">
+                        <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">events/schrittweiteEvent/schrittweite</value>
+                    </arguments>
+                </expression>
+            </next>
+            <AssignBox>
+                <next xsi:type="assignBox">
+                    <next xsi:type="functionBox">
+                        <next xsi:type="functionBox">
+                            <next xsi:type="functionBox">
+                                <next xsi:type="functionBox">
+                                    <function xsi:type="ok"/>
+                                </next>
+                                <function xsi:type="check"/>
+                                <arguments xsi:type="constantValue">
+                                    <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">$sollErgebnis = $ergebnis</value>
+                                </arguments>
+                            </next>
+                            <function xsi:type="commentIf"/>
+                            <arguments xsi:type="constantValue">
+                                <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">$sollErgebnis != $ergebnis</value>
+                            </arguments>
+                            <arguments xsi:type="constantValue">
+                                <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">Mit diesem Schlüssel würde 'Informatik' zu '%s' verschlüsselt werden.</value>
+                            </arguments>
+                            <arguments xsi:type="valueOfIdentifier">
+                                <variableName>ergebnis</variableName>
+                            </arguments>
+                        </next>
+                        <function xsi:type="debug"/>
+                    </next>
+                    <variableName>ergebnis</variableName>
+                    <expression xsi:type="functionBox">
+                        <function xsi:type="retrieve"/>
+                        <arguments xsi:type="constantValue">
+                            <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">events/verschluesseltesErgebnisEvent/ergebnis</value>
+                        </arguments>
+                    </expression>
+                </next>
+                <variableName>geratenerKey</variableName>
+                <expression xsi:type="functionBox">
+                    <function xsi:type="retrieve"/>
+                    <arguments xsi:type="constantValue">
+                        <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">events/schrittweiteEvent/schrittweite</value>
+                    </arguments>
+                </expression>
+            </AssignBox>
+            <AssignBox>
+                <next xsi:type="functionBox">
+                    <next xsi:type="functionBox">
+                        <next xsi:type="functionBox">
+                            <next xsi:type="functionBox">
+                                <function xsi:type="ok"/>
+                            </next>
+                            <function xsi:type="check"/>
+                            <arguments xsi:type="constantValue">
+                                <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">$sollErgebnis = $ergebnis</value>
+                            </arguments>
+                        </next>
+                        <function xsi:type="commentIf"/>
+                        <arguments xsi:type="constantValue">
+                            <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">$sollErgebnis != $ergebnis</value>
+                        </arguments>
+                        <arguments xsi:type="constantValue">
+                            <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">Mit diesem Schlüssel würde 'Informatik' zu '%s' verschlüsselt werden.</value>
+                        </arguments>
+                        <arguments xsi:type="valueOfIdentifier">
+                            <variableName>ergebnis</variableName>
+                        </arguments>
+                    </next>
+                    <function xsi:type="debug"/>
+                </next>
+                <variableName>ergebnis</variableName>
+                <expression xsi:type="functionBox">
+                    <function xsi:type="retrieve"/>
+                    <arguments xsi:type="constantValue">
+                        <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">events/verschluesseltesErgebnisEvent/ergebnis</value>
+                    </arguments>
+                </expression>
+            </AssignBox>
+            <FunctionBox>
+                <next xsi:type="functionBox">
+                    <next xsi:type="functionBox">
+                        <next xsi:type="functionBox">
+                            <function xsi:type="ok"/>
+                        </next>
+                        <function xsi:type="check"/>
+                        <arguments xsi:type="constantValue">
+                            <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">$sollErgebnis = $ergebnis</value>
+                        </arguments>
+                    </next>
+                    <function xsi:type="commentIf"/>
+                    <arguments xsi:type="constantValue">
+                        <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">$sollErgebnis != $ergebnis</value>
+                    </arguments>
+                    <arguments xsi:type="constantValue">
+                        <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">Mit diesem Schlüssel würde 'Informatik' zu '%s' verschlüsselt werden.</value>
+                    </arguments>
+                    <arguments xsi:type="valueOfIdentifier">
+                        <variableName>ergebnis</variableName>
+                    </arguments>
+                </next>
+                <function xsi:type="debug"/>
+            </FunctionBox>
+            <FunctionBox>
+                <next xsi:type="functionBox">
+                    <next xsi:type="functionBox">
+                        <function xsi:type="ok"/>
+                    </next>
+                    <function xsi:type="check"/>
+                    <arguments xsi:type="constantValue">
+                        <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">$sollErgebnis = $ergebnis</value>
+                    </arguments>
+                </next>
+                <function xsi:type="commentIf"/>
+                <arguments xsi:type="constantValue">
+                    <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">$sollErgebnis != $ergebnis</value>
+                </arguments>
+                <arguments xsi:type="constantValue">
+                    <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">Mit diesem Schlüssel würde 'Informatik' zu '%s' verschlüsselt werden.</value>
+                </arguments>
+                <arguments xsi:type="valueOfIdentifier">
+                    <variableName>ergebnis</variableName>
+                </arguments>
+            </FunctionBox>
+            <FunctionBox>
+                <next xsi:type="functionBox">
+                    <function xsi:type="ok"/>
+                </next>
+                <function xsi:type="check"/>
+                <arguments xsi:type="constantValue">
+                    <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">$sollErgebnis = $ergebnis</value>
+                </arguments>
+            </FunctionBox>
+            <FunctionBox>
+                <function xsi:type="ok"/>
+            </FunctionBox>
+        </decisionBox>
+        <inputVariables>
+            <name>Eingabeschluessel</name>
+        </inputVariables>
+        <questionId>Question-3454406021359559040201</questionId>
+        <questionText>Alice versendet den Text "Informatik" an Bob. Bob erhält das Wort "chzilgunce". Wie groß war die Schrittweite, wenn die Nachricht von Alice mittels Cäsar-Chiffre verschlüsselt wurde? (Bitte gebe den Eingabeschlüssel als Buchstabe an. Hierbei steht a für den Wert 1, b für 2, ...)</questionText>
+        <script>geratenerKey = Retrieve("events/schrittweiteEvent/schrittweite");
+ergebnis = Retrieve ("events/verschluesseltesErgebnisEvent/ergebnis");
+Debug();
+
+CommentIf ("$sollErgebnis != $ergebnis", "Mit diesem Schlüssel würde 'Informatik' zu '%s' verschlüsselt werden.", ergebnis);
+
+Check ("$sollErgebnis = $ergebnis");
+Ok();</script>
+        <variables>
+            <name>sollErgebnis</name>
+            <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">chzilgunce</value>
+        </variables>
+    </questionsList>
+    <questionsList>
+        <decisionBox xsi:type="scriptBox" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+            <inputVariables>
+                <name>Eingabewort</name>
+            </inputVariables>
+            <next xsi:type="assignBox">
+                <next xsi:type="functionBox">
+                    <next xsi:type="functionBox">
+                        <next xsi:type="functionBox">
+                            <next xsi:type="functionBox">
+                                <function xsi:type="ok"/>
+                            </next>
+                            <function xsi:type="check"/>
+                            <arguments xsi:type="constantValue">
+                                <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">$ergebnis = $sollErgebnis</value>
+                            </arguments>
+                        </next>
+                        <function xsi:type="comment"/>
+                        <arguments xsi:type="constantValue">
+                            <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">Verschlüsselt man das Wort '%s' mittels Cäsar-Chiffre mit dem Schlüssel o, so erhält man das Wort '%s'.</value>
+                        </arguments>
+                        <arguments xsi:type="valueOfIdentifier">
+                            <variableName>Eingabewort</variableName>
+                        </arguments>
+                        <arguments xsi:type="valueOfIdentifier">
+                            <variableName>ergebnis</variableName>
+                        </arguments>
+                    </next>
+                    <function xsi:type="debug"/>
+                </next>
+                <variableName>ergebnis</variableName>
+                <expression xsi:type="functionBox">
+                    <function xsi:type="retrieve"/>
+                    <arguments xsi:type="constantValue">
+                        <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">events/verschluesseltesErgebnisEvent/ergebnis</value>
+                    </arguments>
+                </expression>
+            </next>
+            <AssignBox>
+                <next xsi:type="functionBox">
+                    <next xsi:type="functionBox">
+                        <next xsi:type="functionBox">
+                            <next xsi:type="functionBox">
+                                <function xsi:type="ok"/>
+                            </next>
+                            <function xsi:type="check"/>
+                            <arguments xsi:type="constantValue">
+                                <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">$ergebnis = $sollErgebnis</value>
+                            </arguments>
+                        </next>
+                        <function xsi:type="comment"/>
+                        <arguments xsi:type="constantValue">
+                            <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">Verschlüsselt man das Wort '%s' mittels Cäsar-Chiffre mit dem Schlüssel o, so erhält man das Wort '%s'.</value>
+                        </arguments>
+                        <arguments xsi:type="valueOfIdentifier">
+                            <variableName>Eingabewort</variableName>
+                        </arguments>
+                        <arguments xsi:type="valueOfIdentifier">
+                            <variableName>ergebnis</variableName>
+                        </arguments>
+                    </next>
+                    <function xsi:type="debug"/>
+                </next>
+                <variableName>ergebnis</variableName>
+                <expression xsi:type="functionBox">
+                    <function xsi:type="retrieve"/>
+                    <arguments xsi:type="constantValue">
+                        <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">events/verschluesseltesErgebnisEvent/ergebnis</value>
+                    </arguments>
+                </expression>
+            </AssignBox>
+            <FunctionBox>
+                <next xsi:type="functionBox">
+                    <next xsi:type="functionBox">
+                        <next xsi:type="functionBox">
+                            <function xsi:type="ok"/>
+                        </next>
+                        <function xsi:type="check"/>
+                        <arguments xsi:type="constantValue">
+                            <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">$ergebnis = $sollErgebnis</value>
+                        </arguments>
+                    </next>
+                    <function xsi:type="comment"/>
+                    <arguments xsi:type="constantValue">
+                        <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">Verschlüsselt man das Wort '%s' mittels Cäsar-Chiffre mit dem Schlüssel o, so erhält man das Wort '%s'.</value>
+                    </arguments>
+                    <arguments xsi:type="valueOfIdentifier">
+                        <variableName>Eingabewort</variableName>
+                    </arguments>
+                    <arguments xsi:type="valueOfIdentifier">
+                        <variableName>ergebnis</variableName>
+                    </arguments>
+                </next>
+                <function xsi:type="debug"/>
+            </FunctionBox>
+            <FunctionBox>
+                <next xsi:type="functionBox">
+                    <next xsi:type="functionBox">
+                        <function xsi:type="ok"/>
+                    </next>
+                    <function xsi:type="check"/>
+                    <arguments xsi:type="constantValue">
+                        <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">$ergebnis = $sollErgebnis</value>
+                    </arguments>
+                </next>
+                <function xsi:type="comment"/>
+                <arguments xsi:type="constantValue">
+                    <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">Verschlüsselt man das Wort '%s' mittels Cäsar-Chiffre mit dem Schlüssel o, so erhält man das Wort '%s'.</value>
+                </arguments>
+                <arguments xsi:type="valueOfIdentifier">
+                    <variableName>Eingabewort</variableName>
+                </arguments>
+                <arguments xsi:type="valueOfIdentifier">
+                    <variableName>ergebnis</variableName>
+                </arguments>
+            </FunctionBox>
+            <FunctionBox>
+                <next xsi:type="functionBox">
+                    <function xsi:type="ok"/>
+                </next>
+                <function xsi:type="check"/>
+                <arguments xsi:type="constantValue">
+                    <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">$ergebnis = $sollErgebnis</value>
+                </arguments>
+            </FunctionBox>
+            <FunctionBox>
+                <function xsi:type="ok"/>
+            </FunctionBox>
+        </decisionBox>
+        <inputVariables>
+            <name>Eingabewort</name>
+        </inputVariables>
+        <questionId>Question-3454406021359560151683</questionId>
+        <questionText>Bob erhält von Alice das mittels Cäsar-Chiffre verschlüsselte Wort "utgxtc". Bob weiß, dass der Schlüssel "o" ist. Was wollte Alice Bob sagen?</questionText>
+        <script>ergebnis = Retrieve ("events/verschluesseltesErgebnisEvent/ergebnis");
+Debug();
+Comment ("Verschlüsselt man das Wort '%s' mittels Cäsar-Chiffre mit dem Schlüssel o, so erhält man das Wort '%s'.", Eingabewort, ergebnis);
+Check ("$ergebnis = $sollErgebnis");
+Ok();</script>
+        <variables>
+            <name>Eingabeschluessel</name>
+            <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">o</value>
+        </variables>
+        <variables>
+            <name>sollErgebnis</name>
+            <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">utgxtc</value>
+        </variables>
+    </questionsList>
+    <subTitle>Übungsblatt 01</subTitle>
+    <title>Cäsar Chiffre</title>
+</ns2:exercise>

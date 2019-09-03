@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<PropertiesTreeModel xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="PropertiesTreeModel.xsd">
+	<Folder name="Root">
+		<Primitive type="intMatrix">
+			<name>matrixA</name>
+			<value><intMatrix>-1, 0; 1, 0; 0, -1; 0, 1</intMatrix></value>
+			<description>The parameter matrix A of the system of inequalities</description>
+		</Primitive>
+		<Primitive type="intArray">
+			<name>vectorB</name>
+			<value><intArray>-1, 2, -1, 2</intArray></value>
+			<description>the right hand sides b of the system of inequalities</description>
+		</Primitive>
+		<Primitive type="int">
+			<name>k</name>
+			<value><int>0</int></value>
+			<description>the coefficient to be projected onto 0</description>
+		</Primitive>
+	</Folder>
+</PropertiesTreeModel>

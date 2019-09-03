@@ -1,0 +1,11 @@
+ID3 hat einen Entscheidungsbaum erstellt, der die Daten erklärt.
+
+Zwei Anmerkungen:
+- Wenn ein solcher Lernalgorithmus in der Praxis benutzt wird, sollte es viel mehr Beispielbeobachtungen
+geben. Diese geringe Anzahl Beispiele ist definitiv nicht ausreichend, um ein allgemeines Konzept zu erstellen.
+ID3 klassifiziert neue Beispiele basierend auf den Trainingsdaten. Diese sollten daher repräsentativ sein.
+
+- ID3 ist nicht perfekt. Einige erstellte Bäume können nicht JEDE neue Beobachtung erklären: Es kann vorkommen, dass während 
+der Klassifizierung eines Beispiels keine Kante für einen NEUEN Wert einer Eigenschaft zur Verfügung steht, da ID3 diese 
+Ausprägung beim Erstellen des Baums nicht kannte. ID3 terminiert zudem nicht im Falle von Inkonsistenzen in den Daten: 
+Mindestens zwei Datenpunkte unterschieden sich AUSSCHLIESSLICH im Wert ihres Klassenattributs.

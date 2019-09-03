@@ -1,0 +1,9 @@
+hideAll
+{
+  Text "eoa" "Ende der Animation" at (120,50) color black font SansSerif size 32
+}
+{
+  Text "comps" "Es wurden " +$"nrComparisons" asInt +" Vergleiche" at (20,100) color black font SansSerif size 24
+  Text "swaps" "und " +$"nrAssignments" asInt +" Zuweisungen durchgeführt." at (20,130) color black font SansSerif size 24
+}
+label "Insertion Sort: Aufwand"

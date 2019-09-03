@@ -1,0 +1,59 @@
+{
+text "f1-01" "Shell Sort" at (120,50) color black font SansSerif size 32 bold
+}
+{
+text "f1-02a" "Insertion Sort is slow, because it can only move elements" at (20,100) color black font SansSerif size 24
+text "f1-02b" "one position to the right with each step.                   " at (20,130) color black font SansSerif size 24
+}
+{
+text "f1-03a" "Shellsort tries to move elements faster to their final position " at (20,170) color black font SansSerif size 24
+text "f1-03b" "by using leaps.                                              " at (20,200) color black font SansSerif size 24
+}
+{
+text "f1-04a" "The data is h-sorted in each step. A set of data is  " at (20,240) color black font SansSerif size 24
+text "f1-04b" "h-sorted, if selecting every h-th element starting at position 0,..., h-1  " at (20,270) color black font SansSerif size 24
+text "f1-04c" "will always yield a sorted data set.     " at (20,300) color black font SansSerif size 24
+}
+{
+text "f1-05a" "Therefore, a h-sorted array consists of h independently sorted" at (20,340) color black font SansSerif size 24
+text "f1-05b" "data sets interleaved in one array                                " at (20,370) color black font SansSerif size 24
+}
+{
+text "f1-06a" "To sort the data, Shell Sort performs a set of h-sorting steps   " at (20,410) color black font SansSerif size 24
+text "f1-06b" "for decreasing values of h, until it finally performs h-sorting for h==1.      " at (20,440) color black font SansSerif size 24
+text "f1-06c" "h==1 essentially equals Insertion Sort.             " at (20,470) color black font SansSerif size 24
+}
+{
+text "f1-07a" "The set of values to use for h is also called the increment order.   " at (20,510) color black font SansSerif size 24
+}
+{
+hideAll
+}
+{
+text "f2-01" "Verbal Description" at (120,50) color black font SansSerif size 32 bold
+}
+{
+text "f2-02a" "It can be proved, that h[i+1]=3*h[i]+1 yields good results.         " at (20,100) color black font SansSerif size 24
+text "f2-02b" "Using this, the algorithm can be adapted as follows:" at (20,130) color black font SansSerif size 24
+}
+{
+text "f2-03" "1. while h<=n/9, set h=3*h+1                                      " at (20,200) color black font SansSerif size 24
+}
+{
+text "f2-04" "2. Set i=h                                                          " at (20,240) color black font SansSerif size 24
+}
+{
+text "f2-05a" "3. Store Element a[i] in a variable v, and store i in j   " at (20,280) color black font SansSerif size 24
+}
+{
+text "f2-06" "4. While j>h ist and a[j-h]>v, set a[j]=a[j-h] and j=j-h          " at (20,350) color black font SansSerif size 24
+}
+{
+text "f2-07" "5. Set a[j]=v                                                       " at (20,390) color black font SansSerif size 24
+}
+{
+text "f2-08" "6. Increment i. If i<n, continue with step 3          " at (20,430) color black font SansSerif size 24
+}
+{
+text "f2-09" "7. Set h=h/3 (integer division!). If h>0, continue with step 2" at (20,470) color black font SansSerif size 24
+}

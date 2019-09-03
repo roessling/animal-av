@@ -1,0 +1,11 @@
+Beispiel: Ein Softwareunternehmen stellt neue Mitarbeiter ein. Herr Dilver spielt mit dem Gedanken, dort zu arbeiten, aber bevor er sich um einen 
+Job bewirbt, möchte er vorhersagen, ob er eingestellt wird oder nicht. Einige seiner Freunde haben sich dort für einen Job beworben und er weiß, 
+wer eingestellt wurde und wer nicht. Er organisiert diese Daten in einer Tabelle (der 'Haupttabelle'). Ein Eintrag enthält Informationen darüber, 
+welches Können eine Person aufweist (KÖNNEN), wie viel Erfahrung sie bisher gesammelt hat (ERFAHRUNG) und welche abschließende Schulnote sie hat 
+(NOTE). Und schließlich beschreibt der Wert der Klasse (ganz rechts, 'ja' oder 'nein'), ob die Person eingestellt wurde. ID3 nimmt diese Beispiele 
+als Eingabe und entwickelt ein allgemeines Konzept, nach welchen Kriterien Leute bei diesem Unternehmen eingestellt werden.
+
+Nun kann Herr Dilver mit dem erzeugten Baum vorhersagen, ob man ihn einstellen wird. Aber natürlich sollte er sich, egal welche 
+Vorhersage dabei herauskommt, dort bewerben, falls er dort gerne arbeiten möchte! So erhält man eine Vorhersage:
+Mit dem Wurzelknoten beginnend folgt man den Kanten, die zu den entsprechenden Attributwerten eine Person gehören; 
+das Blatt, an dem man ankommt, gibt die Erwartung an (allerdings nur basierend auf den bisher gesehenen Beispiele).

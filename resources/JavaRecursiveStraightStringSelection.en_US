@@ -1,0 +1,22 @@
+algoName=Straight Selection
+theName=Recursive Straight Selection (String) [EN]
+algoDesc=This algorithm looks for a value passed in in an array of int values. If the value is found, its position in the array is returned; otherwise, the result is -1.
+codeExample=public int search(String[] array, String value, int pos) {\n  if (array == null || value == null)\n    return -1;\n  if (pos >= array.length)\n    return -1;\n  if (value.equals(array[pos]))\n    return pos;\n  return search(array, value, pos + 1);\n}
+animTitle=Recursive Straight Selection (String)
+algoAuthor=Dr. Guido Rößling (roessling@acm.org>
+algoTitle=Recursive Straight Selection
+animDesc=Description of the algorithm
+adForURL=Further animations can be found at http://www.animal.ahrgr.de in the online repository.
+nrSteps=The algorithm used a total of {0} assignments and {1} comparisons.
+description.filename=resources/JavaRecursiveStraightStringSelection_descr_en.txt
+description.level=2
+description.labelSymbol=#
+code.filename=resources/JavaRecursiveStraightStringSelection_code.txt
+code.level=2
+code.labelSymbol=#
+complexity.filename=resources/JavaRecursiveStraightStringSelection_complexity_en.txt
+complexity.level=2
+complexity.labelSymbol=#
+nrAss=Assignments
+nrComp=Comparisons
+result=Result: {0}

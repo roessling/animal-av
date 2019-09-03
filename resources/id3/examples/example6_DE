@@ -1,0 +1,11 @@
+Beispiel: Bill und Charlie gehen oft in den Süßigkeitenladen und probieren neue zuckerhaltige Köstlichkeiten aus. Basierend auf einigen 
+früheren Beobachtungen, welche Süßigkeiten Bill probiert hat und welche nicht, möchte Charlie herausfinden, welche Arten von Süßigkeiten 
+Bill mag. Charlie hat Informationen über diese Süßigkeiten in einer Tabelle gespeichert (der 'Haupttabelle'). Ein Eintrag enthält 
+Informationen darüber, ob die Süßigkeit süß oder sauer war (TYP), welche Form sie hatte (FORM) und welche Geschmacksrichtung sie 
+aufwies (GESCHMACK). Und schließlich beschreibt der Wert der Klasse (ganz rechts, 'ja' oder 'nein'), ob Bill die Süßigkeit probiert hat. 
+ID3 nimmt diese Beispiele als Eingabe und entwickelt ein allgemeines Konzept, welche Süßigkeiten Bill probiert und welche nicht.
+
+Mithilfe des erzeugten Baumes kann Charlie nun vorhersagen, welche Süßigkeiten Bill (vermutlich) mögen wird und welche er
+(vermutlich) nicht mögen wird. Bill scheint Lollis zu mögen. Eine Vorhersage für eine neue Süßigkeit kann man so bekommen:
+Mit dem Wurzelknoten beginnend folgt man den Kanten, die zu den entsprechenden Attributwerten der Süßigkeit gehören; 
+das Blatt, an dem man ankommt, gibt die Erwartung an (allerdings nur basierend auf den bisher gesehenen Beispiele).

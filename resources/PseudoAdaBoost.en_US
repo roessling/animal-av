@@ -1,0 +1,70 @@
+algorithmName=AdaBoost [EN]
+
+generatorName=AdaBoost [EN]
+
+dataset=Training data:
+
+cs=Coordinate system:
+
+calculation=Calculation:
+
+explanation=Explanation:
+
+initWeights=There are {0} examples. Initialize the example weights with {1}.
+
+combine=Combine all classifiers and calculate the predicted class by the biggest sum of the classification weights.
+
+class=Class
+
+example=Example
+
+sumYes=Sum of weights with yes
+
+sumNo=Sum of weights with no
+
+prediction=Prediction
+
+weight=Weight
+
+colors=The green area shows all examples that are classified as positive\nand the red are all examples that are classified as negative.
+
+bestValue=Select the best value of both axes as the weighted error. If we have the same value multiple times,\nselect the first appearance.\n
+
+calcClassifierWeights=Calculate the classifier weight: 
+
+updateAllWeights=Update all weights depending on whether they were correctly classified or not.
+
+createDecStumX=Create a decision stump for each possible split at the x-axis:
+
+createDecStumY=Create a decision stump for each possible split at the y-axis:
+
+sumWrongClassified=Sum up the weights of all wrong classified examples:\n
+
+findBestSplitX=Find best split for the x-axis
+
+findBestSplitY=Find best split for the y-axis
+
+value=Value
+
+description=AdaBoost belongs to the area of the Ensemble-classifier. The main idea is to combine plenty of different and weak classifiers, which are combined afterwards instead of learning just one classifier.\nThis is a great opportunity for achieving better results. A known algorithm with the same procedure is AdaBoost, which is based on the so-called boosting method and is characterized by later classifiers,\nfocusing on faults of the previous classifiers. All particular examples are weighted the same. Afterwards the classifier is learned depending on the examples with their current weights. For instance, this classifier can be a\nrule set or a decision tree. On the basis of the classifier error (sum of all weights, which were classified incorrectly), a weighting is calculated for the classifier. Comfortable to the quality of the classifier,\nthe weights of the examples are updated and prepared for the next iteration. This has the effect that examples that have been wrongly classified are weighted more strongly and the probability of correct classification\nincreases in the next iteration. For a test example, the overall decision is finally calculated in which the class with the larger sum of classifier weights is determined as the result.
+
+
+introQuestion=What is the effect of the calculation of the classifier weight?
+introQuestionAnswer1=Depending on the classifier quality, all examples are re-weighted.
+introQuestionFeedback1=Correct!
+introQuestionAnswer2=Depending on the classifier quality, all positive examples are re-weighted. 
+introQuestionFeedback2=Wrong! all examples are re-weighted.
+introQuestionAnswer3=Depending on the classifier quality, all negative examples are re-weighted.
+introQuestionFeedback3=Wrong! all examples are re-weighted.
+
+outroQuestion=A rule set also contains several rules that classify examples. What is the difference to AdaBoost? 
+outroQuestionAnswer1=Each rule classifies certain examples. In AdaBoost, all of them are combined into one and classify together.
+outroQuestionFeedback1=Correct!
+outroQuestionAnswer2=All rules are combined into one. In AdaBoost each classifier classifies individually.
+outroQuestionFeedback2=Wrong! Each rule classifies certain examples. In AdaBoost, all of them are combined into one and classify together.
+outroQuestionAnswer3=It makes no difference.
+outroQuestionFeedback3=Wrong! Each rule classifies certain examples. In AdaBoost, all of them are combined into one and classify together.
+
+
+
+

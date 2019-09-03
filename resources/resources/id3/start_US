@@ -1,0 +1,9 @@
+The ID3 Algorithm receives a list of data points (examples) and recursively constructs a decision tree, which
+consists out of nodes (correspond to features of the data), leaves (correspond to the classes of the data) and
+edges (which connect nodes and leaves). Examples consist of feature-value pairs and a class value whose distribution 
+among the current examples should be explained by the resulting tree and is to be predicted for future 
+examples as good as possible.
+
+
+Of course, this is just a sample application - ID3 can generate trees for all kinds of data, provided that 
+the corresponding examples can be described in terms of feature-value pairs.

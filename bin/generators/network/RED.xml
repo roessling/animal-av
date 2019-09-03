@@ -1,0 +1,243 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<PropertiesTreeModel xmlns:xsi="http://www.w3.org/2001/XMLSchFema-instance"
+                     xsi:noNamespaceSchemaLocation="PropertiesTreeModel.xsd">
+    <Folder name="Root">
+        <AnimationProperties type="SourceCodeProperties">
+            <AnimationPropertyItem type="BooleanPropertyItem">
+                <name>bold</name>
+                <isEditable value="false"/>
+                <label></label>
+                <value>
+                    <boolean value="false"/>
+                </value>
+            </AnimationPropertyItem>
+            <AnimationPropertyItem type="ColorPropertyItem">
+                <name>color</name>
+                <isEditable value="false"/>
+                <label></label>
+                <value>
+                    <Color>(0, 0, 0)</Color>
+                </value>
+            </AnimationPropertyItem>
+            <AnimationPropertyItem type="ColorPropertyItem">
+                <name>highlightColor</name>
+                <isEditable value="true"/>
+                <label>Code Highlight Farbe</label>
+                <value>
+                    <Color>(255, 0, 255)</Color>
+                </value>
+            </AnimationPropertyItem>
+            <AnimationPropertyItem type="BooleanPropertyItem">
+                <name>hidden</name>
+                <isEditable value="false"/>
+                <label></label>
+                <value>
+                    <boolean value="false"/>
+                </value>
+            </AnimationPropertyItem>
+            <AnimationPropertyItem type="FontPropertyItem">
+                <name>font</name>
+                <isEditable value="false"/>
+                <label></label>
+                <value>
+                    <Font>SansSerif</Font>
+                </value>
+            </AnimationPropertyItem>
+            <AnimationPropertyItem type="StringPropertyItem">
+                <name>name</name>
+                <isEditable value="true"/>
+                <label></label>
+                <value>
+                    <String>highlightColor</String>
+                </value>
+            </AnimationPropertyItem>
+            <AnimationPropertyItem type="ColorPropertyItem">
+                <name>contextColor</name>
+                <isEditable value="false"/>
+                <label></label>
+                <value>
+                    <Color>(0, 0, 0)</Color>
+                </value>
+            </AnimationPropertyItem>
+            <AnimationPropertyItem type="BooleanPropertyItem">
+                <name>italic</name>
+                <isEditable value="false"/>
+                <label></label>
+                <value>
+                    <boolean value="false"/>
+                </value>
+            </AnimationPropertyItem>
+            <AnimationPropertyItem type="IntegerPropertyItem">
+                <name>depth</name>
+                <isEditable value="false"/>
+                <label></label>
+                <value>
+                    <int>1</int>
+                </value>
+            </AnimationPropertyItem>
+            <AnimationPropertyItem type="IntegerPropertyItem">
+                <name>row</name>
+                <isEditable value="false"/>
+                <label></label>
+                <value>
+                    <int>1</int>
+                </value>
+            </AnimationPropertyItem>
+            <AnimationPropertyItem type="IntegerPropertyItem">
+                <name>size</name>
+                <isEditable value="false"/>
+                <label></label>
+                <value>
+                    <int>10</int>
+                </value>
+            </AnimationPropertyItem>
+            <AnimationPropertyItem type="IntegerPropertyItem">
+                <name>indentation</name>
+                <isEditable value="false"/>
+                <label></label>
+                <value>
+                    <int>1</int>
+                </value>
+            </AnimationPropertyItem>
+        </AnimationProperties>
+        <Primitive type="int">
+            <name>fifoCapacity</name>
+            <value>
+                <int>8</int>
+            </value>
+            <description>Capacity of the FIFO (0 &lt; fifoCapacity &lt;= 10)</description>
+        </Primitive>
+        <Primitive type="int">
+            <name>numberOfClients</name>
+            <value>
+                <int>8</int>
+            </value>
+            <description>Number of clients to generate packets. (0 &lt; clients &lt;= 10)
+            </description>
+        </Primitive>
+        <Primitive type="double">
+            <name>packetGenerateProbability</name>
+            <value>
+                <double>0.6</double>
+            </value>
+            <description>Probability for a client to generate a packet. (0 &lt;=
+                packetGenerateProbability &lt;= 1)
+            </description>
+        </Primitive>
+        <Primitive type="int">
+            <name>packetsToProcess</name>
+            <value>
+                <int>2</int>
+            </value>
+            <description>Packets to process per iteration (dequeue from FIFO). Must be > 0
+            </description>
+        </Primitive>
+        <Primitive type="int">
+            <name>approximatePacketsToGenerate</name>
+            <value>
+                <int>20</int>
+            </value>
+            <description><![CDATA[Maximum of packets to generate in one animation. (>0, this was tested
+                safely up to 70 packets)
+                <br>
+                If an iteration of clients creates more packets, those are processed as well (max 9 more packets than declared here)
+                ]]>
+            </description>
+        </Primitive>
+        <Primitive type="int">
+            <name>initialAverage</name>
+            <value>
+                <int>0</int>
+            </value>
+            <description>The initial average should be 0.</description>
+        </Primitive>
+        <Primitive type="double">
+            <name>reactivness</name>
+            <value>
+                <double>0.3</double>
+            </value>
+            <description><![CDATA[This determines the <i><font color="gray">reactiveness</i></font> of the EWMA process to traffic
+                fluctuations.
+                <br />In order to figure out how to tune this parameter, it is crucial to
+                understand why the <i><font color="blue">average</font></i> (and not the instantaneous) queue length is used in <u>RED</u>:
+                <br />
+                The goal is to filter out short sporadic bursts and only react to persistent
+                congestion. Now consider what would happen if <i><font color="gray">reactivness</font></i>(<i><font color="gray">w_q</font></i>) were 1:
+                <br />only the instantaneous queue would be used, and the impact of preceding
+                values would be completely eliminated.
+                <br />Setting this parameter to <i>0</i>, on the other hand, would mean that the
+                <i><font color="blue">average</font></i> queue length would remain fixed at some old value and not react to queue
+                fluctuations at all. In (<i>Floyd and Jacobson 1993</i>),
+                <br />a lower and upper bound for <i><font color="gray">reactivness</font></i> (<i><font color="gray">w_q</font></i>) that depends on the size of
+                bursts that one wants to allow are derived.
+                <br />
+                In the original paper from Floyd and Jacobson
+
+                <br /><i>(S. Floyd and V. Jacobson, "Random early detection gateways for congestion
+                avoidance," in IEEE/ACM Transactions on Networking, vol. 1, no. 4, pp. 397-413, Aug.
+                1993. doi: 10.1109/90.251892)</i>,
+                <br />
+                It is suggested to set <i><font color="gray">reactivness</font></i> (<i><font color="gray">w_q</font></i>) between <i>0.001</i> and <i>0.0042</i> (optimal value is:
+                <u>0.002</u>).
+                <br />Since this is the recommendation for live networks, we suggest to multiply the
+                factor by a <i>100</i> (i.e. <i>0.1</i> &lt; <i><font color="gray">reactivness</font></i> &lt; <i>0.42</i>), this is because of the small
+                queue length we use in the simulation.]]>
+            </description>
+        </Primitive>
+        <Primitive type="double">
+            <name>max</name>
+            <value>
+                <double>0.9</double>
+            </value>
+            <description><![CDATA[<i><font color="gray">reactivness (w_q)</font></i> and <i><font color="red">max</font></i> values depend on the desired <i><font color="blue">average</font></i> queue size.
+                <br/>As already
+                mentioned, marking any packets that arrive when the <i><font color="blue">average</font></i> queue length exceeds
+                <i><font color="red">max</font></i> prevents the queue from growing far beyond this upper limit.
+                <br/>In other words,
+                setting this parameter to a small value will lead to a small queue (and thus short
+                delay). On the other hand, the parameter <i><font color="green">min</font></i> depends on the burstiness of traffic
+                <br/>
+                - if fairly bursty traffic should be accommodated, it must be set to a rather large
+                value - and at the same time, (<i><font color="red">max</font></i> - <i><font color="green">min</font></i>) should not be too small to allow for
+                the randomness to take effect.
+                <br/>If, for example, the two parameters were equal, there
+                would be no randomness whatsoever in the scheme,
+                <br/>and traffic phase effects would not be countered.]]>
+            </description>
+        </Primitive>
+        <Primitive type="double">
+            <name>min</name>
+            <value>
+                <double>0.2</double>
+            </value>
+            <description><![CDATA[<i><font color="gray">w_q</font></i> and <i><font color="red">max</font></i> values depend on the desired <i><font color="blue">average</font></i> queue size.
+                <br/>As already
+                mentioned, marking any packets that arrive when the <i><font color="blue">average</font></i> queue length exceeds
+                <i><font color="red">max</font></i> prevents the queue from growing far beyond this upper limit.
+                <br/>In other words,
+                setting this parameter to a small value will lead to a small queue (and thus short
+                delay). On the other hand, the parameter <i><font color="green">min</font></i> depends on the burstiness of traffic
+                <br/>
+                - if fairly bursty traffic should be accommodated, it must be set to a rather large
+                value - and at the same time, (<i><font color="red">max</font></i> - <i><font color="green">min</font></i>) should not be too small to allow for
+                the randomness to take effect.
+                <br/>If, for example, the two parameters were equal, there
+                would be no randomness whatsoever in the scheme,
+                <br/>and traffic phase effects would not be countered.]]>
+            </description>
+        </Primitive>
+        <Primitive type="double">
+            <name>max_p</name>
+            <value>
+                <double>0.2</double>
+            </value>
+            <description><![CDATA[This parameter controls how likely it is for a packet to be discarded when
+                the <i><font color="blue">average</font></i> queue length is between <i><font color="green">min</font></i> and <i><font color="red">max_th</font></i>;
+                <br />it should be small because the general goal of <u>RED</u> is not to drop a large
+                number of packets as soon as <i><font color="green">min</font></i> is exceeded but only to drop a packet every
+                now and then,
+                <br />thereby forcing senders to reduce their rates. It is recommended to set it to <i>0.1</i>.]]>
+            </description>
+        </Primitive>
+    </Folder>
+</PropertiesTreeModel>

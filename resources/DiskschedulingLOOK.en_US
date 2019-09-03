@@ -1,0 +1,44 @@
+﻿noSuchKeyException=Es  gibt  keine  Ressource  f\u00fcr  Eintrag{0}
+iconNotFound=Icon  ”{0}” not  found
+
+###Overview###
+overDesc=The LOOK algorithm is used to schedule I/O requests arriving from disk. \nThe arm only goes as far as the last request in each direction, \nthen reverses direction immediately.
+overCode=1. Sort queue increasing from start position of the head. \n2. Sort the remaining requests decreasing. \n3. Move head to the next position and process it. \n4. Jump to the next entry. \n5. If there are any remaining requests, go to step 3, else terminate.
+
+###Title###
+title=Disk Scheduling: LOOK
+
+
+###Description###
+descheader=Description:
+desc1=The LOOK algorithm is used to schedule I/O requests arriving from disk.
+desc2=The arm only goes as far as the last request in each direction,
+desc3 =then reverses direction immediately.
+
+###Code###
+codeheader=Pseudocode:
+code1=1. Sort queue increasing from start position of the head.
+code2=2. Sort the remaining requests decreasing.
+code3=3. Jump to the next entry.
+code4=4. Move head to the next position and process it.
+code5=5. If there are any remaining requests, go to step 3, else terminate.
+
+###Array###
+arr1=Distance: 
+arr2=Head starts at 
+arr3=Requests:
+arr4=Queue: 
+
+###Finish###
+finheader=Conclusion:
+fin1=After having processed all requests in the queue,
+fin2=the head moved 
+fin3= cylinders.
+
+###Summary###
+sumheader=Summary:
+sum1=In LOOK scheduling, the arm only goes as far as final requests in each direction 
+sum2=and then reverses direction immediately without going all the way to the end.
+sum3=LOOK avoids the starvation problem (a request is denied for nearly an infinite amount of time) and has a high throughput.
+sum4=The average seek times are slightly better than the seek times of similar algorithms e.g. SCAN.
+

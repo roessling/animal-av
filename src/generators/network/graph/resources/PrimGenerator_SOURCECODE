@@ -1,0 +1,23 @@
+function Prim(Graph)
+	E = edges in spanning tree ;
+	choose start vertex v in Graph ;
+	for i := 0 to count_vertices(Graph):
+		Q ← v ;
+		closest := undefined ;
+		next_edge := undefined ;
+		shortest := infinity ;
+		for each vertex u in Q:
+			get neighbors N ;
+			for each vertex n in N:
+				if n NOT in Q AND dist[n] < shortest:
+					closest := n ;
+					next_edge := edge(u, n) ;
+					shortest := dist[n] ;
+				end if ;
+			end for ;
+		end for ;
+		v := closest ;
+		E ← next_edge ;
+	end for ;
+	return E ;
+end function ;

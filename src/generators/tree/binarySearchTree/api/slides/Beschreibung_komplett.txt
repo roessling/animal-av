@@ -1,0 +1,28 @@
+[block]
+Ein binärer Suchbaum ist ein Baum, der aus Knoten mit jeweils 0-2 Kindknoten besteht. Jeder Knoten enthält einen Schlüssel, sowie Verweise auf maximal zwei Kindknoten.[br]
+Die Besonderheit des binären Suchbaums ist es, dass die Wertigkeit der Schlüssel aller Knoten im linken Teilbaum eines Knotens K kleiner ist, als der Schlüssel von K. [br]
+Im rechten Teilbaum sind die Schlüssel entsprechend immer größer als der Schlüssel von K.
+[br] Der Schlüssel kann hierbei aus einem beliebigen Datentyp bestehen, wobei es eine Möglichkeit geben muss, die Schlüssel nach Wertigkeit zu sortieren.
+[/block]
+[block]
+[h2]Einfügen[/h2]
+Um einen Schlüssel in den Baum einzufügen, wird dieser mit dem Schlüssel des aktuellen Knotens verglichen. Ist der Schlüssel kleiner, wird beim linken Kind fortgefahren, sonst beim rechten Kind.[br]
+Dies wird solange fortgesetzt, bis der aktuelle Knoten kein Kind auf der dem Vergleich entsprechenden Seite hat. An dieser Stelle wird nun ein neuer Knoten mit dem übergebenen Schlüssel eingefügt.
+[/block]
+[block]
+[h2]Löschen[/h2]
+Um einen Knoten aus dem Baum zu löschen, muss zunächst dessen Elternknoten gesucht werden, 
+da dieser die Referenz auf den zu löschenden Knoten enthält.[br]
+Nun gibt es drei zu unterscheidende Fälle:
+[/block]
+[block]
+Ist der zu löschende Knoten ein Blatt, also wenn er keine Kindknoten hat, dann kann er ohne weitere Aktionen gelöscht werden.
+[/block]
+[block]
+Hat der zu löschende Knoten einen Kindknoten, wird der zu löschende Knoten durch seinen Kindknoten ersetzt.
+[/block]
+[block]
+Hat der zu löschende Knoten zwei Kindknoten, muss zunächst der größte Knoten im linken Teilbaum des zu löschenden Knoten gesucht werden.[br]
+Dieser gesuchte Knoten ist entweder ein Blatt, oder ein Knoten mit genau einem Kindknoten.[br]
+Dieser Knoten muss zunächst aus dem Baum entfernt werden, anschließend wird der zu löschende Knoten durch den gefundenen Knoten ersetzt. 
+[/block]

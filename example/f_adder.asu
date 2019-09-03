@@ -1,0 +1,169 @@
+%Animal 2656*574
+{
+codeGroup "codeSource" at (489,60) color black highlightColor red
+addCodeLine "LIBRARY IEEE;" to "codeSource"
+addCodeLine "USE IEEE.STD_LOGIC_1164.ALL;" to "codeSource"
+addCodeLine "" to "codeSource"
+addCodeLine "ENTITY f_adder IS" to "codeSource"
+addCodeLine "PORT ( ain,bin,cin : IN STD_LOGIC;" to "codeSource" indentation 1
+addCodeLine "cout,sum : OUT STD_LOGIC );" to "codeSource" indentation 1
+addCodeLine "END ENTITY f_adder;" to "codeSource"
+addCodeLine "" to "codeSource"
+addCodeLine "ARCHITECTURE fd1 OF f_adder IS" to "codeSource"
+addCodeLine "COMPONENT h_adder" to "codeSource" indentation 1
+addCodeLine "PORT ( a,b : IN STD_LOGIC;" to "codeSource" indentation 2
+addCodeLine "co,so : OUT STD_LOGIC);" to "codeSource" indentation 2
+addCodeLine "END COMPONENT" to "codeSource" indentation 1
+addCodeLine "COMPONENT or2" to "codeSource" indentation 1
+addCodeLine "PORT (a,b : IN STD_LOGIC; c : OUT STD_LOGIC);" to "codeSource" indentation 2
+addCodeLine "END COMPONENT" to "codeSource" indentation 1
+addCodeLine "SIGNAL d,e,f : STD_LOGIC;" to "codeSource" indentation 1
+addCodeLine "BEGIN" to "codeSource" indentation 1
+addCodeLine "u1 : h_adder PORT MAP( a =>ain b =>bin co=>d so =>e);" to "codeSource" indentation 2
+addCodeLine "u2 : h_adder PORT MAP( a =>e b =>cin co =>f so =>sum);" to "codeSource" indentation 2
+addCodeLine "u3 : or2 PORT MAP(a =>d b =>f c =>cout);" to "codeSource" indentation 2
+addCodeLine "END ARCHITECTURE fd1 ;" to "codeSource"
+}
+{
+relRectangle "0" (50, 100) (389, 369)  color black depth 23
+text "0" "f_adder" (50,85) color black depth 50 font Monospaced size 14
+polyline "0" (35,192) (50,192) color black depth 10
+polyline "0" (35,233) (50,233) color black depth 10
+polyline "0" (35,406) (50,406) color black depth 10
+polyline "0" (439,403) (459,403) color black depth 10
+polyline "0" (439,198) (459,198) color black depth 10
+highlightCode on  "codeSource" line 3
+highlightCode on  "codeSource" line 4
+highlightCode on  "codeSource" line 5
+highlightCode on  "codeSource" line 6
+highlightCode on  "codeSource" line 7
+
+}
+
+{
+relentity "h_adder" (93, 123) (150, 150) input ain input bin output d output e name "h_adder" color red depth 0 filled fillColor blue
+unhighlightCode on  "codeSource" line 0
+unhighlightCode on  "codeSource" line 1
+unhighlightCode on  "codeSource" line 2
+unhighlightCode on  "codeSource" line 3
+unhighlightCode on  "codeSource" line 4
+unhighlightCode on  "codeSource" line 5
+unhighlightCode on  "codeSource" line 6
+unhighlightCode on  "codeSource" line 7
+unhighlightCode on  "codeSource" line 8
+unhighlightCode on  "codeSource" line 9
+unhighlightCode on  "codeSource" line 10
+unhighlightCode on  "codeSource" line 11
+unhighlightCode on  "codeSource" line 12
+unhighlightCode on  "codeSource" line 13
+unhighlightCode on  "codeSource" line 14
+unhighlightCode on  "codeSource" line 15
+unhighlightCode on  "codeSource" line 16
+unhighlightCode on  "codeSource" line 17
+highlightCode on  "codeSource" line 18
+unhighlightCode on  "codeSource" line 19
+unhighlightCode on  "codeSource" line 20
+unhighlightCode on  "codeSource" line 21
+
+}
+{
+
+color "h_adder" type "fillColor" red 
+color "h_adder" type "color" blue 
+relentity "h_adder" (93, 296) (150, 150) input e input cin output f output sum name "h_adder" color red depth 0 filled fillColor blue
+unhighlightCode on  "codeSource" line 0
+unhighlightCode on  "codeSource" line 1
+unhighlightCode on  "codeSource" line 2
+unhighlightCode on  "codeSource" line 3
+unhighlightCode on  "codeSource" line 4
+unhighlightCode on  "codeSource" line 5
+unhighlightCode on  "codeSource" line 6
+unhighlightCode on  "codeSource" line 7
+unhighlightCode on  "codeSource" line 8
+unhighlightCode on  "codeSource" line 9
+unhighlightCode on  "codeSource" line 10
+unhighlightCode on  "codeSource" line 11
+unhighlightCode on  "codeSource" line 12
+unhighlightCode on  "codeSource" line 13
+unhighlightCode on  "codeSource" line 14
+unhighlightCode on  "codeSource" line 15
+unhighlightCode on  "codeSource" line 16
+unhighlightCode on  "codeSource" line 17
+unhighlightCode on  "codeSource" line 18
+highlightCode on  "codeSource" line 19
+unhighlightCode on  "codeSource" line 20
+unhighlightCode on  "codeSource" line 21
+
+}
+{
+wire "wire_h_adder-0->h_adder-0" ( 243,230) ( 248,230) ( 248,278) ( 75,278) ( 75,365) ( 93,365) 
+}
+{
+
+color "h_adder" type "fillColor" red 
+color "h_adder" type "color" blue 
+relor "or2" (266, 123) (150, 150) input d input f output cout color green4 depth 0 filled fillColor yellow
+unhighlightCode on  "codeSource" line 0
+unhighlightCode on  "codeSource" line 1
+unhighlightCode on  "codeSource" line 2
+unhighlightCode on  "codeSource" line 3
+unhighlightCode on  "codeSource" line 4
+unhighlightCode on  "codeSource" line 5
+unhighlightCode on  "codeSource" line 6
+unhighlightCode on  "codeSource" line 7
+unhighlightCode on  "codeSource" line 8
+unhighlightCode on  "codeSource" line 9
+unhighlightCode on  "codeSource" line 10
+unhighlightCode on  "codeSource" line 11
+unhighlightCode on  "codeSource" line 12
+unhighlightCode on  "codeSource" line 13
+unhighlightCode on  "codeSource" line 14
+unhighlightCode on  "codeSource" line 15
+unhighlightCode on  "codeSource" line 16
+unhighlightCode on  "codeSource" line 17
+unhighlightCode on  "codeSource" line 18
+unhighlightCode on  "codeSource" line 19
+highlightCode on  "codeSource" line 20
+unhighlightCode on  "codeSource" line 21
+
+}
+{
+wire "wire_h_adder-0->or2-0" ( 243,189) ( 243,176) ( 266,176) 
+}
+{
+wire "wire_h_adder-0->or2-0" ( 243,362) ( 260,362) ( 260,226) ( 266,226) 
+}
+{
+color "or2" type "fillColor" cyan 
+color "or2" type "color" blue4 
+}
+
+{
+wire "wire_black" ( 35,192) ( 93,192) 
+wire "wire_black" ( 35,233) ( 93,233) 
+wire "wire_black" ( 35,406) ( 93,406) 
+wire "wire_black" ( 243,403) ( 459,403) 
+wire "wire_black" ( 416,198) ( 459,198) 
+unhighlightCode on  "codeSource" line 0
+unhighlightCode on  "codeSource" line 1
+unhighlightCode on  "codeSource" line 2
+unhighlightCode on  "codeSource" line 3
+unhighlightCode on  "codeSource" line 4
+unhighlightCode on  "codeSource" line 5
+unhighlightCode on  "codeSource" line 6
+unhighlightCode on  "codeSource" line 7
+unhighlightCode on  "codeSource" line 8
+unhighlightCode on  "codeSource" line 9
+unhighlightCode on  "codeSource" line 10
+unhighlightCode on  "codeSource" line 11
+unhighlightCode on  "codeSource" line 12
+unhighlightCode on  "codeSource" line 13
+unhighlightCode on  "codeSource" line 14
+unhighlightCode on  "codeSource" line 15
+unhighlightCode on  "codeSource" line 16
+unhighlightCode on  "codeSource" line 17
+unhighlightCode on  "codeSource" line 18
+unhighlightCode on  "codeSource" line 19
+unhighlightCode on  "codeSource" line 20
+highlightCode on  "codeSource" line 21
+}

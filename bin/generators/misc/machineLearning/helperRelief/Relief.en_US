@@ -1,0 +1,41 @@
+dataset = Dataset:
+
+interSteps = Intermediate steps:
+
+sc = Source Code:
+
+explanation = Explanation:
+
+intro = The Relief Algorithms, a family of algorithms for attribute weighting, belong to the monitored learning methods of machine learning.\nFirst of all, the relief algorithm does not refer to future decision processes, but is a tool for the subsequent investigation of the\nquestion which attribute had the greatest or least influence on the decision. The difference between the attribute values of two instances\nis also defined for nominal values, namely (originally) as 0 if the instances in this attribute match, and otherwise as 1. As a rule, you\nonly need to use the so-called Manhattan distance as the distance between the instances, that is, the sum of all differences.\n \nThe relief algorithms change the weights of each attribute A depending on how large the differences of adjacent instances of both the\n same and different classes in A are. Finally, the weights that relief has given to a size can be used to determine its influence on the\nresult of a decision-making process, the so-called class value of an instance. In the case of the simplest algorithm, Relief, this only\nworks for two classes, i.e. the target value can take two values, and the data must be complete. First, Relief picks an instance\nthen determines its nearest neighbor, one from its own class (called nearest hit and designated with H) and one from the other\n(called nearest miss). The weights of all attributes in which I matches H or does not match M are increased, the weights of those in which\nI differs from H or matches M are reduced.\n \n[Source: https://de.wikipedia.org/wiki/Relief-Algorithmus] 
+
+initWeights = Initialize each attribute weight with 0.0.
+
+randomValue = Random value:
+
+highlightSameClass = Random value: {0}\nAll hits (same class like the random picked example) are highlighted green.\nAll misses (different class) are highlighted red.
+
+outro = All {0} iterations have been executed. The algorithm terminates.\nThe final weights of the attributes are as follows:\n \n 
+
+updateWeight = Update each attribute weight:\n
+
+chooseNearestHit = Choose the example with the same class and the lowest distance to the example ID{0}.
+
+chooseNearestMiss = Choose the example with the different class and the lowest distance to the example ID{0}.
+
+distance = Distance
+
+calcDistBetween = Calculate the distance between ID{0} and any other example.\nThe distance between two attributes is 1 if the attributes are different.\nThe distance is 0 if the attributes are equal.\n 
+
+q1 = What is the basic idea of the 'Relief' algorithm?
+q1a1 = Calculate weighting of attributes.
+q1a2 = Calculate weighting of examples.
+q1a3 = Calculate a rule set for the positive class.
+
+
+q2 = Which statement is correct??
+q2a1 = An attribute with a negative weighting is still taken into account..
+q2a2 = With negative weightings, it makes no difference, since they are generally not taken into account.
+q2a3 = The sign does not make any difference, since only the absolute value is taken into account..
+
+qFeedbackC = Correct.
+qFeedbackW = Wrong.

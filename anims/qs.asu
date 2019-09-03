@@ -1,0 +1,259 @@
+%Animal 2.0
+title "Bubble Sort Animation"
+author "Jens Falk <Jens.Falk@epost.de>"
+embed "bubbleSortHeader.asu"
+hideAll
+{
+  array "array" (20, 80) color black fillColor white elementColor black elemHighlight blue cellHighlight light Gray length 5 "3" "7" "2" "1" "4"
+  codegroup "bubbleCode" at (20,140) color black highlightColor red contextColor black font Monospaced size 11
+  addCodeLine "public void bubbleSort(int[] a)" to "bubbleCode" indentation 0
+  addCodeLine "{" to "bubbleCode" indentation 0
+  addCodeLine " int i, j;                                  // Loop counter" to "bubbleCode" indentation 0
+  addCodeLine " boolean swapPerformed = true;              // swap performed?" to "bubbleCode" indentation 0
+  addCodeLine " // Iterate n times or until no more swaps" to "bubbleCode" indentation 0
+  addCodeLine " for (i=a.length; swapPerformed && i>-1; i--)" to "bubbleCode" indentation 0
+  addCodeLine " {" to "bubbleCode" indentation 0
+  addCodeLine "  for (j=1,swapPerformed = false; j<i; j++) // Test all elements" to "bubbleCode" indentation 0
+  addCodeLine "  {" to "bubbleCode" indentation 0
+  addCodeLine "   if (a[j-1] > a[j])                       // wrong order?" to "bubbleCode" indentation 0
+  addCodeLine "   {" to "bubbleCode" indentation 0
+  addCodeLine "    swap(a, j-1, j);                        // --> then swap!" to "bubbleCode" indentation 0
+  addCodeLine "    swapPerformed = true;                   //     and remember swapping" to "bubbleCode" indentation 0
+  addCodeLine "   }" to "bubbleCode" indentation 0
+  addCodeLine "  }" to "bubbleCode" indentation 0
+  addCodeLine " }" to "bubbleCode" indentation 0
+  addCodeLine "}" to "bubbleCode" indentation 0
+}
+highlightCode on "bubbleCode" line 0
+{
+  unhighlightCode on "bubbleCode" line 0
+  arraymarker "i" on "array" atIndex 0 label "i" color black
+  arraymarker "j" on "array" atIndex 0 label "j" color gray
+  highlightCode on "bubbleCode" line 2
+}
+{
+  unhighlightCode on "bubbleCode" line 2
+  highlightCode on "bubbleCode" line 3
+}
+{
+  unhighlightCode on "bubbleCode" line 3
+  movemarker "i" to outside within 5 ticks
+  highlightCode on "bubbleCode" line 5
+}
+{
+  unhighlightCode on "bubbleCode" line 5
+  movemarker "j" to position 1 within 5 ticks
+  highlightCode on "bubbleCode" line 7
+}
+{
+  unhighlightCode on "bubbleCode" line 7
+  highlightCode on "bubbleCode" line 9
+}
+{
+  unhighlightCode on "bubbleCode" line 9
+  movemarker "j" to position 2 within 5 ticks
+  highlightCode on "bubbleCode" line 7
+}
+{
+  unhighlightCode on "bubbleCode" line 7
+  highlightCode on "bubbleCode" line 9
+}
+{
+  unhighlightCode on "bubbleCode" line 9
+  highlightArrayElem on "array" position 2 within 0 ticks
+  highlightArrayElem on "array" position 1 within 0 ticks
+  arraySwap on "array" position 1 with 2 within 10 ticks
+  highlightCode on "bubbleCode" line 11
+}
+{
+  unhighlightCode on "bubbleCode" line 11
+  unhighlightArrayElem on "array" position 2 within 0 ticks
+  unhighlightArrayElem on "array" position 1 within 0 ticks
+  highlightCode on "bubbleCode" line 12
+}
+{
+  unhighlightCode on "bubbleCode" line 12
+  movemarker "j" to position 3 within 5 ticks
+  highlightCode on "bubbleCode" line 7
+}
+{
+  unhighlightCode on "bubbleCode" line 7
+  highlightCode on "bubbleCode" line 9
+}
+{
+  unhighlightCode on "bubbleCode" line 9
+  highlightArrayElem on "array" position 3 within 0 ticks
+  highlightArrayElem on "array" position 2 within 0 ticks
+  arraySwap on "array" position 2 with 3 within 10 ticks
+  highlightCode on "bubbleCode" line 11
+}
+{
+  unhighlightCode on "bubbleCode" line 11
+  unhighlightArrayElem on "array" position 3 within 0 ticks
+  unhighlightArrayElem on "array" position 2 within 0 ticks
+  highlightCode on "bubbleCode" line 12
+}
+{
+  unhighlightCode on "bubbleCode" line 12
+  movemarker "j" to position 4 within 5 ticks
+  highlightCode on "bubbleCode" line 7
+}
+{
+  unhighlightCode on "bubbleCode" line 7
+  highlightCode on "bubbleCode" line 9
+}
+{
+  unhighlightCode on "bubbleCode" line 9
+  highlightArrayElem on "array" position 4 within 0 ticks
+  highlightArrayElem on "array" position 3 within 0 ticks
+  arraySwap on "array" position 3 with 4 within 10 ticks
+  highlightCode on "bubbleCode" line 11
+}
+{
+  unhighlightCode on "bubbleCode" line 11
+  unhighlightArrayElem on "array" position 4 within 0 ticks
+  unhighlightArrayElem on "array" position 3 within 0 ticks
+  highlightCode on "bubbleCode" line 12
+}
+{
+  unhighlightCode on "bubbleCode" line 12
+  highlightCode on "bubbleCode" line 7
+}
+{
+  unhighlightCode on "bubbleCode" line 7
+  highlightArrayCell on "array" position 4 within 0 ticks
+  movemarker "i" to position 4 within 5 ticks
+  highlightCode on "bubbleCode" line 5
+}
+{
+  unhighlightCode on "bubbleCode" line 5
+  movemarker "j" to position 1 within 5 ticks
+  highlightCode on "bubbleCode" line 7
+}
+{
+  unhighlightCode on "bubbleCode" line 7
+  highlightCode on "bubbleCode" line 9
+}
+{
+  unhighlightCode on "bubbleCode" line 9
+  highlightArrayElem on "array" position 1 within 0 ticks
+  highlightArrayElem on "array" position 0 within 0 ticks
+  arraySwap on "array" position 0 with 1 within 10 ticks
+  highlightCode on "bubbleCode" line 11
+}
+{
+  unhighlightCode on "bubbleCode" line 11
+  unhighlightArrayElem on "array" position 1 within 0 ticks
+  unhighlightArrayElem on "array" position 0 within 0 ticks
+  highlightCode on "bubbleCode" line 12
+}
+{
+  unhighlightCode on "bubbleCode" line 12
+  movemarker "j" to position 2 within 5 ticks
+  highlightCode on "bubbleCode" line 7
+}
+{
+  unhighlightCode on "bubbleCode" line 7
+  highlightCode on "bubbleCode" line 9
+}
+{
+  unhighlightCode on "bubbleCode" line 9
+  highlightArrayElem on "array" position 2 within 0 ticks
+  highlightArrayElem on "array" position 1 within 0 ticks
+  arraySwap on "array" position 1 with 2 within 10 ticks
+  highlightCode on "bubbleCode" line 11
+}
+{
+  unhighlightCode on "bubbleCode" line 11
+  unhighlightArrayElem on "array" position 2 within 0 ticks
+  unhighlightArrayElem on "array" position 1 within 0 ticks
+  highlightCode on "bubbleCode" line 12
+}
+{
+  unhighlightCode on "bubbleCode" line 12
+  movemarker "j" to position 3 within 5 ticks
+  highlightCode on "bubbleCode" line 7
+}
+{
+  unhighlightCode on "bubbleCode" line 7
+  highlightCode on "bubbleCode" line 9
+}
+{
+  unhighlightCode on "bubbleCode" line 9
+  highlightCode on "bubbleCode" line 7
+}
+{
+  unhighlightCode on "bubbleCode" line 7
+  highlightArrayCell on "array" position 3 within 0 ticks
+  movemarker "i" to position 3 within 5 ticks
+  highlightCode on "bubbleCode" line 5
+}
+{
+  unhighlightCode on "bubbleCode" line 5
+  movemarker "j" to position 1 within 5 ticks
+  highlightCode on "bubbleCode" line 7
+}
+{
+  unhighlightCode on "bubbleCode" line 7
+  highlightCode on "bubbleCode" line 9
+}
+{
+  unhighlightCode on "bubbleCode" line 9
+  highlightArrayElem on "array" position 1 within 0 ticks
+  highlightArrayElem on "array" position 0 within 0 ticks
+  arraySwap on "array" position 0 with 1 within 10 ticks
+  highlightCode on "bubbleCode" line 11
+}
+{
+  unhighlightCode on "bubbleCode" line 11
+  unhighlightArrayElem on "array" position 1 within 0 ticks
+  unhighlightArrayElem on "array" position 0 within 0 ticks
+  highlightCode on "bubbleCode" line 12
+}
+{
+  unhighlightCode on "bubbleCode" line 12
+  movemarker "j" to position 2 within 5 ticks
+  highlightCode on "bubbleCode" line 7
+}
+{
+  unhighlightCode on "bubbleCode" line 7
+  highlightCode on "bubbleCode" line 9
+}
+{
+  unhighlightCode on "bubbleCode" line 9
+  highlightCode on "bubbleCode" line 7
+}
+{
+  unhighlightCode on "bubbleCode" line 7
+  highlightArrayCell on "array" position 2 within 0 ticks
+  movemarker "i" to position 2 within 5 ticks
+  highlightCode on "bubbleCode" line 5
+}
+{
+  unhighlightCode on "bubbleCode" line 5
+  movemarker "j" to position 1 within 5 ticks
+  highlightCode on "bubbleCode" line 7
+}
+{
+  unhighlightCode on "bubbleCode" line 7
+  highlightCode on "bubbleCode" line 9
+}
+{
+  unhighlightCode on "bubbleCode" line 9
+  highlightCode on "bubbleCode" line 7
+}
+{
+  unhighlightCode on "bubbleCode" line 7
+  highlightArrayCell on "array" position 1 within 0 ticks
+{
+  highlightArrayCell on "array" position 0 within 0 ticks
+  highlightCode on "bubbleCode" line 5
+}
+unhighlightCode on "bubbleCode" line 5
+{
+  variable "nrComparisons"
+  assign "nrComparisons" = 10
+  variable "nrAssignments"
+  assign "nrAssignments" = 18
+}
+embed "bubbleSortFooter.asu"

@@ -1,0 +1,15 @@
+[block]
+[br]
+[br]
+[br]
+Wir wollen Polynome 3. Ordnung finden um eine gegebene Funktion zwischen Knotenpunkten zu interpolieren.
+[/block]
+[block]
+Sei S(x) ein kubischer Spline. Wir nennen die zweizte Ableitung am Punkt x_j S’’(x_j) den “Moment” M_j
+[br]
+S’’(x) = M_(j-1)*((x_j-x)/h_j) + M_j*((x-x_(j-1))/h_j)
+[br]
+S’(x) = -M_(j-1)*((x_j-x)^2/2h_j) + M_j*((x-x_(j-1)^2)/2h_j) + A
+[br]
+S(x) = M_(j-1)*((x_j-x)^3/6h_j) + M_j*((x-x_(j-1)^3)/6h_j) + Ax + B
+[/block]

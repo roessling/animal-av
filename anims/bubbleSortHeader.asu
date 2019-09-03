@@ -1,0 +1,34 @@
+{
+text "f1-01" "Bubble Sort" at (120,50) color black font SansSerif size 32 bold
+}
+{
+text "f1-02a" "Bubble Sort ist ein elementares Suchverfahren, das in" at (20,100) color black font SansSerif size 24
+text "f1-02b" "vielen Informatikveranstaltungen gelehrt wird" at (20,130) color black font SansSerif size 24
+}
+{
+text "f1-03a" "Die Grundidee des Verfahrens ist es, benachbarte" at (20,170) color black font SansSerif size 24
+text "f1-03b" "Elemente so zu vertauschen, dass sie sortiert sind" at (20,200) color black font SansSerif size 24
+}
+{
+hideAll
+}
+{
+text "f2-01" "Der Algorithmus in Worten" at (120,50) color black font SansSerif size 32 bold
+}
+{
+text "f2-02" "1. Setze i=n" at (20,100) color black font SansSerif size 24
+}
+{
+text "f2-03" "2. Setze j=1 und eine boole'sche Variable swapPerformed auf false." at (20,140) color black font SansSerif size 24
+}
+{
+text "f2-04a" "3. Vertausche in einer Schleife die Elemente a[j-1] und a[j]," at (20,180) color black font SansSerif size 24
+text "f2-04b" "    falls a[j-1] > a[j] ist und setze swapPerformed auf true" at (20,210) color black font SansSerif size 24
+}
+{
+text "f2-05" "4. Zähle j um eins hoch, bis j==i gilt" at (20,250) color black font SansSerif size 24
+}
+{
+text "f2-06a" "5. Zähle i um eins herunter. Gilt i==-1 oder ist swapPerformed false," at (20,290) color black font SansSerif size 24
+text "f2-06b" "    so beende das Programm; andernfalls fahre fort bei Schritt 2" at (20,320) color black font SansSerif size 24
+}

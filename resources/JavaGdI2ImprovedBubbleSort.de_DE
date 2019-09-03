@@ -1,0 +1,9 @@
+@import=resources/GenericBubbleSort.de_DE
+algoName=Bubble Sort Improved (GdI 2@TUD) [DE]
+codeExample=public void sort(int[] array) {\n  if (array == null)\n    return;\n  int i, j;\n  i = array.length - 1;\n  boolean isSorted = false;\n  while (i >= 0 && !isSorted) {\n    isSorted = true;\n    for (j = 0; j <= i - 1; j++) {\n      if (array[j1] > array[j + 1]) {\n        swap(array, j, j + 1);\n        isSorted = false;\n      }\n    }\n    i = i - 1;\n  }\n}
+animTitle=Bubble Sort Improved (GdI 2@TUD)
+algoTitle=Bubble Sort Improved (GdI 2@TUD)
+animDesc=Beschreibung des Algorithmus
+description.filename=resources/JavaGdI2ImprovedBubbleSort_descr_de.txt
+code.filename=resources/JavaGdI2ImprovedBubbleSort_code.txt
+complexity.filename=resources/GenericBubbleSort_complexity_de.txt

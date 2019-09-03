@@ -1,0 +1,191 @@
+noSuchKeyException=there is no ressource for the key {0}
+iconNotFound=Icon "{0}" not found
+
+name=Gauss-Legendre [EN]
+
+
+title=Gauss-Legendre (approximation of Pi)
+
+
+######################
+description0=The Gauss-Legendre algorithm is an algorithm to compute the digits of Pi.
+
+
+description1=The algorithm has second-order convergent nature, which essentially means that the number of correct digits doubles with each step of the algorithm.
+
+
+description2=Only 25 iterations are needed to get 45 million correct digits of Pi.
+
+
+description3=However, the drawback is that it is memory intensive and it is therefore sometimes not used over Machin-like formulas.
+
+
+description4=It repeatedly replaces two numbers by their Arithmetic and Geometric mean, in order to approximate their Arithmetic-Geometric mean.
+
+
+description5=The method is based on the individual work of Carl Friedrich Gauss (1777-1855) and Adrien-Marie Legendre (1752-1833) combined with modern algorithms for multiplication and square roots.
+
+
+description6=The version presented here is also known as the Gauss-Euler, Brent-Salamin (or Salamin-Brent) algorithm; it was independently discovered in 1975 by Richard Brent and Eugene Salamin.
+
+
+######################
+note_before0=Note:
+
+
+note_before1=In order to highlight the correct digits of each approximation of Pi, the approximation is compared with a static representation of Pi with 85 decimal places.
+
+
+note_before2=Therefore the number of decimal places in this visualization is limited to 85.
+
+
+note_after0=Note:
+
+
+note_after1=There is no formula to predict the exact number of correct digits in the next step.
+
+
+note_after2=The second-order convergent nature of the algorithm only guarantees that the number of correct digits at least doubles with each step.
+
+
+note_after3=The number of correct digits has not doubled in the last approximation of Pi, only because the number of decimal places is limited in this visualization.
+
+
+######################
+step0=Introduction / Remark
+
+
+step1=Initialization of variables
+
+
+step2=Computation of approximation
+
+
+step3=Return
+
+
+step4=Conclusion / Remark
+
+
+######################
+inter_values0=intermediate values (
+
+
+inter_values1=decimal places):
+
+
+loop_cond0=loop condition:
+
+
+is=is
+
+
+inter_values_cmp0=computation of intermediate values:
+
+
+apx_pi_cmp0=computation of approximation(
+
+
+######################
+apx=approximation(
+
+
+pi=) of Pi
+
+
+######################
+tmp_value0=(Arithmetic mean of
+
+
+a_value0=(Arithmetic mean of
+
+
+a_value1=(Arithm.Geom. mean of
+
+
+b_value0=(Geometric mean of
+
+
+b_value1=(Arithm.Geom. mean of
+
+
+######################
+explain0=Initilize a variable.
+
+
+explain1=Initilize b variable.
+
+
+explain2=Initilize t variable.
+
+
+explain3=Initilize p variable.
+
+
+explain4=Initilize tmp variable.
+
+
+explain5=Initilize apxPi variable (this is the approximation of Pi).
+
+
+explain6=Arithm.Geom. mean of initial a and b values not yet reached (a and b not equal); Start iteration
+
+
+explain7=) of Pi was computed.
+
+
+explain8=Compute Arithmetic mean of current a and b values and store it in tmp.
+
+
+explain9=tmp now stores Arithmetic mean of current a and b values. Compute Geometric mean of current a and b values and store it in b.
+
+
+explain10=b now stores Geometric mean of current a and b values. Compute new value of t.
+
+
+explain11=t was updated. Compute new value of p.
+
+
+explain12=p was updated. Assign Arithmetic mean of current a and b values (stored in tmp) to a.
+
+
+explain13=a now stores Arithmetic mean of current a and b values. Compute approximation(
+
+
+explain14=was computed. Arithm.Geom. mean of initial a and b values is reached (a and b are equal); Break out of loop.
+
+
+explain15=return last (and best) approximation of Pi.
+
+
+######################
+last0=had
+
+
+last1=correct digits
+
+
+curr0=has
+
+
+curr1=correct digits
+
+
+pred0=At least
+
+
+pred1=were demanded.
+
+
+pred2=should have at least
+
+
+pred3=correct digits
+
+
+pred4=(Impossible due to limit of decimal places!)
+
+
+######################
+corr_digits=Correct digits of approximation(
+

@@ -1,0 +1,158 @@
+%Animal 2656*574
+{
+codeGroup "codeSource" at (471,60) color black highlightColor red
+addCodeLine "LIBRARY IEEE;" to "codeSource"
+addCodeLine "USE IEEE.STD_LOGIC_1164.ALL;" to "codeSource"
+addCodeLine "ENTITY h_adder IS" to "codeSource"
+addCodeLine "PORT (a, b : IN STD_LOGIC; co, so : OUT STD_LOGIC);" to "codeSource" indentation 1
+addCodeLine "END ENTITY h_adder" to "codeSource"
+addCodeLine "" to "codeSource"
+addCodeLine "ARCHITECTURE fh1 OF h_adder IS" to "codeSource"
+addCodeLine "BEGIN" to "codeSource" indentation 1
+addCodeLine "so <= (a OR b)AND(a NAND b);" to "codeSource" indentation 2
+addCodeLine "co <= NOT(a NAND b);" to "codeSource" indentation 2
+addCodeLine "END ARCHITECTURE fh1;" to "codeSource"
+addCodeLine "" to "codeSource"
+}
+{
+relRectangle "0" (55, 100) (366, 518)  color black depth 23
+text "0" "h_adder" (55,85) color black depth 50 font Monospaced size 14
+polyline "0" (40,170) (55,170) color black depth 10
+polyline "0" (40,220) (55,220) color black depth 10
+polyline "0" (421,192) (441,192) color black depth 10
+polyline "0" (421,359) (441,359) color black depth 10
+highlightCode on  "codeSource" line 2
+highlightCode on  "codeSource" line 3
+highlightCode on  "codeSource" line 4
+highlightCode on  "codeSource" line 5
+
+}
+
+{
+relor "or1" (87, 117) (150, 150) input a input b output T1 color green4 depth 0 filled fillColor yellow
+unhighlightCode on  "codeSource" line 0
+unhighlightCode on  "codeSource" line 1
+unhighlightCode on  "codeSource" line 2
+unhighlightCode on  "codeSource" line 3
+unhighlightCode on  "codeSource" line 4
+unhighlightCode on  "codeSource" line 5
+unhighlightCode on  "codeSource" line 6
+unhighlightCode on  "codeSource" line 7
+highlightCode on  "codeSource" line 8
+unhighlightCode on  "codeSource" line 9
+unhighlightCode on  "codeSource" line 10
+unhighlightCode on  "codeSource" line 11
+
+}
+{
+
+color "or1" type "fillColor" cyan 
+color "or1" type "color" blue4 
+relnand "nand1" (87, 284) (150, 150) input a input b output T2 color green4 depth 0 filled fillColor yellow
+unhighlightCode on  "codeSource" line 0
+unhighlightCode on  "codeSource" line 1
+unhighlightCode on  "codeSource" line 2
+unhighlightCode on  "codeSource" line 3
+unhighlightCode on  "codeSource" line 4
+unhighlightCode on  "codeSource" line 5
+unhighlightCode on  "codeSource" line 6
+unhighlightCode on  "codeSource" line 7
+highlightCode on  "codeSource" line 8
+unhighlightCode on  "codeSource" line 9
+unhighlightCode on  "codeSource" line 10
+unhighlightCode on  "codeSource" line 11
+
+}
+{
+
+color "nand1" type "fillColor" cyan 
+color "nand1" type "color" blue4 
+reland "and1" (254, 117) (150, 150) input T1 input T2 output so color green4 depth 0 filled fillColor yellow
+unhighlightCode on  "codeSource" line 0
+unhighlightCode on  "codeSource" line 1
+unhighlightCode on  "codeSource" line 2
+unhighlightCode on  "codeSource" line 3
+unhighlightCode on  "codeSource" line 4
+unhighlightCode on  "codeSource" line 5
+unhighlightCode on  "codeSource" line 6
+unhighlightCode on  "codeSource" line 7
+highlightCode on  "codeSource" line 8
+unhighlightCode on  "codeSource" line 9
+unhighlightCode on  "codeSource" line 10
+unhighlightCode on  "codeSource" line 11
+
+}
+{
+wire "wire_or1-0->and1-0" ( 237,192) ( 237,170) ( 254,170) 
+}
+{
+wire "wire_nand1-0->and1-0" ( 237,359) ( 248,359) ( 248,220) ( 254,220) 
+}
+{
+
+color "and1" type "fillColor" cyan 
+color "and1" type "color" blue4 
+relnand "nand2" (87, 451) (150, 150) input a input b output T4 color green4 depth 0 filled fillColor yellow
+unhighlightCode on  "codeSource" line 0
+unhighlightCode on  "codeSource" line 1
+unhighlightCode on  "codeSource" line 2
+unhighlightCode on  "codeSource" line 3
+unhighlightCode on  "codeSource" line 4
+unhighlightCode on  "codeSource" line 5
+unhighlightCode on  "codeSource" line 6
+unhighlightCode on  "codeSource" line 7
+unhighlightCode on  "codeSource" line 8
+highlightCode on  "codeSource" line 9
+unhighlightCode on  "codeSource" line 10
+unhighlightCode on  "codeSource" line 11
+
+}
+{
+
+color "nand2" type "fillColor" cyan 
+color "nand2" type "color" blue4 
+relnot "not2" (254, 284) (150, 150) input T4 output co color green4 depth 0 filled fillColor yellow
+unhighlightCode on  "codeSource" line 0
+unhighlightCode on  "codeSource" line 1
+unhighlightCode on  "codeSource" line 2
+unhighlightCode on  "codeSource" line 3
+unhighlightCode on  "codeSource" line 4
+unhighlightCode on  "codeSource" line 5
+unhighlightCode on  "codeSource" line 6
+unhighlightCode on  "codeSource" line 7
+unhighlightCode on  "codeSource" line 8
+highlightCode on  "codeSource" line 9
+unhighlightCode on  "codeSource" line 10
+unhighlightCode on  "codeSource" line 11
+
+}
+{
+wire "wire_nand2-0->not2-0" ( 237,526) ( 242,526) ( 242,362) ( 254,362) 
+}
+{
+color "not2" type "fillColor" cyan 
+color "not2" type "color" blue4 
+}
+
+{
+wire "wire_black" ( 40,170) ( 87,170) 
+wire "wire_black" ( 87,170) ( 65,170) ( 65,337) ( 87,337) 
+wire "wire_black" ( 87,170) ( 65,170) ( 65,504) ( 87,504) 
+wire "wire_black" ( 40,220) ( 87,220) 
+wire "wire_black" ( 87,220) ( 60,220) ( 60,387) ( 87,387) 
+wire "wire_black" ( 87,220) ( 60,220) ( 60,554) ( 87,554) 
+wire "wire_black" ( 404,192) ( 441,192) 
+wire "wire_black" ( 404,359) ( 441,359) 
+unhighlightCode on  "codeSource" line 0
+unhighlightCode on  "codeSource" line 1
+unhighlightCode on  "codeSource" line 2
+unhighlightCode on  "codeSource" line 3
+unhighlightCode on  "codeSource" line 4
+unhighlightCode on  "codeSource" line 5
+unhighlightCode on  "codeSource" line 6
+unhighlightCode on  "codeSource" line 7
+unhighlightCode on  "codeSource" line 8
+unhighlightCode on  "codeSource" line 9
+unhighlightCode on  "codeSource" line 10
+highlightCode on  "codeSource" line 11
+}

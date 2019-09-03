@@ -1,0 +1,12 @@
+Some comments about complexity
+
+Interpolative Search has a double (binary) logarithmic complexity
+(O(log(log n)).
+Finding a given element in a set of 256 elements will 
+therefore take at most 3 iterations. The proof for this is too tricky
+to be given here.
+
+It is important to remember that Interpolative Search will
+only work for sorted data. If the data is not fully sorted,
+getting the right result depends more on luck than on the
+algorithm.

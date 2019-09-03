@@ -1,0 +1,9 @@
+@import=resources/GenericSelectionSort.de_DE
+theName=Selection Sort
+codeExample={ TSelectionSort }\n\nprocedure TSelectionSortSort(var A: array of Integer);\nvar I, J, T: Integer;\nbegin\n for I := Low(A) to High(A) - 1 do\n   for J := High(A) downto I + 1 do\n     if A[I] > A[J] then\n     begin\n       T := A[I];\n       A[I] := A[J];\n       A[J] := T;\n       if Terminated then Exit;\n     end;\nend;
+animTitle=Selection Sort
+algoTitle=Selection Sort
+description.filename=resources/DelphiSelectionSort_descr_de.txt
+code.filename=resources/DelphiSelectionSort_code.txt
+complexity.filename=resources/GenericSelectionSort_complexity_de.txt
+outputLanguage=DELPHI

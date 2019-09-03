@@ -1,0 +1,79 @@
+;; T5.16-18
+;; Structure for Inventory Records
+;; name: string - name of the inventory record
+;; price: number - price for the inventory record
+(define-struct ir (name price)) 
+
+;; less-than-ir : number (listof ir) -> (listof ir) 
+;; to construct a list of those records 
+;; on aloir that contain a price less than t 
+;; example: (less-than-ir (list (make-ir "A" 11.0)) 12
+;; is (make-ir "A" 11.0)
+(define (less-than-ir aloir t) 
+   (cond 
+     [(empty? aloir) empty] 
+     [else 
+       (cond           
+		 [(<ir (first aloir) t) (cons (first aloir)
+			(less-than-ir (rest aloir) t))]
+		[else 
+			(less-than-ir (rest aloir) t)])]))
+
+;; <ir: ir number -> boolean
+;; determines if the price of the inventory record
+;; is less than p
+;; example: (<ir (make-ir "A" 11.0) 12) is true
+(define (<ir ir p)
+  (< (ir-price ir) p)) 
+
+;; less-than-ir1: (listof ir) number -> (listof ir)
+;; constructs a list of those inventory records of aloir
+;; with a price less then t
+(define (less-than-ir1 aloir t)
+  (filter1 <ir aloir t)) 
+
+;; filter1: (X number -> boolean) (listof X) number -> (listof X)
+;; places all elements in the list "alon" into the output
+;; list for which "rel-op" returns true when working on
+;; a list element and the parameter t
+;; example: (filter1 < '(1 2 3) 3) is '(1 2)
+(define (filter1 rel-op alon t) 
+   (cond 
+      [(empty? alon) empty] 
+      [else 
+         (cond
+            [(rel-op (first alon) t) 
+                     (cons (first alon) 
+                           (filter1 rel-op (rest alon) t))] 
+            [else 
+               (filter1 rel-op (rest alon) t)])])) 
+
+;; find: (listof ir) symbol -> boolean 
+;; determines whether aloir contains a record with the given name
+;; example: (find (list (make-ir "A" 120.99)) "A") is true
+(define (find aloir name)
+   (cons? (filter1 eq-ir? aloir name)))
+
+;; eq-ir?: ir symbol  ->  boolean 
+;; compares the name of ir with p
+;; example: (eq-ir? (make-ir "A" 120.99) "A") is true
+(define (eq-ir? ir p) 
+  (string=? (ir-name ir) p)) 
+
+;; Tests
+(define ir1 (make-ir "A" 11.0))
+(define ir2 (make-ir "B" 12.2))
+(define ir3 (make-ir "C" 12.0))
+(check-expect (<ir ir1 12.1) true)
+(check-expect (<ir ir2 12.1) false)
+(check-expect (<ir ir3 12.1) true)
+(check-expect (less-than-ir (list ir1 ir2 ir3) 12.1) (list ir1 ir3))
+(check-expect (less-than-ir (list ir1 ir2 ir3) 10.9) empty)
+(check-expect (less-than-ir (list ir1 ir2 ir3) 12.1) (less-than-ir1 (list ir1 ir2 ir3) 12.1))
+(check-expect (less-than-ir (list ir1 ir2 ir3) 10.9) (less-than-ir1 (list ir1 ir2 ir3) 10.9))
+(check-expect (eq-ir? ir1 "A") true)
+(check-expect (eq-ir? ir2 "B") true)
+(check-expect (eq-ir? ir3 "C") true)
+(check-expect (eq-ir? ir3 "D") false)
+(check-expect (find (list ir1 ir2 ir3) "C") true)
+(check-expect (find (list ir1 ir2 ir3) "D") false)

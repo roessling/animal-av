@@ -1,0 +1,23 @@
+algoName=Bin\u00e4re Suche
+theName=Iterative Bin\u00e4re Suche (int, Pseudocode; DE)
+algoDesc=Dieser Algorithmus sucht in einem Array von int-Werten nach einem &uuml;bergebenen Wert. Wird der gesuchte Wert gefunden, so wird seine Position zur&uuml;ckgegeben, ansonsten der Wert -1.
+codeExample=int iterativeBinarySearch(int[] array, int value):\n  Teste, ob das Feld existiert.\n    nrElems = Anzahl Feldelemente.\n  Setze Untergrenze des Teilfeldes l = 0.\n  Setze Obergrenze des Teilfeldes r = nrElems - 1.\n  Setze Mitte des Teilfeldes mid = (l + r) / 2.\n  Solange r > l und array[mid] != value:\n    Falls value < array[mid]:\n      Setze r = mid - 1.\n    Sonst\n      Setze l = mid + 1.\n    Setze mid = (l + r) / 2.\n  Falls array[mid] = value:\n    return mid.\n  Sonst\n    return -1.
+animTitle=Iterative Binäre Suche (int)
+algoAuthor=Dr. Guido Rößling (roessling@acm.org>
+algoTitle=Iterative Binäre Suche
+outputLanguage=Pseudo-Code
+animDesc=Beschreibung des Algorithmus
+adForURL=Weitere Animationen finden Sie unter http://www.animal.ahrgr.de im Online-Repository
+nrSteps=Insgesamt verwendete der Algorithmus {0} Zuweisungen und {1} Vergleiche.
+description.filename=resources/PseudoIterativeBinaryIntSearching_descr_de.txt
+description.level=2
+description.labelSymbol=#
+code.filename=resources/PseudoIterativeBinaryIntSearching_code_de.txt
+code.level=2
+code.labelSymbol=#
+complexity.filename=resources/PseudoIterativeBinaryIntSearching_complexity_de.txt
+complexity.level=2
+complexity.labelSymbol=#
+nrAss=Zuweisungen
+nrComp=Vergleiche
+result=Ergebnis: {0}

@@ -1,0 +1,11 @@
+@import=resources/GenericBubbleSort.de_DE
+algoName=Bubble Sort in Matlab [DE]
+theName=Bubble Sort in Matlab [DE]
+outputLanguage=Matlab
+codeExample=function x = bubble_sort(x)\n  n=length(x);\n  swapPerformed = 1;\n  for i = n-1:1\n    swapPerformed = 0;\n    for j = 2:i\n	    if x(j-1) > x(j)\n        temp=x(j-1); x(j-1)=x(j;) x(j)=temp;\n        swapPerformed = 1;\n      end\n    end\n  if ~swapPerformed break end\nend;
+animTitle=Bubble Sort (Matlab)
+algoTitle=Bubble Sort (Matlab)
+animDesc=Beschreibung des Algorithmus
+description.filename=resources/MatlabBubbleSort_descr_de.txt
+code.filename=resources/MatlabBubbleSort_code.txt
+complexity.filename=resources/GenericBubbleSort_complexity_de.txt

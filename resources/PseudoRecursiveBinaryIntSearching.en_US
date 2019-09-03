@@ -1,0 +1,23 @@
+algoName=Binary Search
+theName=Recursive Binary Search (int, Pseudocode; EN)
+outputLanguage=Pseudo-Code
+algoDesc=This algorithm looks for a value passed in in a sorted array of int values. If the value is found, its position in the array is returned; otherwise, the result is -1.
+codeExample=public int recursiveBinarySearch(int[] array, int value, int l, int r) {\n  if (array == null) {\n    return -1;\n  }\n  if (l > r || l < 0 || r >= array.length) {\n    return -1;\n  }\n  int mid = (l + r) / 2;\n  if (array[mid] == value) {\n    return mid;\n  else if (value < array[mid]) {\n    return recursiveBinarySearch(array, value, l, mid - 1);\n  }\n  return recursiveBinarySearch(array, value, mid + 1, r);\n  }\n}
+animTitle=Recursive Binary Search (int)
+algoAuthor=Dr. Guido Rößling (roessling@acm.org>
+algoTitle=Binary Search
+animDesc=Description of the algorithm
+adForURL=Further animations can be found at http://www.animal.ahrgr.de in the online repository.
+nrSteps=The algorithm used a total of {0} assignments and {1} comparisons.
+description.filename=resources/PseudoRecursiveBinaryIntSearching_descr_en.txt
+description.level=2
+description.labelSymbol=#
+code.filename=resources/PseudoRecursiveBinaryIntSearching_code_en.txt
+code.level=2
+code.labelSymbol=#
+complexity.filename=resources/PseudoRecursiveBinaryIntSearching_complexity_en.txt
+complexity.level=2
+complexity.labelSymbol=#
+nrAss=Assignments
+nrComp=Comparisons
+result=Result: {0}

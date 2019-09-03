@@ -1,0 +1,94 @@
+noSuchKeyException=Es gibt keine Ressource f\u00fcr Eintrag {0}
+iconNotFound=Icon "{0}" not found
+
+
+### Misc ###
+title=Sweep and Prune in 2D
+name=Sweep and Prune für Axis-aligned Bounding Boxes in 2D
+
+### Description one text ###
+descriptionText=Sweep and Prune f\u00fcr AABBs ist ein Verfahren, das bei der Kollisionserkennung \n in Simulationen und Computerspielen genutzt werden kann. \n Dieser Algorithmus wird in der Broad Phase der Kollisionserkennung genutzt. \n In dieser Phase werden lediglich Kollisionen, die auf keinen Fall stattfinden ausgeschlossen. \n Der Vorteil des Algorithmus liegt in seiner geringen Komplexit\u00e4t (O(n log n)), \n die im Anwendungsfall durch Ausnutzung zeitlicher Koh\u00e4renz \n (bei entsprechender Implementierung) \n auf einen Erwartungswert von O(n) gedr\u00fcckt werden kann. \n \n Der Algorithmus pr\u00fcft f\u00fcr jede Achse des Koordinatensystems, ob eine \u00dcberschneidung der \n Objekte auf dieser Achse m\u00f6glich ist. Nur f\u00fcr Objektpaare, f\u00fcr die dies auf allen Achsen gilt \n wird in der Narrowphase eine detaillierte Kollisionserkennung durchgef\u00fchrt. \n \n Axis-Aligned Bounding Box bedeutet, dass nicht die Form des Objektes selbst gepr\u00fcft wird, \n sondern nur ein Quader, der an den Achsen ausgerichtet ist, das Objekt komplett einschlie\u00dft \n und minimale Gr\u00f6\u00dfe hat. \n Deshalb muss man auch nur einmal entlang jeder Koordinatenachse pr\u00fcfen.
+
+### Pseudo-Code one text ###
+pseudeCode=f\u00fcge alle Objekte der Szene den betrachteten Objekten hinzu \n erstelle eine leere liste f\u00fcr m\u00f6gliche Kollisionen f\u00fcr jede Achse \n f\u00fcr jede Achse im Koordinatensystem \n     erstelle eine leere Liste der auf  der n\u00e4chsten Achse zu betrachtenden Objekte und ein leere Liste aktuell m\u00f6glicher Kollisionspartner \n     f\u00fclle die Liste der Eckpunkte mit den minimalen und maximalen Punkten der betrachteten Objekte entlang der aktuellen Achse \n     sortiere die Eckpunkte \n     f\u00fcr jeden Eckpunkt \n         falls es ein minimaler Punkt ist \n             f\u00fcr jeden aktuell m\u00f6glichen Kollisionspartner \n                 f\u00fcge beide Objekte zur Liste der auf der n\u00e4chsten Achse betrachteten Objekte zu (au\u00dfer sie sind schon drin) \n                 f\u00fcge das Paar der Liste der m\u00f6glichen Kollsiosnen f\u00fcr dese Achse hinzu \n             f\u00fcge das Objekt, das zu dem Punkt geh\u00f6rt den aktuelle m\u00f6glichen Kollisionspartnern zu \n         falls es ein maximaler Punkt ist, so l\u00f6sche das entsprechnde Objekt aus den aktuell m\u00f6glichen Kollisionspartnern \n     setze zu betrachtenden Objekte = auf n\u00e4chster Achse zu betrachtende Objekte \n gebe alle Paare zur\u00fcck, die in jeder Liste f\u00fcr m\u00f6gliche Kollisionen auftauchen
+
+### Description lines ###
+descriptionline0=Sweep and Prune für AABBs ist ein Verfahren, das bei der Kollisionserkennung
+descriptionline1=in Simulationen und Computerspielen genutzt werden kann.
+descriptionline2=Dieser Algorithmus wird in der Broad Phase der Kollisionserkennung genutzt.
+descriptionline3=In dieser Phase werden lediglich Kollisionen, die auf keinen Fall stattfinden ausgeschlossen.
+descriptionline4=Der Vorteil des Algorithmus liegt in seiner geringen Komplexität (O(n log n)),
+descriptionline5=die im Anwendungsfall durch Ausnutzung zeitlicher Kohärenz
+descriptionline6=(bei entsprechender Implementierung)
+descriptionline7=auf einen Erwartungswert von O(n) gedrückt werden kann.
+descriptionline8=
+descriptionline9=Der Algorithmus prüft für jede Achse des Koordinatensystems, ob eine Überschneidung der
+descriptionline10=Objekte auf dieser Achse möglich ist. Nur für Objektpaare, für die dies auf allen Achsen gilt
+descriptionline11=wird in der Narrowphase eine detaillierte Kollisionserkennung durchgeführt.
+descriptionline12=
+descriptionline13=Axis-Aligned Bounding Box bedeutet, dass nicht die Form des Objektes selbst geprüft wird,
+descriptionline14=sondern nur ein Quader, der an den Achsen ausgerichtet ist, das Objekt komplett einschließt
+descriptionline15=und minimale Größe hat.
+descriptionline16=Deshalb muss man auch nur einmal entlang jeder Koordinatenachse prüfen.
+
+### PseudoCode lines ###
+pseudocode0=füge alle Objekte der Szene den betrachteten Objekten hinzu
+pseudocode1=erstelle eine leere liste für mögliche Kollisionen für jede Achse
+pseudocode2=für jede Achse im Koordinatensystem
+pseudocode3=erstelle eine leere Liste der auf der nächsten Achse zu betrachtenden Objekte und ein leere Liste aktuell möglicher Kollisionspartner
+pseudocode4=fülle die Liste der Eckpunkte  mit den minimalen und maximalen Punkten der betrachteten Objekte entlang der aktuellen Achse
+pseudocode5=sortiere die Eckpunkte
+pseudocode6=für jeden Eckpunkt
+pseudocode7=falls es ein minimaler Punkt ist
+pseudocode8=für jeden aktuell möglichen Kollisionspartner
+pseudocode9=füge beide Objekte zur Liste der auf der nächsten Achse betrachteten Objekte zu (außer sie sind schon drin)
+pseudocode10=füge das Paar der Liste der möglichen Kollsiosnen für dese Achse hinzu
+pseudocode11=füge das Objekt, das zu dem Punkt gehört den aktuelle möglichen Kollisionspartnern zu
+pseudocode12=falls es ein maximaler Punkt ist, so lösche das entsprechnde Objekt aus den aktuell möglichen Kollisionspartnern
+pseudocode13=setze zu betrachtenden Objekte = auf nächster Achse zu betrachtende Objekte
+pseudocode14=gebe alle Paare zurück, die in jeder Liste für mögliche Kollisionen auftauchen
+
+### sections ###
+introduction=Einleitung
+xAxis=Test entlang der x-Achse
+yAxis=Test entlang der y-Achse
+conclusion=Fazit
+
+### fields ###
+consideredList=betrachtete Objekte
+possibleCollisionsList=mögliche Kollisionen auf 
+nextConsideredList=auf nächster Achse betrachtete Objekte
+activeList=aktuell mögliche Kollisionspartner
+cornerList=Eckpunkte
+
+### questions ###
+and= und 
+whyunconsidered1=Warum werden die Objekte
+whyunconsidered2= nicht mehr betrachtet?
+unconsideredAnswer1=Wenn auf der ersten Achse keine mögliche Kollision erkannt wird, so werden die Objekte sowieso später detailliert auf Kollisionen geprüft.
+unconsideredResult1=Falsch. Die Kollision konnte schon nicht auf der vorherigen Achse stattfinden. Damit kann sie insgesamt nicht stattfinden.
+unconsideredAnswer2=Auf der vorherigen Achse waren sie an keiner möglichen Kollision beteiligt.
+correct=Korrekt!
+unconsideredAnswer3=Das ist eine Fangfrage. Sie werden noch betrachtet.
+unconsideredResult3=Falsch. Die Kollision konnte schon nicht auf der vorherigen Achse stattfinden. Damit kann sie insgesamt nicht stattfinden.
+collisionQuestion=Was wird nun passieren?
+collisionAnswer1= kommen in die Liste der Objekte, die auf der nächsten Achse betrachtete werden und eine mögliche Kollision auf dieser Achse wird eingetragen.
+collisionAnswer2a=Eine mögliche Kollision zwischen 
+collisionAnswer2b= wird erkannt.
+collisionResult2=Sie müssen auch in die Liste der Objekte, die auf der nächsten Achse betrachtete werden eingetragen werden, damit sie auf der nächsten Achse überprüft werden können.
+collisionAnswer3= kommen in die Liste der Objekte, die auf der nächsten Achse betrachtete werden, aber eine mögliche Kollision auf dieser Achse wird erst am Schluss gemeldet.
+collisionResult3=Die Kollision wird sofort eingetragen.
+
+### Conclusion ###
+conclusionLine0=Fazit:
+conclusionLine1=Es müssen nicht alle Kombinationen von Objekten in der Narrow Phase überprüft werden.
+conclusionLine2a=Es konnten 
+conclusionLine2b= von 
+conclusionLine2c= theoretisch möglichen Kollisionen ausgeschlossen werden.
+conclusionLine3a=Dafür mussten nur 
+conclusionLine3b= Tests zwischen den Objekten ausgeführt werden.
+conclusionLine4a=überprüft werden müssen nur noch die Kollisionen 
+conclusionLine4b=.
+
+### error messages ###
+illegalCollumns=Es müssen genau vier Spalten vorhanden sein!

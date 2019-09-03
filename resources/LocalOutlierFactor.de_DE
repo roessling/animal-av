@@ -1,0 +1,97 @@
+noSuchKeyException=there is no ressource for the key {0}
+iconNotFound=Icon "{0}" not found
+TITLE=Local Outlier Factor
+SRC_0=for(Point p: points)
+SRC_1=p.knn = points.clone();
+SRC_2=p.knn.remove(p);
+SRC_3=p.knn.sort(distance);
+SRC_4=p.kDist = distance(p, p.knn.get(k));
+SRC_5=p.knn.removeIf(o -> distance(p,o) > p.kDist);
+SRC_6=for(Point p: points) 
+SRC_7=sum_rd = p.knn.stream()
+SRC_8=.mapToDouble(q -> rDist(p,q))
+SRC_9=.sum();
+SRC_10=p.lrd = 1 / (sum_rd ( p.knn.size())
+SRC_11=for(Point p: points)
+SRC_12=sum_lrd = p.knn.stream()
+SRC_13=.mapToDouble(q -> q.getLrd())
+SRC_14=.sum();
+SRC_15=p.lof = (sum_lrd / p.knn.size) / p.lrd
+
+DESC_0=Der Local Outlier Factor ist ein Algorithmus von by Markus M. Breunig, Hans-
+DESC_1=Peter Kriegel, Raymond T. Ng und Jörg Sander von 2000 um Anomalien in Datenpunkten
+DESC_2=zu finden, indem man die Lokale Dichte eines Datenpunktes misst und mit der Dichte
+DESC_3=seiner Nachbarn vergleicht..
+DESC_4=
+DESC_5=Der Algorithmus arbeitet auf einer Menge von Datenpunkten, einer Konstanten 
+DESC_6=k, die beschreibt wie viele Nachbarn miteinbezogen werden und einer Distanzfunktion.
+DESC_7=Zuerst wird dazu für jeden Datenpunkt die Distanz (kDist) zum k-ten Nächsten Nachbarn
+DESC_8=bestimmt. Alle Datenpunkte die innerhalb der k-Distanz eines Punkte p liegen werden
+DESC_9=der Menge p.KNN, der K-Nächsten-Nachbarn von p, zugeordnet. Das können mehr als k
+DESC_10=sein, wenn meherer Punkte einen Abstand von kDist von p haben.
+DESC_11=
+DESC_12=Im folgenden wird die Lokale Erreichbarkeitsdistanz für jeden Punkt ermittelt. Das
+DESC_13=ist das Inverse der durchschnittlichen Erreichbarkeitsdistanz eines Punktes von
+DESC_14=seinen Nachbarn. Bei Datenpunkt-Duplikaten kann dieser wert unendlich groß werden.
+DESC_15=Im letzten Schritt werden die Lokalen Erreichbarkeitsdistanzen mit denen der
+DESC_16=Nachbarpunkte verglichen. Dazu wird die durchschnittliche lokale Erreichbarkeits-
+DESC_17=distanz der Nachbarn eines Punktes durch die eigene Erreichbarkeitsdistanz geteilt.
+DESC_18=Das ergebnis ist der LOF. Werte nahe 1 bedeuten einen inlier, Werte kleiner 1 einen 
+DESC_19=definitiven inlier und Werte die signifikant größer als 1 sind bedeuten einen outlier.
+
+VAR_K=k
+VAR_CURRENT_POINT=AktuellerPunkt
+VAR_CP_KDST=p.kDst
+VAR_CP_KNN=p.kNN
+VAR_CP_LRD=p.LRD
+VAR_CP_LOF=p.LOF
+VAR_SUM_RD=summeRD
+VAR_SUM_LRD=summeLRD
+
+LGND:Legend:
+LGND_CURRENT_POINT=Aktueller Punkt
+LGND_NEIGHBOR_POINT=Nachbar Punkt
+LGND_KTH_NN=k-ter Nächster Nachbar
+LGND_INLIER=Inlier
+LGND_DEF_INLIER=Definitiver Inlier
+LGND_OUTLIER=Outlier
+
+HINT=Hint:
+HINT_KNN_KDST=Errechte k-Distanz und k-Nächste-Nachbarn für jeden Punkt
+HINT_ALL_NEIGHBORS=Füge alle Punkte außer {0} zu den Nachbarpunkten hinzu und sortiere nach Distanz zu {0}
+HINT_NEW_KDIST=Die distanz zum k-ten Nachbarn ist {0}
+HINT_REMOVE_NOT_NEIGHBOR=Entferne alle Nachbarn ausserhalb der k-Distanz von den Nächsten Nachbarn
+HINT_CALC_ALL_LRD=Errechne LRD (Lokale Erreichbarkeitsdistanz) für jeden Punkt
+HINT_SUM_ALL_RD=Die Summe der Erreichbarkeitsdistanzen zu allen Nachbarnvon {0} ist {1}
+HINT_CALC_LRD=Errechne LRD für {0}, das ist 1 / ( summeRD/size(KNN) ) = {1}
+HINT_CALC_ALL_LOF=Errechne LOF für jeden Punkt
+HINT_SUM_ALL_LRD=Die Summe der Lokalen Errechbarkeitsdistanzen der Nachbarn von {0} ist {1}
+HINT_CALC_LOF=Errechne LOF für {0}, das ist {1}
+
+SECTION_DESCRIPTION=Beschreibung
+SECTION_KDIST=Finde k-Distanz und k-Nächste-Nachbarn
+SECTION_LRD=Errechne Lokale Errechbarkeitsdistanz
+SECTION_LOF=Errechne Lokalen Ausreißerfaktor
+SECTION_SUMMARY=Ergebnis
+
+INFO_DISTANCE=dst: {0}
+INFO_RDST=rDst: {0}
+INFO_KDST=kDst: {0}
+INFO_LRD=LRD: {0}
+INFO_LOF=LOF: {0}
+
+SUMM_INLIER=Die folgenden Punkte sind definitive Inlier (LOF <= 1):
+SUMM_OUTLIER=Die folgenden Punkte sind Outlier (LOF > 1 + Standardabweichung):
+SUMM_OTHER=Die folgenden Punkte sind Inlier (LOF <= 1 + Standardabweichung):
+
+QST_NEIGHBORS=Welche Punkte sind die k-te nächsten Nachbarn von Punkt {0}?
+QST_NEIGHBORS_FB_RIGHT=Das ist richtig, Punkt {0} ist innerhalb der k-Distanz.
+QST_NEIGHBORS_FB_WRONG=Das ist falsch, Punkt {0} ist nicht innerhalb der k-Distanz.
+QST_KNN=Welcher Punkt ist der k-te nächste Nachbar von Punkt {0}?
+QST_KNN_FB_RIGHT=Das ist richtig, Punkt {0} ist der k-te nächste Nachbar von Punkt {1}.
+QST_KNN_FB_WRONG=Das ist nicht richtig. Der k-te nächste Nachbar von Punkt {0} ist der Punkt {1}.
+QST_OUTLIER=Punkt {0} ist ein Outlier.
+
+
+
+

@@ -1,0 +1,342 @@
+%Animal 2.0
+title "Shell Sort Animation"
+author "Jens Falk <Jens.Falk@epost.de>"
+embed "shellSortHeader.asu"
+hideAll
+{
+  array "array" (20, 80) color black fillColor white elementColor black elemHighlight blue cellHighlight light Gray length 6 "6" "1" "4" "3" "2" "5"
+  codegroup "shellCode" at (20,140) color black highlightColor red contextColor black font Monospaced size 11
+  addCodeLine "public void shellSort(int[] a)" to "shellCode" indentation 0
+  addCodeLine "{" to "shellCode" indentation 0
+  addCodeLine " int i, j, dist;                                 // Schleifenzaehler und Distanz" to "shellCode" indentation 0
+  addCodeLine " int v;                                          // Hilfselement" to "shellCode" indentation 0
+  addCodeLine " for (dist=1; dist<a.length/9; dist = 3*dist+1); // Start Inkrementfolge" to "shellCode" indentation 0
+  addCodeLine " for (; dist>0; dist /= 3)                       // Herstellen h-Sortierung" to "shellCode" indentation 0
+  addCodeLine " {" to "shellCode" indentation 0
+  addCodeLine "  for (i = dist; i<a.length; i++)" to "shellCode" indentation 0
+  addCodeLine "  {" to "shellCode" indentation 0
+  addCodeLine "   v = a[i];                                     // Speichern" to "shellCode" indentation 0
+  addCodeLine "   j = i;" to "shellCode" indentation 0
+  addCodeLine "   while (j>=dist && v<a[j-dist])                // Tausch durchfuehren?" to "shellCode" indentation 0
+  addCodeLine "   {" to "shellCode" indentation 0
+  addCodeLine "    a[j] = a[j-dist];                            // Tauschen" to "shellCode" indentation 0
+  addCodeLine "    j = j-dist;" to "shellCode" indentation 0
+  addCodeLine "   }" to "shellCode" indentation 0
+  addCodeLine "   a[j] = v;                                     // Letztes einkopieren" to "shellCode" indentation 0
+  addCodeLine "  }" to "shellCode" indentation 0
+  addCodeLine " }" to "shellCode" indentation 0
+  addCodeLine "}" to "shellCode" indentation 0
+}
+highlightCode on "shellCode" line 0
+{
+  unhighlightCode on "shellCode" line 0
+  arraymarker "i" on "array" atIndex 0 label "i" color black
+  arraymarker "j" on "array" atIndex 0 label "j" color gray
+  highlightCode on "shellCode" line 2
+}
+{
+  unhighlightCode on "shellCode" line 2
+  highlightCode on "shellCode" line 3
+}
+{
+  unhighlightCode on "shellCode" line 3
+  highlightCode on "shellCode" line 4
+}
+{
+  unhighlightCode on "shellCode" line 4
+  highlightCode on "shellCode" line 5
+}
+{
+  unhighlightCode on "shellCode" line 5
+  movemarker "i" to position 1 within 5 ticks
+  highlightCode on "shellCode" line 7
+}
+{
+  unhighlightCode on "shellCode" line 7
+  highlightArrayElem on "array" position 1 within 0 ticks
+  highlightCode on "shellCode" line 9
+}
+unhighlightArrayElem on "array" position 1 within 0 ticks
+{
+  unhighlightCode on "shellCode" line 9
+  movemarker "j" to position 1 within 5 ticks
+  highlightCode on "shellCode" line 10
+}
+{
+  unhighlightCode on "shellCode" line 10
+  highlightCode on "shellCode" line 11
+}
+{
+  unhighlightCode on "shellCode" line 11
+  arrayPut "6" on "array" position 1
+  highlightArrayCell on "array" position 1 within 0 ticks
+  unhighlightArrayCell on "array" position 0 within 0 ticks
+  highlightCode on "shellCode" line 13
+}
+{
+  unhighlightCode on "shellCode" line 13
+  movemarker "j" to position 0 within 5 ticks
+  highlightCode on "shellCode" line 14
+}
+{
+  unhighlightCode on "shellCode" line 14
+  highlightCode on "shellCode" line 11
+}
+{
+  unhighlightCode on "shellCode" line 11
+  arrayPut "1" on "array" position 0
+  highlightArrayElem on "array" position 0 within 0 ticks
+  highlightCode on "shellCode" line 16
+}
+{
+  highlightArrayCell on "array" position 0 within 0 ticks
+  unhighlightArrayElem on "array" position 0 within 0 ticks
+}
+{
+  unhighlightCode on "shellCode" line 16
+  movemarker "i" to position 2 within 5 ticks
+  highlightCode on "shellCode" line 7
+}
+{
+  unhighlightCode on "shellCode" line 7
+  highlightArrayElem on "array" position 2 within 0 ticks
+  highlightCode on "shellCode" line 9
+}
+unhighlightArrayElem on "array" position 2 within 0 ticks
+{
+  unhighlightCode on "shellCode" line 9
+  movemarker "j" to position 2 within 5 ticks
+  highlightCode on "shellCode" line 10
+}
+{
+  unhighlightCode on "shellCode" line 10
+  highlightCode on "shellCode" line 11
+}
+{
+  unhighlightCode on "shellCode" line 11
+  arrayPut "6" on "array" position 2
+  highlightArrayCell on "array" position 2 within 0 ticks
+  unhighlightArrayCell on "array" position 1 within 0 ticks
+  highlightCode on "shellCode" line 13
+}
+{
+  unhighlightCode on "shellCode" line 13
+  movemarker "j" to position 1 within 5 ticks
+  highlightCode on "shellCode" line 14
+}
+{
+  unhighlightCode on "shellCode" line 14
+  highlightCode on "shellCode" line 11
+}
+{
+  unhighlightCode on "shellCode" line 11
+  arrayPut "4" on "array" position 1
+  highlightArrayElem on "array" position 1 within 0 ticks
+  highlightCode on "shellCode" line 16
+}
+{
+  highlightArrayCell on "array" position 1 within 0 ticks
+  unhighlightArrayElem on "array" position 1 within 0 ticks
+}
+{
+  unhighlightCode on "shellCode" line 16
+  movemarker "i" to position 3 within 5 ticks
+  highlightCode on "shellCode" line 7
+}
+{
+  unhighlightCode on "shellCode" line 7
+  highlightArrayElem on "array" position 3 within 0 ticks
+  highlightCode on "shellCode" line 9
+}
+unhighlightArrayElem on "array" position 3 within 0 ticks
+{
+  unhighlightCode on "shellCode" line 9
+  movemarker "j" to position 3 within 5 ticks
+  highlightCode on "shellCode" line 10
+}
+{
+  unhighlightCode on "shellCode" line 10
+  highlightCode on "shellCode" line 11
+}
+{
+  unhighlightCode on "shellCode" line 11
+  arrayPut "6" on "array" position 3
+  highlightArrayCell on "array" position 3 within 0 ticks
+  unhighlightArrayCell on "array" position 2 within 0 ticks
+  highlightCode on "shellCode" line 13
+}
+{
+  unhighlightCode on "shellCode" line 13
+  movemarker "j" to position 2 within 5 ticks
+  highlightCode on "shellCode" line 14
+}
+{
+  unhighlightCode on "shellCode" line 14
+  highlightCode on "shellCode" line 11
+}
+{
+  unhighlightCode on "shellCode" line 11
+  arrayPut "4" on "array" position 2
+  highlightArrayCell on "array" position 2 within 0 ticks
+  unhighlightArrayCell on "array" position 1 within 0 ticks
+  highlightCode on "shellCode" line 13
+}
+{
+  unhighlightCode on "shellCode" line 13
+  movemarker "j" to position 1 within 5 ticks
+  highlightCode on "shellCode" line 14
+}
+{
+  unhighlightCode on "shellCode" line 14
+  highlightCode on "shellCode" line 11
+}
+{
+  unhighlightCode on "shellCode" line 11
+  arrayPut "3" on "array" position 1
+  highlightArrayElem on "array" position 1 within 0 ticks
+  highlightCode on "shellCode" line 16
+}
+{
+  highlightArrayCell on "array" position 1 within 0 ticks
+  unhighlightArrayElem on "array" position 1 within 0 ticks
+}
+{
+  unhighlightCode on "shellCode" line 16
+  movemarker "i" to position 4 within 5 ticks
+  highlightCode on "shellCode" line 7
+}
+{
+  unhighlightCode on "shellCode" line 7
+  highlightArrayElem on "array" position 4 within 0 ticks
+  highlightCode on "shellCode" line 9
+}
+unhighlightArrayElem on "array" position 4 within 0 ticks
+{
+  unhighlightCode on "shellCode" line 9
+  movemarker "j" to position 4 within 5 ticks
+  highlightCode on "shellCode" line 10
+}
+{
+  unhighlightCode on "shellCode" line 10
+  highlightCode on "shellCode" line 11
+}
+{
+  unhighlightCode on "shellCode" line 11
+  arrayPut "6" on "array" position 4
+  highlightArrayCell on "array" position 4 within 0 ticks
+  unhighlightArrayCell on "array" position 3 within 0 ticks
+  highlightCode on "shellCode" line 13
+}
+{
+  unhighlightCode on "shellCode" line 13
+  movemarker "j" to position 3 within 5 ticks
+  highlightCode on "shellCode" line 14
+}
+{
+  unhighlightCode on "shellCode" line 14
+  highlightCode on "shellCode" line 11
+}
+{
+  unhighlightCode on "shellCode" line 11
+  arrayPut "4" on "array" position 3
+  highlightArrayCell on "array" position 3 within 0 ticks
+  unhighlightArrayCell on "array" position 2 within 0 ticks
+  highlightCode on "shellCode" line 13
+}
+{
+  unhighlightCode on "shellCode" line 13
+  movemarker "j" to position 2 within 5 ticks
+  highlightCode on "shellCode" line 14
+}
+{
+  unhighlightCode on "shellCode" line 14
+  highlightCode on "shellCode" line 11
+}
+{
+  unhighlightCode on "shellCode" line 11
+  arrayPut "3" on "array" position 2
+  highlightArrayCell on "array" position 2 within 0 ticks
+  unhighlightArrayCell on "array" position 1 within 0 ticks
+  highlightCode on "shellCode" line 13
+}
+{
+  unhighlightCode on "shellCode" line 13
+  movemarker "j" to position 1 within 5 ticks
+  highlightCode on "shellCode" line 14
+}
+{
+  unhighlightCode on "shellCode" line 14
+  highlightCode on "shellCode" line 11
+}
+{
+  unhighlightCode on "shellCode" line 11
+  arrayPut "2" on "array" position 1
+  highlightArrayElem on "array" position 1 within 0 ticks
+  highlightCode on "shellCode" line 16
+}
+{
+  highlightArrayCell on "array" position 1 within 0 ticks
+  unhighlightArrayElem on "array" position 1 within 0 ticks
+}
+{
+  unhighlightCode on "shellCode" line 16
+  movemarker "i" to position 5 within 5 ticks
+  highlightCode on "shellCode" line 7
+}
+{
+  unhighlightCode on "shellCode" line 7
+  highlightArrayElem on "array" position 5 within 0 ticks
+  highlightCode on "shellCode" line 9
+}
+unhighlightArrayElem on "array" position 5 within 0 ticks
+{
+  unhighlightCode on "shellCode" line 9
+  movemarker "j" to position 5 within 5 ticks
+  highlightCode on "shellCode" line 10
+}
+{
+  unhighlightCode on "shellCode" line 10
+  highlightCode on "shellCode" line 11
+}
+{
+  unhighlightCode on "shellCode" line 11
+  arrayPut "6" on "array" position 5
+  highlightArrayCell on "array" position 5 within 0 ticks
+  unhighlightArrayCell on "array" position 4 within 0 ticks
+  highlightCode on "shellCode" line 13
+}
+{
+  unhighlightCode on "shellCode" line 13
+  movemarker "j" to position 4 within 5 ticks
+  highlightCode on "shellCode" line 14
+}
+{
+  unhighlightCode on "shellCode" line 14
+  highlightCode on "shellCode" line 11
+}
+{
+  unhighlightCode on "shellCode" line 11
+  arrayPut "5" on "array" position 4
+  highlightArrayElem on "array" position 4 within 0 ticks
+  highlightCode on "shellCode" line 16
+}
+{
+  highlightArrayCell on "array" position 4 within 0 ticks
+  unhighlightArrayElem on "array" position 4 within 0 ticks
+}
+{
+  unhighlightCode on "shellCode" line 16
+  highlightCode on "shellCode" line 7
+}
+{
+  unhighlightCode on "shellCode" line 7
+  highlightCode on "shellCode" line 5
+}
+unhighlightCode on "shellCode" line 5
+{
+  variable "nrComparisons"
+  assign "nrComparisons" = 13
+  variable "nrAssignments"
+  assign "nrAssignments" = 18
+}
+embed "shellSortFooter.asu"

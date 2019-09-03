@@ -1,0 +1,11 @@
+int straightSelection(int[] data, int value): @CodeLabel("header")
+  if (array is null) @CodeLabel("ifNull")
+    return -1;
+  set nrElems = length of array; @CodeLabel("getArrayLength")
+  set loop counter i = 0; @CodeLabel("installMarker")
+  while i is less than nrElems and array element i != value: @CodeLabel("whileLoop")
+    increment i; @CodeLabel("moveMarker")
+  
+  if i is less then nrElems: @CodeLabel("outerIf")
+    return i as the position of the element; @CodeLabel("return value")
+  return -1; @CodeLabel("notFound")

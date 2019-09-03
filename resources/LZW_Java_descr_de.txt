@@ -1,0 +1,7 @@
+Der Lempel Ziv Welch Algorithmus ist ein verlustfreies Kompressionsverfahren für Texte.
+Er verwendet ein Wörterbuch, um häufig vorkommende Zeichenketten durch einen Schlüssel zu ersetzen.
+In dieser textbasierten Animation werden einzelne Zeichen durch ihren jeweiligen ASCII-Wert kodiert.
+
+Ein Vorteil des LZW-Algorithmus ist, dass kein Wörterbuch aus einer Datenbank benötigt wird.
+Die Erstellung des Wörterbuchs erfolgt zur Laufzeit. So werden aufeinanderfolgende Zeichen
+sukzessive dem Wörterbuch hinzugefügt, sofern ihr Präfix bereits im Wörterbuch vorhanden ist.

@@ -1,0 +1,11 @@
+Beispiel: Der Besitzer einer kleinen Bar ist interessiert daran, unter welchen Umständen Leute in seiner Bar Billard
+spielen. Daher stellt er seinen Gästen ein paar Fragen und speichert die Ergebnisse in einer Tabelle (genannt 'Haupttabelle'). 
+Ein Eintrag enthält Informationen darüber, ob eine Person sich motiviert fühlte (MOTIVATION), ob sie sich müde fühlte (MÜDE) 
+und wieviel Geld sie mitgenommen hatte (GELD). Und schließlich beschreibt der Wert der Klasse 
+(ganz rechts, 'ja' oder 'nein'), ob die Person Billard gespielt hat oder nicht. ID3 nimmt diese Beispiele als Eingabe 
+und entwickelt ein allgemeines Konzept, wann Personen Billard spielen und wann nicht.
+
+Wenn eine neue Person die Bar betritt (mit einer gewissen Motivation, einer gewissen Menge Geld in der Tasche und 
+einer gewissen Müdigkeit), kann der Barbesitzer (wie auch du!) versuchen, vorherzusagen, ob sie Billard spielen wird. 
+Mit dem Wurzelknoten beginnend folgt man den Kanten, die zu den entsprechenden Attributwerten dieser Person gehören; 
+das Blatt, an dem man ankommt, gibt die Erwartung an (allerdings nur basierend auf den bisher gesehenen Beispiele).

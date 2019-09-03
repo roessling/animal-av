@@ -1,0 +1,79 @@
+descFormatInitStep_local = At first, we normalize\nthe color values:\nRed: %d -> %.2f\nGreen: %d -> %.2f\nBlue: %d -> %.2f
+descFormatExtremata_local = The next step is to find the extremums\n(the minimum and the maximum).
+descFormatHSLspace_local = In this case %s is the maximum (%.2f)\nand %s is the minimum (%.2f).\nIf the values are equal to each other\nthe order R, G, B will be maintained.\nThese extremums are the max / min Y value\nof the colored lines in the\ndisplayed chart.\nThe chart displays the relation between\nRed, Green and Blue by iterating all\nvalues located on the border of the\nHSL color space.\nIn contrast to the RGB color space\nthe HSL color space is a cylinder, which\ncontains all fully saturated colors an the border.
+descFormatLuminance_local = The Luminance is %.2f,\nmarked by an orange line.\n\nThe formula is:\nL = (max + min) / 2
+descFormatGrayCheck_local = We need to check if the\ncolor is a shade of gray\nThe color is gray if all values\nR, G and B are equal to each other.
+descFormatHueValue_local = Hue is %d°.\nWe need to normalize it.
+descFormatNormalisedHue_local = The normalized value of Hue is:\n%.2f = %d°\nIn the chart we see that Hue\nrepresents the angle of a color\nin the color space.
+descFormatSaturationInitial_local = At last we need the Saturation.\nThe Saturation indicates how intense a color is,\ne. g. Gray has a Saturation of 0.\nTherefore S depends on the difference between\nthe min and max value.\n\nInitially we check if the color\nis Black or White.
+descFormatBlackAndWhite_local = All values are equal %.2f,\nso the HSL value is located in the %s\ncentrum of the HSL color space.\nIt is the color %s\nWe set the S = 0.
+descFormatSaturationCalulation_local = The color is neither black nor\nwhite. The formula to calculate S is:\ns = (max - min) / (1 - |max + min - 1|)
+descFormatFinalHSL_local = The HSL color has the values:\nH = %.2f (= %d°),\nS = %.2f and\nL = %.2f.
+descFormatInitialSetup_local = In the following example\nwe convert the RGB color into a HSL color.\nThe RGB color has the values:
+descFormatFazit_local = During the calculation, we\ncreated 3 colored Rectangles.\nThese Rectangles demonstrate the relation of\nthe values Hue, Saturation and Luminance.\n\nIn the RGB color space all 3 values\nR, G and B determine the\nlightness, saturation and color gradient.\nIn the HSL color space instead\nthe value H determines the color\ngradient, S the saturation and\nL the luminance of a single color.\nSo the priorities of both color\nspaces are completely different.
+
+descFormatHueCalculationAllValuesAreEqual_local = All values are equal to each other!\nThe color must be a shade of gray.\nThe HSL color must be located in\nthe centrum of the HSL color space.\nHue itself is not important and we\ndefine it as 0.
+descFormatGrey_local = The RGB color is not a shade\nof gray. Therefore the HSL color\nmust be located in of of the following\nfields:\nRed, Yellow, Green, Cyan, Blue, Magenta\nThe area depends on the maximum value.
+domininanceDescFormat = %s dominates over %s, so\nHue is near to the %d° boundary.\nIn the following we just look\nat the %s colored line.\n\nThe Formula for Hue:\n60° * (2*fieldIndex + ((right - left) / (max - min)))\nwith:\nright = %s,\nleft = %s\nfieldIndex = %d\nfieldIndex indicates the interval\n for 0:[-60, 60], 1:[60, 180], 2:[180, 300]
+descFormatHueInterval_local = The values are not equal, so\nthe color cannot be a shade of gray.\n%s is the maximum and the\nother values differ from it.\n Hue must be located in [%d,%d].\n%s
+
+
+
+contentFormatRGBnormalise_local = RGB Value Normalization.
+contentFormatExtremata_local = Finding the Extremums
+contentFormatHSLspace_local = The border of the HSL color space as chart.
+contentFormatHueNotImportant_local = Hue without influence - a shade of gray
+contentFormatLuminance_local = Luminance
+contentFormatGrayCheck_local = A shade of Gray
+contentFormatHueCalculation_local = Hue
+contentFormatNormalisedHue_local = Normalized Hue is %.2f°
+contentFormatStaturationInitial_local = Saturation
+contentTitleFormatBlackNWhite_local = The color %s
+contentTitleFormatSaturationFormal_local = Saturation Formula
+contentTitleFinalFormat_local = The converted HSL value ( %.2f;  %.2f;  %.2f )
+contentSetup_local = Setup
+contentFormatFazit_local = Conclusion
+
+
+questionHUEString_local = In which interval is Hue?
+answerHUEA_local = Hue is in [-60 , 60]
+answerHUEB_local = Hue is in [60 , 180]
+answerHUEC_local = Hue is in [180 , 300]
+answerHUED_local = Hue is 0
+falseFeedbackHUEFormat_local = Wrong. The correct answer is: %s.\nTo find the correct answer,\nyou need to look in the chart.\nWith the help of the red, green\nand blue line, we find out where\nthe hue value will be located.
+trueFeedbackHUEFormat_local = Correct! %s
+
+
+questionLuminanceString_local = What represents the luminance value in the HSL color space?
+answerLuminanceA_local = It is the radius
+answerLuminanceB_local = It is the angle
+answerLuminanceC_local = It is the height
+falseFeedbackLuminanceFormat_local = Wrong. %s.\nInstead of the RGB color space\n the HSL color space is a standing\ncylinder. In the upper area are all brigth\ncolors located and in the lower area\nare all dark colors.\nLuminance represents the brigthness of a\ncolor, so it stands for the height.
+trueFeedbackLuminanceFormat_local = Correct! %s
+
+
+questionSaturationString_local = What represents the Saturation in the HSL color space?
+answerSaturationA_local = It is the radius
+answerSaturationB_local = It is the angle
+answerSaturationC_local = It is the height
+falseFeedbackSaturationFormat_local = Wrong. %s.\nInstead of the RGB color space\n the HSL color space is a standing\ncylinder. On the border of the cylinders\nare all completely saturated color located.\nIn the core are all shades of gray. The\nsaturation is the radius of a color.
+trueFeedbackSaturationFormat_local = Correct! %s.
+
+
+
+colorNameRed_local = Red
+colorNameGreen_local = Green
+colorNameBlue_local = Blue
+
+colorNameWhite_local = White
+colorNameBlack_local = Black
+upper_local = upper
+lowest_local = lower
+
+title_local = RGB Color to HSL Color
+
+algoAnimName_local = RGB to HSL Conversion
+genName_local =   RGB to HSL Conversion [en]
+generalAlgoDesc_local =   An Algorithmus to calculate a HSL Color by a given RGB Color.\n\nIn the HSL color space are 3 important components to describe the location of colors:\nThe color gradient hue,\nthe color saturation and\nthe lightness.\n\nHue is the angle in the cylindric color space (e.g. 0° red, 120° green, 240° blue, ...).\nThe Saturation S indicates the color saturation (difference from gray in percentage).\nThe value S = 0 (%) is just gray, the value S = 100 (%) indicates full saturation - S is the distance from the center of the HSL color space.\nThe Lightness L indicates the brightness of a color, e.g. the value L = 0 is for complete black, the value L = 1 describes the color white - so the Luminance L is the height in the HSL color space.\n\nThis animation is about a RGB to HSL translation and shows the special meaning of the HSL color space components.
+
+

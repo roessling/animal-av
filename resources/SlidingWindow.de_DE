@@ -1,0 +1,55 @@
+noSuchKeyException=There is no resource for the key {0}
+iconNotFound=Icon "{0}" not found
+
+title=Sliding Window Protokoll
+sender=Sender
+receiver=Empfänger
+upper=obere Grenze
+lower=untere Grenze
+buffer=freier Pufferspeicher
+frame=Packet
+ack=Bestätigung
+error=Die Aktion wird normal ausgeführt. Auf dem Übertragungsweg findet der Fehler statt.
+intro=Einführung
+received=erhalten
+time=Zeit
+description=Das Sliding Window Protokoll versucht die kompletten Kapazitäten der Verbindung zwischen Sender und Empfänger auszunutzen. Hierfür hat der Sender eine Liste von Sequenznummern und eine Anzahl von Packeten, die übertragen werden sollen.
+description1=Wird ein Packet erfolgreich dem Empfänger zugestellt, sendet dieser eine Bestätigung zurück an den Sender. Kommt die Bestätigung an, kann der Sender ein weiteres Packet schicken. Sollte keine Bestätigung innerhalb eines Timeouts empfangen werden, wird das Packet erneut geschickt.
+description2=Aufgrund der Packete und der Bestätigungen können beide(Sender und Empfänger) ein Fenster berechnen, ausdem herauszulesen ist, welche Packete angekommen oder bestätigt worden sind und ob weitere Packete oder Bestätigungen geschickt werden dürfen. 
+pseudo=Sender :
+pseudo1=1. Wenn erlaubt(B = freier Pufferspeicher > 0) sende das nächste Frame an den Empfänger.
+pseudo2=2. Erhöhe obere Grenze(UB) um eins, falls es sich um ein noch nicht übertrages Frame handelt. Wenn es eine erneute Übertragung ist, erhöhe UB nicht.
+pseudo3=3. Erhöhe untere Grenze(LB) um eins, falls es sich um eine noch nicht erhaltene Bestätigung(ACK) handelt. Sollte dies ein Duplikat sein erhöhe LB nicht.
+pseudo4=   (da wir including Acknowledgement verwenden werden alle noch nicht bestätigten Packete, die niedriger als die Sequenznummer sind, mit bestätigt)
+pseudo5=4. Sollte ein Timeout vorliegen gehe zu 1., falls in diesem Zeitslot noch keine Aktion ausgeführt wurde.
+pseudo6=Empfänger : 
+pseudo7=1. Akzeptiere alle Packete deren Sequenznummer zwischen LB und UB liegen.
+pseudo8=2. Sobald das Packet mit Sequenznummer LB empfangen wird, erhöhe LB um die Anzahl aufeinander folgenden Sequenznummern startend mit LB.
+pseudo9=3. Sende ACK mit der höchsten Sequenznummer die bisher empfangen wurde, um ACKs zu sparen.
+pseudo10=4. Sollte ein Timeout vorliegen gehe zu 1., falls in diesem Zeitslot noch keine Aktion ausgeführt wurde.
+des=Beschreibung
+ps=Pseudo Code
+conclusion=Fazit
+conclusion1=Das letzte ACK wurde erhalten und die Übertragung ist erfolgreich abgeschlossen. Der Algorithmus hat
+conclusion2=Zeiteinheiten gebraucht um die Übertragung abzuschließen.
+sourcecode=sende Packet;
+sourcecode1=starte den Timeoutzähler für dieses Packet;
+sourcecode2=erhöhe U um 1;
+sourcecode3=if(timeout tritt auf)
+sourcecode4=schicke Packet erneut;
+sourcecode5=if(Bestätigung erhalten)
+sourcecode6=if(Bestätigung wurde davor noch nicht erhalten)
+sourcecode7=setze L auf die Sequenznummer + 1;
+sourcecode8=aktualisiere B = windowSize - U + L;
+sourcecodeR=if(Packet erhalten)
+sourcecodeR1=if(Sequenznummer > L && Sequenznummer <= U && nicht bereits erhalten)
+sourcecodeR2=erhöhe L nicht;
+sourcecodeR3=sende keine Bestätigung, da auf nächstes Packet gewartet wird;
+sourcecodeR4=if(Sequenznummer == L)
+sourcecodeR5=erhöhe L auf die höchste bisher akzeptierte Sequenznummer + 1;
+sourcecodeR6=bereite das Senden einer Bestätigung mit der bisher am höchsten akzeptierten Sequenznummer vor;
+sourcecodeR7=schicke Bestätigung erneut;
+sourcecodeR8=starte den Timeoutzähler für diese Bestätigung;
+sourcecodeR9=erhöhe U auf gesendete Sequenznummer + windowSize;
+sourcecodeR10=aktualisiere B = U - L + 1;
+validate=muss größer sein als

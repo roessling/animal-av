@@ -1,0 +1,208 @@
+title#Algorithmus Round Robin
+Bsp1-P1#Word
+Bsp1-P2#Excel
+Bsp1-P3#GIMP
+Bsp1-P4#PowerPoint
+Bsp2-P1#Prozess 1
+Bsp2-P2#Prozess 2
+Bsp2-P3#Prozess 3
+Bsp2-P4#Prozess 4
+Bsp3-P1#SysCheck
+Bsp3-P2#START
+Bsp3-P3#Backup
+Bsp3-P4#SteamUpd
+Bsp3-P5#NASA8374
+Bsp3-P6#DefRoutine
+        #___________________________________________________________________|
+mRemove1#Der Prozess ist vollständig abgearbeitet, deshalb wird der er aus
+mRemove2#der Warteschlange (Queue) entfernt.
+        #___________________________________________________________________|
+mRotate1#zeitscheibe = 0: Der Prozessor hat nun k Schritte an einem Prozess
+mRotate2#gearbeitet, jetzt ist der nächste an der Reihe. Dafür wird der aktuelle
+mRotate3#Prozess an das Ende der Warteschlange (Queue) verschoben.
+            #___________________________________________________________________|
+mNewProcess1#Ein neuer Prozess soll bearbeitet werden, dieser muss sich am Ende
+mNewProcess2#der Warteschlange (Queue) einordnen.
+     #___________________________________________________________________|
+mWait#Aktuell befindet sich kein Prozess in der Warteschlange (Queue).
+      #___________________________________________________________________|
+mWork1#Der Prozessor arbeitet eine Zeiteinheit lang am aktuell ersten 
+mWork2#Prozess in der Warteschlange (Queue).
+              #_________________________________________________________________________________________|
+startText1-id1#Bei diesem Beispiel geht es darum, die allgemeine Funktionsweise von RoundRobin zu 
+startText2-id1#verstehen. Die ersten 3 Prozesse kommen nacheinander innerhalb der ersten 3 Zeiteinheiten,   
+startText3-id1#der 4. bei Schritt 25. Sie haben die Ausführungszeiten 10, 5, 3 und 2.
+startText4-id1#Hier bietet es sich an, mit dem Parameter k zu spielen und sich anzuschauen, wie sich die
+startText5-id1#Wartezeit der einzelnen Prozesse verändert.
+startText6-id1#Tipp: Wenn du Beispielnummer 4 eingibst, kannst du eigene Prozesse angeben!
+		        #_________________________________________________________________________________________|
+endText1-id1-inf#Alle Prozesse wurden ausgeführt.
+endText2-id1-inf#Probiere doch das selbe Beispiel noch einmal mit einer anderen Größe für k aus und 
+endText3-id1-inf#schau, was sich verändert!
+endText4-id1-inf# 
+endText5-id1-inf# 
+endText6-id1-inf# 
+		        #_________________________________________________________________________________________|
+endText1-id1-inc#Der Prozessor hat es nicht geschafft alle Prozesse bis zum Ende auszuführen.
+endText2-id1-inc#Welche(r) Prozess(e) ist/sind noch übrig? 
+endText3-id1-inc#Was passiert, wenn du den Wert für k änderst?
+endText4-id1-inc# 
+endText5-id1-inc# 
+endText6-id1-inc# 
+              #_________________________________________________________________________________________|
+startText1-id2#Paul möchte eine Präsentation zum Thema "Round Robin Scheduling" erstellen. Hierfür benutzt 
+startText2-id2#er verschiedene Programme. Texte schreibt er mit Word, Tabellen erstellt er mit Excel 
+startText3-id2#und Bilder bearbeitet er mithilfe von GIMP. Am Ende fügt er alles in PowerPoint zusammen,
+startText4-id2#doch wie sieht das im Prozessor seines (sehr alten) Computers aus?
+startText5-id2# 
+startText6-id2# 
+		        #_________________________________________________________________________________________|
+endText1-id2-inf#Paul ist fertig mit seiner Präsentation. Der Prozessor hat trotz seines Alters nicht viele 
+endText2-id2-inf#Schritte gebraucht, um alle Prozesse abzuarbeiten. 
+endText3-id2-inf# 
+endText4-id2-inf# 
+endText5-id2-inf# 
+endText6-id2-inf# 
+                #_________________________________________________________________________________________|
+endText1-id2-inc#Paul konnte seine Präsentation leider nicht fertigstellen. Der Prozessor hat sich, 
+endText2-id2-inc#wahrscheinlich wegen des hohen Alters, aufgehängt.
+endText3-id2-inc# 
+endText4-id2-inc#  
+endText5-id2-inc# 
+endText6-id2-inc# 
+              #___Raketenstart__________________________________________________________________________|
+startText1-id3#Es ist soweit: Die NASA startet eine Rakete in Richtung Mars. Die Astronauten haben sich
+startText2-id3#zur Unterhaltung auf der langen Reise Steam auf den PC geladen.
+startText3-id3#Doch wird die Rakete überhaupt fehlerfrei starten? 
+startText4-id3#Das kann sie nur, wenn der 'START'-Prozess bis zum Ablauf des Timers abgearbeitet wird.
+startText5-id3#Mal sehen, ob das der Fall ist...
+startText6-id3# 
+                  #_________________________________________________________________________________________|
+startText1-id3-sim#Die NASA bereitet sich auf einen neuen Raketenstart vor, hierbei geht es um die Landung
+startText2-id3-sim#auf dem Mars. 
+startText3-id3-sim#Um sicherzugehen, dass der Start auch funktioniert, wird dieser vorher simuliert. Wenn der
+startText4-id3-sim#Prozess 'START' bis zum Ende des Arrays (Timer) abgearbeitet wurde, wird die Rakete
+startText5-id3-sim#fehlerfrei starten.
+startText6-id3-sim#Ist dies der Fall oder müssen die Ingenieure das Schedulingverfahren umstellen? 
+		        #_________________________________________________________________________________________|
+endText1-id3-inf#Die Simulation ist fertig, es gab keine Fehler, aber wurde die Zeit eingehalten, in der 
+endText2-id3-inf#der Prozess 'START' abgearbeitet sein muss? 
+endText3-id3-inf# 
+endText4-id3-inf#Wenn du denkst, der Start wird fehlerfrei ablaufen, dann probiere es aus, indem du den
+endText5-id3-inf#Unendlichkeitsmodus abschaltest.
+endText6-id3-inf# 
+                #_________________________________________________________________________________________|
+endText1-id3-inc#3 ... 2 ... 1 ... die Rakete steht immer noch auf der Erde!
+endText2-id3-inc# 
+endText3-id3-inc#Scheinbar wurde der Prozess 'START' nicht vollständig ausgeführt, sodass die Rakete nicht
+endText4-id3-inc#starten konnte. Hier müssen die Ingenieure wohl das Scheduling-Verfahren überarbeiten,
+endText5-id3-inc#damit der Start das nächste Mal erfolgreich ist. 
+endText6-id3-inc#Tipp: Passe k an!
+                 #_________________________________________________________________________________________|
+endText1-id3-comp#3 ... 2 ... 1 ... und die Rakete hebt ab! :-)
+endText2-id3-comp# 
+endText3-id3-comp#Super! Du hast das Schedulingverfahren richtig angepasst, sodass der 'START'-Prozess  
+endText4-id3-comp#rechtzeitig abgearbeitet werden konnte. Die Rakete ist abgehoben und die Astronauten 
+endText5-id3-comp#befinden sich auf dem Weg zum Mars.
+endText6-id3-comp#Ob sie dort Marsmännchen treffen? ;-)
+              #_________________________________________________________________________________________|
+startText1-id4#Hier kannst du deine eigenen Beispiele testen.
+startText2-id4#Wenn du deine Prozesse schon in den Einstellungen erstellt hast, kannst du dir hier
+startText3-id4#anschauen, wie diese vom Prozessor verwaltet werden. 
+startText4-id4# 
+startText5-id4#Viel Spaß beim Ausprobieren :-) 
+startText6-id4# 
+		        #_________________________________________________________________________________________|
+endText1-id4-inf#Super! 
+endText2-id4-inf#Alle deine Prozesse wurden fertig abgearbeitet.
+endText3-id4-inf# 
+endText4-id4-inf# 
+endText5-id4-inf# 
+endText6-id4-inf# 
+		        #_________________________________________________________________________________________|
+endText1-id4-inc#Der Prozessor hatte offensichtlich nicht genug Zeit, alle deine Prozesse in der vorgegebenen
+endText2-id4-inc#Zeit zu bearbeiten. 
+endText3-id4-inc#Wenn dir die Zeit, die der Prozessor braucht, nicht wichtig ist, kannst du in den Einstellungen
+endText4-id4-inc#den Unendlichkeitsmodus anschalten. 
+endText5-id4-inc# 
+endText6-id4-inc# 
+ #__QUESTIONS______________________________________________
+q_choiceofk#Die Wahl von k kann beeinflussen, welcher von zwei Prozessen früher fertig wird. Richtig (TRUE) oder falsch (FALSE)?
+q_choiceofk_ft#Richtig. Durch die Wahl von k kann die Reihenfolge, in der Prozesse fertig werden, variieren.
+q_choiceofk_ff#Das ist falsch. Die Wahl von k kann die Reihenfolge, in der Prozesse fertig werden, beeinflussen.
+q_interrupted#Ist der folgende Satz richtig (TRUE) oder falsch (FALSE)? Die Ausführung eines Prozesses kann vom Prozessor unterbrochen werden, wenn Round-Robin-Scheduling verwendet wird.
+q_interrupted_ft#Richtig. Der Prozessor kann die Ausführung eines Prozesses unterbrechen, um einen anderen Prozess auszuführen.
+q_interrupted_ff#Das ist falsch. Der Prozessor kann die Ausführung eines Prozesses unterbrechen, um einen anderen Prozess auszuführen.
+q_thebigger#Welche beiden Satzenden sind korrekt? Je größer der Wert von k ist ->
+q_thebigger_a1# -> desto seltener finden Wechsel des aktuellen Prozesses statt.
+q_thebigger_f1#Weniger Wechsel des auszuführenden Prozesses: Das ist richtig.
+q_thebigger_a2# -> desto weniger Zeit braucht die Ausführung einer festen Menge von Prozessen (angenommen, die Wechsel kosten keine Zeit).
+q_thebigger_f2#Weniger Zeit: Das ist nicht richtig. Die Ausführungszeit der Prozesse insgesamt bleibt für alle k gleich.
+q_thebigger_a3# -> desto mehr Prozesse werden in einem festen Zeitintervall teilweise bearbeitet.
+q_thebigger_f3#Mehr Prozesse: Das ist falsch. Ein größeres k bedeuted weniger Prozesswechsel im Prozessor, also werden in einem festen Zeitintervall weniger Prozesse teilweise bearbeitet.
+q_thebigger_a4# -> desto länger wird ein Prozess ausgeführt, bis zum nächsten Prozess gewechselt wird.
+q_thebigger_f4#Längere Ausführungszeit: Das ist richtig. Der Parameter k gibt an, wie groß das Zeitintervall ist, das für die Ausführung eines Prozesses reserviert ist.
+q_whichk_1#Angenommen es existieren zwei Prozesse:
+q_whichk_2#Prozess A kommt zum Zeitpunkt 0 an und braucht 4 Zeiteinheiten.
+q_whichk_3#Prozess B kommt zum Zeitpunkt 1 an und braucht 3 Zeiteinheiten.
+q_whichk_4#Wähle den kleinsten Wert für k aus, für den Prozess B vor Prozess A fertig wird!
+q_whichk_f1#Richtig: Mit Wert 3 für k ist B vor A fertig. Ausführung: A -> A -> A -> B -> B -> B (fertig) -> A (fertig)
+q_whichk_f2#Falsch: Mit Wert 2 für k ist A vor B fertig. Ausführung: A -> A -> B -> B -> A -> A (fertig!) -> B (fertig)
+q_whichk_f3#Falsch: Mit Wert 4 für k ist A vor B fertig. Ausführung: A -> A -> A -> A (fertig!) -> B -> B -> B (fertig)
+q_howmanyswitches_1#Der Wert für Parameter k ist 2. Es existieren zwei Prozesse:
+q_howmanyswitches_2#Prozess A kommt zum Zeitpunkt 1 und braucht 5 Zeiteinheiten.
+q_howmanyswitches_3#Prozess B kommt zum Zeitpunkt 2 und braucht 7 Zeiteinheiten.
+q_howmanyswitches_4#Wie oft tauscht der Prozessor die Prozesse?
+q_howmanyswitches_f#Richtig! Fünfmal werden die Prozesse getauscht: [kein Prozess] -> A -> A -[Wechsel 1]> B -> B -[Wechsel 2]> A -> A -[Wechsel 3]> B -> B -[Wechsel 4]> A -[Wechsel 5]> B -> B -> B
+q_whichks_1#Angenommen, es existieren 2 Prozesse:
+q_whichks_2#Prozess A kommt zum Zeitpunkt 1 und braucht 4 Zeiteinheiten.
+q_whichks_3#Prozess B kommt zum Zeitpunkt 0 und braucht 6 Zeiteinheiten.
+q_whichks_4#Wähle alle Werte für k aus, mit denen Prozess A vor dem Zeitpunkt 8 fertig wird! Tipp: Es gibt 3 richtige Antworten.
+q_whichks_f1#1: Richtig! Das ist die Ausführung: B -> A -> B -> A -> B -> A -> B -> A (fertig) -[Zeitpunkt 8]> B -> B (fertig)
+q_whichks_f2#2: Richtig! Das ist die Ausführung: B -> B -> A -> A -> B -> B -> A -> A (fertig) -[Zeitpunkt 8]> B -> B (fertig)
+q_whichks_f3#3: Das ist nicht richtig! Das ist die Ausführung: B -> B -> B -> A -> A -> A -> B -> B -[Zeitpunkt 8]> B (fertig) -> A (fertig!)
+q_whichks_f4#4: Richtig! Das ist die Ausführung: B -> B -> B -> B -> A -> A -> A -> A (fertig) -[Zeitpunkt 8]> B -> B (fertig)
+q_whichks_f5#5: Das ist nicht richtig! Das ist die Ausführung: B -> B -> B -> B -> B -> A -> A -> A -[Zeitpunkt 8]> A (fertig!) -> B (fertig)
+q_whichks_f6#6: Das ist nicht richtig! Das ist die Ausführung: B -> B -> B -> B -> B -> B (fertig) -> A -> A -[Zeitpunkt 8]> A -> A (fertig!)
+q_rotate#Wird die Warteschlange jetzt rotiert? Ja (TRUE) oder nein (FALSE)?
+q_rotate_tt#Richtig, die Warteschlange wird rotiert, da der aktuelle Prozess noch nicht fertig ist.
+q_rotate_tf#Falsch, die Warteschlange wird nicht rotiert, da der aktuelle Prozess fertig ist und entfernt wird.
+q_rotate_ft#Falsch, die Warteschlange wird rotiert, da der aktuelle Prozess noch nicht fertig ist.
+q_rotate_ff#Richtig, der aktuelle Prozess ist fertig, also wird nicht rotiert.
+q_toEnd#Wird der aktuelle Prozess in dieser Iteration fertig ausgeführt?
+q_toEnd_tt#Richtig, der Prozess wird fertig werden.
+q_toEnd_tf#Falsch, der Prozess wird nicht fertig werden, da das Zeitintervall endet, bevor der Prozess fertig abgearbeitet ist.
+q_toEnd_ft#Falsch, der Prozess wird fertig werden.
+q_toEnd_ff#Richtig, der Prozess wird nicht fertig werden, da das Zeitintervall endet, bevor der Prozess fertig abgearbeitet ist.
+q_alreadydone#Wie viele Prozesse wurden bis jetzt vollständig ausgeführt?
+q_alreadydone_f0#Richtig, kein Prozess wurde bis jetzt vollständig ausgeführt.
+q_alreadydone_f1_a#Richtig, nur 
+q_alreadydone_f1_b# wurde bis jetzt vollständig ausgeführt
+q_alreadydone_f2_a#Richtig. Diese 
+q_alreadydone_f2_b# Prozesse wurden bis jetzt vollständig ausgeführt: 
+q_stilltodo#Wie viele Prozesse wurden bis jetzt noch nicht vollständig ausgeführt?
+q_stilltodo_f0#Richtig, alle Prozesse wurden schon vollständig ausgeführt.
+q_stilltodo_f1_a#Richtig, nur 
+q_stilltodo_f1_b# wurde noch nicht vollständig ausgeführt.
+q_stilltodo_f2_a#Richtig. Diese 
+q_stilltodo_f2_b# Prozesse wurden noch nicht (vollständig) ausgeführt.
+q_wait#Muss der Prozessor jetzt eine Zeiteinheit lang warten? Warum?
+q_wait_f-correct#Das ist richtig! 
+q_wait_f-notCorrect#Das ist falsch. 
+q_wait_a1#Ja, weil zurzeit kein Prozess in der Warteschlange ist. In der Zukunft wird nur noch ein Prozess ankommen.
+q_wait_a2#Ja, weil die Warteschlange zur Zeit leer ist. In der Zukunft werden aber noch mehrere Prozesse ankommen.
+q_wait_a3#Nein, da die Warteschlange nicht leer ist.
+q_wait_f1_a#Es ist ein Prozess in der Warteschlange, der ausgeführt werden kann.
+q_wait_f1_b#Mehr als ein Prozess wird noch ankommen.
+q_wait_f2_a#Es ist ein Prozess in der Warteschlange, der ausgeführt werden kann.
+q_wait_f2_b#Nur ein Prozess wird noch ankommen.
+q_wait_f3#Nein, es ist kein Prozess in der Warteschlange, also muss der Prozessor warten.
+q_notcompletely_1#Wähle alle Prozesse aus, die zurzeit nur teilweise bearbeitet sind! 
+q_notcompletely_2#Es gibt nur eine richtig Antwort.
+q_notcompletely_3#Es gibt 
+q_notcompletely_4# richtige Antworten.
+q_notcompletely_f-correct#: Richtig.
+q_notcompletely_f-notCorrect#: Das ist nicht richtig.
+q_notcompletely_a#Gerade ist kein Prozess teilweise bearbeitet.
+q_notcompletely_aT#Kein Prozess: Richtig.
+q_notcompletely_aF#Kein Prozess: Das ist nicht richtig. Teilweise bearbeitet sind folgende Prozesse: 

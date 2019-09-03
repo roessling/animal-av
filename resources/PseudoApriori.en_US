@@ -1,0 +1,55 @@
+algorithmName=Apriori [EN]
+
+generatorName=Apriori [EN]
+
+dataset=Training data:
+
+calculation=Calculation:
+
+explanation=Explanation:
+
+oneElementSet=Create a set for each element in the first step.
+
+calcSuppFormula=Calculate the support for each item set with the formula: |A U B| / n.\n|A U B| is the amount of examples with the attribute value yes for all attributes of (A U B).\nn is the amount of examples in the dataset.
+
+removeItemset=Remove the item sets if its support is smaller than
+
+addItemset=add all frequent item sets to S:\n
+
+noCombination=No combination for C_k+1 possible.
+
+terminates=We have created all association rules for each element of S and calculated the confidence. The algorithm terminates. \nThe set of all association rules that are confident is:\n{0}
+
+calcConfFormula=Create for each item set of S association rules and calculate the confidence value with |A U B| / |A|
+
+confOneElement=Start with the item sets with one element. All one-element item sets are confident.
+
+buildCombination=create all combinations of association rules for all frequent item sets with {0} elements 
+
+removeItemsetConf=remove all item sets if their confidence is smaller than
+
+buildCombination1=Combine each item set with the other ones.
+
+newItemset=Create new item set for:\n
+
+buildCombination2=In step k, combine all item sets that have the same first (k-1) elements.\nIn this step we have to check the first {0} elements.
+
+description= Apriori is a method for finding association rules. These rules can be used to illustrate useful coherence in databases. Set I is given and it contains all objects (items).\nAn association rule is an implication in the form of A -> B, where A and B are subsets of I. A popular application of Apriori is the analysis of shopping baskets, which allows findings such as:\n70% of customers who have bought bread have also bought milk. The procedure displays two problems. The first part determines all frequent item sets of training data D. For this purpose,\nall one-element sets of objects are started and the frequency is calculated using the support value. The support of an association is defined as:\nsupport(A->B) = support(A U B) = |A U B| / |D|\nSubsequently, all sets that do not fulfill the minimum of support are removed. The remaining sets are combined with each other and form the basis for the subsequent iteration.\nThe second problem deals with the creation of association rules. All result sets of the first problem are used. Each item set is divided into all possible combinations of two disjoint subsets.\nThe confidence provides the percentage of training data for two sets in which B also occurs when A occurs. The confidence is defined as:\nconfidence(A->B) = support(A U B) / support(A) = |A U B| / |A|\nIf an association rule does not fulfill the minimum confidence, it is removed. Finally, you get all item sets that are confident and frequent.
+
+introQuestion=Which statement is equivalent to: no one who bought milk bought water?
+introQuestionAnswer1=confidence(Milk -> Water) \= 0
+introQuestionFeedback1=Correct!
+introQuestionAnswer2=confidence(Water -> Milk) \= 1 
+introQuestionFeedback2=Wrong! 
+introQuestionAnswer3=support(Milk) \= 0
+introQuestionFeedback3=Wrong!
+
+outroQuestion=The association rules R1: (Bread -> Cheese, Milk) and R2: (Bread, Cheese -> Milk) are given. Which statement is correct? 
+outroQuestionAnswer1=support(R1) \= support(R2)
+outroQuestionFeedback1=Correct!
+outroQuestionAnswer2=support(R1) > support(R2)
+outroQuestionFeedback2=Wrong!
+outroQuestionAnswer3=support(R1) < support(R2)
+outroQuestionFeedback3=Wrong!
+
+

@@ -1,0 +1,18 @@
+public Baum id3(List<Beispiel> beispiele) {
+
+if ( beispiele.anzahlKlassen() == 1 )
+Blatt blatt = new Blatt();
+blatt.setzeBezeichnung( beispiele.bestimmeKlasseAllerBeispiele() );
+return new Baum( blatt );
+
+String besteEigenschaft = bestimmeBesteEigenschaft();
+
+Knoten knoten = new Knoten();
+knoten.setzeBezeichnung( besteEigenschaft );
+
+for ( String wert : werteVon(besteEigenschaft) )
+id3( beispiele.konstruiereReduzierteTabelleFuer(wert) );
+
+Baum neuerBaum = new Baum( knoten.haengeAn(holeAlleErzeugtenSubbaeume()) );
+return neuerBaum;
+} 

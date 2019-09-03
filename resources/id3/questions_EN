@@ -1,0 +1,51 @@
+differenceNodeLeaf1#What is the main difference between ID3's nodes and its leaves?
+differenceNodeLeaf2#Nodes represent choices, while leaves represent class predictions.
+differenceNodeLeaf3#Each tree has always only one node, but several leaves.
+differenceNodeLeaf4#That's not correct: Each tree can only have one ROOT node, but several nodes are allowed.
+differenceNodeLeaf5#This is correct! Well done!
+differenceNodeLeaf6#Nodes have a label while leaves don't.
+differenceNodeLeaf7#That's not correct: Both nodes and leaves have labels!
+recursiveDepth1#Is the following statement true or false? ID3 is a recursive algorithm with a recursion depth dependent on the input table.
+recursiveDepth2#Correct. It is true. Well done.
+recursiveDepth3#No, the sentence is true.
+partsOfDecisionTree1#Which of those elements are part of EVERY ID3 decision tree? Exactly three answers are right.
+partsOfDecisionTree2#Node
+partsOfDecisionTree3#Node: Wrong, a tree does not have to have a node; it may consist of a labeled leaf only.
+partsOfDecisionTree4#Root
+partsOfDecisionTree5#Root: Right, each tree has a root.
+partsOfDecisionTree6#Edge
+partsOfDecisionTree7#Edge: Wrong, a tree does not have to have an edge; with only one leaf, there is no edge.
+partsOfDecisionTree8#A label
+partsOfDecisionTree9#A label: Right, a tree has at least one label.
+partsOfDecisionTree10#Leaf
+partsOfDecisionTree11#Leaf: Right, a tree has at least one leaf.
+howManyColumns1#On how many table columns of an initial input table does ID3 in an ideal case only have do look at?
+howManyColumns2#Right! Ideally, the algorithm finds out that all examples share one class and produces a leaf. In that case it is only necessary to check the table column for the class entries.
+notTerminate1#Is the following statement true or false? Whenever there are inconsistencies in the data, meaning that two examples are identical except for the class values, the algorithm will not terminate.
+notTerminate2#Correct. It is true. Well done.
+notTerminate3#No, the sentence is true.
+subTrees1#Is the following statement true or false? When a node for a certain attribute is created, then ID3 will always create subtrees for every value that is contained for that attribute in the main table.
+subTrees2#Only that values which are contained in the current sub-table are used.
+subTrees3#No. The sentence is false.
+subTrees4#Correct. The sentence is false.
+anotherDescent1#Will there be another recursive descent (True) or will the recursion end now (False)?
+anotherDescent2#There are different classes, so the recursion does not end.
+anotherDescent3#Correct.
+anotherDescent4#No.
+anotherDescent5#All examples share one class, so the recursion ends.
+anotherDescent6#No.
+anotherDescent7#Correct.
+whichFeature1#Which feature will be selected now (if more the one could be chosen, please take the first according to the main table)?
+whichFeature2#This is correct! Well done.
+whichFeature3#No, '§' will be selected.
+explainsData1#Does the created tree explain the training data, i.e. will the right class be predicted for all examples of the initial table?
+explainsData2#A decision tree created by ID3 always explains all the training examples. But it may classify new (unseen) examples wrong, as it is only based on the examples seen so far.
+explainsData3#Correct.
+explainsData4#No.
+label0#the node about to be created
+label00#the newly created leaf
+label1#Which label will be assigned to §? (in lowercase letters)
+label2#Correct!
+values1#For which values of the current feature '§' are subtrees created? (§ items to check)
+values2#Correct!
+values3#No.

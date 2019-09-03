@@ -1,0 +1,39 @@
+--deutsche Dokumentation M-Wege Suchbaum
+
+-- Bei insert/remove ist {0} der eingefügte/gelöschte Schlüssel. 
+-- Die Schwierigkeitsgrade expert/intermediate/novice können jeweile 1/2/4 Zeilen 
+-- Dokumentation verarbeiten.
+
+insert.expert.de = Der M-Wege Suchbaum nach der Operation insert({0}).
+remove.expert.de = Der M-Wege Suchbaum nach der Operation remove({0}).
+insert.intermediate1.de = Der M-Wege Suchbaum nach der Operation insert({0}).
+insert.intermediate2.de = Der Schlüssel {0} wurde nach den Suchbaumkriterien eingeordnet.
+remove.intermediate1.de = Der M-Wege Suchbaum nach der Operation remove({0}).
+remove.intermediate2.de = Der Schlüssel {0} wurde von seiner Position gelöscht. 
+insert.novice1.de = Der M-Wege Suchbaum nach der Operation insert({0}).
+insert.novice2.de = Der Schlüssel {0} wurde an der passenden Position eingefügt.
+insert.novice3.de = Während dem Einfügen bleiben die Suchbaum Eigenschaften erhalten. 
+remove.novice1.de = Der M-Wege Suchbaum nach der Operation remove({0}).
+remove.novice2.de = Der Schlüssel {0} wurde von seiner Position entfernt, falls es sich dabei
+remove.novice3.de = nicht um ein Blatt handelte und es der letzte Schlüssel im Knoten war, wird die leere Stelle mit dem linken oder
+remove.novice4.de = wird die leere Stelle mit dem linken oder dem rechten Sohn aufgefüllt.
+
+--english documentation m-way searchtree
+
+-- For insert/remove {0} is the inserted/removed key. 
+-- The documentationlevels expert/intermediate/novice are able to work with
+-- 1/2/4 lines of documentation text.
+
+insert.expert.eng = M-way searchtree after operation insert({0}).
+remove.expert.eng = M-way searchtree after operation remove({0}).
+insert.intermediate1.eng = M-way searchtree after operation insert({0}).
+insert.intermediate2.eng = The key {0} was inserted.
+remove.intermediate1.eng = M-way searchtree operation remove({0}).
+remove.intermediate2.eng = The key {0} was removed from its position.
+insert.novice1.eng = The given tree originates from the operation insert({0}).
+insert.novice2.eng = The key {0} was inserted at the fitting position.
+insert.novice3.eng = The searchtree properties are preserved.
+remove.novice1.eng = The tree after remove({0}). 
+remove.novice2.eng = The key {0} was removed from its position, if it wasn´t a leaf node 
+remove.novice3.eng = and the last key in this node, the whole in the tree will be filled 
+remove.novice4.eng = with its left or right son.

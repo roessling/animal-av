@@ -1,0 +1,8 @@
+int search(String[] array, int value, int pos): @CodeLabel("header")
+  Ist das Eingabefeld leer? @CodeLabel("ifNull")
+    Falls ja: return -1;
+  Liegt pos nicht mehr im Eingabefeld? @CodeLabel("ifAtEnd")
+    Falls ja: return -1; @CodeLabel("notFound")
+  Entspricht das Element an Stelle pos dem gesuchten Wert value? @CodeLabel("ifMatch")
+    Falls ja: return pos; @CodeLabel("return value")
+  Ansonsten rufe auf search(array, value, pos + 1); @CodeLabel("recursion")

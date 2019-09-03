@@ -1,0 +1,31 @@
+[block]
+	Path Vector Routing is an extended Vector Routing Protocol used to exchange 
+	information between closed networks. Those networks are called Autonomous[br]
+	Systems.	
+[/block]
+[block]
+	[h2]The Method[/h2]
+	The most common implementation is found in the Border Gateway Protocol which 
+	is used to exchange routes on the Internet. Within the Border Gateway[br]
+	Protocol only the reachability and the path along the Autonomous Systems 
+	is announced. The complete route within one of these networks is not[br] 
+	relevant for creating routes.[br]
+	Unlike Distance Vector Routing the Path Vector Routing Protocol not only
+	saves the next (intermediate) hop but all nodes along the path. It is[br]
+	therefore easy to detect loops within a route and the ''Count to Infinity'' 
+	Problem where the distance of a route grows continuously can be avoided.
+[/block]
+[block]
+	[h2]The Animation[/h2]
+	The routing table of each node is build dynamically during the 
+	animation and not every router on the network is necessarily[br]
+	known in advance. The sorting of routing targets must therefore
+	not be in alphabetical order. This behavior suits the real[br]
+	world implementations where participants further away in the 
+	network are not known in advance but added dynamically as[br]
+	updates for the routing tables are received.[br]
+	The animation is round based which means that all routing tables
+	are generated before any updates are sent. The newly[br]
+	received information is incorporated into the routing tables on
+	the next round even if they might be available earlier.
+[/block]

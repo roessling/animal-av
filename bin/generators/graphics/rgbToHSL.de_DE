@@ -1,0 +1,78 @@
+descFormatInitStep_local = Als erstes normalisieren wir\ndie Farbwerte:\nRot: %d -> %.2f\nGr\u00fcn: %d -> %.2f\nBlau: %d -> %.2f
+descFormatExtremata_local = Als n\u00e4chstes sucht man die Grenzen,\nalso das Minimum und das\nMaximum, die im Verlauf der Berechnung\nben\u00f6tigt werden.
+descFormatHSLspace_local = In diesem Fall ist %s das Maximum (%.2f)\nund %s das Minimum (%.2f).\nBei Gleichstand wird die Reihenfolge R, G, B\neingehalten.\nDiese Extremwerte entsprechen dem Y-Wert\nder jeweiligen Hoch- bzw. Tiefpunkte der\ngef\u00e4rbten Linien im Graphen.\nDer Graph zeigt das Verhalten zwischen\nRot, Gr\u00fcn und Blau beim Durchlaufen aller \nWerte auf dem Rand des HSL Farbraums.\nIm Gegensatz zu RGB ist der HSL Farbraum \nein Zylinder, auf dessen Rand alle knalligen\n(grau-losen) Farben liegen.
+descFormatLuminance_local = Die Luminance / Leuchtkraft betr\u00e4gt %.2f,\ndargestellt als orange Linie.\nDies berechnet sich durch die Formel\nL = (max + min) / 2
+descFormatGrayCheck_local = Nun pr\u00fcfen wir, ob es sich\nbei der gegebene Farbe um einen Grauton\nhandelt. Dies ist genau dann der Fall,\nwenn alle Werte identisch sind.
+descFormatHueValue_local = Hue betr\u00e4gt %d° . \nWir m\u00fcssen diesen Wert nur noch\nnormalisieren.
+descFormatNormalisedHue_local = Der normalisierte Wert von H lautet:\n%.2f = %d°\nIm Graphen sehen wir, dass Hue\nden Winkel eines Farbwertes im\nHSL Farbraum repr\u00e4sentiert.
+descFormatSaturationInitial_local = Nun fehlt nur noch die Saturation / S\u00e4ttigung.\nDie Saturation beschreibt wie stark\nder Farbwert von Grau abweicht.\nDemnach ist S abh\u00e4ngig vom Abstand\ndes min und max Wertes.\n\nZun\u00e4chst pr\u00fcfen wir, ob es sich\nbei der gegebenen Farbe um Schwarz\noder Weis handelt.
+descFormatBlackAndWhite_local = Da alle Werte gleich %.2f sind,\nliegt des HSL-Wert im %s Zentrum des\nHSL-Farbraums.\nEs handelt sich also um %s\nDaher setzten wir S = 0.
+descFormatSaturationCalulation_local = Die gegebene Farbe ist weder schwarz\nnoch weis.\nDie Formel zur Berechnung von S lautet:\ns = (max - min) / (1 - |max + min - 1|)
+descFormatFinalHSL_local = Die HSL-Farbe hat also die Werte\nH = %.2f (= %d°),\nS = %.2f und\nL = %.2f.
+descFormatInitialSetup_local = Im folgendem Code-Beispiel wird\ndie RGB-Farbe, mit folgenden Werten\nin eine HSL Farbe umgewandelt.
+descFormatFazit_local = Im Laufe der Berechnung, wurden\n3 farbige K\u00e4stchen erstellt.\nDiese zeigen nochmal explizit\ndie Bedeutung der einzelnen Werte\nHue, Saturation und Luminance.\n\nIm RGB Farbraum bestimmen alle 3 Werte\nR, G und B die Helligkeit, den Farbverlauf\nund die S\u00e4ttigung.\nIm HSL Farbraum steht allein der Wert\nH f\u00fcr den Farbverlauf, S f\u00fcr die S\u00e4ttigung\nund L f\u00fcr die Helligkeit / Leuchtkraft.\nDie Priorit\u00e4ten beider Farbr\u00e4ume sind\nalso stark unterschiedlich.
+
+descFormatHueCalculationAllValuesAreEqual_local = Alle Werte sind identisch!\nEs muss sich um ein Grauton handeln.\nDaher liegt der HSL-Farbton im Zentrum\ndes HSL-Farbraums.\nDer Hue / Radius ist daher bedeutungslos.
+descFormatGrey_local = Es handelt sich nicht um ein Grauton.\nDemzufolge muss der HSL-Wert in einem\nder folgenden Farbbereichen liegen:\nRot, Gelb, Gr\u00fcn, Cyan, Blau, Magenta\nDer Bereich h\u00e4ngt stark vom Maximum ab.
+domininanceDescFormat = Da %s gegen\u00fcber %s dominiert, liegt\nHue n\u00e4her an der %d° Grenze an.\nWir betrachten uns also nur die\n%s gef\u00e4rbte Linie.\n \nDie Formel lautet:\n60° * (2 * feldIndex + ((right - left) / (max - min)))\nright = %s, left = %s\nfeldIndex = %d\n feldIndex zeigt auf das Interval\n f\u00fcr 0:[-60, 60], 1:[60, 180] oder\n2:[180, 300]
+descFormatHueInterval_local = Die Werte sind nicht identisch, die\nFarbe ist also kein Grauton.\nDa %s das Maximum ist und die\nanderen Werte sich davon unterscheiden,\nmuss Hue im Interval [%d,%d] liegen.\n%s
+
+
+
+contentFormatRGBnormalise_local = RGB-Werte normalisieren.
+contentFormatExtremata_local = Extrema bestimmen
+contentFormatHSLspace_local = Der Rand des HSL Raums als Graphik.
+contentFormatLuminance_local = Luminance / Leuchtkraft
+contentFormatGrayCheck_local = Grauton Pr\u00fcfung
+contentFormatHueCalculation_local = Hue Berechnung
+contentFormatHueNotImportant_local = Hue ohne Auswirkung - ein Grauton
+contentFormatNormalisedHue_local = Der normalisierter Wert von Hue betr\u00e4gt %.2f°
+contentFormatStaturationInitial_local = S\u00e4ttigung / Saturation
+contentTitleFormatBlackNWhite_local = Die Farbe %s
+contentTitleFormatSaturationFormal_local = Saturation Formel
+contentTitleFinalFormat_local = Unser HSL Wert ( %.2f;  %.2f;  %.2f )
+contentSetup_local = Setup
+contentFormatFazit_local = Fazit
+
+
+questionHUEString_local = Im welchem Interval liegt Hue?
+answerHUEA_local = Hue ist in [-60 , 60]
+answerHUEB_local = Hue ist in [60 , 180]
+answerHUEC_local = Hue ist in [180 , 300]
+answerHUED_local = Hue ist genau 0
+falseFeedbackHUEFormat_local = Falsch. Die Richtige Antwort lautet: %s\nUm die richtige Antwort zu finden,\nmuss man sich nur die Grafik anschauen.\nAnhand der 3 Linien f\u00fcr Rot, Gr\u00fcn und Blau, l\u00e4sst\nsich erkennen, wo Hue liegen muss.
+trueFeedbackHUEFormat_local = Richtig! F\u00fcr Hue gilt: %s
+
+
+questionLuminanceString_local = Was repr\u00e4sentiert die Luminance eines Farbwertes im HSL Farbraum?
+answerLuminanceA_local = Den Radius
+answerLuminanceB_local = Den Winkel
+answerLuminanceC_local = Die H\u00f6he
+falseFeedbackLuminanceFormat_local = Falsch. Die Richtige Antwort lautet: %s\nDer HSL Farbraum ist im Gegensatz zum\nRGB Farbraum ein aufrecht stehender\nZylinder. Im oberen Bereich sind helle\nFarben und im unteren dunkle.\nLuminance steht f\u00fcr die Helligkeit\nund somit die H\u00f6he eines Farbwertes.
+trueFeedbackLuminanceFormat_local = Richtig! Luminance repr\u00e4sentiert: %s
+
+
+questionSaturationString_local = Was repr\u00e4sentiert die Saturation eines Farbwertes im HSL Farbraum?
+answerSaturationA_local = Den Radius
+answerSaturationB_local = Den Winkel
+answerSaturationC_local = Die H\u00f6he
+falseFeedbackSaturationFormat_local = Falsch. Die Richtige Antwort lautet: %s\nDer HSL Farbraum ist im Gegensatz zum\nRGB Farbraum ein aufrecht stehender\nZylinder. Auf dem Rand des Zylinders\nliegen die stark ges\u00e4ttigten Farben.\nIm Kern des Zylinders sind die\nGraut\u00f6ne. Somit steht die Saturation\nf\u00fcr den Radius eines Farbwertes.
+trueFeedbackSaturationFormat_local = Richtig! Saturation repr\u00e4sentiert: %s.
+
+
+colorNameRed_local = Rot
+colorNameGreen_local = Gr\u00fcn
+colorNameBlue_local = Blau
+
+colorNameWhite_local = Weis
+colorNameBlack_local = Schwarz
+upper_local = oberstem
+lowest_local = unterstem
+
+title_local = RGB-Farbwert zu HSL-Farbwert
+
+algoAnimName_local = RGB zu HSL Konvertierung
+genName_local = RGB zu HSL Konvertierung [de]
+generalAlgoDesc_local = Algorithmus zur Berechnung eines HSL Farbwertes anhand eines RGB Farbwertes.\nDer HSL-Farbraum ist der Farbraum, bei dem man die Farbe mit Hilfe\ndes Farbwerts (hue),\nder Farbs\u00e4ttigung (saturation) und \nder Helligkeit (lightness) definiert.\n\nHue beschreibt dabei den Farbwinkel auf dem Farbkreis\n(etwa 0° f\u00fcr Rot, 120° f\u00fcr Gr\u00fcn, 240° f\u00fcr Blau usw.). Die S\u00e4ttigung S gibt in Prozent an, wie stark eine Farbe ges\u00e4ttigt ist. Der Wert 0 (%) steht dabei f\u00fcr Neutralgrau und 100 (%) f\u00fcr eine ges\u00e4ttigte, reine Farbe. Die Lightness L hingegeben beschreibt, wie stark eine Farbe leuchtet. Ist der Wert von L 0 so ist die Farbe schwarz, ist der Wert 1 so ist die Farbe weis.\n\nDiese Animation erkl\u00e4rt, wie man vom typischen RGB Farbraum zum HSL Farbraum umrechnet und welche Aufgaben die Bestandteile H, S und L besitzen.
+
+

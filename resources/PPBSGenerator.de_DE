@@ -1,0 +1,60 @@
+noSuchKeyException=There i s no r e s s o u r c e f o r the key {0}
+iconNotFound=Ic on ” {0} ” not found
+
+
+### name ###
+name = Pivot Partitioning By Scanning [DE]
+
+### algo related ###
+iter = # Iterationen
+res = Ergebnis
+
+
+### intro header ###
+in0 = Einf\u00fchrung		
+
+### intro text ###
+in1 = Pivot Partitioning by Scanning (PPbS) ordnet die Elemente in einem Array A um ein vorgegebenes Pivot-Element in-place um,
+in2 = in etwa so wie die Partitionierungsprozedur, die im Quicksort-Algorithmus genutzt wird, wie z.B. die Prozedur aus dem bekannten CLRS-Buch.
+in3 = Es gibt allerdings ein paar Unterschiede: der Algorithmus von CLRS partitioniert das Array in zwei Teile (Elemente <= und Elemente >= dem Pivot),
+in4 = gegeben ein Pivot-Element, welches immer das letzte Element in dem Array ist, wohingegen PPbS das Array in drei Teile partitioniert (<, ==, und > als das Pivot-Element),
+in5 = wobei das Pivot frei w\u00e4hlbar ist. PPbS hat allerding verschachtelte Schleifen, sodass die Zeitkomplexit\u00e4t schlechter ist.
+
+in6 = PPbS hat als R\u00fcckgabewert zwei Pointer, m1 und m2, die folgende Bedingungen erf\u00fcllen:
+in7 =   1. Es gibt m1 viele Elemente in A, deren Wert < als das vom Pivot ist
+in8 =   2. Es gibt (m2 - m1) viele Elemente in A, deren Wert == dem vom Pivot ist
+in9 =   3. Es gibt (n - m2) viele Elemente in A, deren Wert < als das vom Pivot ist, wobei n == A.length
+
+
+
+
+### outro header ###
+out0 = Letzte Worte
+
+### outro text ###
+out1 = F\u00fcr mehr Informationen rund um PPbS (z.B. Invariante, Variante, etc.), siehe
+out2 =     https://wiki.algo.informatik.tu-darmstadt.de/Pivot_partitioning_by_scanning
+
+out3 = Nabla bietet einen Aufgabengenerator für PPbS an, welchen man evtl. mit Hilfe dieser Animation l\u00f6sen k\u00f6nnte.
+out4 =     https://nabla.algo.informatik.tu-darmstadt.de/
+
+out5 = Man sollte allerdings darauf achten, dass die oben genannten Seiten eine andere Indizierung benutzen (ausgehend von 1 anstatt von 0), sodass man sich anpassen muss.
+
+
+
+
+
+### description ###
+d1 = Pivot Partitioning by Scanning (PPbS) ordnet die Elemente in einem Array A um ein vorgegebenes 
+d2 = Pivot-Element "in-place" um, in etwa so wie die Partitionierungsprozedur, die im Quicksort-Algorithmus genutzt wird,
+d3 = wie z.B. die Prozedur aus dem bekannten CLRS-Buch.                               
+d4 = Es gibt allerdings ein paar Unterschiede: der Algorithmus von CLRS partitioniert das Array in zwei Teile
+d5 = Elemente <= und Elemente >= dem Pivot), gegeben ein Pivot-Element, welches immer das letzte Element in dem Array ist,
+d6 = wohingegen PPbS das Array in drei Teile partitioniert (<, ==, und > als das Pivot-Element), wobei das Pivot frei w\u00e4hlbar ist.
+d7 = PPbS hat allerding verschachtelte Schleifen, sodass die Zeitkomplexit\u00e4t schlechter ist.                          
+
+
+d8 = PPbS hat als R\u00fcckgabewert zwei Pointer, m1 und m2, die folgende Bedingungen erf\u00fcllen:        
+d9 =  1. Es gibt m1 viele Elemente in A, deren Wert < als das vom Pivot ist   
+d10 =  2. Es gibt (m2 - m1) viele Elemente in A, deren Wert == dem vom Pivot ist   
+d11 =  3. Es gibt (n - m2) viele Elemente in A, deren Wert < als das vom Pivot ist, wobei n == A.length

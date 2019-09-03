@@ -1,0 +1,12 @@
+LIBRARY IEEE;
+USE IEEE.STD_LOGIC_1164.ALL;
+ENTITY and3 IS
+	PORT (a, b : IN STD_LOGIC; co : OUT STD_LOGIC);
+END ENTITY h_adder
+
+ARCHITECTURE fh1 OF and3 IS
+BEGIN
+	c <= (a and b);
+	co <= a AND c;
+END ARCHITECTURE fh1;
+

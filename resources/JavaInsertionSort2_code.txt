@@ -1,0 +1,14 @@
+public void insertionSort(int[] array) @CodeLabel("header")
+{
+  int i, j, temp; @CodeLabel("variables")
+  for (i=1; i<array.length; i++) @CodeLabel("outerLoop")
+  {
+    j = i; @CodeLabel("setJ")
+    temp = array[i]; @CodeLabel("takeOut")
+    while (j > 0 && array[j-1] > temp){ @CodeLabel("innerLoop")
+      array[j] = array[j-1]; @CodeLabel("moveForward")
+      j = j - 1; @CodeLabel("decrementJ")
+    }
+    array[j] = temp; @CodeLabel("insert")
+  } @CodeLabel("endOuterLoop")
+} @CodeLabel("end")

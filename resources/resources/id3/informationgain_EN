@@ -1,0 +1,23 @@
+> table is a set of examples.
+> attribute is the currently tested attribute.
+> P₊ = |{ x | x is an instance for class yes }| / |table|
+> P₋ = |{ x | x is an instance for class no }| / |table|
+> reduced_table(f, v) = { x | x contained in table with value v for feature f }
+
+entropy(table) = - (P₊) × log₂(P₊) - (P₋) × log₂(P₋)
+
+INFORMATION_GAIN(table, attribute) = 
+   entropy(table) -					 			
+         Σₓ    [ 
+                    ( |reduced_table(attribute, x)| / |table| )   *   entropy( reduced_table(attribute, x) ) 
+                ]							
+---------------------------------------------------------------------------------------------------
+
+INFORMATION_GAIN(current_table, §) 
+   = §  § = §		
+														 
+INFORMATION_GAIN(current_table, §) 
+   = §  § = §		
+
+INFORMATION_GAIN(current_table, §) 
+   = §  § = §	

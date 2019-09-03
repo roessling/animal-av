@@ -1,0 +1,13 @@
+int interpolatedSearch(int[] array, int value, int lower, int upper): @CodeLabel("header")
+  If array is empty: @CodeLabel("ifNull")
+    return -1; @CodeLabel("invalid")
+  If boundaries are invalid: @CodeLabel("invalidIndex")
+    return -1; @CodeLabel("invalidIndexReturn")
+    
+  Interpolate a good position to look for the element @CodeLabel("installMidMarker")
+  If the element at the position matches value: @CodeLabel("checkFound")
+    return current position. @CodeLabel("found")
+  If value < current element: @CodeLabel("ifLess")
+    return interpolatedSearch(array, value, l, mid - 1). @CodeLabel("continueLeft")
+  Otherwise:
+    return interpolatedSearch(array, value, mid + 1, r). @CodeLabel("continueRight")

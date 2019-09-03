@@ -1,0 +1,9 @@
+@import=resources/GenericShellSort.de_DE
+theName=Shell Sort (Pseudo Code) [DE]
+outputLanguage=Pseudo-Code
+codeExample=public void shellSort(int[] array) {\n  int i, j, dist, v;\n  for (dist = 1; dist < array.length / 9; dist = dist * 3 +1) ;\n  for (; dist > 0; dist /= 3) {\n    for (i = dist; i < array.length; i++) {\n      v = array[i];\n     j = i;\n      while (j >= dist && v < array[j - dist]) {\n        array[j] = array[j-dist]\n        j = j - dist;\n      }\n     array[j] = v;\n   }\n  }\n}
+animTitle=Shell Sort
+algoTitle=Shell Sort
+description.filename=resources/GenericShellSort_descr_de.txt
+code.filename=resources/PseudoShellSort_code.txt
+complexity.filename=resources/GenericShellSort_complexity_de.txt

@@ -1,0 +1,32 @@
+Das Verfahren Sortieren durch Einfuegen ist langsam, weil es Elemente
+immer nur um eine Position nach rechts verschiebt.
+Shellsort versucht, Elemente durch größere Spruenge schneller an die 
+Zielposition zu bringen.
+
+Dabei werden die Daten in jedem Schritt h-sortiert. Eine Datenfolge
+ist dabei h-sortiert, wenn man bei Entnahme jedes h-ten Elements ab
+einem beliebigen Startelement immer eine sortierte Folge erhält.
+
+Eine h-sortierte Datenfolge besteht daher aus h unabhängig sortierten
+Datenfolgen, die einander überlagern.
+
+Das Vorgehen von Shellsort ist dabei, dass die Datenfolge sortiert
+wird, indem mit abnehmenden h mehrere h-Sortierungen ausgeführt
+werden, wobei am Schluss eine Sortierung mit h=1 erfolgt.
+Die Folge zu verwendeter Werte für h wird auch als Inkrementfolge
+bezeichnet
+
+Der Algorithmus in Worten
+
+Es hat sich gezeigt, dass die Folge h[i+1]=3*h[i]+1 günstige
+Eigenschaften hat. Mit ihr lässt sich der Algorithmus wie folgt
+anpassen:
+
+1. Solange h<=n/9, setze h=3*h+1
+2. Setze i=h
+3. Speichere Element a[i] in einer Variablen v, und speichere i in
+einer Variablen j
+4. Solange j>h ist und a[j-h]>v, setze a[j]=a[j-h] und j=j-h
+5. Setze a[j]=v
+6. Zähle i um eins hoch. Falls i<n, fahre fort mit Schritt 3
+7. Setze h=h/3 (Integer-Division). Falls h>0, fahre fort mit Schritt 2

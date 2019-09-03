@@ -1,0 +1,44 @@
+algorithmName=Separate-and-Conquer [DE]
+generatorName=Separate-and-Conquer [DE]
+dataset=Trainingsdaten:
+conqueredData=Conquered-Daten:
+explanation=Erklärung:
+ruleset=Regelmenge:
+
+selectHighestHeuristic=Wähle den Attributwert mit der höchsten Heuristik und prüfe, ob negative Beispiele abgedeckt werden.
+
+filterAndRefine=Wähle den Attributwert mit der höchsten Heuristik und prüfe, ob negative Beispiele abgedeckt werden.\nDie Regel {0} deckt noch negative Beispiele.\nFilter alle Beispiele mit der Regel {0} und prüfe, ob eine Verfeinerung zu einer besseren Heuristik mit keinen negativen Beispielen führt.
+
+noNegativeCovered= Die Regel {0} deckt keine negativen Beispiele ab.\nFüge diese Regel zur Regelmenge hinzu.
+
+notAllPositiveCovered=Die Regelmenge deckt noch nicht alle positiven Beispiele ab. Entferne alle Beispiele mit der Regel {0}.
+
+summary=Die Regelmenge deckt {0} positive Beispiele und {1} negative Beispiele ab.
+
+filterAndRefine2=Die Regel {0} deckt negative Beispiele ab.\nFilter alle Beispiele mit dieser Regel und prüfe,\nob eine Verfeinerung zu einer höheren Heuristik ohne negative Beispiele führt.
+
+addRule=Füge diese Regel zu der Regelmenge hinzu und entferne alle Beispiele, die von dieser Regel abgedeckt werden.
+
+precisionFormula=Precision = #positive / (#positive + #negative)
+
+calc=Berechne für jeden Attributwert die Heuristik mit folgender Formel:\n
+terminates=Alle Beispiele wurden mit der Regelmenge abgedeckt. Der Algorithmus terminiert. 
+
+description=Separate-and-Conquer Algorithmen eignen sich ideal für das Erlernen von Regelmengen und teilen sich in der Vorgehensweise, wie der Name bereits erahnen lässt, in zwei Teile auf.\nIm Conquer-Teil wird eine Regel gelernt, die eine Teilmenge der Daten abdeckt. Die Auswahl der Regel findet anhand von entsprechenden Heuristiken statt und muss hierbei nicht die Korrektheit erfüllen.\nAnschließend wird die Regel solange auf dieser Teilmenge rekursiv angepasst, bis sie ein entsprechendes Kriterium erfüllt. Dies könnte beispielsweise die Abdeckung von keinen negativen Beispielen sein.\nIm Separate-Teil werden anschließend alle Beispiele entfernt, die von der zuvor erlernten Regel abgedeckt werden. Dieser Prozess wird solange wiederholt, bis die erlernte Regelmenge beispielsweise\ndie Vollständigkeit erfüllt. Für die Umsetzung von Separate-and-Conquer stehen zwei mögliche Ansätze zur Auswahl. Eine davon ist die sogenannte Top-Down Hill Climbing Variante. Hierbei wird von der\nallgemeinsten Regel ausgegangen, die alle Beispiele abdeckt und durch das Hinzufügen einzelner Bedingungen sukzessive verfeinert wird. Die Bottom-Up Lern-Strategie verhält sich entgegengesetzt und beginnt mit der spezifischsten Regel, die sukzessive verallgemeinert wird.\nDieser Algorithmus wurde in der Variante des Top-Down Hill Climbing implementiert.
+
+introQuestion=Was ist der Vorteil von Regelmengen im Vergleich zu einer einzelnen Regel? 
+introQuestionAnswer1=Eine Regelmenge kann alle positiven Beispiele abdecken.
+introQuestionFeedback1=Richtig!
+introQuestionAnswer2=Eine Regelmenge findet immer die perfekte Lösung, die kein negatives Beispiel abdeckt.
+introQuestionFeedback2=Falsch!
+introQuestionAnswer3=Eine Regelmenge ist effizienter zu lernen.
+introQuestionFeedback3=Falsch!
+
+outroQuestion=Wie sind viele, kurze einzelne Regeln in einer Menge zu bewerten?
+outroQuestionAnswer1=Eher schlecht, da es zu overfitting neigt.
+outroQuestionFeedback1=Richtig!
+outroQuestionAnswer2=Eher gut, da es gut verallgemeinert.
+outroQuestionFeedback2=Falsch! Es neigt eher zu Overfitting.
+outroQuestionAnswer3=Es macht keinen Unterschied.
+outroQuestionFeedback3=Falsch!
+

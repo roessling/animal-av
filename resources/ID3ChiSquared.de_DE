@@ -1,0 +1,63 @@
+intro1 = ID3 ist ein Data-Mining/Machine-Learning Algorithmus zur Erstellung eines Entscheidungsbaums aus einem konsistenten Trainingsdatensatz.
+intro2 = Alle Trainingsdaten besitzen diesselbe Anzahl an Attributen und ein Label, was beschreibt, zu welcher Klasse die Daten geh\u00f6ren.
+intro3 = Initial wird der Trainingsdatensatz dem Ursprungsknoten \u00fcbergeben.
+intro4 = Zuerst m\u00fcssen wir die Entropy des Ursprungsknotens ausrechnen:
+intro5 = Entropy = Die Summe \u00fcber jeder Klasse von (-Verteilung der Klasse * log2(Verteilung der Klasse) )
+intro6 = Danach \u00fcberpr\u00fcft der Algorithmus, welches Attribute die beste Spaltung im Datensatz produziert.
+intro7 = (Das optimale Resultat gibt ein Attribut, welches den Datensatz so spaltet, dass alle Kindknoten nur noch eine Klasse enthalten.)
+intro8 = Hierzu muss zun\u00e4chst die Entropy jedes Kindknotens und dann der Gain des Attributs berechnet werden:
+intro9 = Gain = Entropy des Knoten - Summe \u00fcber jeden Kindknoten von ( Entropy des Kindknotens * |Datensatz des Kindes| / |Datensatz des Knotens| )
+intro10 = Das Attribut mit dem h\u00f6chsten Gain produziert die beste Spaltung.
+intro11 = Aber bevor wir den Baum vergr\u00f6\u00dfern, m\u00fcssen wir den Chi_Quadrat-Test auf das beste Attribut ausf\u00fchren, um zu \u00fcberpr\u00fcfen, ob die Spaltung des Datensatzes signifikant genug ist.
+intro12 = Dadurch soll vermieden werden, dass ein ganzer Teilbaum erstellt werden muss, nur weil zum Beispiel eins von zehn Datenbeispielen zu einer anderen Klasse geh\u00f6rt.
+intro13 = Schl\u00e4gt der Test fehl, kann der Knoten einfach klassifiziert werden.
+intro14 = Der Test l\u00e4uft folgenderma\u00dfen ab:
+intro15 = Man erstellt eine Beobachtet-Matrix. Die Spalten repr\u00e4sentieren die Werte des Attributs, die Zeilen repr\u00e4sentieren die Klassen in dem Datensatz.
+intro16 = Das Element (i,j) beschreibt die Anzahl an Beispielen im Datensatz, die den Wert j des Attributs besitzen und zur Klasse i geh\u00f6ren.
+intro17 = Danach berechnen wir die Summe von jeder Zeile, jeder Spalte und die Summe jedes einzelnen Elements. Wir ben\u00f6tigen diese Informationen, um die Erwartet-Matrix zu berechnen.
+intro18 = Das Element (i,j) der Erwartet-Matrixis wird folgenderma\u00dfen berechnet:
+intro19 = (Summe der Zeile i * Summe der Spalte j) / Summe jedes Elements.
+intro20 = Schlie\u00dflich k\u00f6nnen wir Chi_Quadrat berechnen:
+intro21 = Chi_Quadrat = Summe \u00fcber jedes i,j von ((Erwartet-Matrix[i][j] - Beobachtet-Matrix[i][j])^2 / Erwartet-Matrix[i][j])
+intro22 = Der Test ist erfolgreich, wenn Chi_Quadrat gr\u00f6\u00dfer als der gegebene Grenzwert ist.
+intro23 = Ist der Test erfolgreich, kann der Algorithmus fortfahren.
+intro24 = Der Algorithmus erstellt einen Kindknoten f\u00fcr jeden Wert des Attributs mit dem h\u00f6chsten Gain.
+intro25 = Die Kindknoten erhalten dann den Datensatz, der nur die Datenbeispiele mit dem zugeh\u00f6rigen Wert enth\u00e4lt,
+intro26 = und das Attribut selbst wird aus dem Datensatz entfernt.
+intro27 = (Zum Beispiel: Das Attribut Weather mit den drei Werten sunny, rainy und cloudy besitzt den h\u00f6chsten Gain und der Chi_Quadrat-Test war erfolgreich.
+intro28 = Der erste Kindknoten erh\u00e4lt dann alle Datenbeispiele, die den Wert sunny auf dem Attribut Weather besitzen.
+intro29 = Der zweite Kindknoten erh\u00e4lt alle, die den Wert rainy besitzen, etc.)
+intro30 = Schlie\u00dflich wenden wir den Algorithmus rekursive auf jeden Kindknoten an. Der Algorithmus terminiert, wenn der Datensatz nur noch eine Klasse enth\u00e4lt oder der Chi_Quadrat-Test fehlschl\u00e4gt.
+description = ID3 ist ein Data-Mining/Machine-Learning Algorithmus zur Erstellung eines Entscheidungsbaums aus einem konsistenten Trainingsdatensatz. Alle Trainingsdaten besitzen diesselbe Anzahl an Attributen und ein Label, was beschreibt, zu welcher Klasse die Daten geh\u00f6ren.\n\
+    Konsistent bedeutet, dass es in dem Datensatz keine Datenbeispiele gibt, die in jedem Attribut denselben Wert besitzen.\n\
+    Der Algorithmus \u00fcberpr\u00fcft, welches Attribut das beste ist, um den Datensatz zu teilen. Ist dies geschehen, erstellt der Algorithmus ein Kindknoten f\u00fcr jeden Wert des gew\u00e4hlten Attributs.\n\
+    Der Algorithmus terminiert, sobald nur noch eine Klasse im Datensatz vorhanden ist oder der Chi_Quadrat Test fehlschl\u00e4gt.\n\n\
+    Der Datensatz, der Grenzwert f\u00fcr den Chi Quadrat Test und die Highlight Farbe der Knoten sind einstellbar.
+pseu1 = Wenn nur eine Klasse sich im Datensatz befindet,
+pseu2 = dann klassifiziere den Knoten und return
+pseu3 = berechne die Entropy des Knotens
+pseu4 = f\u00fcr jedes Attribut:
+pseu5 = |   erstelle einen Kindknoten f\u00fcr jeden Wert des Attributs
+pseu6 = |   berechnne die Entropy f\u00fcr jeden Kindknoten
+pseu7 = |   berechne den Gain
+pseu8 = w\u00e4hle das Attribut mit dem h\u00f6chsten Gain und speichere die Kinder
+pseu9 = berechne Chi_Quadrat f\u00fcr das gew\u00e4hlte Attribut
+pseu10 = wenn Chi_Quadrat > Grenzwert
+pseu11 = dann zeichne die Kindknoten
+pseu12 = rufe ID3 auf jeden Kindknoten rekursiv auf
+pseu13 = ansonsten
+pseu14 = klassifiziere den Knoten und return
+best_attribute = Bestes Attribut =
+class = Klasse
+distribution = Verteilung
+class_distribution = Klassenverteilung
+chi_squared_test = Chi_Quadrat Test
+expected_formula = erwartet[x][y] = Erscheinen von Klasse x * Erscheinen von Wert y / Summe aller Beispiele
+expected = Erwartet
+observed = Beobachtet
+sum = Summe
+chi_formula = Chi_Quadrat = Summe von ((erwartet[x][y] - beobachtet[x][y])^2 / erwartet[x][y])
+threshold = Grenzwert
+summary = Der Baum wurde erfolgreich erstellt. Versuch einen anderen Grenzwert, um zu sehen wie sich der Baum verändert.
+introduction = Einführung
+result = Ergebnis

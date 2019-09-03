@@ -1,0 +1,41 @@
+#
+# Internationalization (I18N) resources for the BoxPointerEditor
+#
+# title for the border around the text box and pointer color settings
+BoxPointerEditor.boxColBL.toolTipText=Textbox/Pointer Colors
+BoxPointerEditor.boxColBL=Textbox/Pointer Colors
+# label for the text box and pointer color
+BoxPointerEditor.boxPtrColorLabel=Outline and pointer color:
+# label for the text box and pointer color
+BoxPointerEditor.boxPtrColor=text box and pointer color
+# label for the text color
+BoxPointerEditor.textColor=text color
+# button definition for "make null pointer"
+BoxPointerEditor.nullPtrButton.iconName=
+BoxPointerEditor.nullPtrButton.label=Make null pointer
+BoxPointerEditor.nullPtrButton.mnemonic=n
+BoxPointerEditor.nullPtrButton.toolTipText=Reset the pointers to the null position
+# label for the color of the pointer box (with space at the end)
+BoxPointerEditor.pointerBoxColorLabel=Pointer box color: 
+# label for the number of pointers (with space at the end)
+BoxPointerEditor.pointerCountLabel=# pointers: 
+# label for the position of the pointer(s) (with space at the end)
+BoxPointerEditor.pointerPositionLabel=Position: 
+# text for the "bottom" position of the pointer
+BoxPointerEditor.positionBottom=bottom
+# text for the "left" position of the pointer
+BoxPointerEditor.positionLeft=left
+# text for the "none" position of the pointer
+BoxPointerEditor.positionNone=none
+# text for the "right" position of the pointer
+BoxPointerEditor.positionRight=right
+# text for the "top" position of the pointer
+BoxPointerEditor.positionTop=top
+# title for the border around the color settings for the pointer box
+BoxPointerEditor.ptrBoxBL.toolTipText=Options for setting the pointer Box Colors
+BoxPointerEditor.ptrBoxBL=Pointer Box Colors
+# title for the border around the settings for the pointer position
+BoxPointerEditor.ptrPosBL.toolTipText=Options for setting the position of the pointer(s)
+BoxPointerEditor.ptrPosBL=Pointer Position
+# status message for the object: which click does what?
+BoxPointerEditor.statusLine={0}: 1st and 2nd click: set position; 3rd click: set Tip; {1}: finish; {2}: cancel

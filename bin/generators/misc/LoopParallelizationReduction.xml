@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<PropertiesTreeModel xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="PropertiesTreeModel.xsd">
+	<Folder name="Root">
+		<Primitive type="Font">
+			<name>Schriftart</name>
+			<value><Font>Monospaced</Font></value>
+		</Primitive>
+		<Primitive type="Color">
+			<name>Farbe: Code (hervorgehoben)</name>
+			<value><Color>(255, 0, 0)</Color></value>
+		</Primitive>
+		<Primitive type="Color">
+			<name>Farbe: aktiver Thread</name>
+			<value><Color>(0, 255, 0)</Color></value>
+		</Primitive>
+		<Primitive type="Color">
+			<name>Farbe: inaktiver Thread</name>
+			<value><Color>(255, 0, 0)</Color></value>
+		</Primitive>
+		<Primitive type="Color">
+			<name>Farbe: verarbeiteter Wert</name>
+			<value><Color>(255, 255, 0)</Color></value>
+		</Primitive>
+		<Primitive type="intArray">
+			<name>Eingabe</name>
+			<value><intArray>1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1</intArray></value>
+		</Primitive>
+		<Primitive type="int">
+			<name>Anzahl CPUs</name>
+			<value><int>6</int></value>
+		</Primitive>
+	</Folder>
+</PropertiesTreeModel>

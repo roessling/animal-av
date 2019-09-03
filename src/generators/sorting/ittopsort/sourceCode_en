@@ -1,0 +1,13 @@
+L = []
+S = Set of nodes without incoming edges
+while S != [] do
+	remove a node n from S
+	add n to tail of L
+    for each successor m of n do
+        remove edge (n,m)
+        if m has no predecessors then
+            insert m into S
+if graph G has edges then
+    return error (graph has at least one cycle)
+else
+    return L

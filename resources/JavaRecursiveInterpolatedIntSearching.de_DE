@@ -1,0 +1,22 @@
+algoName=Interpolationssuche
+theName=Rekursive Interpolationssuche (int; DE)
+algoDesc=Dieser Algorithmus sucht in einem Array von int-Werten nach einem &uuml;bergebenen Wert. Wird der gesuchte Wert gefunden, so wird seine Position zur&uuml;ckgegeben, ansonsten der Wert -1.
+codeExample=public int recursiveInterpolatedSearching(int[] array, int value, int lower, int upper) {\n  if (array == null || array.length == 0 || upper < lower ) {\n    return -1;\n  }\n  int nrElems = array.length();\n  int l = 0;\n  int r = nrElems - 1;\n  int mid = l + ((value - array[l]) * (r - l)) / (array[r] - array[l]);\n  if (value == array[mid])\n    return mid;\n  else if (value < array[mid])\n    return recursiveInterpolatedSearch(array, value, l, mid - 1);\n  return recursiveInterpolatedSearch(array, value, mid + 1, r);\n}
+animTitle=Rekursive Interpolationssuche (int)
+algoAuthor=Dr. Guido Rößling (roessling@acm.org>
+algoTitle=Rekursive Interpolationssuche
+animDesc=Beschreibung des Algorithmus
+adForURL=Weitere Animationen finden Sie unter http://www.algoanim.info/Animal2 im Online-Repository
+nrSteps=Insgesamt verwendete der Algorithmus {0} Zuweisungen und {1} Vergleiche.
+description.filename=resources/JavaRecursiveInterpolatedIntSearching_descr_de.txt
+description.level=2
+description.labelSymbol=#
+code.filename=resources/JavaRecursiveInterpolatedIntSearching_code.txt
+code.level=2
+code.labelSymbol=#
+complexity.filename=resources/JavaRecursiveInterpolatedIntSearching_complexity_de.txt
+complexity.level=2
+complexity.labelSymbol=#
+nrAss=Zuweisungen
+nrComp=Vergleiche
+result=Ergebnis: {0}

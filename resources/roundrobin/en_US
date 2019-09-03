@@ -1,0 +1,208 @@
+title#Round Robin algorithm
+Bsp1-P1#Word
+Bsp1-P2#Excel
+Bsp1-P3#GIMP
+Bsp1-P4#PowerPoint
+Bsp2-P1#Process 1
+Bsp2-P2#Process 2
+Bsp2-P3#Process 3
+Bsp2-P4#Process 4
+Bsp3-P1#SysCheck
+Bsp3-P2#START
+Bsp3-P3#Backup
+Bsp3-P4#SteamUpd
+Bsp3-P5#NASA8374
+Bsp3-P6#DefRoutine
+        #___________________________________________________________________|
+mRemove1#The process is completed. It gets removed from the queue now.
+mRemove2# 
+        #___________________________________________________________________|
+mRotate1#slice = 0: The processor executed the process for k time units.
+mRotate2#The current process is shifted to the end of the queue
+mRotate3#and the next process is started.
+            #___________________________________________________________________|
+mNewProcess1#A new process arrived and gets inserted into
+mNewProcess2#the queue.
+     #___________________________________________________________________|
+mWait#There is no process in the queue at the moment.
+      #___________________________________________________________________|
+mWork1#The processor executes the current process for one time 
+mWork2#unit.
+              #_________________________________________________________________________________________|
+startText1-id1#The aim of this example is that you understand the general idea of the algorithm. 
+startText2-id1#There are 3 processes that arrive in the first three time units and one that  
+startText3-id1#arrives at step 25. The process need 10, 5, 3 or 2 time units for processing.
+startText4-id1#It could be interesting to change the value of parameter k.
+startText5-id1# 
+startText6-id1#Tip: If you want to play with your own processes, you should select example number 4!
+		        #_________________________________________________________________________________________|
+endText1-id1-inf#All processes are completely executed.
+endText2-id1-inf#Maybe you could take a look at the same example with another value for the
+endText3-id1-inf#parameter k. What will change?
+endText4-id1-inf# 
+endText5-id1-inf# 
+endText6-id1-inf# 
+		        #_________________________________________________________________________________________|
+endText1-id1-inc#The processor did not succeed in scheduling all processes in the given time.
+endText2-id1-inc#Which processes are not executed?
+endText3-id1-inc#What will happen if you change the value of parameter k?
+endText4-id1-inc# 
+endText5-id1-inc# 
+endText6-id1-inc# 
+              #_________________________________________________________________________________________|
+startText1-id2#Paul wants to create a presentation about Round Robin Scheduling. Therefore he uses different 
+startText2-id2#programs. He writes texts with Word, creates tables with Excel and edits pictures with GIMP. 
+startText3-id2#To put his work together in a presentation, he makes use of PowerPoint.
+startText4-id2#Let's have a look how these programs may be scheduled by his computer (with only one core).
+startText5-id2# 
+startText6-id2# 
+		    #_________________________________________________________________________________________|
+endText1-id2-inf#The presentation is ready. The processor needed just few steps to execute the processes -
+endText2-id2-inf#although he is very old and only has one processor core.
+endText3-id2-inf# 
+endText4-id2-inf# 
+endText5-id2-inf# 
+endText6-id2-inf# 
+                #_________________________________________________________________________________________|
+endText1-id2-inc#Paul couldn't finalize his presentation. The processor crashed, maybe
+endText2-id2-inc#because of its age. It didn't have enough time to finish work...
+endText3-id2-inc# 
+endText4-id2-inc#  
+endText5-id2-inc# 
+endText6-id2-inc# 
+              #___Raketenstart__________________________________________________________________________|
+startText1-id3#The time has come: NASA starts a new rocket to Mars. The astronauts have downloaded Steam
+startText2-id3#for entertainment on the long journey. 
+startText3-id3#But will the rocket start flawlessly?
+startText4-id3#It will only do, if the process 'START' is finished before the end of the timer!
+startText5-id3#Let's see if this works!
+startText6-id3# 
+                  #_________________________________________________________________________________________|
+startText1-id3-sim#The NASA prepares a rocket launch, because they want to explore the Mars.
+startText2-id3-sim# 
+startText3-id3-sim#To make sure that the launch will run, they simulate it on a computer. If the process
+startText4-id3-sim#'START' is finished due to the end of the array the launch will run flawlessly.
+startText5-id3-sim# 
+startText6-id3-sim#Will the launch be successful or do the engineers have to adjust the scheduling?
+		        #_________________________________________________________________________________________|
+endText1-id3-inf#The simulation is finished, there were no errors, but was the process 'START'
+endText2-id3-inf#finished in time? 
+endText3-id3-inf#  
+endText4-id3-inf#If you think the launch will run flawlessly, feel free to test it! You just have to 
+endText5-id3-inf#deactivate the infinity mode in the settings.
+endText6-id3-inf# 
+                #_________________________________________________________________________________________|
+endText1-id3-inc#3 ... 2 ... 1 ... wait, the rocket still hasn't started!
+endText2-id3-inc# 
+endText3-id3-inc#Apparently the process 'START' was not completely executed in time, so the rocket could not
+endText4-id3-inc#launch. It seems that the engineers have to change the scheduling parameters to make sure
+endText5-id3-inc#that the launch will pass flawlessly next time.
+endText6-id3-inc#Tip: Change the value of k ...
+                 #_________________________________________________________________________________________|
+endText1-id3-comp#3 ... 2 ... 1 ... the rocket launches! :-)
+endText2-id3-comp# 
+endText3-id3-comp#Great! You have adapted the scheduling parameters in a way, so that the 
+endText4-id3-comp#process 'START' could be executed in time. The rocket is on its way to Mars.
+endText5-id3-comp# 
+endText6-id3-comp# 
+              #___________________________________________________________________________________________|
+startText1-id4#Here you can test your own examples
+startText2-id4#If you have created your own processes in the settings, you can see how they get 
+startText3-id4#scheduled by the processor.
+startText4-id4# 
+startText5-id4#Have fun exploring! :-)
+startText6-id4# 
+		        #_________________________________________________________________________________________|
+endText1-id4-inf#Great! 
+endText2-id4-inf#All your processes are completely executed.
+endText3-id4-inf# 
+endText4-id4-inf# 
+endText5-id4-inf# 
+endText6-id4-inf# 
+		        #_________________________________________________________________________________________|
+endText1-id4-inc#The processor obviously didn't have enough time to execute all processes completely.
+endText2-id4-inc# 
+endText3-id4-inc#If you do not care about the time the processor needs to executing all processes, you can
+endText4-id4-inc#activate the infinity mode in the settings.
+endText5-id4-inc#  
+endText6-id4-inc# 
+ #__QUESTIONS______________________________________________
+q_choiceofk#The choice of k can influence which of two given processes is finished first. True or false?
+q_choiceofk_ft#Right. The choice of k can change the order in which processes are finished.
+q_choiceofk_ff#This is not correct. The choice of k can influence the order in which processes finish work.
+q_interrupted#Is the following sentence true or false: A process's execution can be suspended by the processor when using Round Robin scheduling.
+q_interrupted_ft#Right. The processor can suspend an execution in order to switch to another process.
+q_interrupted_ff#This is not correct. The processor can suspend an execution in order to switch to another process.
+q_thebigger#Which sentence endings are correct for the following sentence start (there are two correct answers): The bigger the parameter k is ->
+q_thebigger_a1# -> the less process changes occur during execution of a fixed set of processes.
+q_thebigger_f1#Less process changes: Yes, this is correct.
+q_thebigger_a2# -> the less time the execution of a fixed set of processes will take (assuming that process changes take no time).
+q_thebigger_f2#Less time: No, this is not correct. The execution takes the same time for every k.
+q_thebigger_a3# -> more processes will be partially executed in a fixed time interval
+q_thebigger_f3#More processes: This is not correct, as a bigger k means less process switches. So there are less partial executions in a fixed time interval.
+q_thebigger_a4# -> the longer the processor will execute a process before switching to the next one
+q_thebigger_f4#Executing a process: This is correct. The parameter k specifies the time slot reserved for each process.
+q_whichk_1#There are two processes:
+q_whichk_2#Process A arrives at time point 0 and takes 4 units to finish work.
+q_whichk_3#Process B arrives at time point 1 and takes 3 units to finish work.
+q_whichk_4#Select the smallest of the following values for k with which B finishes work before A!
+q_whichk_f1#Right: With k set to 3, B will finish before A. Execution: A -> A -> A -> B -> B -> B (finished) -> A (finished)
+q_whichk_f2#This is not right: With k set to 2, A will finish before B! Execution: A -> A -> B -> B -> A -> A (finished!) -> B (finished)
+q_whichk_f3#This is not right: With k set to 4, A will finish before B! Execution: A -> A -> A -> A (finished!) -> B -> B -> B (finished)
+q_howmanyswitches_1#The parameter k is set to 2. There are two processes:
+q_howmanyswitches_2#Process A arrives at time point 1 and takes 5 units to finish work.
+q_howmanyswitches_3#Process B arrives at time point 2 and takes 7 units to finish work.
+q_howmanyswitches_4#How often are the processes switched by the processor?
+q_howmanyswitches_f#Correct. Five times. This is the execution: [no process] -> A -> A -[switch 1]> B -> B -[switch 2]> A -> A -[switch 3]> B -> B -[switch 4]> A -[switch 5]> B -> B -> B
+q_whichks_1#There are two processes:
+q_whichks_2#Process A arrives at time point 1 and takes 4 units to finish work.
+q_whichks_3#Process B arrives at time point 0 and takes 6 units to finish work.
+q_whichks_4#Select all values of k with which process A finishes before time point 8! There are three correct answers!
+q_whichks_f1#1: Correct. This is the execution: B -> A -> B -> A -> B -> A -> B -> A (finished) -[Time point 8]> B -> B (finished)
+q_whichks_f2#2: Correct. This is the execution: B -> B -> A -> A -> B -> B -> A -> A (finished) -[Time point 8]> B -> B (finished)
+q_whichks_f3#3: This is not correct. This is the execution: B -> B -> B -> A -> A -> A -> B -> B -[Time point 8]> B (finished) -> A (finished!)
+q_whichks_f4#4: Correct. This is the execution: B -> B -> B -> B -> A -> A -> A -> A (finished) -[Time point 8]> B -> B (finished)
+q_whichks_f5#5: This is not correct. This is the execution: B -> B -> B -> B -> B -> A -> A -> A -[Time point 8]> A (finished!) -> B (finished)
+q_whichks_f6#6. This is not correct. This is the execution: B -> B -> B -> B -> B -> B (finished) -> A -> A -[Time point 8]> A -> A (finished!)
+q_rotate#Will the queue be rotated now (TRUE) or not (FALSE)?
+q_rotate_tt#Right. The queue will be rotated as the current process is not finished yet.
+q_rotate_tf#No, the queue will not be rotated. The current process has finished.
+q_rotate_ft#No, the queue will be rotated, as the current process is not finished yet.
+q_rotate_ff#Right. The current process has finished and there is no rotation.
+q_toEnd#Will the current process be executed until termination now?
+q_toEnd_tt#Right. The process will be executed until termination.
+q_toEnd_tf#No, the process will not be completely executed.
+q_toEnd_ft#No, the process will be executed completely.
+q_toEnd_ff#Right. The process is not executed until termination, the time slice ends before it is completely executed.
+q_alreadydone#How many processes are already completely executed?
+q_alreadydone_f0#Right, no process has been executed completely so far.
+q_alreadydone_f1_a#Right, only 
+q_alreadydone_f1_b# has been completely executed
+q_alreadydone_f2_a#Correct. These 
+q_alreadydone_f2_b# processes are already executed: 
+q_stilltodo#How many processes are not or not completely executed yet?
+q_stilltodo_f0#Right, all processes are completely executed.
+q_stilltodo_f1_a#Right, only 
+q_stilltodo_f1_b# is not yet completely executed
+q_stilltodo_f2_a#Correct. These 
+q_stilltodo_f2_b# processes are not (completely) executed: 
+q_wait#Will the processor wait for one time unit now (and why)?
+q_wait_f-correct#This is correct! Well done!
+q_wait_f-notCorrect#This is not correct. 
+q_wait_a1#Yes, because there is currently no process in the queue. There is only one process to arrive in the future.
+q_wait_a2#Yes, because the queue is currently empty, but several processes will arrive in the future.
+q_wait_a3#No, because there queue is not empty.
+q_wait_f1_a#There is a process to be executed.
+q_wait_f1_b#More than one process will arrive in the future.
+q_wait_f2_a#There is a process to be executed.
+q_wait_f2_b#Only one process will arrive in the future.
+q_wait_f3#No, there are no processes in the queue, so the processor has to wait.
+q_notcompletely_1#Select all processes that are currently only partially executed! There 
+q_notcompletely_2#is one right answer.
+q_notcompletely_3#are 
+q_notcompletely_4# right answers.
+q_notcompletely_f-correct#: Right.
+q_notcompletely_f-notCorrect#: This is not correct.
+q_notcompletely_a#No process is partially executed.
+q_notcompletely_aT#No process: Right.
+q_notcompletely_aF#No process: This is not correct. Partially executed are those processes: 

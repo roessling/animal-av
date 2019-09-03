@@ -1,0 +1,43 @@
+﻿noSuchKeyException=Es  gibt  keine  Ressource  f\u00fcr  Eintrag{0}
+iconNotFound=Icon  ”{0}” not  found
+
+###Overview###
+overDesc=Der LOOK-Algorithmus wird verwendet, um Anfragen an die Festplatte abzuarbeiten. \nDer Lese-/Schreibkopf bewegt sich bis zur letzten Anfrage in jeder Richtung \nund kehrt dann direkt um.
+overCode=1. Sortiere die Warteschlange von der Startposition des Lese-/Schreibkopfes aufsteigend. \n2. Sortiere die restlichen Anfragen absteigend.\n3. Die n\u00e4chste Anfrage in der Liste wird als n\u00e4chstes ausgef\u00fchrt. \n4. Bewege Lese-/Schreibkopf zur aktuellen Anfrage und arbeite es ab. \n5. Wenn noch nicht alle Anfragen abgearbeitet sind, gehe zu Schritt 3, ansonsten terminiere.  
+
+###Title###
+title=Disk Scheduling: LOOK
+
+
+###Description###
+descheader=Beschreibung:
+desc1=Der LOOK-Algorithmus wird verwendet, um Anfragen an die Festplatte abzuarbeiten.
+desc2=Der Lese-/Schreibkopf bewegt sich bis zur letzten Anfrage in jeder Richtung
+desc3=und kehrt dann direkt um.
+
+###Code###
+codeheader=Pseudocode:
+code1=1. Sortiere die Warteschlange von der Startposition des Lese-/Schreibkopfes aufsteigend.
+code2=2. Sortiere die restlichen Anfragen absteigend.
+code3=3. Die n\u00e4chste Anfrage in der Liste wird als n\u00e4chstes ausgef\u00fchrt.
+code4=4. Bewege Lese-/Schreibkopf zur aktuellen Anfrage und arbeite es ab.
+code5=5. Wenn noch nicht alle Anfragen abgearbeitet sind, gehe zu Schritt 3, ansonsten terminiere.
+
+###Array###
+arr1=Distanz: 
+arr2=Lese-/Schreibkopf startet bei 
+arr3=Anfragen:
+arr4=Warteschlange: 
+
+###Finish###
+finheader=Fazit:
+fin1=Nach dem Bearbeiten aller Anfragen in der Warteschlange hat der Lese-/Schreibkopf
+fin2=eine Distanz von 
+fin3= Zylindern zur\u00fcckgelegt.
+
+###Summary###
+sumheader=Zusammenfassung:
+sum1=Bei LOOK bewegt sich der Lese-/Schreibkopf nur bis zur letzten Anfrage in jeder Richtung 
+sum2=und dreht dann direkt um, ohne bis zum Ende zu gehen. LOOK vermeidet dadurch das 
+sum3=Problem der Starvation (eine Anfrage wird nahezu unendlich aufgeschoben) und hat außerdem einen hohen Durchsatz.
+sum4=Die durchschnittlichen Suchzeiten sind etwas besser als die Suchzeiten von ähnlichen Algorithmen, wie bspw. SCAN.

@@ -1,0 +1,549 @@
+%Animal 2 800*600
+title "Davis-Putnam-Verfahren [DE]"
+author "Magnus Brand,Bastian de Groot"
+listelement "fifth" (260, 100) text "" pointers 1 position bottom  color (0, 0, 0) boxFillColor (0, 0, 0) pointerAreaColor (0, 0, 0) pointerAreaFillColor (0, 0, 0) textColor (0, 0, 0) depth 1
+listelement "fourth" (200, 100) text "" pointers 1 position bottom  color (0, 0, 0) boxFillColor (0, 0, 0) pointerAreaColor (0, 0, 0) pointerAreaFillColor (0, 0, 0) textColor (0, 0, 0) depth 1
+{
+}
+setLink "fifth" link 1 to "fourth"    within 30 ticks
+{
+}
+clearLink "fifth" link 1  after 30 ticks  within 30 ticks
+{
+  interactionDefinition "intDef20190608133800655.txt"
+  text "header" "Davis-Putnam-Verfahren" (20, 30) color (0, 0, 0) depth 1 font SansSerif size 24 bold
+  rectangle "headerRect" offset (-5, -5) from "header" NW offset (5, 5) from "header" SE color (0, 0, 0) depth 2
+  text "subheader" "Problem und Algorithmus" offset (0, 60) from "headerRect" NW color (0, 0, 0) depth 1 font SansSerif size 18
+  codegroup "sourceCode" at move (0, 60) color (0, 0, 0) highlightColor (0, 0, 0) contextColor (0, 0, 0) font SansSerif size 15 depth 1
+  addCodeLine "Das Davis-Putnam-Verfahren kann das Erfuellbarkeitsproblem (SAT)" to "sourceCode"
+  addCodeLine "einer aussagenlogischen Formel in konjunktiver Normalform" to "sourceCode"
+  addCodeLine "entscheiden. Das bedeutet, dass der Algorithmus 'true'" to "sourceCode"
+  addCodeLine "liefert, falls eine Variablenbelegung gefunden werden kann," to "sourceCode"
+  addCodeLine "fuer die die Formel zu wahr auswertet. Andernfalls liefert" to "sourceCode"
+  addCodeLine "er 'false'." to "sourceCode"
+  addCodeLine "Die Formel selbst wird als Klauselmenge dargestellt." to "sourceCode"
+  addCodeLine "Eine Klausel ist dabei eine Disjunktion von Literalen" to "sourceCode"
+  addCodeLine "(Variable oder ihr Negat) und wird ebenfalls als Menge abgebildet." to "sourceCode"
+  addCodeLine "Die Eingabe des Algorithmus' ist also eine Menge von Mengen." to "sourceCode"
+  addCodeLine "Der Algorithmus wendet dabei wenige, einfache Regeln" to "sourceCode"
+  addCodeLine "an, um Variablen mit nur einer moeglichen Belegung zu finden (Literale aus sog. Einheitsklauseln)." to "sourceCode"
+  addCodeLine "Gelingt ihm das nicht, probiert er beide moeglichen" to "sourceCode"
+  addCodeLine "Belegungen aus." to "sourceCode"
+}
+label "Problem und Algorithmus"
+{
+  interaction "Einheitsklauseln"
+  text "subheader2" "Transformation einer Formel" offset (0, 60) from "headerRect" NW color (0, 0, 0) depth 1 font SansSerif size 18
+  text "formula" "(P | Q) & (~Q | R) & R" move (0, 60) color (0, 0, 0) depth 1 font SansSerif size 15
+  text "clauseSet" "{{P,Q}, {~Q,R}, R}" move (250, 0) color (0, 0, 0) depth 1 font SansSerif size 15
+  polyline "arrow0" offset (20, 8) from "formula" NE offset (-20, 11) from "clauseSet" NW color (0, 0, 0) depth 1 fwArrow 
+  text "desc1" "Die Formel in dieser Form ist die Eingabe fuer den Algorithmus." offset (0, 50) from "formula" NW color (0, 0, 0) depth 1 font SansSerif size 15
+  hide "subheader" "sourceCode" 
+}
+label "Transformation einer Formel"
+{
+  interaction "Transformation"
+  text "subheader3" "Abstrakte Vorgehensweise und Teilschritte" offset (0, 60) from "headerRect" NW color (0, 0, 0) depth 1 font SansSerif size 18
+  codegroup "abstractAlgo" at move (0, 60) color (0, 0, 0) highlightColor (0, 0, 0) contextColor (0, 0, 0) font SansSerif size 15 depth 1
+  addCodeLine "1.  'Einheitsklauseln' in Klauselmenge K finden (Klausel mit nur 1 Literal)." to "abstractAlgo"
+  addCodeLine "     (Diese muessen wahr sein, da K Konjunktion ueber Klauseln ist.)" to "abstractAlgo"
+  addCodeLine "2.  Fuer alle gefundenen Einheitsklauseln:" to "abstractAlgo"
+  addCodeLine "2.1 Entferne Klauseln aus K, in denen Literal aus einer gefundenen Einheitsklausel vorkommt" to "abstractAlgo"
+  addCodeLine "      (Also auch Einheitsklausel selbst. Denn das wahre Literal macht ganze Klauseln wahr.)" to "abstractAlgo"
+  addCodeLine "2.2 Entferne Negate von Literal aus Einheitsklausel aus anderen Klauseln" to "abstractAlgo"
+  addCodeLine "     (Da Literal aus Einheitsklausel wahr -> Negat falsch -> ueberfluessig in Klausel)" to "abstractAlgo"
+  addCodeLine "3.  ueberpruefe Klauselmenge K. 2 Faelle sind moeglich:" to "abstractAlgo"
+  addCodeLine "3.1 K ist leer, d. h. Fall 2.1 ist 'oft genug' eingetreten." to "abstractAlgo"
+  addCodeLine "    (Die Einheitsklauseln haben also ganz K wahr gemacht.) -> Ende mit 'true'" to "abstractAlgo"
+  addCodeLine "3.2 K selbst ist nicht leer, enthaelt aber eine leere Klausel" to "abstractAlgo"
+  addCodeLine "    D. h. Fall 2.2 ist 'zu oft' eingetreten. (Es blieb in der Klausel nichts uebrig," to "abstractAlgo"
+  addCodeLine "    was sie noch wahr machen koennte und Disjunktion ueber die leere Menge ist falsch.)" to "abstractAlgo"
+  addCodeLine "    -> Ende mit 'false'" to "abstractAlgo"
+  addCodeLine "4.  ueberpruefe, ob sich K seit Schritt 1. veraendert hat" to "abstractAlgo"
+  addCodeLine "    (weniger Klauseln oder weniger Literale in Klauseln):" to "abstractAlgo"
+  addCodeLine "4.1  veraendert: Wiederhole ab Schritt 1." to "abstractAlgo"
+  addCodeLine "4.2  gleich: gehe zu Schritt 5" to "abstractAlgo"
+  addCodeLine "5.  Zerlege K in zwei neue Klauselmengen K1 und K2 wie folgt:" to "abstractAlgo"
+  addCodeLine "5.1  Waehle zufaellig ein Literal L aus beliebiger Klausel in K" to "abstractAlgo"
+  addCodeLine "5.2  Erzeuge K1 durch Hinzufuegen von einer Einheitsklausel, die aus L besteht" to "abstractAlgo"
+  addCodeLine "     Analog fuer K2, aber hier mit dem Negat von L" to "abstractAlgo"
+  addCodeLine "5.3 Rufe Verfahren mit K1 und K2 auf" to "abstractAlgo"
+  addCodeLine "5.4 Ergibt mindestens 1 Aufruf 'true', ende mit 'true', sonst mit 'false'." to "abstractAlgo"
+  addCodeLine "   (Es reicht, wenn eine Belegung von L zum Erfolg fuehrt.)" to "abstractAlgo"
+  hide "subheader2" "formula" "clauseSet" "desc1" "arrow0" 
+}
+label "Abstrakte Vorgehensweise und Teilschritte"
+{
+  text "subheader4" "Beispiel" offset (0, 60) from "headerRect" NW color (0, 0, 0) depth 1 font SansSerif size 18
+  codegroup "SourceCode17" at offset (0, 60) from "subheader4" NW color (0, 0, 0) highlightColor (255, 0, 0) contextColor (0, 0, 0) font SansSerif size 12 depth 1
+  addCodeLine "public static boolean dp(Set<Set<Literal>> clauseSet) {" to "SourceCode17"
+  addCodeLine "  int flatLen;" to "SourceCode17"
+  addCodeLine "  do {" to "SourceCode17"
+  addCodeLine "    flatLen = flatLen(clauseSet);" to "SourceCode17"
+  addCodeLine "    Set<Literal> unitClauses = new HashSet<>();" to "SourceCode17"
+  addCodeLine "    for(Set<Literal> clause : clauseSet ) {" to "SourceCode17"
+  addCodeLine "      if(clause.size() == 1)" to "SourceCode17"
+  addCodeLine "        unitClauses.add(clause.iterator().next());/*Einheitsklausel (EK) merken*/" to "SourceCode17"
+  addCodeLine "    }" to "SourceCode17"
+  addCodeLine "    for(Literal lit : unitClauses) {" to "SourceCode17"
+  addCodeLine "      for(Iterator<Set<Literal>> clauseIt = clauseSet.iterator(); clauseIt.hasNext(); ) {" to "SourceCode17"
+  addCodeLine "        Set<Literal> clause = clauseIt.next();" to "SourceCode17"
+  addCodeLine "        if(clause.contains(lit))" to "SourceCode17"
+  addCodeLine "          /*Klausel, die Literal von EK enthaelt, loeschen*/" to "SourceCode17"
+  addCodeLine "          clauseIt.remove();" to "SourceCode17"
+  addCodeLine "        else" to "SourceCode17"
+  addCodeLine "          for(Iterator<Literal> litIt = clause.iterator(); litIt.hasNext(); )" to "SourceCode17"
+  addCodeLine "            if(litIt.next().equals(Literal.Neg(lit)))" to "SourceCode17"
+  addCodeLine "              /*Negiertes Literal aus EK loeschen*/" to "SourceCode17"
+  addCodeLine "              litIt.remove();" to "SourceCode17"
+  addCodeLine "      }" to "SourceCode17"
+  addCodeLine "    }" to "SourceCode17"
+  addCodeLine "      " to "SourceCode17"
+  addCodeLine "    if(clauseSet.isEmpty())" to "SourceCode17"
+  addCodeLine "      return true;" to "SourceCode17"
+  addCodeLine "    else if(containsEmptyClause(clauseSet))" to "SourceCode17"
+  addCodeLine "      return false;" to "SourceCode17"
+  addCodeLine "  }" to "SourceCode17"
+  addCodeLine "  /*ueberpruefe Veraenderung der Gesamtzahl der Literale*/" to "SourceCode17"
+  addCodeLine "  while(flatLen(clauseSet) != flatLen);" to "SourceCode17"
+  addCodeLine "  " to "SourceCode17"
+  addCodeLine "  /*zufaellige neue EK generieren und aufteilen*/" to "SourceCode17"
+  addCodeLine "  Literal rndLit = chooseLiteral(clauseSet);" to "SourceCode17"
+  addCodeLine "  Set<Set<Literal>> splitCS1 = new HashSet<>(clauseSet);" to "SourceCode17"
+  addCodeLine "  splitCS1.add(createClause(rndLit));" to "SourceCode17"
+  addCodeLine "  Set<Set<Literal>> splitCS2 = new HashSet<>(clauseSet);" to "SourceCode17"
+  addCodeLine "  splitCS2.add(createClause(Literal.Neg(rndLit)));" to "SourceCode17"
+  addCodeLine "  " to "SourceCode17"
+  addCodeLine "  if(dp(splitCS1))" to "SourceCode17"
+  addCodeLine "    return true;" to "SourceCode17"
+  addCodeLine "  else if(dp(splitCS2))" to "SourceCode17"
+  addCodeLine "    return true;" to "SourceCode17"
+  addCodeLine "  else" to "SourceCode17"
+  addCodeLine "    return false;" to "SourceCode17"
+  addCodeLine "}" to "SourceCode17"
+  array "StringArray7" offset (700, 60) from "subheader4" NW color (0, 0, 0) fillColor (192, 192, 192) elementColor (0, 0, 0) elemHighlight (0, 0, 0) cellHighlight (0, 0, 0) horizontal length 3 "R" "R, Q" "Q, P"  depth 1 font SansSerif size 12
+  hide "subheader3" "abstractAlgo" 
+}
+{
+}
+{
+  arrayMarker "arrMarker" on "StringArray7" atIndex 0 label "clause" color (255, 0, 0) depth 1
+  array "StringArray8" offset (700, 60) from "subheader4" NW color (0, 0, 0) fillColor (192, 192, 192) elementColor (0, 0, 0) elemHighlight (0, 0, 0) cellHighlight (0, 0, 0) horizontal length 3 "R" "R, Q" "Q, P"  depth 1 font SansSerif size 12
+  hide "StringArray7" 
+}
+{
+  unhighlightCode on "SourceCode17" line 39 row 0  
+  highlightCode on "SourceCode17" line 1 row 0  
+}
+{
+  unhighlightCode on "SourceCode17" line 1 row 0  
+  highlightCode on "SourceCode17" line 2 row 0  
+}
+{
+  unhighlightCode on "SourceCode17" line 2 row 0  
+  highlightCode on "SourceCode17" line 3 row 0  
+}
+{
+  codegroup "locVarBlock" at offset (700, 200) from "subheader4" NW color (0, 0, 0) highlightColor (0, 0, 0) contextColor (0, 0, 0) font SansSerif size 12 depth 1
+  addCodeLine "Lokale Variablen:" to "locVarBlock"
+  addCodeLine "FlatLen = 5" to "locVarBlock"
+  unhighlightCode on "SourceCode17" line 3 row 0  
+  highlightCode on "SourceCode17" line 4 row 0  
+}
+{
+  codegroup "SourceCode18" at offset (700, 200) from "subheader4" NW color (0, 0, 0) highlightColor (0, 0, 0) contextColor (0, 0, 0) font SansSerif size 12 depth 1
+  addCodeLine "Lokale Variablen:" to "SourceCode18"
+  addCodeLine "FlatLen = 5" to "SourceCode18"
+  addCodeLine "UnitClauses = {}" to "SourceCode18"
+  unhighlightCode on "SourceCode17" line 4 row 0  
+  highlightCode on "SourceCode17" line 5 row 0  
+  hide "locVarBlock" 
+}
+{
+  arrayMarker "ArrayMarker6" on "StringArray8" atIndex 0 label "clause" color (255, 0, 0) depth 1
+  moveArrayMarker "ArrayMarker6" to position 0   
+  unhighlightCode on "SourceCode17" line 5 row 0  
+  highlightCode on "SourceCode17" line 6 row 0  
+}
+{
+  unhighlightCode on "SourceCode17" line 6 row 0  
+  highlightCode on "SourceCode17" line 7 row 0  
+}
+{
+  codegroup "SourceCode19" at offset (700, 200) from "subheader4" NW color (0, 0, 0) highlightColor (0, 0, 0) contextColor (0, 0, 0) font SansSerif size 12 depth 1
+  addCodeLine "Lokale Variablen:" to "SourceCode19"
+  addCodeLine "FlatLen = 5" to "SourceCode19"
+  addCodeLine "UnitClauses = {R}" to "SourceCode19"
+  unhighlightCode on "SourceCode17" line 7 row 0  
+  highlightCode on "SourceCode17" line 8 row 0  
+  hide "SourceCode18" 
+}
+{
+  moveArrayMarker "ArrayMarker6" to position 1   
+  unhighlightCode on "SourceCode17" line 8 row 0  
+  highlightCode on "SourceCode17" line 6 row 0  
+}
+{
+  moveArrayMarker "ArrayMarker6" to position 2   
+  unhighlightCode on "SourceCode17" line 6 row 0  
+  highlightCode on "SourceCode17" line 6 row 0  
+}
+{
+  unhighlightCode on "SourceCode17" line 6 row 0  
+  highlightCode on "SourceCode17" line 9 row 0  
+}
+{
+  codegroup "SourceCode20" at offset (700, 200) from "subheader4" NW color (0, 0, 0) highlightColor (0, 0, 0) contextColor (0, 0, 0) font SansSerif size 12 depth 1
+  addCodeLine "Lokale Variablen:" to "SourceCode20"
+  addCodeLine "FlatLen = 5" to "SourceCode20"
+  addCodeLine "UnitClauses = {R}" to "SourceCode20"
+  addCodeLine "Lit = R" to "SourceCode20"
+  unhighlightCode on "SourceCode17" line 9 row 0  
+  highlightCode on "SourceCode17" line 10 row 0  
+  hide "SourceCode19" 
+}
+{
+  unhighlightCode on "SourceCode17" line 10 row 0  
+  highlightCode on "SourceCode17" line 11 row 0  
+}
+{
+  moveArrayMarker "ArrayMarker6" to position 0   
+  unhighlightCode on "SourceCode17" line 11 row 0  
+  highlightCode on "SourceCode17" line 12 row 0  
+}
+{
+  unhighlightCode on "SourceCode17" line 12 row 0  
+  highlightCode on "SourceCode17" line 14 row 0  
+}
+{
+  interaction "Klausel entfernen"
+  array "StringArray9" offset (700, 60) from "subheader4" NW color (0, 0, 0) fillColor (192, 192, 192) elementColor (0, 0, 0) elemHighlight (0, 0, 0) cellHighlight (0, 0, 0) horizontal length 2 "R, Q" "Q, P"  depth 1 font SansSerif size 12
+  hide "StringArray8" 
+}
+{
+  unhighlightCode on "SourceCode17" line 14 row 0  
+  highlightCode on "SourceCode17" line 15 row 0  
+}
+{
+  unhighlightCode on "SourceCode17" line 15 row 0  
+  highlightCode on "SourceCode17" line 11 row 0  
+}
+{
+  arrayMarker "ArrayMarker7" on "StringArray9" atIndex 0 label "clause" color (255, 0, 0) depth 1
+  moveArrayMarker "ArrayMarker7" to position 0   
+  unhighlightCode on "SourceCode17" line 11 row 0  
+  highlightCode on "SourceCode17" line 12 row 0  
+}
+{
+  unhighlightCode on "SourceCode17" line 12 row 0  
+  highlightCode on "SourceCode17" line 14 row 0  
+}
+{
+  interaction "Klausel entfernen"
+  array "StringArray10" offset (700, 60) from "subheader4" NW color (0, 0, 0) fillColor (192, 192, 192) elementColor (0, 0, 0) elemHighlight (0, 0, 0) cellHighlight (0, 0, 0) horizontal length 1 "Q, P"  depth 1 font SansSerif size 12
+  hide "StringArray9" 
+}
+{
+  unhighlightCode on "SourceCode17" line 14 row 0  
+  highlightCode on "SourceCode17" line 15 row 0  
+}
+{
+  unhighlightCode on "SourceCode17" line 15 row 0  
+  highlightCode on "SourceCode17" line 11 row 0  
+}
+{
+  arrayMarker "ArrayMarker8" on "StringArray10" atIndex 0 label "clause" color (255, 0, 0) depth 1
+  moveArrayMarker "ArrayMarker8" to position 0   
+  unhighlightCode on "SourceCode17" line 11 row 0  
+  highlightCode on "SourceCode17" line 12 row 0  
+}
+{
+  unhighlightCode on "SourceCode17" line 12 row 0  
+  highlightCode on "SourceCode17" line 16 row 0  
+}
+{
+  unhighlightCode on "SourceCode17" line 16 row 0  
+  highlightCode on "SourceCode17" line 17 row 0  
+}
+{
+  unhighlightCode on "SourceCode17" line 17 row 0  
+  highlightCode on "SourceCode17" line 17 row 0  
+}
+{
+  unhighlightCode on "SourceCode17" line 17 row 0  
+  highlightCode on "SourceCode17" line 23 row 0  
+}
+{
+  unhighlightCode on "SourceCode17" line 23 row 0  
+  highlightCode on "SourceCode17" line 25 row 0  
+}
+{
+  unhighlightCode on "SourceCode17" line 25 row 0  
+  highlightCode on "SourceCode17" line 27 row 0  
+}
+{
+  unhighlightCode on "SourceCode17" line 27 row 0  
+  highlightCode on "SourceCode17" line 29 row 0  
+}
+{
+  unhighlightCode on "SourceCode17" line 29 row 0  
+  highlightCode on "SourceCode17" line 3 row 0  
+}
+{
+  codegroup "SourceCode21" at offset (700, 200) from "subheader4" NW color (0, 0, 0) highlightColor (0, 0, 0) contextColor (0, 0, 0) font SansSerif size 12 depth 1
+  addCodeLine "Lokale Variablen:" to "SourceCode21"
+  addCodeLine "FlatLen = 2" to "SourceCode21"
+  addCodeLine "UnitClauses = {R}" to "SourceCode21"
+  unhighlightCode on "SourceCode17" line 3 row 0  
+  highlightCode on "SourceCode17" line 4 row 0  
+  hide "SourceCode20" 
+}
+{
+  codegroup "SourceCode22" at offset (700, 200) from "subheader4" NW color (0, 0, 0) highlightColor (0, 0, 0) contextColor (0, 0, 0) font SansSerif size 12 depth 1
+  addCodeLine "Lokale Variablen:" to "SourceCode22"
+  addCodeLine "FlatLen = 2" to "SourceCode22"
+  addCodeLine "UnitClauses = {}" to "SourceCode22"
+  unhighlightCode on "SourceCode17" line 4 row 0  
+  highlightCode on "SourceCode17" line 5 row 0  
+  hide "SourceCode21" 
+}
+{
+  moveArrayMarker "ArrayMarker8" to position 0   
+  unhighlightCode on "SourceCode17" line 5 row 0  
+  highlightCode on "SourceCode17" line 6 row 0  
+}
+{
+  unhighlightCode on "SourceCode17" line 6 row 0  
+  highlightCode on "SourceCode17" line 9 row 0  
+}
+{
+  unhighlightCode on "SourceCode17" line 9 row 0  
+  highlightCode on "SourceCode17" line 23 row 0  
+}
+{
+  unhighlightCode on "SourceCode17" line 23 row 0  
+  highlightCode on "SourceCode17" line 25 row 0  
+}
+{
+  unhighlightCode on "SourceCode17" line 25 row 0  
+  highlightCode on "SourceCode17" line 27 row 0  
+}
+{
+  unhighlightCode on "SourceCode17" line 27 row 0  
+  highlightCode on "SourceCode17" line 29 row 0  
+}
+{
+  unhighlightCode on "SourceCode17" line 29 row 0  
+  highlightCode on "SourceCode17" line 32 row 0  
+}
+{
+  codegroup "SourceCode23" at offset (700, 200) from "subheader4" NW color (0, 0, 0) highlightColor (0, 0, 0) contextColor (0, 0, 0) font SansSerif size 12 depth 1
+  addCodeLine "Lokale Variablen:" to "SourceCode23"
+  addCodeLine "RndLit = Q" to "SourceCode23"
+  unhighlightCode on "SourceCode17" line 32 row 0  
+  highlightCode on "SourceCode17" line 33 row 0  
+  hide "SourceCode22" 
+}
+{
+  codegroup "SourceCode24" at offset (700, 200) from "subheader4" NW color (0, 0, 0) highlightColor (0, 0, 0) contextColor (0, 0, 0) font SansSerif size 12 depth 1
+  addCodeLine "Lokale Variablen:" to "SourceCode24"
+  addCodeLine "RndLit = Q" to "SourceCode24"
+  addCodeLine "SplitCS1 = {{Q, P}}" to "SourceCode24"
+  unhighlightCode on "SourceCode17" line 33 row 0  
+  highlightCode on "SourceCode17" line 34 row 0  
+  hide "SourceCode23" 
+}
+{
+  codegroup "SourceCode25" at offset (700, 200) from "subheader4" NW color (0, 0, 0) highlightColor (0, 0, 0) contextColor (0, 0, 0) font SansSerif size 12 depth 1
+  addCodeLine "Lokale Variablen:" to "SourceCode25"
+  addCodeLine "RndLit = Q" to "SourceCode25"
+  addCodeLine "SplitCS1 = {{Q}, {Q, P}}" to "SourceCode25"
+  unhighlightCode on "SourceCode17" line 34 row 0  
+  highlightCode on "SourceCode17" line 35 row 0  
+  hide "SourceCode24" 
+}
+{
+  codegroup "SourceCode26" at offset (700, 200) from "subheader4" NW color (0, 0, 0) highlightColor (0, 0, 0) contextColor (0, 0, 0) font SansSerif size 12 depth 1
+  addCodeLine "Lokale Variablen:" to "SourceCode26"
+  addCodeLine "RndLit = Q" to "SourceCode26"
+  addCodeLine "SplitCS1 = {{Q}, {Q, P}}" to "SourceCode26"
+  addCodeLine "SplitCS2 = {{Q, P}}" to "SourceCode26"
+  unhighlightCode on "SourceCode17" line 35 row 0  
+  highlightCode on "SourceCode17" line 36 row 0  
+  hide "SourceCode25" 
+}
+{
+  codegroup "SourceCode27" at offset (700, 200) from "subheader4" NW color (0, 0, 0) highlightColor (0, 0, 0) contextColor (0, 0, 0) font SansSerif size 12 depth 1
+  addCodeLine "Lokale Variablen:" to "SourceCode27"
+  addCodeLine "RndLit = Q" to "SourceCode27"
+  addCodeLine "SplitCS1 = {{Q}, {Q, P}}" to "SourceCode27"
+  addCodeLine "SplitCS2 = {{Q, P}, {~Q}}" to "SourceCode27"
+  interaction "Splitting"
+  unhighlightCode on "SourceCode17" line 36 row 0  
+  highlightCode on "SourceCode17" line 38 row 0  
+  hide "SourceCode26" 
+}
+{
+  array "StringArray11" offset (700, 60) from "subheader4" NW color (0, 0, 0) fillColor (192, 192, 192) elementColor (0, 0, 0) elemHighlight (0, 0, 0) cellHighlight (0, 0, 0) horizontal length 2 "Q" "Q, P"  depth 1 font SansSerif size 12
+  hide "StringArray10" 
+}
+{
+  unhighlightCode on "SourceCode17" line 38 row 0  
+  highlightCode on "SourceCode17" line 1 row 0  
+}
+{
+  unhighlightCode on "SourceCode17" line 1 row 0  
+  highlightCode on "SourceCode17" line 2 row 0  
+}
+{
+  unhighlightCode on "SourceCode17" line 2 row 0  
+  highlightCode on "SourceCode17" line 3 row 0  
+}
+{
+  codegroup "SourceCode28" at offset (700, 200) from "subheader4" NW color (0, 0, 0) highlightColor (0, 0, 0) contextColor (0, 0, 0) font SansSerif size 12 depth 1
+  addCodeLine "Lokale Variablen:" to "SourceCode28"
+  addCodeLine "FlatLen = 3" to "SourceCode28"
+  addCodeLine "RndLit = Q" to "SourceCode28"
+  addCodeLine "SplitCS1 = {{Q}, {Q, P}}" to "SourceCode28"
+  addCodeLine "SplitCS2 = {{Q, P}, {~Q}}" to "SourceCode28"
+  unhighlightCode on "SourceCode17" line 3 row 0  
+  highlightCode on "SourceCode17" line 4 row 0  
+  hide "SourceCode27" 
+}
+{
+  codegroup "SourceCode29" at offset (700, 200) from "subheader4" NW color (0, 0, 0) highlightColor (0, 0, 0) contextColor (0, 0, 0) font SansSerif size 12 depth 1
+  addCodeLine "Lokale Variablen:" to "SourceCode29"
+  addCodeLine "FlatLen = 3" to "SourceCode29"
+  addCodeLine "UnitClauses = {}" to "SourceCode29"
+  addCodeLine "RndLit = Q" to "SourceCode29"
+  addCodeLine "SplitCS1 = {{Q}, {Q, P}}" to "SourceCode29"
+  addCodeLine "SplitCS2 = {{Q, P}, {~Q}}" to "SourceCode29"
+  unhighlightCode on "SourceCode17" line 4 row 0  
+  highlightCode on "SourceCode17" line 5 row 0  
+  hide "SourceCode28" 
+}
+{
+  arrayMarker "ArrayMarker9" on "StringArray11" atIndex 0 label "clause" color (255, 0, 0) depth 1
+  moveArrayMarker "ArrayMarker9" to position 0   
+  unhighlightCode on "SourceCode17" line 5 row 0  
+  highlightCode on "SourceCode17" line 6 row 0  
+}
+{
+  unhighlightCode on "SourceCode17" line 6 row 0  
+  highlightCode on "SourceCode17" line 7 row 0  
+}
+{
+  codegroup "SourceCode30" at offset (700, 200) from "subheader4" NW color (0, 0, 0) highlightColor (0, 0, 0) contextColor (0, 0, 0) font SansSerif size 12 depth 1
+  addCodeLine "Lokale Variablen:" to "SourceCode30"
+  addCodeLine "FlatLen = 3" to "SourceCode30"
+  addCodeLine "UnitClauses = {Q}" to "SourceCode30"
+  addCodeLine "RndLit = Q" to "SourceCode30"
+  addCodeLine "SplitCS1 = {{Q}, {Q, P}}" to "SourceCode30"
+  addCodeLine "SplitCS2 = {{Q, P}, {~Q}}" to "SourceCode30"
+  unhighlightCode on "SourceCode17" line 7 row 0  
+  highlightCode on "SourceCode17" line 8 row 0  
+  hide "SourceCode29" 
+}
+{
+  moveArrayMarker "ArrayMarker9" to position 1   
+  unhighlightCode on "SourceCode17" line 8 row 0  
+  highlightCode on "SourceCode17" line 6 row 0  
+}
+{
+  unhighlightCode on "SourceCode17" line 6 row 0  
+  highlightCode on "SourceCode17" line 9 row 0  
+}
+{
+  codegroup "SourceCode31" at offset (700, 200) from "subheader4" NW color (0, 0, 0) highlightColor (0, 0, 0) contextColor (0, 0, 0) font SansSerif size 12 depth 1
+  addCodeLine "Lokale Variablen:" to "SourceCode31"
+  addCodeLine "FlatLen = 3" to "SourceCode31"
+  addCodeLine "UnitClauses = {Q}" to "SourceCode31"
+  addCodeLine "Lit = Q" to "SourceCode31"
+  addCodeLine "RndLit = Q" to "SourceCode31"
+  addCodeLine "SplitCS1 = {{Q}, {Q, P}}" to "SourceCode31"
+  addCodeLine "SplitCS2 = {{Q, P}, {~Q}}" to "SourceCode31"
+  unhighlightCode on "SourceCode17" line 9 row 0  
+  highlightCode on "SourceCode17" line 10 row 0  
+  hide "SourceCode30" 
+}
+{
+  unhighlightCode on "SourceCode17" line 10 row 0  
+  highlightCode on "SourceCode17" line 11 row 0  
+}
+{
+  moveArrayMarker "ArrayMarker9" to position 0   
+  unhighlightCode on "SourceCode17" line 11 row 0  
+  highlightCode on "SourceCode17" line 12 row 0  
+}
+{
+  unhighlightCode on "SourceCode17" line 12 row 0  
+  highlightCode on "SourceCode17" line 14 row 0  
+}
+{
+  interaction "Klausel entfernen"
+  array "StringArray12" offset (700, 60) from "subheader4" NW color (0, 0, 0) fillColor (192, 192, 192) elementColor (0, 0, 0) elemHighlight (0, 0, 0) cellHighlight (0, 0, 0) horizontal length 1 "Q, P"  depth 1 font SansSerif size 12
+  hide "StringArray11" 
+}
+{
+  unhighlightCode on "SourceCode17" line 14 row 0  
+  highlightCode on "SourceCode17" line 15 row 0  
+}
+{
+  unhighlightCode on "SourceCode17" line 15 row 0  
+  highlightCode on "SourceCode17" line 11 row 0  
+}
+{
+  arrayMarker "ArrayMarker10" on "StringArray12" atIndex 0 label "clause" color (255, 0, 0) depth 1
+  moveArrayMarker "ArrayMarker10" to position 0   
+  unhighlightCode on "SourceCode17" line 11 row 0  
+  highlightCode on "SourceCode17" line 12 row 0  
+}
+{
+  unhighlightCode on "SourceCode17" line 12 row 0  
+  highlightCode on "SourceCode17" line 14 row 0  
+}
+{
+  interaction "Klausel entfernen"
+  hide "StringArray12" 
+}
+{
+  unhighlightCode on "SourceCode17" line 14 row 0  
+  highlightCode on "SourceCode17" line 15 row 0  
+}
+{
+  unhighlightCode on "SourceCode17" line 15 row 0  
+  highlightCode on "SourceCode17" line 23 row 0  
+}
+{
+  unhighlightCode on "SourceCode17" line 23 row 0  
+  highlightCode on "SourceCode17" line 24 row 0  
+}
+{
+  unhighlightCode on "SourceCode17" line 24 row 0  
+  highlightCode on "SourceCode17" line 39 row 0  
+}
+{
+}
+label "Beispiel"
+{
+  text "subheader5" "Abschliessende Bemerkungen" offset (0, 60) from "headerRect" NW color (0, 0, 0) depth 1 font SansSerif size 18
+  codegroup "ending" at offset (0, 60) from "subheader5" NW color (0, 0, 0) highlightColor (0, 0, 0) contextColor (0, 0, 0) font SansSerif size 12 depth 1
+  addCodeLine "Der Algorithmus terminiert mit 'true', d. h." to "ending"
+  addCodeLine "es existiert also eine Variablenbelegung, die" to "ending"
+  addCodeLine "die ganze Formel wahr macht." to "ending"
+  addCodeLine "" to "ending"
+  addCodeLine "Man koennte den Algorithmus beispielsweise noch so modifizieren," to "ending"
+  addCodeLine "dass er ggf. die Belegung am Ende mit ausgibt." to "ending"
+  addCodeLine "" to "ending"
+  addCodeLine "Da SAT zur Komplexitaetsklasse NP gehoert, laesst sich das Problem (auf herkoemmlichen Rechnern) nur in exponentieller Zeit entscheiden." to "ending"
+  addCodeLine "Das bedeutet in diesem Fall, dass Variablenbelegungen einfach" to "ending"
+  addCodeLine "'durchprobiert' werden muessen. Zwar nicht ganz blindlings (denn zunaechst werden ja immer Variablen" to "ending"
+  addCodeLine "mit nur einer Belegungsmoeglichkeit gesucht (Einheitsklauseln)," to "ending"
+  addCodeLine "jedoch wird bei der Generierung der neuen" to "ending"
+  addCodeLine "Klauselmengen splitCS1 und splitCS2 willkuerlich ein Literal gewaehlt wird, und fuer dieses dann einfach beide" to "ending"
+  addCodeLine "binaere Belegungsmoeglichkeiten durchprobiert." to "ending"
+  addCodeLine "" to "ending"
+  addCodeLine "Eine optimiertere Version des Verfahrens ist der Davis-Putnam-Logemann-Loveland-Algorithmus (DPLL)." to "ending"
+  hide "SourceCode17" "SourceCode31" "StringArray12" "subheader4" 
+}
+label "Abschliessende Bemerkungen"

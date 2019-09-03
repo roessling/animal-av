@@ -1,0 +1,51 @@
+differenceNodeLeaf1#Was ist der Hauptunterschied zwischen Knoten und Blättern bei ID3?
+differenceNodeLeaf2#Knoten repräsentieren Entscheidungen, während Blätter Klassenvorhersagen repräsentieren.
+differenceNodeLeaf3#Jeder Baum hat immer nur einen Knoten, aber mehrere Blätter.
+differenceNodeLeaf4#Das ist nicht korrekt: Jeder Baum kann nur einen WURZELknoten haben, aber mehrere Knoten sind erlaubt.
+differenceNodeLeaf5#Das ist richtig! Gut gemacht!
+differenceNodeLeaf6#Knoten haben eine Beschriftung, Blätter nicht.
+differenceNodeLeaf7#Das ist nicht richtig: Sowohl Knoten als auch Blätter haben Beschriftungen!
+recursiveDepth1#Ist der der folgende Satz richtig (True) oder falsch (False)? ID3 ist ein rekursiver Algorithmus mit einer von der Ausgangstabelle abhängigen Rekursionstiefe.
+recursiveDepth2#Richtig. Der Satz ist wahr. Gut gemacht.
+recursiveDepth3#Nein, der Satz ist wahr.
+partsOfDecisionTree1#Welches dieser Elemente ist in JEDEM ID3-Entscheidungsbaum zu finden? Genau drei Antworten sind richtig.
+partsOfDecisionTree2#Ein Knoten
+partsOfDecisionTree3#Ein Knoten: Falsch, ein Baum braucht keinen Knoten; er kann ausschließlich aus einem beschrifteten Blatt bestehen.
+partsOfDecisionTree4#Wurzel
+partsOfDecisionTree5#Wurzel: Richtig, jeder Baum hat eine Wurzel.
+partsOfDecisionTree6#Kante
+partsOfDecisionTree7#Kante: Falsch, ein Baum muss keine Kante haben; bei nur einem Blatt gibt es keine Kante.
+partsOfDecisionTree8#Eine Beschriftung
+partsOfDecisionTree9#Eine Beschriftung: Richtig, ein Baum hat mindestens eine Beschriftung.
+partsOfDecisionTree10#Blatt
+partsOfDecisionTree11#Blatt: Richtig, ein Baum hat mindestens ein Blatt.
+howManyColumns1#Wie viele Tabellenspalten der Haupttabelle muss sich ID3 im Idealfall lediglich ansehen?
+howManyColumns2#Richtig! Im Idealfall findet der Algorithmus heraus, dass alle Beispiele einer Klasse angehören und erzeugt ein Blatt. In diesem Fall ist es nur nötig, die Tabellenspalte für die Klassen anzusehen.
+notTerminate1#Ist der der folgende Satz richtig (True) oder falsch (False)? Sobald es Inkonsistenzen in den Daten gibt, dass heißt sobald zwei Beispiele bis auf die Klasse identisch sind, wird der Algorithmus nicht terminieren.
+notTerminate2#Richtig. Der Satz ist wahr. Gut gemacht.
+notTerminate3#Nein, der Satz ist wahr.
+subTrees1#Ist der der folgende Satz richtig (True) oder falsch (False)? Wenn ein Knoten für eine bestimmte Eigenschaft erstellt wird, dann wird ID3 einen Subbaum für jeden Wert generieren, welcher in der Haupttabelle bei dieser Eigenschaft vorkommt.
+subTrees2#Nur die Werte, die in der aktuellen Subtabelle vorkommen, werden genutzt.
+subTrees3#Nein. Der Satz ist falsch.
+subTrees4#Richtig. Der Satz ist falsch.
+anotherDescent1#Wird es einen weiteren rekursiven Abstieg geben (True) oder wird die Rekursion enden (False)?
+anotherDescent2#Es kommen verschiedene Klassen vor, daher endet die Rekursion nicht.
+anotherDescent3#Richtig.
+anotherDescent4#Nein.
+anotherDescent5#Alle Beispiele gehören einer Klasse an, daher endet die Rekursion.
+anotherDescent6#Nein
+anotherDescent7#Richtig.
+whichFeature1#Welche Eigenschaft wird nun ausgewählt (falls mehr als eine möglich ist, wähle bitte die erste in der Haupttabelle)?
+whichFeature2#Das ist richtig. Gut gemacht!
+whichFeature3#Nein, '§' wird nun ausgewählt.
+explainsData1#Erklärt der erstellte Baum die Trainingsdaten, d.h. wird die richtige Klasse für alle Beispiele der Haupttabelle vorhergesagt?
+explainsData2#Ein Entscheidungsbaum, der von ID3 erstellt wurde, erklärt immer alle Trainingsbeispiele. Aber er könnte neue (ungesehene) Beispiele falsch klassifizieren, da er lediglich auf Basis der bisher gesehenen Beispiele erstellt wurde.
+explainsData3#Richtig.
+explainsData4#Nein.
+label0#der der im diesem Schritt zu erstellende Knoten
+label00#das neu erstellte Blatt
+label1#Welche Beschriftung wird § haben? (Eingabe bitte in Kleinbuchstaben)
+label2#Richtig.
+values1#Für welche Werte der aktuellen Eigenschaft '§' werden Subbäume erstellt? (§ Möglichkeiten sind richtig)
+values2#Richtig.
+values3#Nein.

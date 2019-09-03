@@ -1,0 +1,11 @@
+In diesem Schritt berechnen wir die neue Volatilität 
+sigma.
+
+Der hierfür von Prof. Glickman vorgeschlagene Algorithmus
+ist in den Pseudocode integriert. Aber wir werden hier nicht
+weiter ins Detail gehen, da dieser Teil nur die Nullstelle einer 
+Funktion berechnet. Er basiert auf dem Illinois-Algorithmus,
+eine Variante der Regula-Falsi-Methode, bei der die Nullstelle von
+eine Funktion approximiert wird, indem von einem negativen und 
+positivem Punkt (hier A und B, wobei C das Endergebnis ist), C
+approximiert wird.

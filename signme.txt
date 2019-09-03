@@ -1,0 +1,4 @@
+keytool -genkey -alias "Dr. Guido Roessling" -keypass AnimalGR  -keystore /Users/roessling/Documents/workspace/Animal/Animal.cer -storepass AnimalGR 
+
+jarsigner -keystore Animal.cer -storepass AnimalGR -keypass AnimalGR /Users/roessling/Downloads/Animal-current.jar "Dr. Guido Roessling"
+

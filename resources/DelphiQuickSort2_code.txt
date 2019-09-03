@@ -1,0 +1,28 @@
+{ TQuickSort }
+
+procedure TQuickSortSort(var A: array of Integer);
+
+ procedure QuickSort(var A: array of Integer; iLo, iHi: Integer); @CodeLabel("header")
+ var Lo, Hi, Mid, T: Integer; @CodeLabel("variables")
+ begin
+   Lo := iLo; @CodeLabel("setLo")
+   Hi := iHi - 1; @CodeLabel("setHi")
+   Mid := A[Hi]; @CodeLabel("setMid")
+   repeat @CodeLabel("repeat")
+     while A[Lo] < Mid do Inc(Lo); @CodeLabel("incLo")
+     while A[Hi] > Mid do Dec(Hi); @CodeLabel("decHi")
+     if Lo <= Hi then @CodeLabel("testLoHi")
+     begin
+       T := A[Lo]; @CodeLabel("copyLo")
+       A[Lo] := A[Hi]; @CodeLabel("replicateHi")
+       A[Hi] := T; @CodeLabel("insertLo")
+       Inc(Lo); @CodeLabel("incLo2")
+       Dec(Hi); @CodeLabel("decHi2")
+     end;
+   until Lo > Hi; @CodeLabel("until")
+   if Hi > iLo then @CodeLabel("checkHiiLo")
+     QuickSort(A, iLo, Hi);  @CodeLabel("rightRec")
+   if Lo < iHi then  @CodeLabel("checkLoiHi")
+     QuickSort(A, Lo, iHi);  @CodeLabel("leftRec")
+   if Terminated then Exit;  @CodeLabel("checkDone")
+ end;

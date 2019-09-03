@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jardesc>
+<jar path="/Users/roessling/Documents/Animations/generators.jar"/>
+<options buildIfNeeded="true" compress="true" descriptionLocation="/Animal/generators.jardesc" exportErrors="false" exportWarnings="true" includeDirectoryEntries="true" overwrite="false" saveDescription="true" storeRefactorings="false" useSourceFolders="false"/>
+<storedRefactorings deprecationInfo="true" structuralOnly="false"/>
+<selectedProjects/>
+<manifest generateManifest="false" manifestLocation="/Animal/META-INF/MANIFEST.MF" manifestVersion="1.0" reuseManifest="true" saveManifest="true" usesManifest="true">
+<sealing sealJar="false">
+<packagesToSeal/>
+<packagesToUnSeal/>
+</sealing>
+</manifest>
+<selectedElements exportClassFiles="true" exportJavaFiles="false" exportOutputFolder="false">
+<javaElement handleIdentifier="=Animal/&lt;de.ahrgr.animal.kohnert.asugen.property"/>
+<javaElement handleIdentifier="=Animal/&lt;de.ahrgr.animal.kohnert.generatorgui"/>
+<file path="/Animal/translator.jardesc"/>
+<javaElement handleIdentifier="=Animal/&lt;algorithm"/>
+<javaElement handleIdentifier="=Animal/&lt;de.ahrgr.animal.kohnert.generators"/>
+<javaElement handleIdentifier="=Animal/&lt;generators"/>
+<javaElement handleIdentifier="=Animal/&lt;de.ahrgr.animal.kohnert.asugen"/>
+<javaElement handleIdentifier="=Animal/&lt;algorithm.compression"/>
+<javaElement handleIdentifier="=Animal/&lt;de.ahrgr.animal.kohnert.asugen.petri"/>
+<javaElement handleIdentifier="=Animal/&lt;resources"/>
+<javaElement handleIdentifier="=Animal/&lt;algorithm.animalTranslator.library"/>
+<javaElement handleIdentifier="=Animal/&lt;algorithm.search"/>
+<javaElement handleIdentifier="=Animal/&lt;algorithm.animalTranslator"/>
+<javaElement handleIdentifier="=Animal/&lt;algorithm.animalTranslator.codeItems"/>
+<javaElement handleIdentifier="=Animal/&lt;algorithm.stringSearch"/>
+<javaElement handleIdentifier="=Animal/&lt;algorithm.fileHandler"/>
+</selectedElements>
+</jardesc>

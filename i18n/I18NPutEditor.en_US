@@ -1,0 +1,16 @@
+#
+# Internationalization (I18N) resources for the PutEditor
+#
+# inactiveElementException: the affected element is deactivated
+PutEditor.inactiveElementException=The chosen cell {0} is deactivated in the current animation step.\nPlease activate the cell at first using the highlight animator or choose another cell.
+# noNumberException: the value typed in is not an int (but should be)
+PutEditor.noNumberException=Only integer values are allowed in an IntArray. The entered string ''{0}'' is not a number!
+# definition for the context popup menu item
+PutEditor.put.iconName=
+PutEditor.put.label=Put
+PutEditor.put.mnemonic=t
+PutEditor.put.toolTipText=Enter a new value into an array cell
+# label for the selected cell
+PutEditor.cellIndex=Cell index: 
+# label for the content of the selected cell
+PutEditor.cellContent=Cell content: 

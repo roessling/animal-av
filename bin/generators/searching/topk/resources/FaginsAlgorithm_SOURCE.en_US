@@ -1,0 +1,9 @@
+Pseudocode
+		
+fagin(Array A, k) {
+	L := Lists of objects in A sorted by one attribute for each lists
+	do sorted access in parallel at all the lists in L
+		until k objects have been seen from all the lists
+	retrieve missing attributes by random access
+	calculate score value of all objects
+}

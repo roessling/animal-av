@@ -1,0 +1,31 @@
+noSuchKeyException=Es gibt keine Ressource f\u00fcr Eintrag {0}
+iconNotFound=Icon "{0}" nicht gefunden
+
+generatorName=Carry-Lookahead Addierer
+algoName=Carry-Lookahead Addierer
+
+description=Der Carry-Lookahead Addierer ist eine Erweiterung des Ripple-Carry Addierers. Dieser addiert alle Bits seriell und reicht dabei jeweils einen Übertrag weiter. Der Nachteil dabei ist, das die folgenden Bits erst berechnet werden können, wenn alle vorherigen bereits abgeschlossen sind.\n\nDer Carry-Lookahead Addierer führt daher zusätzliche Logik ein, welche den Übertrag für mehrere Bits vorberechnet, sodass folgende Addiererblöcke früher beginnen können.\n\nDer vorteil eines einzelnen Carry-Lookahead Addierers besteht also darin, dass die Ausgabe c_out früher bekannt ist. Das Ergebnis s selbst wird jedoch weiterhin durch einen Ripple-Carry Addierer berechnet, wobei die Eingabe c_in jeweils vom vorherigen Carry-Lookahead Addierer stammt.
+sourceCodeComplete=input [n-1:0] a, b    // Eingabewerte\ninput c_in            // Eingabeübertrag\noutput [n-1:0] s      // Ergebnis A + B\noutput c_out          // Ausgabeübertrag\nwire [n-1:-1] c       // Zwischenüberträge\nwire [n-1:0] g        // Erzeugt Übertrag?\nwire [n-1:0] p        // Leitet Übertrag weiter?\nwire [n-1:-1] c_cla   // CLA-Übertrag\n\nc[-1] = c_in;   cp[-1] = 0;\nfor (i = 0; i < 2; i = i + 1) begin\n    (c[i],s[i]) = a[i] + b[i] + c[i-1]\n    g[i] = a[i] & b[i]\n    p[i] = a[i] | b[i]\n    c_cla[i] = g[i] | (p[i] & c_cla[i-1])\nend\nc_out = c_cla[n-1] | (c_in & p)
+codeVariables=input [n-1:0] a, b    // Eingabewerte\ninput c_in            // Eingabeübertrag\noutput [n-1:0] s      // Ergebnis A + B\noutput c_out          // Ausgabeübertrag\nwire [n-1:-1] c       // Zwischenüberträge\nwire [n-1:0] g        // Erzeugt Übertrag?\nwire [n-1:0] p        // Leitet Übertrag weiter?\nwire [n-1:-1] c_cla   // CLA-Übertrag
+sourceCode=c[-1] = c_in;   c_cla[-1] = 0;\nfor (i = 0; i < 2; i = i + 1) begin\n\t\t(c[i],s[i]) = a[i] + b[i] + c[i-1]\n\t\tg[i] = a[i] & b[i]\n\t\tp[i] = a[i] | b[i]\n\t\tc_cla[i] = g[i] | (p[i] & c_cla[i-1])\nend\nc_out = c_cla[n-1] | (c_in & p)
+conclusion=Der hier betrachtete Carry-Lookahead Addierer hat eine Breite von {0} Bit. Es fällt auf, dass die CLA-Logik vollständig vom oberen Ripple-Carry Addierer getrennt ist.\n\nDer von der CLA-Logik berechnete Übertrag wird ausschließlich für die Ausgabe c_out verwendet. Diese steht somit zur Verfügung, während die Berechnung der Ausgabe s noch im Gange ist, wodurch folgende Addiererblöcke ihre Arbeit früher aufnehmen können. Es handelt sich um eine lineare Optimierung, da nur jeweils Blöcke fester Bitlänge beschleunigt werden.\n\nCarry-Lookahead Addierer können, ähnlich wie der Ripple-Carry Addierer, kaskadiert werden, um einen Trade-off zwischen Beschleunigung und Hardwarekomplexität zu erhalten. In der Praxis werden meist Carry-Lookahead mit 4 Bit Breite verwendet.
+
+tocIntroduction=Einleitung
+tocBit=Bit {0}
+tocCarryOut=c_out
+
+fullAdder=Ausgabe s[{0}] berechnet durch Ripple-Carry-Addierer
+generateYes=a[{0}] + b[{0}] = {1} => Generate, da zwei Bits nötig
+generateNo=a[{0}] + b[{0}] = {1} => Kein Generate
+propagateYes=Ergebnis ist zweistellig, wenn Übertrag reinkommt => Propagate
+propagateNo=Ergebnis bleibt bei Eingabeübertrag einstellig => Kein Propagate
+claCarryFirst=Erste Stelle: Noch kein eingehender Übertrag in der CLA-Logik
+propagate=Wird ein Übertrag weitergeleitet? => {0}
+hasClaCarry=Wird ein Übertrag erzeugt oder weitergeleitet? => {0}
+propagateAll=Leiten alle Blöcke einen Übertrag weiter? => {0}
+inputCarryPropagated=Wird der Eingabeübertrag weitergeleitet? => {0}
+
+yes=Ja
+no=Nein
+
+errorNegativeInput=Die Eingabewerte a und b dürfen nicht negativ sein.

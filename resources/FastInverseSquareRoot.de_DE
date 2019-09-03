@@ -1,0 +1,150 @@
+# By Max Kaiser (c) 2018
+
+noSuchKeyException=Es existiert keine Ressource f\u00fcr den Key{0}
+2 iconNotFound=Icon ” {0} ” nicht gefunden
+
+### Ä -> \u00c4 ###
+### ä -> \u00e4 ###
+### Ö -> \u00d6 ###
+### ö -> \u00f6 ### 
+### Ü -> \u00dc ###
+### ü -> \u00fc ###
+### ß -> \u00df ###
+
+#### Animal GUI Text ####
+description = Fast Inverse Square Root:\n\nEin Mathematischer Algorithmus mit sehr wichtiger Vergangenheit in der grafischen Computer Verarbeitung.\n\nEr wurde bei vielen Anwendungen eingesetzt wo das schnelle berechnen der Inversen einer Wurzel wichtig ist.\nDies kann z.B. die Licht Berechnung in Computerspielen (Quake 3) sein oder im Real-Time Rendering von 3D Modellen.\nJedoch ist der Algorithmus kein so einfacher zum verstehender. Obwohl er nur aus wenigen Zeilen besteht hat er seine Schwierigkeit nachvollzogen zu werden.\n\nMit grafischen Elementen und einer Schritt für Schritt Beschreibung kann er jedoch gut nachvollzogen werden :)
+
+#### Introduction ####
+intro.titleA = Was ist der Fast Inverse Square Root Algorithmus?
+intro.text1  = Ein Algorithmus welcher in der Vergangenheit wichtig war um schnell und effizient das Inverse einer Wurzel
+intro.text2  = zu berechnen. Um genauer zu sein wird die mathematische Funktion f(x) = 1 / sqrt(x) effizient approximiert.
+intro.titleB = Wo wurde der Algorithmus eingesetzt und warum war er so wichtig?
+intro.text3  = Durch die Schnelligkeit und sehr hohe Genauigkeit schon in der ersten Iteration wurde und auch wird er im
+intro.text4  = Bereich der Grafik Verarbeitung genutzt. So unter anderem auch in dem Computerspiel Quake 3 wodurch er
+intro.text5  = erstmals bekannt wurde ca 1990-2000. Existiert hat er in verschieden Versionen auch schon davor.
+intro.titleC = Wie funktioniert der Algorithmus?
+intro.text6  = Der Algorithmus besteht aus zwei Hauptteilen:
+intro.text7  = 1) eine erste Approximation mittels einer Magic Number
+intro.text8  = 2) danach wird das Newton-Verfahren benutzt um sich weiter anzunahern.
+intro.text9  = Dabei wird eine Funktion benutzt um den Fehler von einem geschatzen Wert g und unserem Ausgangswert zu berechnen.
+intro.text10 =      f(x) = 1 / (g^2)   -  x  (Einsetzen in Newton und Umformen ergibt die Formel im Algorithmus)
+
+
+
+#### GUI Introduction ####
+gui.intro.description      = Beschreibung
+gui.intro.descriotion.text = Eine kurze Erklarung wo welche Daten zu sehen sind:
+gui.intro.text1            = - Es gibt einmal oben links den Algorithmus Code
+gui.intro.title1           = Algorithmus
+gui.intro.text2            = - Daneben unser aktuelle Wert als float Darstellung
+gui.intro.title2           = Float Wert
+gui.intro.text3            = - Und ganz rechts den gleichen Wert als Binardarstellung
+gui.intro.title3           = Wert in Binar
+gui.intro.tip              = ***  Es empfiehlt sich das Animal Fenster tiefer/breiter zu ziehen  ***
+
+
+#### GUI ####
+array.title = Wert als IEEE 754 Darstellung
+
+
+#### Algorithmus ####
+call.text1 = In der Variable x wird die Startzahl festgelegt auf welchen wir den Algorithmus anwenden
+call.text2 = wollen um unsere inverse Wurzel zu berechnen.
+
+threehalves.text1 = Der Wert 1.5 entsteht durch die Herleitung der Newton Formel zur Berechnung von unseren
+threehalves.text2 = neuen y Wert, welcher jede Iteration in unserer do/while Schleife neu ausgerechnet wird.
+
+half_x.text1 = Die andere Konstante in der Formel ist die Halfte von unserem Ursprungswert.
+half_x.text2 = Dieser Ausdruck (also 0.5*x) entsteht genau wie die 1.5 aus dem Newton Verfahren.
+half_x.text3 = Wir haben unsere Newton Annaherung fur die Wurzel einer Funktion f an der Stelle x
+half_x.text4 = new_x = x - (f(x) - f'(x)) mit f(x) = 1 / g^2  - x  wobei g ein Schatzung von 1/sqrt(x) ist.
+half_x.text5 = Wenn wir unsere Fehlerfunktion f(x) (Fehler zwischen unserer Zahl und der Schatzung)
+half_x.text6 = nun in die Newton Annaherung einsetzen bekommen wir die Formel in der Schleife.
+
+magicnumber.text1 = Die Magic Number ist eigentlich DIE Zentrale <Funktion> in dem Algorithmus da sie
+magicnumber.text2 = eine sehr genau erste Annaherung erzeugt fur jede mogliche Zahl. Dabei bleibt sie
+magicnumber.text3 = jedoch Konstant bei alle moglichen Werte von x.
+magicnumber.text4 = Im Laufe der Zeit sind unterschiedliche Magic Numbers im Internet erschienen welche
+magicnumber.text5 = sich in der Genauigkeit der ersten Annaherung unterscheiden. 
+magicnumber.text6 = Fur doppelte Genauigkeit(= double) muss eine angepasste Magic Number
+magicnumber.text7 = verwendet werden. Spater wird genauer darauf eingegangen wie diese auch noch mit dem Shift zusammenhangt.
+
+floatasbits.text1 = Um dem Trick mit dem Shift durch zufuhren mussen wir unsere Float Variable
+floatasbits.text2 = in binarer Form darstellen.
+floatasbits.text3 = Mittels floatToIntBits(a) bekommt man die Bitdarstellung der Variable a.
+floatasbits.text4 = Diese konnen wir in Java nicht direkt speichern da es den Datentyp Bit nicht gibt
+floatasbits.text5 = und daher auch kein Bit Array. Jedoch hat das speichern in Integer den gleichen Effekt.
+
+magicshift.text1 = Um zu verstehen was der Shift macht muss man wissen das eine Zahl in der Flieskommadarstellung
+magicshift.text2 = normalisiert und getrennt von ihren Exponenten gespeichert wird.
+magicshift.text3 = Wenn wir nun alle binaren Stellen um eins nach rechts verschieben, halbieren wir die Zahl und 
+magicshift.text4 = auch der Exponent ist nur noch halb so viel.
+magicshift.text5 = Die neue Bitdarstellung wird nun von unserer Magic Number abgezogen. Beachten Sie jedoch, dass
+magicshift.text6 = unsere Zahl kein Float Wert ist sondern immer noch eine Int / Binarzahl!
+
+bitsasfloat.text = Wir wandern unsere Bitdarstellung wieder in eine Float Zahl zuruck um mit ihr weiter rechnen zu konnen.
+
+lasty.text1 = Unsere Schleife beginnt.
+lasty.text2 = Es wird in jeder Iteration eine neue Annaherung fur unser x berechnet.
+lasty.text3 = Um zu wissen wann wir fertig sind, was bei uns bedeutet die maximale Genauigkeit erreicht zu haben
+lasty.text4 = welche wir speichern konnen, rechnen wir so lange bis sich der Wert nicht mehr vom vorherigen unterscheidet.
+
+calculation.text1 = Wir fuhren einen Schritt des Newton Verfahrens aus und errechnen dadurch eine neue und bessere Annaherung.
+calculation.text2 = D.h. wir bekommen einen kleineren Fehler in unserer Fehlerfunktion f(x) siehe Erklarung wie wir auch auf
+calculation.text3 = den Ausdruck half_x = 0.5*x gekommen sind.
+
+check.text1 = Um zu wissen wann wir ausreichend genau sind (in dem Falle erst wenn die maximale Genauigkeit fur Float erreicht ist
+check.text2 = mit Double kann naturlich noch weiter gerechnet werden) nehmen wir die Differenz von der aktuellen Annaherung und jene
+check.text3 = aus vorheriger Iteration. Irgendwann (meist nach zwei bis drei Durchlaufen) andert sich an dem Wert nichts mehr.
+
+finish.text1 = Wir sind fertig und geben unser finales Ergebnis zuruck.
+finish.text2 = Und dies schneller als vergleichbare Algorithmen welche in der Zeit um ca 1990-2000 herum genutzt wurden :)
+
+
+#### Questions ####
+question.text1   = Welche der folgenden Antworten sind richtig?
+question.answ1.1 = Die Formel   new = old - ( f(x) / Df(x) ) wird benutzt.
+question.answ1.2 = Eine Annaherung ist f(x) = (1 / guess^2 ) - x
+question.answ1.3 = Die Magic Number ist einzigartig.
+question.answ1.4 = Visuelle Anwendungen benutzen diesen Algorithmus.
+question.feed1.1 = 1) Dies stimmt da es die allgemeine Formel für die Newton Approximation ist.\r\n
+question.feed1.2 = 2) Das stimmt auch da es unsere Fehlerfunktion ist.\r\n
+question.feed1.3 = 3) Leider falsch da im Laufe der Zeit mehrer Magic Numbers errechnet wurden.\r\n
+question.feed1.4 = 4) Ja fur die Berechnung von z.B. Licht sehr wichtig.\r\n
+question.text2   = In welche Richtung wird der Shift in der nachsten Anweisung ausgefuhrt?
+question.answ2.1 = Shift nach rechts
+question.answ2.2 = Shift nach links
+question.feed2.1 = Korrekt wir shiften um eine Stelle nach rechts.
+question.feed2.2 = Falsch es wird kein links Shift durchgefuhrt sondern eine Stelle nach rechts geshiftet.
+
+question.text3   = Wir haben wieder unsere Abbruchbedingung erreicht. Fuhren wir eine weitere Iteration aus oder verlassen wir die Schleife? (false = verlassen, true = weitere Iteration)\nTipp: schauen Sie sich das Animal Variablen Fenster an. (jedoch nicht die Variablen welche auf der GUI zu sehen sind)
+
+#### Error Messages ####
+validate.floattobig   = Die eingegebene Gleitkommazahl ist zu groß für den Datentyp Float. 
+validate.floattosmall = Die eingegebene Gleitkommazahl ist zu klein für den Datentyp Float. 
+validate.magicnumber  = Sorry aber die eingegebene Magic Number ist zu groß um später mit ihr als Integer zu rechnen. 
+
+#### Final Frame ####
+final.title.text = Final
+final.text       = Wir sind mit dem Algorithmus fertig und haben fur die Berechnung
+final.text2      = Iterationen gebraucht.
+final.text2b     = Wir haben mit diesen Eingabewerten:
+final.text2c     = Der Startwert:
+final.text2d     = Festgelegte Magic Number:
+final.text2e     = Folgende Ergebnisse erhalten:
+final.text3      = Unser errechnetes y:
+final.text4      = Vergleichsrechnung mittels Java Math:
+
+
+
+
+
+
+
+
+
+
+
+
+
+

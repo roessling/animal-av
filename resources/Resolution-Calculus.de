@@ -1,0 +1,81 @@
+name=Resolutionskalkül
+
+expl1=Resolution nimmt eine Menge von Klauseln entgegen, die wiederum
+expl2=Mengen von sogenannten Literalen sind (unnegierte und negierte boolesche Variablen)
+expl3=Die Semantik dieser Menge von Mengen ist eine repräsentative boolesche KNF-Formel:
+expl4=Bilde die Disjunktion der Literale für jede Klausel, davon dann die Konjunktion
+expl5=Zum Beispiel ist '{'p,s'}', '{'!p,q'}' äquivalent zu der Formel (p ∨ s) ∧ (!p ∨ q)
+expl6=Streng genommen sind diese Formeln aber nur zulässig aufschreibbar wenn die Eingabemenge endlich ist
+expl7=Resolution ist jetzt ein SAT-Löser dazu, dh. es berechnet, ob es eine Belegung
+expl8=für die Variablen in den Klauseln gibt, sodass die Formel wahr wird
+expl9=Die Idee ist, dass man stetig neue Klauseln aus alten resolviert. Die neuen Klauseln ändern die Erfüllbarkeit
+expl10=der Eingabe nicht, sie machen es nur "klarer", wie die Variablen zu belegen wären.
+expl11=Sobald der Algorithmus die "leere" Klausel resolviert, gibt er unerfüllbar aus,
+expl12=falls er terminiert, sobald alle Klauseln resolviert sind, gibt er erfüllbar aus.
+expl13=SAT-Lösen ist wohl das bekannteste und trivialste NP-vollständige Problem und KNF-Formeln sind hier keine Ausnahme!
+expl14=Unendliche Klauselmengen sind zumindest noch semientscheidbar (wegen Kompaktheit)
+expl15=Diese Implementierung verwaltet Klauseln in einer alten, neuen und nächsten Generation:
+expl16=Dies wird gemacht, um redundante Vergleiche zu sparen (Alle alten Klauseln
+expl17=wurden zb. bereits miteinander verglichen, sodass spätere Iterationen das überspringen)
+
+wdwExpl1=Resolution ist ein Kalkül für SAT-Lösen von booleschen Klauseln.\n
+wdwExpl2=Diese Klauseln repräsentieren KNF-Formeln:\n
+wdwExpl3=Zum Beispiel ist '{'p,s'}', '{'!p,q'}' äquivalent zu der Formel (p ∨ s) ∧ (!p ∨ q)\n
+wdwExpl4=Siehe die Einleitungsfolie der Animation für mehr Informationen.\n\n
+wdwExpl5=Die Eingabe für den Algorithmus muss folgender Grammatik entsprechen:\n
+wdwExpl6=Startnichtterminal ist S\n\nS -> Clause ("," Clause)*\n
+wdwExpl7=Clause -> "'{'" Literal ("," Literal)* "'}'"\nLiteral -> UnicodeCharacters*\n\n
+wdwExpl8=Beispiele:\n'{'p, q'}', '{'!p, s'}', '{'!s'}', '{'!q'}'\n
+wdwExpl9='{'!s, t'}', '{'s, t, q'}', '{'!q, p'}', '{'!q, !p'}', '{'!s, !q'}'\n
+wdwExpl10=Literale mit einem vorgestellten ! werden als negierte Variablen interpretiert, das Nutzen von Leerzeichen ist erlaubt.\n\n
+wdwExpl11=Vorsicht: Resolution ist NP-vollständig, zudem ist diese naive Implementierung i.A. sehr langsam! (Das richtige Beantworten der Komplexitätsfrage gibt dazu noch einen Hinweis)
+
+satExpl0=Beweis für Erfüllbarkeit
+satExpl1=In der letzten Iteration wurden keine neuen Klauseln resolviert:
+satExpl2=Nun wurden alle Klauseln resolviert, ohne,
+satExpl3=dass eine davon die leere Klausel ist.
+satExpl4=Weil der Resolutionskalkül vollständig und korrekt ist,
+satExpl5=folgt, dass die Eingabe erfüllbar sein muss.
+satExpl6=Der Generator sortiert nun die Klauseln, man kann damit nun
+satExpl7=recht einfach konstruieren, wie die Variablen belegt
+satExpl8=sein müssten für das Erfüllen der Klauseln.
+satExpl9=Die Eingabeklauseln wurden hervorgehoben!
+
+unsatExpl0=Beweis der Unerfüllbarkeit
+unsatExpl1=Das Resolvieren der letzten beiden Klauseln ergab die leere Klausel:
+unsatExpl2=Weil der Resolutionskalkül korrekt ist, folgt, dass
+unsatExpl3=die Eingabe unerfüllbar gewesen sein muss.
+unsatExpl4=Testen Sie auch eine Eingabe, die erfüllbar ist!
+
+exmplRes=Beispiel einer Resolution
+
+correct=Richtig
+wrong=Falsch
+
+emptyClauseQ0=Nach Lesen der Einleitung: Warum stoppt der Algorithmus und gibt unerfüllbar aus beim Resolvieren der leeren Klausel? (Die falsche Antwort ist gesucht!)
+emptyClauseQ1=Die leere Klausel ist äquivalent zur logischen Konstante 0
+emptyClauseQ2=Falsche Antwort: Tatsächlich ist sie äquivalent zur 0
+emptyClauseQ3=Weil die leere Klausel unerfüllbar ist, kann die ganze Klauselmenge nicht erfüllbar sein
+emptyClauseQ4=Falsche Antwort: Erinnerung, dass Klauselmengen als große Konjunktion repräsentierbar sind, da die leere Klausel bereits äquivalent zur 0 ist, kann die Konjunktion nicht erfüllbar sein
+emptyClauseQ5=Weil die leere Klausel unerfüllbar ist, führt das jetzt zur Unerfüllbarkeit der Eingabeklauseln
+emptyClauseQ6=Richtige Antwort: Die Eingabe war bereits unerfüllbar. Dass die leere Klausel abgeleitet wird, zeigt nur die Unerfüllbarkeit, führt aber nicht ursächlich dazu
+emptyClauseQ7=Weil der Rest der Klauselmenge unerfüllbar ist
+emptyClauseQ8=Falsche Antwort: Erinnerung, dass Resolvieren die Erfüllbarkeit nicht ändert, falls die leere Klausel ableitbar war, war die Eingabe schon unerfüllbar
+
+parallelResQ0=Nachdem Sie den Algorithmus in Aktion gesehen haben: Welchen Resolventen folgen durch '{'p, q'}' mit '{'!p, !q'}' ?
+parallelResQ1='{'q, !q'}', '{'p, !p'}'
+parallelResQ2='{'q, !q'}', '{'p, !p'}', '{''}'
+parallelResQ3=Falsch, '{'q, !q'}', '{'p, !p'}' wird zwar resolviert, aber das Kalkül verbietet strikt zwei oder mehrere Paare von Literal gleichzeitig abzuleiten. Tatsächlich sind beide Klauseln äquivalent zu p XOR q und damit ein sauberes Gegenbeispiel.
+parallelResQ4='{'p, !q'}', '{'!p, q'}'
+parallelResQ5='{'p, !q'}', '{'!p, q'}', '{''}'
+parallelResWrong=Falsch, '{'q, !q'}', '{'p, !p'}' ist die richtige Antwort
+
+runtimeQ0=Welche Laufzeit und Speicherkomplexität erwartet man für den Algorithmus im schlimmsten Fall? (Eingabegröße n ist die Anzahl verschiedener Literale in der Eingabe)
+runtimeQ1=Polynomialzeit, polynomieller Platz
+runtimeQ2=Falsch, wie in der Einleitung gezeigt, ist Resolution NP-vollständig, Exponentialzeit ist also auf jeden Fall zu erwarten.
+runtimeQ3=Exponentialzeit, polynomieller Platz
+runtimeQ4=Teilweise richtig: Resolution kann so implementiert werden basierend auf Entscheidungsbäumen. Jedoch ist das hier aus didaktischem Grund (und weil diese Ansätze recht komplex sind) eine Variante, die alle Resolventen während der ganzen Ausführung speichert.
+runtimeQ5=Polynomialzeit, exponentieller Platz
+runtimeQ6=Falsch, das ist auch eine theoretisch unmögliche Kombination
+runtimeQ7=Exponentialzeit, exponentieller Platz
+runtimeQ8=Richtig, für diese Implementierung. Es gibt aber recht komplexe Ansätze, Resolution in polynomiellem Platz zu implementieren. Das ist i.A. auch zu bevorzugen, da hier die Laufzeit dadurch auch leidet. (Hier: O(2^3n))

@@ -1,0 +1,11 @@
+InsertionSort(int[] array) #header
+  Declare int currentPos, insertPos, currentVal; #variables
+  currentPos = 1; #setCurrentPos
+  loop while currentPos < array length: #outerLoop
+    insertPos = currentPos; #setInsertPos
+    currentVal = array[currentPos]; #takeOut
+    loop while insertPos > 0 && array[insertPos-1] > currentVal: #innerLoop
+      array[insertPos] = array[insertPos-1]; #moveForward
+      insertPos = insertPos - 1; #decrementInsertPos
+    array[insertPos] = currentVal; #insert
+    currentPos = currentPos + 1; #incrementCurrentPos

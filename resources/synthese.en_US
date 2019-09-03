@@ -1,0 +1,67 @@
+noSuchKeyException=Translation missing {0}
+
+
+### Algorithm ###
+algo.name=3NF Synthesis
+algo.algoName=Normalizing into third normal form (3NF)
+algo.desc=3NF Synthesis describes how to synthesize a database scheme into the third normal form. A great feature as opposed to the intuitive decomposition is it's functional dependency preservation guarantee
+
+### Generator ###
+requiredSteps=Required steps
+init=Initial functional dependencies:
+left=Functional dependencies after reducing left:
+right=Functional dependencies after reducing right:
+empty=Functional dependencies without empty entries:
+assembled=Assembled functional dependencies:
+textBegin=3NF Synthesis describes how to synthesize a database scheme into the third normal form.\nA great feature as opposed to the intuitive decomposition is it's functional dependency \npreservation guarantee, meaning every the synthesis is always lossless\nAn alternative to this algorithm is the decomposition\ninto the Boyce-Codd normal form (BCNF) but without the guarantee of lossless decomposition\nIt is still worth mentioning as every scheme in BCNF is also in 3NF\ndue to it being a more restrictive normal form
+textSteps=1st Step: Reducing functional dependencies, e.g. determining their canonical coverage.\n 	          1.1 Reducing left\n           1.2 Reducing right\n           1.3 Removal of empty clauses\n           1.4 Assembling the clauses\n2nd Step: Creation of a new relational scheme based on the canonical cover. \n3rd Step: Adding another relation just to contain the original key if required.\n \n \nWarning: The synthesis has multiple possible outcomes based on the order of elements \ncompared by the algorithm. This algorithm compares input rows from top to bottom\nand individual lines are iterated over from left to right.
+titleFinal=The final relations are as follows:
+closureOf=Attribute closure of
+relations=Relations:
+titleReduceLeft=Reduction - 1st Step: Reducing left
+key=Key
+removedLeftNotInClosure=will be removed from the left, \nbecause it is part of the closure of
+isdot=.
+remainsDueNotInClosure=remains, as it is not a subset of the closure.
+onlyOneCanSkip=Just one attribute on the left. It may therefore be skipped
+redMarkedWereRemoved=Attributes marked red were removed from the left hand side.
+
+titleReduceRight=Reduction - 2nd Step: Reducing right
+unnecessaryValue=Unnecessary value
+willBeRemovedBecauseKeyClosure=is being removed, because it is part of a closure from a key.
+willRemainBecauseNotPartKeyClosure=will remain, because it not part of a closure from a key.
+redMarkedRemovedFromRight=Attributes marked red were removed from the right hand side.
+
+titleRemoveEmpty=Reduction - 3rd Step: Removal of empty clauses
+mayRemainRightNotEmpty=The marked line may remain, as its right side is not empty.
+removeBecauseRightEmpty=Remove marked line, as its right side is empty.
+
+titleAssembleRelations=Reduction - 4th Step: Assembling the clauses
+redDependencyIsAlreadyAssembled=The functional dependency marked red is already assembled.
+redDependenciesAreBeingAssembled=The functional dependencies marked red are being assembled.
+
+titleCreateNewRelations=Creation of a new relational scheme
+
+titleAddBinderRelation=If required, add a relation only containing the original key
+iterateUntilPkCovered=Iterate through all relations, until the closure of the union of their primary keys covers all global attributes. \nOnly primary keys which extend the closures will be considered.
+theClosureOf=The attribute closure of
+coversPkCreatingBinderRelation=covers all global attributes. \nTherefore a corresponding relation is added, to create a relationship \nbetween the existing relations.
+doesntCoverNeedMorePk=does not cover all global attributes.\nTherefore the attributes from the key of the next relation 
+bringInNotPartClosure=have to be added, \nwhich are not part of the current attribute closure.
+allSteps=1st Step: Reducing functional dependencies, e.g. determining their canonical coverage. \n2nd Step: Creation of a new relational scheme based on the canonical cover. \n3rd Step: Adding another relation just to contain the original key if required.
+finalInfo=The synthesis algorithm terminates after the finding of an relation\nwhich super keys have a closure containing all global attributes.\nTherefore all listed relations are in third normal form.
+emptyQPrompt=How many empty clauses have to be removed?
+assembledQPrompt=How many functional dependencies exist after the assembling?
+stepQPrompt=Which of these steps is not part of the determination of the canonical coverage? 
+rightAnswer=This is the right answer.
+wrongAnswer=This answer is wrong.
+leftReduction=Left Reduction.
+rightReduction=Right Reduction.
+emptyReduction=Removal of empty clauses.
+assembledReduction=Assembling of functional dependencies with the same left side.
+wrongReduction=Decomposition of functional dependencies with the same right side.
+
+explanationLeft=The determination of the canonical coverage begins with the left reduction.\nThe algorithm iterates over all determinants of the functional dependencies.\nThe closure of every determinants attribute will be computed and it will be checked, \nwhether the other attributes of the determinant are part of the closure.\nIf this is the case, the corresponding attribute will be removed vom the determinant.\nA functional dependency will be skipped in case that its determinant only has one attribute.
+explanationRight=The right reduction checks whether every attribute of the right hand side of \nthe functional dependencies can be computed transitively with the closure of the \ndeterminant (The considered functional dependency will be used without the \nconsidered attribute of the right hand side). In this case this attribute will be removed.explanationEmpty=
+explanationEmpty=The removal of empty clauses checks for all functional depedencies whether \nthe right hand side is empty. In that case this functional dependeny will be removed.
+explanationAssembled=The assembling checks which functional dependencies have the same determinant \nand replaces them with a new functional dependency with the union of the right hand sides.

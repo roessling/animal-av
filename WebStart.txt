@@ -1,0 +1,150 @@
+WebStart Walkthrough
+
+Webstart is a SUN produced piece of software that uses the JNLP standard to support distribution and update of software. Basically this means that people can download your software from a website in an automated manner. Whats really nice is that they can also get updates when they run the software automatically!
+
+This tutorial can be discussed here
+Jar Files
+
+Everything you distribute must be in Jar files. This include native libraries and resource files (models/maps/sprites etc..). Putting things in Jar files is pretty simple. The "jar" tool is distributed with the JDK. To put stuff in a jar you do this:
+
+    // putting myClassesDirectory in a jar file
+    jar cf myjar.jar myClassesDirectory
+
+    // putting gagetimer.dll in a jar file
+    jar cf myjar.jar gagetimer.dll
+
+    // putting the com directory which is inside the src directory in a jar file
+    jar cf myjar.jar -C src com
+
+The first jar that you distribute needs to be executable. This essentially means it has a file inside it called a "manifest" that tells java which class file it should run to execute the jar. The manifest file should look something like this:
+
+    Main-Class: org.newdawn.salvage.client.Game
+    Class-Path: lib/net.jar lib/jogl.jar
+
+The Main-Class element specifies the class that should be run when executing the Jar. The Class-Path element specifies the class path that should be used. Using WebStart this shouldn't matter since any Jar included in the download will be in the class path but it seemed worth mentioning.
+
+To assign a manifest named "manifest.txt" to a jar file you do something like this:
+
+    // sticking a manifest in a jar file thats being created
+    jar cfm myExecutableJar.jar manifest.txt -C src com
+
+    // adding a manifest to an existing jar file
+    jar ufm myExistingExecutableJar.jar manifest.txt
+
+The final important thing to note about the Jars you distribute is that they must all be signed. This allows your jars to do normal stuff on the users machine assuming that they agree to allow you. Its a bit complicated so here's another section.
+Signing Jars
+
+The first thing you're going to need to do is create a "key store". The key store is a file that contains your generated signing information. To create one you do something like this:
+
+    keytool -genkey -keystore myKeyStore -alias myName
+
+The key tool is also part of the JDK. After typing the above you'll be asked lots of questions about who you are, this information will be provided to the end user when they're asked to accept your jars. You'll also be asked for a password for your name. You need this each time you sign anything. Talking of which, signing jars looks something like this:
+
+    jarsigner -keystore myKeyStore -storepass myPassword -keypass myNamePassword myJar.jar myName
+
+This is pretty unwieldy and you have to remember lots of bits. Generally I stick this in a script and never think about it again. Remember you need to sign every jar you distribute.
+JNLP
+
+Finally, we'll actually look at how to make something webstartable. First off you need to define a JNLP XML file to describe what you're going to distribute, heres an example:
+
+    <?xml version="1.0" encoding="utf-8"?>
+    <!-- Test for Astro Prime Web Start Deployment -->
+    <jnlp
+      spec="1.0+"
+      codebase="http://www.newdawnsoftware.com/astroprime/webstart"
+      href="astroprime.jnlp">
+      <information>
+        <title>AstroPrime MMO</title>
+        <vendor>Kev Glass - New Dawn Software</vendor>
+        <homepage href="http://www.newdawnsoftware.com"/>
+
+        <description>AstroPrime Client</description>
+        <description kind="short">MMO 2D Space Trading Game</description>
+        <icon href="icon.gif"/>
+        <icon kind="splash" href="splash.gif"/>
+        <offline-allowed/>
+      </information>
+      <security>
+        <all-permissions/>
+      </security>
+      <resources>
+        <j2se href="http://java.sun.com/products/autodl/j2se" version="1.4+"/>
+        <jar href="ap.jar"/>
+        <jar href="apresource.jar"/>
+        <jar href="lib/j2da.jar"/>
+        <jar href="lib/net.jar"/>
+        <jar href="lib/gagetimer.jar"/>
+      </resources>
+
+      <resources os="Windows">
+        <j2se href="http://java.sun.com/products/autodl/j2se" version="1.4+"/>
+        <jar href="lib/jogl-win32.jar"/>
+        <nativelib href="lib/jogl-win32-native.jar"/>    
+        <nativelib href="lib/gagetimer-native.jar"/>
+      </resources>
+      <resources os="SunOS" arch="sparc">
+        <j2se href="http://java.sun.com/products/autodl/j2se" version="1.4+"/>
+        <jar href="lib/jogl-solsparc.jar"/>
+        <nativelib href="lib/jogl-solsparc-native.jar"/>
+      </resources>
+      <resources os="Linux">
+        <j2se href="http://java.sun.com/products/autodl/j2se" version="1.4+"/>
+        <jar href="lib/jogl-linux.jar"/>
+        <nativelib href="lib/jogl-linux-native.jar"/>
+      </resources>
+      <resources os="Mac OS">
+        <j2se href="http://java.sun.com/products/autodl/j2se" version="1.4+"/>
+        <jar href="lib/jogl-macos.jar"/>
+        <nativelib href="lib/jogl-macos-native.jar"/>
+      </resources>
+      <application-desc/>
+    </jnlp>
+
+Its a pretty complicated example but I think it covers everything most people are going to want. I'll just nip through the tags:
+JNLP
+
+JNLP tag simple describes the download area. "spec" should always be "1.0+". "codebase" is like the applet tag, its the base directory on the web server where everything is being downloaded from. "href" like in html is the reference to the actual JNLP file.
+information
+
+As you might have guessed this tag contains information about the produce. I think most of the tags are fairly self explanatory. All the information appears in one way or another in the WebStart GUI.
+resources
+
+Resources describes all the jars that need to be downloaded and can also define the resources required on the target platform. The "os" tag specifies which operating system the resources are applicable to. If its not specified the resources are assumed to be required on all platforms. The "j2se" tag specifies a location where the java VM required can be downloaded. The "jar" tag specified a normal jar file that needs to be downloaded. The "nativelib" tag specifies a jar file that contains native libraries.
+Web Server Considerations
+
+So finally you've signed all your jars, dumped all your files on a web server including your JNLP file. What else do you need to think about. JNLP only works if the correct MIME-type is returned by the web server. If you think you've got everything else right and clicking on your JNLP file on the webserver doesn't start WebStart, your web server probably doesn't support the MIME type.
+
+The mime type needs to be "application/x-java-jnlp-file" for *.jnlp files. The easiest way to get this updated is to contact the admin for your webserver and have it updated. If you don't have this sort of access you can hack it to work using a bit of PHP or JSP.
+.htaccess
+
+If you're using Apache webserver you can put a .htaccess file in your public_html directory. If you add the following line, it'll add the mime-type for you.
+
+    AddType application/x-java-jnlp-file .jnlp
+
+PHP
+
+Rename the .jnlp file to .php (or any .php extension you are require to use). Add the following line at top of the file :
+
+    <?php  header("Content-type: application/x-java-jnlp-file");
+    echo "<?xml version=\"1.0\" encoding=\"UTF-8\"?>";?>
+
+JSP
+
+Rename the .jnlp file as .jsp file, add the following line at top of the file :
+
+    <%@ page contentType="application/x-java-jnlp-file" %>
+
+Getting at your resources
+
+Interesting side note here. You put all your resources in a jar file right, so how can you access them from inside your program? If you've been accessing them directly by file then you've got alot of change. You can use the class loader to pick them up out of resources by using:
+
+    // Getting hold of a URL to sprite
+    Thread.currentThread().getContextClassLoader().getResource("sprites/mySprite.png");
+
+    // Getting hold of a stream to a sound
+    Thread.currentThread().getContextClassLoader().getResourceAsStream("sounds/bang.wav");
+
+Now to those of you who normally access your resources via the class loader this might look a bit long winded. The important thing to realise is that when a game runs in WebStart its loaded into a "special" secure class loader. This means that you must use the same class loader to load your resources. Doing a "Thread.currentThread().getClassLoader()" ensures you get the class loader that webstart is using.
+Fin.
+
+If you spot errors, think something needs changing or have problems let me know here.

@@ -1,0 +1,22 @@
+> table is a set of examples.
+> attribute is the currently tested attribute.
+> P₊ = |{ x | x is an instance for class yes }| / |table|
+> P₋ = |{ x | x is an instance for class no }| / |table|
+> reduced_table(f, v) = { x | x contained in table with value v for feature f }
+
+gini_index(table) = 1 - ( (P₊)² + (P₋)² )
+
+AVERAGE_GINI_INDEX(table, attribute) = 			 			
+         Σₓ    [ 
+                    ( |reduced_table(attribute, x)| / |table| )   *   gini_index( reduced_table(attribute, x) ) 
+                ]							
+---------------------------------------------------------------------------------------------------
+
+AVERAGE_GINI_INDEX(current_table, §) 
+   = § = §		
+														 
+AVERAGE_GINI_INDEX(current_table, §) 
+   = § = §		
+
+AVERAGE_GINI_INDEX(current_table, §) 
+   = § = §	

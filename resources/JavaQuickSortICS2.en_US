@@ -1,0 +1,10 @@
+@import=resources/GenericQuickSort.en_US
+theName=Quick Sort (ICS2)
+algoName=Quick Sort (ICS2)
+outputLanguage=Java
+codeExample=void quicksort(int left, int right) {\n	int i, pivot;\n	pivot = findPivot(left, right);\n	if(pivot != -1) {\n		i = divide(left, right, pivot);\n		quicksort(left, i-1);\n		quicksort(i, right);\n	}\n}
+animTitle=Quick Sort (ICS2)
+algoTitle=Quick Sort (ICS2)
+description.filename=resources/JavaQuickSortICS2_descr_en.txt
+code.filename=resources/JavaQuickSortICS2_code.txt
+complexity.filename=resources/JavaQuickSortICS2_complexity_en.txt

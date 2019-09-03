@@ -1,0 +1,15 @@
+%Animal 2656*574
+
+{
+reland "and0" (47, 30) (150, 150) input a input b output c color black depth 50
+}
+{
+reland "and1" (47, 197) (150, 150) input a input b output d color black depth 50
+}
+{
+reland "and2" (214, 30) (150, 150) input c input d output e color black depth 50
+wire "1" ( 197,105) ( 197,80) ( 214,80) }
+{
+wire "1" ( 197,272) ( 208,272) ( 208,272) ( 208,130) ( 214,130) 
+}
+

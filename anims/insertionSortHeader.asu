@@ -1,0 +1,38 @@
+{
+text "f1-01" "Insertion Sort" at (120,50) color black font SansSerif size 32 bold
+}
+{
+text "f1-02a" "Sortieren durch Einfügen, auch als Insertion Sort bezeichnet, fuegt" at (20,100) color black font SansSerif size 24
+text "f1-02b" "der Reihe nach Elemente in eine bereits sortierte (Teil-)Liste ein," at (20,130) color black font SansSerif size 24
+text "f1-02c" "die anfangs leer ist.                                              " at (20,160) color black font SansSerif size 24
+}
+{
+text "f1-03a" "Damit ist das Vorgehen dem Sortieren von Spielkarten aehnlich: in  " at (20,200) color black font SansSerif size 24
+text "f1-03b" "jedem Schritt wird eine neue Spielkarte zwischen die bereits       " at (20,230) color black font SansSerif size 24
+text "f1-03c" "sortierten Karten einfügt.                                         " at (20,260) color black font SansSerif size 24
+}
+label "Insertion Sort Übersicht"
+{
+hideAll
+}
+{
+text "f2-01" "Der Algorithmus in Worten" at (120,50) color black font SansSerif size 32 bold
+}
+{
+text "f2-02" "1. Setze i=1" at (20,100) color black font SansSerif size 24
+}
+{
+text "f2-03" "2. Speichere a[i] in einer Variablen v und setze j=i" at (20,140) color black font SansSerif size 24
+}
+{
+text "f2-04a" "3. Solange j>0 und v kleiner als a[j-1] is, kopiere" at (20,180) color black font SansSerif size 24
+text "f2-04b" "    a[j-1] an Position a[j] und setze j=j-1" at (20,210) color black font SansSerif size 24
+}
+{
+text "f2-05" "4. Fuege Element v an die Position j ein" at (20,250) color black font SansSerif size 24
+}
+{
+text "f2-06a" "5. Falls i kleiner als n ist, erhoehe i um eins und fahre" at (20,290) color black font SansSerif size 24
+text "f2-06b" "    fort mit Schritt 2" at (20,320) color black font SansSerif size 24
+}
+label "Insertion Sort Pseudocode"

@@ -1,0 +1,17 @@
+QuickSort(int[] array, int l, int r) #header
+  Declare int i, j, pivot; #variables
+  if r>l #check1
+    pivot = array[r]; #setPivot
+    loop for i = l and j = r - 1 until i < j: #loop
+      loop while array[i] <= pivot and j > i: #loopI
+        i++; #incrementI
+      loop while pivot < array[j] and j > i: #loopJ
+        j--; #decrementJ
+      if i < j #check2
+        swap(array, i, j); #swapIJ
+    if pivot < array[i] #check3
+      swap(array, i, r); #swapIR
+    else 
+      i=r; #setItoR
+    quickSort(array, l, i - 1); #sortLeft
+    quickSort(array, i + 1, r); #sortRight

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<PropertiesTreeModel xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="PropertiesTreeModel.xsd">
+	<Folder name="Root">
+		<Primitive type="String">
+			<name>calender_type</name>
+			<value><String>gregorianisch</String></value>
+			<description>Wahl zwichen Gregorianischem und Julianischem Kalender (gregorianisch/julianisch)</description>
+		</Primitive>
+		<Primitive type="Color">
+			<name>codeHighlightColor</name>
+			<value><Color>(0, 0, 255)</Color></value>
+			<description>Hervorhebungs Farbe</description>
+		</Primitive>
+		<Primitive type="int">
+			<name>year</name>
+			<value><int>2019</int></value>
+			<description>Legt das zu betrachtende Jahr fest</description>
+		</Primitive>
+	</Folder>
+</PropertiesTreeModel>

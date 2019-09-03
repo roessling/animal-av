@@ -1,0 +1,6 @@
+Now we calculate the new rating and rating deviation
+values. 
+
+    set Phi' := SQRT(Phi*^-2 + ny^-1)^-1
+    set my' := my + Phi'^2 * [SUM from j=1 to m(g(Phi_j)*(s_j - E(my, my_j, Phi_j))]
+

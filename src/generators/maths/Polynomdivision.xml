@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<PropertiesTreeModel xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="PropertiesTreeModel.xsd">
+	<Folder name="Root">
+		<Primitive type="intArray">
+			<name>Polynom-Koeffizienten</name>
+			<value><intArray>1, -2, -5, 6</intArray></value>
+			<description>Die Koeffizienten des Polynoms vom höchsten Grad zum kleinsten</description>
+		</Primitive>
+		<Primitive type="intArray">
+			<name>Nullstelle</name>
+			<value><intArray>1, -1</intArray></value>
+			<description>Die Koeffizienten der Nullstelle vom höchsten Grad zum kleinsten</description>
+		</Primitive>
+	</Folder>
+</PropertiesTreeModel>

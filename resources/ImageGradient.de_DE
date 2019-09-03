@@ -1,0 +1,87 @@
+### exception handling ###
+
+	noSuchKeyException = Es gibt keinen Wert zu dem Schlüssel {0}
+	iconNotFound = Schlüssel "{0}" wurde nicht gefunden
+
+
+### texts ###
+
+	TITLE = Image Gradient (Prewitt Operator)
+	
+	DESCRIPTION = Der Gradient eines Bildes kann dazu genutzt werden um Informationen aus einem Bild zu extrahieren. \nDer Gradient wird meistens durch Konvolution (Faltung) mit einem Filter erstellt. Ein Pixel \ndes Gradienten beinhaltet die Intensitätsänderung (vgl. Steigung einer eindimesionalen \nFunktion) des Pixels vom Originalbild mit den gleichen Koordinaten.\n\nDieser Algorithmus nutzt den Prewitt Operator für die X-Richtung als Kernel für die Faltung. Es\nwerden also vorallem vertikale Kanten gefunden. Analog dazu müssten man dann ein Gradientenbild für\ndie Y-Richtung erstellen. Abschließend kann man durch eine geeignete Norm (Bspw. Eukldische-Norm)\ndurch verrechnung der beiden Gradientenbilder das Gradientenstärkebild berechnen.\n\nMeistens wird der Gradient dazu genutzt um die Kanten von Objekten innerhalb eines Bildes zu\nextrahieren. Der Ansatz dabei ist es die Pixel des Gradienten mit den höchsten Werten zu Linien zu\nverbinden. Ein Beispiel f&uuml;r eine solche Kantendetektion, welche als Input ein Gradientenstärkebild\nbenötigt ist der Canny-Edge-Detektor\n(https://en.wikipedia.org/wiki/Canny_edge_detector)";
+		
+	FIRSTPAGETEXT_LENGTH = 28
+	FIRSTPAGETEXT_0 = Das Verfahren kann grob in vier Schritte aufgeteilt werden:
+	FIRSTPAGETEXT_1 = Im ersten Schritt wird die Source Matrix erweitert. Dies ist notwendig
+	FIRSTPAGETEXT_2 = da bei dieser Art von Faltung die benachbarten Pixel genutzt werden. Nimmt
+	FIRSTPAGETEXT_3 = man nun beispielsweise den linken, oberen Pixel und möchte diesen Wert
+	FIRSTPAGETEXT_4 = berechnen, braucht man einen Wert außerhalb der Matrix. Dieses Problem
+	FIRSTPAGETEXT_5 = löst man, indem man die Source Matrix entsprechend der Größe des Kernels
+	FIRSTPAGETEXT_6 = erweitert. Bei dem Prewitt Operator also um 1 in alle Richtungen.
+	FIRSTPAGETEXT_7 = Nun stellt sich die Frage, womit man die neuen Zellen füllen sollen.
+	FIRSTPAGETEXT_8 = 
+	FIRSTPAGETEXT_9 = Hierfür gibt es eine Variation an Ansätze:
+	FIRSTPAGETEXT_10 = \u0020\u0020\u0020\u0020\u0020- Zero Padding, dabei werden die neuen Zellen mit 0 gefüllt
+	FIRSTPAGETEXT_11 = \u0020\u0020\u0020\u0020\u0020- EXTEND, dabei werden die Randpixel kopiert
+	FIRSTPAGETEXT_12 = \u0020\u0020\u0020\u0020\u0020- Wrap, hierbei werden die Pixel von der jeweils entgegengesetzten
+	FIRSTPAGETEXT_13 = \u0020\u0020\u0020\u0020\u0020  Kante kopiert. Quasi als ob man die Matrix 'aufrollen' würde
+	FIRSTPAGETEXT_14 = \u0020\u0020\u0020\u0020\u0020- Mirror, dabei werden die Pixel von der jeweiligen Kante kopiert,
+	FIRSTPAGETEXT_15 = \u0020\u0020\u0020\u0020\u0020  als ob man einen Spiegel an den Rand gestellt hätte.
+	FIRSTPAGETEXT_16 = \u0020\u0020\u0020\u0020\u0020- ...
+	FIRSTPAGETEXT_17 = 
+	FIRSTPAGETEXT_18 = Im zweiten Schritt, der Kern des Algorithmus, wird die Faltung angewendet.
+	FIRSTPAGETEXT_19 = Für jedes Pixel wird der Gradient in X-Richtung berechnet. Hierbei werden
+	FIRSTPAGETEXT_20 = vorallem vertikale Kanten detektiert. Ergebnis G_x
+	FIRSTPAGETEXT_21 = Im dritten Schritt, wird analog zum zweiten Schritt, die Faltung mit einem
+	FIRSTPAGETEXT_22 = Kernel für die Y-Richtung durchgeführt. Hierbei werden vorallem horizontale
+	FIRSTPAGETEXT_23 = Kanten detektiert. Ergebnis G_y
+	FIRSTPAGETEXT_24 = 
+	FIRSTPAGETEXT_25 = Im vierten Schritt wird mithilfe einer passenden Norm, meist die euklidsche
+	FIRSTPAGETEXT_26 = Norm, ein Gradientenstärkebild G_xy berechnet: 
+	FIRSTPAGETEXT_27 = √[(G_x)²+(G_y)²] = G_xy
+	
+	THIRDPAGETEXT_LENGTH = 2
+	THIRDPAGETEXT_0 = Nun wird analog zum zweiten Schritt der mit dem Kernel für die Y-Richtung
+	THIRDPAGETEXT_1 = eine Faltung durchgeführt.	
+	
+	FOURTHPAGETEXT_LENGTH = 3
+	FOURTHPAGETEXT_0 = Nun würde durch Anwendung der euklidschen Norm auf die beiden Matritze
+	FOURTHPAGETEXT_1 = G_x und G_y ein Gradientenstärkebild berechnet.
+	FOURTHPAGETEXT_2 = eine Faltung durchgeführt.
+	
+### conclusion ###
+
+	CONCLUSION_0 = Mithilfe des Prewitt-Operators (K_x und K_y) haben wir für das Bild (Source Matrix)
+	CONCLUSION_1 = somit die Gradienten (G_x und G_y) berechnet. Durch Anwendung der Eukldischen Norm
+	CONCLUSION_2 = erhalten wir letztendenlich den Gradienten (G_xy)
+	CONCLUSION_3 = Nun könnte man mithilfe des Canny-Edge-Detekors bspw. die Kanten extrahieren.
+	
+### labels ###
+
+	LABEL_BORDER_HANDLING = Border Handling
+	LABEL_PREWITT_VERTICAL = Faltung mit Prewitt - Erkennen von vertikalen Kanten
+	LABEL_PREWITT_HORIZONTAL = Faltung mit Prewitt - Erkennen von horizontalen Kanten
+	LABEL_CONCLUSION = Fazit
+
+	
+### questions ###
+	Q0_WHAT_BORDER_VALUE = Welchen Wert bekommt nun die blau markierte Zelle?
+	Q1_WHAT_BORDER_HANDLING = Welches Border-Handling wurde hier genutzt?
+	Q2_WHAT_CONVOLUTE_VALUE = Welchen Wert bekommt nun die blau markierte Zelle? (ACHTUNG: Die Berechnung im grauen Kasten ist von der vorherigen Zelle!)
+	Q3_WHAT_IS_EUKLID = Wie lautet die euklidsche Norm?
+	Q4_WHAT_EUKLID_VALUE = Wie lautet der Wert der erten zu berechnenden Zelle (links oben)
+	
+### answers ###
+	Q0_A1_CORRECT = Das ist korrekt!
+	
+	Q1_A1_ZERO_PADDING = Zero Padding wurde nicht genutzt! 
+	Q1_A2_EXTEND = Extend ist richtig. Mirror auch, da nur um eins erweitert wurde. 
+	Q1_A3_WRAP = Wrap wurde nicht genutzt! 
+	Q1_A4_MIRROR = Mirror ist richtig. Extend auch, da nur um eins erweitert wurde. 
+	
+	Q2_A1_CORRECT = Das ist korrekt!
+	
+	Q3_A1_CORRECT = Richtig!
+	Q3_A2_FALSE = Falsch. Hierbei handelt es sich um die Manhatten Norm.
+	
+	Q4_A1_CORRECT = Richtige Antwort!

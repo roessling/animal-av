@@ -1,0 +1,59 @@
+# Description
+description=KURZBESCHREIBUNG\nOS-SELECT(x, i) gibt den Knoten mit dem i-kleinsten Schlüssel des von x ausgehenden Teilbaums zurück.\n\nANWENDUNGSFALL\nFalls effizient das i-kleinste Objekt in einer geordneten Menge gefunden werden soll, kann OS-SELECT verwendet werden.\n\nERWEITERTE BESCHREIBUNG\nDer Algorithmus OS-SELECT, wie er hier vorgestellt wird, stammt aus dem Buch "Algorithmen - Eine Einführung" von Thomas H.Cormen, Charles E. Leiserson, Ronold Rivest, Clifford Stein. Damit der Algorithmus möglichst effizient arbeitet, wird ein erweiterter Rot-Schwarz-Baum verwendet, da nur so eine Komplexität von O(lg(n)) erreicht werden kann, weil bei einem Rot-Schwarz-Baum die Höhe O(lg(n)) beträgt, wobei n die Anzahl der Knoten im Baum ist. Damit der Algorithmus korrekt arbeiten kann, muss jeder Knoten x des Rot-Schwarz-Baums um das Attribut Größe erweitert werden. Das Attribut Größe enthält hierbei die Anzahl der inneren Knoten des von x ausgehenden Teilbaums zzgl. 1 für x selbst.\n\nx ist die Wurzel eines Teilbaums von einem Rot-Schwarz-Baum, wie oben beschrieben. Allerdings kann für x auch die Wurzel des kompletten Rot-Schwarz-Baums gewählt werden.\n\ni legt den Rang des Knoten fest, den wir mit Hilfe von OS-SELECT bestimmen wollen. Ist beispielsweise i = 13, dann gibt der Algorithmus den Knoten mit dem 13. kleinsten Schlüssel zurück.\n\nRang ist die Position eines Knoten x in der linearen Reihenfolge der Knoten eines Rot-Schwarz-Baums.\n\nEINSTELLUNGSMÖGLICHKEITEN\nUnter Primitives->"Schlüssel für Baumknoten" kann ein eigener Rot-Schwarz-Baum erstellt werden. Hierzu müssen die Schlüssel für die Knoten eingegeben werden, die dem Rot-Schwarz-Baum hinzugefügt werden sollen. Anschließend wird der Rot-Schwarz-Baum automatisch generiert und auch das Attribut Größe wird automatisch berechnet.\n\nUnter Primitives->"Position der Wurzel des Teilbaums im intArray" kann der Parameter x, der in OS-SELECT(x, i) verwendet wird, festgelegt werden. Das heißt, dass hier die Wurzel eines Teilbaums des Rot-Schwarz-Baums, der zuvor unter Primitives->"Schlüssel für Baumknoten" definiert wurde, festgelegt werden kann. Hierbei ist zu beachten, dass in das Eingabefeld nicht der Schlüssel des Knotens, sondern der Index des Knoten im intArray (Primitives->"Schlüssel für Baumknoten"), angegeben werden muss. Der Index beginnt bei 0 zu zählen.\n\nUnter Primitives->"i-kleinster Schlüssel der gefunden werden soll" kann der Parameter i des Aufrufs OS-SELECT(x, i) festgelegt werden, der den i-kleinsten Knoten bestimmt.\n\nAußerdem gibt es noch weitere Optionen, um z. B. Farbe oder Schriftgröße zu ändern.
+
+# Startscreen
+# indicate in line1 the number of lines of this section 'startscreen.description' 
+startscreen.description.line1=24
+startscreen.description.line2=OS-SELECT(x, i) gibt den Knoten mit dem i-kleinsten Schlüssel
+startscreen.description.line3=im Teilbaum mit der Wurzel x zurück.
+startscreen.description.line4=\n STRATEGIE
+startscreen.description.line5=Bestimme den Knoten mit dem i-kleinsten Schlüssel durch rekursiven Aufruf 
+startscreen.description.line6=von OS-SELECT bis der i-kleinste Knoten gefunden wurde (Rekursionsanker).
+startscreen.description.line7=\n VARIABLEN
+startscreen.description.line8=* x  ist die Wurzel des Teilbaums
+startscreen.description.line9=* i   ist die Position (in linearer Ordnung) des gesuchten Knotens
+startscreen.description.line10=* r   ist der Rang des Knoten x
+startscreen.description.line11=\n FUNKTIONEN
+startscreen.description.line12=Erklärungen für den Funktionsaufruf von OS-SELECT(x, i) mit Knoten x und Zahl i 
+startscreen.description.line13=* x.left    gibt das linke Kind des Knoten x zurück
+startscreen.description.line14=* x.right  gibt das rechte Kind des Knoten x zurück
+startscreen.description.line15=* x.size   gibt die Größe des Knoten x zurück
+startscreen.description.line16=* x.key   gibt den Schlüssel des Knoten x zurück, z. B. 34|1 für Schlüssel|Größe
+startscreen.description.line17=\n ERKLÄRUNGEN
+startscreen.description.line18=(1) Setze r auf die Größe des linken Kinds von x plus 1
+startscreen.description.line19=(2) Wenn i gleich r 
+startscreen.description.line20=(3) Gebe Knoten x zurück, dies ist der i-kleinste Schlüssel
+startscreen.description.line21=(4) Sonst-Wenn i kleiner als r ist
+startscreen.description.line22=(5) Gebe OS-SELECT(linkes Kind von x, i) zurück [Rekursion]
+startscreen.description.line23=(6) Sonst gebe OS-SELECT(linkes Kind von x, i-r) zurück [Rekursion]
+startscreen.description.line24=\nQuelle: Algorithmen - Eine Einführung, Charles E. Leiserson, \nClifford Stein, Ronald L. Rivest, Thomas H. Cormen
+
+# Animation 
+sourcecode.Description.line1=Setze r auf die Größe von x linken Kind plus 1
+sourcecode.Description.line2=Wenn i gleich r
+sourcecode.Description.line3=Gebe Knoten x zurück, dieser hat den i kleinsten Schlüssel
+sourcecode.Description.line4=Sonst-Wenn i kleiner als r ist
+sourcecode.Description.line5=Rufe rekursiv      OS-SELECT(x.left, i) auf
+sourcecode.Description.line6=Ansonsten rufe rekursiv OS-SELECT(x.right, i-r) auf
+
+# Endscreen
+endscreen.description.line1=9
+endscreen.description.line2=KOMPLEXITÄT
+endscreen.description.line3=Da jeder rekursive Aufruf im Ranggrößen-Baum eine Ebene nach unten geht
+endscreen.description.line4=ist die Gesamtlaufzeit für OS-SELECT im schlechtesten Fall proportional 
+endscreen.description.line5=zur Höhe des Baumes.
+endscreen.description.line6=Weil der Baum ein Rot-Schwarz-Baum ist, beträgt seine Höhe O(log n), 
+endscreen.description.line7=wobei n die Anzahl der Knoten ist. Somit liegt die Laufzeit von OS-SELECT
+endscreen.description.line8=für eine dynamische Menge aus n Elementen in O(log n).
+endscreen.description.line9=\nQuelle: Algorithmen - Eine Einführung, Charles E. Leiserson, \nClifford Stein, Ronald L. Rivest, Thomas H. Cormen
+
+# XML-file - DE
+KeysForTreeNodes=Schlüssel für Baumknoten
+x_PositionOfRootOfSubtree=Position der Wurzel des Teilbaums im intArray
+i_iThSmallestKeyToFind=i-kleinster Schlüssel der gefunden werden soll
+textProperties_startEndScreen=[Texteigenschaften] Start- und Endseite
+color_childrenNodes=[Farbe] Kindknoten
+color_sourceCode=[Farbe] Quelltext
+color_sourceCodeHighlighting=[Farbe] Hervorhebung Quelltext
+color_backgroundRectangles=[Farbe] Hintergrund der Rechtecke
+color_currentNode=[Farbe] Aktueller Knoten

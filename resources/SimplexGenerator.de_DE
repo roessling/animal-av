@@ -1,0 +1,76 @@
+noSuchKeyException=Keine Ressource für Schlüssel {0}.
+iconNotFound=Icon {0} konnte nicht gefunden werden.
+
+# Stuff
+
+name=Simplex-Algorithmus
+result=Ergebnis
+
+# Pseudo code
+
+code00=Wiederhole:
+code10=1: Falls kein negativer Eintrag in der F-Zeile:
+code11=    Optimale Lösung wurde gefunden. Terminiere.
+code20=2: Wähle Pivotspalte t (neue Basisvariable):
+code21=    Wähle t = Spalte mit dem kleinsten Eintrag in der F-Zeile.
+code30=3: Wähle Pivotzeile s (neue Nichtbasisvariable):
+code31=    3.1: Falls kein Pivotspalten-Eintrag a_it positiv:
+code311=       LP is unbeschränkt. Terminiere.
+code32=    3.2: Berechne b_i / a_it für jede Zeile mit positivem a_it.
+code33=    3.3: Wähle s = Zeile mit kleinstem b_i / a_it.
+code34=    3.4: a_st ist das Pivotelement.
+code40=4: Aktualisiere Simplex-Tableau:
+code41=    4.1: Ersetze Basisvariable.
+code42=    4.2: Aktualisiere Pivotzeile: Teile durch Pivotelement.
+code43=    4.3: Alle anderen Zeilen i: Subtrahiere a_it * Pivotzeile.
+
+# Description
+
+exp10=Der Simplex-Algorithmus sucht optimale Lösungen eines Linearen Programms (LP). Lineare Programme sind Optimierungsprobleme, bei denen ein Vektor x gesucht wird, der den höchsten Wert einer Zielfunktion liefert und gleichzeitig eine Menge von Nebenbedingungen erfüllt. Lineare Programmierung und der Simplex-Algorithmus werden zum Lösen zahlreicher Probleme verwenden, wie bspw. in der Zeit- oder Verkehrsplanung.\n
+exp20=Dieser Generator akzeptiert LP-Modelle in kanonischer Normalform, das heißt:
+exp21=    Maximiere: F(x) = c^T * x
+exp22=    unter den Nebenbedingungen:  Ax <= b
+exp23=    mit Nichtnegativität: x >= 0
+exp30=wobei x und c Vektoren der Dimension n, b ein Vektor der Dimension m und A eine m x n-Matrix sind. Darüber hinaus muss A unter den Schlupfvariablen eine Einheitsmatrix sein, b muss positiv sein und die Werte von c unter den Schlupfvariablen müssen 0 sein.\n
+exp40=Der Generator benötigt die Werte A, b und c.\n
+exp50=Fragen sind standardmäßig abgeschaltet und können über die Einstellung askQuestions eingeschaltet werden.\n
+exp60=Die Konstruktion des Simplex-Tableaus in diesem Generator folgt dem Buch Einführung in Operations Research von Domschke, Drexl, Klein und Scholl.\n
+
+# Introduction
+
+intro30=Eine zulässige Lösung ist eine Lösung ist eine Lösung, die alle Nebenbedingungen erfüllt. Eine optimale Lösung liefert darüber hinaus den höchsten Wert der Zielfunktion.\n
+intro40=Die Nebenbedingungen beschränken die Menge zulässiger Lösungen, die man sich als konvexes Polyeder verdeutlichen kann. Man kann zeigen, dass die optimale Lösung, falls es sie gibt, eine der Ecken des konvexen Polyeders ist.\n
+intro50=Eine Basislösung ist eine Lösung mit so vielen Basisvariablen wie es Nebenbedingungen gibt. Alle übrigen Variablen heißen Nichtbasisvariablen und werden auf 0 gesetzt. Eine Basislösung entspricht einer Ecke im konvexen Polyeder.\n
+intro60=Der Simplex-Algorithmus startet mit einer zulässigen Basislösung. Wenn das Eingabemodell in kanonischer Form ist, kann man die Schlupfvariablen als Basisvariablen wählen. Dies ergibt dann immer eine zulässige Lösung. In jeder Iteration tauscht der Algorithmus eine Basisvariable gegen eine Nichtbasisvariable. Auf dem konvexen Polyeder entspricht dies einer Bewegung zu einer Nachbarecke. Der Algorithmus wählt diejenige neue Basisvariable, die die höchste Verbesserung hinsichtlich der Zielfunktion ergibt.\n
+intro70=Der Algorithmus terminiert, sobald keine Verbesserung mehr möglich ist. Er terminiert ebenfalls, wenn erkennbar ist, dass das Modell unbeschränkt ist. In diesem Fall kann der Zielfunktionswert durch Wahl des Lösungsvektors beliebig groß werden.\n
+
+# Results
+
+success=Die optimale Lösung x = {1} wurde nach {0} Iterationen gefunden. Der Zielfunktionswert ist {2}.
+unbounded=Das Modell ist unbeschränkt. Der Zielfunktionswert kann beliebig groß werden und wird von den Nebenbedingungen nicht beschränkt.
+
+# Step labels
+
+final=Schlussbemerkungen
+iteration=Iteration {0}
+
+# Table
+
+negative_ait=Ignoriert
+zero_ait=Unbeschränkt
+
+# Errors
+
+errDimension=Die Dimensionen von A, b und c passen nicht zusammen.
+errCanonical=Eingabewerte sind nicht in kanonischer Form.
+
+# Questions
+
+q_correct=Korrekt.
+q1prompt=Welche Variable könnte als neue Basisvariable gewählt werden, sodass sich der Zielfunktionwert verbessert?
+q1correct={0} ist korrekt! Jeder Variable mit negativem Eintrag in der F-Zeile würde eine Verbesserung erzielen. Der Algorithmus wählt die Variable mit dem negativsten Eintrag.
+q1incorrect={0} ist falsch.
+q1none=Keine.
+q1none_correct=Richtig, der Zielfunktionswert ist bereits optimal.
+q1none_incorrect=Falsch.
+q2prompt=Welche Zelle wird in dieser Iteration als Pivotelement gewählt werden? (Eingabe: Zeile,Spalte)

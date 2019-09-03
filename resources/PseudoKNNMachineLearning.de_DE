@@ -1,0 +1,38 @@
+generatorName=k-Nearest Neighbors [DE]
+algorithmName=k-Nearest Neighbors [DE]
+dataset=Trainingsdaten:
+explanation=Erklärungen:
+example=Beispiel:
+calculation=Berechnungen:
+with=mit
+and=und 
+biggestDiff=1.) Berechne zu Beginn für alle numerischen Attribute die jeweilige größte Distanz mit max(a) - min(a)\n     zwischen zwei Werten. In diesem Fall ist es 
+calcNum=2.) Berechne für die numerischen Attribute die Distanz mit:
+calcNom=\n     Berechne für die nominalen Attribute die Distanz mit: 
+calcEx=\n     Berechne die Gesamtdistanz zwischen zwei Beispielen mit:
+sort=Sortiere das Array absteigend nach der Distanz, um die nächsten Nachbarn einfacher zu finden.
+select=Wähle die ersten k = {0} Beispiele und ermittle die Klassen davon.
+classDistribution=Die k = {0} nächsten Nachbarn sind durch\n{1} positive Beispiele und {2} negative Beispiele klassifiziert.
+moreNegative=Es gibt mehr negative als positive Beispiele unter den nächsten Nachbarn. Das Beispiel wird daher als negativ klassifiziert.
+morePositive=Es gibt mehr positive als negative Beispiele unter den nächsten Nachbarn. Das Beispiel wird daher als positiv klassifiziert.
+equal=Eine Klassifikation ist nicht möglich, da gleich viele positive und negative Beispiele unter den nächsten Nachbarn gegeben sind.
+normalizeDistanceDescription=(a1 - a2) / ( abs(max(a) - min(a)) )
+zeroOneDistanceDescription=Falls die nominalen Attribute a1 und a2 gleich sind: Distanz = 0, ansonsten Distanz = 1
+manhattanDistanceDescription=Summe aller numerischen und nominalen Distanzen
+description=k-Nearest Neighbor ermittelt die k-nächsten Nachbarn und nutzt diese zur Klassifizierung eines Beispiels. Die Wahl des Parameters k kann vom Nutzer manuell gewählt oder mithilfe eines Validierungsverfahrens ermittelt werden.\nEin zu kleines k kann zu einer zu starken Anpassung an die Daten führen (Overfitting); ein zu großes hingegen zu einer zu schwachen Anpassung (Underfitting). Um die nächsten Nachbarn zu ermitteln, werden Distanzfunktionen\nfür Attributwerte und Beispiele eingesetzt. Hierfür wird zu jeder Trainingsinstanz die Distanz berechnet und die k Beispiele mit der geringsten Distanz gewählt. Anschließend wird aus diesen Beispielen nach dem\nMehrheitsprinzip die Klasse für das Label gewählt.
+
+introQuestion=Welche Aussage ist korrekt? 
+introQuestionAnswer1=Overfitting ist eine zu starke Anpassung an die Daten.
+introQuestionFeedback1=Korrekt!
+introQuestionAnswer2=Overfitting ist eine zu starke Verallgemeinerung auf den Daten.
+introQuestionFeedback2=Falsch! Overfitting ist eine zu starke Anpassung an die Daten
+introQuestionAnswer3=Underfitting ist eine zu starke Anpassung an die Daten.
+introQuestionFeedback3=Falsch! Underfitting ist eine zu starke Verallgemeinerung auf den Daten
+
+outroQuestion=Was ist der Unterschied zwischen kNN und einem Regellerner?
+outroQuestionAnswer1=Das gelernte Wissen wird nach der Klassifizierung verworfen.
+outroQuestionFeedback1=Richtig!
+outroQuestionAnswer2=Das gelernte Wissen wird als Modell dargestellt und später wiederverwendet.
+outroQuestionFeedback2=Falsch! Es wird kein Modell gelernt.
+outroQuestionAnswer3=Alle Ergebnisse werden miteinander kombiniert und ergeben die endgültige Klassifizierung
+outroQuestionFeedback3=Falsch!

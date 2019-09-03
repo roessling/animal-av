@@ -1,0 +1,25 @@
+[block]
+	Der Algorithmus von Bellman und Ford bestimmt die kürzesten Wege, die ausgehend von 
+	einem beliebigen aber festen Startknoten in einem Graphen existieren. 
+[/block]
+[block]
+	[h2]Der Algorithmus[/h2]
+	Der Algorithmus kann dabei, im Gegensatz zum Algorithmus von Dijkstra, 
+	auch auf Graphen mit negativen Kantengewichten eingesetzt werden. Das Verfahren[br]
+	erkennt hierzu einen eventuell vorhandenen Zyklus mit negativem Gesamtgewicht
+	innerhalb des Pfades und meldet, falls ein solcher Zyklus vorhanden sein sollte,[br]
+	dass keine Lösung des Problems auf dem gegebenen Graphen und mit dem gewählten 
+	Startknoten existiert.[br]
+	Der Bellman–Ford Algorithmus sucht bei jedem Schleifendurchlauf nach einem 
+	kürzeren Weg zu allen Knoten im Graph. Hierzu werden die erreichbaren Kanten zu[br]
+	einem bereits existierenden Pfad hinzugefügt und geprüft, ob so ein neuer Pfad mit
+	geringerem Gewicht entsteht.[br]
+	Da der kürzeste Pfad zu einem beliebigen Knoten maximal |V| − 1 Kanten enthalten
+	kann, muss diese Suche entsprechend oft durchgeführt werden, um alle möglichen[br]
+	Wege zu betrachten. Die Komplexität des Algorithmus setzt sich aus dem Erstellen 
+	der kürzesten Wege und der Suche nach einem negativ gewichteten Zyklus zusammen[br]
+	und beträgt somit O(|V| x |E|).[br]
+	Eine praktische Implementierung des Algorithmus von Bellman und Ford in Netzwerken
+	sind die Distance Vector Routing Protokolle, die eine dynamische Erstellung von[br]
+	Routentabellen ohne Kenntnis der vollständigen Netztopologie erlauben.
+[/block]

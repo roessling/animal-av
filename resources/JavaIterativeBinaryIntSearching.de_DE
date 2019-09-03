@@ -1,0 +1,9 @@
+@import=resources/GenericBinarySearch.de_DE
+theName=Iterative Bin\u00e4re Suche (int; DE)
+codeExample=public int iterativeBinarySearch(int[] array, int value) {\n  if (array == null || array.length == 0) {\n    return -1;\n  }\n  int nrElems = array.length();\n  int l = 0;\n  int r = nrElems - 1;\n  int mid = (l + r) / 2;\n  while (r > l && array[mid] != value) {\n    if (value < array[mid]) {\n      r = mid - 1;\n    } else {\n      l = mid + 1;\n    }\n    mid = (l + r) / 2;\n  }\n  if (array[mid] == value) {\n    return mid;\n  } else {\n    return -1;\n  }\n}
+animTitle=Iterative Binäre Suche (int)
+algoAuthor=Dr. Guido Rˆﬂling (roessling@acm.org>
+algoTitle=Iterative Binäre Suche
+description.filename=resources/GenericBinarySearching_descr_de.txt
+code.filename=resources/JavaIterativeBinaryIntSearching_code.txt
+complexity.filename=resources/GenericBinarySearching_complexity_de.txt

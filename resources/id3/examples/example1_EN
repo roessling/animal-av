@@ -1,0 +1,11 @@
+Example: It's Sarah's birthday tomorrow and her friend Lucy still does not know which present to pick for her. But luckily,
+she remembers what Sarah got last year from some of her friends (and if theses presents delighted her heart or not). She chooses three features 
+of these presents, stores them in a table (the 'main table') and used ID3 to generate a decision tree to help her decide on a present. 
+One example contains information about the size of the present (SIZE), whether it is handcrafted or not (HANDCRAFTED) and about how 
+colorful it was (COLORS). And finally, the class value (on the right, 'yes' or 'no') describes whether Sarah liked it or not. 
+ID3 takes these examples as an input to come up with a general concept about which presents Sarah likes.
+
+Now, Lucy can come up with ideas about what to give to Sarah and use the tree to checker whether Sarah will 
+probably like them or not. And so can you:
+Starting at the root node, follow the edges that correspond to the attribute values of the present; the 
+leaf that you'll reach tells the expectation (but, of course, only based on the previously seen examples).

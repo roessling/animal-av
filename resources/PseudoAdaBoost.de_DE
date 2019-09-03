@@ -1,0 +1,69 @@
+algorithmName=AdaBoost [DE]
+
+generatorName=AdaBoost [DE]
+
+dataset=Trainingsdaten:
+
+cs=Koordinatensystem:
+
+calculation=Berechnungen:
+
+explanation=Erklärung:
+
+initWeights=Es sind {0} Beispiele vorhanden. Initialisiere die Gewichtungen mit {1}.
+
+combine=Kombiniere alle Klassifizierer und berechne die Vorhersage durch die größte Gewichtssumme der Klassifikationen.
+
+class=Klasse
+
+example=Beispiel
+
+sumYes=Summe der yes-Gewichte
+
+sumNo=Summe der no-Gewichte
+
+prediction=Vorhersage
+
+weight=Gewichtung
+
+colors=Der grüne Bereich zeigt alle Beispiele an, die als positiv klassifiziert werden\nund der rote alle Beispiele, die als negativ klassifiziert werden.
+
+bestValue=Wähle den besten Wert beider Achsen als Gewichtungsfehler aus. Falls der Wert mehrmals\n existiert, wird die erste Bedingung gewählt.\n
+
+calcClassifierWeights=Berechne die Gewichtung der Klassifizierer: 
+
+updateAllWeights=Update alle Gewichte abhängig davon, ob sie richtig oder falsch klassifiziert wurden.
+
+createDecStumX=Erstelle eine Trennung für jeden Wert auf der x-Achse:
+
+createDecStumY=Erstelle eine Trennung für jeden Wert auf der y-Achse:
+
+sumWrongClassified=Summiere die Gewichte aller falsch klassifizierter Beispiele:\n
+
+findBestSplitX=Finde den besten Split für die x-Achse.
+
+findBestSplitY=Finde den besten Split für die y-Achse.
+
+value=Wert
+
+description=AdaBoost gehört zum Bereich der Ensemble-Klassifizierer. Die Grundidee ist hierbei, dass nicht ein einzelner Klassifizierer gelernt wird, sondern eine Menge von unterschiedlichen, relativ schwachen Klassifizierern,\ndie anschließend miteinander kombiniert werden. Dies bringt den Vorteil mit sich, dass dadurch oft bessere Ergebnisse erzielt werden können. Ein bekannter Algorithmus mit dieser Vorgehensweise ist AdaBoost. Dieser basiert auf\nder sogenannten Boosting-Methode, die sich dadurch auszeichnet, dass spätere Klassifizierer sich auf die Fehler der vorherigen fokussieren und entsprechend handeln. Die einzelnen Beispiele werden zunächst alle gleich gewichtet.\nAnschließend wird ein Klassifizierer auf den Beispielen mit der aktuellen Gewichtung erlernt. Dieser Klassifizierer kann beispielsweise eine Regel(-menge) oder ein Entscheidungsbaum sein. Anhand des Klassifizierungsfehlers\n(Summe der Gewichte, die falsch klassifiziert wurden), wird eine Gewichtung für den Klassifizierer errechnet. Gemäß der Qualität des Klassifizierers werden die Gewichte der Beispiele aktualisiert und für die nächste Trainingsrunde vorbereitet.\nDies hat den Effekt, dass Beispiele, die falsch klassifiziert wurden, stärker gewichtet werden und die Wahrscheinlichkeit für eine richtige Klassifizierung in der nächsten Iteration steigt. Für ein Testbeispiel wird abschließend\ndie Gesamtentscheidung berechnet, in der die Klasse mit der größeren Summe an Klassifizierergewichten als Ergebnis bestimmt wird.
+
+introQuestion=Was bewirkt die Berechnung des Klassifizierergewichtes?
+introQuestionAnswer1=Abhängig von der Klassifiziererqualität werden alle Beispiele neu gewichtet. 
+introQuestionFeedback1=Richtig!
+introQuestionAnswer2=Abhängig von der Klassifiziererqualität werden die positiven Beispiele neu gewichtet. 
+introQuestionFeedback2=Falsch! Alle Beispiele werden neu gewichtet.
+introQuestionAnswer3=Abhängig von der Klassifiziererqualität werden die negativen Beispiele neu gewichtet. 
+introQuestionFeedback3=Falsch! Alle Beispiele werden neu gewichtet.
+
+outroQuestion=Eine Regelmenge enthält ebenfalls mehrere Regeln, die Beispiele klassifizieren. Was ist der Unterschied zu AdaBoost? 
+outroQuestionAnswer1=Jede Regel klassifiziert für sich allein die Beispiele. Bei AdaBoost hingegen werden alle zu einem kombiniert und klassifizieren gemeinsam.
+outroQuestionFeedback1=Richtig!
+outroQuestionAnswer2=Alle Regel werden zu einer kombiniert. Bei AdaBoost hingegen klassifiziert jede einzeln für sich. 
+outroQuestionFeedback2=Falsch! Jede Regel klassifiziert für sich allein die Beispiele. Bei AdaBoost hingegen werden alle zu einem kombiniert und klassifizieren gemeinsam.
+outroQuestionAnswer3=Es gibt keinen Unterschied
+outroQuestionFeedback3=Falsch! Jede Regel klassifiziert für sich allein die Beispiele. Bei AdaBoost hingegen werden alle zu einem kombiniert und klassifizieren gemeinsam.
+
+
+
+

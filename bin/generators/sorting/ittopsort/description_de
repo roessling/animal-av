@@ -1,0 +1,28 @@
+Es werden zwei Listen verwendet:[br]
+L ist unsere Ergebnisliste. Zu Beginn initialisieren wir sie als eine leere Liste.[br]
+In S speichern wir alle Knoten von Aufträgen, die gerade ausführbar sind. Dies sind alle Knoten[br]
+ohne Vorgängern.[br][br]
+
+In der Hauptschleife lassen wir einen Auftrag n von S ausführen[br]
+Dazu entfernen wir n von S und fügen es L hinzu.
+Dies können wir tun, da in S alle Knoten ohne[br]
+Abhängigkeiten sind, also ist n ausführbar.
+Danach müssen wir die Abhängigkeiten aktualisieren.[br]
+n wurde bereits ausgeführt, daher können wir alle Kanten
+(Abhängigkeiten) zwischen n und seinen Nachfolgern entfernen.[br]
+Wenn ein Nachfolger keine anderen Vorgänger hat, was bedeutet
+dass der Auftrag ausführbar geworden ist, können wir ihn zu S hinzufügen.[br][br]
+
+Nun können wir wieder einen Auftrag aus S ausführen und an[br]
+L anhängen. Dies machen wir so lange, bis keine Elemente mehr in S sind.[br][br][br]
+
+
+Am Ende gibt es zwei Möglichkeiten:[br][br]
+
+1) Es sind noch Kanten übrig: Das heißt, dass wir nicht alle Aufträge ausführen konnten
+allerdings gibt es keine Aufträge ohne Abhängigkeiten mehr.[br]
+Logischerweise bedeutet das, dass es Zyklen im Graph gab, also
+gibt es keine Lösung für den Graphen.[br][br]
+
+2) Es sind keine Kanten mehr übrig: Dann haben wir eine Reihenfolge gefunden, um
+alle Aufträge auszuführen. L ist dann eine Lösung.

@@ -1,0 +1,37 @@
+%Animal 2656*574
+
+{
+relnot "not1" (211, 111) (150, 150) input a output T1 color black depth 0
+}
+{
+reland "and1" (211, 272) (150, 150) input a input b output T2 color black depth 0
+}
+{
+reland "and2" (211, 433) (150, 150) input T1 input c output T3 color black depth 0
+}
+{
+wire "1" ( 361,186) ( 366,186) ( 366,427) ( 205,427) ( 205,427) ( 205,486) ( 211,486) 
+}
+
+{
+relRectangle "0" (180, 100) (192, 494)  color black depth 23
+text "0" "control_stmts" (180,100) color black depth 50 font Monospaced size 14
+}
+{
+wire "1" ( 165,189) ( 211,189) 
+}
+{
+wire "1" ( 211,189) ( 195,189) ( 195,325) ( 211,325) 
+}
+{
+wire "1" ( 165,375) ( 211,375) 
+}
+{
+wire "1" ( 165,536) ( 211,536) 
+}
+{
+wire "1" ( 361,347) ( 392,347) 
+}
+{
+wire "1" ( 361,508) ( 392,508) 
+}

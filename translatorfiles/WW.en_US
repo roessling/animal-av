@@ -1,0 +1,131 @@
+﻿noSuchKeyException=There is no ressource for the key {0}
+iconNotFound=Icon "{0}" not found
+
+###Titel###
+Titel = Wagner Within Algorithm
+
+###Tabellenbeschriftung###
+Planungsperiode = planning period
+Prod.-periode = prod.-period
+Bedarf = demand
+Prod.-kosten = prod.-cost
+Ruestkosten = changeover costs
+Lagerkosten = stockkeeping cost
+
+###Textfelder###
+Berechnungstitel = calculations and annotations
+prod.-in-Periode = production in period
+verkuerzter-Horizont = not relevant due to shortened horizon
+InputCounter = Input Counter
+OutputCounter = Output Counter
+
+###Ergebnisseite###
+Ergebnistitel = optimal production plan
+Ergebnis1 = production for period
+Ergebnis2 = in period
+Ergebnis3 = quantity
+Ergebnis4 = cumulated costs
+
+###Beschreibung###
+desc1=Description:
+desc2=
+desc3=The Wagner-Within-Algorithm is an optimization method for production planning.
+desc4=The goal of this algorithm ist the minimization of the costs, which occur during a planningperiod,
+desc5=and the determination of the optimal lot size. In Addition to the demand of the period, 
+desc6=changeover costs and stockkeeping costs are also considered in order to minimize the 
+desc7=resulting costs. 
+desc8=An important assumption of this algorithm ist the Zero-Inventory-Property, 
+desc9=which means production takes only place, if the warehouse is empty.The demand of a 
+desc10=period can consequently only be fully covered by the warehouse or the production in the period. The 
+desc11=algorithm also assumes that the production costs per unit are constant across the whole 
+desc12=planning period and consequently is not considered by the algorithm. 
+desc13=In order to be efficient and to avoid unnecessary calculations, the shortened horizon is used. In the 
+desc14=shortened horizon, periods which are previous to the last optimal production period, are not considered.
+desc15=This results from the theory, that production in a period can not be cost minimizing, if it was not cost
+desc16=minimizing in the previous periods.
+
+###PseudoCodegroß###
+Codeg1=Pseudo-sourcecode:
+Codeg2=
+Codeg3=1.initialization for planning period t=1
+Codeg4=	a.set costs for planning period t=1 to the changeover costs of period 1
+Codeg5=	b.set production period of planning period t=1 to 1
+Codeg6=2.as long the end of the planning period is not reached
+Codeg7=	a.consider next period
+Codeg8=		i.t=t+1
+Codeg9=		ii.production period p=1
+Codeg10=		iii.as long production period p <= current planning period t
+Codeg11=			1.if p < last production period
+Codeg12=				a.skip because of shortened horizon
+Codeg13=			2.else if p >= last production period && p == t
+Codeg14=				a.costs = costs of last production period in previous planning period + changeover cost of period p
+Codeg15=			3.else if p >= last production period && p<t
+Codeg16=				a.costs = costs of previous period (p-1) + stockkeeping costs till period t * demand of the current period t
+Codeg17=			4.p=p+1
+Codeg18=	b.determine optimal production period for demand of period p
+Codeg19=		i.determine production period i with minimal costs
+Codeg20=		ii.set optimal production period for planning period t to i
+
+###PseudoCodeklein###
+
+Codek1=1.Initialization for planning period t=1
+Codek2=a.set costs for planning period t=1 to the changeover costs of period 1
+Codek3=	b.set production period of planning period t=1 to 1
+Codek4=2.As long the end of the planning period is not reached
+Codek5=	a.consider next period
+Codek6=		i.t=t+1
+Codek7=		ii.production period p=1
+Codek8=		iii.as long production period p <= current planning period t
+Codek9=			1.if p < last production period
+Codek10=				a.skip because of shortened horizon
+Codek11=			2.else if p >= last production period && p == t
+Codek12=				a.costs = costs of last production period in previous planning period + changeover cost of period p
+Codek13=			3.else if p >= last production period && p<t
+Codek14=				a.costs = costs of previous period (p-1) + stockkeeping costs till period t * demand of the current period t
+Codek15=			4.p=p+1
+Codek16=	b.determine optimal production period for demand of period p
+Codek17=		i.determine production period i with minimal costs
+Codek18=		ii.set optimal production period for planning period t to i
+
+###PseudoCode###
+
+Code1=1.Initialization for planning period t=1
+Code2=a.set costs for planning period t=1 to the changeover costs of period 1
+Code3=b.set production period of planning period t=1 to 1
+Code4=2.As long the end of the planning period is not reached
+Code5=a.consider next period
+Code6=i.t=t+1
+Code7=ii.production period p=1
+Code8=iii.as long production period p <= current planning period t
+Code9=1.if p < last production period
+Code10=a.skip because of shortened horizon
+Code11=2.else if p >= last production period && p == t
+Code12=a.costs = costs of last production period in previous planning period + changeover cost of period p
+Code13=3.else if p >= last production period && p<t
+Code14=a.costs = costs of previous period (p-1) + stockkeeping costs till period t * demand of the current period t
+Code15=4.p=p+1
+Code16=b.determine optimal production period for demand of period p
+Code17=i.determine production period i with minimal costs
+Code18=ii.set optimal production period for planning period t to i
+
+
+###Inhaltsverzeichnis###
+Einleitung = introduction
+Quellcode = Pseudo-Sourcecode
+Algorithmus = algorithm
+Iteration = iteration
+Initialisierung = initialization
+Ergebnis = result
+Endergebnis = endresult	
+		
+###Variablen###
+pvariable = p
+tvariable = t
+letztePeriode = last-prod.-period
+minimum = i
+
+###Fehlermeldungen###
+falscheZeilenanzahl = Wrong number of rows. There Must be 4 rows.
+falscheSpaltenanzahl = Wrong number of columns. There must be at least 1 column.
+negativeZahlen = No negative numbers allowed.
+Inputfehler = Erroneous Input

@@ -1,0 +1,42 @@
+﻿noSuchKeyException=Es  gibt  keine  Ressource  f\u00fcr  Eintrag{0}
+iconNotFound=Icon  ”{0}” not  found
+
+
+###Overview###
+overDesc=Der First-Come-First-Serve Algorithmus wird verwendet, um Anfragen an die Festplatte abzuarbeiten. \nHierbei werden Anfragen in der Reihenfolge ihrer Ankunft bearbeitet.
+overCode=1. Die n\u00e4chste Anfrage in der Liste wird als n\u00e4chstes ausgef\u00fchrt. \n2. Bewege Lese-/Schreibkopf zur aktuellen Anfrage und arbeite es ab. \n3. Wenn noch nicht alle Anfragen abgearbeitet sind, gehe zu  Schritt 1, ansonsten terminiere.
+ 
+
+###Title###
+title=Disk Scheduling: FCFS
+
+
+###Description###
+descheader=Beschreibung:
+desc1=Der First-Come-First-Serve Algorithmus wird verwendet, um Anfragen an die Festplatte abzuarbeiten.
+desc2=Hierbei werden Anfragen in der Reihenfolge ihrer Ankunft bearbeitet.
+
+###Code###
+codeheader=Pseudocode:
+code1=1. Die n\u00e4chste Anfrage in der Liste wird als n\u00e4chstes ausgef\u00fchrt.
+code2=2. Bewege Lese-/Schreibkopf zur aktuellen Anfrage und arbeite es ab.
+code3=3. Wenn noch nicht alle Anfragen abgearbeitet sind, gehe zu Schritt 1, ansonsten terminiere.
+
+###Array###
+arr1=Distanz: 
+arr2=Lese-/Schreibkopf startet bei 
+arr3=Warteschlange: 
+
+###Finish###
+finheader=Fazit:
+fin1=Nach dem Bearbeiten aller Anfragen in der Warteschlange hat der Lese-/Schreibkopf
+fin2=eine Distanz von 
+fin3= Zylindern zur\u00fcckgelegt.
+
+###Summary###
+sumheader=Zusammenfassung:
+sum1=First Come, First Serve ist der einfachste von allen Disk Scheduling Algorithmen.
+sum2=Bei FCFS werden die Requests in der Reihenfolge ihrer Ankuft abgearbeitet.
+sum3=Der Vorteil ist, dass jede Anfrage eine faire Chance bekommt und 
+sum4=keine Starvation (eine Anfrage wird nahezu unendlich aufgeschoben) möglich ist.
+sum5=Jedoch wird die Suchzeit nicht optimiert.

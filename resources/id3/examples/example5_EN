@@ -1,0 +1,11 @@
+Example: A software company hires new employees. Mr. Dilver thinks about working there, but before he applies for a job there,
+he wants to predict whether he is hired or not. Some of his friends already applied for a job there and he knows whether they
+were hired or not. He organizes this information in a table (the 'main table'). One entry contains information about a person's 
+software skills (SKILLS), their experience so far (EXPERIENCE) and their high school grade (GRADE). And finally, the class value 
+(on the right, 'yes' or 'no') describes whether this person was hired or not. 
+ID3 takes these examples as an input to come up with a general concept about in which cases people are hired by the company.
+
+With the generated tree, Mr. Dilver can predict if he will be hired. But of course, no matter what the tree predicts: If he
+really wants to work there, he should definitely send his application to that company! This is how you can get a prediction:
+Starting at the root node, follow the edges that correspond to the attribute values of a person; the 
+leaf that you'll reach tells the expectation (but, of course, only based on the previously seen examples).

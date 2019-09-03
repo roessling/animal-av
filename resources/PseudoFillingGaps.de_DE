@@ -1,0 +1,35 @@
+algorithmName=Filling Gaps [DE]
+generatorName=Filling Gaps [DE]
+dataset=Trainingsdaten:
+filteredExamples=Gefilterte Beispiele:
+explanation=Erklärung:
+classless=Erster Schritt: Entferne alle unklassifizierten Beispiele.
+filter=Das Beispiel ist als {0} klassifiziert.\nWähle alle Beispiele aus (Tabelle: Gefilterte Beispiele) mit der selben Klasse und berechne die Distanzen.
+distance=Distanz
+sort=Sortiere die Beispiele absteigend nach der Distanz, um die k = {0} nächsten Nachbarn einfacher zu ermitteln.
+calcNum=Berechne für die numerischen Attribute die Distanz mit: 
+calcNom=Berechne für die nominalen Attribute die Distanz mit: 
+calcEx=Berechne die Gesamtdistanz zwischen zwei Beispielen mit: 
+normalizeDistanceDescription=(a1 - a2) / ( abs(max(a) - min(a)) )
+zeroOneDistanceDescription=Falls die nominalen Attribute a1 und a2 gleich sind: Distanz = 0, ansonsten Distanz = 1
+manhattanDistanceDescription=Summe aus allen Distanzen der Attribute für das Beispiel.
+classifySymbolic=Der häufigste Wert ist {0}. Bei Werten mit der gleichen Häufigkeit wird der Wert genommen,\nder als erstes unter den gefilterten Beispielen vorkommt. Klassifiziere die Lücke mit dem Wert.
+classifyNumeric=Berechne den Durchschnitt der Werte:\n{0}
+terminates=Alle fehlenden Werte wurde klassifiziert.
+description=Eine abgewandelte Form des k-nearest Neighbor bietet die Möglichkeit nicht nur Klassen, sondern auch fehlende Attributwerte zu ermitteln. In diesen Fällen ist es jedoch notwendig, dass alle Beispiele bereits klassifiziert sind.\nUm sicherzustellen, dass charakterisierende Eigenschaften einer Klasse nicht vertauscht werden, werden für ein Beispiel mit einem fehlenden Attributwert nur die Instanzen aus der selben Klasse betrachtet. Unter diesen Beispielen werden die\nk nächsten Nachbarn ermittelt. Für das Auffüllen der Werte gibt es unterschiedliche Ansätze. In dieser Variante wurde für symbolische Attribute das Mehrheitsprinzip implementiert.\nFür numerische Attribute wurde der Durchschnitt unter den k nächsten Beispielen gebildet.
+
+introQuestion=Welche Auswirkungen hat k? 
+introQuestionAnswer1=Ein zu kleines k neigt zu Overfitting.
+introQuestionFeedback1=Richtig!
+introQuestionAnswer2=Ein zu kleines k neigt zu Underfitting.
+introQuestionFeedback2=Falsch! Ein zu kleines k neigt zu Overfitting.
+introQuestionAnswer3=Ein möglichst großes k führt zum perfekten Ergebnis
+introQuestionFeedback3=Falsch!
+
+outroQuestion=Was ist der Unterschied zwischen diesem Algorithmus und einem Regellerner?
+outroQuestionAnswer1=Das gelernte Wissen wird nach der Klassifizierung verworfen.
+outroQuestionFeedback1=Richtig!
+outroQuestionAnswer2=Das gelernte Wissen wird als Modell dargestellt und später wiederverwendet.
+outroQuestionFeedback2=Falsch! Es wird kein Modell gelernt.
+outroQuestionAnswer3=Alle Ergebnisse werden miteinander kombiniert und ergeben die endgültige Klassifizierung
+outroQuestionFeedback3=Falsch!

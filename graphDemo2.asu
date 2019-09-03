@@ -1,0 +1,19 @@
+%Animal 2
+square "s" (10, 10) 100 fillColor red
+graph "DemoGraph" size 5 color blue bgColor yellow outlineColor black highlightColor green elemHighlightColor red nodeFontColor green edgeFontColor pink directed  nodes { font SansSerif size 16 bold "a" (40, 60), "b" (220, 30), "c" offset (40, 90) from "s" NE, "d" offset (10, 120) from "s" SE, "e" move (50, 120) } edges { font Serif size 12 italic (0, 2) (2, 4) (4, 1) (4,2) (2, 2) (3, 0) } # origin (100, 100) showIndices
+highlightEdge on "DemoGraph" (0, 2)
+transformEdge on "DemoGraph" type "highlight edges" (3, 0)
+transformEdge on "DemoGraph" (0, 2) type "unhighlight edges" within 10 ticks
+transformEdge on "DemoGraph" (4, 1)
+transformEdge on "DemoGraph" type "highlight edge elements" (4, 2)
+transformEdge on "DemoGraph" type "deactivate edges" (2,2) (3,0)
+transformEdge on "DemoGraph" type "activate edges" (2,2)
+transformEdge on "DemoGraph" type "set edges invisible" (2, 4) (4, 1)
+transformEdge on "DemoGraph" type "unhighlight edge elements" (4, 2)
+transformEdge on "DemoGraph" type "set edges visible" (2, 4) within 20 ticks
+highlightNode on "DemoGraph" nodes 1 3
+unhighlightNode on "DemoGraph" nodes 3
+highlightNode on "DemoGraph" type "deactivate nodes" nodes 1 2 3
+transformNode on "DemoGraph" type "set nodes invisible" nodes 2 3
+transformNode on "DemoGraph" type "unhighlight nodes" nodes 1
+transformNode on "DemoGraph" type "set nodes visible" nodes 2 3

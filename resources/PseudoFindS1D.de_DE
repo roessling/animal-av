@@ -1,0 +1,32 @@
+algorithmName=Find-S (1D) [DE] 
+generatorName=Find-S (1D) [DE]
+dataset=Trainingsdaten:
+cs=Koordinatensystem:
+hypo=Hypothesen:
+explanation=Erklärungen:
+noConcept=Ein negatives Beispiel wurde abgedeckt. Ein Target Concept und eine gültige Hypothese existieren somit nicht. Der Algorithmus terminiert.
+invalidInput=Das letzte Attribut klassifiziert die Trainingsbeispiele. Bitte spezifizieren Sie die Klasse durch Angabe von 'yes' oder 'no'.
+start=Starte mit der spezifischsten Hypothese [a,b] = [false, false], die kein Beispiel abdeckt. 
+foreach=Jedes Beispiel muss nun auf die Klassifizierung geprüft werden. 
+negative=Das gefundene Beispiel ist negativ und wird nicht von der Hypothese abgedeckt. Es kann daher ignoriert werden.
+generalize=Das gefundene Beispiel ist positiv und wird nicht von der Hypothese abgedeckt.\nEs findet daher eine Generalisierung statt, sodass alle vorherigen positiven und das aktuelle Beispiel gerade noch abgedeckt werden.
+notGeneralize=Das gefundene Beispiel ist positiv und wird bereits von der Hypothese abgedeckt.\nEs muss daher keine Generalisierung durchgeführt werden.
+terminates=Der Algorithmus terminiert, da alle Beispiele durchlaufen wurden und alle positiven abgedeckt sind.\nDie endgültige Hypothese lautet: {0}
+description=Find-S findet die spezifischste Hypothese, die gerade noch alle positiven Beispiele abdeckt. Der Algorithmus startet mit der spezifischsten Hypothese h = [false, false], die keine Beispiele abdeckt.\nDie einzelnen Beispiele des Datensatzes werden in der gegebenen Reihenfolge bearbeitet. Falls ein positives Beispiel gefunden wird, das von der Hypothese noch nicht abgedeckt wird, findet eine Generalisierung von h statt.\nBei numerischen Attributen wird das Intervall erweitert, sodass der eben gefundene Wert eine Intervallgrenze darstellt. Sollte das positive Beispiel bereits von h abgedeckt sein, werden keine Änderungen vorgenommen.\nFalls ein negativ klassifiziertes Beispiel gesichtet wird, ignoriert der Algorithmus diese und führt keine zusätzlichen Änderungen durch.\nFalls für einen Datensatz das Target Concept existiert und dieses mit einer Hypothese beschrieben werden kann, liefert Find-S ein vollständiges und konsistentes Ergebnis.
+
+introQuestion=Welche Aussage ist korrekt? 
+introQuestionAnswer1=Find-S deckt möglichst viele positive Beispiele ab
+introQuestionFeedback1=Falsch! Find-S deckt alle positiven Beispiele ab
+introQuestionAnswer2=Find-S deckt alle positiven Beispiele ab
+introQuestionFeedback2=Richtig!
+introQuestionAnswer3=Find-S deckt möglichst wenig negative Beispiele ab
+introQuestionFeedback3=Falsch! Find-S deckt kein negatives Beispiel ab
+
+outroQuestion=Wie viele Generalisierungen führt der Algorithmus maximal durch?
+outroQuestionAnswer1=|positive Beispiele|
+outroQuestionFeedback1=Richtig!
+outroQuestionAnswer2=min( |Attribute| + 1, |negative Beispiele| )
+outroQuestionFeedback2=Falsch! Änderungen finden nur bei positiven Beispielen statt
+outroQuestionAnswer3=|Attribute| + 1
+outroQuestionFeedback3=Falsch! Änderungen finden nur bei positiven Beispielen statt
+

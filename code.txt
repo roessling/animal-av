@@ -1,0 +1,20 @@
+public void quickSort(int[] array, int l, int r) {
+  int i, j, pivot;
+  if (r > l) {
+    pivot = array[r];
+    for (i = l; j = r - 1; i < j; ) {
+      while (array[i] <= pivot && j > i)
+        i++;
+      while (pivot < array[j] && j > i)
+        j--;
+      if (i < j)
+        swap(array, i, j);
+    }
+    if (pivot < array[i])
+      swap(array, i, r);
+    else
+      i=r;
+    quickSort(array, l, i - 1);
+    quickSort(array, i + 1, r);
+  }
+}

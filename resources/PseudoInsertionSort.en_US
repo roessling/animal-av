@@ -1,0 +1,10 @@
+@import=resources/GenericInsertionSort.en_US
+theName=Insertion Sort (Pseudo Code) [EN]
+outputLanguage=Pseudo-Code
+codeExample=public void insertionSort(int[] array)\n{\n  int i, j, temp;\n  for (i=1; i<array.length; i++)\n  {\n    j = i;\n    temp = array[i];\n    while (j > 0 && array[j-1] > temp){\n      array[j] = array[j-1];\n      j = j - 1;\n    }\n    array[j] = temp;\n  }\n}
+animTitle=Insertion Sort
+algoTitle=Insertion Sort
+animDesc=Insertion Sort: Synopsis
+description.filename=resources/GenericInsertionSort_descr_en.txt
+code.filename=resources/PseudoInsertionSort_code.txt
+complexity.filename=resources/GenericInsertionSort_complexity_en.txt

@@ -1,0 +1,50 @@
+noSuchKeyException= No Ressources found {0}
+iconNotFound=Icon "{0}" not found
+
+algorithm_name=Wavelet-Tree
+approach= Introduction
+description= The wavelet tree is a data structure that is a recursive partition of a sequence S of length n
+description1= according to their symbols. If E = (1, ... 0) is the alphabet of the symbols of S, then the
+description2= Wavelet-tree for S the root representing S itself and o-leaves representing the positions of the symbols
+description3= represent:
+
+description4= ♦ Leaf c Elemet of E represents all positions i such that S [i] = c and 1 <i> n.
+description5= ♦ The internal nodes describe how the symbols are grouped.
+description6= ♦ Input: A string S of any length consisting of letters.
+
+description7= The wavelet tree supports the operations access, rank and select. We visualize here
+description8= the operations access, rank and form the wavelet tree from the input.
+
+step1=1. Step: Tree illustration
+step2=2. Step: Acess-Method
+step3=3. Step: Rang-Method
+step4=4. Step: .....
+
+line1= The following operations are used:
+line2= - split(tree)
+line3= - access(i)						
+line4= - rank(letter, position)						
+
+line5= The following rank was determined:
+line6= The following access was determined:								
+
+conclusion=* * * * * * * * * * * * * * * * * * * * * * * * * * * * Summary * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+conclusion1= From the input:
+conclusion2= follows the following wavelet tree, depending on the alphabet.
+conclusion3= access
+conclusion4= returns the following value:
+conclusion5= rang
+conclusion6= returns the following value:
+conclusion7= The operations provide the following:
+
+description10= This wavelet tree displays the operations Acess (index) and rank (characters, index). In the primitives,
+description11= you can specify a string, the index for Access, as well as a separate index for rank, and the letter.
+description12= In addition, you can influence the following properties:
+description13=♦ Color of the ArrayMarkers
+description14=♦ Color of the StringArray
+description15=♦ Color of the SoruceCodes
+
+vaild1= The string is too long and must be fewer than 21 entries.
+vaild3= The index is too large, adjust it by the size of the string.
+vaild4= Size of the string:
+vaild5= The letter you selected is missing from the string.

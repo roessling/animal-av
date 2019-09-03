@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<PropertiesTreeModel xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="PropertiesTreeModel.xsd">
+	<Folder name="Root">
+		<Primitive type="intMatrix">
+			<name>Texture</name>
+			<value><intMatrix>4, 2, 7, 9; 1, 0, 4, 6; 3, 5, 8, 1</intMatrix></value>
+		</Primitive>
+		<Primitive type="int">
+			<name>Number_of_questions</name>
+			<value><int> 4 </int></value>
+		</Primitive>
+		<Folder name="Texture">
+			<Primitive type="Color">
+				<name>Highlight_Color_1</name>
+				<value><Color>(177, 0, 0)</Color></value>
+			</Primitive>
+			<Primitive type="Color">
+				<name>Highlight_Color_2</name>
+				<value><Color>(62, 110, 255)</Color></value>
+			</Primitive>
+			<Primitive type="Color">
+				<name>Highlight_Color_3</name>
+				<value><Color>(25, 93, 42)</Color></value>
+			</Primitive>
+			<Primitive type="Color">
+				<name>Highlight_Color_4</name>
+				<value><Color>(255, 66, 0)</Color></value>
+			</Primitive>
+			<Primitive type="Color">
+				<name>Line_Color</name>
+				<value><Color>(192, 192, 192)</Color></value>
+			</Primitive>
+			<Primitive type="Color">
+				<name>Cell_Color</name>
+				<value><Color>(255, 255, 255)</Color></value>
+			</Primitive>
+			<Primitive type="Color">
+				<name>Text_Color</name>
+				<value><Color>(0, 0, 0)</Color></value>
+			</Primitive>
+		</Folder>
+		<Folder name="Pseudocode">
+			<Primitive type="Color">
+				<name>Pseudocode_Text_Color</name>
+				<value><Color>(0, 0, 0)</Color></value>
+			</Primitive>
+			<Primitive type="Color">
+				<name>Pseudocode_Background_Color</name>
+				<value><Color>(192, 192, 192)</Color></value>
+			</Primitive>
+			<Primitive type="Color">
+				<name>Pseudocode_Highlight_Color</name>
+				<value><Color>(255, 0, 0)</Color></value>
+			</Primitive>
+		</Folder>
+		<Folder name="Banner">
+			<Primitive type="Color">
+				<name>Banner_Text_Color</name>
+				<value><Color>(0, 0, 0)</Color></value>
+			</Primitive>
+		</Folder>
+		<Folder name="Equation">
+			<Primitive type="boolean">
+				<name>Display_Equation</name>
+				<value><boolean value="true" /></value>
+			</Primitive>
+			<Primitive type="Color">
+				<name>Equation_Background_Color</name>
+				<value><Color>(255, 255, 255)</Color></value>
+			</Primitive>
+		</Folder>
+		<Folder name="Counter">
+			<Primitive type="boolean">
+				<name>Display_Counters</name>
+				<value><boolean value="true" /></value>
+			</Primitive>
+			<Primitive type="Color">
+				<name>Counter_Color</name>
+				<value><Color>(0, 255, 0)</Color></value>
+			</Primitive>
+		</Folder>
+	</Folder>
+</PropertiesTreeModel>

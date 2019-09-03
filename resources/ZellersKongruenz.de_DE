@@ -1,0 +1,55 @@
+noSuchKeyException=Es gibt keine Ressource f\u00fcr Eintrag {0}
+
+iconNotFound=Icon \u201d{0}\u201d not found
+
+## Misc ###
+name = Zellers Kongruenz
+algorithmName = Zellers Kongruenz
+algorithmName2 = ZellersKongruenz
+description = Zellers Kongruenz ist ein Algorithmus zur mathematischen Bestimmung des Wochentags zu einem \ngegeben Datum. Dabei muss man bei der Berechnung zwischen dem gregorianischen und \njulianischen Kalender unterscheiden. \n\nDer gregorianische Kalender wurde am 15.10.1582 eingef\u00fchrt. Alle Wochentage von Daten vor dem \n15.10.1582 sollten nach dem julianischen Kalender berechnet werden. Dem Nutzer steht es jedoch \nfrei diesen Hinweis zu ignorieren.
+description2 = Zellers Kongruenz ist ein Algorithmus zur mathematischen Bestimmung des Wochentags zu einem gegebenen Datum. Dabei bekommen die Wochentage folgende Werte zugewiesen:
+description3 = In den n\u00e4chsten Schritten zeigen wir ihnen die Wochentagsberechnung mit Zellers Kongruenz anhand des 
+description4 = ForceWrongCalendertype wurde ausgew\u00e4hlt und die Kommentare am Code wurden angepasst.
+
+greg = Gregorianischer Kalender
+jul = Julianischer Kalender
+greg2 = gregorianischen
+jul2 = julianischen
+e1 =  im 
+e2 =  Kalender.
+
+wochentag0 = Samstag
+wochentag1 = Sonntag
+wochentag2 = Montag
+wochentag3 = Dienstag
+wochentag4 = Mittwoch
+wochentag5 = Donnerstag
+wochentag6 = Freitag
+
+monat0 = Januar
+monat1 = Februar
+monat2 = M\u00e4rz
+monat3 = April
+monat4 = Mai
+monat5 = Juni
+monat6 = Juli
+monat7 = August
+monat8 = September
+monat9 = Oktober
+monat10 = November
+monat11 = Dezember
+
+summary1 = Laut dem gregorianischen Kalender ist der 
+summary2 = Laut dem julianischen Kalender ist der 
+summary3 =  ein 
+
+step1 = Start
+step2 = Berechnung
+step3 = Kalender fertig
+step4 = Zusammenfassung
+
+error1 = Bitte nur Werte zwischen 0 und 31 f\u00fcr den Tag verwenden
+error2 = Bitte nur Werte zwischen 0 und 12 f\u00fcr den Monat verwenden
+error3 = Bitte nur Werte gr\u00f6\u00dfer 0 f\u00fcr das Jahr angeben
+error4 = Bitte nur Werte zwischen 0 und 29 f\u00fcr den Tag verwenden
+error5 = Bitte nur Werte zwischen 0 und 28 f\u00fcr den Tag verwenden

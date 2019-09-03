@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<PropertiesTreeModel xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="PropertiesTreeModel.xsd">
+	<Folder name="Root">
+		<Primitive type="int">
+			<name>Iterationen</name>
+			<value><int>50</int></value>
+			<description>Anzahl der Iterationen</description>
+		</Primitive>
+		<Primitive type="int">
+			<name>Seed</name>
+			<value><int>41</int></value>
+			<description>Seed für den Zufallsgenerator</description>
+		</Primitive>
+		<Primitive type="int">
+			<name>PseudoCode</name>
+			<value><int>2</int></value>
+			<description>Anzahl der Iterationen mit PseudoCode-und Textbegleitung</description>
+		</Primitive>
+		<Primitive type="Color">
+			<name>Treffer</name>
+			<value><Color>(0, 153, 0)</Color></value>
+			<description>Farbe der Punkt innerhalb der Kreises</description>
+		</Primitive>
+		<Primitive type="Color">
+			<name>Nieten</name>
+			<value><Color>(255, 0, 0)</Color></value>
+			<description>Farbe der Punkte ausserhalb des Kreises</description>
+		</Primitive>
+	</Folder>
+</PropertiesTreeModel>

@@ -1,0 +1,8 @@
+@import=resources/GenericSettings
+algoDesc=QuickSort wählt ein Element aus der zu sortierenden Liste aus (Pivotelement) und zerlegt die Liste in zwei Teillisten, eine untere, die alle Elemente kleiner und eine obere, die alle Elemente gleich oder größer dem Pivotelement enthält.\nDazu wird zunächst ein Element von unten gesucht, das größer als (oder gleichgroß wie) das Pivotelement und damit für die untere Liste zu groß ist. Entsprechend wird von oben ein kleineres Element als das Pivotelement gesucht. Die beiden Elemente werden dann vertauscht und landen damit in der jeweils richtigen Liste.\nDer Vorgang wird fortgesetzt, bis sich die untere und obere Suche treffen. Damit sind die oben erwähnten Teillisten in einem einzigen Durchlauf entstanden. Suche und Vertauschung können in-place durchgeführt werden.\n\nDie noch unsortierten Teillisten werden über denselben Algorithmus in noch kleinere Teillisten zerlegt (z. B. mittels Rekursion) und, sobald nur noch Listen mit je einem Element vorhanden sind, wieder zusammengesetzt. Die Sortierung ist damit abgeschlossen.
+algoAuthor=Krasimir Markov <kmarkov@gmail.com>
+animDesc=Beschreibung des Algorithmus
+adForURL=Weitere Animationen finden Sie unter http://www.algoanim.info/Animal2 im Online-Repository
+nrSteps=Insgesamt verwendete der Algorithmus {0} Zuweisungen und {1} Vergleiche.
+nrAss=Zuweisungen
+nrComp=Vergleiche

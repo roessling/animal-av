@@ -1,0 +1,23 @@
+> tabelle ist eine Menge von Beispielen.
+> eigenschaft ist eine bestimmte Eigenschaft.
+> P₊ = |{ x | x ist eine Instanz der Klasse ja }| / |tabelle|
+> P₋ = |{ x | x ist eine Instanz der Klasse nein }| / |tabelle|
+> reduzierte_tabelle(f, v) = { x | x ist in tabelle enthalten und weist Wert v für Eigenschaft f auf }
+
+entropy(tabelle) = - (P₊) × log₂(P₊) - (P₋) × log₂(P₋)
+
+INFORMATION_GAIN(tabelle, eigenschaft) = 
+   entropy(tabelle) -					 			
+         Σₓ    [ 
+                    ( |reduzierte_tabelle(eigenschaft, x)| / |tabelle| )   *   entropy( reduzierte_tabelle(eigenschaft, x) ) 
+                ]							
+---------------------------------------------------------------------------------------------------
+
+INFORMATION_GAIN(aktuelle_tabelle, §) 
+   = §  § = §		
+														 
+INFORMATION_GAIN(aktuelle_tabelle, §) 
+   = §  § = §		
+
+INFORMATION_GAIN(aktuelle_tabelle, §) 
+   = §  § = §	

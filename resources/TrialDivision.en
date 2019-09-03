@@ -1,0 +1,44 @@
+#Ueberpruefung
+noSuchKeyException=There is no resource for the key {0}
+iconNotFound=Icon "{0}” not  found
+
+#Die Einfuehrung
+INTRO0=Trial Division is the most laborious but easiest to understand
+INTRO1=of the integer factorization algorithms.
+INTRO2=The essential idea behind trial division tests to see if an
+INTRO3=integer n, the integer to be factored, can be divided by each
+INTRO4=number in turn that is less than n.
+INTRO5=
+INTRO6=The following slide will show the factorization of
+
+#Die Erklaerungen
+EXPLANATIONS0=
+EXPLANATIONS1=Explanation: Prepare an empty list
+EXPLANATIONS2=Explanation: The first possible factor
+EXPLANATIONS3=Explanation: While n still has remaining factors...
+EXPLANATIONS4=Explanation: If n can be divided by the factor
+EXPLANATIONS5=Explanation: Add factor to the list
+EXPLANATIONS6=Explanation: Divide that factor out of n
+EXPLANATIONS7=Explanation: If f is not a factor of n
+EXPLANATIONS8=Explanation: Increase the factor by 1
+EXPLANATIONS9=Explanation: Return list of prime factors
+
+#Die Zusammenfassung
+OUTRO0=The Trial Division algorithm as shown before computes the factorization of the given number.
+OUTRO1=in this case the given number was:
+OUTRO2=
+OUTRO3=and the computed factors were:
+OUTRO4=
+OUTRO5=Factorization means that multiplying the produced values will result in the given number.
+OUTRO6=
+OUTRO7=Trial Division is an easy approach to solve this task but there are more efficient ways for it.
+OUTRO8=The algorithm is deterministic which means that it will always produce the same values for a given number.
+
+#The steps
+STEP0=Introduction
+STEP1=Factorization of
+
+#Roles of Variables
+VAR_ROLE_p=Array of prime factors found so far.
+VAR_ROLE_f=Incremented value that is checked as a potential prime factor.
+VAR_ROLE_n=Number to be factorized. Is decreased while the algorithm runs.

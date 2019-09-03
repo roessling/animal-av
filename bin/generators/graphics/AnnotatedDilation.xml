@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<PropertiesTreeModel xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="PropertiesTreeModel.xsd">
+	<Folder name="Root">
+		<Primitive type="intMatrix">
+			<name>input_image</name>
+			<value><intMatrix>0, 1, 1, 0; 1, 1, 1, 1; 1, 1, 1, 1; 0, 1, 1, 0</intMatrix></value>
+		</Primitive>
+		<Primitive type="intMatrix">
+			<name>structureelement</name>
+			<value><intMatrix>0, 1, 0; 0, 1, 1; 0, 0, 0</intMatrix></value>
+		</Primitive>
+		<Primitive type="int">
+			<name>comparisonelement_x_pos</name>
+			<value><int>1</int></value>
+		</Primitive>
+		<Primitive type="int">
+			<name>comparisonelement_y_pos</name>
+			<value><int>1</int></value>
+		</Primitive>
+	</Folder>
+</PropertiesTreeModel>

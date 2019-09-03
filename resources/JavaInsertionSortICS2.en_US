@@ -1,0 +1,10 @@
+@import=resources/GenericInsertionSort.en_US
+theName=Insertion Sort (ICS2)
+algoName=Insertion Sort (ICS2)
+outputLanguage=Java
+codeExample=public void insertionSort() {\n  for (i=1; i<n; i++) {\n    j = i;\n    temp = L[i];\n    while (j > 0 && L[j-1] > temp){\n      L[j] = L[j-1];\n      j = j - 1;\n    }\n    L[j] = temp;\n  }\n}
+animTitle=Insertion Sort (ICS2)
+algoTitle=Insertion Sort (ICS2)
+description.filename=resources/JavaInsertionSortICS2_descr_en.txt
+code.filename=resources/JavaInsertionSortICS2_code.txt
+complexity.filename=resources/JavaInsertionSortICS2_complexity_en.txt

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<PropertiesTreeModel xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="PropertiesTreeModel.xsd">
+	<Folder name="Root">
+		<Primitive type="String">
+			<name>imageUrl</name>
+			<value><String></String></value>
+			<description>URL to image the algorithm will extract isolines from</description>
+		</Primitive>
+		<Primitive type="int">
+			<name>threshold</name>
+			<value><int>-1</int></value>
+			<description>Pixel value threshold (0-255), auto:-1</description>
+		</Primitive>
+		<Primitive type="Color">
+			<name>outBgHighlightColor</name>
+			<value><Color>(114, 140, 56)</Color></value>
+			<description>Background color for highlighted pixels less than threshold</description>
+		</Primitive>
+		<Primitive type="Color">
+			<name>inBgHighlightColor</name>
+			<value><Color>(203, 250, 100)</Color></value>
+			<description>Background color for highlighted pixels &gt;= threshold</description>
+		</Primitive>
+	</Folder>
+</PropertiesTreeModel>

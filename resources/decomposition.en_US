@@ -1,0 +1,55 @@
+noSuchKeyException=Translation missing {0}
+
+name=BCNF Decomposition algorithm
+algoName=Decomposing a schema into BCNF
+description=The decomposition algorithm transforms a relational schema into the Boyce-Codd-Normalform(BCNF). It works by testing whether all existing schemas are already in BCNF. If this is not the case, the violating schema is decomposed into two new relational schemas. The first one is composed of the intersection of the attributes from the violating schema and the closure of the BCNF-violating functional dependency. The candidate keys of this new schema have to be computed. The second relational schema is composed of the attributes of the current violating relation without the right side of the violating functional dependency. The candidate keys are the ones from the decomposed relation. After the computation of the two relations, they get added to the set of relations after the removal of the BCNF-violating relation. Afterwards all relations will be checked again whether they violate BCNF. This will repeat until no violation is found. \nGeneral remark: Because of multiple possible implementations of the decomposition algorithm, multiple solutions can exist, which are all correct. For example, there are multiple sets of candidate keys, which can be computed. Another reason is that not always all sets are ordered. 
+instructions=Start with Z = {R}\nAs long as there is Ri ∈ Z, which violates BCNF:\nFind a FD (α → β) ∈ F⁺ with\n- α ∪ β ⊆ Ri\n- α ∩ β = ∅\n- α → Ri ∈/ F⁺\n- Decompose Ri into Ri1 := α ∪ β and Ri2 := Ri − β\n- Remove Ri from Z and insert Ri1 and Ri2, so that\nZ := (Z − {Ri}) ∪ {Ri1} ∪ {Ri2}
+
+symbolTable=\n \nSymbols:\nZ  describes the set of relations\nRi describes a relation with index i\nF⁺ describes the attribute closure of the functional dependency F\nFD is short for functional dependency
+
+
+introTextFirst=The Boyce-Codd-Normalform(BCNF or also 3.5NF) is a more strict variant than the third normalform(3NF).\n It is used in the field of data bases for the preventation of anomalies. \nA relational schema which is in BCNF does not have any redudancy based on the functional dependencies(FD). \nA relational schema is in BCNF if one of the two following conditions hold(X and Y are sets of attributes):\n- X -> Y is a trivial functional dependency meaning Y is a subset of X \n- X is a candidate key of the relational schema
+introTextSecond=The decomposition algorithm transform a relational schema into the Boyce-Codd-Normalform. \nIt does this by checking whether every schema is already in BCNF. If this is not the case then \nthe considered relational schema is decomposed into two new schemas then. The first one has \nthe intersection of the attributes of the decomposed relation and of the closure from the \nBCNF-violating functional dependency. The candidate keys have to be computed for this \nschema. The second relational schema is composed of the attribute of the decomposed relation \nwithout the attributes of the functional dependencys' right hand side. The candidate keys for \nthis relation are the ones from the decomposed relation. Both computed relations will be \nadded to the set of relations after the removal of the decomposed one. Afterwards \nall relations will be checked again whether they hold the BCNF conditions. This repeats until \nall relations do not violate BCNF. \n \nGeneral remark: This algorithm can be implemented in multiple ways, which produce different but also valid \nsolutions. For example, the computation of candidate keys has multiple solutions and the choice \nof the candidate key has an impact on the final relational schemas. Also functional dependencies can be iterated in different order.
+mathHeader=Approach
+
+closureHeader=Exemplary computation of an attribute closure
+closureInfo=The computation of an attribute closure requires a set of attributes as input and \nis computed interatively upon a set of functional dependencies. For demonstration purposes,\nthe closure of the following attributes will be computed:
+closureOf=Attribute closure of
+funcDependencies=Functional dependencies
+
+
+currentRelations=Current relations
+decomposedRelation=Decomposed relation
+wordKey=Key
+attributes=Attributes
+
+initialization=Now, the actual algorithm begins. We will iterate over all relations until \nevery relation fulfills BCNF. If that is not the case for a given relation, it \nis split up into two new relations. The old one will be removed from the set of relations\nand the two newly decomposed ones will be added. After that, the iteration starts again checking the\nrelations for BCNF violations
+relationIsInBCNF=This relation has been checked and fulfills the BCNF
+attributesFirstSplit=The attributes of the first decompositioned relation match the attribute closure of the current\nfunctional dependency. Using this set of attributes and the functional dependencies, the new\ncandidate key is computed for the first relation
+attributesSecondSplit=The second decompositioned relation is built by using the same candidate key from the parent\nrelation. The set of attributes of the second will therefore match the parent\nrelation but without the attributes from the closure of the current functional dependency\n(with an exception for the attributes part of the determinant).
+finalRelationsColon=The current relations as shown above are final and all of them are in Boyce-Codd normal form. \nThe input relational schema was composed of all used attributes and was decomposed \nuntil no schema was violating the BCNF. Because of this less anomalies can happen \nwhen working with the new relational schema.
+
+
+redIsInNotBcnf=The functional dependency marked red violates BCNF, as it is neither trivial\nnor does its determinant constitute a superkey.\nTherefore the marked relation will be decomposed.
+redIsTrivial=The functional dependency marked red is trivial\n(meaning its determinant is a subset of its right side) and is therefore not in violation of BCNF.
+markedFdDeterminant=The determinant of the functional dependency marked red is a \nsuper-key. It therefore already fulfills BCNF.
+markedNotSubsetRelation=The functional dependency marked red is not part \nof the subset of attributes of the current relation.\nIt is therefore skipped.
+
+bcnfQPrompt=Which conditions have to hold so that a relation is in BCNF?
+closureQPrompt=Which of the following sets of attributes is the closure of
+r1QPrompt=Please enter the set of attributes which will be in the relation s%1 for the decomposed relation %s (They have to be comma separated, without blanks and in lexicographic order, e.g. A,B,C,D)
+r2QPrompt=Please enter the set of attributes which will be in the relation s%2 for the decomposed relation %s (They have to be comma separated, without blanks and in lexicographic order, e.g. A,B,C,D)
+rightAnswer=That is the right answer.
+wrongAnswer=That is the wrong answer.
+bcnfAnswer1=The functional dependencies have to be trivial.
+bcnfAnswer2=The closure of a functional dependency has the attributes like the current relation.
+bcnfAnswer3=The determinants have to be candidate keys of the current relation.
+bcnfAnswer4=The determinants of the functional dependencies need to have at least 2 attributes.
+bcnfFeedback1=True, triviality is one of the conditions.   
+bcnfFeedback3=True, the condition with the candidate keys is the most important one for the BCNF.
+finalTitle=The final relations are as follows:
+
+closureAgain=The closure got extended during this iteration thus all functional depencies\nhave to be checked again whether they extend the new closure.
+closureIsSubset=The red marked functional dependency is considered. Since the determinant is part of the \ncurrent closure, the right side will be added.
+closureIsNotSubset=The red marked functional dependency is considered. Since the determinant is not part of the \ncurrent closure this functional dependency is skipped.
+closureTerminates=No other attributes got added to the closure during this iteration. \nTherefore the algorithm for the computation of the closure terminates.

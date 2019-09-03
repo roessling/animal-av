@@ -1,0 +1,14 @@
+The left side shows the pseudocode of Threshold algorithm.
+The right side shows the sorted matrix from step before.
+		
+Input variables:
+	Array A: Represented by the right Matrix.
+	         Contains objects name and attributes values sorted by value.
+	Integer k: Defines the number of top objects we are looking for.
+	t = The grade of the last seen object from list Li under sorted access. 
+	g = The lowest aggregated grade of the top k set.
+		
+All attributes seen so far will be marked yellow.
+The parallel access is performed until there are k objects where every
+attribute has been. In the lower right matrix this can be seen on rows
+where every column is filled with an attribute value.

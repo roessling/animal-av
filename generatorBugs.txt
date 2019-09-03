@@ -1,0 +1,335 @@
+Animator-Framework:
+(Re-)Translate GUI if language is changed but previously opened Weiter / Fertig button!
+Back & Zurück Button if language changed at run-time Zurück-Button geht nicht?
+M@rtin: Weiter und Fertig Button und Überschriftüberlappungen beim Generiern einer neuen Animation wenn bereits generiert gewesen
+M@rtin: Wenn Animation Window geschlossen und man generiert neue Animation dann ist der erste Schritt immer leer 
+M@rtin: Geschwindigkeitsregulierung geht nicht scheint generelles Problem zu sein!!!
+Generators:
+Sorting
+M@rtin: Reihenfolge/Sortierung der Algos? nach [DE][EN] oder alphabetisch?
+        Bubble Sort [EN]
+        		M@rtin: Highlight nach Abbruch wegen swapperformed = false wird nicht mehr gemacht mit dem Rest der Menge
+        		M@rtin: Assignments und Comparisons für 67 und 66 sehr unterschiedlich
+        Bubble Sort GdI2@TUD [EN]
+        		M@rtin: StreamCorruptedException, InvocationTargetexceptipn beim Generieren
+        Bubble Sort Improved for GdI2@TUD [EN]
+        		M@rtin: Highlight nach Abbruch mit isSorted = true wird nicht richtig gemacht
+        Insertion Sort [EN]        		
+        Bubble Sort (Pseudo Code) [EN]
+        		M@rtin: Highlight wenn Menge sortiert fehlt 
+        		M@rtin: Assignments und Comparisons für 67 und 66 sehr unterschiedlich
+        Insertion Sort (Pseudocode)[EN]
+        Bubble Sort [DE]
+        		M@rtin: Highlight nach Abbruch wegen swapperformed = false wird nicht mehr gemacht mit dem Rest der Menge
+        		M@rtin: Assignments und Comparisons für 67 und 66 sehr unterschiedlich        	
+        Bubble Sort GdI2@TUD [DE]
+        		M@rtin: StreamCorruptedException, InvocationTargetexceptipn beim Generieren        	
+        Bubble Sort Improved for GdI2@TUD [DE]
+        		M@rtin: Highlight nach Abbruch mit isSorted = true wird nicht richtig gemacht        	
+        Insertion Sort [DE]
+        Bubble Sort (Pseudo Code) [DE]
+        		M@rtin: Highlight wenn Menge sortiert fehlt 
+        		M@rtin: Assignments und Comparisons für 67 und 66 sehr unterschiedlich
+        Insertion Sort (Pseudocode)[DE]
+        		M@rtin: Der Pseudocode ist aber noch nicht sehr Deutsch!
+        Insertion Sort
+                Intro: "aehnlich"
+                Keine Labels
+                Titel fehlt
+                Pseudocode: Fuege, erhoehe
+                Zeiger i bewegt sich zu spät bei 1. Betreten der Schleife
+                Highlight auf falscher Zelle
+                Bei j=i keine Anpassung von j
+                Highlight "{" statt "for (i"
+                Zeiger j bewegt sich gar nicht?
+                0 Vergleiche bei aufsteigend sortiert…?
+                Keine Angabe von v, daher etwas unbefriedigend!
+				M@rtin: Leerschritte 4,11
+				M@rtin: 12, 13 Array alleine keine Überschrift
+				M@rtin: Anzeige von v fehlt
+        Insertion Sort (English)
+                Kein Titel
+                Leerer Schritt vor Pseudocode
+                Keine Labels
+                Increment until j==i, dann Bruch vor "end"?
+                hideAll geht nicht / fehlt?
+                Highlight bleibt auf erster for-Schleife stehen
+                Summary auf Deutsch
+                Erst anpassen, dann nochmal checken!
+				M@rtin: Bubblesort?
+				M@rtin: Überlappung von Algo in Worten und Code
+				M@rtin: Muss v nicht an Stelle a[j-1] ansonsten Zeiger falsch
+        Insertion Sort (GdI 2)
+                Kein Titel
+                Labels
+                Intro: "aehnlich"
+                Titel fehlt, leere Schritte
+                Pseudocode: Fuege, erhoehe
+                Schrittzahl unlesbar, da oben außer Rahmen
+				M@rtin: Schritt 4, 11 leer
+				M@rtin: Pseudocode "erhoehe"
+				M@rtin: 12, 13 Array alleine keine Überschrift
+				M@rtin: Ende in Englisch
+        Insertion Sort (Pseudocode, English)
+                Description in German [in Framework]
+                Kein Titel
+                Intro is for Bubble Sort!
+                Increment until j==i, dann Bruch vor "end"?
+                Leere Schritte zwischen Pseudocode und Array/Code da
+                Keine Labels
+                Label cPos, iPos (in Pseudo + Ptr!)
+                Pointer currentPos wandert nicht bei "++", sondern erst nach Zugriff iPos = cPos
+                0 Vergleiche?
+                Bei swap wird falscher Zeiger verschoben?
+                moveMarker statt moveArrayMarker (tw.)?
+                nrSteps in German
+				M@rtin: Generatorbeschreibung in Deutsch
+				M@rtin: Überschrift fehlt
+				M@rtin: Erklärung Bubblesort?
+				M@rtin: Ende in Deutsch
+        Insertion Sort (Pseudo Code 2)
+                Kein Titel
+                Keine Labels
+                Leere Schritte
+                Intro: "aehnlich"
+                Leere Schritte zwischen Pseudocode und Array/Code da
+                0 Vergleiche?
+                Delta zu Insertion Sort (Pseudo)?
+				M@rtin: Überschrift fehlt
+				M@rtin: Fenstertitel in Englisch
+				M@rtin: Schritt 3, 10 leer
+				M@rtin: Vergleiche und Zuweisungen vertauscht
+        Insertion Sort (Pseudo Code, English)
+				M@rtin: null...null Exception: 1 Fehler beim Einlesen
+				M@rtin: Titel fehlt
+				M@rtin: Erklärung Bubblesort
+				M@rtin: Schritte 3, 10 leer
+				M@rtin: Highlighting im Teilsortierten Array fehlt
+				M@rtin: Ende in Deutsch
+				M@rtin: Vergleiche und Zuweisungen vertauscht
+        Insertion Sort (Pseudo Code, English)
+                Eigentlich einer "German"!
+				M@rtin: Titel fehlt
+				M@rtin: Erklärung Bubblesort
+				M@rtin: Schritte 3, 10 leer
+				M@rtin: Highlighting im Teilsortierten Array fehlt
+				M@rtin: Vergleiche und Zuweisungen vertauscht
+        Merge Sort
+                NullPointerException
+        Merge Sort
+				M@rtin: NullpointerException
+        Quicksort (pivot=last)
+				M@rtin: Intro fehlt mit Erklärung wie er funktioniert
+				M@rtin: Schritt 7 leer
+				M@rtin: Überschrift fehlt/ Array alleine zwei Schritte lang
+				M@rtin: Viele Leerschritte
+				M@rtin: Zeiger bleiben stehen so wird es sehr unübersichtlich
+				M@rtin: Fehler in der for schleife Variablen erhoehung fehlt...
+				M@rtin: Vergleiche und Zuweisungen vertauscht
+				M@rtin: Am Ende viel Leerlauf
+				M@rtin: Anzeige r,l vielleicht interessant?
+				M@rtin: Pivot erscheint einen Schritt zu spät
+        Quicksort (pivot=last)
+                Rename to "English"
+				M@rtin: Intro fehlt mit Erklärung wie er funktioniert
+				M@rtin: Schritt 7 leer
+				M@rtin: Überschrift fehlt/ Array alleine zwei Schritte lang
+				M@rtin: Viele Leerschritte
+				M@rtin: Zeiger bleiben stehen so wird es sehr unübersichtlich
+				M@rtin: Fehler in der for schleife Variablen erhoehung fehlt...
+				M@rtin: Vergleiche und Zuweisungen vertauscht
+				M@rtin: Am Ende viel Leerlauf
+				M@rtin: Anzeige r,l vielleicht interessant?
+				M@rtin: Pivot erscheint einen Schritt zu spät
+        Quicksort (GdI 2)
+				M@rtin: Intro fehlt mit Erklärung wie er funktioniert
+				M@rtin: Schritt 7 leer
+				M@rtin: Überschrift fehlt/ Array alleine zwei Schritte lang
+				M@rtin: Viele Leerschritte
+				M@rtin: Zeiger bleiben stehen so wird es sehr unübersichtlich
+				M@rtin: Fehler in der for schleife Variablen erhoehung fehlt...
+				M@rtin: Vergleiche und Zuweisungen vertauscht
+				M@rtin: Am Ende viel Leerlauf
+				M@rtin: Anzeige r,l vielleicht interessant?
+				M@rtin: Pivot erscheint einen Schritt zu spät
+				M@rtin: 2 Leerschritte nach Rekusionsaufruf
+        Selection Sort
+        		M@rtin: Leerlauf Schritt 3, 9
+        		M@rtin: Überschift fehlt/ Array alleine
+        		M@rtin: Anzeige Pointer stimmt nicht mit Highlight im Code überein
+        		M@rtin: Zuweisung von minindex stimmt nicht mit Highlight "{" anstatt "minindex = i" (Highlight in Zeile obendrüber) 
+				M@rtin: Bei Zuweisung minindex = j ist das Highlighting eine Zeile zu tief
+        		M@rtin: Vergleiche und Zuweisungen vertauscht
+        		M@rtin: Highlight beim swap wird nicht angezeigt
+        Selection Sort (Englisch)
+                M@rtin: Leerlauf Schritt 3, 9
+        		M@rtin: Überschift fehlt/ Array alleine
+        		M@rtin: Anzeige Pointer stimmt nicht mit Highlight im Code überein
+        		M@rtin: Zuweisung von minindex stimmt nicht mit Highlight "{" anstatt "minindex = i" (Highlight in Zeile obendrüber) 
+				M@rtin: Bei Zuweisung minindex = j ist das Highlighting eine Zeile zu tief
+        		M@rtin: Vergleiche und Zuweisungen vertauscht
+        		M@rtin: Highlight beim swap wird nicht angezeigt
+        Selection Sort (GdI 2)
+        		M@rtin: Überschrift fehlt
+        		M@rtin: Pointer i, j, min erscheinen nicht zum Zeitpunkt wo sie angelegt werden sondern bei der ersten Wertzuweisung ist das richtig
+        		M@rtin: ab und zu sind die Rückwärtspfeile in der Navigation im ersten Schritt aktiviert
+        Shell Sort (h' = 3*h+1)
+        		M@rtin: Leerlauf Schritt 8(zw. Beschreibung und Algo in Worten)
+        		M@rtin: Überschrift fehlt Schritt 18
+        		M@rtin: Fehlermeldung: Ungültige Animatorinitialisierung: keine Objekte gesetzt für Animator hide -- hide
+        				within 0 ticks in Schritt 26
+        		M@rtin: Fehler in der 2-ten for schleife?
+        		M@rtin: dist wird nicht angezeigt
+        		M@rtin: Die Animation macht meiner Meinung nach nicht das was der Code macht er müsste erstmal alle Elemente
+        				an der 3-ten 6-ten usw Sortieren macht aber nur das 3-te und dann um 1 erhöht und davon das dritte
+        				Ich denke ein Fehler im Algorithmus oder ich habe die Beschreibung nicht verstanden
+        		M@rtin: Vergleiche und Zuweisungen vertauscht
+        		M@rtin: Invalid animator instantiation: no objects are set for animator hide -- hide  within 0 ticks in step 26
+        Shell Sort (English)
+        		M@rtin: Leerlauf Schritt 8(zw. Beschreibung und Algo in Worten)
+        		M@rtin: Überschrift fehlt Schritt 18
+        		M@rtin: Fehlermeldung: Ungültige Animatorinitialisierung: keine Objekte gesetzt für Animator hide -- hide 
+        				within 0 ticks in Schritt 26
+        		M@rtin: Fehler in der 2-ten for schleife?
+        		M@rtin: dist wird nicht angezeigt
+        		M@rtin: Die Animation macht meiner Meinung nach nicht das was der Code macht
+        		M@rtin: Vergleiche und Zuweisungen vertauscht
+        		M@rtin: Ende in Deutsch
+        		M@rtin: Die Animation macht meiner Meinung nach nicht das was der Code macht er müsste erstmal alle Elemente
+        				an der 3-ten 6-ten usw Sortieren macht aber nur das 3-te und dann um 1 erhöht und davon das dritte
+        				Ich denke ein Fehler im Algorithmus oder ich habe die Beschreibung nicht verstanden
+        		M@rtin: Vergleiche und Zuweisungen vertauscht        		        		
+        		M@rtin: Invalid animator instantiation: no objects are set for animator hide -- hide  within 0 ticks in step 26
+Searching
+M@rtin: Alle Suchalgorithmen sehr viele Schritte und dadurch sehr langsam anzusehen
+M@rtin: Neue Algos deutlich besser anzusehen!
+		Boyer/Moore-Suche in Strings
+           		M@rtin: Überschrift zu weit eingerückt
+           		M@rtin: Anzeige fehler der Äs, Ös und Üs im Text aendern zu ae oe ue
+           		M@rtin: Ein paar Textformatierungen wären noch gut
+        		M@rtin: Vielleicht Angabe der Vergleiche???
+         		M@rtin: Geschwindigkeitsregulierung geht nicht
+		Brute-Force Suche in Strings
+        		M@rtin: Geschwindigkeitsregulierung geht nicht geht glaube generell nicht
+        		M@rtin: Anzeige fehler der Äs, Ös und Üs im Text aendern zu ae oe ue
+		Iterative Binary Searching (int; EN)
+		Iterative Binary Searching (String; EN)
+		Iterative Interpolated Searching (int; EN)
+		Iterative Straight Selection (int; EN)
+		Iterative Binary Searching (int, Pseudocode; EN)
+		Iterative Binary Searching (String, Pseudocode; EN)
+		Iterative Interpolated Searching (int, Pseudocode; EN)
+		Iterative Straight Selection (int; Pseudocode; EN)
+		Recursive Binary Searching (int; EN)
+				M@rtin: Highlight vom letzten Midmarker bleibt, soll das so sein?
+		Recursive Binary Searching (String; EN)
+				M@rtin: Highlight vom letzten Midmarker bleibt, soll das so sein?
+		Recursive Interpolated Searching (int; EN)
+		Recursive Straight Selection (int) [EN]
+				M@rtin: Fehler beim Zeiger im letzten Schritt des Rückspringens (springt eins zu weit)
+				M@rtin: Assignments bei der Suche?
+				M@rtin: Highlight vom letzten Midmarker bleibt, soll das so sein?
+		Recursive Straight Selection (String) [EN]
+				M@rtin: Fehler beim Zeiger im letzten Schritt des Rückspringens (springt eins zu weit)
+				M@rtin: Assignments bei der Suche?
+				M@rtin: Highlight vom letzten Midmarker bleibt, soll das so sein?
+		Recursive Binary Searching (int, Pseudocode; EN)
+				M@rtin: Highlight vom letzten Midmarker bleibt, soll das so sein?
+				M@rtin: Der Code ist nahe am richtigen Code für nen Pseudocode!
+		Recursive Binary Searching (String; EN)
+				M@rtin: Pseudocode fehlt im Namen?
+				M@rtin: Highlight vom letzten Midmarker bleibt soll das so sein?
+				M@rtin: Der Code ist nahe am richtigen Code für nen Pseudocode!
+		Recursive Interpolated Searching (int, Pseudocode; EN)
+				M@rtin: Highlight des alten mids noch grün?
+		Recursive Straight Selection (String; Pseudocode) [EN]
+				M@rtin: Exception in thread "AWT-EventQueue-0" animalscriptapi.exceptions.LineNotExistsException beim Klick auf Finish
+		Recursive Straight Selection (String; Pseudocode) [EN]
+				M@rtin: Exception in thread "AWT-EventQueue-0" animalscriptapi.exceptions.LineNotExistsException beim Klick auf Finish
+		Iterative Binäre Suche (int; DE)
+		Iterative Binäre Suche (String; DE)
+		Iterative Interpolationssuche (int; DE)
+		Iterative Lineare Suche (int; DE)
+		Iterative Lineare Suche (String; DE)
+				M@rtin: Exception in thread "AWT-EventQueue-0" java.lang.ClassCastException: [Ljava.lang.String; cannot be cast to [I beim Klick auf Finish
+		Iterative Binäre Suche (int, Pseudocode; DE)				
+		Iterative Binäre Suche (String; DE)
+				M@rtin: Pseudocode im Namen? Was ist der Unterschied zum Oberen?
+		Iterative Interpolationssuche (int; DE)
+				M@rtin: Pseudocode im Namen? Was ist der Unterschied zum Oberen?
+		Iterative Lineare Suche (int; Pseudocode)
+				M@rtin: DE fehlt im Namen?
+		Iterative Lineare Suche (String; Pseudocode)
+				M@rtin: DE fehlt im Namen?
+				M@rtin: Exception in thread "AWT-EventQueue-0" animalscriptapi.exceptions.LineNotExistsException beim Klick auf Finish				
+		Rekursive Binäre Suche (int; DE)
+				M@rtin: Highlight vom letzten Midmarker bleibt, soll das so sein?				
+		Rekursive Binäre Suche (int; DE)
+				M@rtin: Highlight vom letzten Midmarker bleibt, soll das so sein?				
+				M@rtin: String statt int im Namen!	
+		Rekursive Interpolationssuche (int; DE)
+				M@rtin: Highlight vom letzten Midmarker bleibt, soll das so sein?			
+		Rekursive Lineare Suche (int)
+				M@rtin: DE fehlt im Namen?
+				M@rtin: Fehler beim Zeiger im letzten Schritt des Rückspringens (springt eins zu weit)
+		Rekursive Lineare Suche (String)
+				M@rtin: DE fehlt im Namen?
+				M@rtin: Fehler beim Zeiger im letzten Schritt des Rückspringens (springt eins zu weit)
+		Rekursive Binäre Suche (int, Pseudocode; DE)
+				M@rtin: Überschrift = Iterative Binäre Suche!
+				M@rtin: Highlight vom letzten Midmarker bleibt, soll das so sein?			
+		Rekursive Binäre Suche (int; DE)
+				M@rtin: Überschrift = Iterative Binäre Suche!
+				M@rtin: Highlight vom letzten Midmarker bleibt, soll das so sein?			
+		Rekursive Interpolationssuche (int; DE)
+				M@rtin: Highlight vom letzten Midmarker bleibt, soll das so sein?			
+		Rekursive Lineare Suche (int; Pseudocode)
+				M@rtin: DE fehlt im Namen?
+				M@rtin: Fehler beim Zeiger im letzten Schritt des Rückspringens (springt eins zu weit)
+		Rekursive Lineare Suche (String, Pseudocode; DE)
+				M@rtin: Exception in thread "AWT-EventQueue-0" animalscriptapi.exceptions.LineNotExistsException beim Klick auf Finish
+		Interpolationssuche
+        		M@rtin: Anzeige fehler der Äs, Ös und Üs im Text aendern zu ae oe ue
+        		M@rtin: Geschwindigkeitsregulierung geht nicht
+		Knuth/Morris/Pratt-Suche in Strings
+        		M@rtin: Anzeige fehler der Äs, Ös und Üs im Text aendern zu ae oe ue 
+        		M@rtin: Geschwindigkeitsregulierung geht nicht
+Compression
+M@rtin: Wenn man das Fenster verkleinert wird nicht mehr der ganze Text angezeigt!
+        Arithmetic Decoding
+        Arithmetic Encoding
+        Burrows Wheeler Retransformation
+        Burrows Wheeler Transformation
+        Huffman Kodierung
+        LZ77
+				M@rtin: ein leerer Schritt nach Algo in Worten sonst ok!
+        LZ77 Decoding
+		LZ78
+				M@rtin: ein leerer Schritt nach Algo in Worten sonst ok!
+		LZ78 Decoding
+        LZW
+				M@rtin: ein leerer Schritt nach Algo in Worten sonst ok!
+        LZW Decoding
+        		M@rtin: Fehlermeldung beim Generieren! (InvocationTargetException)
+				M@rtin: # !!!null .... null!!! [line=856] when handling 'moveArrayMarker' in line 856 Token[n=16.0], line 856
+				M@rtin: # *** 1 Fehler beim Verarbeiten von (internal String input) [111 ms]		
+		Move to Front
+		Move to Front Decoding
+        Lauflängenkodierung
+        Run Length Encoding EN
+        Sequitur
+        Shannon-Fano Kodierung
+				M@rtin: ein leerer Schritt nach Algo in Worten sonst ok!
+Crypto
+        Vigenere-Entschlüsselung
+        		M@rtin: The given key 'size' was not found!
+        		M@rtin: NullPointerexception beim Generieren!
+        Vigenere Decryption
+        		M@rtin: The given key 'size' was not found!
+        		M@rtin: NullPointerexception beim Generieren!
+        Vigenere-Verschlüsselung
+        		M@rtin: The given key 'size' was not found!
+        		M@rtin: NullPointerexception beim Generieren!        
+        Vigenere Encryption
+        		M@rtin: The given key 'size' was not found!
+        		M@rtin: NullPointerexception beim Generieren!        

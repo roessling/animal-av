@@ -1,0 +1,526 @@
+%Animal 2 640*480
+title "CaesarChiffre Animation"
+author "Us"
+{
+text "header" "Cäsar-Chiffre" (100, 20) color (0, 0, 0) depth 1 font SansSerif size 12 after 15 ticks
+setFont of "header" to font Serif size 40 bold within 15 ticks
+label "Einführung"
+codegroup "desc_algo" at (10, 50) color (0, 0, 0) highlightColor (0, 0, 0) contextColor (0, 0, 0) font SansSerif size 12 depth 1 after 15 ticks
+addCodeLine "Die Cäsar-Chiffre ist eines der einfachsten Verfahren" to "desc_algo"
+addCodeLine "zum Verschlüsseln von Nachrichten. Der Name kommt " to "desc_algo"
+addCodeLine "vom römischen Kaiser Julius Cäsar (100-44 v. Chr.)," to "desc_algo"
+addCodeLine "der dieses Verfahren während seiner Regentschaft" to "desc_algo"
+addCodeLine "im Römischen Reich verwendet hat." to "desc_algo"
+addCodeLine "" to "desc_algo"
+addCodeLine "Dabei wird jedem Buchstaben eines Klartextes ein" to "desc_algo"
+addCodeLine "anderer eindeutiger Buchstabe zugewiesen." to "desc_algo"
+addCodeLine "Man spricht von monoalphabetischer Substitution." to "desc_algo"
+addCodeLine "" to "desc_algo"
+addCodeLine "Die Zuordnung basiert auf der zyklischen Rotation" to "desc_algo"
+addCodeLine "des Alphabets um x Zeichen, dabei folgt auf" to "desc_algo"
+addCodeLine "'Z' wieder 'A'. Das x ist der Schlüssel, mit dem" to "desc_algo"
+addCodeLine "verschlüsselt oder entschlüsselt wird. " to "desc_algo"
+addCodeLine "siehe: http://home.arcor.de/wemmzi/downloads/vigenere.pdf" to "desc_algo"
+}
+{
+interactionDefinition "intDef20090103194415796.txt"
+interaction "algoName"
+}
+{
+hide "desc_algo" 
+array "ar_plain" (110, 100) color (0, 0, 0) fillColor (255, 255, 255) elementColor (0, 0, 0) elemHighlight (0, 255, 0) cellHighlight (0, 255, 0) horizontal length 8 " K " " L " " A " " R " " T " " E " " X " " T " depth 1 
+text "tb_plain" "Klartext:" (10, 100) color (0, 0, 0) depth 1 font SansSerif size 12 after 15 ticks
+setFont of "tb_plain" to font Serif size 20 within 15 ticks
+hide "ar_plain" 
+array "StringArray1" (110, 100) color (0, 0, 0) fillColor (255, 255, 255) elementColor (0, 0, 0) elemHighlight (0, 255, 0) cellHighlight (0, 255, 0) horizontal length 8 " K " " L " " A " " R " " T " " E " " X " " T " depth 1 
+codegroup "desc_plaintext" at (100, 120) color (0, 0, 0) highlightColor (0, 0, 0) contextColor (0, 0, 0) font SansSerif size 12 depth 1 after 15 ticks
+addCodeLine "Der Klartext wird in den folgenden Schritten verschlüsselt." to "desc_plaintext"
+addCodeLine "In dieser Animation werden nur Grossbuchstaben verschlüsselt." to "desc_plaintext"
+}
+{
+hide "desc_plaintext" 
+text "shiftText" "Schlüssel: 3" (10, 150) color (0, 0, 0) depth 1 font SansSerif size 12 after 15 ticks
+setFont of "shiftText" to font Serif size 20 within 15 ticks
+codegroup "desc_shift" at (100, 170) color (0, 0, 0) highlightColor (0, 0, 0) contextColor (0, 0, 0) font SansSerif size 12 depth 1 after 15 ticks
+addCodeLine "Der Schlüssel gibt den Wert an, um den" to "desc_shift"
+addCodeLine "die Klartextbuchstaben nach rechts verschoben werden." to "desc_shift"
+addCodeLine "Der Klartext und der Schlüssel werden als Parameter übergeben." to "desc_shift"
+}
+{
+hide "desc_shift" 
+array "ar_alphabet" (10, 200) color (0, 0, 0) fillColor (255, 255, 255) elementColor (0, 0, 0) elemHighlight (0, 255, 0) cellHighlight (0, 255, 0) horizontal length 26 "A" "B" "C" "D" "E" "F" "G" "H" "I" "J" "K" "L" "M" "N" "O" "P" "Q" "R" "S" "T" "U" "V" "W" "X" "Y" "Z" depth 1 
+codegroup "desc_alphabet" at (100, 220) color (0, 0, 0) highlightColor (0, 0, 0) contextColor (0, 0, 0) font SansSerif size 12 depth 1 after 15 ticks
+addCodeLine "Die Verschlüsselung wird anhand des Alphabets (oben) erklärt." to "desc_alphabet"
+}
+{
+hide "desc_alphabet" 
+move "shiftText" to (10, 250)  after 10 ticks  within 10 ticks
+array "ar_chiffre" (110, 290) color (0, 0, 0) fillColor (255, 255, 255) elementColor (0, 0, 0) elemHighlight (0, 255, 0) cellHighlight (0, 255, 0) horizontal length 8 "  " "  " "  " "  " "  " "  " "  " "  " depth 1 
+text "tb_chiffre" "Geheimtext:" (10, 290) color (0, 0, 0) depth 1 font SansSerif size 12 after 15 ticks
+setFont of "tb_chiffre" to font Serif size 20 within 15 ticks
+label "Der Algorithmus"
+codegroup "sourceCode" at (40, 320) color (0, 0, 0) highlightColor (255, 0, 0) contextColor (0, 0, 0) font Monospaced size 12 depth 1
+addCodeLine "public String caesarChiffre(String plain, int shift) {" to "sourceCode"
+addCodeLine "char Alphabet[] = { 'A', 'B', 'C', ... ,'Z' };" to "sourceCode" indentation 1
+addCodeLine "plain=plain.toUpperCase();" to "sourceCode" indentation 1
+addCodeLine "StringBuffer chiffre = new StringBuffer();" to "sourceCode" indentation 1
+addCodeLine "for (int i = 0; i < plain.length(); i++) {" to "sourceCode" indentation 1
+addCodeLine "int position = ((int) plain.charAt(i));" to "sourceCode" indentation 2
+addCodeLine "if (position >= 'A' && position <= 'Z') {" to "sourceCode" indentation 2
+addCodeLine "position = position - 'A';" to "sourceCode" indentation 3
+addCodeLine "position = (position + shift) % 26;" to "sourceCode" indentation 3
+addCodeLine "chiffre.append(Alphabet[position]);" to "sourceCode" indentation 3
+addCodeLine "}" to "sourceCode" indentation 2
+addCodeLine "}" to "sourceCode" indentation 1
+addCodeLine "return chiffre.toString();" to "sourceCode" indentation 1
+addCodeLine "}" to "sourceCode"
+highlightCode on "sourceCode" line 0
+highlightCode on "sourceCode" line 1
+highlightCode on "sourceCode" line 2
+highlightCode on "sourceCode" line 3
+text "description" "Die ersten drei Zeilen im Code dienen der Initzialisierung" (10, 600) color (0, 0, 0) depth 1 font SansSerif size 12 after 15 ticks
+setFont of "description" to font Serif size 20 within 15 ticks
+}
+{
+unhighlightCode on "sourceCode" line 0
+unhighlightCode on "sourceCode" line 1
+unhighlightCode on "sourceCode" line 2
+unhighlightCode on "sourceCode" line 3
+arrayMarker "i" on "StringArray1" atIndex 0 label "i" color (0, 0, 0) depth 1
+interaction "chiff0"
+}
+{
+highlightCode on "sourceCode" line 4
+setText of "description" to "Der Zeiger i wird um eine Stelle nach rechts verschoben. " within 15 ticks
+}
+{
+unhighlightCode on "sourceCode" line 4
+highlightCode on "sourceCode" line 5
+setText of "description" to "Das 0'te Element im Klartext wird ausgelesen." within 15 ticks
+highlightArrayCell on "StringArray1" position 0 within 15 ticks
+}
+{
+unhighlightCode on "sourceCode" line 5
+highlightCode on "sourceCode" line 6
+setText of "description" to "Ist das aktuelle Element ein Buchstabe?" within 15 ticks
+}
+{
+unhighlightCode on "sourceCode" line 6
+highlightCode on "sourceCode" line 7
+setText of "description" to "Berechne die Position vom Buchstaben im Alphabet." within 15 ticks
+highlightArrayCell on "ar_alphabet" position 10 within 15 ticks
+label "Verschlüsselung des Klartextes(erster Buchstabe)"
+}
+{
+unhighlightCode on "sourceCode" line 7
+highlightCode on "sourceCode" line 8
+setText of "description" to "Verschlüssele den Buchstaben  K  durch Verschiebung um 3 Buchstaben." within 15 ticks
+arrayMarker "shift" on "ar_alphabet" atIndex 10 label "shift + 3" color (0, 0, 0) depth 1 after 15 ticks
+}
+{
+moveArrayMarker "shift" to position 13   within 15 ticks
+setText of "description" to " K   um 3 Buchstaben veschoben ergibt N" within 15 ticks
+}
+{
+highlightArrayCell on "ar_alphabet" position 13 within 15 ticks
+}
+{
+unhighlightArrayCell on "ar_alphabet" position 10 within 15 ticks
+unhighlightArrayCell on "ar_alphabet" position 13 within 15 ticks
+hide "shift" 
+unhighlightCode on "sourceCode" line 8
+highlightCode on "sourceCode" line 9
+arrayPut " N " on "ar_chiffre" position 0   within 15 ticks
+highlightArrayCell on "ar_chiffre" position 0 within 15 ticks
+setText of "description" to " Der verschlüsselte Buchstabe  N  wird in die Chiffre übertragen." within 15 ticks
+}
+{
+unhighlightArrayCell on "ar_chiffre" position 0 within 15 ticks
+unhighlightCode on "sourceCode" line 9
+unhighlightCode on "sourceCode" line 3
+unhighlightArrayCell on "StringArray1" position 0 within 15 ticks
+}
+{
+moveArrayMarker "i" to position 1   within 15 ticks
+interaction "chiff1"
+}
+{
+highlightCode on "sourceCode" line 4
+setText of "description" to "Der Zeiger i wird um eine Stelle nach rechts verschoben. " within 15 ticks
+}
+{
+unhighlightCode on "sourceCode" line 4
+highlightCode on "sourceCode" line 5
+setText of "description" to "Das 1'te Element im Klartext wird ausgelesen." within 15 ticks
+highlightArrayCell on "StringArray1" position 1 within 15 ticks
+}
+{
+unhighlightCode on "sourceCode" line 5
+highlightCode on "sourceCode" line 6
+setText of "description" to "Ist das aktuelle Element ein Buchstabe?" within 15 ticks
+}
+{
+unhighlightCode on "sourceCode" line 6
+highlightCode on "sourceCode" line 7
+setText of "description" to "Berechne die Position vom Buchstaben im Alphabet." within 15 ticks
+highlightArrayCell on "ar_alphabet" position 11 within 15 ticks
+}
+{
+unhighlightCode on "sourceCode" line 7
+highlightCode on "sourceCode" line 8
+setText of "description" to "Verschlüssele den Buchstaben  L  durch Verschiebung um 3 Buchstaben." within 15 ticks
+arrayMarker "ArrayMarker1" on "ar_alphabet" atIndex 11 label "shift + 3" color (0, 0, 0) depth 1 after 15 ticks
+}
+{
+moveArrayMarker "ArrayMarker1" to position 14   within 15 ticks
+setText of "description" to " L   um 3 Buchstaben veschoben ergibt O" within 15 ticks
+}
+{
+highlightArrayCell on "ar_alphabet" position 14 within 15 ticks
+}
+{
+unhighlightArrayCell on "ar_alphabet" position 11 within 15 ticks
+unhighlightArrayCell on "ar_alphabet" position 14 within 15 ticks
+hide "ArrayMarker1" 
+unhighlightCode on "sourceCode" line 8
+highlightCode on "sourceCode" line 9
+arrayPut " O " on "ar_chiffre" position 1   within 15 ticks
+highlightArrayCell on "ar_chiffre" position 1 within 15 ticks
+setText of "description" to " Der verschlüsselte Buchstabe  O  wird in die Chiffre übertragen." within 15 ticks
+}
+{
+unhighlightArrayCell on "ar_chiffre" position 1 within 15 ticks
+unhighlightCode on "sourceCode" line 9
+unhighlightCode on "sourceCode" line 3
+unhighlightArrayCell on "StringArray1" position 1 within 15 ticks
+}
+{
+moveArrayMarker "i" to position 2   within 15 ticks
+interaction "chiff2"
+}
+{
+highlightCode on "sourceCode" line 4
+setText of "description" to "Der Zeiger i wird um eine Stelle nach rechts verschoben. " within 15 ticks
+}
+{
+unhighlightCode on "sourceCode" line 4
+highlightCode on "sourceCode" line 5
+setText of "description" to "Das 2'te Element im Klartext wird ausgelesen." within 15 ticks
+highlightArrayCell on "StringArray1" position 2 within 15 ticks
+}
+{
+unhighlightCode on "sourceCode" line 5
+highlightCode on "sourceCode" line 6
+setText of "description" to "Ist das aktuelle Element ein Buchstabe?" within 15 ticks
+}
+{
+unhighlightCode on "sourceCode" line 6
+highlightCode on "sourceCode" line 7
+setText of "description" to "Berechne die Position vom Buchstaben im Alphabet." within 15 ticks
+highlightArrayCell on "ar_alphabet" position 0 within 15 ticks
+}
+{
+unhighlightCode on "sourceCode" line 7
+highlightCode on "sourceCode" line 8
+setText of "description" to "Verschlüssele den Buchstaben  A  durch Verschiebung um 3 Buchstaben." within 15 ticks
+arrayMarker "ArrayMarker2" on "ar_alphabet" atIndex 0 label "shift + 3" color (0, 0, 0) depth 1 after 15 ticks
+}
+{
+moveArrayMarker "ArrayMarker2" to position 3   within 15 ticks
+setText of "description" to " A   um 3 Buchstaben veschoben ergibt D" within 15 ticks
+}
+{
+highlightArrayCell on "ar_alphabet" position 3 within 15 ticks
+}
+{
+unhighlightArrayCell on "ar_alphabet" position 0 within 15 ticks
+unhighlightArrayCell on "ar_alphabet" position 3 within 15 ticks
+hide "ArrayMarker2" 
+unhighlightCode on "sourceCode" line 8
+highlightCode on "sourceCode" line 9
+arrayPut " D " on "ar_chiffre" position 2   within 15 ticks
+highlightArrayCell on "ar_chiffre" position 2 within 15 ticks
+setText of "description" to " Der verschlüsselte Buchstabe  D  wird in die Chiffre übertragen." within 15 ticks
+}
+{
+unhighlightArrayCell on "ar_chiffre" position 2 within 15 ticks
+unhighlightCode on "sourceCode" line 9
+unhighlightCode on "sourceCode" line 3
+unhighlightArrayCell on "StringArray1" position 2 within 15 ticks
+}
+{
+moveArrayMarker "i" to position 3   within 15 ticks
+interaction "chiff3"
+}
+{
+highlightCode on "sourceCode" line 4
+setText of "description" to "Der Zeiger i wird um eine Stelle nach rechts verschoben. " within 15 ticks
+}
+{
+unhighlightCode on "sourceCode" line 4
+highlightCode on "sourceCode" line 5
+setText of "description" to "Das 3'te Element im Klartext wird ausgelesen." within 15 ticks
+highlightArrayCell on "StringArray1" position 3 within 15 ticks
+}
+{
+unhighlightCode on "sourceCode" line 5
+highlightCode on "sourceCode" line 6
+setText of "description" to "Ist das aktuelle Element ein Buchstabe?" within 15 ticks
+}
+{
+unhighlightCode on "sourceCode" line 6
+highlightCode on "sourceCode" line 7
+setText of "description" to "Berechne die Position vom Buchstaben im Alphabet." within 15 ticks
+highlightArrayCell on "ar_alphabet" position 17 within 15 ticks
+}
+{
+unhighlightCode on "sourceCode" line 7
+highlightCode on "sourceCode" line 8
+setText of "description" to "Verschlüssele den Buchstaben  R  durch Verschiebung um 3 Buchstaben." within 15 ticks
+arrayMarker "ArrayMarker3" on "ar_alphabet" atIndex 17 label "shift + 3" color (0, 0, 0) depth 1 after 15 ticks
+}
+{
+moveArrayMarker "ArrayMarker3" to position 20   within 15 ticks
+setText of "description" to " R   um 3 Buchstaben veschoben ergibt U" within 15 ticks
+}
+{
+highlightArrayCell on "ar_alphabet" position 20 within 15 ticks
+}
+{
+unhighlightArrayCell on "ar_alphabet" position 17 within 15 ticks
+unhighlightArrayCell on "ar_alphabet" position 20 within 15 ticks
+hide "ArrayMarker3" 
+unhighlightCode on "sourceCode" line 8
+highlightCode on "sourceCode" line 9
+arrayPut " U " on "ar_chiffre" position 3   within 15 ticks
+highlightArrayCell on "ar_chiffre" position 3 within 15 ticks
+setText of "description" to " Der verschlüsselte Buchstabe  U  wird in die Chiffre übertragen." within 15 ticks
+}
+{
+unhighlightArrayCell on "ar_chiffre" position 3 within 15 ticks
+unhighlightCode on "sourceCode" line 9
+unhighlightCode on "sourceCode" line 3
+unhighlightArrayCell on "StringArray1" position 3 within 15 ticks
+}
+{
+moveArrayMarker "i" to position 4   within 15 ticks
+interaction "chiff4"
+}
+{
+highlightCode on "sourceCode" line 4
+setText of "description" to "Der Zeiger i wird um eine Stelle nach rechts verschoben. " within 15 ticks
+}
+{
+unhighlightCode on "sourceCode" line 4
+highlightCode on "sourceCode" line 5
+setText of "description" to "Das 4'te Element im Klartext wird ausgelesen." within 15 ticks
+highlightArrayCell on "StringArray1" position 4 within 15 ticks
+}
+{
+unhighlightCode on "sourceCode" line 5
+highlightCode on "sourceCode" line 6
+setText of "description" to "Ist das aktuelle Element ein Buchstabe?" within 15 ticks
+}
+{
+unhighlightCode on "sourceCode" line 6
+highlightCode on "sourceCode" line 7
+setText of "description" to "Berechne die Position vom Buchstaben im Alphabet." within 15 ticks
+highlightArrayCell on "ar_alphabet" position 19 within 15 ticks
+}
+{
+unhighlightCode on "sourceCode" line 7
+highlightCode on "sourceCode" line 8
+setText of "description" to "Verschlüssele den Buchstaben  T  durch Verschiebung um 3 Buchstaben." within 15 ticks
+arrayMarker "ArrayMarker4" on "ar_alphabet" atIndex 19 label "shift + 3" color (0, 0, 0) depth 1 after 15 ticks
+}
+{
+moveArrayMarker "ArrayMarker4" to position 22   within 15 ticks
+setText of "description" to " T   um 3 Buchstaben veschoben ergibt W" within 15 ticks
+}
+{
+highlightArrayCell on "ar_alphabet" position 22 within 15 ticks
+}
+{
+unhighlightArrayCell on "ar_alphabet" position 19 within 15 ticks
+unhighlightArrayCell on "ar_alphabet" position 22 within 15 ticks
+hide "ArrayMarker4" 
+unhighlightCode on "sourceCode" line 8
+highlightCode on "sourceCode" line 9
+arrayPut " W " on "ar_chiffre" position 4   within 15 ticks
+highlightArrayCell on "ar_chiffre" position 4 within 15 ticks
+setText of "description" to " Der verschlüsselte Buchstabe  W  wird in die Chiffre übertragen." within 15 ticks
+}
+{
+unhighlightArrayCell on "ar_chiffre" position 4 within 15 ticks
+unhighlightCode on "sourceCode" line 9
+unhighlightCode on "sourceCode" line 3
+unhighlightArrayCell on "StringArray1" position 4 within 15 ticks
+}
+{
+moveArrayMarker "i" to position 5   within 15 ticks
+interaction "chiff5"
+}
+{
+highlightCode on "sourceCode" line 4
+setText of "description" to "Der Zeiger i wird um eine Stelle nach rechts verschoben. " within 15 ticks
+}
+{
+unhighlightCode on "sourceCode" line 4
+highlightCode on "sourceCode" line 5
+setText of "description" to "Das 5'te Element im Klartext wird ausgelesen." within 15 ticks
+highlightArrayCell on "StringArray1" position 5 within 15 ticks
+}
+{
+unhighlightCode on "sourceCode" line 5
+highlightCode on "sourceCode" line 6
+setText of "description" to "Ist das aktuelle Element ein Buchstabe?" within 15 ticks
+}
+{
+unhighlightCode on "sourceCode" line 6
+highlightCode on "sourceCode" line 7
+setText of "description" to "Berechne die Position vom Buchstaben im Alphabet." within 15 ticks
+highlightArrayCell on "ar_alphabet" position 4 within 15 ticks
+}
+{
+unhighlightCode on "sourceCode" line 7
+highlightCode on "sourceCode" line 8
+setText of "description" to "Verschlüssele den Buchstaben  E  durch Verschiebung um 3 Buchstaben." within 15 ticks
+arrayMarker "ArrayMarker5" on "ar_alphabet" atIndex 4 label "shift + 3" color (0, 0, 0) depth 1 after 15 ticks
+}
+{
+moveArrayMarker "ArrayMarker5" to position 7   within 15 ticks
+setText of "description" to " E   um 3 Buchstaben veschoben ergibt H" within 15 ticks
+}
+{
+highlightArrayCell on "ar_alphabet" position 7 within 15 ticks
+}
+{
+unhighlightArrayCell on "ar_alphabet" position 4 within 15 ticks
+unhighlightArrayCell on "ar_alphabet" position 7 within 15 ticks
+hide "ArrayMarker5" 
+unhighlightCode on "sourceCode" line 8
+highlightCode on "sourceCode" line 9
+arrayPut " H " on "ar_chiffre" position 5   within 15 ticks
+highlightArrayCell on "ar_chiffre" position 5 within 15 ticks
+setText of "description" to " Der verschlüsselte Buchstabe  H  wird in die Chiffre übertragen." within 15 ticks
+}
+{
+unhighlightArrayCell on "ar_chiffre" position 5 within 15 ticks
+unhighlightCode on "sourceCode" line 9
+unhighlightCode on "sourceCode" line 3
+unhighlightArrayCell on "StringArray1" position 5 within 15 ticks
+}
+{
+moveArrayMarker "i" to position 6   within 15 ticks
+interaction "chiff6"
+}
+{
+highlightCode on "sourceCode" line 4
+setText of "description" to "Der Zeiger i wird um eine Stelle nach rechts verschoben. " within 15 ticks
+}
+{
+unhighlightCode on "sourceCode" line 4
+highlightCode on "sourceCode" line 5
+setText of "description" to "Das 6'te Element im Klartext wird ausgelesen." within 15 ticks
+highlightArrayCell on "StringArray1" position 6 within 15 ticks
+}
+{
+unhighlightCode on "sourceCode" line 5
+highlightCode on "sourceCode" line 6
+setText of "description" to "Ist das aktuelle Element ein Buchstabe?" within 15 ticks
+}
+{
+unhighlightCode on "sourceCode" line 6
+highlightCode on "sourceCode" line 7
+setText of "description" to "Berechne die Position vom Buchstaben im Alphabet." within 15 ticks
+highlightArrayCell on "ar_alphabet" position 23 within 15 ticks
+}
+{
+unhighlightCode on "sourceCode" line 7
+highlightCode on "sourceCode" line 8
+setText of "description" to "Verschlüssele den Buchstaben  X  durch Verschiebung um 3 Buchstaben." within 15 ticks
+arrayMarker "ArrayMarker6" on "ar_alphabet" atIndex 23 label "shift + 3" color (0, 0, 0) depth 1 after 15 ticks
+}
+{
+moveArrayMarker "ArrayMarker6" to position 0   within 15 ticks
+setText of "description" to " X   um 3 Buchstaben veschoben ergibt A" within 15 ticks
+}
+{
+highlightArrayCell on "ar_alphabet" position 0 within 15 ticks
+}
+{
+unhighlightArrayCell on "ar_alphabet" position 23 within 15 ticks
+unhighlightArrayCell on "ar_alphabet" position 0 within 15 ticks
+hide "ArrayMarker6" 
+unhighlightCode on "sourceCode" line 8
+highlightCode on "sourceCode" line 9
+arrayPut " A " on "ar_chiffre" position 6   within 15 ticks
+highlightArrayCell on "ar_chiffre" position 6 within 15 ticks
+setText of "description" to " Der verschlüsselte Buchstabe  A  wird in die Chiffre übertragen." within 15 ticks
+}
+{
+unhighlightArrayCell on "ar_chiffre" position 6 within 15 ticks
+unhighlightCode on "sourceCode" line 9
+unhighlightCode on "sourceCode" line 3
+unhighlightArrayCell on "StringArray1" position 6 within 15 ticks
+}
+{
+moveArrayMarker "i" to position 7   within 15 ticks
+interaction "chiff7"
+}
+{
+highlightCode on "sourceCode" line 4
+setText of "description" to "Der Zeiger i wird um eine Stelle nach rechts verschoben. " within 15 ticks
+}
+{
+unhighlightCode on "sourceCode" line 4
+highlightCode on "sourceCode" line 5
+setText of "description" to "Das 7'te Element im Klartext wird ausgelesen." within 15 ticks
+highlightArrayCell on "StringArray1" position 7 within 15 ticks
+}
+{
+unhighlightCode on "sourceCode" line 5
+highlightCode on "sourceCode" line 6
+setText of "description" to "Ist das aktuelle Element ein Buchstabe?" within 15 ticks
+}
+{
+unhighlightCode on "sourceCode" line 6
+highlightCode on "sourceCode" line 7
+setText of "description" to "Berechne die Position vom Buchstaben im Alphabet." within 15 ticks
+highlightArrayCell on "ar_alphabet" position 19 within 15 ticks
+label "Verschlüsselung des Klartextes(letzter Buchstabe)"
+}
+{
+unhighlightCode on "sourceCode" line 7
+highlightCode on "sourceCode" line 8
+setText of "description" to "Verschlüssele den Buchstaben  T  durch Verschiebung um 3 Buchstaben." within 15 ticks
+arrayMarker "ArrayMarker7" on "ar_alphabet" atIndex 19 label "shift + 3" color (0, 0, 0) depth 1 after 15 ticks
+}
+{
+moveArrayMarker "ArrayMarker7" to position 22   within 15 ticks
+setText of "description" to " T   um 3 Buchstaben veschoben ergibt W" within 15 ticks
+}
+{
+highlightArrayCell on "ar_alphabet" position 22 within 15 ticks
+}
+{
+unhighlightArrayCell on "ar_alphabet" position 19 within 15 ticks
+unhighlightArrayCell on "ar_alphabet" position 22 within 15 ticks
+hide "ArrayMarker7" 
+unhighlightCode on "sourceCode" line 8
+highlightCode on "sourceCode" line 9
+arrayPut " W " on "ar_chiffre" position 7   within 15 ticks
+highlightArrayCell on "ar_chiffre" position 7 within 15 ticks
+setText of "description" to " Der verschlüsselte Buchstabe  W  wird in die Chiffre übertragen." within 15 ticks
+}
+{
+unhighlightArrayCell on "ar_chiffre" position 7 within 15 ticks
+unhighlightCode on "sourceCode" line 9
+unhighlightCode on "sourceCode" line 3
+unhighlightArrayCell on "StringArray1" position 7 within 15 ticks
+}
+{
+hide "i" 
+setText of "description" to "Ausgabe des Geheimtextes." within 15 ticks
+interaction "link"
+}

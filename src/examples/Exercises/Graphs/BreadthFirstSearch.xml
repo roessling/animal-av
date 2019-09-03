@@ -1,0 +1,1404 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<ns2:exercise xmlns:ns2="http://www.algoanim.info/Animal2/">
+    <chainPath>/en/Java/Graphs/BFS/BFS</chainPath>
+    <description>Breadth-first search is a way to find all the vertices reachable from the a given source vertex s. 
+BFS traverse a connected component of a given graph and defines a spanning tree. Intuitively, the basic idea of the breath-first search is this: send a wave out from source s. The wave hits all vertices 1 edge from s. From there, the wave hits all vertices 2 edges from s. Etc. We use FIFO queue Q to maintain the wavefront: v is in Q if and only if wave has hit v but has not come out of v yet. 
+
+The following figure  illustrates the progress of breadth-first search on the undirected sample graph.
+
+edge R S
+edge R V
+edge S W
+edge T W
+edge T U
+edge T X
+edge U Y
+edge U X
+edge W X
+edge X Y</description>
+    <generatorName>generators.graph.breadthfirstsearch.BFS</generatorName>
+    <questionsList>
+        <decisionBox xsi:type="scriptBox" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+            <inputVariables>
+                <name>sr</name>
+                <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema"></value>
+            </inputVariables>
+            <inputVariables>
+                <name>sw</name>
+                <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema"></value>
+            </inputVariables>
+            <next xsi:type="assignBox">
+                <next xsi:type="assignBox">
+                    <next xsi:type="functionBox">
+                        <next xsi:type="functionBox">
+                            <next xsi:type="functionBox">
+                                <next xsi:type="functionBox">
+                                    <function xsi:type="ok"/>
+                                </next>
+                                <function xsi:type="comment"/>
+                                <arguments xsi:type="constantValue">
+                                    <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">The algorithm discovers all vertices %d edge from s i.e., discovered all vertices (w and r) at level 1.</value>
+                                </arguments>
+                                <arguments xsi:type="valueOfIdentifier">
+                                    <variableName>distance_sr</variableName>
+                                </arguments>
+                            </next>
+                            <function xsi:type="check"/>
+                            <arguments xsi:type="constantValue">
+                                <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">($distance_sr = $sr) and ($distance_sw = $sw)</value>
+                            </arguments>
+                        </next>
+                        <function xsi:type="debug"/>
+                    </next>
+                    <variableName>distance_sw</variableName>
+                    <expression xsi:type="functionBox">
+                        <function xsi:type="retrieve"/>
+                        <arguments xsi:type="constantValue">
+                            <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">events/findDistance/distance[6]</value>
+                        </arguments>
+                    </expression>
+                </next>
+                <variableName>distance_sr</variableName>
+                <expression xsi:type="functionBox">
+                    <function xsi:type="retrieve"/>
+                    <arguments xsi:type="constantValue">
+                        <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">events/findDistance/distance[1]</value>
+                    </arguments>
+                </expression>
+            </next>
+            <AssignBox>
+                <next xsi:type="assignBox">
+                    <next xsi:type="functionBox">
+                        <next xsi:type="functionBox">
+                            <next xsi:type="functionBox">
+                                <next xsi:type="functionBox">
+                                    <function xsi:type="ok"/>
+                                </next>
+                                <function xsi:type="comment"/>
+                                <arguments xsi:type="constantValue">
+                                    <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">The algorithm discovers all vertices %d edge from s i.e., discovered all vertices (w and r) at level 1.</value>
+                                </arguments>
+                                <arguments xsi:type="valueOfIdentifier">
+                                    <variableName>distance_sr</variableName>
+                                </arguments>
+                            </next>
+                            <function xsi:type="check"/>
+                            <arguments xsi:type="constantValue">
+                                <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">($distance_sr = $sr) and ($distance_sw = $sw)</value>
+                            </arguments>
+                        </next>
+                        <function xsi:type="debug"/>
+                    </next>
+                    <variableName>distance_sw</variableName>
+                    <expression xsi:type="functionBox">
+                        <function xsi:type="retrieve"/>
+                        <arguments xsi:type="constantValue">
+                            <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">events/findDistance/distance[6]</value>
+                        </arguments>
+                    </expression>
+                </next>
+                <variableName>distance_sr</variableName>
+                <expression xsi:type="functionBox">
+                    <function xsi:type="retrieve"/>
+                    <arguments xsi:type="constantValue">
+                        <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">events/findDistance/distance[1]</value>
+                    </arguments>
+                </expression>
+            </AssignBox>
+            <AssignBox>
+                <next xsi:type="functionBox">
+                    <next xsi:type="functionBox">
+                        <next xsi:type="functionBox">
+                            <next xsi:type="functionBox">
+                                <function xsi:type="ok"/>
+                            </next>
+                            <function xsi:type="comment"/>
+                            <arguments xsi:type="constantValue">
+                                <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">The algorithm discovers all vertices %d edge from s i.e., discovered all vertices (w and r) at level 1.</value>
+                            </arguments>
+                            <arguments xsi:type="valueOfIdentifier">
+                                <variableName>distance_sr</variableName>
+                            </arguments>
+                        </next>
+                        <function xsi:type="check"/>
+                        <arguments xsi:type="constantValue">
+                            <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">($distance_sr = $sr) and ($distance_sw = $sw)</value>
+                        </arguments>
+                    </next>
+                    <function xsi:type="debug"/>
+                </next>
+                <variableName>distance_sw</variableName>
+                <expression xsi:type="functionBox">
+                    <function xsi:type="retrieve"/>
+                    <arguments xsi:type="constantValue">
+                        <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">events/findDistance/distance[6]</value>
+                    </arguments>
+                </expression>
+            </AssignBox>
+            <FunctionBox>
+                <next xsi:type="functionBox">
+                    <next xsi:type="functionBox">
+                        <next xsi:type="functionBox">
+                            <function xsi:type="ok"/>
+                        </next>
+                        <function xsi:type="comment"/>
+                        <arguments xsi:type="constantValue">
+                            <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">The algorithm discovers all vertices %d edge from s i.e., discovered all vertices (w and r) at level 1.</value>
+                        </arguments>
+                        <arguments xsi:type="valueOfIdentifier">
+                            <variableName>distance_sr</variableName>
+                        </arguments>
+                    </next>
+                    <function xsi:type="check"/>
+                    <arguments xsi:type="constantValue">
+                        <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">($distance_sr = $sr) and ($distance_sw = $sw)</value>
+                    </arguments>
+                </next>
+                <function xsi:type="debug"/>
+            </FunctionBox>
+            <FunctionBox>
+                <next xsi:type="functionBox">
+                    <next xsi:type="functionBox">
+                        <function xsi:type="ok"/>
+                    </next>
+                    <function xsi:type="comment"/>
+                    <arguments xsi:type="constantValue">
+                        <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">The algorithm discovers all vertices %d edge from s i.e., discovered all vertices (w and r) at level 1.</value>
+                    </arguments>
+                    <arguments xsi:type="valueOfIdentifier">
+                        <variableName>distance_sr</variableName>
+                    </arguments>
+                </next>
+                <function xsi:type="check"/>
+                <arguments xsi:type="constantValue">
+                    <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">($distance_sr = $sr) and ($distance_sw = $sw)</value>
+                </arguments>
+            </FunctionBox>
+            <FunctionBox>
+                <next xsi:type="functionBox">
+                    <function xsi:type="ok"/>
+                </next>
+                <function xsi:type="comment"/>
+                <arguments xsi:type="constantValue">
+                    <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">The algorithm discovers all vertices %d edge from s i.e., discovered all vertices (w and r) at level 1.</value>
+                </arguments>
+                <arguments xsi:type="valueOfIdentifier">
+                    <variableName>distance_sr</variableName>
+                </arguments>
+            </FunctionBox>
+            <FunctionBox>
+                <function xsi:type="ok"/>
+            </FunctionBox>
+        </decisionBox>
+        <inputVariables>
+            <name>sr</name>
+            <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"></value>
+        </inputVariables>
+        <inputVariables>
+            <name>sw</name>
+            <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"></value>
+        </inputVariables>
+        <questionId>Question-3454406021291567576028</questionId>
+        <questionText>1. Start at node S. Give the distance from S to R, S to W.</questionText>
+        <script>// No script
+distance_sr = Retrieve("events/findDistance/distance[1]");
+distance_sw = Retrieve("events/findDistance/distance[6]");
+Debug();
+Check("($distance_sr = $sr) and ($distance_sw = $sw)");
+Comment("The algorithm discovers all vertices %d edge from s i.e., discovered all vertices (w and r) at level 1.",distance_sr);
+Ok();</script>
+    </questionsList>
+    <questionsList>
+        <decisionBox xsi:type="scriptBox" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+            <inputVariables>
+                <name>st</name>
+            </inputVariables>
+            <inputVariables>
+                <name>sv</name>
+                <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema"></value>
+            </inputVariables>
+            <inputVariables>
+                <name>sx</name>
+                <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema"></value>
+            </inputVariables>
+            <next xsi:type="assignBox">
+                <next xsi:type="assignBox">
+                    <next xsi:type="assignBox">
+                        <next xsi:type="functionBox">
+                            <next xsi:type="functionBox">
+                                <next xsi:type="functionBox">
+                                    <next xsi:type="functionBox">
+                                        <function xsi:type="ok"/>
+                                    </next>
+                                    <function xsi:type="comment"/>
+                                    <arguments xsi:type="constantValue">
+                                        <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">The algorithm discovers all vertices %d edge from s i.e., discovered all vertices (t,v and x) at level 2.</value>
+                                    </arguments>
+                                    <arguments xsi:type="valueOfIdentifier">
+                                        <variableName>distance_st</variableName>
+                                    </arguments>
+                                </next>
+                                <function xsi:type="check"/>
+                                <arguments xsi:type="constantValue">
+                                    <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">($distance_st = $st) and ($distance_sv = $sv) and ($distance_sx = $sx)</value>
+                                </arguments>
+                            </next>
+                            <function xsi:type="debug"/>
+                        </next>
+                        <variableName>distance_sx</variableName>
+                        <expression xsi:type="functionBox">
+                            <function xsi:type="retrieve"/>
+                            <arguments xsi:type="constantValue">
+                                <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">events/findDistance/distance[7]</value>
+                            </arguments>
+                        </expression>
+                    </next>
+                    <variableName>distance_sv</variableName>
+                    <expression xsi:type="functionBox">
+                        <function xsi:type="retrieve"/>
+                        <arguments xsi:type="constantValue">
+                            <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">events/findDistance/distance[5]</value>
+                        </arguments>
+                    </expression>
+                </next>
+                <variableName>distance_st</variableName>
+                <expression xsi:type="functionBox">
+                    <function xsi:type="retrieve"/>
+                    <arguments xsi:type="constantValue">
+                        <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">events/findDistance/distance[3]</value>
+                    </arguments>
+                </expression>
+            </next>
+            <AssignBox>
+                <next xsi:type="assignBox">
+                    <next xsi:type="assignBox">
+                        <next xsi:type="functionBox">
+                            <next xsi:type="functionBox">
+                                <next xsi:type="functionBox">
+                                    <next xsi:type="functionBox">
+                                        <function xsi:type="ok"/>
+                                    </next>
+                                    <function xsi:type="comment"/>
+                                    <arguments xsi:type="constantValue">
+                                        <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">The algorithm discovers all vertices %d edge from s i.e., discovered all vertices (t,v and x) at level 2.</value>
+                                    </arguments>
+                                    <arguments xsi:type="valueOfIdentifier">
+                                        <variableName>distance_st</variableName>
+                                    </arguments>
+                                </next>
+                                <function xsi:type="check"/>
+                                <arguments xsi:type="constantValue">
+                                    <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">($distance_st = $st) and ($distance_sv = $sv) and ($distance_sx = $sx)</value>
+                                </arguments>
+                            </next>
+                            <function xsi:type="debug"/>
+                        </next>
+                        <variableName>distance_sx</variableName>
+                        <expression xsi:type="functionBox">
+                            <function xsi:type="retrieve"/>
+                            <arguments xsi:type="constantValue">
+                                <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">events/findDistance/distance[7]</value>
+                            </arguments>
+                        </expression>
+                    </next>
+                    <variableName>distance_sv</variableName>
+                    <expression xsi:type="functionBox">
+                        <function xsi:type="retrieve"/>
+                        <arguments xsi:type="constantValue">
+                            <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">events/findDistance/distance[5]</value>
+                        </arguments>
+                    </expression>
+                </next>
+                <variableName>distance_st</variableName>
+                <expression xsi:type="functionBox">
+                    <function xsi:type="retrieve"/>
+                    <arguments xsi:type="constantValue">
+                        <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">events/findDistance/distance[3]</value>
+                    </arguments>
+                </expression>
+            </AssignBox>
+            <AssignBox>
+                <next xsi:type="assignBox">
+                    <next xsi:type="functionBox">
+                        <next xsi:type="functionBox">
+                            <next xsi:type="functionBox">
+                                <next xsi:type="functionBox">
+                                    <function xsi:type="ok"/>
+                                </next>
+                                <function xsi:type="comment"/>
+                                <arguments xsi:type="constantValue">
+                                    <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">The algorithm discovers all vertices %d edge from s i.e., discovered all vertices (t,v and x) at level 2.</value>
+                                </arguments>
+                                <arguments xsi:type="valueOfIdentifier">
+                                    <variableName>distance_st</variableName>
+                                </arguments>
+                            </next>
+                            <function xsi:type="check"/>
+                            <arguments xsi:type="constantValue">
+                                <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">($distance_st = $st) and ($distance_sv = $sv) and ($distance_sx = $sx)</value>
+                            </arguments>
+                        </next>
+                        <function xsi:type="debug"/>
+                    </next>
+                    <variableName>distance_sx</variableName>
+                    <expression xsi:type="functionBox">
+                        <function xsi:type="retrieve"/>
+                        <arguments xsi:type="constantValue">
+                            <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">events/findDistance/distance[7]</value>
+                        </arguments>
+                    </expression>
+                </next>
+                <variableName>distance_sv</variableName>
+                <expression xsi:type="functionBox">
+                    <function xsi:type="retrieve"/>
+                    <arguments xsi:type="constantValue">
+                        <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">events/findDistance/distance[5]</value>
+                    </arguments>
+                </expression>
+            </AssignBox>
+            <AssignBox>
+                <next xsi:type="functionBox">
+                    <next xsi:type="functionBox">
+                        <next xsi:type="functionBox">
+                            <next xsi:type="functionBox">
+                                <function xsi:type="ok"/>
+                            </next>
+                            <function xsi:type="comment"/>
+                            <arguments xsi:type="constantValue">
+                                <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">The algorithm discovers all vertices %d edge from s i.e., discovered all vertices (t,v and x) at level 2.</value>
+                            </arguments>
+                            <arguments xsi:type="valueOfIdentifier">
+                                <variableName>distance_st</variableName>
+                            </arguments>
+                        </next>
+                        <function xsi:type="check"/>
+                        <arguments xsi:type="constantValue">
+                            <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">($distance_st = $st) and ($distance_sv = $sv) and ($distance_sx = $sx)</value>
+                        </arguments>
+                    </next>
+                    <function xsi:type="debug"/>
+                </next>
+                <variableName>distance_sx</variableName>
+                <expression xsi:type="functionBox">
+                    <function xsi:type="retrieve"/>
+                    <arguments xsi:type="constantValue">
+                        <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">events/findDistance/distance[7]</value>
+                    </arguments>
+                </expression>
+            </AssignBox>
+            <FunctionBox>
+                <next xsi:type="functionBox">
+                    <next xsi:type="functionBox">
+                        <next xsi:type="functionBox">
+                            <function xsi:type="ok"/>
+                        </next>
+                        <function xsi:type="comment"/>
+                        <arguments xsi:type="constantValue">
+                            <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">The algorithm discovers all vertices %d edge from s i.e., discovered all vertices (t,v and x) at level 2.</value>
+                        </arguments>
+                        <arguments xsi:type="valueOfIdentifier">
+                            <variableName>distance_st</variableName>
+                        </arguments>
+                    </next>
+                    <function xsi:type="check"/>
+                    <arguments xsi:type="constantValue">
+                        <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">($distance_st = $st) and ($distance_sv = $sv) and ($distance_sx = $sx)</value>
+                    </arguments>
+                </next>
+                <function xsi:type="debug"/>
+            </FunctionBox>
+            <FunctionBox>
+                <next xsi:type="functionBox">
+                    <next xsi:type="functionBox">
+                        <function xsi:type="ok"/>
+                    </next>
+                    <function xsi:type="comment"/>
+                    <arguments xsi:type="constantValue">
+                        <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">The algorithm discovers all vertices %d edge from s i.e., discovered all vertices (t,v and x) at level 2.</value>
+                    </arguments>
+                    <arguments xsi:type="valueOfIdentifier">
+                        <variableName>distance_st</variableName>
+                    </arguments>
+                </next>
+                <function xsi:type="check"/>
+                <arguments xsi:type="constantValue">
+                    <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">($distance_st = $st) and ($distance_sv = $sv) and ($distance_sx = $sx)</value>
+                </arguments>
+            </FunctionBox>
+            <FunctionBox>
+                <next xsi:type="functionBox">
+                    <function xsi:type="ok"/>
+                </next>
+                <function xsi:type="comment"/>
+                <arguments xsi:type="constantValue">
+                    <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">The algorithm discovers all vertices %d edge from s i.e., discovered all vertices (t,v and x) at level 2.</value>
+                </arguments>
+                <arguments xsi:type="valueOfIdentifier">
+                    <variableName>distance_st</variableName>
+                </arguments>
+            </FunctionBox>
+            <FunctionBox>
+                <function xsi:type="ok"/>
+            </FunctionBox>
+        </decisionBox>
+        <inputVariables>
+            <name>st</name>
+        </inputVariables>
+        <inputVariables>
+            <name>sv</name>
+            <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"></value>
+        </inputVariables>
+        <inputVariables>
+            <name>sx</name>
+            <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"></value>
+        </inputVariables>
+        <questionId>Question-3454406021291659432682</questionId>
+        <questionText>2. Start at node S. Give the distance from S to V, S to T, S to X.</questionText>
+        <script>// No script
+distance_st = Retrieve("events/findDistance/distance[3]");
+distance_sv = Retrieve("events/findDistance/distance[5]");
+distance_sx = Retrieve("events/findDistance/distance[7]");
+Debug();
+Check("($distance_st = $st) and ($distance_sv = $sv) and ($distance_sx = $sx)");
+Comment("The algorithm discovers all vertices %d edge from s i.e., discovered all vertices (t,v and x) at level 2.",distance_st);
+Ok();</script>
+    </questionsList>
+    <questionsList>
+        <decisionBox xsi:type="scriptBox" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+            <inputVariables>
+                <name>su</name>
+            </inputVariables>
+            <inputVariables>
+                <name>sy</name>
+                <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema"></value>
+            </inputVariables>
+            <next xsi:type="assignBox">
+                <next xsi:type="assignBox">
+                    <next xsi:type="functionBox">
+                        <next xsi:type="functionBox">
+                            <next xsi:type="functionBox">
+                                <next xsi:type="functionBox">
+                                    <function xsi:type="ok"/>
+                                </next>
+                                <function xsi:type="comment"/>
+                                <arguments xsi:type="constantValue">
+                                    <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">The algorithm discovers all vertices %d edge from s i.e., discovered all vertices (u and y) at level 3.</value>
+                                </arguments>
+                                <arguments xsi:type="valueOfIdentifier">
+                                    <variableName>distance_su</variableName>
+                                </arguments>
+                            </next>
+                            <function xsi:type="check"/>
+                            <arguments xsi:type="constantValue">
+                                <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">($distance_su = $su) and ($distance_sy = $sy) </value>
+                            </arguments>
+                        </next>
+                        <function xsi:type="debug"/>
+                    </next>
+                    <variableName>distance_sy</variableName>
+                    <expression xsi:type="functionBox">
+                        <function xsi:type="retrieve"/>
+                        <arguments xsi:type="constantValue">
+                            <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">events/findDistance/distance[8]</value>
+                        </arguments>
+                    </expression>
+                </next>
+                <variableName>distance_su</variableName>
+                <expression xsi:type="functionBox">
+                    <function xsi:type="retrieve"/>
+                    <arguments xsi:type="constantValue">
+                        <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">events/findDistance/distance[4]</value>
+                    </arguments>
+                </expression>
+            </next>
+            <AssignBox>
+                <next xsi:type="assignBox">
+                    <next xsi:type="functionBox">
+                        <next xsi:type="functionBox">
+                            <next xsi:type="functionBox">
+                                <next xsi:type="functionBox">
+                                    <function xsi:type="ok"/>
+                                </next>
+                                <function xsi:type="comment"/>
+                                <arguments xsi:type="constantValue">
+                                    <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">The algorithm discovers all vertices %d edge from s i.e., discovered all vertices (u and y) at level 3.</value>
+                                </arguments>
+                                <arguments xsi:type="valueOfIdentifier">
+                                    <variableName>distance_su</variableName>
+                                </arguments>
+                            </next>
+                            <function xsi:type="check"/>
+                            <arguments xsi:type="constantValue">
+                                <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">($distance_su = $su) and ($distance_sy = $sy) </value>
+                            </arguments>
+                        </next>
+                        <function xsi:type="debug"/>
+                    </next>
+                    <variableName>distance_sy</variableName>
+                    <expression xsi:type="functionBox">
+                        <function xsi:type="retrieve"/>
+                        <arguments xsi:type="constantValue">
+                            <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">events/findDistance/distance[8]</value>
+                        </arguments>
+                    </expression>
+                </next>
+                <variableName>distance_su</variableName>
+                <expression xsi:type="functionBox">
+                    <function xsi:type="retrieve"/>
+                    <arguments xsi:type="constantValue">
+                        <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">events/findDistance/distance[4]</value>
+                    </arguments>
+                </expression>
+            </AssignBox>
+            <AssignBox>
+                <next xsi:type="functionBox">
+                    <next xsi:type="functionBox">
+                        <next xsi:type="functionBox">
+                            <next xsi:type="functionBox">
+                                <function xsi:type="ok"/>
+                            </next>
+                            <function xsi:type="comment"/>
+                            <arguments xsi:type="constantValue">
+                                <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">The algorithm discovers all vertices %d edge from s i.e., discovered all vertices (u and y) at level 3.</value>
+                            </arguments>
+                            <arguments xsi:type="valueOfIdentifier">
+                                <variableName>distance_su</variableName>
+                            </arguments>
+                        </next>
+                        <function xsi:type="check"/>
+                        <arguments xsi:type="constantValue">
+                            <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">($distance_su = $su) and ($distance_sy = $sy) </value>
+                        </arguments>
+                    </next>
+                    <function xsi:type="debug"/>
+                </next>
+                <variableName>distance_sy</variableName>
+                <expression xsi:type="functionBox">
+                    <function xsi:type="retrieve"/>
+                    <arguments xsi:type="constantValue">
+                        <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">events/findDistance/distance[8]</value>
+                    </arguments>
+                </expression>
+            </AssignBox>
+            <FunctionBox>
+                <next xsi:type="functionBox">
+                    <next xsi:type="functionBox">
+                        <next xsi:type="functionBox">
+                            <function xsi:type="ok"/>
+                        </next>
+                        <function xsi:type="comment"/>
+                        <arguments xsi:type="constantValue">
+                            <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">The algorithm discovers all vertices %d edge from s i.e., discovered all vertices (u and y) at level 3.</value>
+                        </arguments>
+                        <arguments xsi:type="valueOfIdentifier">
+                            <variableName>distance_su</variableName>
+                        </arguments>
+                    </next>
+                    <function xsi:type="check"/>
+                    <arguments xsi:type="constantValue">
+                        <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">($distance_su = $su) and ($distance_sy = $sy) </value>
+                    </arguments>
+                </next>
+                <function xsi:type="debug"/>
+            </FunctionBox>
+            <FunctionBox>
+                <next xsi:type="functionBox">
+                    <next xsi:type="functionBox">
+                        <function xsi:type="ok"/>
+                    </next>
+                    <function xsi:type="comment"/>
+                    <arguments xsi:type="constantValue">
+                        <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">The algorithm discovers all vertices %d edge from s i.e., discovered all vertices (u and y) at level 3.</value>
+                    </arguments>
+                    <arguments xsi:type="valueOfIdentifier">
+                        <variableName>distance_su</variableName>
+                    </arguments>
+                </next>
+                <function xsi:type="check"/>
+                <arguments xsi:type="constantValue">
+                    <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">($distance_su = $su) and ($distance_sy = $sy) </value>
+                </arguments>
+            </FunctionBox>
+            <FunctionBox>
+                <next xsi:type="functionBox">
+                    <function xsi:type="ok"/>
+                </next>
+                <function xsi:type="comment"/>
+                <arguments xsi:type="constantValue">
+                    <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">The algorithm discovers all vertices %d edge from s i.e., discovered all vertices (u and y) at level 3.</value>
+                </arguments>
+                <arguments xsi:type="valueOfIdentifier">
+                    <variableName>distance_su</variableName>
+                </arguments>
+            </FunctionBox>
+            <FunctionBox>
+                <function xsi:type="ok"/>
+            </FunctionBox>
+        </decisionBox>
+        <inputVariables>
+            <name>su</name>
+        </inputVariables>
+        <inputVariables>
+            <name>sy</name>
+            <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"></value>
+        </inputVariables>
+        <questionId>Question-3454406021291659861543</questionId>
+        <questionText>3. Start at node S. Give the distance from S to U, S to Y.</questionText>
+        <script>// No script
+distance_su = Retrieve("events/findDistance/distance[4]");
+distance_sy = Retrieve("events/findDistance/distance[8]");
+
+Debug();
+Check("($distance_su = $su) and ($distance_sy = $sy) ");
+Comment("The algorithm discovers all vertices %d edge from s i.e., discovered all vertices (u and y) at level 3.",distance_su);
+Ok();</script>
+    </questionsList>
+    <questionsList>
+        <decisionBox xsi:type="scriptBox" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+            <inputVariables>
+                <name>x</name>
+            </inputVariables>
+            <next xsi:type="assignBox">
+                <next xsi:type="functionBox">
+                    <next xsi:type="functionBox">
+                        <function xsi:type="ok"/>
+                        <arguments xsi:type="valueOfIdentifier">
+                            <variableName>x</variableName>
+                        </arguments>
+                        <arguments xsi:type="valueOfIdentifier">
+                            <variableName>d</variableName>
+                        </arguments>
+                    </next>
+                    <function xsi:type="debug"/>
+                </next>
+                <variableName>d</variableName>
+                <expression xsi:type="functionBox">
+                    <function xsi:type="retrieve"/>
+                    <arguments xsi:type="constantValue">
+                        <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">events/visited[seqnr = 3]/bfs</value>
+                    </arguments>
+                </expression>
+            </next>
+            <AssignBox>
+                <next xsi:type="functionBox">
+                    <next xsi:type="functionBox">
+                        <function xsi:type="ok"/>
+                        <arguments xsi:type="valueOfIdentifier">
+                            <variableName>x</variableName>
+                        </arguments>
+                        <arguments xsi:type="valueOfIdentifier">
+                            <variableName>d</variableName>
+                        </arguments>
+                    </next>
+                    <function xsi:type="debug"/>
+                </next>
+                <variableName>d</variableName>
+                <expression xsi:type="functionBox">
+                    <function xsi:type="retrieve"/>
+                    <arguments xsi:type="constantValue">
+                        <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">events/visited[seqnr = 3]/bfs</value>
+                    </arguments>
+                </expression>
+            </AssignBox>
+            <FunctionBox>
+                <next xsi:type="functionBox">
+                    <function xsi:type="ok"/>
+                    <arguments xsi:type="valueOfIdentifier">
+                        <variableName>x</variableName>
+                    </arguments>
+                    <arguments xsi:type="valueOfIdentifier">
+                        <variableName>d</variableName>
+                    </arguments>
+                </next>
+                <function xsi:type="debug"/>
+            </FunctionBox>
+            <FunctionBox>
+                <function xsi:type="ok"/>
+                <arguments xsi:type="valueOfIdentifier">
+                    <variableName>x</variableName>
+                </arguments>
+                <arguments xsi:type="valueOfIdentifier">
+                    <variableName>d</variableName>
+                </arguments>
+            </FunctionBox>
+        </decisionBox>
+        <inputVariables>
+            <name>x</name>
+        </inputVariables>
+        <questionId>Question-3454406021291804561124</questionId>
+        <questionText>4. Give the node which will be added after 2 iteration.(Fill in your answers in capital letters, not small letters.)</questionText>
+        <script>// No script
+d = Retrieve("events/visited[seqnr = 3]/bfs");
+
+Debug();
+Ok(x,d);</script>
+    </questionsList>
+    <questionsList>
+        <decisionBox xsi:type="scriptBox" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+            <inputVariables>
+                <name>x</name>
+            </inputVariables>
+            <next xsi:type="assignBox">
+                <next xsi:type="functionBox">
+                    <next xsi:type="functionBox">
+                        <function xsi:type="ok"/>
+                        <arguments xsi:type="valueOfIdentifier">
+                            <variableName>x</variableName>
+                        </arguments>
+                        <arguments xsi:type="valueOfIdentifier">
+                            <variableName>d</variableName>
+                        </arguments>
+                    </next>
+                    <function xsi:type="debug"/>
+                </next>
+                <variableName>d</variableName>
+                <expression xsi:type="functionBox">
+                    <function xsi:type="retrieve"/>
+                    <arguments xsi:type="constantValue">
+                        <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">events/visited[seqnr = 5]/bfs</value>
+                    </arguments>
+                </expression>
+            </next>
+            <AssignBox>
+                <next xsi:type="functionBox">
+                    <next xsi:type="functionBox">
+                        <function xsi:type="ok"/>
+                        <arguments xsi:type="valueOfIdentifier">
+                            <variableName>x</variableName>
+                        </arguments>
+                        <arguments xsi:type="valueOfIdentifier">
+                            <variableName>d</variableName>
+                        </arguments>
+                    </next>
+                    <function xsi:type="debug"/>
+                </next>
+                <variableName>d</variableName>
+                <expression xsi:type="functionBox">
+                    <function xsi:type="retrieve"/>
+                    <arguments xsi:type="constantValue">
+                        <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">events/visited[seqnr = 5]/bfs</value>
+                    </arguments>
+                </expression>
+            </AssignBox>
+            <FunctionBox>
+                <next xsi:type="functionBox">
+                    <function xsi:type="ok"/>
+                    <arguments xsi:type="valueOfIdentifier">
+                        <variableName>x</variableName>
+                    </arguments>
+                    <arguments xsi:type="valueOfIdentifier">
+                        <variableName>d</variableName>
+                    </arguments>
+                </next>
+                <function xsi:type="debug"/>
+            </FunctionBox>
+            <FunctionBox>
+                <function xsi:type="ok"/>
+                <arguments xsi:type="valueOfIdentifier">
+                    <variableName>x</variableName>
+                </arguments>
+                <arguments xsi:type="valueOfIdentifier">
+                    <variableName>d</variableName>
+                </arguments>
+            </FunctionBox>
+        </decisionBox>
+        <inputVariables>
+            <name>x</name>
+        </inputVariables>
+        <questionId>Question-3454406021292063571870</questionId>
+        <questionText>5. Give the node which will be added after 5 iteration.(Fill in your answers in capital letters, not small letters.)</questionText>
+        <script>// No script
+d = Retrieve("events/visited[seqnr = 5]/bfs");
+
+Debug();
+Ok(x,d);</script>
+    </questionsList>
+    <questionsList>
+        <decisionBox xsi:type="scriptBox" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+            <inputVariables>
+                <name>node1</name>
+            </inputVariables>
+            <inputVariables>
+                <name>node2</name>
+                <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema"></value>
+            </inputVariables>
+            <inputVariables>
+                <name>node3</name>
+                <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema"></value>
+            </inputVariables>
+            <inputVariables>
+                <name>node4</name>
+                <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema"></value>
+            </inputVariables>
+            <inputVariables>
+                <name>node5</name>
+                <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema"></value>
+            </inputVariables>
+            <inputVariables>
+                <name>node6</name>
+                <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema"></value>
+            </inputVariables>
+            <inputVariables>
+                <name>node7</name>
+                <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema"></value>
+            </inputVariables>
+            <next xsi:type="assignBox">
+                <next xsi:type="assignBox">
+                    <next xsi:type="assignBox">
+                        <next xsi:type="assignBox">
+                            <next xsi:type="assignBox">
+                                <next xsi:type="assignBox">
+                                    <next xsi:type="assignBox">
+                                        <next xsi:type="functionBox">
+                                            <next xsi:type="functionBox">
+                                                <next xsi:type="functionBox">
+                                                    <function xsi:type="ok"/>
+                                                </next>
+                                                <function xsi:type="check"/>
+                                                <arguments xsi:type="constantValue">
+                                                    <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">($n1 = $node1) and ($n2 = $node2) and ($n3 = $node3) and ($n4 = $node4) and ($n5 = $node5) and ($n6 = $node6) and ($n7 = $node7)</value>
+                                                </arguments>
+                                            </next>
+                                            <function xsi:type="debug"/>
+                                        </next>
+                                        <variableName>n7</variableName>
+                                        <expression xsi:type="functionBox">
+                                            <function xsi:type="retrieve"/>
+                                            <arguments xsi:type="constantValue">
+                                                <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">events/visited[seqnr = 7]/bfs</value>
+                                            </arguments>
+                                        </expression>
+                                    </next>
+                                    <variableName>n6</variableName>
+                                    <expression xsi:type="functionBox">
+                                        <function xsi:type="retrieve"/>
+                                        <arguments xsi:type="constantValue">
+                                            <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">events/visited[seqnr = 6]/bfs</value>
+                                        </arguments>
+                                    </expression>
+                                </next>
+                                <variableName>n5</variableName>
+                                <expression xsi:type="functionBox">
+                                    <function xsi:type="retrieve"/>
+                                    <arguments xsi:type="constantValue">
+                                        <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">events/visited[seqnr = 5]/bfs</value>
+                                    </arguments>
+                                </expression>
+                            </next>
+                            <variableName>n4</variableName>
+                            <expression xsi:type="functionBox">
+                                <function xsi:type="retrieve"/>
+                                <arguments xsi:type="constantValue">
+                                    <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">events/visited[seqnr = 4]/bfs</value>
+                                </arguments>
+                            </expression>
+                        </next>
+                        <variableName>n3</variableName>
+                        <expression xsi:type="functionBox">
+                            <function xsi:type="retrieve"/>
+                            <arguments xsi:type="constantValue">
+                                <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">events/visited[seqnr = 3]/bfs</value>
+                            </arguments>
+                        </expression>
+                    </next>
+                    <variableName>n2</variableName>
+                    <expression xsi:type="functionBox">
+                        <function xsi:type="retrieve"/>
+                        <arguments xsi:type="constantValue">
+                            <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">events/visited[seqnr = 2]/bfs</value>
+                        </arguments>
+                    </expression>
+                </next>
+                <variableName>n1</variableName>
+                <expression xsi:type="functionBox">
+                    <function xsi:type="retrieve"/>
+                    <arguments xsi:type="constantValue">
+                        <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">events/visited[seqnr = 1]/bfs</value>
+                    </arguments>
+                </expression>
+            </next>
+            <AssignBox>
+                <next xsi:type="assignBox">
+                    <next xsi:type="assignBox">
+                        <next xsi:type="assignBox">
+                            <next xsi:type="assignBox">
+                                <next xsi:type="assignBox">
+                                    <next xsi:type="assignBox">
+                                        <next xsi:type="functionBox">
+                                            <next xsi:type="functionBox">
+                                                <next xsi:type="functionBox">
+                                                    <function xsi:type="ok"/>
+                                                </next>
+                                                <function xsi:type="check"/>
+                                                <arguments xsi:type="constantValue">
+                                                    <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">($n1 = $node1) and ($n2 = $node2) and ($n3 = $node3) and ($n4 = $node4) and ($n5 = $node5) and ($n6 = $node6) and ($n7 = $node7)</value>
+                                                </arguments>
+                                            </next>
+                                            <function xsi:type="debug"/>
+                                        </next>
+                                        <variableName>n7</variableName>
+                                        <expression xsi:type="functionBox">
+                                            <function xsi:type="retrieve"/>
+                                            <arguments xsi:type="constantValue">
+                                                <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">events/visited[seqnr = 7]/bfs</value>
+                                            </arguments>
+                                        </expression>
+                                    </next>
+                                    <variableName>n6</variableName>
+                                    <expression xsi:type="functionBox">
+                                        <function xsi:type="retrieve"/>
+                                        <arguments xsi:type="constantValue">
+                                            <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">events/visited[seqnr = 6]/bfs</value>
+                                        </arguments>
+                                    </expression>
+                                </next>
+                                <variableName>n5</variableName>
+                                <expression xsi:type="functionBox">
+                                    <function xsi:type="retrieve"/>
+                                    <arguments xsi:type="constantValue">
+                                        <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">events/visited[seqnr = 5]/bfs</value>
+                                    </arguments>
+                                </expression>
+                            </next>
+                            <variableName>n4</variableName>
+                            <expression xsi:type="functionBox">
+                                <function xsi:type="retrieve"/>
+                                <arguments xsi:type="constantValue">
+                                    <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">events/visited[seqnr = 4]/bfs</value>
+                                </arguments>
+                            </expression>
+                        </next>
+                        <variableName>n3</variableName>
+                        <expression xsi:type="functionBox">
+                            <function xsi:type="retrieve"/>
+                            <arguments xsi:type="constantValue">
+                                <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">events/visited[seqnr = 3]/bfs</value>
+                            </arguments>
+                        </expression>
+                    </next>
+                    <variableName>n2</variableName>
+                    <expression xsi:type="functionBox">
+                        <function xsi:type="retrieve"/>
+                        <arguments xsi:type="constantValue">
+                            <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">events/visited[seqnr = 2]/bfs</value>
+                        </arguments>
+                    </expression>
+                </next>
+                <variableName>n1</variableName>
+                <expression xsi:type="functionBox">
+                    <function xsi:type="retrieve"/>
+                    <arguments xsi:type="constantValue">
+                        <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">events/visited[seqnr = 1]/bfs</value>
+                    </arguments>
+                </expression>
+            </AssignBox>
+            <AssignBox>
+                <next xsi:type="assignBox">
+                    <next xsi:type="assignBox">
+                        <next xsi:type="assignBox">
+                            <next xsi:type="assignBox">
+                                <next xsi:type="assignBox">
+                                    <next xsi:type="functionBox">
+                                        <next xsi:type="functionBox">
+                                            <next xsi:type="functionBox">
+                                                <function xsi:type="ok"/>
+                                            </next>
+                                            <function xsi:type="check"/>
+                                            <arguments xsi:type="constantValue">
+                                                <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">($n1 = $node1) and ($n2 = $node2) and ($n3 = $node3) and ($n4 = $node4) and ($n5 = $node5) and ($n6 = $node6) and ($n7 = $node7)</value>
+                                            </arguments>
+                                        </next>
+                                        <function xsi:type="debug"/>
+                                    </next>
+                                    <variableName>n7</variableName>
+                                    <expression xsi:type="functionBox">
+                                        <function xsi:type="retrieve"/>
+                                        <arguments xsi:type="constantValue">
+                                            <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">events/visited[seqnr = 7]/bfs</value>
+                                        </arguments>
+                                    </expression>
+                                </next>
+                                <variableName>n6</variableName>
+                                <expression xsi:type="functionBox">
+                                    <function xsi:type="retrieve"/>
+                                    <arguments xsi:type="constantValue">
+                                        <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">events/visited[seqnr = 6]/bfs</value>
+                                    </arguments>
+                                </expression>
+                            </next>
+                            <variableName>n5</variableName>
+                            <expression xsi:type="functionBox">
+                                <function xsi:type="retrieve"/>
+                                <arguments xsi:type="constantValue">
+                                    <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">events/visited[seqnr = 5]/bfs</value>
+                                </arguments>
+                            </expression>
+                        </next>
+                        <variableName>n4</variableName>
+                        <expression xsi:type="functionBox">
+                            <function xsi:type="retrieve"/>
+                            <arguments xsi:type="constantValue">
+                                <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">events/visited[seqnr = 4]/bfs</value>
+                            </arguments>
+                        </expression>
+                    </next>
+                    <variableName>n3</variableName>
+                    <expression xsi:type="functionBox">
+                        <function xsi:type="retrieve"/>
+                        <arguments xsi:type="constantValue">
+                            <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">events/visited[seqnr = 3]/bfs</value>
+                        </arguments>
+                    </expression>
+                </next>
+                <variableName>n2</variableName>
+                <expression xsi:type="functionBox">
+                    <function xsi:type="retrieve"/>
+                    <arguments xsi:type="constantValue">
+                        <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">events/visited[seqnr = 2]/bfs</value>
+                    </arguments>
+                </expression>
+            </AssignBox>
+            <AssignBox>
+                <next xsi:type="assignBox">
+                    <next xsi:type="assignBox">
+                        <next xsi:type="assignBox">
+                            <next xsi:type="assignBox">
+                                <next xsi:type="functionBox">
+                                    <next xsi:type="functionBox">
+                                        <next xsi:type="functionBox">
+                                            <function xsi:type="ok"/>
+                                        </next>
+                                        <function xsi:type="check"/>
+                                        <arguments xsi:type="constantValue">
+                                            <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">($n1 = $node1) and ($n2 = $node2) and ($n3 = $node3) and ($n4 = $node4) and ($n5 = $node5) and ($n6 = $node6) and ($n7 = $node7)</value>
+                                        </arguments>
+                                    </next>
+                                    <function xsi:type="debug"/>
+                                </next>
+                                <variableName>n7</variableName>
+                                <expression xsi:type="functionBox">
+                                    <function xsi:type="retrieve"/>
+                                    <arguments xsi:type="constantValue">
+                                        <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">events/visited[seqnr = 7]/bfs</value>
+                                    </arguments>
+                                </expression>
+                            </next>
+                            <variableName>n6</variableName>
+                            <expression xsi:type="functionBox">
+                                <function xsi:type="retrieve"/>
+                                <arguments xsi:type="constantValue">
+                                    <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">events/visited[seqnr = 6]/bfs</value>
+                                </arguments>
+                            </expression>
+                        </next>
+                        <variableName>n5</variableName>
+                        <expression xsi:type="functionBox">
+                            <function xsi:type="retrieve"/>
+                            <arguments xsi:type="constantValue">
+                                <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">events/visited[seqnr = 5]/bfs</value>
+                            </arguments>
+                        </expression>
+                    </next>
+                    <variableName>n4</variableName>
+                    <expression xsi:type="functionBox">
+                        <function xsi:type="retrieve"/>
+                        <arguments xsi:type="constantValue">
+                            <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">events/visited[seqnr = 4]/bfs</value>
+                        </arguments>
+                    </expression>
+                </next>
+                <variableName>n3</variableName>
+                <expression xsi:type="functionBox">
+                    <function xsi:type="retrieve"/>
+                    <arguments xsi:type="constantValue">
+                        <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">events/visited[seqnr = 3]/bfs</value>
+                    </arguments>
+                </expression>
+            </AssignBox>
+            <AssignBox>
+                <next xsi:type="assignBox">
+                    <next xsi:type="assignBox">
+                        <next xsi:type="assignBox">
+                            <next xsi:type="functionBox">
+                                <next xsi:type="functionBox">
+                                    <next xsi:type="functionBox">
+                                        <function xsi:type="ok"/>
+                                    </next>
+                                    <function xsi:type="check"/>
+                                    <arguments xsi:type="constantValue">
+                                        <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">($n1 = $node1) and ($n2 = $node2) and ($n3 = $node3) and ($n4 = $node4) and ($n5 = $node5) and ($n6 = $node6) and ($n7 = $node7)</value>
+                                    </arguments>
+                                </next>
+                                <function xsi:type="debug"/>
+                            </next>
+                            <variableName>n7</variableName>
+                            <expression xsi:type="functionBox">
+                                <function xsi:type="retrieve"/>
+                                <arguments xsi:type="constantValue">
+                                    <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">events/visited[seqnr = 7]/bfs</value>
+                                </arguments>
+                            </expression>
+                        </next>
+                        <variableName>n6</variableName>
+                        <expression xsi:type="functionBox">
+                            <function xsi:type="retrieve"/>
+                            <arguments xsi:type="constantValue">
+                                <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">events/visited[seqnr = 6]/bfs</value>
+                            </arguments>
+                        </expression>
+                    </next>
+                    <variableName>n5</variableName>
+                    <expression xsi:type="functionBox">
+                        <function xsi:type="retrieve"/>
+                        <arguments xsi:type="constantValue">
+                            <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">events/visited[seqnr = 5]/bfs</value>
+                        </arguments>
+                    </expression>
+                </next>
+                <variableName>n4</variableName>
+                <expression xsi:type="functionBox">
+                    <function xsi:type="retrieve"/>
+                    <arguments xsi:type="constantValue">
+                        <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">events/visited[seqnr = 4]/bfs</value>
+                    </arguments>
+                </expression>
+            </AssignBox>
+            <AssignBox>
+                <next xsi:type="assignBox">
+                    <next xsi:type="assignBox">
+                        <next xsi:type="functionBox">
+                            <next xsi:type="functionBox">
+                                <next xsi:type="functionBox">
+                                    <function xsi:type="ok"/>
+                                </next>
+                                <function xsi:type="check"/>
+                                <arguments xsi:type="constantValue">
+                                    <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">($n1 = $node1) and ($n2 = $node2) and ($n3 = $node3) and ($n4 = $node4) and ($n5 = $node5) and ($n6 = $node6) and ($n7 = $node7)</value>
+                                </arguments>
+                            </next>
+                            <function xsi:type="debug"/>
+                        </next>
+                        <variableName>n7</variableName>
+                        <expression xsi:type="functionBox">
+                            <function xsi:type="retrieve"/>
+                            <arguments xsi:type="constantValue">
+                                <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">events/visited[seqnr = 7]/bfs</value>
+                            </arguments>
+                        </expression>
+                    </next>
+                    <variableName>n6</variableName>
+                    <expression xsi:type="functionBox">
+                        <function xsi:type="retrieve"/>
+                        <arguments xsi:type="constantValue">
+                            <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">events/visited[seqnr = 6]/bfs</value>
+                        </arguments>
+                    </expression>
+                </next>
+                <variableName>n5</variableName>
+                <expression xsi:type="functionBox">
+                    <function xsi:type="retrieve"/>
+                    <arguments xsi:type="constantValue">
+                        <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">events/visited[seqnr = 5]/bfs</value>
+                    </arguments>
+                </expression>
+            </AssignBox>
+            <AssignBox>
+                <next xsi:type="assignBox">
+                    <next xsi:type="functionBox">
+                        <next xsi:type="functionBox">
+                            <next xsi:type="functionBox">
+                                <function xsi:type="ok"/>
+                            </next>
+                            <function xsi:type="check"/>
+                            <arguments xsi:type="constantValue">
+                                <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">($n1 = $node1) and ($n2 = $node2) and ($n3 = $node3) and ($n4 = $node4) and ($n5 = $node5) and ($n6 = $node6) and ($n7 = $node7)</value>
+                            </arguments>
+                        </next>
+                        <function xsi:type="debug"/>
+                    </next>
+                    <variableName>n7</variableName>
+                    <expression xsi:type="functionBox">
+                        <function xsi:type="retrieve"/>
+                        <arguments xsi:type="constantValue">
+                            <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">events/visited[seqnr = 7]/bfs</value>
+                        </arguments>
+                    </expression>
+                </next>
+                <variableName>n6</variableName>
+                <expression xsi:type="functionBox">
+                    <function xsi:type="retrieve"/>
+                    <arguments xsi:type="constantValue">
+                        <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">events/visited[seqnr = 6]/bfs</value>
+                    </arguments>
+                </expression>
+            </AssignBox>
+            <AssignBox>
+                <next xsi:type="functionBox">
+                    <next xsi:type="functionBox">
+                        <next xsi:type="functionBox">
+                            <function xsi:type="ok"/>
+                        </next>
+                        <function xsi:type="check"/>
+                        <arguments xsi:type="constantValue">
+                            <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">($n1 = $node1) and ($n2 = $node2) and ($n3 = $node3) and ($n4 = $node4) and ($n5 = $node5) and ($n6 = $node6) and ($n7 = $node7)</value>
+                        </arguments>
+                    </next>
+                    <function xsi:type="debug"/>
+                </next>
+                <variableName>n7</variableName>
+                <expression xsi:type="functionBox">
+                    <function xsi:type="retrieve"/>
+                    <arguments xsi:type="constantValue">
+                        <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">events/visited[seqnr = 7]/bfs</value>
+                    </arguments>
+                </expression>
+            </AssignBox>
+            <FunctionBox>
+                <next xsi:type="functionBox">
+                    <next xsi:type="functionBox">
+                        <function xsi:type="ok"/>
+                    </next>
+                    <function xsi:type="check"/>
+                    <arguments xsi:type="constantValue">
+                        <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">($n1 = $node1) and ($n2 = $node2) and ($n3 = $node3) and ($n4 = $node4) and ($n5 = $node5) and ($n6 = $node6) and ($n7 = $node7)</value>
+                    </arguments>
+                </next>
+                <function xsi:type="debug"/>
+            </FunctionBox>
+            <FunctionBox>
+                <next xsi:type="functionBox">
+                    <function xsi:type="ok"/>
+                </next>
+                <function xsi:type="check"/>
+                <arguments xsi:type="constantValue">
+                    <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">($n1 = $node1) and ($n2 = $node2) and ($n3 = $node3) and ($n4 = $node4) and ($n5 = $node5) and ($n6 = $node6) and ($n7 = $node7)</value>
+                </arguments>
+            </FunctionBox>
+            <FunctionBox>
+                <function xsi:type="ok"/>
+            </FunctionBox>
+        </decisionBox>
+        <inputVariables>
+            <name>node1</name>
+        </inputVariables>
+        <inputVariables>
+            <name>node2</name>
+            <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"></value>
+        </inputVariables>
+        <inputVariables>
+            <name>node3</name>
+            <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"></value>
+        </inputVariables>
+        <inputVariables>
+            <name>node4</name>
+            <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"></value>
+        </inputVariables>
+        <inputVariables>
+            <name>node5</name>
+            <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"></value>
+        </inputVariables>
+        <inputVariables>
+            <name>node6</name>
+            <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"></value>
+        </inputVariables>
+        <inputVariables>
+            <name>node7</name>
+            <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"></value>
+        </inputVariables>
+        <questionId>Question-3454406021292063648118</questionId>
+        <questionText>6. Give the sorted order.(Fill in your answers in capital letters, not small letters.)</questionText>
+        <script>// No script
+n1 = Retrieve("events/visited[seqnr = 1]/bfs");
+n2 = Retrieve("events/visited[seqnr = 2]/bfs");
+n3 = Retrieve("events/visited[seqnr = 3]/bfs");
+n4 = Retrieve("events/visited[seqnr = 4]/bfs");
+n5 = Retrieve("events/visited[seqnr = 5]/bfs");
+n6 = Retrieve("events/visited[seqnr = 6]/bfs");
+n7 = Retrieve("events/visited[seqnr = 7]/bfs");
+Debug();
+Check("($n1 = $node1) and ($n2 = $node2) and ($n3 = $node3) and ($n4 = $node4) and ($n5 = $node5) and ($n6 = $node6) and ($n7 = $node7)" );
+Ok();</script>
+    </questionsList>
+    <questionsList>
+        <decisionBox xsi:type="scriptBox" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+            <inputVariables>
+                <name>x</name>
+            </inputVariables>
+            <next xsi:type="assignBox">
+                <next xsi:type="functionBox">
+                    <next xsi:type="functionBox">
+                        <function xsi:type="ok"/>
+                        <arguments xsi:type="valueOfIdentifier">
+                            <variableName>x</variableName>
+                        </arguments>
+                        <arguments xsi:type="valueOfIdentifier">
+                            <variableName>n</variableName>
+                        </arguments>
+                    </next>
+                    <function xsi:type="debug"/>
+                </next>
+                <variableName>n</variableName>
+                <expression xsi:type="functionBox">
+                    <function xsi:type="retrieve"/>
+                    <arguments xsi:type="constantValue">
+                        <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">events/visited/bfs</value>
+                    </arguments>
+                </expression>
+            </next>
+            <AssignBox>
+                <next xsi:type="functionBox">
+                    <next xsi:type="functionBox">
+                        <function xsi:type="ok"/>
+                        <arguments xsi:type="valueOfIdentifier">
+                            <variableName>x</variableName>
+                        </arguments>
+                        <arguments xsi:type="valueOfIdentifier">
+                            <variableName>n</variableName>
+                        </arguments>
+                    </next>
+                    <function xsi:type="debug"/>
+                </next>
+                <variableName>n</variableName>
+                <expression xsi:type="functionBox">
+                    <function xsi:type="retrieve"/>
+                    <arguments xsi:type="constantValue">
+                        <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">events/visited/bfs</value>
+                    </arguments>
+                </expression>
+            </AssignBox>
+            <FunctionBox>
+                <next xsi:type="functionBox">
+                    <function xsi:type="ok"/>
+                    <arguments xsi:type="valueOfIdentifier">
+                        <variableName>x</variableName>
+                    </arguments>
+                    <arguments xsi:type="valueOfIdentifier">
+                        <variableName>n</variableName>
+                    </arguments>
+                </next>
+                <function xsi:type="debug"/>
+            </FunctionBox>
+            <FunctionBox>
+                <function xsi:type="ok"/>
+                <arguments xsi:type="valueOfIdentifier">
+                    <variableName>x</variableName>
+                </arguments>
+                <arguments xsi:type="valueOfIdentifier">
+                    <variableName>n</variableName>
+                </arguments>
+            </FunctionBox>
+        </decisionBox>
+        <inputVariables>
+            <name>x</name>
+        </inputVariables>
+        <questionId>Question-3454406021292404389936</questionId>
+        <questionText>7. Give the sorted order. ( Fill in your answers in capital letters, not small letters  with this form [ , , ,]).</questionText>
+        <script>// No script
+n = Retrieve("events/visited/bfs");
+Debug();
+Ok(x,n);</script>
+    </questionsList>
+    <subTitle>Output  Language: Java
+Author: Xiaofan Fan</subTitle>
+    <title>Breadth-first search (BFS)</title>
+</ns2:exercise>

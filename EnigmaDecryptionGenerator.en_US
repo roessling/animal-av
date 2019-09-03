@@ -1,0 +1,69 @@
+noSuchKeyException=Es gibt keine Ressource f\u00fcr Eintrag f{0}
+iconNotFound=Icon "{0}" not found
+
+### Misc ###
+title=Enigma Decryption
+
+descriptionTitle=Description of the algorithm:
+descriptionText1=The Enigma is a machine for encryption and decryption of text.
+descriptionText2=It is built out of the following components:
+descriptionText3= - a plugboard
+descriptionText4= - a rotor set with 3 interchangeable rotors
+descriptionText5= - an interchangeable reflector
+descriptionText6=The plugboard allows to map each character to another. Out of 5 rotors - each with a fixed mapping from one character to another -, 3 can be chosen.
+descriptionText7=Additionally, each rotor has a carry notch, resulting in a one-step rotation of the following rotor after every 26 turns.
+descriptionText8=The reflector can be chosen out of 3 rotors and also has a fixed mapping from one character to another. The reflector does not rotate and is responsible for returning the signal.
+descriptionText9=Enigma's security is based on keeping the plugboard and used rotors with their start position secret.
+descriptionText10=The signal of each character passes through Enigma as follows:
+descriptionText11= - plugboard
+descriptionText12= - rotor C
+descriptionText13= - rotor B
+descriptionText14= - rotor A
+descriptionText15= - reflector
+descriptionText16= - rotor A
+descriptionText17= - rotor B
+descriptionText18= - rotor C
+descriptionText19= - plugboard
+
+inputText=Cypher
+outputText=Plaintext
+
+rotorA=Rotor A
+rotorB=Rotor B
+rotorC=Rotor C
+plugboard=Plugboard
+reflector=Reflector
+
+carryCB=carry to
+carryBA=carry to
+
+legendTextMessage=Current cypher character
+legendTextStep=Decryption forward path
+legendTextStepReverse=Decryption return path
+legendTextCypher=Resulting plaintext character
+legendTextNotch=Position of carry notch
+
+finalSlide1=The decryption of the plaintext was successful. Each cypher character passed through Enigma exactly once.
+finalSlide2=This decryption method results in a linear complexity. The more cypher characters, the longer Enigma needs to decrypt.
+finalSlide3=The result of Enigma is as follows:
+finalSlide4=Cypher:
+finalSlide5=Plaintext:
+
+contents1=Introduction
+contents2=Example
+contents3=Decryption Step
+contents4=Conclusion
+
+input=Input
+output=Output
+
+example1=In the following, you will see a short example of how each of the rotors works. Blue marks the carry notch.
+example2=We choose a arbitrary letter. In this example - C -.
+example3=When the key is pressed, the rotor rotates by one step.
+example4=The signal coming from the last step arrives at the previous components output index (in our case - C).
+example5=The rotor maps - C - on - M -.
+example6=Letters are arranged parallel to each other (A - A, B - B, ...). Therefore, we take the index of - M -.
+example7=The signal enters the next rotor.
+example8=Carry notch (red) reached the start position. Carry to the next rotor.
+example9=The input of the next letter triggers both rotors to rotate.
+example10=Due to lack of space in the following slides, we will only show input and output of each component.

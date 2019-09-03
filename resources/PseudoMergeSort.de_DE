@@ -1,0 +1,9 @@
+@import=resources/GenericMergeSort.de_DE
+theName=Merge Sort (Pseudo Code) [DE]
+codeExample=public void mergesort(int[] array, int l, int r) {\n  int i, j, k, m;\n  int[] b = new int[r - l + 1];\n  if (r>l) {\n    m = (l+r)/2;\n    mergesort(array, l, m);\n    mergesort(array, m+1, r);\n    for (i=l; i<=m && i<array.length; i++) b[i-l] = array[i];\n    for (j=m+1; j<=r; j++) b[r+m+1-j-l] = array[j];\n    for (k=l, i=0, j=r-l; k<=r && k<array.length; k++)\n      array[k] = (b[i] <b[j]) ? b[i++] : b[j--];\n  }\n}
+animTitle=Merge Sort
+algoTitle=Merge Sort
+animDesc=Beschreibung des Algorithmus
+description.filename=resources/GenericMergeSort_descr_de.txt
+code.filename=resources/PseudoMergeSort_code.txt
+complexity.filename=resources/GenericMergeSort_complexity_de.txt

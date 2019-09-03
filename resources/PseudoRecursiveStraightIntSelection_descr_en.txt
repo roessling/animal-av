@@ -1,0 +1,8 @@
+Straight Selection is probably the most obvious searching algorithm.
+
+The recursive implementation will first check if the array is null
+or if the end of the array has already been reached. If so, the
+value is not found and -1 is returned.
+Otherwise, the current element is compared with the search value.
+If they match, the current position is returned. Otherwise, the
+method is invoked recursively for the next array position.

@@ -1,0 +1,56 @@
+noSuchKeyException=There is no resource for the key {0}
+iconNotFound=Icon "{0}" not found
+
+title=Sliding Window Protocol
+sender=Sender
+receiver=Receiver
+upper=upper bound
+lower=lower bound
+buffer=free buffer space
+frame=Frame
+ack=Acknowledgement
+error=The action is performed normally. On the transmission path, the error takes place.
+intro=Introduction
+received=received
+time=Time
+description=The sliding window protocol tries to exploit the full capacity of the connection between sender and receiver. For this, the sender has a list of sequence numbers and a number of packets to be transmitted.
+description1=If a frame is successfully delivered to the receiver, it sends an acknowledgement back to the sender. If the acknowledgement arrives, the sender can send another frame. If no acknowledgement is received within a timeout, the frame will be sent again.
+description2=Based on the frames and the acknowledgments, both the sender and the receiver can compute a window showing which frames have arrived or been acknowledged and whether further frames or acknowledgments may be sent.
+pseudo=Sender :
+pseudo1=1. If allowed (B = Free Buffer Space> 0) send the next frame to the receiver.
+pseudo2=2. Increase Upper Limit (UB) by one if frame was not transmitted yet. If it is a retransmission, do not increase UB.
+pseudo3=3. Increase Lower Bound (LB) by one if it is a not seen Acknowledgment (ACK). Should this be a duplicate, do not raise LB.
+pseudo4=   (since we use including acknowledgment, all unconfirmed frames that are lower than the sequence number will be confirmed with)
+pseudo5=4. If there is a timeout go to 1. if no action has been taken in this time slot.
+pseudo6=Receiver : 
+pseudo7=1. Accept all frames whose sequence number is between LB and UB.
+pseudo8=2. As soon as the frame with sequence number LB is received, increase LB by the number of consecutive sequence numbers starting with LB.
+pseudo9=3. Send ACK with the highest sequence number received so far to save additional ACKs.
+pseudo10=4. If there is a timeout go to 1. if no action has been taken in this time slot.
+des=Description
+ps=Pseudo Code
+conclusion=Conclusion
+conclusion1=The last ACK has been received and the transfer has been successfully completed. The algorithm took
+conclusion2=time units to complete the transfer.
+sourcecode=send frame;
+sourcecode1=start the timeout counter for this frame;
+sourcecode2=increase U by 1;
+sourcecode3=if(timeout occurs)
+sourcecode4=resend frame;
+sourcecode5=if(acknowledgement received)
+sourcecode6=if(acknowledgement was not received before)
+sourcecode7=set L to the sequence number + 1;
+sourcecode8=update B = windowSize - U + L;
+sourcecodeR=if(frame received)
+sourcecodeR1=if(sequence number > L && sequence number <= U && not already received)
+sourcecodeR2=do not raise L;
+sourcecodeR3=do not send any acknowledgement as you wait for next frame;
+sourcecodeR4=if(sequence number == L)
+sourcecodeR5=increase L to the highest previously accepted sequence number + 1;
+sourcecodeR6=prepare to send an acknowledgement with the highest accepted sequence number so far;
+sourcecodeR7=resend acknowledgement;
+sourcecodeR8=start the timeout counter for this acknowledgement;
+sourcecodeR9=increase U to sent sequence number + windowSize;
+sourcecodeR10=update B = U - L + 1;
+validate=must be bigger than
+

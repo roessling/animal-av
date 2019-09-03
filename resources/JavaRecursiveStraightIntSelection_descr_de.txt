@@ -1,0 +1,8 @@
+Die Lineare Suche ist vermutlich das naheliegendeste Suchverfahren.
+
+Die rekursive Implementierung testet zuerst, ob das Feld leer ist
+oder schon das Ende erreicht wurde. In beiden Fällen ist das Ergebnis -1.
+Ansonsten wird das aktuelle Feldelement mit dem gesuchten Wert
+vergleichen. Stimmen sie überein, so wird die aktuelle Position als
+Ergebnis zurückgegeben; andernfalls wird die Methode rekursive
+für die nächste Startposition aufgerufen.

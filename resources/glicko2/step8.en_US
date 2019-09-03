@@ -1,0 +1,12 @@
+Now we convert back to our original Glicko-2
+scale and update the player's ratings
+accordingly.
+
+    set r' := 173.7178*my' + 1500
+    set RD' := 173.7178*Phi'
+    set sigma := sigma'
+
+
+Implementation details:
+Do not forget to NOT alter
+the values of your working copy!

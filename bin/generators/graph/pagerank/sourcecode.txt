@@ -1,0 +1,32 @@
+public void doPageRank() {
+  double[] lastNodeWeights;
+  do { 
+    lastNodeWeights = getCurrentNodeWeights();     
+
+    for (Node node : model.getNodes()) { 
+      double newNodeWeight = calculateNewNodeWeight(node, lastNodeWeights); 
+      setCurrentNodeWeight(node, newNodeWeight); 
+    }
+
+  } while (!terminate(lastNodeWeights, getCurrentNodeWeights())); 
+}
+
+public double calculateNewNodeWeight(Node node, double[] nodeWeights) {
+  double[] graphColumnEdges = getIncomingEdgesForNode(node);
+
+  double result = 0;
+  for (int index = 0; index < model.numberOfNodes(); index++) {
+    result += nodeWeights[index] * (jumpOperator * graphColumnEdges[index] + (1 - jumpOperator) * (1d / numberOfNodes)); 
+  }
+
+  return result;
+}
+
+public boolean terminate(double[] oldWeights, double[] currentWeights) {
+  double sum = 0;
+  for (int index = 0; index < oldWeights.length; index++) {
+    sum += Math.abs(oldWeights[index] - currentWeights[index]);
+  }
+
+  return sum <= threshold;
+}

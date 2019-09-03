@@ -1,0 +1,9 @@
+Anmerkungen zur Komplexität
+
+Die Lineare Suche ist - wie der name schon sagt - immer linear.
+Bei bereits sortierten Daten gibt es (deutlich) bessere Suchverfahren.
+
+Bei unsortierten Daten kann, je nach Art und Herkunft der Daten,
+kein besseres Suchverfahren implementiert werden - etwa wenn die
+Daten aus einem Socket gelesen werden und daher von vorne nach
+hinten verarbeitet werden müssen.

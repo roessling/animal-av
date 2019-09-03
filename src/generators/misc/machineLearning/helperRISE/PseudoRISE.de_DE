@@ -1,0 +1,83 @@
+description = RISE gehört zu den sogenannten instanzbasierten Lernverfahren und konzentriert sich bei der Ausführung auf die Generierung einer Regelmenge.\nZu Beginn wird der gesamte Datensatz in eine Regelmenge umgewandelt. Auf dieser Regelmenge wird anschließend der Algorithmus durchgeführt.\nIn jeder Iteration wird als erstes die Accuracy berechnet. Hierfür wird für jedes Beispiel die nächste Regel ermittelt und überprüft zu\nwelcher Klasse diese Regel das Beispiel klassifizieren würde. Der Prozentuale Anteil der korrekt klassifizierten Beispiele entspricht der Accuracy.\nAccuracy = Anzahl der korrekt klassifizierten Beispiele / Anzahl der Beispiele.\nAls nächstes wird für jede Regel das nächste, noch nicht von dieser Regel abgedeckte Beispiel der selben Klasse ermittelt. Die Regel wird\nminimal generalisiert, sodass diese das Beispiel nun abdeckt. Für die neue Regel wird überprüft, ob sich die Accuracy auf dem Datensatz\nverbessern würde. Falls ja, wird die ursprüngliche Regel durch die neue ersetzt. Falls nicht, wird die neue Regel verworfen. Sollte eine\nVerallgemeinerung aus einer Regel und Beispiel bereits erstellt worden sein, wird die Regel aus der Regelmenge verworfen, um Duplikate zu\nverhindern.\n \nFür die Ermittlung des nächsten Nachbarn wird die Distanz-Funktion 'Value Difference Metric' (VDM) verwendet. Die Idee hinter VDM ist, dass\nsich zwei Werte ähnlich sind (geringe Distanz), wenn sie prozentual gleich oft in den unterschiedlichen Klassen vorkommen.\nDie Formel hierfür lautet: d(v1, v2) = SUM_c | (n1_c / n1) - (n2,c / n2) |.\nv1 und v2 stellen hierbei die beiden Attributwerte dar. n1_c ist die Anzahl des Attributwertes v1 mit der Klasse c. Analog dazu n2_c mit dem\nAttributwert v2. n1 und n2 stellen die Häufigkeit der Werte v1 und v2 dar.\n \nFür die Gesamtdistanz eines Beispieles werden anschließend alle Attributdistanzen aufaddiert. 
+
+titleRuleset = Regelmenge
+
+titleExamples = Beispielmenge
+
+titleExp = Erklärung
+
+titleInterSteps = Zwischenschritte
+
+convertAllRules = Alle Beispiele werden als Regel umgewandelt (Tabelle: Regelmenge).
+
+calcVDM = Im folgenden wird für jedes Attribut die VDM-Distanz zwischen den jeweiligen Attributwerten berechnet.
+
+calcDistanceForEachExample1 = Berechne die Distanz von jedem Beispiel (linke Spalte) zu jeder Regel (obere Reihe),\nin dem die Distanzen der einzelnen Attribute zueinander aufsummiert werden.
+
+calcDistanceForEachExample2 = Berechne die Distanz von jedem Beispiel (linke Spalte) zu jeder Regel (obere Reihe),\nin dem die Distanzen der einzelnen Attribute zueinander aufsummiert werden.\nErmittle den nächsten Nachbarn (NN) mit der geringsten Distanz.
+
+calcAcc = Berechne nun die Accuracy.\nHierfür prüfen wir für jedes Beispiel, ob es durch die nächste Regel richtig oder falsch\nklassifiziert wird.
+
+wrongClassifiedEx = Berechne nun die Accuracy.\nHierfür prüfen wir für jedes Beispiel, ob es durch die nächste Regel richtig oder falsch\nklassifiziert wird.\n{0} Beispiele werden falsch klassifiziert (grau markiert).\nDadurch erhalten wir eine Accurcay von {1}/{2} = {3} (alte Accuracy = {4}).
+
+iterate = Wir gehen alle Beispiele durch und suchen jeweils das nicht abgedeckt Beispiel mit dem\ngeringsten Abstand.
+
+createNewRule = Bilde eine neue Regel, die die minimalste Generalisierung beider Regeln darstellt.
+
+newMinimalDistance = Berechne für jedes Beispiel die Distanz zur Regel {0}.\nDie grau markierten Beispiele haben durch {0} eine neue minimale Distanz erhalten.
+
+addNewRule = Durch {0} werden nun {1} Beispiele richtig klassifiziert.\nDie aktuelle Accuracy beträgt {2}/{3} = {4}.\nFüge die neue Regel zur Regelmenge hinzu, da die aktuelle Accuracy größer gleich als\ndie Gesamtaccuracy ({5}).
+
+dontAddNewRule = Durch {0} werden nur noch {1} Beispiele richtig klassifiziert.\nDie aktuelle Accuracy beträgt {2}.\nDie Verallgemeinerung wird somit nicht hinzugefügt, da die kleiner als die Gesamtaccuracy ist ({3}).
+
+removeRule = Eine Verallgemeinerung von diesen beiden Regeln wurde bereits vorher erstellt.\n{0} wird daher aus dem Datensatz entfernt.
+
+updateRuleset = Die neue Regelmenge wird geupdatet.
+
+terminate = {0} Beispiele werden falsch klassifiziert (grau markiert). Dadurch erhalten wir eine Accurcay\nvon {1}/{2} = {3}. Die Accuracy hat sich verschlechtert (alte Accuracy = {4}).\nDie Änderung der letzten Iteration werden somit verworfen und der Algorithmus terminiert.
+
+result = Resultat
+
+finalRuleset = Wenn der RISE-Algorithmus auf die Beispielmenge (linke Tabelle) angewendet wird,\nliefert dieser die Regelmenge (rechte Tabelle) mit der Accuracy {0}.
+
+distance = Distanz
+
+toClassifyingExample = Zu klassifizierendes Beispiel
+
+rule = Regel
+
+prediction = Vorhersage
+
+calcVDM2 = Wir berechnen die Distanzen für alle Attributwerte untereinander eines Attributes:
+
+attribute = Attribut
+
+calcDist = Berechne die Klassenverteilung. 
+
+and = und
+
+examplesArePositive = Beispiele sind positiv\n
+
+examplesAreNegative = Beispiele sind negativ\n
+
+calcDifference = Berechne nun die Differenz zwischen den einzelnen Klassenverteilungen und summiere sie auf:\n
+
+task = In den nächsten Schritten wird der RISE-Algorithmus anhand der Beispielmenge links durchgeführt.
+
+exampleCalc = Beispielsrechung: 
+
+q1 = Wann haben zwei Attribute eine geringe VDM-Distanz?
+q1a1 = Wenn sie gleich oft in den selben Klassen vorkommen.
+q1a2 = Wenn sie relativ gleich oft in den selben Klassen vorkommen.
+q1a3 = Wenn sie oft in unterschiedlichen Klassen vorkommen.
+
+q2 = Wird die neue Regel in die Regelmenge aufgenommen? 
+q2a1 = Nein, da die Accuracy sinkt.
+q2a2 = Ja, da die Accuracy steigt.
+q2a3 = Nein, da eine Verallgemeinerung aus beiden Regeln bereits besteht.
+
+qFeedbackC = Richtig! 
+qFeedbackW = Falsch!
+
+
+

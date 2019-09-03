@@ -1,0 +1,11 @@
+Beispiel: Morgen hat Sarah Geburtstag und ihre Freundin Lucy hat noch immer kein Geschenk. Aber glücklicherweise erinnert sie sich daran, 
+was Sarah von einigen ihrer Freunde letztes Jahr geschenkt bekommen hat (und ob die jeweiligen Geschenke ihr Herz erfreuten oder nicht). Sie wählt 
+drei Eigenschaften der Geschenke aus, speichert sie in einer Tabelle (der 'Haupttabelle') und nutzt ID3 um einen Entscheidungsbaum zu erstellen, 
+der ihr dabei helfen soll, ein Geschenk auszuwählen. Ein Beispiel enthält Informationen darüber, wie groß das Geschenk war (GRÖSSE), ob es 
+handgemacht war oder nicht (HANDGEMACHT) und wie bunt es war (FARBEN). Und schließlich beschreibt der Wert der Klasse (ganz rechts, 'ja' oder 'nein'), 
+ob das Geschenk Sarah gefallen hat. ID3 nimmt diese Beispiele als Eingabe und entwickelt ein allgemeines Konzept, wann Sarah ein Geschenk gefällt und wann nicht.
+
+Jetzt kann sich Lucy Dinge überlegen, die sie Sarah schenken könnte und mit dem Entscheidungsbaum prüfen, ob 
+sie Sarah (vermutlich) gefallen werden. Und du kannst das auch:
+Mit dem Wurzelknoten beginnend folgt man den Kanten, die zu den entsprechenden Attributwerten des Geschenks gehören; das Blatt, 
+an dem man ankommt, gibt die Erwartung an (allerdings nur basierend auf den bisher gesehenen Beispiele).

@@ -1,0 +1,56 @@
+noSuchKeyException=There is no ressource for the key {0}
+iconNotFound=Icon "{0}" not found
+
+### Description ###
+description1=Peterson's algorithm (or Peterson's solution) is a concurrent programming algorithm for mutual exclusion
+description2=that allows two or more processes to share a single-use resource without conflict,
+description3=using only shared memory for communication.
+description4=It was formulated by Gary L. Peterson in 1981.
+description5=While Peterson's original formulation worked with only two processes,
+description6=the algorithm can be generalized for more than two.
+description7=The algorithm satisfies the three essential criteria to solve the critical section problem,
+description8=provided that changes to the variables propagate immediately and atomically.
+description9=The three criteria are mutual exclusion, progress, and bounded waiting.
+
+algo11=The filter algorithm generalizes Peterson's algorithm to N > 2 processes.
+algo12=Instead of a Boolean flag, it requires an integer variable per process, stored in a single writer/multiple reader (SWMR) atomic register,
+algo13=and N−1 additional variables in similar registers. The registers can be represented in pseudocode as arrays.
+algo14=The level variables take on values up to N−1, each representing a distinct waiting room before the critical section.
+algo15=Processes advance from one room to the next, finishing in room N−1 which is the critical section.
+
+### Explanations ###
+explanation1=In this example, all threads execute the same main function, Thread.
+explanation2=In real applications, different threads often have different main functions.
+explanation3=Also for the purpose of demonstration and to keep this animation short,
+explanation4=Every thread will execute his main function exactly once.
+
+explanation5=To acquire a lock process i executes this function.
+explanation6=Process i exits the inner loop when there is either no process with a higher level than level[i], so the next waiting room is free;
+explanation7=or, when i != last_to_enter[L], so another process joined its waiting room.
+explanation8=At any given level L no more than N − L will be able to enter level L.
+
+### Ending ###
+ending1=All threads have now entered and finished their critical section.
+ending2=Normally this would go on for far longer and threads would keep on entering, but the principle stays the same.
+ending3=To simulate the undeterministic timing of threads, the order of threads entering was randomized.
+ending4=Start a few more runs of this, to see how else it could play out!
+
+### Chapters ###
+explanationend=End of explanations
+
+conclusion=Conclusion
+
+unlock= has reached the critical section
+
+### Questions ###
+unlockquestion=One thread reached his critical section. Which one ?
+unlockanswer=will now enter his critical section.
+
+nextnumberquestion1=gets assigned his number. What is
+nextnumberquestion2=number ?
+nextnumberanswer=gets assigned the number
+
+### Legend ###
+legend1=Thread has not yet requested a lock
+legend2=Thread has requested a lock and begun progressing through the levels
+legend3=Thread has finished his main function

@@ -1,0 +1,8 @@
+int search(int[] array, int value, int pos): @CodeLabel("header")
+  if the input array is null: @CodeLabel("ifNull")
+    return -1;
+  if the current position is outside the array: @CodeLabel("ifAtEnd")
+    return -1; @CodeLabel("notFound")
+  if the element at position pos is equal to value: @CodeLabel("ifMatch")
+    return pos; @CodeLabel("return value")
+  return search(array, value, pos + 1); @CodeLabel("recursion")

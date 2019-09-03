@@ -1,0 +1,76 @@
+noSuchKeyException=There is no ressource for the key {0}
+iconNotFound=Icon {0}  not found
+
+# Stuff
+
+name=Simplex algorithm
+result=Result
+
+# Pseudo code
+
+code00=Repeat:
+code10=1: If there are no negative entries in the F row:
+code11=    Optimal solution found. Terminate.
+code20=2: Choose pivot column t (new basic variable):
+code21=    Choose t = column with the smallest entry in the F row.
+code30=3: Choose pivot row s (basic variable to leave the base):
+code31=    3.1: If no pivot column entry a_it is positive:
+code311=       LP is unbounded. Terminate.
+code32=    3.2: Calculate b_i / a_it for each row with positive a_it.
+code33=    3.3: Choose s = row with the smallest b_i / a_it.
+code34=    3.4: a_st is the pivot element.
+code40=4: Update simplex table:
+code41=    4.1: Replace basic variable.
+code42=    4.2: Update pivot row: Divide by pivot element.
+code43=    4.3: For all other rows i: Subtract a_it * pivot row.
+
+# Description
+
+exp10=The Simplex algorithm is used for finding the optimal solution of a linear program (LP). Linear programs are optimization problems with the goal of finding a vector x that yields the highest value of some objective function while being subject to a set of side conditions. Linear programming and the Simplex algorithm are used to solve various problems related to planning, scheduling and other fields.\n
+exp20=This generator will accept LP problems in canonical standard form, i.e.:
+exp21=    Maximize: F(x) = c^T * x
+exp22=    with side contitions:  Ax <= b
+exp23=    and: x >= 0
+exp30=where x and c are vectors of size n, b is a vector of size m, and A is a matrix of size m x n. Further, A must be a unit matrix under slack variables, b must be positive and c must be 0 under slack variables.\n
+exp40=Please provide the values A, b and c.\n
+exp50=Questions are turned off by default. If you want questions to be asked, set the askQuestions to true in the primitives tab.\n
+exp60=Construction of the Simplex Table is done as described in the book Einführung in Operations Research by Domschke, Drexl, Klein, and Scholl.
+
+# Introduction
+
+intro30=A feasible solution is one that fulfills all side conditions. An optimal solution is one that yields the highest value of the objective function.\n
+intro40=The side conditions form a set of feasible solutions, a geometric object called convex polytope. It can be shown that the optimal solution, if there is one, is one of the corners of this object.\n
+intro50=A basic solution is a solution with a number of so-called basic variables equal to the number of side conditions. All other variables are called nonbasic variables and are set to zero. A basic solution corresponds to a corner of the convex polytope.\n
+intro60=The Simplex algorithm starts with one feasible basic solution. When the input model is in canonical form, we can choose the slack variables as basic variables since it is always a feasible solution. In each iteration, the algorithm exchanges one basic variable for another, previously nonbasic, variable. This is equivalent to moving to an adjacent corner of the convex polytope. The algorithm will choose the new basic variable that yields the largest improvement in regards to the value of the objective function.\n
+intro70=The algorithm terminates once the value of the objective function cannot be improved further. It may also terminate if it determines that the problem is unbounded, which means that the the solution can be choosen such that the value of the objective function becomes arbitrarily large.\n
+
+# Results
+
+success=The optimal solution x = {1} was found in iteration {0}. It yields a value of {2} for the objective function.
+unbounded=The model is unbounded. The value of the objective function can become arbitrarily large and is not restricted by the side conditions.
+
+# Step labels
+
+final=Final remarks
+iteration=Iteration {0}
+
+# Table
+
+negative_ait=Ignored
+zero_ait=Unbounded
+
+# Errors
+
+errDimension=Dimensions of input values A, b and c do not match up.
+errCanonical=Inputs are not in canonical form (unit matrix under slack variables, b >= 0, c = 0 under slack variables).
+
+# Questions
+
+q_correct=Correct.
+q1prompt=Which variables could be choosen as a new basic variable such that the objective function improves?
+q1correct={0} is correct! Any variable with a negative F row entry would result in an improvement. The algorithm chooses the one with the most negative value.
+q1incorrect={0} is incorrect.
+q1none=None.
+q1none_correct=Correct, there are no further improvements to be made.
+q1none_incorrect=Incorrect.
+q2prompt=Which cell will be chosen as pivot element in this iteration? (Enter: row,cell)

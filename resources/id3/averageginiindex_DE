@@ -1,0 +1,22 @@
+> tabelle ist eine Menge von Beispielen.
+> eigenschaft ist eine bestimmte Eigenschaft.
+> P₊ = |{ x | x ist eine Instanz der Klasse ja }| / |tabelle|
+> P₋ = |{ x | x ist eine Instanz der Klasse nein }| / |tabelle|
+> reduzierte_tabelle(f, v) = { x | x ist in tabelle enthalten und weist Wert v für Eigenschaft f auf }
+
+gini_index(tabelle) = 1 - ( (P₊)² + (P₋)² )
+
+AVERAGE_GINI_INDEX(tabelle, eigenschaft) = 			 			
+         Σₓ    [ 
+                    ( |reduzierte_tabelle(eigenschaft, x)| / |tabelle| )   *   gini_index( reduzierte_tabelle(eigenschaft, x) ) 
+                ]							
+---------------------------------------------------------------------------------------------------
+
+AVERAGE_GINI_INDEX(aktuelle_tabelle, §) 
+   = § = §		
+														 
+AVERAGE_GINI_INDEX(aktuelle_tabelle, §) 
+   = § = §		
+
+AVERAGE_GINI_INDEX(aktuelle_tabelle, §) 
+   = § = §	

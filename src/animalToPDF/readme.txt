@@ -1,0 +1,1 @@
+This package shall contain all the files needed for the Animal to PDF functionality without the GUI parts.

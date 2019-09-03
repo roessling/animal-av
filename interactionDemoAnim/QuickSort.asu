@@ -1,0 +1,574 @@
+%Animal 2 640*480
+title "Quick Sort"
+author "Krasimir Markov <kmarkov@gmail.com>"
+{
+text "title" "Quick Sort" (20, 35) color (0, 0, 0) depth 1 font SansSerif size 20 bold
+rectangle "headerRect" offset (-5, -5) from "title" NW offset (5, 5) from "title" SE color (0, 0, 0) depth 3 filled fillColor (192, 192, 192)
+text "descrHd" "Beschreibung des Algorithmus" (20, 80) color (0, 0, 0) depth 1 font SansSerif size 20 bold
+codegroup "descr" at offset (0, 30) from "descrHd" SW color (0, 0, 0) highlightColor (255, 0, 0) contextColor (0, 0, 0) font SansSerif size 16 bold depth 3
+addCodeLine "Der Algorithmus in Worten" to "descr"
+addCodeLine "" to "descr"
+addCodeLine "1. Bestimme ein Pivotelement pivot" to "descr"
+addCodeLine "2. Partitioniere so, dass alle Werte vor Position i kleiner," to "descr"
+addCodeLine "alle Werte nach Position i größer als das Pivot sind" to "descr" indentation 1
+addCodeLine "3. Vertausche das Pivotelement mit dem Element an Position i" to "descr"
+addCodeLine "4. Starte quicksort(l, i-1)" to "descr"
+addCodeLine "5. Starte quicksort(i+1, r)" to "descr"
+}
+{
+hide "descrHd" 
+hide "descr" 
+array "array" (30, 150) color (0, 0, 0) fillColor (192, 192, 192) elementColor (0, 0, 0) elemHighlight (0, 255, 0) cellHighlight (255, 200, 0) horizontal length 8 "1" "3" "7" "5" "2" "6" "8" "4" depth 1 
+codegroup "code" at offset (0, 20) from "array" SW color (0, 0, 0) highlightColor (255, 0, 255) contextColor (0, 0, 0) font Monospaced size 16 bold depth 3
+addCodeLine "public void quickSort(int[] array, int l, int r) {" to "code"
+addCodeLine "int i, j, pivot;" to "code" indentation 1
+addCodeLine "if (r>l) {" to "code" indentation 1
+addCodeLine "pivot = array[r];" to "code" indentation 2
+addCodeLine "for (i = l; j = r - 1; i < j; ) {" to "code" indentation 2
+addCodeLine "while (array[i] <= pivot && j > i)" to "code" indentation 3
+addCodeLine "i++;" to "code" indentation 4
+addCodeLine "while (pivot < array[j] && j > i)" to "code" indentation 3
+addCodeLine "j--;" to "code" indentation 4
+addCodeLine "if (i < j)" to "code" indentation 3
+addCodeLine "swap(array, i, j);" to "code" indentation 4
+addCodeLine "}" to "code" indentation 2
+addCodeLine "if (pivot < array[i])" to "code" indentation 2
+addCodeLine "swap(array, i, r);" to "code" indentation 3
+addCodeLine "else" to "code" indentation 2
+addCodeLine "i=r;" to "code" indentation 3
+addCodeLine "quickSort(array, l, i - 1);" to "code" indentation 2
+addCodeLine "quickSort(array, i + 1, r);" to "code" indentation 2
+addCodeLine "}" to "code" indentation 1
+addCodeLine "}" to "code"
+text "#A" "Zuweisungen" offset (80, -80) from "array" SE color (0, 0, 0) depth 1 font SansSerif size 20 bold
+rectangle "Zuweisungen" offset (10, 0) from "#A" NE offset (11, 0) from "#A" SE color (0, 0, 255) depth 2 filled fillColor (0, 0, 255)
+text "#C" "Vergleiche" offset (0, 35) from "#A" NW color (0, 0, 0) depth 1 font SansSerif size 20 bold
+rectangle "Vergleiche" offset (0, 35) from "Zuweisungen" NW offset (1, 35) from "Zuweisungen" SW color (0, 0, 255) depth 2 filled fillColor (0, 0, 255)
+interactionDefinition "intDef20090103194149484.txt"
+interaction "AlgorithmYear"
+}
+{
+interaction "Comparisons"
+}
+{
+highlightCode on "code" line 0
+highlightArrayCell on "array" from 0 to 7
+}
+label "quicksort(0, 7)"
+{
+unhighlightCode on "code" line 0
+highlightCode on "code" line 1
+}
+{
+unhighlightCode on "code" line 1
+highlightCode on "code" line 2
+}
+{
+move "Vergleiche" type "translate #2" along line (0, 0) (2, 0)  
+unhighlightCode on "code" line 2
+highlightCode on "code" line 3
+}
+{
+interaction "Pivot1"
+}
+{
+move "Zuweisungen" type "translate #2" along line (0, 0) (2, 0)  
+unhighlightCode on "code" line 3
+highlightCode on "code" line 4
+}
+{
+move "Zuweisungen" type "translate #2" along line (0, 0) (4, 0)  
+arrayMarker "iMarker" on "array" atIndex 0 label "i" color (0, 0, 255) depth 1
+arrayMarker "jMarker" on "array" atIndex 6 label "j" color (135, 206, 255) depth 1
+move "Vergleiche" type "translate #2" along line (0, 0) (2, 0)  
+unhighlightCode on "code" line 4
+highlightCode on "code" line 5
+}
+{
+move "Vergleiche" type "translate #2" along line (0, 0) (4, 0)  
+unhighlightCode on "code" line 5
+highlightCode on "code" line 6
+}
+{
+move "Zuweisungen" type "translate #2" along line (0, 0) (2, 0)  
+moveArrayMarker "iMarker" to position 1  
+unhighlightCode on "code" line 6
+highlightCode on "code" line 5
+}
+{
+move "Vergleiche" type "translate #2" along line (0, 0) (4, 0)  
+unhighlightCode on "code" line 5
+highlightCode on "code" line 6
+}
+{
+move "Zuweisungen" type "translate #2" along line (0, 0) (2, 0)  
+moveArrayMarker "iMarker" to position 2  
+unhighlightCode on "code" line 6
+highlightCode on "code" line 5
+}
+{
+move "Vergleiche" type "translate #2" along line (0, 0) (4, 0)  
+unhighlightCode on "code" line 5
+highlightCode on "code" line 7
+}
+{
+move "Vergleiche" type "translate #2" along line (0, 0) (4, 0)  
+unhighlightCode on "code" line 7
+highlightCode on "code" line 8
+}
+{
+move "Zuweisungen" type "translate #2" along line (0, 0) (2, 0)  
+moveArrayMarker "jMarker" to position 5  
+unhighlightCode on "code" line 8
+highlightCode on "code" line 7
+}
+{
+move "Vergleiche" type "translate #2" along line (0, 0) (4, 0)  
+unhighlightCode on "code" line 7
+highlightCode on "code" line 8
+}
+{
+move "Zuweisungen" type "translate #2" along line (0, 0) (2, 0)  
+moveArrayMarker "jMarker" to position 4  
+unhighlightCode on "code" line 8
+highlightCode on "code" line 7
+}
+{
+move "Vergleiche" type "translate #2" along line (0, 0) (4, 0)  
+unhighlightCode on "code" line 7
+highlightCode on "code" line 9
+}
+{
+move "Vergleiche" type "translate #2" along line (0, 0) (2, 0)  
+unhighlightCode on "code" line 9
+highlightCode on "code" line 10
+}
+{
+arraySwap on "array" position 2 with 4  
+move "Zuweisungen" type "translate #2" along line (0, 0) (4, 0)  
+unhighlightCode on "code" line 10
+highlightCode on "code" line 4
+}
+{
+moveArrayMarker "iMarker" to position 2  
+moveArrayMarker "jMarker" to position 4  
+move "Vergleiche" type "translate #2" along line (0, 0) (2, 0)  
+unhighlightCode on "code" line 4
+highlightCode on "code" line 5
+}
+{
+move "Vergleiche" type "translate #2" along line (0, 0) (4, 0)  
+unhighlightCode on "code" line 5
+highlightCode on "code" line 6
+}
+{
+move "Zuweisungen" type "translate #2" along line (0, 0) (2, 0)  
+moveArrayMarker "iMarker" to position 3  
+unhighlightCode on "code" line 6
+highlightCode on "code" line 5
+}
+{
+move "Vergleiche" type "translate #2" along line (0, 0) (4, 0)  
+unhighlightCode on "code" line 5
+highlightCode on "code" line 7
+}
+{
+move "Vergleiche" type "translate #2" along line (0, 0) (4, 0)  
+unhighlightCode on "code" line 7
+highlightCode on "code" line 8
+}
+{
+move "Zuweisungen" type "translate #2" along line (0, 0) (2, 0)  
+moveArrayMarker "jMarker" to position 3  
+unhighlightCode on "code" line 8
+highlightCode on "code" line 7
+}
+{
+move "Vergleiche" type "translate #2" along line (0, 0) (4, 0)  
+unhighlightCode on "code" line 7
+highlightCode on "code" line 9
+}
+{
+move "Vergleiche" type "translate #2" along line (0, 0) (2, 0)  
+unhighlightCode on "code" line 9
+highlightCode on "code" line 4
+}
+{
+unhighlightCode on "code" line 4
+highlightCode on "code" line 12
+}
+{
+move "Vergleiche" type "translate #2" along line (0, 0) (2, 0)  
+unhighlightCode on "code" line 12
+highlightCode on "code" line 13
+}
+{
+move "Zuweisungen" type "translate #2" along line (0, 0) (4, 0)  
+arraySwap on "array" position 3 with 7  
+unhighlightCode on "code" line 13
+highlightCode on "code" line 16
+}
+{
+unhighlightCode on "code" line 16
+unhighlightArrayCell on "array" from 0 to 7
+highlightCode on "code" line 0
+highlightArrayCell on "array" from 0 to 2
+}
+label " quicksort(0, 2)"
+{
+unhighlightCode on "code" line 0
+highlightCode on "code" line 1
+}
+{
+unhighlightCode on "code" line 1
+highlightCode on "code" line 2
+}
+{
+move "Vergleiche" type "translate #2" along line (0, 0) (2, 0)  
+unhighlightCode on "code" line 2
+highlightCode on "code" line 3
+}
+{
+interaction "Pivot2"
+}
+{
+move "Zuweisungen" type "translate #2" along line (0, 0) (2, 0)  
+unhighlightCode on "code" line 3
+highlightCode on "code" line 4
+}
+{
+move "Zuweisungen" type "translate #2" along line (0, 0) (4, 0)  
+moveArrayMarker "iMarker" to position 0  
+moveArrayMarker "jMarker" to position 1  
+move "Vergleiche" type "translate #2" along line (0, 0) (2, 0)  
+unhighlightCode on "code" line 4
+highlightCode on "code" line 5
+}
+{
+move "Vergleiche" type "translate #2" along line (0, 0) (4, 0)  
+unhighlightCode on "code" line 5
+highlightCode on "code" line 6
+}
+{
+move "Zuweisungen" type "translate #2" along line (0, 0) (2, 0)  
+moveArrayMarker "iMarker" to position 1  
+unhighlightCode on "code" line 6
+highlightCode on "code" line 5
+}
+{
+move "Vergleiche" type "translate #2" along line (0, 0) (4, 0)  
+unhighlightCode on "code" line 5
+highlightCode on "code" line 7
+}
+{
+move "Vergleiche" type "translate #2" along line (0, 0) (4, 0)  
+unhighlightCode on "code" line 7
+highlightCode on "code" line 9
+}
+{
+move "Vergleiche" type "translate #2" along line (0, 0) (2, 0)  
+unhighlightCode on "code" line 9
+highlightCode on "code" line 4
+}
+{
+unhighlightCode on "code" line 4
+highlightCode on "code" line 12
+}
+{
+move "Vergleiche" type "translate #2" along line (0, 0) (2, 0)  
+unhighlightCode on "code" line 12
+highlightCode on "code" line 13
+}
+{
+move "Zuweisungen" type "translate #2" along line (0, 0) (4, 0)  
+arraySwap on "array" position 1 with 2  
+unhighlightCode on "code" line 13
+highlightCode on "code" line 16
+}
+{
+unhighlightCode on "code" line 16
+unhighlightArrayCell on "array" from 0 to 2
+highlightCode on "code" line 0
+highlightArrayCell on "array" from 0 to 0
+}
+label "  quicksort(0, 0)"
+{
+unhighlightCode on "code" line 0
+highlightCode on "code" line 1
+}
+{
+unhighlightCode on "code" line 1
+highlightCode on "code" line 2
+}
+{
+unhighlightCode on "code" line 2
+unhighlightArrayCell on "array" from 0 to 0
+highlightCode on "code" line 17
+}
+{
+unhighlightCode on "code" line 17
+highlightCode on "code" line 0
+highlightArrayCell on "array" from 2 to 2
+}
+label "  quicksort(2, 2)"
+{
+unhighlightCode on "code" line 0
+highlightCode on "code" line 1
+}
+{
+unhighlightCode on "code" line 1
+highlightCode on "code" line 2
+}
+{
+unhighlightCode on "code" line 2
+unhighlightArrayCell on "array" from 2 to 2
+highlightArrayCell on "array" from 0 to 2
+unhighlightArrayCell on "array" from 0 to 2
+highlightCode on "code" line 17
+}
+{
+unhighlightCode on "code" line 17
+highlightCode on "code" line 0
+highlightArrayCell on "array" from 4 to 7
+}
+label " quicksort(4, 7)"
+{
+unhighlightCode on "code" line 0
+highlightCode on "code" line 1
+}
+{
+unhighlightCode on "code" line 1
+highlightCode on "code" line 2
+}
+{
+move "Vergleiche" type "translate #2" along line (0, 0) (2, 0)  
+unhighlightCode on "code" line 2
+highlightCode on "code" line 3
+}
+{
+interaction "Pivot3"
+}
+{
+move "Zuweisungen" type "translate #2" along line (0, 0) (2, 0)  
+unhighlightCode on "code" line 3
+highlightCode on "code" line 4
+}
+{
+move "Zuweisungen" type "translate #2" along line (0, 0) (4, 0)  
+moveArrayMarker "iMarker" to position 4  
+moveArrayMarker "jMarker" to position 6  
+move "Vergleiche" type "translate #2" along line (0, 0) (2, 0)  
+unhighlightCode on "code" line 4
+highlightCode on "code" line 5
+}
+{
+move "Vergleiche" type "translate #2" along line (0, 0) (4, 0)  
+unhighlightCode on "code" line 5
+highlightCode on "code" line 7
+}
+{
+move "Vergleiche" type "translate #2" along line (0, 0) (4, 0)  
+unhighlightCode on "code" line 7
+highlightCode on "code" line 8
+}
+{
+move "Zuweisungen" type "translate #2" along line (0, 0) (2, 0)  
+moveArrayMarker "jMarker" to position 5  
+unhighlightCode on "code" line 8
+highlightCode on "code" line 7
+}
+{
+move "Vergleiche" type "translate #2" along line (0, 0) (4, 0)  
+unhighlightCode on "code" line 7
+highlightCode on "code" line 8
+}
+{
+move "Zuweisungen" type "translate #2" along line (0, 0) (2, 0)  
+moveArrayMarker "jMarker" to position 4  
+unhighlightCode on "code" line 8
+highlightCode on "code" line 7
+}
+{
+move "Vergleiche" type "translate #2" along line (0, 0) (4, 0)  
+unhighlightCode on "code" line 7
+highlightCode on "code" line 9
+}
+{
+move "Vergleiche" type "translate #2" along line (0, 0) (2, 0)  
+unhighlightCode on "code" line 9
+highlightCode on "code" line 4
+}
+{
+unhighlightCode on "code" line 4
+highlightCode on "code" line 12
+}
+{
+move "Vergleiche" type "translate #2" along line (0, 0) (2, 0)  
+unhighlightCode on "code" line 12
+highlightCode on "code" line 13
+}
+{
+move "Zuweisungen" type "translate #2" along line (0, 0) (4, 0)  
+arraySwap on "array" position 4 with 7  
+unhighlightCode on "code" line 13
+highlightCode on "code" line 16
+}
+{
+unhighlightCode on "code" line 16
+unhighlightArrayCell on "array" from 4 to 7
+highlightCode on "code" line 0
+}
+label "  quicksort(4, 3)"
+{
+unhighlightCode on "code" line 0
+highlightCode on "code" line 1
+}
+{
+unhighlightCode on "code" line 1
+highlightCode on "code" line 2
+}
+{
+unhighlightCode on "code" line 2
+highlightCode on "code" line 17
+}
+{
+unhighlightCode on "code" line 17
+highlightCode on "code" line 0
+highlightArrayCell on "array" from 5 to 7
+}
+label "  quicksort(5, 7)"
+{
+unhighlightCode on "code" line 0
+highlightCode on "code" line 1
+}
+{
+unhighlightCode on "code" line 1
+highlightCode on "code" line 2
+}
+{
+move "Vergleiche" type "translate #2" along line (0, 0) (2, 0)  
+unhighlightCode on "code" line 2
+highlightCode on "code" line 3
+}
+{
+interaction "Pivot4"
+}
+{
+move "Zuweisungen" type "translate #2" along line (0, 0) (2, 0)  
+unhighlightCode on "code" line 3
+highlightCode on "code" line 4
+}
+{
+move "Zuweisungen" type "translate #2" along line (0, 0) (4, 0)  
+moveArrayMarker "iMarker" to position 5  
+moveArrayMarker "jMarker" to position 6  
+move "Vergleiche" type "translate #2" along line (0, 0) (2, 0)  
+unhighlightCode on "code" line 4
+highlightCode on "code" line 5
+}
+{
+move "Vergleiche" type "translate #2" along line (0, 0) (4, 0)  
+unhighlightCode on "code" line 5
+highlightCode on "code" line 6
+}
+{
+move "Zuweisungen" type "translate #2" along line (0, 0) (2, 0)  
+moveArrayMarker "iMarker" to position 6  
+unhighlightCode on "code" line 6
+highlightCode on "code" line 5
+}
+{
+move "Vergleiche" type "translate #2" along line (0, 0) (4, 0)  
+unhighlightCode on "code" line 5
+highlightCode on "code" line 7
+}
+{
+move "Vergleiche" type "translate #2" along line (0, 0) (4, 0)  
+unhighlightCode on "code" line 7
+highlightCode on "code" line 9
+}
+{
+move "Vergleiche" type "translate #2" along line (0, 0) (2, 0)  
+unhighlightCode on "code" line 9
+highlightCode on "code" line 4
+}
+{
+unhighlightCode on "code" line 4
+highlightCode on "code" line 12
+}
+{
+move "Vergleiche" type "translate #2" along line (0, 0) (2, 0)  
+unhighlightCode on "code" line 12
+highlightCode on "code" line 13
+}
+{
+move "Zuweisungen" type "translate #2" along line (0, 0) (4, 0)  
+arraySwap on "array" position 6 with 7  
+unhighlightCode on "code" line 13
+highlightCode on "code" line 16
+}
+{
+unhighlightCode on "code" line 16
+unhighlightArrayCell on "array" from 5 to 7
+highlightCode on "code" line 0
+highlightArrayCell on "array" from 5 to 5
+}
+label "   quicksort(5, 5)"
+{
+unhighlightCode on "code" line 0
+highlightCode on "code" line 1
+}
+{
+unhighlightCode on "code" line 1
+highlightCode on "code" line 2
+}
+{
+unhighlightCode on "code" line 2
+unhighlightArrayCell on "array" from 5 to 5
+highlightCode on "code" line 17
+}
+{
+unhighlightCode on "code" line 17
+highlightCode on "code" line 0
+highlightArrayCell on "array" from 7 to 7
+}
+label "   quicksort(7, 7)"
+{
+unhighlightCode on "code" line 0
+highlightCode on "code" line 1
+}
+{
+unhighlightCode on "code" line 1
+highlightCode on "code" line 2
+}
+{
+unhighlightCode on "code" line 2
+unhighlightArrayCell on "array" from 7 to 7
+highlightArrayCell on "array" from 5 to 7
+unhighlightArrayCell on "array" from 5 to 7
+highlightArrayCell on "array" from 4 to 7
+unhighlightArrayCell on "array" from 4 to 7
+highlightArrayCell on "array" from 0 to 7
+unhighlightArrayCell on "array" from 0 to 7
+interaction "QuickSort Docu"
+text "nrSteps" "Insgesamt verwendete der Algorithmus 32 Zuweisungen und 58 Vergleiche." offset (0, 30) from "code" SW color (0, 0, 0) depth 1 font SansSerif size 20 bold
+}
+{
+hide "nrSteps" 
+hide "code" 
+hide "Zuweisungen" 
+hide "#A" 
+hide "Vergleiche" 
+hide "#C" 
+hide "array" 
+codegroup "complexity" at offset (0, 30) from "title" SW color (0, 0, 0) highlightColor (255, 0, 0) contextColor (0, 0, 0) font SansSerif size 16 bold depth 3
+addCodeLine "Anmerkungen zur Komplexitä" to "complexity"
+addCodeLine "" to "complexity"
+addCodeLine "Die Effizienz von Quicksort liegt darin, dass es Elemente aus gro?er" to "complexity"
+addCodeLine "Distanz miteinander vertauscht. Je kurzer die zu sortierende Liste wird," to "complexity"
+addCodeLine "desto ineffizienter arbeitet Quicksort, da es sich einer Komplexitat von O(n2) nahert." to "complexity"
+}
+{
+hide "complexity" 
+text "adForURL" "Weitere Animationen finden Sie unter http://www.algoanim.info/Animal2 im Online-Repository" offset (0, 50) from "title" SW color (0, 0, 0) depth 1 font SansSerif size 20 bold
+}

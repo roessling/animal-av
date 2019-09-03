@@ -1,0 +1,13 @@
+Now we calculate the estimated variance
+of our current player. We will need to define two
+helper functions g(Phi) and E(my, my_j, Phi_j) 
+where my_j and Phi_j are the converted rating 
+and rating deviation of opponent j. We will also need 
+them later on in the algorithm. Note that this does
+not consider the round results yet.
+
+    define g(Phi) := sqrt(1 + 3 * (Phi^2 / pi^2))^-1
+    define E(my, my_j, Phi_j) := (1 + exp(-g(Phi_j) * (my - my_j))^-1
+    
+    set ny := [SUM from j=1 to m (g(Phi_j)^2
+               * E(my,my_j,Phi_j) * (1-E(my,my_j,Phi_j))]^-1

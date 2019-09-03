@@ -1,0 +1,57 @@
+noSuchKeyException=There is no ressource for the key {0}
+iconNotFound=Icon ”{0}” not found
+
+heading_text=Trie : Insert
+
+### Table of Contents ###
+introduction='Introduction'
+animation='Animation'
+summary='Summary'
+
+### Data Structure Description ###
+ds_heading='Data Structure'
+ds_desc01='A trie is a tree-like data structure that is used to store strings in such a'
+ds_desc02='way that they can be efficiently retrieved.'
+ds_desc03='Each node in the tree may have one outgoing branch for every character in the'
+ds_desc04='alphabet, so looking up a string is as simple as following its prefix path from'
+ds_desc05='the root node to a specially marked end node.'
+ds_desc06='This also means that shared prefixes are only stored once.'
+
+### Insertion Descritpion ###
+ins_heading='Insertion'
+ins_desc01='When inserting a string, the prefix path in the trie is followed as far as possible.'
+ins_desc02='If the end of the new string is reached, the corresponding node gets tagged to'
+ins_desc03='indicate the string'''s end.'
+ins_desc04='Otherwise, if the end of the path in the trie is reached, new nodes are added'
+ins_desc05='for the remaining characters and the last node gets tagged.'
+ins_desc06='The complexity of insertion is O(M) where M is the length of the string.'
+
+### Animation Description ###
+ani_heading='Animation'
+ani_desc01='To demonstrate the algorithm, the following animation shows the insertion of a'
+ani_desc02='list of strings into a trie.'
+ani_desc03='Nodes are represented by circles and branches by arrows that are labeled with'
+ani_desc04='the corresponding character from the alphabet (a-z).'
+ani_desc05='A small circle inside a node indicates the end of a string.'
+
+### Info ###
+num_of_inserted_strings='# of inserted strings = '
+num_of_nodes='# of nodes = '
+
+### Summary ###
+summary_heading='Summary'
+summary_1=' strings have been inserted.'
+summary_2=' nodes (including the root node) were'
+summary_3='created to store the '
+summary_4=' letters which'
+summary_5='results in a node/letter ratio of '
+inserted_strings='Inserted Strings'
+
+### Invalid Input ###
+radius_error='The circle radius must be in the range '
+hs_error='The horizontal spacing must be in the range '
+vs_error='The vertical spacing must be in the range '
+sp_error='The spacing must be >= circle radius'
+sti_error='The stringsToInsert array must have at least one entry'
+str_len_error='The string length must be less than 15 and greater than 0'
+str_ch_error='A string may only contain characters in the range a-z'

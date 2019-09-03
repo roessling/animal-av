@@ -1,0 +1,8 @@
+@import=resources/GenericSettings
+algoDesc=This generator sorts the provided array values using Insertion Sort. \nThe algorithm takes an element (for example, the first element) from the set of unsorted elements and inserts it into the correct place in the (initially empty) output set. The algorithm therefore works in-place. If the algorithm chooses elements according to their initial order, the algorithm is also stable\nThe correct insertion position can be determined e.g. by binary search and is therefore relatively efficient. When used on an array, the elements after the new insertion position have to be moved. This is the expensive operation in Insertion Sort.
+algoAuthor=Krasimir Markov <kmarkov@gmail.com>
+animDesc=Insertion Sort: Synopsis
+adForURL=Please see http://www.algoanim.info/Animal2 for further animations!
+nrSteps=Insertion sort performed a total of {0} assignments and {1} comparisons.
+nrAss=Assignments
+nrComp=Comparisons

@@ -1,0 +1,12 @@
+Some comments about complexity
+
+Binary Search has a (binary) logarithmic complexity. 
+Finding a given element in a set of 1024 elements will 
+therefore take at most 10 iterations. This can be explained
+by the fact that each iteration will halve the number of
+regarded elements in the array.
+
+It is important to remember that Binary Search will
+only work for sorted data. If the data is not fully sorted,
+getting the right result depends more on luck than on the
+algorithm.

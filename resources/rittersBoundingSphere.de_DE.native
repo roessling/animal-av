@@ -1,0 +1,75 @@
+title=Ritter''s bounding sphere
+description=\
+Ritter''s bounding sphere ist ein Algorithmus, der von Jack Ritter \
+in 1990 vorgestellt wurde, um eine umhüllende Sphäre für eine Menge \
+an Punkten zu finden.\n\
+\n\
+Der Ansatz von Ritter erzeugt nicht immer die beste mögliche Lösung, \
+aber ist dennoch eine beliebte Methode, wegen der Effizienz und einfachen \
+Implementierung.
+
+stepLabelIntro=Einleitung
+stepLabelInit=Initialisierung
+stepLabelX=Wähle x
+stepLabelY=Finde y
+stepLabelZ=Finde z
+stepLabelCenter=Berechne Mittelpunkt m
+stepLabelRadius=Berechne Radius r
+stepLabelSphere=Konstruiere umhüllende Sphäre
+stepLabelOutro=Fazit
+
+intro1=\
+Ritters umhüllende Sphäre ist ein Algorithmus, um eine Sphäre im\n\
+n-dimensionlen Raum zu finden, die eine Menge an Punkten P enthält.
+
+intro2=\
+Dieser Ansatz ist nicht optimal, weil die resultierende Sphäre nicht\n\
+immer die kleinst mögliche umhüllende sphere ist.
+
+intro3=\
+Der Algorithmus arbeitet in 4 Schritten:
+
+step1=Schritt 1: Wähle einen Punkt x aus P
+step2=Schritt 2: Finde einen Punkt y aus P mit maximaler Distanz zu x
+step3=Schritt 3: Finde einen Punkt z aus P mit maximaler Distanz zu y
+step4=Schritt 4: Erzeuge eine Sphäre an dem Mittelpunkt von y and z mit einem Radius gleich der Hälfte des Abstands zwischen y und z
+
+task=\
+Aufgabe: Finde eine umhüllende Sphäre für die Punkte\n\
+P = [\n\
+{0}\n\
+]
+
+outro1=\
+Mit Hilfe von Ritters Algorithmus konnten wir eine umhüllende Sphäre\n\
+für die gegebenen Punkte\n\
+P = [\n\
+{0}\n\
+]\n\
+am Mittelpunkt m = {1} mit Radius r = {2} finden.
+
+outro2=\
+Dieser Ansatz gibt zwar nicht immer die besten Ergebnisse, aber ist\n\
+dafür eine effiziente Lösung für das umhüllende Sphäre Problem.
+
+outro3=\
+Um diese Sphäre zu finden mussten wir 2 Punkte mit maximaler Distanz\n\
+in 2 x {0} = {1}, also O(2n), Schritten suchen.
+
+questionX.prompt=Haben wir x = p0 aus einem bestimmten Grund gewählt?
+questionX.feedback.wrong=Nein, die Wahl hatte keinen Grund. p0 wurde zur Einfachheit gewählt
+questionX.feedback.correct=Das ist richtig, p0 wurde zur Einfachheit gewählt
+
+questionDistance.prompt=Welche zwei Punkte werden jetzt untersucht? (Wähle 1 oder 2 Möglichkeiten)
+questionDistance.feedback.correct=Richtig
+questionDistance.feedback.wrong=Nein, das passiert in einer anderen Iteration
+
+error=Fehler in den Eingaben
+error.fontSize=Die Schriftgröße darf nicht 1 sein
+error.scaling=Die Skalierung des Koordinatensystems darf 1 sein
+error.width=Die Breite des Koordinatensystems darf 10 nicht unterschreiten
+error.height=Die Höhe des Koordinatensystems darf 10 nicht unterschreiten
+error.points.length=Es müssen mindestens 2 Punkte gegeben sein
+error.points.syntax=Die Punkte müssen in genau 2 Spalten angegeben werden
+error.points.coords=Die Punkte müssen innerhalb der Breite und Höhe des Koordinatensystems plaziert werden
+error.probability=Die questionProbability muss zwischen 0 und 1 liegen

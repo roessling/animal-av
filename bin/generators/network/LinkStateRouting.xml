@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<PropertiesTreeModel xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="PropertiesTreeModel.xsd">
+	<Folder name="Root">
+		<Folder name="Variables">
+			<Primitive type="Graph">
+				<name>graph</name>
+				<value><Graph>%graphscript
+
+graph 7 weighted
+
+
+graphcoordinates at 0 0 
+
+startknoten A
+node A at 40 120
+node B at 230 120
+node C at 420 120
+node D at 330 220
+node E at 40 320
+node F at 230 320
+node G at 420 320
+
+edge A B weight 4
+edge A E weight 10
+edge B F weight 2
+edge B D weight 5
+edge C D weight 5
+edge C G weight 7
+edge D G weight 6
+edge D F weight 3
+edge E F weight 4</Graph></value>
+			<description>Fügt man Knoten hinzu oder entfernt sie, muss die Zahl oben nach graph auch geändert werden.</description>
+		</Primitive>
+		<Primitive type="int">
+			<name>Runden</name>
+			<value><int>3</int></value>
+			<description>Wieviele Runden lang sollen die Pakete gesendet werden</description>
+		</Primitive>
+		</Folder>
+		<Folder name="AnimationProperties">
+			<AnimationProperties type="MatrixProperties">
+				<AnimationPropertyItem type="ColorPropertyItem">
+					<name>cellHighlight</name>
+					<isEditable value="true" />
+					<label></label>
+					<value><Color>(255, 200, 0)</Color></value>
+				</AnimationPropertyItem>
+				<AnimationPropertyItem type="ColorPropertyItem">
+					<name>borderColor</name>
+					<isEditable value="true" />
+					<label></label>
+					<value><Color>(0, 0, 0)</Color></value>
+				</AnimationPropertyItem>
+				<AnimationPropertyItem type="ColorPropertyItem">
+					<name>color</name>
+					<isEditable value="true" />
+					<label></label>
+					<value><Color>(0, 0, 0)</Color></value>
+				</AnimationPropertyItem>
+				<AnimationPropertyItem type="BooleanPropertyItem">
+					<name>hidden</name>
+					<isEditable value="false" />
+					<label></label>
+					<value><boolean value="false" /></value>
+				</AnimationPropertyItem>
+				<AnimationPropertyItem type="BooleanPropertyItem">
+					<name>filled</name>
+					<isEditable value="false" />
+					<label></label>
+					<value><boolean value="false" /></value>
+				</AnimationPropertyItem>
+				<AnimationPropertyItem type="EnumerationPropertyItem">
+					<name>align</name>
+					<isEditable value="true" />
+					<label></label>
+					<value><Enumeration>left, left, center, right</Enumeration></value>
+				</AnimationPropertyItem>
+				<AnimationPropertyItem type="ColorPropertyItem">
+					<name>elementColor</name>
+					<isEditable value="true" />
+					<label></label>
+					<value><Color>(0, 0, 0)</Color></value>
+				</AnimationPropertyItem>
+				<AnimationPropertyItem type="ColorPropertyItem">
+					<name>fillColor</name>
+					<isEditable value="true" />
+					<label></label>
+					<value><Color>(255, 255, 255)</Color></value>
+				</AnimationPropertyItem>
+				<AnimationPropertyItem type="ColorPropertyItem">
+					<name>highlightBorderColor</name>
+					<isEditable value="true" />
+					<label></label>
+					<value><Color>(0, 0, 0)</Color></value>
+				</AnimationPropertyItem>
+				<AnimationPropertyItem type="IntegerPropertyItem">
+					<name>depth</name>
+					<isEditable value="false" />
+					<label></label>
+					<value><int>1</int></value>
+				</AnimationPropertyItem>
+				<AnimationPropertyItem type="IntegerPropertyItem">
+					<name>cellheight</name>
+					<isEditable value="false" />
+					<label></label>
+					<value><int>-1</int></value>
+				</AnimationPropertyItem>
+				<AnimationPropertyItem type="StringPropertyItem">
+					<name>name</name>
+					<isEditable value="true" />
+					<label></label>
+					<value><String>matrix</String></value>
+				</AnimationPropertyItem>
+				<AnimationPropertyItem type="EnumerationPropertyItem">
+					<name>style</name>
+					<isEditable value="false" />
+					<label></label>
+					<value><Enumeration>table, plain, matrix, table</Enumeration></value>
+				</AnimationPropertyItem>
+				<AnimationPropertyItem type="IntegerPropertyItem">
+					<name>cellwidth</name>
+					<isEditable value="false" />
+					<label></label>
+					<value><int>50</int></value>
+				</AnimationPropertyItem>
+				<AnimationPropertyItem type="FontPropertyItem">
+					<name>font</name>
+					<isEditable value="true" />
+					<label></label>
+					<value><Font>SansSerif</Font></value>
+				</AnimationPropertyItem>
+				<AnimationPropertyItem type="ColorPropertyItem">
+					<name>elemHighlight</name>
+					<isEditable value="true" />
+					<label></label>
+					<value><Color>(255, 0, 0)</Color></value>
+				</AnimationPropertyItem>
+			</AnimationProperties>
+			<AnimationProperties type="TextProperties">
+				<AnimationPropertyItem type="IntegerPropertyItem">
+					<name>depth</name>
+					<isEditable value="false" />
+					<label></label>
+					<value><int>1</int></value>
+				</AnimationPropertyItem>
+				<AnimationPropertyItem type="ColorPropertyItem">
+					<name>color</name>
+					<isEditable value="true" />
+					<label></label>
+					<value><Color>(0, 0, 0)</Color></value>
+				</AnimationPropertyItem>
+				<AnimationPropertyItem type="BooleanPropertyItem">
+					<name>hidden</name>
+					<isEditable value="false" />
+					<label></label>
+					<value><boolean value="false" /></value>
+				</AnimationPropertyItem>
+				<AnimationPropertyItem type="BooleanPropertyItem">
+					<name>centered</name>
+					<isEditable value="true" />
+					<label></label>
+					<value><boolean value="false" /></value>
+				</AnimationPropertyItem>
+				<AnimationPropertyItem type="StringPropertyItem">
+					<name>name</name>
+					<isEditable value="true" />
+					<label></label>
+					<value><String>text</String></value>
+				</AnimationPropertyItem>
+				<AnimationPropertyItem type="BooleanPropertyItem">
+					<name>right</name>
+					<isEditable value="true" />
+					<label></label>
+					<value><boolean value="false" /></value>
+				</AnimationPropertyItem>
+				<AnimationPropertyItem type="FontPropertyItem">
+					<name>font</name>
+					<isEditable value="true" />
+					<label></label>
+					<value><Font>SansSerif</Font></value>
+				</AnimationPropertyItem>
+			</AnimationProperties>
+		</Folder>
+	</Folder>
+</PropertiesTreeModel>

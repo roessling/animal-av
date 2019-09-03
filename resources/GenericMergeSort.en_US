@@ -1,0 +1,8 @@
+@import=resources/GenericSettings
+algoDesc=This generator animation sorting using Mergesort.\nThe underlying idea is to recursively split the current (sub-)array in two halves, until the current subarray contains only one element. On returning from the recusion, the split subarray will be sorted. For this, a temporary array is created and the values from both subarray are copied into this temporary array. For efficiency reasons, the values from the left subarray are copied in ascending order, while the values of the right subarray are copied in descending order.\nThe temporary array therefore consists of two separate halves. Starting at both ends, the values are copied in ascending order into the original array.
+algoAuthor=Krasimir Markov <kmarkov@gmail.com>
+animDesc=Merge Sort: Synopsis
+adForURL=Please see http://www.algoanim.info/Animal2 for further animations!
+nrSteps=Merge sort performed a total of {0} assignments and {1} comparisons.
+nrAss=Assignments
+nrComp=Comparisons

@@ -1,0 +1,62 @@
+algorithmName=Apriori [DE]
+
+generatorName=Apriori [DE]
+
+dataset=Trainingsdaten:
+
+calculation=Berechnungen:
+
+explanation=Erklärungen:
+
+oneElementSet=Erstelle eine Menge für jedes Element im ersten Schritt.
+
+calcSuppFormula=Berechne den Support für jedes Itemset mit der Formel: |A U B| / n.\n|A U B| ist die Menge an Beispielen mit den Attributwerten yes aus (A U B).\nn ist die Menge an Trainingsdaten.
+
+removeItemset=Entferne Itemsets, falls deren Support kleiner ist als 
+
+addItemset=Füge alle frequenten Itemsets zu S hinzu:\n
+
+noCombination=Es ist keine Kombination für C_k+1 möglich.
+
+calcConfFormula=Erstelle für jedes Itemset aus S eine Assoziationsregel und berechne die Konfidenz mit |A U B| / |A|
+
+confOneElement=Beginne mit den einelementigen Itemsets. Alle einelementigen Itemsets sind konfident.
+
+buildCombination=Erstelle für alle frequenten Itemsets mit {0} Elementen alle möglichen Assoziationsregeln.
+
+removeItemsetConf=Entferne Itemsets, falls deren Konfidenz kleiner ist als
+
+terminates=Es wurden für alle Elemente aus S alle Asssoziationsregeln erstellt und deren Konfidenz berechnet. Der Algorithmus terminiert.\nDie Menge aller Assoziationsregeln, die konfident sind, lautet:\n{0}
+
+buildCombination1=Kombiniere jedes Itemset mit den anderen.
+
+newItemset=Erstelle neues Itemset für:\n
+
+buildCombination2=Kombiniere in Schritt k alle Itemsets, die die ersten (k-1) ersten gleichen Elemente haben. In diesem Schritt müssen wir also die ersten {0} Elemente vergleichen.
+
+description=Apriori ist ein Verfahren zur Findung von Assoziationsregeln. Mithilfe dieser Regeln können nützliche Zusammenhänge in Datenbanken dargestellt werden. Gegeben ist die Menge I, die alle Objekte (Items) enthält.\nEine Assoziationsregel ist eine Implikation in Form vom A -> B, wobei A und B Teilmengen von I sind. Ein beliebtes Einsatzgebiet von Apriori ist die Warenkorbanalyse, mit der sich Erkenntnisse ermitteln lassen wie: 70% der Kunden, die Brot gekauft haben,\nhaben auch Milch gekauft. Die Vorgehensweise teilt sich in zwei Teilprobleme auf. Der erste Teil bestimmt auf einer Menge von Trainingsdaten D alle häufig vorkommenden Objektmengen.\nHierfür wird mit allen einelementigen Objektmengen gestartet und die Häufigkeit über den Supportwert berechnet. Der Support einer Assoziation ist definiert als:\nsupport(A->B) = support(A U B) = |A U B| / |D|\nAnschließend werden alle Mengen entfernt, die das Minimum an Support nicht erfüllen. Die verbliebenen Mengen werden nun miteinander kombiniert und bilden die Grundlage für die nachfolgende Iteration.\nDas zweite Teilproblem beschäftigt sich mit der Generierung der Assoziationsregeln. Hierbei werden alle Ergebnismengen des ersten Teilproblems genutzt. Jede Objektmenge wird in alle möglichen Kombinationen von zwei disjunkten Teilmengen\naufgeteilt und derer Konfidenz berechnet. Die Konfidenz liefert für zwei Mengen den Anteil der Trainingsdaten, in denen wenn A vorkommt, auch B vorkommt. Die Konfidenz ist definiert als:\nconfidence(A->B) = support(A U B) / support(A) = |A U B| / |A|\nSollte eine Assoziationsregel das Minimum an Konfidenz nicht erfüllen, wird sie entfernt. Abschließend erhält man alle Objektmengen, die konfident und frequent sind.
+
+
+introQuestion=Welche Aussage ist äquivalent zu: Keiner, der Milch gekauft hat, hat auch Wasser gekauft?
+introQuestionAnswer1=confidence(Milch -> Wasser) \= 0
+introQuestionFeedback1=Richtig!
+introQuestionAnswer2=confidence(Wasser -> Milch) \= 1 
+introQuestionFeedback2=Falsch! 
+introQuestionAnswer3=support(Milch) \= 0
+introQuestionFeedback3=Falsch!
+
+outroQuestion=Gegeben seien R1: (Brot -> Käse, Milch) und R2: (Brot, Käse -> Milch ). Welche Aussage ist korrekt? 
+outroQuestionAnswer1=support(R1) \= support(R2)
+outroQuestionFeedback1=Richtig!
+outroQuestionAnswer2=support(R1) > support(R2)
+outroQuestionFeedback2=Falsch!
+outroQuestionAnswer3=support(R1) < support(R2)
+outroQuestionFeedback3=Falsch!
+
+
+
+
+
+
+
+ 

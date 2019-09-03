@@ -1,0 +1,19 @@
+LIBRARY IEEE;
+USE IEEE.STD_LOGIC_1164.ALL;
+ENTITY control_stmts IS
+	PORT (a, b, c: IN BOOLEAN;
+	output: OUT BOOLEAN);
+END ENTITY control_stmts;
+ARCHITECTURE example OF control_stmts IS
+	BEGIN
+		PROCESS (a, b, c)
+			VARIABLE n: BOOLEAN;
+			BEGIN
+				IF a THEN
+				   n := b;
+				ELSE 
+                                   n := c;
+				END IF;
+				output <= n;
+		END PROCESS;
+END ARCHITECTURE example;

@@ -1,0 +1,21 @@
+noSuchKeyException=Es gibt keine Ressource f\u00fcr Eintrag {0}
+iconNotFound=Icon "{0}" nicht gefunden
+
+generatorName=Gauß-Jordan-Algorithmus zur Matrixinvertierung
+algoName=Gauß-Jordan-Algorithmus
+
+description=Der Gauß-Jordan-Algorithmus dient zum Lösen von linearen Gleichungssystemen und hat Ähnlichkeit zum Gauß\'\'schen Eliminationsverfahren.\n\nEr ist in zwei Schritte aufgeteilt: Der erste Schritt gleicht prinzipiell dem Gauß\'\'schen Eliminationsverfahren mit Pivotsuche, wobei alle Operationen analog auf eine mit der Einheitsmatrix initialisierte Matrix E angewandt werden. Hierbei wird die Eingabematrix A in die Stufenform gebracht.\n\nDer zweite Schritt des Gauß-Jordan-Algorithmus ist ein weiterer Eliminationsschritt, welcher jedoch rückwärts abläuft. So wird die im ersten Schritt erzeugte Stufenmatrix nach und nach zu einer Diagonalmatrix umgeformt, wobei Matrix E die nötigen Schritte protokolliert.\n\nSobald Matrix A zur Einheitsmatrix umgeformt wurde, beinhaltet die Matrix E alle nötigen Umformungsschritte und ist somit das Inverse zur Eingabematrix A.
+sourceCode=Grundkonzept des Gauß-Jordan-Algorithmus zur Invertierung einer nxn-Matrix\n    1. Initialisiere Matrix E mit der Einheitsmatrix\n    2. Für k = 0, ... ,n-1:\n        2.1. Spaltenpivotsuche: Für i = k, ... , n-1: Bestimme max|A[i][k]|.\n            Wenn i != k: Vertausche Zeilen i und k in beiden Matrizen.\n        2.2. Elimination: Für i = k+1, ... , n-1 mit Faktor Alpha = A[i][k] / A[k][k]\n            Subtrahiere Alpha * A[k][] von der Zeile A[i][]\n            Subtrahiere Alpha * E[k][] von der Zeile E[i][]\n    3. Für k = n-1, ... ,0:\n        3.1. Normierung: Dividiere Zeile k durch A[k][k] in beiden Matrizen\n        3.2. Elimination: Für i = k-1, ... , 0 mit Faktor Alpha = A[i][k] / A[k][k]\n            Subtrahiere Alpha * A[k][] von der Zeile A[i][]\n            Subtrahiere Alpha * E[k][] von der Zeile E[i][]\n    4. Matrix E stellt das Ergebnis dar
+sourceCode1=Grundkonzept des Gauß-Jordan-Algorithmus zur Invertierung einer nxn-Matrix\n\t1. Initialisiere Matrix E mit der Einheitsmatrix\n\t2. Für k = 0, ... ,n-1:\n\t\t2.1. Spaltenpivotsuche: Für i = k, ... , n-1: Bestimme max|A[i][k]|.\n\t\t\tWenn i != k: Vertausche Zeilen i und k in beiden Matrizen.\n\t\t2.2. Elimination: Für i = k+1, ... , n-1 mit Faktor Alpha = A[i][k] / A[k][k]\n\t\t\tSubtrahiere Alpha * A[k][] von der Zeile A[i][]\n\t\t\tSubtrahiere Alpha * E[k][] von der Zeile E[i][]
+sourceCode2=Grundkonzept des Gauß-Jordan-Algorithmus zur Invertierung einer nxn-Matrix (Fortsetzung)\n\t3. Für k = n-1, ... ,0:\n\t\t3.1. Normierung: Dividiere Zeile k durch A[k][k] in beiden Matrizen\n\t\t3.2. Elimination: Für i = k-1, ... , 0 mit Faktor Alpha = A[i][k] / A[k][k]\n\t\t\tSubtrahiere Alpha * A[k][] von der Zeile A[i][]\n\t\t\tSubtrahiere Alpha * E[k][] von der Zeile E[i][]\n\t4. Matrix E stellt das Ergebnis dar
+conclusion=Alle Schritte, die nötig waren, um die urpsprüngliche Matrix A zur Einheitsmatrix umzuformen, wurden in Matrix E zusammengefasst. Somit stellt Matrix E das Inverse zur ursprünglichen Matrix A dar.
+
+matrixA=Matrix A
+matrixE=Matrix E
+pivotMaximum=Maximum ist {0} in Zeile i = {1} (k = {2})
+swapRows=Vertausche Zeilen i = {0} und k = {1} in beiden Matrizen
+eliminate=k = {0}, i = {1} -> Alpha = {2}
+normalize=Normiere Zeile k = {0} => Teile durch {1}
+
+errorMatrixAEmpty = Matrix A darf nicht leer sein.
+errorMatrixANonSquare = Matrix A muss quadratisch sein.

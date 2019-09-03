@@ -1,0 +1,9 @@
+Die Binäre Suche ist ein effizientes Verfahren zum Finden eines
+gegebenen Elements in einem sortierten Feld.
+
+In jedem Rekursionsschritt wird nur ein Teil des Feldes betrachtet (anfangs
+das gesamte Feld). Die Feldgrenzen werden in jeder Rekursion angepasst,
+wobei das Feld immer halbiert wird. Wurde das gesuchte Element gefunden,
+so wird seine Position zurückgegeben, sonst -1 als 'Fehlermarkierung'.
+
+In der Animation wird das aktuelle Teilfeld farbig hervorgehoben.

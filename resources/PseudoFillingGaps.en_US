@@ -1,0 +1,39 @@
+algorithmName=Filling Gaps [EN] 
+generatorName=Filling Gaps [EN] 
+dataset=Training data: 
+filteredExamples=Filtered examples: 
+explanation=Explanation: 
+classless=First step: Remove all classless examples. 
+filter=This example is classified by {0}.\nSelect all examples (Table: Filtered Examples) with the same class and calculate the distance for each example. 
+distance=Distance 
+sort=Sort the examples by ascending distance to identify the k = {0} nearest neighbors easier. 
+calcNum=For numerical attributes calculate the distance with: 
+calcNom=For nominal attributes calculate the distance with: 
+calcEx=Calculate the complete distance between two examples with: 
+manhattanDistanceDescription=Sum of all attribute distances.
+zeroOneDistanceDescription=If the nominal attributes a1 and a2 are equal: distance = 0, else distance = 1
+normalizeDistanceDescription=(a1 - a2) / ( abs(max(a) - min(a)) )
+classifyNumeric=Calculate the average of the values:\n{0} 
+classifySymbolic=The most frequent value is {0}. For values with the same frequency,\nthe value that appears first in the filtered examples is used. Classify the gap with this value.
+terminates=All missing values were classified.
+description=A modified version of the k-nearest neighbor allows you to determine not only classes, but also missing attribute values. In these cases it is necessary that all examples are classified.\nTo ensure that characterizing properties of a class are not confused, only the instances from the same class are considered for an example with a missing attribute value. Based on these examples,\nthe k nearest neighbors are determined. There are different types of approaches for inserting missing values. In this version, the majority vote was implemented for symbolic attributes.
+
+introQuestion=What are the effects of k? 
+
+introQuestionAnswer1=A too small k tends to overfitting.
+introQuestionFeedback1=Correct!
+
+introQuestionAnswer2=A too small k tends to underfitting.
+introQuestionFeedback2=Wrong! A too small k tends to overfitting.
+
+introQuestionAnswer3=A k as large as possible leads to the perfect result
+introQuestionFeedback3=Wrong!
+
+
+outroQuestion=What is the difference between this algorithm and a rule learner?
+outroQuestionAnswer1=The learned knowledge is discarded after classification.
+outroQuestionFeedback1=Correct!
+outroQuestionAnswer2=The acquired knowledge is presented as a model and reused later.
+outroQuestionFeedback2=Wrong! A model will not be learned.
+outroQuestionAnswer3=All results are combined and give the final classification
+outroQuestionFeedback3=Wrong!

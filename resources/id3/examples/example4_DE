@@ -1,0 +1,11 @@
+Beispiel: Rebeccas Freund Shawn ist ein Bücherwurm. Manchmal fragt sie ihn, welche der neuen Bücher in der Bücherei sich zum Lesen eignen. 
+Er empfiehlt ihr dann einige. Nun möchte Rebecca vorhersagen, welche Bücher Shawn ihr empfehlen wird und daher sammelt sie Informationen über 
+vorherige Bücher, die sie ihm gezeigt und die er ihr empfohlen hat. Diese Daten sind in einer Tabelle gespeichert (die 'Haupttabelle'). Ein 
+Eintrag enthält die Informationen, welchen Autor das Buch hatte (AUTOR), welchem Genre es angehört (GENRE) und welche Erzählperspektive es 
+aufweist (PERSPEKTIVE). Und schließlich beschreibt der Wert der Klasse (ganz rechts, 'ja' oder 'nein'), ob Shawn ihr das Buch empfohlen hat. 
+ID3 nimmt diese Beispiele als Eingabe und entwickelt ein allgemeines Konzept, welche Bücher Shawn empfiehlt und welche nicht.
+
+Mit dem erstellten Baum kann Rebecca nun vorhersagen, welche Bücher ihr Freund empfehlen wird.
+Und du kannst das auch:
+Mit dem Wurzelknoten beginnend folgt man den Kanten, die zu den entsprechenden Attributwerten eines Buches gehören; 
+das Blatt, an dem man ankommt, gibt die Erwartung an (allerdings nur basierend auf den bisher gesehenen Beispiele).

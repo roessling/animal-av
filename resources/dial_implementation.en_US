@@ -1,0 +1,55 @@
+noSuchKeyException=There is no ressource for the key {0}
+iconNotFound=Icon "{ }" not found
+
+
+descriptionGlobal=The dial-implementation is an implementation of a bounded monotonous priority queue. The features of this implementation \nis the constant time, in which the minimum can be accessed, extracted and a new element inserted. The queue is monotonous, because the keyvalues \nare stored in an inceasing Order. One prerequisite is, that the values have to be integers and need to support the modulo operation. The \ndatastructure is defined by three variables: \n1. S: the keyvalues that can be saved are in the set (0, ..., S-1). \n2. A: the keyvalues are stored in array A with size S. \n3. P: P is the index of the current minimum keyvalue. \nThe array can contain an arbitrary number of elements of the same keyvalue. Practically, this datastruce can be applied in dijsktra-algorithm, \nfor example, where only the shortest edges in a graph are saved. In the case of the dijsktra-algorithm, there can be two edges a1 and a2 with the same \nlength l. Then the keyvalue of these edges is l and are stored on A[l].
+
+summaryGlobal=Through the visualization of the executed operations was shown, that all computations for the methods: number, insert and decreaseKey were \nfinished in constant number of steps. While extractMinimum needs S - 1 operations in the worst possible case to find the new global minimum. Fortunately \nthis only happens after an extraction and only if the respective position is empty. In addition does the worst case only occurs, if the distance between the \nsaved keyvalues is maximal. Even in the worst case, this priority queue is more efficient than other ones with it's linear complexity. The dial implementation \nalso respects the following invariant throughout the execution: \n For the position i in the set {0, ..., S-1}, the keyvalue on the position i is (S+i-P) mod S \nbigger than the keycalue on position P.
+
+titleString=Dial-Implementation
+
+initCodeLine0=1. Initialize array of size S = 
+initCodeLine1=2. Set minimal position P = 
+initCodeLine2= (for educational purposes randomly chosen)
+
+nextMethodLabel=Next methods:
+
+summaryTitle=Summary
+
+initialization=initialization
+
+ex1=S needs to be between 1 and 15 for visualization purposes.
+
+ex2=The number of operations to generate need to be greater than 0.
+
+ex3=The list of operations should not be empty.
+
+ex4=Every operation must consist of an function name and parameter. Respectively: first row, second row.
+
+ex5=Can't extract minimum if the data structure is empty.
+
+ex6=To decrease the value of an element, the element must be present in the data structure.
+
+theOperator=The operator
+
+ex7= is not supported.
+
+ex8= expects an "-" as parameter.
+
+ex9=The parameter of "insert" needs to be an integer lower than
+
+ex10=.
+
+ex11=The parameter of the operation "decreaseKey" must have the form: integer->integer
+
+ex12=The old value of "decreaseKey" needs to be lower than
+
+ex13=.
+
+ex14=The new value of "decreaseKey" needs to be smaller than the old value.
+
+generatorDescription=The dial-implementation is an implementation of an abstract data structure "bounded monotonous priority queue".\nThe number of stored values inside an interval can be arbitrary large. A feature of this implementation is the constant time to acccess\nthe current minimum of the queue at any time. The dial-implementation supports the following operations:\n "insert", whichs inserts an element into the queue,\n "extractMinimum", which extracts the current minimum of the queue,\n "decreaseKey", which decreases the value of an element of the queue,\n "number", which returns the number of currently stored values.\nThe following parameters can be adjusted:\n S: max value to store.\n Random Method Selection: use random operations for animation? (don't forget to specify the number of operations to generate)\n Operations: the execution order of the operations (ignore for random methods).\n Number of random operations: number of random operations to generate.
+
+introduction=Introduction
+
+summary=Summary

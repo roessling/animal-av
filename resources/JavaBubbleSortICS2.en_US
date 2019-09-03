@@ -1,0 +1,10 @@
+@import=resources/GenericBubbleSort.en_US
+theName=Bubble Sort (ICS2)
+algoName=Bubble Sort (ICS2)
+outputLanguage=Java
+codeExample=public void bubbleSort() {\n  i = n - 1;  \n  sorted = false;\n  while(i>=0 && !sorted) {\n    sorted = true;\n    for(j=0; j<=i-1; j++)\n      if(L[j].key > L[j+1].key) {\n        temp = L[j];\n        L[j] = L[j+1];\n        L[j+1] = temp;\n        sorted=false;\n      }\n    i = i - 1;\n  }\n}
+animTitle=Bubble Sort (ICS2)
+algoTitle=Bubble Sort (ICS2)
+description.filename=resources/JavaBubbleSortICS2_descr_en.txt
+code.filename=resources/JavaBubbleSortICS2_code_en.txt
+complexity.filename=resources/JavaBubbleSortICS2_complexity_en.txt

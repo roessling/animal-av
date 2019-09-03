@@ -1,0 +1,34 @@
+algorithmName=Separate-and-Conquer [EN]
+generatorName=Separate-and-Conquer [EN]
+dataset=Training data:
+conqueredData=Conquered data:
+explanation=Explanation:
+ruleset=Ruleset:
+selectHighestHeuristic=Select the attribute value with the highest heuristic value and check if negative examples are covered.
+filterAndRefine=Select the attribute value with the highest heuristic value and check if negative examples are covered.\nThe rule {0} covers negative examples.\nFilter all examples with the rule {0} and check if a refinement results in a higher\nheuristic with no negative examples.
+noNegativeCovered=The rule {0} covers no negative examples.\nAdd this rule to the set of rules.
+notAllPositiveCovered=The ruleset does not cover all positive examples. Remove all examples with the rule {0}.
+summary=The ruleset covers {0} positive and {1} negative examples.
+filterAndRefine2=The rule {0} covers negative examples.\nFilter all examples with this rule and check if a refinement results in a higher\nheuristic without covered negative examples.
+addRule=Add this rule to the set of rule and remove all examples with this rule from training data
+precisionFormula=Precision = #positives / (#positives + #negatives)
+calc=Calculate for each attribute value the heuristic with the formula:\n
+terminates=All positive example are covered with the ruleset. The algorithm terminates.
+description=Separate-and-Conquer algorithms are ideally suited for learning rulesets and are divided into two parts in the procedure, as the name already suggests.\nIn the conquer part, a rule is learned that covers a subset of the data. The rule is selected by using heuristics and does not have to be correct. The rule is then recursively\nadjusted on this subset until it fulfills a certain criterion. This could be the coverage of no negatives, for example. In the separate section, all examples covered by the\npreviously learned rule are removed. This process is repeated until the learned ruleset is complete. There are two possible approaches for the implementation of Separate-and-Conquer.\nOne of them is the so-called Top-Down Hill Climbing. This is based on the most general rule, which covers all examples and is successively refined. The bottom-up learning strategy is\nthe opposite and starts with the most specific rule, which is gradually generalized. This algorithm was implemented in the Top-Down Hill Climbing variant.
+
+
+introQuestion=What is the advantage compared to a single rule? 
+introQuestionAnswer1=A rule set can cover more positive examples.
+introQuestionFeedback1=Correct!
+introQuestionAnswer2=A rule set finds always the perfect solution that covers no negative example.
+introQuestionFeedback2=Wrong!
+introQuestionAnswer3=A rule set is more efficient to learn.
+introQuestionFeedback3=Wrong!
+
+outroQuestion=How would you rate many short rules?
+outroQuestionAnswer1=Bad, as it tends to overfitting
+outroQuestionFeedback1=Correct!
+outroQuestionAnswer2=Good, as it generalizes well.
+outroQuestionFeedback2=Wrong! It tends to overfitting
+outroQuestionAnswer3=It makes no difference.
+outroQuestionFeedback3=Wrong!

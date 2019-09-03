@@ -1,0 +1,5 @@
+First we convert our Glicko-2 rating to
+the Glicko scale using the following formulas:
+
+    set my := (r - 1500) / 173.7178
+    set Phi := RD / 173.7178

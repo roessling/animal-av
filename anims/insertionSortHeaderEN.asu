@@ -1,0 +1,36 @@
+{
+text "f1-01" "Insertion Sort" at (120,50) color black font SansSerif size 32 bold
+}
+{
+text "f1-02a" "Insertion sort / sorting by insertion inserts" at (20,100) color black font SansSerif size 24
+text "f1-02b" "elements successively into a sorted partial array," at (20,130) color black font SansSerif size 24
+text "f1-02c" "starting with an empty array" at (20,160) color black font SansSerif size 24
+}
+{
+text "f1-03a" "Insertion sort is therefore similar to sorting playing cards:  " at (20,200) color black font SansSerif size 24
+text "f1-03b" "each step inserts a new card into the already sorted       " at (20,230) color black font SansSerif size 24
+text "f1-03c" "cards held by the player.                                         " at (20,260) color black font SansSerif size 24
+}
+{
+hideAll
+}
+{
+text "f2-01" "The conceptual algorithm:" at (120,50) color black font SansSerif size 32 bold
+}
+{
+text "f2-02" "1. Set i=1" at (20,100) color black font SansSerif size 24
+}
+{
+text "f2-03" "2. Store a[i] in a variable v and set j=i" at (20,140) color black font SansSerif size 24
+}
+{
+text "f2-04a" "3. While j>0 and v < a[j-1], copy" at (20,180) color black font SansSerif size 24
+text "f2-04b" "    a[j-1] to position a[j] and set j=j-1" at (20,210) color black font SansSerif size 24
+}
+{
+text "f2-05" "4. Insert element v at position j" at (20,250) color black font SansSerif size 24
+}
+{
+text "f2-06a" "5. If i is less than n, increment i" at (20,290) color black font SansSerif size 24
+text "f2-06b" "    continue with step 2" at (20,320) color black font SansSerif size 24
+}

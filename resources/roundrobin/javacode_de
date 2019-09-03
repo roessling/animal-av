@@ -1,0 +1,19 @@
+public void roundRobin(Warteschlange ws) {
+ 
+while (true) {
+if (ws.istLeer()) {	
+warte(1);	
+} else {
+int zeitscheibe = k;	
+while (zeitscheibe > 0 && !erster.beendet()) { 		
+fuehreAus(erster, 1);
+zeitscheibe = zeitscheibe - 1;
+}
+if (erster.beendet()) {
+enferne(ws, erster);
+} else {
+rotiere(ws);
+}
+}		
+}
+} 

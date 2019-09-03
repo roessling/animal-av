@@ -1,0 +1,19 @@
+public void roundRobin(Queue queue) {
+ 
+while (true) {
+if (queue.isEmpty()) {	
+wait(1);	
+} else {
+int slice = k;	
+while (slice > 0 && !first.finished()) { 		
+execute(first, 1);
+slice = slice - 1;
+}
+if (first.finished()) {
+remove(queue, first);
+} else {
+rotate(queue);
+}
+}		
+}
+} 

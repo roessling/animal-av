@@ -1,0 +1,33 @@
+### Start trying to add an element ###
+tryInsert=The algorithm tries to insert an element.\nIt starts with the first hashtable.
+
+### Max attempts exceeded ###
+maxAttempsExc=After an unsuccessful try to insert the element, the algorithm stops.\nAt this point, I need to mention that if it fails to insert. The algorithm will build the two hashtables from scratch with\nnew hashfunctions. This will work like the normal insertion mentioned before.\nThis won't be inside this animation. 
+
+### Epiloque ###
+endInformation=The good point of Cuckoo-Hashing is that an element can only be in two positions.\nOnly at the calculated position in the first or the second hashtable.\nThis makes lookups and deletions always constant.\nThe most important part is the election of hashfunction, this should better than\nin this example. The function was taken from https://de.wikipedia.org/wiki/Kuckucks-Hashing.
+
+
+### Explain termination ###
+ifTerminate=If there isn't an element on the calculated position, like in this example.\nThen the next element will be inserted,\nor if there aren't anymore elements the algorithm stops.
+
+### Changes table ###
+tableSwitch=If there was an element on the calculated position, the algorithm tries to insert it on the other hashtable.
+
+### Swap element with position ###
+elemSwitch=The elements will be swapped.
+
+### Calculate first hash ###
+calcHashOne=Calculate the position with the first hashfunction,\nwhere the element should be inserted.
+
+### Calculate second hash ###
+calcHashTwo=Calculate the position with the second hashfunction,\nwhere the element should be inserted.
+
+### Prologue ###
+startInformation=Cuckoo-Hashing is an algorithm to save elements into two hashtables.\nThere are two different hashfunctions to calculate positions.\nTo insert elements the first hash function will calculate the position for the first hashtable.\nIf there is no element, the element will be inserted and the algorithm terminates.\nBut if there is an element they will swapped and the algorithm tries to insert it into the second\nhashtable with the second hashfunction.\nThis will rotate until the algorithm finds an empty spot for the element, but this will only be tried\nfor a number of attempts. If they algorithm can't find a spot, it will insert all elements again from\nscratch with different hashfunctions. This will work like described as above.\nIn this animation the algorithm will terminate if it fails to insert elements. Because\nit would just be the same as mentioned before. In the worst case scenario the algorithm will take\nconstant time to find an element, because it can only exist in two places.
+
+### Requirements Information ###
+reqInformation=Requirements are:\n1. Two hashtables of the same size.\n2. Two different hashfunction, which calculate to [0, hashtable length -1].\n2.1 Those need to calculate different results.\n2.2 In this animation, the algorithm will use an interface with lambda to implement the two functions.\n3. Maximum attempts to try insert an element. 
+
+### Description ###
+description=Cuckoo-Hashing is an algorithm to save elements into two hashtables.\nThere are two different hashfunctions to calculate positions.\nTo insert elements the first hash function will calculate the position for the first hashtable.\nIf there is no element, the element will be inserted and the algorithm terminates.\nBut if there is an element they will swapped and the algorithm tries to insert it into the second\nhashtable with the second hashfunction.\nThis will rotate until the algorithm finds an empty spot for the element, but this will only be tried\nfor a number of attempts. If they algorithm can't find a spot, it will insert all elements again from\nscratch with different hashfunctions. This will work like described as above.\n In the worst case scenario the algorithm will take\nconstant time to find an element, because it can only exist in two places.

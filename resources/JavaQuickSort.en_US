@@ -1,0 +1,8 @@
+@import=resources/GenericQuickSort.en_US
+theName=Quick Sort [EN]
+codeExample=public void quickSort(int[] array, int l, int r)\n{\n  int i, j, pivot;\n  if (r>l)\n  {\n    pivot = array[r];\n    for (i = l; j = r - 1; i < j; )\n    {\n      while (array[i] <= pivot && j > i)\n        i++;\n      while (pivot < array[j] && j > i)\n        j--;\n      if (i < j)\n        swap(array, i, j);\n    }\n    if (pivot < array[i])\n      swap(array, i, r);\n    else\n      i=r;\n    quickSort(array, l, i - 1);\n    quickSort(array, i + 1, r);\n  }\n}
+animTitle=Quick Sort
+algoTitle=Quick Sort
+description.filename=resources/GenericQuickSort_descr_en.txt
+code.filename=resources/JavaQuickSort_code.txt
+complexity.filename=resources/GenericQuickSort_complexity_en.txt

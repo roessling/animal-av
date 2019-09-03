@@ -1,0 +1,81 @@
+algoNam=Simplex Verfahren
+description=todo
+code=todo
+createGraph.drawAxis=Zunächst werden die Achsen abgetragen
+createGraph.drawConstraints1=Jede Nebenbedingung kann in die allgemeine Form y=mx+b umgewandelt werden
+createGraph.drawConstraints2=Und lässt sich anschließend als Linie im Graphen darstellen
+drawLines.label=Nebenbedingung
+title=Das Simplex Verfahren
+subtitle=Der Algorithmus in Worten
+exampleLine0=Max. -> ZF
+exampleLine2=unter den N.B.
+exampleLabel=Beispiel
+createTableau=Erstelle das Simplex Tableau
+writeLabels=Beschrifte die Zeilen und Spalten mit den Variablen
+fillCoefficients=Trage die Koeffizienten des Nebenbedinungssystems ein
+fillFRow=Trage die Koeffizienten der Zielfunktion negativ in die F-Zeile ein
+identMatrix=Füge für die Schlupfvariablen eine Einheitsmatrix in das Tableau ein
+tableFinished=Simplex Tableau fertig erstellt
+graphPossible=Das Optimierungsproblem lässt sich auch graphisch darstellen
+firstSolution=Die erste Basislösung ist die triviale Lösung mit
+resultTable=Lösung
+smallestFValue=Suche das Element mit dem kleinsten negativen Wert in der F-Zeile
+pivotColumn=Pivotspalte gefunden
+calcBA=Berechne für alle Elemente > 0 in der Pivotspalte b/a
+unlimited=Alle Koeffizienten sind negativ -> Das Modell ist unbeschränkt
+noSolution=Es gibt keine endliche optimale Lösung. Das Verfahren wird abgebrochen
+smallestBA=Suche das Element mit dem kleinsten, positiven Wert unter allen b/a
+pivotRow=Pivotzeile gefunden!
+pivotElem=Pivotelement gefunden!
+bvSwap=Nehme die Nicht-Basisvariable der Pivotspalte in die Basis auf
+transformPivotRow=Transformier die Pivotzeile so, dass das Pivotelement = 1 ist
+transformOthers=Transformiere die Matrix so, dass alle anderen Elemente in der Pivotspalte = 0 sind
+iterFinish=Iteration beendet. Neue gefundene Basislösung ist: 
+noNegF=Keine negativen Eintragungen mehr in der F-Zeile
+done=Simplex Algorithmus beendet
+opt=Die gefundene optimale Lösung ist: 
+row=Zeile 
+explLine0=Ein Simplex-Verfahren (auch Simplex-Algorithmus) ist ein Optimierungsverfahren 
+explLine1=der Numerik zur Lösung linearer Optimierungsprobleme. Es löst ein solches Problem 
+explLine2=nach endlich vielen Schritten exakt oder stellt dessen Unlösbarkeit oder Unbeschränktheit 
+explLine3=fest. Die Grundidee der Simplex-Verfahren wurde 1947 von George Dantzig vorgestellt; 
+explLine4=seitdem haben sie sich durch zahlreiche Verbesserungen zu den wichtigsten Lösungsverfahren 
+explLine5=der linearen Optimierung in der Praxis entwickelt. Simplex-Verfahren sind Pivotverfahren.	
+explLine6=//////
+explLine7=ACHTUNG: Die Anzahl der Zeilen der Input Variablen darf nicht geändert werden.
+explLine8=Der Generator ist für Beispiele mit 2 Variablen und 3 Nebenbedingungen ausgelegt.
+explLine8=//////
+explLine9=BESCHREIBUNG DES INPUTS
+explLine10=targetFunction: Bitte fülle hier die Parameter der Zielfunktion in den ersten beiden Felder ein
+explLine11=constraints: Jede Zeile der Matrix representiert eine Nebenbedingungn der Form a * x1 + b * x2 <= c
+explLine12=             Bitte fülle a,b and c in jeder Zeile aus.
+codeLine0=1. Erstelle das Simplex Tableau
+codeLine1=Solange die F-Zeile negative Werte enthaelt
+codeLine2=   2. Suche diejenige Spalte t mit dem kleinsten (negativen) Wert in der F-Zeile (Pivotspalte)
+codeLine3=   3. Bestimme eine Zeile s, für die gilt: b's / a'st = min b... (Pivotzeile)
+codeLine4=   4. Nehme die Nicht-Basisvariable der Pivotspalte in die Basis auf (in die Pivotzeile)
+codeLine5=   5. Schaffe durch lineare Transformation des Nebenbedigungssystems unter der neuen Basis-
+codeline6=      -variable einen Einheitsvektor mit a'st = 1 (Gauß-Jordan-Verfahren)
+finishLine0=Die Komplexität des Simplex Verfahrens ist bis heute umstritten.
+finishLine1=Es wurde 1972 entgegen dem damaligen Stand der Forschung nachgewiesen
+finishLine2=dass bis zu 2^n Simplexiterationen möglich sind, wobei n die Anzahl der Variablen darstellt.
+finishLine3=Nichtsdestotrotz wurde durch empirische Beobachtung vermutet und später auch durch Meggido bewiesen
+finishLine4=dass die erwartete Laufzeit bei O(min(m^2,n^2)) liegt. Mit n = Anzahl Variablen und m=Anzahl Restriktionen.
+finishLine5.1=In unserem Beispiel benötigten wir
+finishLine5.2= Iterationen, bei 2 Variablen und 3 Restriktionen.
+GraphQuestion=Lässt sich das Optimierungsproblem auch graphisch darstellen?
+GraphQuestion.rightAnswer=Ja
+GraphQuestion.rightAnswerExplanation=Sehr gut! Da das Optimierungsproblem zwei Variablen enthält, lässt es sich auch graphisch darstellen. Dabei wird jede Nebenbedingung als Linie in einem Graph x1/x2 abgetragen.
+GraphQuestion.wrongAnswer1=Nein
+GraphQuestion.wrongAnswer1Explanation=Die Antwort ist leider falsch. Da das Optimierungsproblem zwei Variablen enthält, lässt es sich auch graphisch darstellen. Dabei wird jede Nebenbedingung als Linie in einem Graph x1/x2 abgetragen.
+GraphQuestion.wrongAnswer2=Das lässt sich zu diesem Zeitpunkt noch nicht bestimmen
+GraphQuestion.wrongAnswer2Explanation=Die Antwort ist leider falsch. Da das Optimierungsproblem zwei Variablen enthält, lässt es sich auch graphisch darstellen. Dabei wird jede Nebenbedingung als Linie in einem Graph x1/x2 abgetragen.
+UnlimitedQuestion=Was bedeutet es, wenn die Pivotspalte nur negative Werte enthält.
+UnlimitedQuestion.rightAnswer=Es gibt unendlich viele Lösungen.
+UnlimitedQuestion.rightAnswerExplanation=Sehr gut! Es bedeutet, dass da Optimierungsproblem unbeschränkt ist und es demnach unendlich viele Lösungen gibt.
+UnlimitedQuestion.wrongAnswer1=Die finale Lösung ist negativ.
+UnlimitedQuestion.wrongAnswer1Explanation=Die Antwort ist leider falsch. Es bedeutet, dass da Optimierungsproblem unbeschränkt ist und es demnach unendlich viele Lösungen gibt.
+UnlimitedQuestion.wrongAnswer2=Es gibt keine Lösung.
+UnlimitedQuestion.wrongAnswer2Explanation=Die Antwort ist leider falsch. Es bedeutet, dass da Optimierungsproblem unbeschränkt ist und es demnach unendlich viele Lösungen gibt.
+
+					

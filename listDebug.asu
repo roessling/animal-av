@@ -1,0 +1,13 @@
+%Animal 2
+listelement "l1" (20, 20) text "L1" pointers 2 position bottom 
+listelement "l2" (160, 160) text "L2" pointers 2 position bottom  
+listelement "l3" (300, 20) text "L3" pointers 2 position bottom 
+setLink "l2" link 1 to "l3"
+{
+  # update link and creeate new object
+  setLink "l1" link 1 to "l2"
+  listelement "l4" (420, 40) text "L4" pointers 2 position bottom prev "l3"
+}
+text "t" "List pointer updated, create new element" (200, 200)
+listelement "l5" (300, 300) text "TP" pointers 2 position bottom prev "t"
+

@@ -1,0 +1,13 @@
+L = []
+S = Menger der Knoten ohne eingehende Kante
+solange S != [ ]
+	entferne einen Knoten n aus S
+	füge n ans Ende von L hinzu
+    für jeden Nachfolger m von n
+        lösche Kante (n,m)
+        wenn m keine eingehenden Kanten hat
+            füge m in S ein
+wenn Graph G noch Kanten hat
+    return error (Der Graph hat einen Zyklus)
+sonst
+    return L

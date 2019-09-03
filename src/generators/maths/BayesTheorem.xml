@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<PropertiesTreeModel xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="PropertiesTreeModel.xsd">
+	<Folder name="Root">
+		<Primitive type="double">
+			<name>Restaurant1_Umsatz</name>
+			<value><double>0.5</double></value>
+			<description>Restaurant 1 Umsatzanteil (zwischen 0 und 1; Summe von Restaurant1_Umsatz, Restaurant2_Umsatz und Restaurant3_Umsatz muss 1 sein)</description>
+		</Primitive>
+		<Primitive type="double">
+			<name>Restaurant2_Umsatz</name>
+			<value><double>0.3</double></value>
+			<description>Restaurant 2 Umsatzanteil (zwischen 0 und 1; Summe von Restaurant1_Umsatz, Restaurant2_Umsatz und Restaurant3_Umsatz muss 1 sein)</description>
+		</Primitive>
+		<Primitive type="double">
+			<name>Restaurant3_Umsatz</name>
+			<value><double>0.2</double></value>
+			<description>Restaurant 3 Umsatzanteil (zwischen 0 und 1; Summe von Restaurant1_Umsatz, Restaurant2_Umsatz und Restaurant3_Umsatz muss 1 sein)</description>
+		</Primitive>
+		<Primitive type="double">
+			<name>Restaurant1_Zufriedenheit</name>
+			<value><double>0.7</double></value>
+			<description>Restaurant 1 Zufriedenheitanteil (zwischen 0 und 1)</description>
+		</Primitive>
+		<Primitive type="double">
+			<name>Restaurant2_Zufriedenheit</name>
+			<value><double>0.6</double></value>
+			<description>Restaurant 2 Zufriedenheitanteil (zwischen 0 und 1)</description>
+		</Primitive>
+		<Primitive type="double">
+			<name>Restaurant3_Zufriedenheit</name>
+			<value><double>0.5</double></value>
+			<description>Restaurant 3 Zufriedenheitanteil (zwischen 0 und 1)</description>
+		</Primitive>
+		<Primitive type="Color">
+			<name>HighlightColor</name>
+			<value><Color>(255, 0, 0)</Color></value>
+			<description>Betonungsfarbe in der Animation</description>
+		</Primitive>
+	</Folder>
+</PropertiesTreeModel>

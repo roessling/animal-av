@@ -1,0 +1,70 @@
+@@ -0,0 +1,69 @@
+noSuchKeyException=Es gibt keine Ressource f\u00fcr Eintrag f{0}
+iconNotFound=Icon "{0}" not found
+
+### Misc ###
+title=Enigma Verschlüsselung
+
+descriptionTitle=Beschreibung des Algorithmus:
+descriptionText1=Die Enigma ist eine Maschine zur Verschlüsselung und Entschlüsselung von Text.
+descriptionText2=Dazu besteht die Maschine aus verschiedenen Bauteilen:
+descriptionText3= - Einem Steckerbrett
+descriptionText4= - Einem Walzensatz mit 3 austauschbaren Walzen
+descriptionText5= - Einer austauschbaren Umkehrwalze
+descriptionText6=Das Steckerbrett erlaubt das feste Abbilden von jedem Buchstaben auf einen anderen. Es lassen sich 3 aus 5 Walzen verwenden, wobei jede Walze eine feste Zuordnung von einem Buchstaben auf einen anderen hat.
+descriptionText7=Zudem besitzt eine Walze eine Übertragskerbe, sodass nach 26 Umdrehungen die nächste Walze um eine Position rotiert.
+descriptionText8=Die Umkehrwalze lässt sich aus 3 Walzen auswählen und hat wie die anderen Walzen eine feste Zuordnung der Buchstaben, rotiert aber nicht. Sie dient dazu das Signal zurück zu leiten.
+descriptionText9=Die Sicherheit basiert auf der Geheimhaltung von Steckverbindungen, genutzten Walzen und deren Startposition.
+descriptionText10=Ein Durchlauf für einen Buchstaben sieht wie folgt aus:
+descriptionText11= - Steckerbrett
+descriptionText12= - Walze C
+descriptionText13= - Walze B
+descriptionText14= - Walze A
+descriptionText15= - Umkehrwalze
+descriptionText16= - Walze A
+descriptionText17= - Walze B 
+descriptionText18= - Walze C
+descriptionText19= - Steckerbrett
+
+inputText=Klartext
+outputText=Chiffre
+
+rotorA=Walze A
+rotorB=Walze B
+rotorC=Walze C
+plugboard=Steckerbrett
+reflector=Umkehrwalze
+
+carryCB=Übertrag auf Walze B
+carryBA=Übertrag auf Walze A
+
+legendTextMessage=Aktuelles Klartext Zeichen
+legendTextStep=Verschlüsselungsschritt Hinweg
+legendTextStepReverse=Verschlüsselungsschritt Rückweg
+legendTextCypher=Resultierendes Chiffre Zeichen
+legendTextNotch=Position der Übertragskerbe
+
+finalSlide1=Damit ist die Verschlüsselung erfolgreich abgeschlossen. Für jeden Buchstaben aus dem Klartext wurde die Enigma-Maschine genau einmal durchlaufen.
+finalSlide2=Der Aufwand für eine Verschlüsselung steigt somit proportional zur Länge der Klartext-Eingabe.
+finalSlide3=Das Ergebnis lautet wie folgt:
+finalSlide4=Klartext:
+finalSlide5=Chiffre:
+
+contents1=Einführung
+contents2=Beispiel
+contents3=Verschlüsselungsschritt
+contents4=Fazit
+
+input=Eingabe
+output=Ausgabe
+
+example1=Im Folgenden ist ein kurzes Beispiel über die Funktionsweise der Walzen. Blau markiert die Übergangskerbe.
+example2=Wir wählen einen beliebigen Buchstaben. In diesem Beispiel - C -.
+example3=Wenn die Taste gedrückt wird, rotiert die Walze um einen Schritt.
+example4=Das Signal, welches aus dem letzten Schritt kommt, tritt am vorherigen Ausgang ein.
+example5=Die Walze bildet - C - auf - M - ab.
+example6=Buchstaben sind parallel zueinander angeordnet (A - A, B - B, ...). Wir nehmen daher den Index von - M -.
+example7=Das Signal tritt in die nächste Walze ein.
+example8=Die Übertragskerbe erreicht die Startposition. Übertrag auf die nächste Walze.
+example9=Der nächste Eingang rotiert beide Walzen.
+example10=Aus Platzgründen werden in den folgenden Folien nur Ein- und Ausgang angezeigt.

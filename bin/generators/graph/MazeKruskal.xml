@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<PropertiesTreeModel xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="PropertiesTreeModel.xsd">
+	<Folder name="Root">
+		<Primitive type="boolean">
+			<name>showCellIndex</name>
+			<value><boolean value="false" /></value>
+			<description><![CDATA[<br />
+			Show the index number of each cell. <br />
+			Use only with cells that are big enough. (Cell size > 15)
+			]]></description>
+		</Primitive>
+		<Primitive type="boolean">
+			<name>showWallIndex</name>
+			<value><boolean value="false" /></value>
+			<description><![CDATA[<br />
+			Show the index numbers of each wall.<br /> 
+			Use only with walls that are big enough. (Cell size > 31)
+			]]></description>
+		</Primitive>
+		<Primitive type="boolean">
+			<name>useRandomizerSeed</name>
+			<value><boolean value="false" /></value>
+			<description><![CDATA[<br />
+			Use the specified seed to create the maze layout. <br />
+			The seed will be ignored and the maze will be randomized if false.
+			]]></description>
+		</Primitive>
+		<Primitive type="int">
+			<name>randomizerSeed</name>
+			<value><int>2</int></value>
+			<description><![CDATA[<br />
+			A random number to create a random maze layout. <br />
+			The same number will always create the same maze.
+			]]></description>
+		</Primitive>
+		<Primitive type="int">
+			<name>horizontalSize</name>
+			<value><int>5</int></value>
+			<description><![CDATA[<br />
+			The horizontal length of the maze measured in cells. <br />
+			Has to be bigger than 1.
+			]]></description>
+		</Primitive>
+		<Primitive type="int">
+			<name>verticalSize</name>
+			<value><int>4</int></value>
+			<description><![CDATA[<br />
+			The vertical length of the maze measured in cells. <br />
+			Has to be bigger than 1
+			]]></description>
+		</Primitive>
+		<Primitive type="int">
+			<name>cellSize</name>
+			<value><int>24</int></value>
+			<description><![CDATA[<br />
+			The size of one cell. Measured in pixels. <br />
+			Has to be bigger than 1 and should be devidable by 2.
+			]]></description>
+		</Primitive>
+		<Primitive type="Color">
+			<name>disconnectedCellColor</name>
+			<value><Color>(0, 0, 0)</Color></value>
+			<description><![CDATA[<br />
+			The color of a cell that is not connected yet.
+			]]></description>
+		</Primitive>
+		<Primitive type="Color">
+			<name>wallColor</name>
+			<value><Color>(0, 0, 0)</Color></value>
+			<description><![CDATA[<br />
+			The color of the walls.
+			]]></description>
+		</Primitive>
+		<Primitive type="Color">
+			<name>connectedCellColor</name>
+			<value><Color>(255, 255, 255)</Color></value>
+			<description><![CDATA[<br />
+			The color of a cell that is connected.
+			]]></description>
+		</Primitive>
+		<Primitive type="Color">
+			<name>cellHighlightColor</name>
+			<value><Color>(0, 255, 255)</Color></value>
+			<description><![CDATA[<br />
+			The highlight color of the cells.
+			]]></description>
+		</Primitive>
+		<Primitive type="Color">
+			<name>wallHighlightColor</name>
+			<value><Color>(0, 255, 0)</Color></value>
+			<description><![CDATA[<br />
+			The highlight color of the walls.
+			]]></description>
+		</Primitive>
+		<Primitive type="Color">
+			<name>wallArrayHighlightColor</name>
+			<value><Color>(0, 255, 0)</Color></value>
+			<description><![CDATA[<br />
+			The highlight color of the wall array.
+			]]></description>
+		</Primitive>
+		<Primitive type="Color">
+			<name>cellListProblemColor</name>
+			<value><Color>(255, 0, 0)</Color></value>
+			<description><![CDATA[<br />
+			The highlight color of the cell list, if both highlighted cells are in the same list.
+			]]></description>
+		</Primitive>
+		<Primitive type="Color">
+			<name>cellListHighlightColor</name>
+			<value><Color>(0, 255, 255)</Color></value>
+			<description><![CDATA[<br />
+			The highlight color of the cell lists.
+			]]></description>
+		</Primitive>
+		<Primitive type="Color">
+			<name>borderColor</name>
+			<value><Color>(0, 0, 0)</Color></value>
+			<description><![CDATA[<br />
+			The color of the border and every indestructible part of the maze.
+			]]></description>
+		</Primitive>
+	</Folder>
+</PropertiesTreeModel>

@@ -1,0 +1,9 @@
+public int search(int[] array, int value, int pos) { #header
+  if (array == null) #ifNull
+    return -1;
+  if (pos >= array.length) #ifAtEnd
+    return -1; #notFound
+  if (array[pos] == value) #ifMatch
+    return pos; #return value
+  return search(array, value, pos + 1); #recursion
+}

@@ -1,0 +1,10 @@
+Der Algorithmus in Worten
+
+1. Bestimme die Mitte m des zu betrachtenden Feldes
+2. Wende mergesort(array, l, m) an,
+3. Wende mergesort(array, m+1, r) an
+4. Lege ein Hilfsfeld der Größe n an i
+5. Kopiere die Werte l...m in das Hilfsfeld
+6. Kopiere die Werte r...m+1 in das Hilfsfeld
+7. Vergleiche jeweils die linken und rechten Werte des Hilfsfeldes
+  und kopiere den kleineren in das Feld

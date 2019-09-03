@@ -1,0 +1,10 @@
+Example: Jack is a mountaineer and he plans another ascent. His brother Jim helps him to organize it. He collected 
+information about Jack's previous ascents and whether they were successful or not. There are stored in a table 
+(the 'main table'). One entry contains information about the mountain height (HEIGHT), its slope (SLOPE) and if there
+was snow on the mountain (SNOW). And finally, the class value (on the right) describes whether 
+Jack made his way to the top or not. ID3 takes these examples as an input to come up with a general concept about 
+which mountains are doable for Jack.
+
+Jack seems to be a very successful mountaineer. The prediction is always 'yes'.
+But this tree was created with only three examples seen (see below, first remark).
+This tree consists only of one leaf (as the root).

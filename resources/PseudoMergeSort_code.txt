@@ -1,0 +1,11 @@
+Mergesort(int[] array, int l, int r) #header
+  Declare int i, j, k, m; #variables
+  Declare int[] b = new int[r - l + 1]; #array
+  if (r>l) #check
+    m = (l+r)/2; #determineMid
+    mergesort(array, l, m); #sortLeftside
+    mergesort(array, m+1, r); #sortRightside
+    loop for i=l until i<=m and i<array.length: b[i-l] = array[i]; #copyLeftside
+    loop for j=m+1 until j<=r: b[r+m+1-j-l] = array[j]; #copyRightside
+    loop for k=l, i=0, j=r-l until k<=r and k < array.length: #loop
+      array[k] = (b[i] <b[j]) ? b[i++] : b[j--]; #merge

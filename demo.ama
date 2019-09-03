@@ -1,0 +1,20 @@
+# Animal protocol 1
+1 object 3 Line (125,82) (257,158) color (51,51,255) fwArrow depth 16 name "3"
+5 object 4 Polyline color (128,191,64) fwArrow nodes: {(71,116) (88,119) (221,177) (290,193) (287,111) (198,66) (103,60) (47,116) (25,57) } depth 10
+5 object 5 Polyline color (128,191,64) fwArrow nodes: {(113,206) (159,278) (216,246) (295,229) } depth 10
+5 object 6 Polyline color (128,191,64) fwArrow nodes: {(388,175) (347,114) (415,68) (415,69) } depth 10
+5 object 7 Polyline color (128,191,64) fwArrow nodes: {(419,201) (276,288) (54,196) } depth 10
+1 object 8 Square (234,68) size 100 color (102,255,102) filled fillColor (255,51,102) depth 16 name "8"
+1 object 9 Rectangle (172,150) size (206,70) color (0,0,0) filled fillColor (0,0,0) depth 50 name "9"
+1 object 10 Triangle (205,124) (130,241) (441,315) color (102,255,51) filled fillColor (255,102,153) depth 16 name "10"
+5 object 11 Polyline color (128,191,64) fwArrow nodes: {(91,33) (528,195) (591,46) (114,184) } depth 10
+STEPS:
+2 Link 1 next step 2 after key press
+2 Step 1 show 3 by "show"
+2 Step 1 show 8 9 10 by "show"
+2 Link 2 next step 3 after key press
+2 Step 2 show 4 5 6 7 by "show"
+2 Link 3 next step 2147483647 after key press
+1 Step 3 Move 3 4 5 6 7 8 9 10 by "translate" timed starting after 10 ticks within 20 ticks via 11
+2 Link END
+Next 11

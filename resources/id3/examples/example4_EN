@@ -1,0 +1,11 @@
+Example: Rebecca's friends Shawn is a bookworm. Sometimes, she asks him which of the new books at the library are good to read.
+He then recommends some to her. Now, Rebecca wants to predict which books Shawn will recommends to her and in order to do this, she 
+gathers information about previous books shown to him and whether they were recommended. The data is stored in
+a table (the 'main table'). One entry contains information about the author of the book (AUTHOR), its genre (GENRE) and the 
+narrative perspective (PERSPECTIVE). And finally, the class value (on the right, 'yes' or 'no') describes whether Shawn recommended 
+the book. ID3 takes these examples as an input to come up with a general concept about in which cases Shawn recommends books.
+
+With the generated tree, Rebecca can predict whether new books are recommended by her friend.
+And so can you:
+Starting at the root node, follow the edges that correspond to the attribute values of the book; the 
+leaf that you'll reach tells the expectation (but, of course, only based on the previously seen examples).

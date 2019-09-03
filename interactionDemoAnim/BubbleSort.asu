@@ -1,0 +1,711 @@
+%Animal 2 640*480
+title "Bubble Sort"
+author "Dr. Guido R??ling (roessling@acm.org>"
+{
+text "title" "Bubble Sort" (20, 35) color (0, 0, 0) depth 1 font SansSerif size 20 bold
+rectangle "headerRect" offset (-5, -5) from "title" NW offset (5, 5) from "title" SE color (0, 0, 0) depth 3 filled fillColor (192, 192, 192)
+text "descrHd" "Beschreibung des Algorithmus" (20, 80) color (0, 0, 0) depth 1 font SansSerif size 20 bold
+codegroup "descr" at offset (0, 30) from "descrHd" SW color (0, 0, 0) highlightColor (255, 0, 0) contextColor (0, 0, 0) font SansSerif size 16 bold depth 3
+addCodeLine "Bubble Sort ist ein elementares Suchverfahren, das in" to "descr"
+addCodeLine "vielen Informatikveranstaltungen gelehrt wird." to "descr"
+addCodeLine "" to "descr"
+addCodeLine "Die Grundidee des Verfahrens ist es, benachbarte Elemente" to "descr"
+addCodeLine "so zu vertauschen, dass sie danach sortiert sind." to "descr"
+addCodeLine "" to "descr"
+addCodeLine "Der Algorithmus in Worten:" to "descr"
+addCodeLine "" to "descr"
+addCodeLine "1. Setze i=n" to "descr"
+addCodeLine "2. Setze j=1 und eine boole'sche Variable swapPerformed auf false" to "descr"
+addCodeLine "3. Vertausche in einer Schleife die Elemente a[j-1] und a[j]," to "descr"
+addCodeLine "falls a[j-1] > a[j] ist und setze swapPerformed auf true" to "descr" indentation 1
+addCodeLine "4. Zähle j um eins hoch, bis j==i gilt" to "descr"
+addCodeLine "5. Zähle i um eins herunter. Gilt i==-1 oder ist swapPerformed false," to "descr"
+addCodeLine "so beende das Programm; andernfalls fahre fort bei Schritt 2" to "descr" indentation 1
+}
+{
+hide "descrHd" 
+hide "descr" 
+array "array" (30, 150) color (0, 0, 0) fillColor (192, 192, 192) elementColor (0, 0, 0) elemHighlight (0, 255, 0) cellHighlight (255, 200, 0) horizontal length 8 "1" "3" "7" "5" "2" "6" "8" "4" depth 1 
+codegroup "code" at offset (0, 20) from "array" SW color (0, 0, 0) highlightColor (255, 0, 255) contextColor (0, 0, 0) font Monospaced size 16 bold depth 3
+addCodeLine "public void sort(int[] array) {" to "code"
+addCodeLine "int i, j;" to "code" indentation 1
+addCodeLine "boolean swapPerformed = true;" to "code" indentation 1
+addCodeLine "for (i = array.length; swapPerformed && i > 0; i--) {" to "code" indentation 1
+addCodeLine "swapPerformed = false;" to "code" indentation 2
+addCodeLine "for (j = 1; j < i; j++) {" to "code" indentation 2
+addCodeLine "if (array[j - 1] > array[j]) {" to "code" indentation 3
+addCodeLine "swap(array, j - 1, j);" to "code" indentation 4
+addCodeLine "swapPerformed = true;" to "code" indentation 4
+addCodeLine "}" to "code" indentation 3
+addCodeLine "}" to "code" indentation 2
+addCodeLine "}" to "code" indentation 1
+addCodeLine "}" to "code"
+text "#A" "Zuweisungen" offset (80, -80) from "array" SE color (0, 0, 0) depth 1 font SansSerif size 20 bold
+rectangle "Zuweisungen" offset (10, 0) from "#A" NE offset (11, 0) from "#A" SE color (0, 0, 255) depth 2 filled fillColor (0, 0, 255)
+text "#C" "Vergleiche" offset (0, 35) from "#A" NW color (0, 0, 0) depth 1 font SansSerif size 20 bold
+rectangle "Vergleiche" offset (0, 35) from "Zuweisungen" NW offset (1, 35) from "Zuweisungen" SW color (0, 0, 255) depth 2 filled fillColor (0, 0, 255)
+interactionDefinition "intDef20090103194118437.txt"
+highlightCode on "code" line 0
+}
+{
+unhighlightCode on "code" line 0
+highlightCode on "code" line 1
+}
+{
+move "Zuweisungen" type "translate #2" along line (0, 0) (4, 0)  
+unhighlightCode on "code" line 1
+highlightCode on "code" line 2
+move "Zuweisungen" type "translate #2" along line (0, 0) (2, 0)  
+text "swapLabel" "swapPerformed=" offset (30, 0) from "array" SE color (0, 0, 0) depth 1 font SansSerif size 20 bold
+text "swapVal" "true" offset (10, 0) from "swapLabel" baseline end color (0, 0, 0) depth 1 font SansSerif size 20 bold
+}
+{
+unhighlightCode on "code" line 2
+move "Zuweisungen" type "translate #2" along line (0, 0) (2, 0)  
+highlightCode on "code" line 3
+arrayMarker "iMarker" on "array" atIndex 7 label "i" color (0, 0, 255) depth 1
+moveArrayMarker "iMarker" to outside   within 10 ticks
+move "Vergleiche" type "translate #2" along line (0, 0) (4, 0)  
+move "Zuweisungen" type "translate #2" along line (0, 0) (2, 0)  
+}
+label "Bubble Sort, i=8"
+{
+unhighlightCode on "code" line 3
+highlightCode on "code" line 4
+setText of "swapVal" to "false" within 10 ticks
+move "Zuweisungen" type "translate #2" along line (0, 0) (2, 0)  
+}
+{
+interaction "swapFIB8"
+unhighlightCode on "code" line 4
+highlightCode on "code" line 5
+arrayMarker "jMarker" on "array" atIndex 1 label "j" color (135, 206, 255) depth 1
+move "Zuweisungen" type "translate #2" along line (0, 0) (2, 0)  
+move "Vergleiche" type "translate #2" along line (0, 0) (2, 0)  
+}
+{
+unhighlightCode on "code" line 5
+highlightCode on "code" line 6
+highlightArrayElem on "array" position 0
+highlightArrayElem on "array" position 1
+move "Vergleiche" type "translate #2" along line (0, 0) (2, 0)  
+}
+{
+unhighlightCode on "code" line 6
+unhighlightArrayElem on "array" position 0
+unhighlightArrayElem on "array" position 1
+unhighlightCode on "code" line 4
+highlightCode on "code" line 5
+moveArrayMarker "jMarker" to position 2   within 10 ticks
+move "Zuweisungen" type "translate #2" along line (0, 0) (2, 0)  
+move "Vergleiche" type "translate #2" along line (0, 0) (2, 0)  
+}
+{
+unhighlightCode on "code" line 5
+highlightCode on "code" line 6
+highlightArrayElem on "array" position 1
+highlightArrayElem on "array" position 2
+move "Vergleiche" type "translate #2" along line (0, 0) (2, 0)  
+}
+{
+unhighlightCode on "code" line 6
+unhighlightArrayElem on "array" position 1
+unhighlightArrayElem on "array" position 2
+unhighlightCode on "code" line 4
+highlightCode on "code" line 5
+moveArrayMarker "jMarker" to position 3   within 10 ticks
+move "Zuweisungen" type "translate #2" along line (0, 0) (2, 0)  
+move "Vergleiche" type "translate #2" along line (0, 0) (2, 0)  
+}
+{
+unhighlightCode on "code" line 5
+highlightCode on "code" line 6
+highlightArrayElem on "array" position 2
+highlightArrayElem on "array" position 3
+move "Vergleiche" type "translate #2" along line (0, 0) (2, 0)  
+}
+{
+unhighlightCode on "code" line 6
+highlightCode on "code" line 7
+arraySwap on "array" position 2 with 3   within 10 ticks
+move "Zuweisungen" type "translate #2" along line (0, 0) (6, 0)  
+}
+{
+unhighlightCode on "code" line 7
+highlightCode on "code" line 8
+setText of "swapVal" to "true" within 10 ticks
+move "Zuweisungen" type "translate #2" along line (0, 0) (2, 0)  
+}
+{
+unhighlightCode on "code" line 8
+unhighlightArrayElem on "array" position 2
+unhighlightArrayElem on "array" position 3
+unhighlightCode on "code" line 4
+highlightCode on "code" line 5
+moveArrayMarker "jMarker" to position 4   within 10 ticks
+move "Zuweisungen" type "translate #2" along line (0, 0) (2, 0)  
+move "Vergleiche" type "translate #2" along line (0, 0) (2, 0)  
+}
+{
+unhighlightCode on "code" line 5
+highlightCode on "code" line 6
+highlightArrayElem on "array" position 3
+highlightArrayElem on "array" position 4
+move "Vergleiche" type "translate #2" along line (0, 0) (2, 0)  
+}
+{
+unhighlightCode on "code" line 6
+highlightCode on "code" line 7
+arraySwap on "array" position 3 with 4   within 10 ticks
+move "Zuweisungen" type "translate #2" along line (0, 0) (6, 0)  
+}
+{
+unhighlightCode on "code" line 7
+highlightCode on "code" line 8
+setText of "swapVal" to "true" within 10 ticks
+move "Zuweisungen" type "translate #2" along line (0, 0) (2, 0)  
+}
+{
+unhighlightCode on "code" line 8
+unhighlightArrayElem on "array" position 3
+unhighlightArrayElem on "array" position 4
+unhighlightCode on "code" line 4
+highlightCode on "code" line 5
+moveArrayMarker "jMarker" to position 5   within 10 ticks
+move "Zuweisungen" type "translate #2" along line (0, 0) (2, 0)  
+move "Vergleiche" type "translate #2" along line (0, 0) (2, 0)  
+}
+{
+unhighlightCode on "code" line 5
+highlightCode on "code" line 6
+highlightArrayElem on "array" position 4
+highlightArrayElem on "array" position 5
+move "Vergleiche" type "translate #2" along line (0, 0) (2, 0)  
+}
+{
+unhighlightCode on "code" line 6
+highlightCode on "code" line 7
+arraySwap on "array" position 4 with 5   within 10 ticks
+move "Zuweisungen" type "translate #2" along line (0, 0) (6, 0)  
+}
+{
+unhighlightCode on "code" line 7
+highlightCode on "code" line 8
+setText of "swapVal" to "true" within 10 ticks
+move "Zuweisungen" type "translate #2" along line (0, 0) (2, 0)  
+}
+{
+unhighlightCode on "code" line 8
+unhighlightArrayElem on "array" position 4
+unhighlightArrayElem on "array" position 5
+unhighlightCode on "code" line 4
+highlightCode on "code" line 5
+moveArrayMarker "jMarker" to position 6   within 10 ticks
+move "Zuweisungen" type "translate #2" along line (0, 0) (2, 0)  
+move "Vergleiche" type "translate #2" along line (0, 0) (2, 0)  
+}
+{
+unhighlightCode on "code" line 5
+highlightCode on "code" line 6
+highlightArrayElem on "array" position 5
+highlightArrayElem on "array" position 6
+move "Vergleiche" type "translate #2" along line (0, 0) (2, 0)  
+}
+{
+unhighlightCode on "code" line 6
+unhighlightArrayElem on "array" position 5
+unhighlightArrayElem on "array" position 6
+unhighlightCode on "code" line 4
+highlightCode on "code" line 5
+moveArrayMarker "jMarker" to position 7   within 10 ticks
+move "Zuweisungen" type "translate #2" along line (0, 0) (2, 0)  
+move "Vergleiche" type "translate #2" along line (0, 0) (2, 0)  
+}
+{
+unhighlightCode on "code" line 5
+highlightCode on "code" line 6
+highlightArrayElem on "array" position 6
+highlightArrayElem on "array" position 7
+move "Vergleiche" type "translate #2" along line (0, 0) (2, 0)  
+}
+{
+unhighlightCode on "code" line 6
+highlightCode on "code" line 7
+arraySwap on "array" position 6 with 7   within 10 ticks
+move "Zuweisungen" type "translate #2" along line (0, 0) (6, 0)  
+}
+{
+unhighlightCode on "code" line 7
+highlightCode on "code" line 8
+setText of "swapVal" to "true" within 10 ticks
+move "Zuweisungen" type "translate #2" along line (0, 0) (2, 0)  
+}
+{
+unhighlightCode on "code" line 8
+unhighlightArrayElem on "array" position 6
+unhighlightArrayElem on "array" position 7
+move "Vergleiche" type "translate #2" along line (0, 0) (2, 0)  
+move "Zuweisungen" type "translate #2" along line (0, 0) (2, 0)  
+highlightCode on "code" line 3
+moveArrayMarker "iMarker" to position 7   within 10 ticks
+highlightArrayCell on "array" position 7 within 10 ticks
+move "Vergleiche" type "translate #2" along line (0, 0) (4, 0)  
+move "Zuweisungen" type "translate #2" along line (0, 0) (2, 0)  
+}
+label "Bubble Sort, i=7"
+{
+unhighlightCode on "code" line 3
+highlightCode on "code" line 4
+setText of "swapVal" to "false" within 10 ticks
+move "Zuweisungen" type "translate #2" along line (0, 0) (2, 0)  
+}
+{
+interaction "swapFIB7"
+unhighlightCode on "code" line 4
+highlightCode on "code" line 5
+moveArrayMarker "jMarker" to position 1   within 10 ticks
+move "Zuweisungen" type "translate #2" along line (0, 0) (2, 0)  
+move "Vergleiche" type "translate #2" along line (0, 0) (2, 0)  
+}
+{
+unhighlightCode on "code" line 5
+highlightCode on "code" line 6
+highlightArrayElem on "array" position 0
+highlightArrayElem on "array" position 1
+move "Vergleiche" type "translate #2" along line (0, 0) (2, 0)  
+}
+{
+unhighlightCode on "code" line 6
+unhighlightArrayElem on "array" position 0
+unhighlightArrayElem on "array" position 1
+unhighlightCode on "code" line 4
+highlightCode on "code" line 5
+moveArrayMarker "jMarker" to position 2   within 10 ticks
+move "Zuweisungen" type "translate #2" along line (0, 0) (2, 0)  
+move "Vergleiche" type "translate #2" along line (0, 0) (2, 0)  
+}
+{
+unhighlightCode on "code" line 5
+highlightCode on "code" line 6
+highlightArrayElem on "array" position 1
+highlightArrayElem on "array" position 2
+move "Vergleiche" type "translate #2" along line (0, 0) (2, 0)  
+}
+{
+unhighlightCode on "code" line 6
+unhighlightArrayElem on "array" position 1
+unhighlightArrayElem on "array" position 2
+unhighlightCode on "code" line 4
+highlightCode on "code" line 5
+moveArrayMarker "jMarker" to position 3   within 10 ticks
+move "Zuweisungen" type "translate #2" along line (0, 0) (2, 0)  
+move "Vergleiche" type "translate #2" along line (0, 0) (2, 0)  
+}
+{
+unhighlightCode on "code" line 5
+highlightCode on "code" line 6
+highlightArrayElem on "array" position 2
+highlightArrayElem on "array" position 3
+move "Vergleiche" type "translate #2" along line (0, 0) (2, 0)  
+}
+{
+unhighlightCode on "code" line 6
+highlightCode on "code" line 7
+arraySwap on "array" position 2 with 3   within 10 ticks
+move "Zuweisungen" type "translate #2" along line (0, 0) (6, 0)  
+}
+{
+unhighlightCode on "code" line 7
+highlightCode on "code" line 8
+setText of "swapVal" to "true" within 10 ticks
+move "Zuweisungen" type "translate #2" along line (0, 0) (2, 0)  
+}
+{
+unhighlightCode on "code" line 8
+unhighlightArrayElem on "array" position 2
+unhighlightArrayElem on "array" position 3
+unhighlightCode on "code" line 4
+highlightCode on "code" line 5
+moveArrayMarker "jMarker" to position 4   within 10 ticks
+move "Zuweisungen" type "translate #2" along line (0, 0) (2, 0)  
+move "Vergleiche" type "translate #2" along line (0, 0) (2, 0)  
+}
+{
+unhighlightCode on "code" line 5
+highlightCode on "code" line 6
+highlightArrayElem on "array" position 3
+highlightArrayElem on "array" position 4
+move "Vergleiche" type "translate #2" along line (0, 0) (2, 0)  
+}
+{
+unhighlightCode on "code" line 6
+unhighlightArrayElem on "array" position 3
+unhighlightArrayElem on "array" position 4
+unhighlightCode on "code" line 4
+highlightCode on "code" line 5
+moveArrayMarker "jMarker" to position 5   within 10 ticks
+move "Zuweisungen" type "translate #2" along line (0, 0) (2, 0)  
+move "Vergleiche" type "translate #2" along line (0, 0) (2, 0)  
+}
+{
+unhighlightCode on "code" line 5
+highlightCode on "code" line 6
+highlightArrayElem on "array" position 4
+highlightArrayElem on "array" position 5
+move "Vergleiche" type "translate #2" along line (0, 0) (2, 0)  
+}
+{
+unhighlightCode on "code" line 6
+unhighlightArrayElem on "array" position 4
+unhighlightArrayElem on "array" position 5
+unhighlightCode on "code" line 4
+highlightCode on "code" line 5
+moveArrayMarker "jMarker" to position 6   within 10 ticks
+move "Zuweisungen" type "translate #2" along line (0, 0) (2, 0)  
+move "Vergleiche" type "translate #2" along line (0, 0) (2, 0)  
+}
+{
+unhighlightCode on "code" line 5
+highlightCode on "code" line 6
+highlightArrayElem on "array" position 5
+highlightArrayElem on "array" position 6
+move "Vergleiche" type "translate #2" along line (0, 0) (2, 0)  
+}
+{
+unhighlightCode on "code" line 6
+highlightCode on "code" line 7
+arraySwap on "array" position 5 with 6   within 10 ticks
+move "Zuweisungen" type "translate #2" along line (0, 0) (6, 0)  
+}
+{
+unhighlightCode on "code" line 7
+highlightCode on "code" line 8
+setText of "swapVal" to "true" within 10 ticks
+move "Zuweisungen" type "translate #2" along line (0, 0) (2, 0)  
+}
+{
+unhighlightCode on "code" line 8
+unhighlightArrayElem on "array" position 5
+unhighlightArrayElem on "array" position 6
+move "Vergleiche" type "translate #2" along line (0, 0) (2, 0)  
+move "Zuweisungen" type "translate #2" along line (0, 0) (2, 0)  
+highlightCode on "code" line 3
+moveArrayMarker "iMarker" to position 6   within 10 ticks
+highlightArrayCell on "array" position 6 within 10 ticks
+move "Vergleiche" type "translate #2" along line (0, 0) (4, 0)  
+move "Zuweisungen" type "translate #2" along line (0, 0) (2, 0)  
+}
+label "Bubble Sort, i=6"
+{
+unhighlightCode on "code" line 3
+highlightCode on "code" line 4
+setText of "swapVal" to "false" within 10 ticks
+move "Zuweisungen" type "translate #2" along line (0, 0) (2, 0)  
+}
+{
+interaction "swapFIB6"
+unhighlightCode on "code" line 4
+highlightCode on "code" line 5
+moveArrayMarker "jMarker" to position 1   within 10 ticks
+move "Zuweisungen" type "translate #2" along line (0, 0) (2, 0)  
+move "Vergleiche" type "translate #2" along line (0, 0) (2, 0)  
+}
+{
+unhighlightCode on "code" line 5
+highlightCode on "code" line 6
+highlightArrayElem on "array" position 0
+highlightArrayElem on "array" position 1
+move "Vergleiche" type "translate #2" along line (0, 0) (2, 0)  
+}
+{
+unhighlightCode on "code" line 6
+unhighlightArrayElem on "array" position 0
+unhighlightArrayElem on "array" position 1
+unhighlightCode on "code" line 4
+highlightCode on "code" line 5
+moveArrayMarker "jMarker" to position 2   within 10 ticks
+move "Zuweisungen" type "translate #2" along line (0, 0) (2, 0)  
+move "Vergleiche" type "translate #2" along line (0, 0) (2, 0)  
+}
+{
+unhighlightCode on "code" line 5
+highlightCode on "code" line 6
+highlightArrayElem on "array" position 1
+highlightArrayElem on "array" position 2
+move "Vergleiche" type "translate #2" along line (0, 0) (2, 0)  
+}
+{
+unhighlightCode on "code" line 6
+highlightCode on "code" line 7
+arraySwap on "array" position 1 with 2   within 10 ticks
+move "Zuweisungen" type "translate #2" along line (0, 0) (6, 0)  
+}
+{
+unhighlightCode on "code" line 7
+highlightCode on "code" line 8
+setText of "swapVal" to "true" within 10 ticks
+move "Zuweisungen" type "translate #2" along line (0, 0) (2, 0)  
+}
+{
+unhighlightCode on "code" line 8
+unhighlightArrayElem on "array" position 1
+unhighlightArrayElem on "array" position 2
+unhighlightCode on "code" line 4
+highlightCode on "code" line 5
+moveArrayMarker "jMarker" to position 3   within 10 ticks
+move "Zuweisungen" type "translate #2" along line (0, 0) (2, 0)  
+move "Vergleiche" type "translate #2" along line (0, 0) (2, 0)  
+}
+{
+unhighlightCode on "code" line 5
+highlightCode on "code" line 6
+highlightArrayElem on "array" position 2
+highlightArrayElem on "array" position 3
+move "Vergleiche" type "translate #2" along line (0, 0) (2, 0)  
+}
+{
+unhighlightCode on "code" line 6
+unhighlightArrayElem on "array" position 2
+unhighlightArrayElem on "array" position 3
+unhighlightCode on "code" line 4
+highlightCode on "code" line 5
+moveArrayMarker "jMarker" to position 4   within 10 ticks
+move "Zuweisungen" type "translate #2" along line (0, 0) (2, 0)  
+move "Vergleiche" type "translate #2" along line (0, 0) (2, 0)  
+}
+{
+unhighlightCode on "code" line 5
+highlightCode on "code" line 6
+highlightArrayElem on "array" position 3
+highlightArrayElem on "array" position 4
+move "Vergleiche" type "translate #2" along line (0, 0) (2, 0)  
+}
+{
+unhighlightCode on "code" line 6
+unhighlightArrayElem on "array" position 3
+unhighlightArrayElem on "array" position 4
+unhighlightCode on "code" line 4
+highlightCode on "code" line 5
+moveArrayMarker "jMarker" to position 5   within 10 ticks
+move "Zuweisungen" type "translate #2" along line (0, 0) (2, 0)  
+move "Vergleiche" type "translate #2" along line (0, 0) (2, 0)  
+}
+{
+unhighlightCode on "code" line 5
+highlightCode on "code" line 6
+highlightArrayElem on "array" position 4
+highlightArrayElem on "array" position 5
+move "Vergleiche" type "translate #2" along line (0, 0) (2, 0)  
+}
+{
+unhighlightCode on "code" line 6
+highlightCode on "code" line 7
+arraySwap on "array" position 4 with 5   within 10 ticks
+move "Zuweisungen" type "translate #2" along line (0, 0) (6, 0)  
+}
+{
+unhighlightCode on "code" line 7
+highlightCode on "code" line 8
+setText of "swapVal" to "true" within 10 ticks
+move "Zuweisungen" type "translate #2" along line (0, 0) (2, 0)  
+}
+{
+unhighlightCode on "code" line 8
+unhighlightArrayElem on "array" position 4
+unhighlightArrayElem on "array" position 5
+move "Vergleiche" type "translate #2" along line (0, 0) (2, 0)  
+move "Zuweisungen" type "translate #2" along line (0, 0) (2, 0)  
+highlightCode on "code" line 3
+moveArrayMarker "iMarker" to position 5   within 10 ticks
+highlightArrayCell on "array" position 5 within 10 ticks
+move "Vergleiche" type "translate #2" along line (0, 0) (4, 0)  
+move "Zuweisungen" type "translate #2" along line (0, 0) (2, 0)  
+}
+label "Bubble Sort, i=5"
+{
+unhighlightCode on "code" line 3
+highlightCode on "code" line 4
+setText of "swapVal" to "false" within 10 ticks
+move "Zuweisungen" type "translate #2" along line (0, 0) (2, 0)  
+}
+{
+interaction "swapFIB5"
+unhighlightCode on "code" line 4
+highlightCode on "code" line 5
+moveArrayMarker "jMarker" to position 1   within 10 ticks
+move "Zuweisungen" type "translate #2" along line (0, 0) (2, 0)  
+move "Vergleiche" type "translate #2" along line (0, 0) (2, 0)  
+}
+{
+unhighlightCode on "code" line 5
+highlightCode on "code" line 6
+highlightArrayElem on "array" position 0
+highlightArrayElem on "array" position 1
+move "Vergleiche" type "translate #2" along line (0, 0) (2, 0)  
+}
+{
+unhighlightCode on "code" line 6
+unhighlightArrayElem on "array" position 0
+unhighlightArrayElem on "array" position 1
+unhighlightCode on "code" line 4
+highlightCode on "code" line 5
+moveArrayMarker "jMarker" to position 2   within 10 ticks
+move "Zuweisungen" type "translate #2" along line (0, 0) (2, 0)  
+move "Vergleiche" type "translate #2" along line (0, 0) (2, 0)  
+}
+{
+unhighlightCode on "code" line 5
+highlightCode on "code" line 6
+highlightArrayElem on "array" position 1
+highlightArrayElem on "array" position 2
+move "Vergleiche" type "translate #2" along line (0, 0) (2, 0)  
+}
+{
+unhighlightCode on "code" line 6
+unhighlightArrayElem on "array" position 1
+unhighlightArrayElem on "array" position 2
+unhighlightCode on "code" line 4
+highlightCode on "code" line 5
+moveArrayMarker "jMarker" to position 3   within 10 ticks
+move "Zuweisungen" type "translate #2" along line (0, 0) (2, 0)  
+move "Vergleiche" type "translate #2" along line (0, 0) (2, 0)  
+}
+{
+unhighlightCode on "code" line 5
+highlightCode on "code" line 6
+highlightArrayElem on "array" position 2
+highlightArrayElem on "array" position 3
+move "Vergleiche" type "translate #2" along line (0, 0) (2, 0)  
+}
+{
+unhighlightCode on "code" line 6
+unhighlightArrayElem on "array" position 2
+unhighlightArrayElem on "array" position 3
+unhighlightCode on "code" line 4
+highlightCode on "code" line 5
+moveArrayMarker "jMarker" to position 4   within 10 ticks
+move "Zuweisungen" type "translate #2" along line (0, 0) (2, 0)  
+move "Vergleiche" type "translate #2" along line (0, 0) (2, 0)  
+}
+{
+unhighlightCode on "code" line 5
+highlightCode on "code" line 6
+highlightArrayElem on "array" position 3
+highlightArrayElem on "array" position 4
+move "Vergleiche" type "translate #2" along line (0, 0) (2, 0)  
+}
+{
+unhighlightCode on "code" line 6
+highlightCode on "code" line 7
+arraySwap on "array" position 3 with 4   within 10 ticks
+move "Zuweisungen" type "translate #2" along line (0, 0) (6, 0)  
+}
+{
+unhighlightCode on "code" line 7
+highlightCode on "code" line 8
+setText of "swapVal" to "true" within 10 ticks
+move "Zuweisungen" type "translate #2" along line (0, 0) (2, 0)  
+}
+{
+unhighlightCode on "code" line 8
+unhighlightArrayElem on "array" position 3
+unhighlightArrayElem on "array" position 4
+move "Vergleiche" type "translate #2" along line (0, 0) (2, 0)  
+move "Zuweisungen" type "translate #2" along line (0, 0) (2, 0)  
+highlightCode on "code" line 3
+moveArrayMarker "iMarker" to position 4   within 10 ticks
+highlightArrayCell on "array" position 4 within 10 ticks
+move "Vergleiche" type "translate #2" along line (0, 0) (4, 0)  
+move "Zuweisungen" type "translate #2" along line (0, 0) (2, 0)  
+}
+label "Bubble Sort, i=4"
+{
+unhighlightCode on "code" line 3
+highlightCode on "code" line 4
+setText of "swapVal" to "false" within 10 ticks
+move "Zuweisungen" type "translate #2" along line (0, 0) (2, 0)  
+}
+{
+interaction "swapFIB4"
+unhighlightCode on "code" line 4
+highlightCode on "code" line 5
+moveArrayMarker "jMarker" to position 1   within 10 ticks
+move "Zuweisungen" type "translate #2" along line (0, 0) (2, 0)  
+move "Vergleiche" type "translate #2" along line (0, 0) (2, 0)  
+}
+{
+unhighlightCode on "code" line 5
+highlightCode on "code" line 6
+highlightArrayElem on "array" position 0
+highlightArrayElem on "array" position 1
+move "Vergleiche" type "translate #2" along line (0, 0) (2, 0)  
+}
+{
+unhighlightCode on "code" line 6
+unhighlightArrayElem on "array" position 0
+unhighlightArrayElem on "array" position 1
+unhighlightCode on "code" line 4
+highlightCode on "code" line 5
+moveArrayMarker "jMarker" to position 2   within 10 ticks
+move "Zuweisungen" type "translate #2" along line (0, 0) (2, 0)  
+move "Vergleiche" type "translate #2" along line (0, 0) (2, 0)  
+}
+{
+unhighlightCode on "code" line 5
+highlightCode on "code" line 6
+highlightArrayElem on "array" position 1
+highlightArrayElem on "array" position 2
+move "Vergleiche" type "translate #2" along line (0, 0) (2, 0)  
+}
+{
+unhighlightCode on "code" line 6
+unhighlightArrayElem on "array" position 1
+unhighlightArrayElem on "array" position 2
+unhighlightCode on "code" line 4
+highlightCode on "code" line 5
+moveArrayMarker "jMarker" to position 3   within 10 ticks
+move "Zuweisungen" type "translate #2" along line (0, 0) (2, 0)  
+move "Vergleiche" type "translate #2" along line (0, 0) (2, 0)  
+}
+{
+unhighlightCode on "code" line 5
+highlightCode on "code" line 6
+highlightArrayElem on "array" position 2
+highlightArrayElem on "array" position 3
+move "Vergleiche" type "translate #2" along line (0, 0) (2, 0)  
+}
+{
+unhighlightCode on "code" line 6
+unhighlightArrayElem on "array" position 2
+unhighlightArrayElem on "array" position 3
+move "Vergleiche" type "translate #2" along line (0, 0) (2, 0)  
+move "Zuweisungen" type "translate #2" along line (0, 0) (2, 0)  
+move "Vergleiche" type "translate #2" along line (0, 0) (2, 0)  
+move "Zuweisungen" type "translate #2" along line (0, 0) (2, 0)  
+interaction "link"
+interaction "link2"
+hide "swapVal" 
+hide "swapLabel" 
+text "nrSteps" "Insgesamt verwendete der Algorithmus 81 Zuweisungen und 66 Vergleiche." offset (0, 30) from "code" SW color (0, 0, 0) depth 1 font SansSerif size 20 bold
+}
+{
+hide "nrSteps" 
+hide "code" 
+hide "Zuweisungen" 
+hide "#A" 
+hide "Vergleiche" 
+hide "#C" 
+hide "array" 
+codegroup "complexity" at offset (0, 30) from "title" SW color (0, 0, 0) highlightColor (255, 0, 0) contextColor (0, 0, 0) font SansSerif size 16 bold depth 3
+addCodeLine "Anmerkungen zur Komplexität" to "complexity"
+addCodeLine "" to "complexity"
+addCodeLine "Bubble Sort ist generell fast immer quadratisch, nur bei" to "complexity"
+addCodeLine "fast vollständig sortierten Daten ist er linear." to "complexity"
+addCodeLine "" to "complexity"
+addCodeLine "Insgesamt ist damit Bubble Sort kein gutes Sortierverfahren" to "complexity"
+addCodeLine "und sollte entsprechend nur massvoll eingesetzt werden." to "complexity"
+}
+{
+hide "complexity" 
+text "adForURL" "Weitere Animationen finden Sie unter http://www.algoanim.info/Animal2 im Online-Repository" offset (0, 50) from "title" SW color (0, 0, 0) depth 1 font SansSerif size 20 bold
+}

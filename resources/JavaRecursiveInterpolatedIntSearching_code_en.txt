@@ -1,0 +1,16 @@
+public int recursiveInterpolatedSearch(int[] array, int value) { #header
+  if (array == null || array.length == 0) { #ifNull
+    return -1; #invalid
+  }
+   if (l > r || l < 0 || r >= array.length) { #invalidIndex
+    return -1; #invalidIndexReturn
+  }
+  int mid = l + ((value - array[l]) * (r - l)) / (array[r] - array[l]); #installMidMarker
+  if (value == array[mid]) #checkFound
+    return mid; #found
+  else if (value < array[mid]) #ifLess
+    return recursiveInterpolatedSearch(array, value, l, mid - 1); #continueLeft
+
+  return recursiveInterpolatedSearch(array, value, mid + 1, r); #continueRight
+    
+}

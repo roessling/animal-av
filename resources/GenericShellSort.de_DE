@@ -1,0 +1,8 @@
+@import=resources/GenericSettings
+algoDesc=Der Gedanke, der hinter ShellSort steht, kann wie folgt beschrieben werden:\n1. Die Daten werden in eine zweidimensionale Matrix geschrieben\n2. Die Spalten der Matrix werden einzeln sortiert\nDaraus resultiert eine grobe Sortierung. Dieser Schritt wird öfter wiederholt, wobei jeweils die Breite der Matrix verringert wird, bis die Matrix nur noch aus einer einzigen vollständig sortierten Spalte besteht.\n\nShellSort arbeitet instabil und in-place.
+algoAuthor=Krasimir Markov <kmarkov@gmail.com>
+animDesc=Beschreibung des Algorithmus
+adForURL=Weitere Animationen finden Sie unter http://www.algoanim.info/Animal2 im Online-Repository
+nrSteps=Insgesamt verwendete der Algorithmus {0} Zuweisungen und {1} Vergleiche.
+nrAss=Zuweisungen
+nrComp=Vergleiche

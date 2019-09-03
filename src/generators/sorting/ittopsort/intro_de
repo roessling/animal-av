@@ -1,0 +1,9 @@
+Die topologische Sortierung wird benutzt um eine Reihenfolge von [br]
+Aufträgen zu erstellen, sodass Abhängigkeiten zwischen ihren Ausführungen[br]
+berücksichtigt werden[br][br]
+
+Dazu wird jeder Auftrag als Knoten in einem gerichteten Grpahen[br]
+repräsentiert. Eine Kante zwischen Knoten a und b bedeutet, dass Auftrag b[br]
+nach der Ausführung von a ausgeführt werden kann.[br][br]
+
+Der hier benutzte Algorithmus verwendet einen iterativen Ansatz.

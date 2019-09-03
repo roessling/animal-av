@@ -1,0 +1,31 @@
+noSuchKeyException=There is no resource for entry {0}
+iconNotFound=Icon "{0}" not found
+
+generatorName=Carry-lookahead adder
+algoName=Carry-lookahead adder
+
+description=The carry-lookahead adder is an extension to the ripple-carry adder. The ripple-carry adder works by adding all bits sequantially and passing a carry. Therefore, all higher bits can only be computed after all previous bits are completed.\n\nThe carry-lookahead adder introduces additional logic to predict a carry for a block of bits. This prediction can be used by subsequent adders to start their work, while the previous adders are still active.\n\nThe advantage of using a carry-lookahead adder is the faster computation of the output carry c_out. The result s itself is computed by a ripple-carry adder which takes the first input carry from a preceding carry-lookahead adder.
+sourceCodeComplete=input [n-1:0] a, b    // Input values\ninput c_in            // Input carries\noutput [n-1:0] s      // Result A + B\noutput c_out          // Output carry\nwire [n-1:-1] c       // Intermediate carries\nwire [n-1:0] g        // Generate carry?\nwire [n-1:0] p        // Propagate carry?\nwire [n-1:-1] c_cla   // CLA-Carry\n\nc[-1] = c_in;   c_cla[-1] = 0;\nfor (i = 0; i < 2; i = i + 1) begin\n    (c[i],s[i]) = a[i] + b[i] + c[i-1]\n    g[i] = a[i] & b[i]\n    p[i] = a[i] | b[i]\n    c_cla[i] = g[i] | (p[i] & c_cla[i-1])\nend\nc_out = c_cla[1] | (c_in & (p[0] & p[1]))
+codeVariables=input [n-1:0] a, b    // Input values\ninput c_in            // Input carries\noutput [n-1:0] s      // Result A + B\noutput c_out          // Output carry\nwire [n-1:-1] c       // Intermediate carries\nwire [n-1:0] g        // Generate carry?\nwire [n-1:0] p        // Propagate carry?\nwire [n-1:-1] c_cla   // CLA-Carry
+sourceCode=c[-1] = c_in;   c_cla[-1] = 0;\nfor (i = 0; i < 2; i = i + 1) begin\n\t\t(c[i],s[i]) = a[i] + b[i] + c[i-1]\n\t\tg[i] = a[i] & b[i]\n\t\tp[i] = a[i] | b[i]\n\t\tc_cla[i] = g[i] | (p[i] & c_cla[i-1])\nend\nc_out = c_cla[1] | (c_in & (p[0] & p[1]))
+conclusion=The carry-lookahead adder considered here has a width of {0} Bit(s). The CLA-Logic is completely separated from the ripple-carry adder.\n\nThe output carry computed by the CLA-Logic is only used for the output carry c_out. Because of the simpler computation it is available before the computation of s is completed. Therefore, subsequent adders can start their computation earlier. Given that only bit-blocks of a fixed width are optimized the speedup is linear.\n\nLike ripple-carry adders, carry-lookahead adders can be cascaded as well. This allows a trade-off between speedup and hardware complexity. In practice 4-bit carry-lookahead adders are commonly used. 
+
+tocIntroduction=Introduction
+tocBit=Bit {0}
+tocCarryOut=c_out
+
+fullAdder=Output s[{0}] calculated by Ripple-Carry-adder
+generateYes=a[{0}] + b[{0}] = {1} => Generate, two bits necessary
+generateNo=a[{0}] + b[{0}] = {1} => No generate
+propagateYes=Result has two bits when carry comes in => Propagate
+propagateNo=Result has one bit even when carry comes in => No propagate
+claCarryFirst=First bit: No incoming carry in CLA-Logic
+propagate=Is a carry being propagated? => {0}
+hasClaCarry=Carray generated or propagated? => {0}
+propagateAll=Can all blocks propagate a carry? => {0}
+inputCarryPropagated=Is c_in being propagated? => {0}
+
+yes=Yes
+no=No
+
+errorNegativeInput=The input values a and b must not be negative.

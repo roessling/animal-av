@@ -1,0 +1,8 @@
+@import=resources/GenericBubbleSort.de_DE
+theName=Bubble Sort [DE]
+codeExample=public void sort(int[] array) {\n  int i, j;\n  boolean swapPerformed = true;\n  for (i = array.length; swapPerformed && i > 0; i--) {\n    for (j = 1, swapPerformed = false; j < i; j++) {\n      if (array[j - 1] > array[j]) {\n        swap(array, j - 1, j);\n        swapPerformed = true;\n      }\n    }\n  }\n}
+animTitle=Bubble Sort
+algoTitle=Bubble Sort
+description.filename=resources/JavaBubbleSort_descr_de.txt
+code.filename=resources/JavaBubbleSort_code.txt
+complexity.filename=resources/GenericBubbleSort_complexity_de.txt

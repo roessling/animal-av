@@ -1,0 +1,21 @@
+POSIX Conventions for Command Line Arguments
+
+Command-Line Arguments warns that the use of command-line arguments
+in a Java program may cause that program to be unportable (that is,
+it will not be 100% Pure Java). If a program requires command-line
+arguments, then it should follow the POSIX conventions for them.
+    
+The POSIX conventions are summarized here:
+
+  * An option is a hyphen followed by a single alphanumeric character, 
+    like this: -o.
+  * An option may require an argument (which must appear immediately
+    after the option); for example, -o argument or -oargument.
+  * Options that do not require arguments can be grouped after a hyphen,
+    so, for example, -lst is equivalent to -t -l -s.
+  * Options can appear in any order; thus -lst is equivalent to -tls.
+  * Options can appear multiple times.
+  * Options precede other nonoption arguments: -lst nonoption.
+  * The -- argument terminates options.
+  * The - option is typically used to represent one of the standard
+    input streams. 

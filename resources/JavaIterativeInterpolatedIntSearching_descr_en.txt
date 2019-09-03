@@ -1,0 +1,26 @@
+Interpolative Search is a very efficient algorithm for locating a given
+element in an array of sorted elements.
+
+The algorithm always regards only a certain partition of the array.
+The first partition covers the complete array. The partition is
+achieved in each iteration by selecting a 'current' element.
+If this current element is less or greater than the value to look for,
+the algorithm will only appropriate partition to the element's left 
+or right, respectively.
+If the value is found, its position is returned; otherwise, 
+the algorithm with return -1 as an 'error mark'.
+
+Pseudo code:
+
+Test if the array exists and has a valid length.
+Set the boundaries of the current partition: l = 0, r = array length - 1.
+Interpolated a likely position 'mid' for the element in the full array.
+While r > l and array[mid] != value:
+  If value < array[mid]:
+    Set r = mid - 1.
+  Otherwise:
+    Set l = mid + 1.
+  Interpolate a likely position 'mid' for the value in the current partition.
+If array[mid] = value, return mid, else return -1.
+
+In the following animation, the current partition will be highlighted.

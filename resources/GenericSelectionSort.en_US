@@ -1,0 +1,8 @@
+@import=resources/GenericSettings
+algoDesc=This algorithm performs Selection Sort.<br />First, the smallest value in the array is exchanged with the value at the first array position. Thus, we have a partially sorted array at position [0, 0] and an unsorted array starting at position i=1.<br />Next, we continue the process for i=1, exchanging the smallest value in the array from position i to the end of the array with the element at position i. This is continued until i reaches the last element, at which time the array is sorted.
+algoAuthor=Krasimir Markov <kmarkov@gmail.com>
+animDesc=Selection Sort: Synopsis
+adForURL=Please see http://www.algoanim.info/Animal2 for further animations!
+nrSteps=Selection sort performed a total of {0} assignments and {1} comparisons.
+nrAss=Assignments
+nrComp=Comparisons

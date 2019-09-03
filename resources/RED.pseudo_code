@@ -1,0 +1,14 @@
+FUNCTION_DEFINITION@def random_early_detection(fifoCapacity):
+FIFO_DECLARATION@\tfifo = [fifoCapacity];@X
+INDEX_DECLARATION@\tindex = 0;@X
+INCOMING_PACKET_DECLARATION@\tpackets = receivePackets()@X
+FOR_PACKET_ITERATION@\tfor (packet in packets):@X
+GET_RANDOM@\t\trandom = Random(0, 1)@X
+CALCULATE_DROP_PROBABILITY@\t\tprobability = getDropProbability@X
+CHECK_DROP@\t\tif (random <= prob):@X
+DROP_PACKET@\t\t\tdropPacket(incomingPacket)@X
+CHECK_DROP_ELSE@\t\telse:@X
+ENQUEUE_PACKET@\t\t\tenqueuePacket(incomingPacket)@X
+UPDATE_FIFO_DROP_ENQ@\t\tupdateFIFO()
+PROCESS_PACKET@\tprocessPacket()@X
+UPDATE_FIFO_END@\tupdateFIFO()@X

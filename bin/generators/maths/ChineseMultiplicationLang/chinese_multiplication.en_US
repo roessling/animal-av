@@ -1,0 +1,38 @@
+noSuchKeyException=There is no resource for entry {0}
+iconNotFound=Icon "{0}" not found
+
+algorithm_name=Chinese Multiplication
+description=With the Chinese multiplication one tries to reduce the multiplication to a simple Addition of numbers. Thereby lines are horizontal aligned lines are drawn for the multiplicand and vertical aligned lines are drawn for the multiplicator. Afterwards the composed intersections are added by observing the decimal places and merged into the final result.
+source_code=1. Draw the multiplier\n2. Draw the multiplicand\n3. Count the numbers of intersections
+
+approach=Approach
+step1=1. Draw the first number
+step2=2. Draw the second number
+step3=3. Draw seperators
+step4=4. Count the numbers of intersections
+step5=5. Add the counted numbers of intersections per section to a single number
+introduction=Introduction
+result=Result
+
+line1=The Chinese multiplication, also stick multiplication, occasionally also Japanese multiplication called, is a method for multiplication of numbers.
+line2=The origin of this method is disputed and is not clearly defined.
+line3=However the origin is assumed to be in the old China.
+line4=With the Chinese multiplication one tries to reduce the multiplication to a simple Addition of numbers.
+line5=The approach is described as follows:
+line6=1. Multiplicator: Draw for every digit lines in horizontal orientation. The amount of lines is per digit is the digit itself. Keep a space between each digit to not confuse them.
+line7=2. Multiplicand: Do the same for the multiplicand, but in vertical orientation.
+line8=3. Count the intersections and merge them to the final result: The grid is sectioned diagonally. Beginning downright the first sections represents the one's, the second the ten's and so on.
+line9=If there are more than 9 Intersection point, then the overflow is considered in the calculation of the next section.
+line10=This method is especially well-suited for 2 or 3-digit numbers, which are not containing digits greater than 5, because otherwise the amount of lines leads to strongly reduced efficiency.
+
+line11=Why is this method working?
+line12=The Chinese multiplication is basically another representation of our well-known written multiplication.
+line13=Consider in the following the example  12 x 23 = 276.
+line14=The product of the highlighted digits in the written multiplication corresponds to the amount of intersections in the encircled area. 
+line15=Now the result is put together by the intersections.
+
+line16=First step: Draw for every digit of the multiplicator lines in the amount of the digit itself. The lines run horizontally from left to right.
+line17=Second step: The lines for the second number are drawn vertically from top to bottom.
+line18=Third step: Now the separation lines are drawn, which divide the areas. Each area represents a decimal place.
+line19=Forth step: Now we count the intersections in each area.
+line20=Fifth step: In the final step the counted intersections are summed up to the final result.

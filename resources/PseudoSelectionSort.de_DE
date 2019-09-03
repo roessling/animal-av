@@ -1,0 +1,10 @@
+@import=resources/GenericSelectionSort.de_DE
+theName=Selection Sort (Pseudo Code) [EN]
+algoName=Selection Sort (Pseudo Code) [EN]
+outputLanguage=Pseudo-Code
+codeExample=public void selectionSort(int[] array)\n{\n  int i, j, minIndex;\n  for (i=0; i<array.length - 1; i++)\n  {\n    minIndex = i;\n    for (j=i+1; j<array.length; j++)\n      if (array[j] < array[minIndex])\n        minIndex = j;\n    swap(array, i, minIndex);\n  }\n}
+animTitle=Selection Sort
+algoTitle=Selection Sort
+description.filename=resources/GenericSelectionSort_descr_de.txt
+code.filename=resources/PseudoSelectionSort_code.txt
+complexity.filename=resources/GenericSelectionSort_complexity_de.txt

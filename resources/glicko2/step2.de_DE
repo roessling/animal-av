@@ -1,0 +1,6 @@
+Zuerst konvertieren wir unsere
+Glicko-2-Wertung in die Glicko-Skala
+mit den folgenden Formeln:
+
+    set my := (r - 1500) / 173.7178
+    set Phi := RD / 173.7178

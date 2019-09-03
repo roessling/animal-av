@@ -1,0 +1,16 @@
+Ein Graph ist eine Datenstruktur, die aus einer Menge von
+Objekten namens Knoten (auch: Ecken) besteht,
+die miteinander durch Kanten verknüpft sind. Die
+Kanten können dabei ein Gewicht haben oder gerichtet sein.
+So kann eine Kante von Knoten A zu Knoten B existieren, ohne
+dass es eine Kante von B zu A gibt.
+
+Graphen werden in der Regel als eine Menge von Punkten
+oder Kreisen dargestellt (für die Knoten), die mit Linien
+verbunden sind (die Kanten). Gerichtete Kanten werden durch
+eine Pfeilspitze am Ende dargestellt; bei gewichteten Kanten
+wird das Gewicht neben die Kante geschrieben.
+
+Graphen können für viele Probleme genutzt werden. Eine
+Sonderform von Graphen sind die Bäume, die ebenfalls
+sehr häufig genutzt werden.

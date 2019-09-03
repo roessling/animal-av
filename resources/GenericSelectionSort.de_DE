@@ -1,0 +1,8 @@
+@import=resources/GenericSettings
+algoDesc=Dieser Generator sortiert das vom Nutzer eingegebene Array mittels Selection Sort.<br />Um ein Array der L&auml;nge n zu sortieren, wird das Minimum gesucht, also das Element mit dem kleinsten Sortierschl&uuml;ssel.<br />Das Minimum wird dann mit dem ersten Element des Arrays vertauscht. Somit erh&auml;lt man links ein sortiertes Teilarray der L&auml;nge 1 und rechts ein unsortiertes Teilfeld der L&auml;nge n-1.<br />Anschlie&szlig;end wird der Algorithmus auf das unsortierte Teilarray angewendet.
+algoAuthor=Krasimir Markov <kmarkov@gmail.com>
+animDesc=Beschreibung des Algorithmus
+adForURL=Weitere Animationen finden Sie unter http://www.algoanim.info/Animal2 im Online-Repository
+nrSteps=Insgesamt verwendete der Algorithmus {0} Zuweisungen und {1} Vergleiche.
+nrAss=Zuweisungen
+nrComp=Vergleiche

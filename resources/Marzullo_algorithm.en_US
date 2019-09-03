@@ -1,0 +1,36 @@
+noSuchKeyException=missing resource entry for {0}
+iconNotFound=Icon "{0}" not found
+
+###HTML###
+assert=assert: 
+errColumn=the input matrix need to have 2 columns.
+errDouble=the input matrix need to only contain double values. (like 2.0)
+ 
+xtitle=Marzullo�s Algorithmus
+xintroSize=3
+xintro0=Marzullo�s Algorithmus calculates the first interval,
+xintro1=which represents the largest, not empty intersection of the input intervals.
+xintro2=This can be used to synchronize clocks or for set estimation algorithm
+
+
+###UTF-8###
+title=Marzullo´s Algorithmus
+
+introHeader=Introduction
+introSize=3
+intro0=Marzullo´s Algorithmus calculates the first interval,
+intro1=which represents the largest, not empty intersection of the input intervals.
+intro2=This can be used to synchronize clocks or for set estimation algorithm
+
+intervals=Intervals: 
+outroHeader=Summary
+outroSize=3
+outro0=The best interval reaches from {0} to {1};  [{2} ± {3}]
+outro1=It was calculated in {4} iterations and
+outro2=represents the intersection of {5} from {6} intervals.
+
+input=Input Values:
+inputToTable1=The input intervals of the shape: [position ± offset]
+inputToTable2=are tabulated as tuples: (startposition, -1), (endposition, 1)
+
+marzCodeHeader=The Algorithm:

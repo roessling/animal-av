@@ -1,0 +1,8 @@
+SelectionSort(int[] array) #header
+  Declare int i, j, minIndex; #variables
+  loop for i=0 until i < array length - 1: #outerLoop
+    minIndex = i; #setMinIndex
+    loop for j=i+1 until j < array length: #innerLoop
+      if array[j] < array[minIndex] #compare
+        minIndex = j; #minFound
+    swap(array, i, minIndex); #swap

@@ -1,0 +1,16 @@
+If the player has not been rated yet,
+we set their rating to 1500, the
+rating deviation to 350 and the
+volatility to 0.06.
+
+Otherwise we use their pre-period ratings.
+
+
+Implementation details:
+It is important to create a working-copy
+of the player ratings before you start
+with the calculations, as we assume that
+events in a single rating period happen
+simultaneously and rating calculations
+of one player's new rating should not affect
+the calculations of the others.

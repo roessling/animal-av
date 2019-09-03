@@ -1,0 +1,17 @@
+Sortieren durch Einfügen, auch als Insertion Sort bezeichnet, fügt
+der Reihe nach Elemente in eine bereits sortierte (Teil-)Liste ein,
+die anfangs leer ist.
+
+Damit ist das Vorgehen dem Sortieren von Spielkarten ähnlich: in
+jedem Schritt wird eine neue Spielkarte zwischen die bereits
+sortierten Karten einfügt.
+
+Der Algorithmus in Worten:
+
+1. Setze i=1
+2. Speichere a[i] in einer Variablen v und setze j=i
+3. Solange j>0 und v kleiner als a[j-1] is, kopiere
+  a[j-1] an Position a[j] und setze j=j-1
+4. Füge Element v an die Position j ein
+5. Falls i kleiner als n ist, erhöhe i um eins und fahre
+  fort mit Schritt 2

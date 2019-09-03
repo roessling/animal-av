@@ -1,0 +1,9 @@
+In this step we calculate the new volatility sigma'.
+
+The algorithm proposed for this by Prof. Glickman
+is integrated in the pseudo code. But we will not
+go into further detail as this part only finds
+the zero of a function. It is based on the Illinois algorithm,
+a variant of the regula falsi method, where the zero of
+a function is approximated by approaching it from a negative
+and positive point (here A and B, with C being the final result).

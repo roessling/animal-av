@@ -1,0 +1,183 @@
+# the label for the array cell
+AbstractArrayEditor.arrayCell=Array cell: 
+# the label for the array size
+AbstractArrayEditor.arraySize=Array Size
+# the array values label for the bordered area
+AbstractArrayEditor.arrayValuesBL=Array Values:
+# the basic colors label for the bordered area
+AbstractArrayEditor.basicColors=Basic Colors
+# the label for the content of an array cell
+AbstractArrayEditor.cellContent=Cell content:
+# the outline color
+AbstractIndexedStructureEditor.outlineColorTip=color used for the cell outline in the structure
+# the text color
+AbstractIndexedStructureEditor.textColorTip=color used for the values in the structure
+# the (cell) fill color
+AbstractIndexedStructureEditor.fillColorTip=color used for the cell background in the structure
+# the cell highlight color
+AbstractIndexedStructureEditor.cellHighlightTip=color used for highlighting a cell of the structure
+# the element highlight color
+AbstractIndexedStructureEditor.elemHighlightTip=color used for highlighting a concrete value in the structure
+# the element highlight color
+AbstractIndexedStructureEditor.elemHighlightColor=Element Highlight
+# the label for the element highlight color
+AbstractIndexedStructureEditor.elemHighlightColorLabel=Element Highlight:
+# the color for array elements
+AbstractArrayEditor.fontColorLabel=Element Color:
+# the highlight colors label for the bordered area
+AbstractArrayEditor.highlightColors=Highlight Colors
+# the label for the highlight color choice
+AbstractIndexedStructureEditor.hlColorLabel=Highlight Color:
+# the button for toggling the index display for indexed structures (matrix, array, ...)
+AbstractIndexedStructureEditor.showIndices.iconName=
+AbstractIndexedStructureEditor.showIndices.label=Show cell indices
+AbstractIndexedStructureEditor.showIndices.mnemonic=i
+AbstractIndexedStructureEditor.showIndices.toolTipText=Turn display of cell indices on/off
+# elements for the "copy" button
+AbstractTextEditor.copy.label=Copy
+AbstractTextEditor.copy.mnemonic=c
+AbstractTextEditor.copy.toolTipText=Copies the selected object(s) to the clipboard
+# elements for the "cut" button
+AbstractTextEditor.cut.label=Cut
+AbstractTextEditor.cut.mnemonic=u
+AbstractTextEditor.cut.toolTipText=Cuts the selected object(s)
+# label for the font
+AbstractTextEditor.fontBL=Font Settings
+AbstractTextEditor.fontBL.toolTipText=Font Settings
+# label for the font size field
+AbstractTextEditor.fontSizeLabel=Size: 
+# label for the font style label
+AbstractTextEditor.fontStyleLabel=Style: 
+# elements for the "paste" button
+AbstractTextEditor.paste.label=Paste
+AbstractTextEditor.paste.mnemonic=p
+AbstractTextEditor.paste.toolTipText=Pastes the clipboard contents to the current position
+# label for the text
+AbstractTextEditor.textBL=Text
+AbstractTextEditor.textBL.toolTipText=Text Value
+# text for the text color
+AbstractTextEditor.textColor=text color
+# title for the bordered text area
+AbstractTextEditor.textCompBL.toolTipText=Text Component
+AbstractTextEditor.textCompBL=Text Component
+# label for choosing the animation method
+AnimatorEditor.methodLabel=Method:
+# no appropriate animation method found
+AnimatorEditor.noAppropriateMethod=No appropriate method
+# no common animator method was found
+AnimatorEditor.noCommonMethod=No common method
+# info that no object was selected in an animator
+AnimatorEditor.noObjectsSelected=No object(s) selected
+# info that no object was selected in an animator
+AnimatorEditor.noObjectSelectedException=Please select one or more object(s)
+# the label for the offset before the effect starts
+AnimatorEditor.offsetLabel=Offset: 
+# the label for the total duration
+AnimatorEditor.totalLabel=Total: 
+# label for duration or delay measured in ms
+TimedAnimatorEditor.ms.iconName=
+TimedAnimatorEditor.ms.label=ms
+TimedAnimatorEditor.ms.mnemonic=m
+TimedAnimatorEditor.ms.toolTipText=Time is measured in milliseconds
+# label for duration or delay measured in ticks
+TimedAnimatorEditor.ticks.iconName=
+TimedAnimatorEditor.ticks.label=ticks
+TimedAnimatorEditor.ticks.mnemonic=t
+TimedAnimatorEditor.ticks.toolTipText=Time is measured in ticks (animation frames)
+# label for the checkbox used to determine the orientation of a primitive
+ArcBasedShapeEditor.clockwise=clockwise
+# definition of a clockwise component to toggle the orientation of a primitive
+ArcBasedShapeEditor.orientation=clockwise
+ArcBasedShapeEditor.orientation.iconName=
+ArcBasedShapeEditor.orientation.label=clockwise
+ArcBasedShapeEditor.orientation.mnemonic=l
+ArcBasedShapeEditor.orientation.toolTipText=Determines if the object is oriented clockwise or counterclockwise
+# is this arc circular or ellipsoid?
+ArcEditor.circle.label=circular
+ArcEditor.circle.iconName=
+ArcEditor.circe.mnemonic=c
+# is this arc closed or open?
+ArcEditor.closed.label=closed
+ArcEditor.closed.iconName=
+ArcEditor.closed.mnemonic=l
+# definition of the text for a backward-pointing arrow
+ArrowableShapeEditor.bwArrow=backward arrow
+# definition of the components for a backward arrow button
+ArrowableShapeEditor.bwArrow.iconName=
+ArrowableShapeEditor.bwArrow.label=Backward
+ArrowableShapeEditor.bwArrow.mnemonic=b
+ArrowableShapeEditor.bwArrow.toolTipText=Toggles whether the (non-closed) component has a backward arrow
+# definition of the text for a forward-pointing arrow
+ArrowableShapeEditor.fwArrow=forward arrow
+# definition of the components for a forward arrow button
+ArrowableShapeEditor.fwArrow.iconName=
+ArrowableShapeEditor.fwArrow.label=Forward
+ArrowableShapeEditor.fwArrow.mnemonic=f
+ArrowableShapeEditor.fwArrow.toolTipText=Toggles whether the (non-closed) component has a forward arrow
+# definition of the label for arrows
+ArrowableShapeEditor.arrowLabel=Arrow
+# the "apply" button
+GenericEditor.apply.iconName=
+GenericEditor.apply.label=Apply
+GenericEditor.apply.mnemonic=a
+GenericEditor.apply.toolTipText=Apply the selection and keep window open
+# the "cancel" button
+GenericEditor.cancel.iconName=
+GenericEditor.cancel.label=Cancel
+GenericEditor.cancel.mnemonic=c
+GenericEditor.cancel.targetCall=cancelOperation
+GenericEditor.cancel.toolTipText=Cancel the operation and close window
+# chooseColor: Prompt for choosing the Primitive color
+GenericEditor.chooseColor=Choose the {0}
+# choose the text color
+GenericEditor.chooseTextColor=Choose the text color
+# label for the bordered color chooser area
+GenericEditor.colorBL=Color Settings
+GenericEditor.colorBL.toolTipText=Options for setting the color(s) of this primitive
+# color label (with a space at the end)
+GenericEditor.colorLabel=Color: 
+# label for the depth of a primitive
+GenericEditor.depth=Depth
+# label for the border around the depth of a primitive
+GenericEditor.depthBL=Depth
+# label for the depth of a primitive
+GenericEditor.depthPrompt=Depth
+# text for an editor error
+GenericEditor.editorError=Error in Editor
+# label for the last animation step
+GenericEditor.end=end
+# translation for the fill color of a primitive
+GenericEditor.fillColor=fill color
+# label for setting the color of a filled object (with a space at the end)
+GenericEditor.fillColorLabel=Fill color: 
+# translation for a "filled" checkbox label
+GenericEditor.filled=filled
+# button definition for a "filled" button
+GenericEditor.filled.iconName=
+GenericEditor.filled.label=filled
+GenericEditor.filled.mnemonic=f
+GenericEditor.filled.toolTipText=Toggles the filled attribute of the component
+# label for finishing touches (OK, Apply, Cancel)
+GenericEditor.finishing=Finishing
+# link to editor has failed
+GenericEditor.linkToEditorError=Error in invoking method "linkToEditor" in class {0}
+# label for the name field
+GenericEditor.name=Object name
+# label for the border around the name field
+GenericEditor.nameBL=Object name
+# label for the name field (with a space at the end)
+GenericEditor.nameLabel=Name: 
+# object is null in editor
+GenericEditor.objectNull=Current object is null in {0}
+# OK button
+GenericEditor.ok.iconName=
+GenericEditor.ok.label=OK
+GenericEditor.ok.mnemonic=o
+GenericEditor.ok.toolTipText=Confirm the selection and close window
+# options translation
+GenericEditor.options=Options
+# label for the animation step
+GenericEditor.step=Step
+# label for the outline of an object (usually for setting its outline color)
+OpenObjectEditor.outline=outline
+Point=Point

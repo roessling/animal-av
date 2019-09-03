@@ -1,0 +1,33 @@
+Aus de.wikipedia.net, der freien Enzyclopädie:
+
+Ein Sortierverfahren ist ein Algorithmus, der dazu dient,
+eine Liste von Elementen zu sortieren. Voraussetzung ist, 
+dass auf der Menge der Elemente eine strenge schwache
+Ordnung definiert ist, z.B. die lexikographische Ordnung
+von Zeichenketten oder die numerische Ordnung von Zahlen.
+
+Es gibt verschiedene Sortierverfahren, die unterschiedlich
+effizient arbeiten. Die Komplexität eines Algorithmus, also
+die Anzahl der nötigen Operationen, wird üblicherweise in 
+der Landau-Notation dargestellt. Einige Sortierverfahren
+benötigen außerdem neben dem zur Speicherung des Arrays
+nötigen noch weiteren Speicherplatz. Komplexität und 
+Speicherbedarf hängen bei einigen Sortierverfahren von der
+anfänglichen Anordnung der Werte im Array ab; man
+unterscheidet dann zwischen Best Case (bester Fall),
+Average Case (Durchschnittsverhalten) und Worst Case 
+(schlechtester Fall).
+
+Man unterscheidet zudem zwischen stabilen und instabilen
+Sortierverfahren. Stabile Sortierverfahren sind solche,
+die die relative Reihenfolge von Elementen, die bezüglich
+der Ordnung äquivalent sind, nicht verändern, während instabile 
+Sortierverfahren dies nicht garantieren.
+
+Zudem unterscheidet man zwischen Sortierverfahren, die
+in-place (auch in situ) arbeiten, d.h. die ohne zusätzlichen
+Speicherplatz funktionieren, und solchen, die dies nicht tun.
+
+Zusätzlich unterscheidet man zwischen natürlichen Sortierverfahren,
+die bei vorsortierten Daten nicht langsamer arbeiten als bei
+unsortierten Daten, und solchen, die es nicht tun.

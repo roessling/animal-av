@@ -1,0 +1,31 @@
+void quicksort(int left, int right) { #quicksortheader
+   int i, pivot; #variables1
+   pivot = findPivot(left, right); #callpivot
+   if(pivot != -1) { #quicksortif
+      i = divide(left, right, pivot); #calldivide
+      quicksort(left, i-1); #recursive1
+      quicksort(i, right); #recursive2
+   }
+}
+
+int findPivot(int left, int right) { #findpivotheader
+   int k = a[left]; #variables2
+   for (int i = left+1; i<= right; i++) { #for
+      IF (a[i] > k) #findpivotif
+         return i; #findpivotreturn1
+      else if(a[i] < k) return left;  #findpivotelse
+   }
+   return -1; #findpivotreturn2
+}
+
+int divide(int left, int right, int pivot) { #divideheader
+   int i = left, j = right, pivotElement = a[pivot]; #variables3
+   DO { #dividedo
+      WHILE(a[i] < pivotElement) i++; #dividewone
+      WHILE(a[j] >= pivotElement) j--; #dividewtwo
+      IF (i < j) { #divideif
+         int tmp = a[i]; a[i] = a[j]; a[j] = tmp; #swap
+      }
+   } WHILE (i < j); #dividewhile3
+   return i; #dividereturn
+}

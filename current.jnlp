@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- JNLP Specification for Animal 2.0.1 distribution -->
+<jnlp spec="1.0+"
+      codebase="http://www.animal.ahrgr.de/download/webstart"
+      href="Animal-2.0.1b.jnlp">
+  <information>
+    <title>Animal Algorithm Animation, version 2.0.1a</title>
+    <vendor>Animal Developer Team / Dr. Guido Roessling</vendor>
+    <homepage href="http://www.animal.ahrgr.de"/>
+    <description>Animal Algorithm Animation, version 2.0.1a</description>
+    <description kind="short">An extensible algorithm animation tool used
+      for Computer Science Education purposes</description>
+    <icon href="Animal.gif"/>
+    <icon kind="splash" href="Animal.gif"/>
+    <offline-allowed/>
+  </information>
+  <security>
+    <all-permissions/>
+  </security>
+  <resources>
+    <j2se href="http://java.sun.com/products/autodl/j2se" version="1.4+"/>
+    <jar href="Animal-2.0.1b.jar"/>
+  </resources>
+  <application-desc/>
+</jnlp>

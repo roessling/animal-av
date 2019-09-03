@@ -1,0 +1,16 @@
+int iterativeBinarySearch(String[] array, String value): @CodeLabel("header")
+  Teste, ob das Feld existiert. @CodeLabel("ifNull")
+  Setze nrElems = Anzahl Feldelemente. @CodeLabel("getArrayLength")
+  Setze Untergrenze des Teilfeldes l = 0. @CodeLabel("installLMarker")
+  Setze Obergrenze des Teilfeldes r = nrElems - 1. @CodeLabel("installRMarker")
+  Setze Mitte des Teilfeldes mid = (l + r) / 2. @CodeLabel("installMidMarker")
+  Solange r > l und array[mid] != value: @CodeLabel("whileLoop")
+    Falls value < array[mid]: @CodeLabel("ifLess")
+      Setze r = mid - 1. @CodeLabel("continueLeft")
+    Sonst
+      Setze l = mid + 1. @CodeLabel("continueRight")
+    Setze mid = (l + r) / 2. @CodeLabel("updateMidElem")
+  Falls array[mid] = value: @CodeLabel("checkFound")
+    return mid. @CodeLabel("found")
+  Sonst
+    return -1.@CodeLabel("notFound")

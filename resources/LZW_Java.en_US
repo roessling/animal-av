@@ -1,0 +1,9 @@
+@import=resources/LZWGeneric.en_US
+algoName=LZW Compression
+algorithm=LZW (Lempel, Ziv, Welch 1984)
+codeExample=public static void lzw(String[] text) {\n  String w, k, result;\n  int cnt = 256;\n  Hashtable<String, Integer> dict = new Hashtable<String, Integer>();\n  for (int i = 0; i < 256;i++) {\n     dict.put(String.valueOf((char)i), i);\n  }\n  for (int i = 0; i < text.length; i++) {\n    k = text[i];\n    if (dict.containsKey(w + k))\n      w = w + k;\n    else {\n      result += dict.get(w) + " ";\n      dict.put(w + k, cnt);\n      cnt++;\n      w = k;\n    }\n  }\n}
+animTitle=LZW
+algoTitle=LZW
+description.filename=resources/LZW_Java_descr_en.txt
+code.filename=resources/LZW_Java_code.txt
+complexity.filename=resources/LZW_Generic_complexity_en.txt

@@ -1,0 +1,20 @@
+#
+# Internationalization (I18N) resources for the SwapEditor
+#
+# inactiveElementException: the chosen cell was inactive
+SwapEditor.inactiveElementException=Die gew\u00e4hlte Zelle {0} ist im aktuellen Animationsschritt deaktiviert.\nBitte aktivieren Sie zuerst die Zelle im Highlight Animator oder w\u00e4hlen Sie eine andere Zelle aus.
+# invalidCellSelection: the cell selection was invalid
+SwapEditor.invalidCellSelection=Die aktuelle Zellauswahl ist ung\u00fcltig.\nBitte w\u00e4hlen Sie zwei unterschiedliche Zellen aus.
+# definitions for the context popup menu item
+SwapEditor.swap.iconName=
+SwapEditor.swap.label=Vertauschen
+SwapEditor.swap.mnemonic=s
+SwapEditor.swap.toolTipText=Zwei Zellen in einem Array vertauschen
+# swapCells: the swap cell choice label
+SwapEditor.swapCells=Zu vertauschende Zellen: 
+# swapType: the type of swap (using an arc or a polyline)
+SwapEditor.swapType=Swap-Typ:
+# swapTypeArc: move along an arc
+SwapEditor.swapTypeArc=PTArc verwenden
+# swapTypePolyline: move along a polyline
+SwapEditor.swapTypePolyline=PTPolyline verwenden

@@ -1,0 +1,59 @@
+noSuchKeyException=Es gibt keine Ressource f\u00fcr Eintrag {0}
+iconNotFound=Icon "{0}" not found
+
+### Description ###
+description1=Lamports Bakery Algorithmus ist ein Computer Algorithmus entwickelt von Leslie Lamport,
+description2=wessen Ziel es ist die Sicherheit im Umgang mit geteilten Ressourcen durch mutual exclusion zu erh\u00f6hen.
+description3=In der Informatik, ist es normal f\u00fcr mehrere Threads gleichzeitig auf die selben Ressourcen zuzugreifen.
+description4=Es kann zu Datenkorruption kommen, wenn zwei oder mehr Threads auf die gleiche Speicherstelle schreiben wollen,
+description5=oder wenn ein Thread eine Speicherstelle lie\u00dft bevor ein anderer fertig damit ist in sie zu schreiben.
+description6=Lamports Bakery Algorithmus ist einer von vielen mutual exclusion Algorithmen, entwickelt um nebenl\u00e4ufige Threads daran zu hindern
+description7=gleichzeitig kritische Sektionen des Codes zu durchlaufen um das Risiko von Datenkorruption zu minimieren.
+
+algo11=Lamport hat sich eine B\u00e4ckerei mit einer Z\u00e4hlmaschine am Eingang vorgestellt, sodass jeder Kunde eine Nummer zugewiesen bekommt.
+algo12=Die Nummer wird f\u00fcr jeden Kunden um 1 inkrementiert. Ein globaler Z\u00e4hler zeigt die Nummer des Kunden der gerade bedient wird an.
+algo13=Alle anderen Kunden m\u00fcssen warten bis der B\u00e4cker den momentanen Kunden fertig bedient hat und die n\u00e4chste Nummer angezeigt wird.
+algo14=Wenn der Kunde fertig mit einkaufen ist und seine Nummer entsorgt hat, wird die Nummer in der Anzeige inkrementiert, sodass der n\u00e4chste Kunde bedient werden kann.
+algo15=Dieser Kunde m\u00fcsste eine neue Nummer ziehen, wenn er nochmals einkaufen wollte.
+
+### Explanations ###
+explanation1=In diesem Beispiel f\u00fchren alle Threads die gleiche Hauptfunktion Thread aus.
+explanation2=In echten Anwendungen f\u00fchren verschiedene Threads oft auch verschiedene Hauptfunktionen aus.
+explanation3=Au\u00dferdem, um diese Demonstration kurz zu halten,
+explanation4=wird jeder Thread seine Hauptfunktion nur einmal ausf\u00fchren.
+
+explanation5=Sobald ein Thread seine Nummer zugewiesen bekommen hat, wird er diese Schleife betreten,
+explanation6=und hier warten bis er an der Reihe ist.
+explanation7=Diese Schleife, beziehungsweise die Bedingungen darin, garantieren, dass immer nur ein Thread gleichzeitig in der kritischen Sektion ist.
+explanation8=Daher werden alle anderen Threads, die bereits eine Nummer gezogen haben, weiterhin diese Schleife ausf\u00fchren.
+
+explanation9=Durch Einschr\u00e4nkungen in Computer Architektur, ben\u00f6tigen manche Teile von Lamports Analogie Modifikationen.
+explanation10=Es ist m\u00f6glich, dass mehr als ein Thread die gleiche Nummer n zugewiesen bekommt; dies ist unausweichlich.
+explanation11=Daher wird angenommen, dass die Thread Kennzeichnung i ebenfalls eine Priorit\u00e4t darstellt.
+explanation12=Ein niedrigerer Wert von i bedeutet eine h\u00f6here Priorit\u00e4t und Threads mit h\u00f6herer Priorit\u00e4t betreten die kritische Sektion zuerst.
+
+### Ending ###
+ending1=Alle Threads haben nun ihre kritische Sektion in der richtigen Reihenfolge betreten und ausgef\u00fchrt.
+ending2=Normalerweise w\u00fcrde dies sehr viel l\u00e4nger dauern, da Threads ihre Hauptfunktion mehrmals ausf\u00fchren, aber das Prinzip bleibt das gleiche.
+ending3=Um das undeterministische Zeitverhalten von Threads zu simulieren, wurde die Reihenfolge von ankommenden Threads zuf\u00e4llig bestimmt.
+ending4=Starte noch einen Durchlauf und beobachte die Unterschiede!
+
+### Chapters ###
+explanationend=Ender der Erkl\u00e4rungen
+
+conclusion=Fazit
+
+unlock= hat die kritische Sektion erreicht
+
+### Questions ###
+unlockquestion=Ein Thread hat seine kritische Sektion erreicht. Welcher ?
+unlockanswer=wird nun seine kritische Sektion betreten.
+
+nextnumberquestion1=bekommt seine Nummer zugewiesen. Was ist
+nextnumberquestion2=Nummer ?
+nextnumberanswer=bekommt die Nummer
+
+### Legend ###
+legend1=Thread wurde noch nicht initialisiert
+legend2=Thread wurde Nummer zugeteilt, aber kritische Sektion ist noch nicht erreicht
+legend3=Thread hat seine Hauptfunktion beendet

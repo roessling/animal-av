@@ -1,0 +1,15 @@
+Links ist der Pseudocode des Fagin's Algorithm zu sehen.
+Rechts sieht man die sortierte Matrix vom vorherigen Schritt.
+		
+Eingabevariablen:
+	Array A: Dargestellt durch die rechte Matrix.
+	         Beinhaltet Objektname- und -Attributwert-Tupel, 
+	         absteigend nach Wert sortiert.
+	Integer k: Legt die Anzahl an Top-Objekten fest, nach denen 
+			gesucht wird.
+		
+Die Attribute, die bereits in die Matrix unten rechts einsortiert wurden, 
+werden rechts oben gelb markiert.
+Der Parallelzugriff wird solange durchgeführt bis in der unteren rechten
+Matrix k Objekte existieren, von denen alle Attributwerte bereits gesehen
+wurden, also alle Spalten der entsprechenden Tabellenzeile gefüllt sind.

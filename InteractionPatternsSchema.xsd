@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+<xs:element name="patterns">
+	<xs:complexType>
+		<xs:group ref="questionTypes" minOccurs="0" maxOccurs="unbounded" />
+	</xs:complexType>
+</xs:element>
+
+<xs:group name="questionTypes">
+	<xs:choice>
+		<xs:element name="TFQuestion" type="tfQuestion" minOccurs="0" maxOccurs="unbounded"/>
+		<xs:element name="FIBQuestion" type="fibQuestion" minOccurs="0" maxOccurs="unbounded"/>
+		<xs:element name="MCQuestion" type="mcQuestion" minOccurs="0" maxOccurs="unbounded"/>
+		<xs:element name="MSQuestion" type="msQuestion" minOccurs="0" maxOccurs="unbounded"/>
+		<xs:element name="Documentation" type="documentation" minOccurs="0" maxOccurs="unbounded"/>
+	</xs:choice>
+</xs:group>
+
+<xs:complexType name="question">
+	<xs:sequence>
+		<xs:element name="prompt" type="xs:string"/>
+		<xs:element name="pointsPossible" type="xs:integer"/>
+		<xs:element name="group" type="xs:string"/>
+	</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="answer">
+	<xs:sequence>
+		<xs:element name="text" type="xs:string"/>
+		<xs:element name="points" type="xs:integer"/>
+		<xs:element name="comment" type="xs:string"/>
+		<xs:element name="state" type="xs:string"/>
+	</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="tfQuestion">
+	<xs:complexContent>
+	    <xs:extension base="question">
+	    	<xs:sequence>
+	        	<xs:element name="answerState" type="xs:boolean" minOccurs="0" maxOccurs="1"/>
+				<xs:element name="commentTrue" type="xs:string" minOccurs="0" maxOccurs="1"/>
+				<xs:element name="commentFalse" type="xs:string" minOccurs="0" maxOccurs="1"/>
+	    	</xs:sequence>
+	    	<xs:attribute name="uid" type="xs:string" use="required"/>
+	    </xs:extension>
+	</xs:complexContent>
+</xs:complexType>
+
+<xs:complexType name="fibQuestion">
+	<xs:complexContent>
+	    <xs:extension base="question">
+	    	<xs:sequence>
+	        	<xs:element name="answer" type="xs:string" minOccurs="0" maxOccurs="1"/>
+				<xs:element name="comment" type="xs:string" minOccurs="0" maxOccurs="1"/>
+	    	</xs:sequence>
+	    	<xs:attribute name="uid" type="xs:string" use="required"/>
+	    </xs:extension>
+	</xs:complexContent>
+</xs:complexType>
+
+<xs:complexType name="mcQuestion">
+	<xs:complexContent>
+	    <xs:extension base="question"> 
+			<xs:sequence>
+				<xs:element name="answer" type="answer" minOccurs="0" maxOccurs="unbounded"/>
+			</xs:sequence>
+			<xs:attribute name="uid" type="xs:string" use="required"/>
+	    </xs:extension>
+	</xs:complexContent>	
+</xs:complexType>
+
+<xs:complexType name="msQuestion">
+	<xs:complexContent>
+	    <xs:extension base="question"> 
+			<xs:sequence>
+				<xs:element name="answer" type="answer" minOccurs="0" maxOccurs="unbounded"/>
+			</xs:sequence>
+			<xs:attribute name="uid" type="xs:string" use="required"/>
+		</xs:extension>
+	</xs:complexContent>	
+</xs:complexType>
+
+<xs:complexType name="documentation">
+	<xs:sequence>
+		<xs:element name="URL" type="xs:string"/>
+	</xs:sequence>
+	<xs:attribute name="uid" type="xs:string" use="required"/>
+</xs:complexType>
+
+</xs:schema>

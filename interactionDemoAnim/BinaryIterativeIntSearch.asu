@@ -1,0 +1,179 @@
+%Animal 2 640*480
+title "Iterative Bin?re Suche (int)"
+author "Dr. Guido R??ling (roessling@acm.org>"
+{
+text "title" "Iterative Bin?re Suche" (20, 35) color (0, 0, 0) depth 1 font SansSerif size 20 bold
+rectangle "headerRect" offset (-5, -5) from "title" NW offset (5, 5) from "title" SE color (0, 0, 0) depth 3 filled fillColor (192, 192, 192)
+text "descrHd" "Beschreibung des Algorithmus" (20, 80) color (0, 0, 0) depth 1 font SansSerif size 20 bold
+codegroup "descr" at offset (0, 30) from "descrHd" SW color (0, 0, 0) highlightColor (255, 0, 0) contextColor (0, 0, 0) font SansSerif size 16 bold depth 3
+addCodeLine "Die Binäre Suche ist ein effizientes Verfahren zum Finden eines" to "descr"
+addCodeLine "gegebenen Elements in einem sortierten Feld." to "descr"
+addCodeLine "" to "descr"
+addCodeLine "In jeder Iteration wird nur ein Teil des Feldes betrachtet (anfangs" to "descr"
+addCodeLine "das gesamte Feld). Die Feldgrenzen werden in jeder Iteration angepasst," to "descr"
+addCodeLine "wobei das Feld immer halbiert wird. Wurde das gesuchte Element gefunden," to "descr"
+addCodeLine "so wird seine Position zurückgegeben, sonst -1 als 'Fehlermarkierung'." to "descr"
+addCodeLine "" to "descr"
+addCodeLine "Der Algorithmus in Worten:" to "descr"
+addCodeLine "" to "descr"
+addCodeLine "Teste, ob das Feld existiert." to "descr"
+addCodeLine "Setze die Grenze des aktuellen Teilfelds: l = 0, r = Feldlänge - 1." to "descr"
+addCodeLine "Berechne die Mitte mid = (l + r) / 2." to "descr"
+addCodeLine "Solange r > l und array[mid] != value:" to "descr"
+addCodeLine "Falls value < array[mid]:" to "descr" indentation 1
+addCodeLine "Setze r = mid - 1." to "descr" indentation 2
+addCodeLine "Sonst" to "descr" indentation 1
+addCodeLine "Setze l = mid + 1." to "descr" indentation 2
+addCodeLine "Setze mid = (l + r) / 2." to "descr" indentation 1
+addCodeLine "Falls array[mid] = value, gib mid zurück, sonst -1." to "descr"
+addCodeLine "" to "descr"
+addCodeLine "In der Animation wird das aktuelle Teilfeld farbig hervorgehoben." to "descr"
+}
+{
+hide "descrHd" 
+hide "descr" 
+array "array" (30, 150) color (0, 0, 0) fillColor (128, 128, 128) elementColor (0, 0, 0) elemHighlight (0, 255, 0) cellHighlight (255, 200, 0) horizontal length 8 "1" "2" "4" "6" "7" "8" "11" "17" depth 1 
+codegroup "code" at offset (0, 20) from "array" SW color (0, 0, 0) highlightColor (255, 0, 255) contextColor (0, 0, 0) font Monospaced size 16 bold depth 3
+addCodeLine "public int iterativeBinarySearch(int[] array, int value) {" to "code"
+addCodeLine "if (array == null || array.length == 0) {" to "code" indentation 1
+addCodeLine "return -1;" to "code" indentation 2
+addCodeLine "}" to "code" indentation 1
+addCodeLine "int nrElems = array.length();" to "code" indentation 1
+addCodeLine "int l = 0;" to "code" indentation 1
+addCodeLine "int r = nrElems - 1;" to "code" indentation 1
+addCodeLine "int mid = (l + r) / 2;" to "code" indentation 1
+addCodeLine "while (r > l && array[mid] != value) {" to "code" indentation 1
+addCodeLine "if (value < array[mid]) {" to "code" indentation 2
+addCodeLine "r = mid - 1;" to "code" indentation 3
+addCodeLine "} else {" to "code" indentation 2
+addCodeLine "l = mid + 1;" to "code" indentation 3
+addCodeLine "}" to "code" indentation 2
+addCodeLine "mid = (l + r) / 2;" to "code" indentation 2
+addCodeLine "}" to "code" indentation 1
+addCodeLine "if (array[mid] == value) {" to "code" indentation 1
+addCodeLine "return mid;" to "code" indentation 2
+addCodeLine "} else {" to "code" indentation 1
+addCodeLine "return -1;" to "code" indentation 2
+addCodeLine "}" to "code" indentation 1
+addCodeLine "}" to "code"
+text "#A" "Zuweisungen" offset (80, -80) from "array" SE color (0, 0, 0) depth 1 font SansSerif size 20 bold
+rectangle "Zuweisungen" offset (10, 0) from "#A" NE offset (11, 0) from "#A" SE color (0, 0, 255) depth 2 filled fillColor (0, 0, 255)
+text "#C" "Vergleiche" offset (0, 35) from "#A" NW color (0, 0, 0) depth 1 font SansSerif size 20 bold
+rectangle "Vergleiche" offset (0, 35) from "Zuweisungen" NW offset (1, 35) from "Zuweisungen" SW color (0, 0, 255) depth 2 filled fillColor (0, 0, 255)
+interactionDefinition "intDef20090103194314656.txt"
+interaction "Eigenschaft"
+}
+{
+text "value" "value: 2" offset (30, 0) from "array" SE color (0, 0, 0) depth 1 font SansSerif size 20 bold
+highlightCode on "code" line 0
+}
+{
+unhighlightCode on "code" line 0
+highlightCode on "code" line 1
+move "Vergleiche" type "translate #2" along line (0, 0) (4, 0)  
+}
+{
+unhighlightCode on "code" line 1
+highlightCode on "code" line 4
+move "Zuweisungen" type "translate #2" along line (0, 0) (2, 0)  
+}
+{
+unhighlightCode on "code" line 4
+highlightCode on "code" line 5
+arrayMarker "lMarker" on "array" atIndex 0 label "l" color (0, 0, 255) depth 1
+move "Zuweisungen" type "translate #2" along line (0, 0) (2, 0)  
+}
+{
+unhighlightCode on "code" line 5
+highlightCode on "code" line 6
+arrayMarker "rMarker" on "array" atIndex 7 label "r" color (255, 0, 0) depth 1
+move "Zuweisungen" type "translate #2" along line (0, 0) (2, 0)  
+highlightArrayCell on "array" from 0 to 7 after 10 ticks
+}
+{
+unhighlightCode on "code" line 6
+highlightCode on "code" line 7
+arrayMarker "midMarker" on "array" atIndex 3 label "mid" color (0, 255, 0) depth 1
+highlightArrayElem on "array" position 3
+move "Zuweisungen" type "translate #2" along line (0, 0) (2, 0)  
+}
+{
+interaction "Iterationen"
+}
+{
+interaction "AnzahlVergleiche"
+}
+{
+unhighlightCode on "code" line 7
+highlightCode on "code" line 8
+move "Vergleiche" type "translate #2" along line (0, 0) (6, 0)  
+}
+{
+unhighlightCode on "code" line 8
+highlightCode on "code" line 9
+move "Vergleiche" type "translate #2" along line (0, 0) (2, 0)  
+}
+{
+interaction "midElement1"
+}
+{
+unhighlightCode on "code" line 9
+highlightCode on "code" line 10
+unhighlightArrayCell on "array" from 3 to 7 after 10 ticks within 10 ticks
+moveArrayMarker "rMarker" to position 2   within 10 ticks
+move "Zuweisungen" type "translate #2" along line (0, 0) (2, 0)  
+}
+{
+unhighlightCode on "code" line 10
+highlightCode on "code" line 14
+unhighlightArrayElem on "array" position 3
+moveArrayMarker "midMarker" to position 1   within 10 ticks
+highlightArrayElem on "array" position 1
+move "Zuweisungen" type "translate #2" along line (0, 0) (2, 0)  
+}
+{
+unhighlightCode on "code" line 14
+highlightCode on "code" line 8
+move "Vergleiche" type "translate #2" along line (0, 0) (6, 0)  
+}
+{
+unhighlightCode on "code" line 8
+highlightCode on "code" line 16
+move "Vergleiche" type "translate #2" along line (0, 0) (2, 0)  
+}
+{
+unhighlightCode on "code" line 16
+highlightCode on "code" line 17
+text "Text7" "Ergebnis: 1" offset (20, 0) from "value" baseline end color (0, 0, 0) depth 1 font SansSerif size 20 bold
+}
+{
+unhighlightCode on "code" line 17
+text "nrSteps" "Insgesamt verwendete der Algorithmus 6 Zuweisungen und 10 Vergleiche." offset (0, 30) from "code" SW color (0, 0, 0) depth 1 font SansSerif size 20 bold
+}
+{
+hide "nrSteps" 
+hide "code" 
+hide "Zuweisungen" 
+hide "#A" 
+hide "Vergleiche" 
+hide "#C" 
+hide "Text7" 
+hide "value" 
+hide "array" 
+codegroup "complexity" at offset (0, 30) from "title" SW color (0, 0, 0) highlightColor (255, 0, 0) contextColor (0, 0, 0) font SansSerif size 16 bold depth 3
+addCodeLine "Anmerkungen zur Komplexität" to "complexity"
+addCodeLine "" to "complexity"
+addCodeLine "Die Binäre Suche hat eine logarithmische Komplexität (zur Basis 2)." to "complexity"
+addCodeLine "Um ein Element unter 1024 Element zu finden, sind also maximal 10" to "complexity"
+addCodeLine "Iterationen erforderlich. Dies kann man damit erklären, dass" to "complexity"
+addCodeLine "in jedem Schritt die Suchmenge halbiert wird, indem jeweils eine" to "complexity"
+addCodeLine "Hälfte des Teilfeldes aus der Betrachtung genommen wird." to "complexity"
+addCodeLine "" to "complexity"
+addCodeLine "Es ist wichtig, daran zu denken, dass die vorliegenden Daten sortiert" to "complexity"
+addCodeLine "sein müssen. Andernfalls liefert die Binäre Suche nur zufällig das" to "complexity"
+addCodeLine "korrekte Ergebnis." to "complexity"
+}
+{
+hide "complexity" 
+text "adForURL" "Weitere Animationen finden Sie unter http://www.algoanim.info/Animal2 im Online-Repository" offset (0, 50) from "title" SW color (0, 0, 0) depth 1 font SansSerif size 20 bold
+}

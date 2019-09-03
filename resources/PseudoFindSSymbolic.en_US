@@ -1,0 +1,37 @@
+algorithmName=Find-S (Symbolic) [EN]
+generatorName=Find-S (Symbolic) [EN]
+dataset=Training data:
+cs=Coordinate system:
+hypo=Hypothesis:
+explanation=Explanation:
+start=Start with the most specific hypothesis h = <false, false, ..., false> that covers no example. false is the conjunction with each attribute value for the attribute: 
+foreach=Each example has to be checked for the classification. 
+noConcept=A negative example is covered. So there is no target concept and no hypothesis. The algorithm converges.
+positive=The current example is positive.\nFor each condition of the hypothesis, check whether it is also part of the example.
+coveredEx=The current example is positive and is already covered by the hypothesis. So h will not be generalized.
+negative=The current example is negative and is not covered by the hypothesis. So it can be ignored.
+removeCon1=Remove all conditions from the current hypothesis except
+removeCon2=, because it covers the example.
+removeCon3=Remove
+removeCon4=, because it covers the example.
+newHypo=The new hypothesis is:
+attVal=The attribute value
+covered=covers the example and therefore remains in the hypothesis.
+terminates=The algorithm terminates because all examples have been checked and all positives are covered.\nThe final hypothesis is: {0}
+description=Find-S finds the most specific hypothesis which covers all positives. The algorithm starts with the most specific hypothesis h = <false, false, ..., false> and does not cover examples.\nThe examples of the dataset are processed in the given order. If there is a positive instance which is not covered by the hypothesis already, a generalization of h occurs. Where symbolic attributes occur,\nvalue assignments are generalized so that the found value is covered by the hypothesis only. If the positive example is already covered by h, no changes are made. The algorithm ignores negative classified\nexamples and does not conduct additional alterations. If there is an existing Target Concept for a dataset which can be described with an hypothesis, Find-S provides a complete and consistent result.
+
+introQuestion=Which statement is correct? 
+introQuestionAnswer1=Find-S covers as many positive examples as possible.
+introQuestionFeedback1=Wrong! Find-S covers all positive examples.
+introQuestionAnswer2=Find-S covers all positive examples.
+introQuestionFeedback2=Correct!
+introQuestionAnswer3=Find-S covers as few negative examples as possible.
+introQuestionFeedback3=Wrong! Find-S covers no negative example.
+
+outroQuestion=What is the maximum number of generalizations that can be performed by the algorithm?
+outroQuestionAnswer1=min( |attributes| + 1, |positive examples| )
+outroQuestionFeedback1=Correct!
+outroQuestionAnswer2=min( |attributes| + 1, |negative examples| )
+outroQuestionFeedback2=Wrong! Changes are only made with positive examples.
+outroQuestionAnswer3=min( |attributes| + 1, |examples| )
+outroQuestionFeedback3=Wrong! Changes are only made with positive examples.

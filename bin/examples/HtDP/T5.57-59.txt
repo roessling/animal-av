@@ -1,0 +1,54 @@
+<html><body><h1>Visualizing <em>How to Design Programs Teaching Languages</h1><p>Visualized expression(s) and definition(s):</p><p><pre>
+;; T5.57-59
+;; insert: number (listof number) -> (listof number)
+;; inserts a value into an ordered list so that the list
+;; will stay ordered.
+;; example: (insert 3 '(1 2 4)) is '(1 2 3 4)
+(define (insert n alon)
+  (cond
+    [(empty? alon) 
+      (cons n empty)]
+    [(<= n (first alon))
+      (cons n alon)]
+    [else 
+      (cons (first alon) 
+            (insert n (rest alon)))]))
+
+;; Tests
+(check-expect (insert 1 empty) (list 1))
+(check-expect (insert 2 '(1 3 4)) (list 1 2 3 4))
+(check-expect (insert 6 '(1 3 4)) (list 1 3 4 6))
+(check-expect (insert 3 '(1 3 4)) (list 1 3 3 4))
+
+;; insertion-sort: (listof number) -> (listof number)
+;; creates a sorted list of numbers from the numbers in alon
+;; example: (insertion-sort '(1 7 3 2)) is '(1 2 3 7)
+(define (insertion-sort alon)
+  (cond
+    [(empty? alon) 
+      empty]
+    [else 
+      (insert (first alon) 
+              (insertion-sort (rest alon)))]))
+
+;; insertion-sort-fold: (listof number) -> (listof number)
+;; creates a sorted list of numbers from the numbers in alon
+;; example: (insertion-sort-fold '(1 7 3 2)) is '(1 2 3 7)
+(define (insertion-sort-fold alon)
+  (foldl insert empty alon))
+
+;; Tests
+(check-expect (insertion-sort empty) empty)
+(check-expect (insertion-sort '(1 2 3 4 5)) '(1 2 3 4 5))
+(check-expect (insertion-sort '(5 4 3 2 1)) '(1 2 3 4 5))
+(check-expect (insertion-sort '(1 3 5 2 4)) '(1 2 3 4 5))
+(check-expect (insertion-sort '(1 2 1 3 1 4 1 5 1)) '(1 1 1 1 1 2 3 4 5))
+(check-expect (insertion-sort '(1 2 5 3 4 5)) '(1 2 3 4 5 5))
+
+(check-expect (insertion-sort-fold empty) empty)
+(check-expect (insertion-sort-fold '(1 2 3 4 5)) '(1 2 3 4 5))
+(check-expect (insertion-sort-fold '(5 4 3 2 1)) '(1 2 3 4 5))
+(check-expect (insertion-sort-fold '(1 3 5 2 4)) '(1 2 3 4 5))
+(check-expect (insertion-sort-fold '(1 2 1 3 1 4 1 5 1)) '(1 1 1 1 1 2 3 4 5))
+(check-expect (insertion-sort-fold '(1 2 5 3 4 5)) '(1 2 3 4 5 5))
+</pre></body></html>

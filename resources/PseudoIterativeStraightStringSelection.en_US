@@ -1,0 +1,23 @@
+algoName=Straight Selection
+theName=Iterative Straight Selection (String; Pseudocode) [EN]
+outputLanguage=Pseudo-Code
+algoDesc=This algorithm looks for a value passed in in an array of String values. If the value is found, its position in the array is returned; otherwise, the result is -1.
+codeExample=int straightSelection(String[] data, String value):\n  if (array is null)\n    return -1;\n  set nrElems = length of array;\n  set loop counter i = 0;\n  while i is less than nrElems and array element i != value:\n    increment i;\n\n  if i is less then nrElems:\n    return i as the position of the element;\n  return -1;
+animTitle=Iterative Straight Selection (String)
+algoAuthor=Dr. Guido Rößling (roessling@acm.org>
+algoTitle=Straight Selection
+animDesc=Description of the algorithm
+adForURL=Further animations can be found at http://www.animal.ahrgr.de in the online repository.
+nrSteps=The algorithm used a total of {0} assignments and {1} comparisons.
+description.filename=resources/PseudoIterativeStraightStringSelection_descr_en.txt
+description.level=2
+description.labelSymbol=#
+code.filename=resources/PseudoIterativeStraightStringSelection_code_en.txt
+code.level=2
+code.labelSymbol=#
+complexity.filename=resources/PseudoIterativeStraightStringSelection_complexity_en.txt
+complexity.level=2
+complexity.labelSymbol=#
+nrAss=Assignments
+nrComp=Comparisons
+result=Result: {0}

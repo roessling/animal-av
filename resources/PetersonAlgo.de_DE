@@ -1,0 +1,56 @@
+noSuchKeyException=Es gibt keine Ressource f\u00fcr Eintrag {0}
+iconNotFound=Icon "{0}" not found
+
+### Description ###
+description1=Peterson's Algorithmus (oder Peterson's L\u00f6sung) ist ein Computer Algorithmus f\u00fcr mutual exclusion,
+description2=welcher es zwei oder mehr Prozessen erlaubt auf geteilte Ressourcen ohne Konflikt zuzugreifen,
+description3=und nur geteilten Speicher zur Kommunikation zu benutzen.
+description4=Der Algorithmus wurde 1981 von Gary L. Peterson entwickelt.
+description5=W\u00e4hrend Peterson's urspr\u00fcnglicher Algorithmus nur f\u00fcr zwei Prozesse funktioniert hat,
+description6=kann er generalisiert werden, sodass er f\u00fcr beliebig viele Prozesse funktioniert.
+description7=Der Algorithmus vollf\u00fcllt die drei grundlegenden Kriterien, um das critical section Problem zu l\u00f6sen,
+description8=solange alle \u00c4nderungen an den Variables unmittelbar und atomar \u00fcbernommen werden.
+description9=Die drei Kriterien sind mutual exclusion, Fortschritt, und begrenztes warten.
+
+algo11=Der Filter Algorithmus generalisiert Peterson's Algorithmus f\u00fcr N > 2 Prozesse.
+algo12=Statt eines Boolean, wird eine Integer Variable pro Prozess ben\u00f6tigt, gespeichert in einem single writer/multiple reader (SWMR) atomaren Register,
+algo13=und N−1 zus\u00e4tzliche Variablen in \u00e4hnlichen Registern. Die Register k\u00f6nnen in Pseudocode als Arrays dargestellt werden.
+algo14=Die level Variablen nehmen Werte bis zu N−1 an, wobei jede ein verschiedenes Wartezimmer vor der critical section darstellt.
+algo15=Prozesse r\u00fccken von einem Zimmer in das n\u00e4chste vor, bis Zimmer N−1, welches die critical section ist.
+
+### Explanations ###
+explanation1=In diesem Beispiel f\u00fchren alle Threads die gleiche Hauptfunktion Thread aus.
+explanation2=In echten Anwendungen f\u00fchren verschiedene Threads oft auch verschiedene Hauptfunktionen aus.
+explanation3=Au\u00dferdem, um diese Demonstration kurz zu halten,
+explanation4=wird jeder Thread seine Hauptfunktion nur einmal ausf\u00fchren.
+
+explanation5=Um ein lock zu erwerben f\u00fchrt Prozess i diese Funktion aus.
+explanation6=Prozess i verl\u00e4sst die innere Schleife wenn es entweder keinen Prozess mit einem h\u00f6heren Level als level[i] gibt, das n\u00e4chste Zimmer also frei ist;
+explanation7=oder, wenn i != last_to_enter[L], also ein anderer Prozess das Wartezimmer betreten hat.
+explanation8=F\u00fcr jedes Level L k\u00f6nnen immer nur N − L Prozesse dieses level betreten.
+
+### Ending ###
+ending1=Alle Threads haben nun ihre kritische Sektion in der betreten und ausgef\u00fchrt.
+ending2=Normalerweise w\u00fcrde dies sehr viel l\u00e4nger dauern, da Threads ihre Hauptfunktion mehrmals ausf\u00fchren, aber das Prinzip bleibt das gleiche.
+ending3=Um das undeterministische Zeitverhalten von Threads zu simulieren, wurde die Reihenfolge von ankommenden Threads zuf\u00e4llig bestimmt.
+ending4=Starte noch einen Durchlauf und beobachte die Unterschiede!
+
+### Chapters ###
+explanationend=Ender der Erkl\u00e4rungen
+
+conclusion=Fazit
+
+unlock= hat die kritische Sektion erreicht
+
+### Questions ###
+unlockquestion=Ein Thread hat seine kritische Sektion erreicht. Welcher ?
+unlockanswer=wird nun seine kritische Sektion betreten.
+
+nextnumberquestion1=bekommt seine Nummer zugewiesen. Was ist
+nextnumberquestion2=Nummer ?
+nextnumberanswer=bekommt die Nummer
+
+### Legend ###
+legend1=Thread wurde noch nicht initialisiert
+legend2=Thread wurde initialisiert und schreitet nun durch die Level voran
+legend3=Thread hat seine Hauptfunktion beendet

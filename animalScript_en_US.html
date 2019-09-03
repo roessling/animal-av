@@ -1,0 +1,927 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" 
+  "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+  <title>AnimalScript Notation</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+</head>
+
+<body style="background-color: white">
+<h1 style="text-align: center"><span style="font-variant: small-caps">AnimalScript</span>
+Definition</h1>
+
+<h2 style="text-align: center">About the notation</h2>
+
+<p>This documentation uses the following notation, based on the extended
+Backus-Naur-Form:</p>
+
+<ul>
+<li>&lt;<em>word</em>&gt;: -- header for the definiton of element <em>word</em></li>
+<li><code>|</code> -- used to separate alternatives. For example, <code>X | Y</code>
+means "either <code>X</code> or <code>Y</code>, but not both".</li>
+<li>[ ... ] -- elements in square brackets are optional and may be left out at the
+user's discretion.</li>
+<li>{ ... } -- elements in braces (if they are not set in <strong>{} bold</strong>)
+can be repeated as often as the user wants. For example, this occurs when specifying
+the IDs of objects to be transformed: you can work on one, two, three, ... objects
+at the same time.</li>
+<li><a name="#xxx">&nbsp;</a><a href="#xxx">&lt;word&gt;</a> -- a reference to the definition
+of element <em>word</em>; click on the hyperlink to see the definition.</li>
+<li><strong>X</strong> -- bold face is used to indicate that the element (here, X)
+is supposed to be written "as is". This also concerns elements such as braces,
+parentheses, commas, double quotes etc.</li>
+<li><em>italics</em> -- mostly used inside double quotes to indicate that the
+text given in italics is to be replaced by the user. For example, the word in italics
+could be <em>objectID</em>, and this should be replaced by the concrete object's ID.</li>
+</ul>
+
+<p><span style="font-variant: small-caps">AnimalScript</span> files contain
+exactly one command per line, or a comment (starting with the <code>#</code>
+character and going to the end of line). They always start with the
+mandatory <a href="#header">file header</a>, followed by an arbitrary combination
+of <a href="#go">graphical object declarations</a> and
+<a href="#trans">transformations</a>.</p>
+
+<h2 style="text-align: center"><span style="font-variant: small-caps">AnimalScript</span>
+<a name="header">File Header</a></h2>
+
+<dl>
+<dt><a name="animalScriptFile">&lt;<em>animalScriptFile</em>&gt;:</a></dt>
+<dd><a href="#fileHeader">&lt;fileHeader&gt;</a> 
+{ <a href="#command">&lt;command&gt;</a> <em>\n</em>}
+</dd>
+
+<dt><a name="fileHeader">&lt;<em>fileHeader</em>&gt;:</a></dt>
+<dd><strong>%Animal</strong> 
+  <a href="#double">&lt;double&gt;</a> 
+  [<a href="#nat">&lt;nat&gt;</a>*<a href="#nat">&lt;nat&gt;</a>]
+  [<em>\n</em> <a href="#titleInfo">&lt;titleInfo&gt;</a>]
+  [<em>\n</em> <a href="#authorInfo">&lt;authorInfo&gt;</a>]
+</dd>
+
+<dt><a name="titleInfo">&lt;<em>titleInfo</em>&gt;:</a></dt>
+<dd><strong>title</strong> <strong>"</strong><em>title as a string</em><strong>"</strong>
+</dd>
+
+<dt><a name="authorInfo">&lt;<em>authorInfo</em>&gt;:</a></dt>
+<dd><strong>author</strong> 
+  <strong>"</strong><em>author with email address</em><strong>"</strong>
+</dd>
+
+<dt><a name="command">&lt;<em>command</em>&gt;:</a></dt>
+<dd><a href="#objectPrimitives">&lt;objectPrimitives&gt;</a> 
+  | <a href="#operations">&lt;operations&gt;</a>
+  | <strong>{</strong> 
+  | <strong>}</strong> 
+  | <a href="#languageSupport">&lt;languageSupport&gt;</a> 
+  | <a href="#extensionCommand">&lt;extensionCommand&gt;</a>
+</dd>
+</dl>
+
+<h2 style="text-align: center"><a name="go">Graphical Objects</a></h2>
+
+<dl>
+<dt><a name="objectPrimitives">&lt;<em>objectPrimitives</em>&gt;</a></dt>
+<dd><a href="#arcTypes">&lt;arcTypes&gt;</a> 
+  | <a href="#array">&lt;array&gt;</a> 
+  | <a href="#arrayMarker">&lt;arrayMarker&gt;</a> 
+  | <a href="#codeTypes">&lt;codeTypes&gt;</a>
+  | <a href="#listelement">&lt;listelement&gt;</a> 
+  | <a href="#point">&lt;point&gt;</a> 
+  | <a href="#polygonTypes">&lt;polygonTypes&gt;</a>
+  | <a href="#polyline">&lt;polyline&gt;</a> 
+  | <a href="#text">&lt;text&gt;</a>
+</dd>
+
+<dt><a name="arcTypes">&lt;<em>arcTypes</em>&gt;:</a></dt>
+<dd><a href="#arc">&lt;arc&gt;</a>
+  | <a href="#circle">&lt;circle&gt;</a>
+  | <a href="#circleSeg">&lt;circleSeg&gt;</a>
+  | <a href="#ellipse">&lt;ellipse&gt;</a>
+</dd>
+
+<dt><a name="arc">&lt;<em>arc</em>&gt;:</a></dt>
+<dd><a href="#arcName">&lt;arcName&gt;</a> <strong>"</strong><em>ID</em><strong>"</strong>
+  <a href="#nodeDefinition">&lt;nodeDefinition&gt;</a>
+  <strong>radius</strong> <a href="#nodeDefinition">&lt;nodeDefinition&gt;</a>
+  [<strong>angle</strong> <a href="#int">&lt;int&gt;</a>] 
+  [<strong>starts</strong> <a href="#int">&lt;int&gt;</a>] 
+  [<strong>clockwise</strong> | <strong>counterclockwise</strong>] 
+  [<strong>color</strong> <a href="#color">&lt;color&gt;</a>]
+  [<strong>depth</strong> <a href="#nat">&lt;nat&gt;</a>]
+  [<a href="#closedOptions">&lt;closedOptions&gt;</a>
+    [<a href="#fillOptions">&lt;fillOptions&gt;</a>] 
+  | <a href="#arrowOptions">&lt;arrowOptions&gt;</a>]
+  [<a href="#displayOptions">&lt;displayOptions&gt;</a>]
+</dd>
+
+<dt><a name="arcName">&lt;<em>arcName</em>&gt;:</a></dt>
+<dd><strong>arc</strong>
+  | <strong>ellipseseg</strong>
+  | <strong>ellipsesegment</strong>
+</dd>
+
+<dt><a name="circleSeg">&lt;<em>circleSeg</em>&gt;:</a></dt>
+<dd><a href="#circleSegName">&lt;circleSegName&gt;</a>
+  <strong>"</strong><em>ID</em><strong>"</strong> 
+  <a href="#nodeDefinition">&lt;nodeDefinition&gt;</a>
+  <strong>radius</strong> <a href="#int">&lt;int&gt;</a> 
+  [<strong>angle</strong> <a href="#int">&lt;int&gt;</a>] 
+  [<strong>starts</strong> <a href="#int">&lt;int&gt;</a>] 
+  [<strong>clockwise</strong> | <strong>counterclockwise</strong>] 
+  [<strong>color</strong> <a href="#color">&lt;color&gt;</a>] 
+  [<strong>depth</strong> <a href="#nat">&lt;nat&gt;</a>] 
+  [<a href="#closedOptions">&lt;closedOptions&gt;</a> 
+    [<a href="#fillOptions">&lt;fillOptions&gt;</a>] 
+  | <a href="#arrowOptions">&lt;arrowOptions&gt;</a>]
+  [<a href="#displayOptions">&lt;displayOptions&gt;</a>]
+</dd>
+
+<dt><a name="circleSegName">&lt;<em>circleSegName</em>&gt;:</a></dt>
+<dd><strong>circleseg</strong>
+  | <strong>circlesegment</strong>
+</dd>
+
+<dt><a name="ellipse">&lt;<em>ellipse</em>&gt;:</a></dt>
+<dd><strong>ellipse</strong> <strong>"</strong><em>ID</em><strong>"</strong> 
+  <a href="#nodeDefinition">&lt;nodeDefinition&gt;</a>
+  <strong>radius</strong> <a href="#nodeDefinition">&lt;nodeDefinition&gt;</a> 
+  [<strong>color</strong> <a href="#color">&lt;color&gt;</a>]
+  [<strong>depth</strong> <a href="#int">&lt;int&gt;</a>] 
+  [<a href="#fillOptions">&lt;fillOptions&gt;</a>] 
+  [<a href="#displayOptions">&lt;displayOptions&gt;</a>]</dd>
+
+<dt><a name="circle">&lt;<em>circle</em>&gt;:</a></dt>
+<dd><strong>circle</strong> <strong>"</strong><em>ID</em>)<strong>"</strong>
+  <a href="#nodeDefinition">&lt;nodeDefinition&gt;</a>
+  <strong>radius</strong> <a href="#int">&lt;int&gt;</a>
+  [<strong>color</strong> <a href="#color">&lt;color&gt;</a>] 
+  [<strong>depth</strong> <a href="#nat">&lt;nat&gt;</a>]
+  [<a href="#fillOptions">&lt;fillOptions&gt;</a>]
+  [<a href="#displayOptions">&lt;displayOptions&gt;</a>]
+</dd>
+
+<dt><a name="array">&lt;<em>array</em>&gt;:</a></dt>
+<dd><a href="#arrayKey">&lt;arrayKey&gt;</a>
+  <strong>"</strong><em>arrayID</em><strong>"</strong> 
+  [<strong>at</strong>] <a href="#nodeDefinition">&lt;nodeDefinition&gt;</a>
+  [<strong>color</strong> <a href="#color">&lt;color&gt;</a>]
+  [<strong>fillColor</strong> <a href="#color">&lt;color&gt;</a>]
+  [<strong>elementColor</strong> <a href="#color">&lt;color&gt;</a>]
+  [<strong>elemHighlight</strong> <a href="#color">&lt;color&gt;</a>]
+  [<strong>cellHighlight</strong> <a href="#color">&lt;color&gt;</a>] 
+  [<strong>horizontal</strong> | <strong>vertical</strong>]
+  <strong>length</strong> <a href="#nat+">&lt;nat+&gt;</a> 
+  { <a href="#intText">&lt;intText&gt;</a> } 
+  [<strong>depth</strong> <a href="#nat">&lt;nat&gt;</a>]
+  [<a href="#timeOffset">&lt;timeOffset&gt;</a>] 
+  [<strong>cascaded</strong> [<strong>within</strong> <a href="#nat+">&lt;nat+&gt;</a> 
+    <strong>ticks</strong> | <strong>ms</strong> ]]
+  <a href="#font">&lt;font&gt;</a>
+</dd>
+
+<dt><a name="arrayKey">&lt;<em>arrayKey</em>&gt;:</a></dt>
+<dd><strong>array</strong> | <strong>field</strong>
+</dd>
+
+<dt><a name="arrayMarker">&lt;<em>arrayMarker</em>&gt;:</a></dt>
+<dd><a href="#markKey">&lt;markKey&gt;</a> 
+  <strong>"</strong><em>indexID</em><strong>"</strong>
+  <strong>on</strong> <strong>"</strong><em>arrayID</em><strong>"</strong> 
+  <strong>atIndex</strong> <a href="#nat">&lt;nat&gt;</a>
+  [<strong>label</strong> <a href="#intText">&lt;intText&gt;</a>]
+  [<strong>color</strong> <a href="#color">&lt;color&gt;</a>] 
+  [<strong>depth</strong> <a href="#nat">&lt;nat&gt;</a>]
+  <a href="#font">&lt;font&gt;</a> 
+  [<a href="#displayOptions">&lt;displayOptions&gt;</a>]</dd>
+
+<dt><a name="markKey">&lt;<em>markKey</em>&gt;:</a></dt>
+<dd><strong>arrayMarker</strong> 
+  | <strong>arrayPointer</strong>
+  | <strong>arrayIndex</strong>
+</dd>
+
+<dt><a name="codeTypes">&lt;<em>codeTypes</em>&gt;:</a></dt>
+<dd><a href="#codeGroup">&lt;codeGroup&gt;</a>
+  | <a href="#codeLine">&lt;codeLine&gt;</a>
+  | <a href="#codeElem">&lt;codeElem&gt;</a>
+</dd>
+
+<dt><a name="codeGroup">&lt;<em>codeGroup</em>&gt;:</a></dt>
+<dd><strong>codegroup</strong> 
+  <strong>"</strong><em>groupID</em><strong>"</strong> 
+  [<strong>at</strong>] <a href="#nodeDefinition">&lt;nodeDefinition&gt;</a>
+  [<strong>color</strong> <a href="#color">&lt;color&gt;</a>]
+  [<strong>highlightColor</strong> <a href="#color">&lt;color&gt;</a>]
+  [<strong>contextColor</strong> <a href="#color">&lt;color&gt;</a>]
+  <a href="#font">&lt;font&gt;</a>
+  [<strong>depth</strong> <a href="#nat">&lt;nat&gt;</a>]
+  [<a href="#timeOffset">&lt;timeOffset&gt;</a>]
+</dd>
+
+<dt><a name="codeLine">&lt;<em>codeLine</em>&gt;:</a></dt>
+<dd><strong>addCodeLine</strong> <strong>"</strong>code<strong>"</strong>
+  [<strong>name</strong> <strong>"</strong><em>ID</em><strong>"</strong>] 
+  <strong>to</strong> <strong>"</strong><em>codeGroupID</em><strong>"</strong> 
+  [<strong>indentation</strong> <a href="#nat">&lt;nat&gt;</a>]
+  [<a href="#timeOffset">&lt;timeOffset&gt;</a>]
+</dd>
+
+<dt><a name="codeElem">&lt;<em>codeElem</em>&gt;:</a></dt>
+<dd><strong>addCodeElem</strong> <strong>"</strong><em>code</em><strong>"</strong>
+  [<strong>name</strong> <strong>"</strong><em>ID</em><strong>"</strong>] 
+  <strong>to</strong> <strong>"</strong>codeGroupID<strong>"</strong>
+  [<strong>row</strong> <a href="#nat">&lt;nat&gt;</a>]
+  [<strong>indentation</strong> <a href="#nat">&lt;nat&gt;</a>]
+  [<a href="#timeOffset">&lt;timeOffset&gt;</a>]
+</dd>
+
+<dt><a name="listelement">&lt;<em>listelement</em>&gt;:</a></dt>
+<dd><strong>listelement</strong> <strong>"</strong><em>ID</em><strong>"</strong> 
+  <a href="#nodeDefinition">&lt;nodeDefinition&gt;</a>
+  [<strong>text</strong> <a href="#intText">&lt;intText&gt;</a>] 
+  <strong>pointers</strong> <a href="#nat">&lt;nat&gt;</a>
+  [<strong>position</strong> <a href="#pointerPos">&lt;pointerPos&gt;</a>]
+  [ { <a href="#ptrLocation">&lt;ptrLocation&gt;</a> } ]
+  [<strong>prev</strong> <strong>"</strong><em>prevID</em><strong>"</strong>]
+  [<strong>color</strong> <a href="#color">&lt;color&gt;</a>]
+  [<strong>boxFillColor</strong> <a href="#color">&lt;color&gt;</a>]
+  [<strong>pointerAreaColor</strong> <a href="#color">&lt;color&gt;</a>]
+  [<strong>pointerAreaFillColor</strong> <a href="#color">&lt;color&gt;</a>]
+  [<strong>textColor</strong> <a href="#color">&lt;color&gt;</a>]
+  [<strong>depth</strong> <a href="#nat">&lt;nat&gt;</a>] 
+  [<a href="#displayOptions">&lt;displayOptions&gt;</a>]
+</dd>
+
+<dt><a name="pointerPos">&lt;<em>pointerPos</em>&gt;:</a></dt>
+<dd><strong>top</strong> 
+  | <strong>left</strong>
+  | <strong>right</strong>
+  | <strong>bottom</strong>
+  | <strong>none</strong>
+</dd>
+
+<dt><a name="ptrLocation">&lt;<em>ptrLocation</em>&gt;:</a></dt>
+<dd><strong>ptr</strong><a href="#nat">&lt;nat&gt;</a> 
+  <a href="#nodeDefinition">&lt;nodeDefinition&gt;</a> 
+  | <strong>ptr</strong><a href="#nat">&lt;nat&gt;</a> 
+  <strong>to</strong> <strong>"</strong><em>targetID</em><strong>"</strong>
+</dd>
+
+<dt><a name="point">&lt;<em>point</em>&gt;:</a></dt>
+<dd><strong>point</strong> <strong>"</strong><em>pointID</em><strong>"</strong>
+  <a href="#nodeDefinition">&lt;nodeDefinition&gt;</a> 
+  [<strong>color</strong> <a href="#color">&lt;color&gt;</a>]
+  [<strong>depth</strong> <a href="#nat">&lt;nat&gt;</a>]
+  [<a href="#displayOptions">&lt;displayOptions&gt;</a>]
+</dd>
+
+<dt><a name="polygonTypes">&lt;<em>polygonTypes</em>&gt;:</a></dt>
+<dd><a href="#square">&lt;square&gt;</a>
+  | <a href="#rect">&lt;rect&gt;</a>
+  | <a href="#triangle">&lt;triangle&gt;</a>
+  | <a href="#polygon">&lt;polygon&gt;</a>
+</dd>
+
+<dt><a name="square">&lt;<em>square</em>&gt;:</a></dt>
+<dd><strong>square</strong> <strong>"</strong><em>ID</em><strong>"</strong>
+  <a href="#nodeDefinition">&lt;nodeDefinition&gt;</a>
+  <a href="#nat+">&lt;nat+&gt;</a>
+  [<strong>color</strong> <a href="#color">&lt;color&gt;</a>]
+  [<strong>depth</strong> <a href="#nat">&lt;nat&gt;</a>] 
+  [<a href="#fillOptions">&lt;fillOptions&gt;</a>]
+  [<a href="#displayOptions">&lt;displayOptions&gt;</a>]
+</dd>
+
+<dt><a name="rect">&lt;<em>rect</em>&gt;:</a></dt>
+<dd><a href="#absoluteRectangle">&lt;absoluteRectangle&gt;</a>
+  | <a href="#relativeRectangle">&lt;relativeRectangle&gt;</a>
+</dd>
+
+<dt><a name="absoluteRectangle">&lt;<em>absoluteRectangle</em>&gt;:</a></dt>
+<dd><strong>rectangle</strong> <strong>"</strong><em>ID</em><strong>"</strong> 
+  <a href="#nodeDefinition">&lt;nodeDefinition&gt;</a>
+  <a href="#nodeDefinition">&lt;nodeDefinition&gt;</a>
+  [<strong>color</strong> <a href="#color">&lt;color&gt;</a>]
+  [<strong>depth</strong> <a href="#nat">&lt;nat&gt;</a>] 
+  [<a href="#fillOptions">&lt;fillOptions&gt;</a>]
+  [<a href="#displayOptions">&lt;displayOptions&gt;</a>]
+</dd>
+
+<dt><a name="relativeRectangle">&lt;<em>relativeRectangle</em>&gt;:</a></dt>
+<dd><a href="#relRectName">&lt;relRectName&gt;</a> 
+  <strong>"</strong><em>ID</em><strong>"</strong> 
+  <a href="#nodeDefinition">&lt;nodeDefinition&gt;</a>
+  <a href="#nodeDefinition">&lt;nodeDefinition&gt;</a>
+  [<strong>color</strong> <a href="#color">&lt;color&gt;</a>]
+  [<strong>depth</strong> <a href="#nat">&lt;nat&gt;</a>] 
+  [<a href="#fillOptions">&lt;fillOptions&gt;</a>]
+  [<a href="#displayOptions">&lt;displayOptions&gt;</a>]
+</dd>
+
+<dt><a name="relRectName">&lt;<em>relRectName</em>&gt;:</a></dt>
+<dd><strong>relrect</strong>
+  | <strong>relrectangle</strong>
+</dd>
+
+<dt><a name="triangle">&lt;<em>triangle</em>&gt;:</a></dt>
+<dd><strong>triangle</strong> <strong>"</strong><em>ID</em><strong>"</strong>
+  <a href="#nodeDefinition">&lt;nodeDefinition&gt;</a> 
+  <a href="#nodeDefinition">&lt;nodeDefinition&gt;</a>
+  <a href="#nodeDefinition">&lt;nodeDefinition&gt;</a>
+  [<strong>color</strong> <a href="#color">&lt;color&gt;</a>]
+  [<strong>depth</strong> <a href="#nat">&lt;nat&gt;</a>] 
+  [<a href="#fillOptions">&lt;fillOptions&gt;</a>]
+  [<a href="#displayOptions">&lt;displayOptions&gt;</a>]
+</dd>
+
+<dt><a name="polygon">&lt;<em>polygon</em>&gt;:</a></dt>
+<dd><strong>polygon</strong> <strong>"</strong><em>ID</em><strong>"</strong>
+  <a href="#nodeDefinition">&lt;nodeDefinition&gt;</a> 
+  <a href="#nodeDefinition">&lt;nodeDefinition&gt;</a>
+  { <a href="#nodeDefinition">&lt;nodeDefinition&gt;</a> }
+  [<strong>color</strong> <a href="#color">&lt;color&gt;</a>]
+  [<strong>depth</strong> <a href="#nat">&lt;nat&gt;</a>]
+  [<a href="#fillOptions">&lt;fillOptions&gt;</a>]
+  [<a href="#displayOptions">&lt;displayOptions&gt;</a>]
+</dd>
+
+<dt><a name="polyline">&lt;<em>polyline</em>&gt;:</a></dt>
+<dd><a href="#lineTag">&lt;lineTag&gt;</a> 
+  <strong>"</strong><em>lineID</em><strong>"</strong>
+  <a href="#nodeDefinition">&lt;nodeDefinition&gt;</a>
+  { <a href="#nodeDefinition">&lt;nodeDefinition&gt;</a> }
+  [<strong>color</strong> <a href="#color">&lt;color&gt;</a>]
+  [<strong>depth</strong> <a href="#nat">&lt;nat&gt;</a>]
+  [<a href="#arrowOptions">&lt;arrowOptions&gt;</a>]
+  [<a href="#displayOptions">&lt;displayOptions&gt;</a>]
+</dd>
+
+<dt><a name="lineTag">&lt;<em>lineTag</em>&gt;:</a></dt>
+<dd><strong>polyline</strong>
+  | <strong>line</strong>
+</dd>
+
+<dt><a name="text">&lt;<em>text</em>&gt;:</a></dt>
+<dd><strong>text</strong> <strong>"</strong><em>ID</em><strong>"</strong>
+  <a href="#intText">&lt;intText&gt;</a> 
+  [<strong>at</strong>] <a href="#nodeDefinition">&lt;nodeDefinition&gt;</a>
+  [<strong>centered</strong> | <strong>right</strong>]
+  [<strong>color</strong> <a href="#color">&lt;color&gt;</a>]
+  [<strong>depth</strong> <a href="#nat">&lt;nat&gt;</a>]
+  <a href="#font">&lt;font&gt;</a> 
+  [<strong>boxed</strong>]
+  [<a href="#displayOptions">&lt;displayOptions&gt;</a>]
+</dd>
+</dl>
+
+<h2 style="text-align: center"><a name="trans">Object Transformations</a></h2>
+
+<dl>
+<dt><a name="operations">&lt;<em>operations</em>&gt;:</a></dt>
+<dd><a href="#arrayOp">&lt;arrayOp&gt;</a> 
+  | <a href="#clone">&lt;clone&gt;</a> 
+  | <a href="#colorChangeTypes">&lt;colorChangeTypes&gt;</a>
+  | <a href="#delay">&lt;delay&gt;</a>
+  | <a href="#echo">&lt;echo&gt;</a> 
+  | <a href="#label">&lt;label&gt;</a> 
+  | <a href="#link">&lt;link&gt;</a> 
+  | <a href="#location">&lt;location&gt;</a>
+  | <a href="#merge">&lt;merge&gt;</a> 
+  | <a href="#move">&lt;move&gt;</a>
+  | <a href="#rotate">&lt;rotate&gt;</a>
+  | <a href="#setFont">&lt;setFont&gt;</a>
+  | <a href="#setText">&lt;setText&gt;</a>
+  | <a href="#showTypes">&lt;showTypes&gt;</a>
+  | <a href="#swap">&lt;swap&gt;</a>
+</dd>
+
+<dt><a name="arrayOp">&lt;<em>arrayOp</em>&gt;:</a></dt>
+<dd><a href="#arrayPut">&lt;arrayPut&gt;</a> 
+  | <a href="#arraySwap">&lt;arraySwap&gt;</a>
+  | <a href="#moveArrayMarker">&lt;moveArrayMarker&gt;</a>
+  | <a href="#highlightArrayCell">&lt;highlightArrayCell&gt;</a>
+  | <a href="#highlightArrayElem">&lt;highlightArrayElem&gt;</a>
+</dd>
+
+<dt><a name="arrayPut">&lt;<em>arrayPut</em>&gt;:</a></dt>
+<dd><strong>arrayPut</strong> <strong>"</strong><em>value</em><strong>"</strong>
+  <strong>on</strong> <strong>"</strong><em>arrayID</em><strong>"</strong>
+  <strong>position</strong> <a href="#nat">&lt;nat&gt;</a>
+  [<a href="#timing">&lt;timing&gt;</a>]
+</dd>
+
+<dt><a name="arraySwap">&lt;<em>arraySwap</em>&gt;:</a></dt>
+<dd><strong>arraySwap</strong>
+  <strong>on</strong> <strong>"</strong><em>arrayName</em><strong>"</strong>
+  <strong>position</strong> <a href="#nat">&lt;nat&gt;</a>
+  <strong>with</strong> <a href="#nat">&lt;nat&gt;</a>
+  [<a href="#timing">&lt;timing&gt;</a>]
+</dd>
+
+<dt><a name="moveArrayMarker">&lt;<em>moveArrayMarker</em>&gt;:</a></dt>
+<dd><a href="#moveMarkerKeyword">&lt;moveMarkerKeyword&gt;</a> 
+  <strong>"</strong><em>markerID</em><strong>"</strong> <strong>to</strong> 
+  [<strong>position</strong> <a href="#nat">&lt;nat&gt;</a> 
+    | <strong>arrayEnd</strong> | <strong>outside</strong>] 
+  [<a href="#timing">&lt;timing&gt;</a>]
+</dd>
+
+<dt><a name="moveMarkerKeyword">&lt;<em>moveMarkerKeyword</em>&gt;:</a></dt>
+<dd><strong>moveArrayIndex</strong> 
+  | <strong>moveArrayMarker</strong> 
+  | <strong>moveArrayPointer</strong>
+  | <strong>moveIndex</strong> 
+  | <strong>moveMarker</strong> 
+  | <strong>movePointer</strong>
+  | <strong>jumpArrayIndex</strong> 
+  | <strong>jumpArrayMarker</strong>
+  | <strong>jumpArrayPointer</strong>
+  | <strong>jumpIndex</strong> 
+  | <strong>jumpMarker</strong> 
+  | <strong>jumpPointer</strong>
+</dd>
+
+<dt><a name="highlightArrayCell">&lt;&lt;<em>highlightArrayCell</em>&gt;:</a></dt>
+<dd><a href="#hlACellKeyword">&lt;hlACellKeyword&gt;</a> 
+  <strong>on</strong> <strong>"</strong><em>arrayID</em><strong>"</strong>
+  <a href="#aHighlightRange">&lt;aHighlightRange&gt;</a>
+  <a href="#timing">&lt;timing&gt;</a>
+</dd>
+
+<dt><a name="hlACellKeyword">&lt;<em>hlACellKeyword</em>&gt;:</a></dt>
+<dd><strong>highlightArrayCell</strong>
+  | <strong>unhighlightArrayCell</strong>
+</dd>
+
+<dt><a name="aHighlightRange">&lt;<em>aHighlightRange</em>&gt;:</a></dt>
+<dd><strong>position</strong> <a href="#nat">&lt;nat&gt;</a> 
+  | [<strong>from</strong> <a href="#nat">&lt;nat&gt;</a>] 
+    [<strong>to</strong> <a href="#nat">&lt;nat&gt;</a>]
+</dd>
+
+<dt><a name="hilightArrayElem">&lt;<em>hilightArrayElem</em>&gt;:</a></dt>
+<dd><a href="#hlAElemKeyword">&lt;hlAElemKeyword&gt;</a> 
+  <strong>on</strong> <strong>"</strong><em>arrayID</em><strong>"</strong>
+  <a href="#aHighlightRange">&lt;aHighlightRange&gt;</a>
+  <a href="#timing">&lt;timing&gt;</a>
+</dd>
+
+<dt><a name="hlAElemKeyword">&lt;<em>hlAElemKeyword</em>&gt;:</a></dt>
+<dd><strong>highlightArrayElem</strong>
+  | <strong>unhighlightArrayElem</strong>
+</dd>
+
+<dt><a name="clone">&lt;&lt;<em>clone</em>&gt;:</a></dt><dd> 
+  <strong>clone</strong> <strong>"</strong><em>originalID</em><strong>"</strong> 
+  <strong>as</strong> <strong>"</strong><em>cloneID</em><strong>"</strong>
+  [<strong>at</strong>] <a href="#nodeDefinition">&lt;nodeDefinition&gt;</a>
+  [<a href="#displayOptions">&lt;displayOptions&gt;</a>]
+</dd>
+
+<dt><a name="colorChangeTypes">&lt;<em>colorChangeTypes</em>&gt;:</a></dt>
+<dd><a href="#colorChange">&lt;colorChange&gt;</a> 
+  | <a href="#codeColorChange">&lt;codeColorChange&gt;</a></dd>
+
+<dt><a name="colorChange">&lt;<em>colorChange</em>&gt;:</a></dt>
+<dd><strong>color</strong> <a href="#oids">&lt;oids&gt;</a> 
+  [<strong>type</strong> <a href="#colorType">&lt;colorType&gt;</a>]
+  <a href="#color">&lt;color&gt;</a>
+  [<a href="#timing">&lt;timing&gt;</a>]
+</dd>
+
+<dt><a name="colorType">&lt;<em>colorType</em>&gt;:</a></dt>
+<dd><strong>"color"</strong>
+  | <strong>"fillColor"</strong>
+  | <strong>"textColor"</strong>
+  | <strong>"colorSetting"</strong>
+</dd>
+
+<dt><a name="codeColorChange">&lt;<em>codeColorChange</em>&gt;:</a></dt><dd> 
+  <a href="#codeColorType">&lt;codeColorType&gt;</a> 
+  <strong>on</strong> <strong>"</strong><em>baseCodeGroup</em><strong>"</strong>
+  <strong>line</strong> <a href="#nat">&lt;nat&gt;</a>
+  [<strong>row</strong> <a href="#nat">&lt;nat&gt;</a>]
+  [<strong>context</strong> | <strong>region</strong>]
+  [<a href="#timing">&lt;timing&gt;</a>]
+</dd>
+
+<dt><a name="codeColorType">&lt;<em>codeColorType</em>&gt;:</a></dt>
+<dd><strong>highlightCode</strong>
+  | <strong>unhighlightCode</strong>
+</dd>
+
+<dt><a name="delay">&lt;<em>delay</em>&gt;:</a></dt>
+<dd><strong>delay</strong> <a href="#nat">&lt;nat&gt;</a> 
+  [<strong>ms</strong>]
+</dd>
+
+<dt><a name="echo">&lt;<em>echo</em>&gt;:</a></dt>
+<dd><strong>echo</strong> <strong>location:</strong>
+     <a href="#nodeDefinition">&lt;nodeDefinition&gt;</a>
+  | <strong>echo</strong> <a href="#boundsKeyword">&lt;boundsKeyword&gt;</a> 
+    { <a href="#oids">&lt;oids&gt;</a> }
+  | <strong>echo</strong> <strong>text:</strong> 
+    <strong>"</strong><em>text</em><strong>"</strong>
+  | <strong>echo</strong> <strong>value:</strong> 
+    { <strong>"</strong><em>ID</em><strong>"</strong> }
+  | <strong>echo</strong> <strong>ids:</strong> { <a href="#oids">&lt;oids&gt;</a> }
+  | <strong>echo visible</strong>
+  | <strong>echo rule: "</strong><em>keyword</em><strong>"</strong>
+  | <strong>echo</strong> <em>unquotedText</em>
+</dd>
+
+<dt><a name="boundsKeyword">&lt;<em>boundsKeyword</em>&gt;:</a></dt>
+<dd><strong>boundingBox</strong>
+  | <strong>bounds</strong>
+</dd>
+
+<dt><a name="label">&lt;<em>label</em>&gt;:</a></dt>
+<dd><strong>label</strong> <strong>"</strong><em>labelEntry</em><strong>"</strong>
+</dd>
+
+<dt><a name="link">&lt;<em>link</em>&gt;:</a></dt>
+<dd><strong>setLink</strong> <strong>"</strong><em>elemID</em><strong>"</strong>
+    [<strong>link</strong> <a href="#nat">&lt;nat&gt;</a>]
+    <strong>to</strong> <strong>"</strong><em>targetID</em><strong>"</strong>
+    [<a href="#timing">&lt;timing&gt;</a>]
+  | <strong>setLink</strong> <strong>"</strong><em>elemID</em><strong>"</strong>
+    [<strong>link</strong> <a href="#nat">&lt;nat&gt;</a>]
+    <a href="#nodeDefinition">&lt;nodeDefinition&gt;</a>
+    [<a href="#timing">&lt;timing&gt;</a>]
+  | <strong>clearLink</strong> <strong>"</strong><em>elemID</em><strong>"</strong>
+    [<strong>link</strong> <a href="#nat">&lt;nat&gt;</a>]
+    [<a href="#timing">&lt;timing&gt;</a>]
+</dd>
+
+<dt><a name="location">&lt;<em>location</em>&gt;:</a></dt>
+<dd><a href="#locationKeyword">&lt;locationKeyword&gt;</a> 
+  <strong>"</strong><em>locationID</em><strong>"</strong>
+  [<strong>at</strong>] <a href="#nodeDefinition">&lt;nodeDefinition&gt;</a>
+</dd>
+
+<dt><a name="locationKeyword">&lt;<em>locationKeyword</em>&gt;:</a></dt>
+<dd><strong>location</strong>
+  | <strong>defineLocation</strong>
+  | <strong>defLocation</strong>
+</dd>
+
+<dt><a name="merge">&lt;<em>merge</em>&gt;:</a></dt>
+<dd><a href="#mergeKeyWord">&lt;mergeKeyWord&gt;</a> 
+  <strong>"</strong><em>targetID</em><strong>"</strong> 
+  { <strong>"</strong><em>ID</em><strong>"</strong> }
+</dd>
+
+<dt><a name="mergeKeyWord">&lt;<em>mergeKeyWord</em>&gt;:</a></dt>
+<dd><strong>group</strong>
+  | <strong>merge</strong> 
+  | <strong>set</strong> 
+  | <strong>ungroup</strong>
+  | <strong>remove</strong>
+</dd>
+
+<dt><a name="move">&lt;<em>move</em>&gt;:</a></dt>
+<dd><a href="#moveVia">&lt;moveVia&gt;</a> 
+  | <a href="#moveAlong">&lt;moveAlong&gt;</a>
+  | <a href="#moveTo">&lt;moveTo&gt;</a>
+</dd>
+
+<dt><a name="moveKeyword">&lt;<em>moveKeyword</em>&gt;:</a></dt>
+<dd><strong>move</strong>
+  | <strong>translate</strong>
+</dd>
+
+<dt><a name="moveVia">&lt;<em>moveVia</em>&gt;:</a></dt>
+<dd><a href="#moveKeyword">&lt;moveKeyword&gt;</a>
+  <a href="#oids">&lt;oids&gt;</a>
+  [<a href="#corner">&lt;corner&gt;</a>]
+  [<a href="#methodSpec">&lt;methodSpec&gt;</a>] 
+  <strong>via</strong> <strong>"</strong><em>oid</em><strong>"</strong>
+  [<a href="#timing">&lt;timing&gt;</a>]
+</dd>
+
+<dt><a name="moveAlong">&lt;<em>moveAlong</em>&gt;:</a></dt>
+<dd><a href="#moveAlongPolyline">&lt;moveAlongPolyline&gt;</a>
+  | <a href="#moveAlongArc">&lt;moveAlongArc&gt;</a></dd>
+
+<dt><a name="moveAlongPolyline">&lt;<em>moveAlongPolyline</em>&gt;:</a></dt>
+<dd><a href="#moveKeyword">&lt;moveKeyword&gt;</a>
+  <a href="#oids">&lt;oids&gt;</a>
+  [<a href="#corner">&lt;corner&gt;</a>]
+  [<a href="#methodSpec">&lt;methodSpec&gt;</a>]
+  <strong>along</strong> <a href="#lineTag">&lt;lineTag&gt;</a>
+  <a href="#nodeDefinition">&lt;nodeDefinition&gt;</a>
+  { <a href="#nodeDefinition">&lt;nodeDefinition&gt;</a> }
+  [<a href="#timing">&lt;timing&gt;</a>]
+</dd>
+
+<dt><a name="moveAlongArc">&lt;<em>moveAlongArc</em>&gt;:</a></dt>
+<dd><a href="#moveAlongArcType">&lt;moveAlongArcType&gt;</a>
+  | <a href="#moveAlongCircleType">&lt;moveAlongCircleType&gt;</a>
+</dd>
+
+<dt><a name="moveAlongArcType">&lt;<em>moveAlongArcType</em>&gt;:</a></dt>
+<dd><a href="#moveKeyword">&lt;moveKeyword&gt;</a>
+  <a href="#oids">&lt;oids&gt;</a>
+  [<a href="#corner">&lt;corner&gt;</a>]
+  [<a href="#methodSpec">&lt;methodSpec&gt;</a>]
+  <strong>along</strong> <a href="#arcType">&lt;arcType&gt;</a> 
+  <a href="#nodeDefinition">&lt;nodeDefinition&gt;</a>
+  <a href="#int">&lt;int&gt;</a>
+  <a href="#int">&lt;int&gt;</a>
+  <a href="#int">&lt;int&gt;</a>
+  <a href="#int">&lt;int&gt;</a>
+  [<a href="#timing">&lt;timing&gt;</a>]
+</dd>
+
+<dt><a name="moveAlongCircleType">&lt;<em>moveAlongCircleType</em>&gt;:</a></dt>
+<dd><a href="#moveKeyword">&lt;moveKeyword&gt;</a>
+  <a href="#oids">&lt;oids&gt;</a>
+  [<a href="#corner">&lt;corner&gt;</a>]
+  [<a href="#methodSpec">&lt;methodSpec&gt;</a>]
+  <strong>along</strong> <a href="#circleType">&lt;circleType&gt;</a>
+  <a href="#nodeDefinition">&lt;nodeDefinition&gt;</a>
+  <a href="#int">&lt;int&gt;</a>
+  <a href="#int">&lt;int&gt;</a>
+  <a href="#int">&lt;int&gt;</a>
+  [<a href="#timing">&lt;timing&gt;</a>]
+</dd>
+
+<dt><a name="moveTo">&lt;<em>moveTo</em>&gt;:</a></dt>
+<dd><a href="#moveKeyword">&lt;moveKeyword&gt;</a>
+  <a href="#oids">&lt;oids&gt;</a>
+  [<a href="#corner">&lt;corner&gt;</a>]
+  [<a href="#methodSpec">&lt;methodSpec&gt;</a>]
+  <strong>to</strong> <a href="#nodeDefinition">&lt;nodeDefinition&gt;</a>
+  [<a href="#timing">&lt;timing&gt;</a>]
+</dd>
+
+<dt><a name="methodSpec">&lt;<em>methodSpec</em>&gt;:</a></dt>
+<dd><strong>type</strong> <strong>"</strong><em>typeName</em><strong>"</strong>
+</dd>
+
+<dt><a name="corner">&lt;<em>corner</em>&gt;:</a></dt>
+<dd><strong>corner</strong> <a href="#direction">&lt;direction&gt;</a>
+</dd>
+
+<dt><a name="arcType">&lt;<em>arcType</em>&gt;:</a></dt>
+<dd><a href="#arcName">&lt;arcName&gt;</a>
+  | <strong>ellipse</strong>
+</dd>
+
+<dt><a name="circleType">&lt;<em>circleType</em>&gt;:</a></dt>
+<dd><strong>circle</strong>
+  | <a href="#circleSegName">&lt;circleSegName&gt;</a>
+</dd>
+
+<dt><a name="rotate">&lt;<em>rotate</em>&gt;:</a></dt>
+<dd><strong>rotate</strong> <a href="#oids">&lt;oids&gt;</a>
+    <strong>around</strong> <strong>"</strong><em>id</em><strong>"</strong>
+    [<strong>degrees</strong> <a href="#int">&lt;int&gt;</a>]
+    [<a href="#timing">&lt;timing&gt;</a>]
+  | <strong>rotate</strong> <a href="#oids">&lt;oids&gt;</a>
+    <strong>center</strong> <a href="#nodeDefinition">&lt;nodeDefinition&gt;</a>
+    [<strong>degrees</strong> <a href="#int">&lt;int&gt;</a>]
+    [<a href="#timing">&lt;timing&gt;</a>]
+</dd>
+
+<dt><a name="showTypes">&lt;<em>showTypes</em>&gt;:</a></dt>
+<dd><a href="#simpleShow">&lt;simpleShow&gt;</a> 
+  | <a href="#codeHide">&lt;codeHide&gt;</a>
+  | <a href="#selectiveHide">&lt;selectiveHide&gt;</a>
+</dd>
+
+<dt><a name="simpleShow">&lt;<em>simpleShow</em>&gt;:</a></dt>
+<dd><a href="#showMode">&lt;showMode&gt;</a>
+  <a href="#oids">&lt;oids&gt;</a>
+  [<a href="#timing">&lt;timing&gt;</a>]
+</dd>
+
+<dt><a name="codeHide">&lt;<em>codeHide</em>&gt;:</a></dt>
+<dd><strong>hideCode</strong>
+  <strong>"</strong><em>codeID</em><strong>"</strong>
+  [<a href="#timeOffset">&lt;timeOffset&gt;</a>]
+</dd>
+
+<dt><a name="selectiveHide">&lt;<em>selectiveHide</em>&gt;:</a></dt>
+<dd><strong>hideAll</strong> [<a href="#timing">&lt;timing&gt;</a>]
+  | <strong>hideAllBut</strong> { <a href="#oids">&lt;oids&gt;</a> }
+    [<a href="#timing">&lt;timing&gt;</a>]
+</dd>
+
+<dt><a name="showMode">&lt;<em>showMode</em>&gt;:</a></dt>
+<dd><strong>show</strong>
+  | <strong>hide</strong>
+</dd>
+
+<dt><a name="setFont">&lt;<em>setFont</em>&gt;:</a></dt>
+<dd><strong>setFont</strong> [<strong>of</strong>] "oid" [<strong>to</strong>]
+  &lt;<a href="#font">font</a>&gt; [&lt;<a href="#timing">timing</a>&gt;]
+</dd>
+  
+<dt><a name="setText">&lt;<em>setText</em>&gt;:</a></dt><dd>
+  <strong>setText</strong> [<strong>of</strong>] "oid" [<strong>to</strong>]
+  &lt;<a href="#intText">intText</a>&gt; [&lt;<a href="#timing">timing</a>&gt;]
+</dd>
+
+<dt><a name="swap">&lt;<em>swap</em>&gt;:</a></dt>
+<dd><a href="#swapKeyword">&lt;swapKeyword&gt;</a> 
+  <strong>"</strong><em>oid1</em><strong>"</strong>
+  <strong>"</strong><em>oid2</em><strong>"</strong>
+</dd>
+
+<dt><a name="swapKeyword">&lt;<em>swapKeyword</em>&gt;:</a></dt>
+<dd><strong>swap</strong>
+  | <strong>exchange</strong>
+</dd>
+
+<dt><a name="languageSupport">&lt;<em>languageSupport</em>&gt;:</a></dt>
+<dd><strong>supports</strong> { <strong>"</strong><em>languageKey</em><strong>"</strong> }
+  [<em>\n</em>
+    <a href="#resourceKey">&lt;resourceKey&gt;</a>
+    <strong>"</strong><em>fileNameWithoutExtension</em><strong>"</strong>]</dd>
+
+<dt><a name="resourceKey">&lt;<em>resourceKey</em>&gt;:</a></dt>
+<dd><strong>resource</strong>
+  | <strong>bundle</strong>
+  | <strong>resourceBundle</strong>
+</dd>
+
+<dt><a name="intText">&lt;<em>intText</em>&gt;:</a></dt>
+<dd><strong>"</strong><em>text</em><strong>"</strong> 
+  | <strong>key: "</strong><em>textResourceKey</em><strong>"</strong>
+  | <strong>(</strong> { <strong>key: 
+  	"</strong><em>text</em><strong>"</strong> } <strong>)</strong>
+</dd>
+
+<dt><a name="color">&lt;<em>color</em>&gt;:</a></dt>
+<dd><strong>black</strong>
+  | <strong>blue</strong>
+  | <strong>blue2</strong>
+  | <strong>blue3</strong>
+  | <strong>blue4</strong>
+  | <strong>brown2</strong>
+  | <strong>brown3</strong>
+  | <strong>brown4</strong>
+  | <strong>cyan</strong>
+  | <strong>cyan2</strong>
+  | <strong>cyan3</strong>
+  | <strong>cyan4</strong>
+  | <strong>dark Gray</strong>
+  | <strong>gold</strong>
+  | <strong>green</strong>
+  | <strong>green2</strong>
+  | <strong>green3</strong>
+  | <strong>green4</strong>
+  | <strong>light Gray</strong>
+  | <strong>light_blue</strong>
+  | <strong>magenta</strong>
+  | <strong>magenta2</strong>
+  | <strong>magenta3</strong>
+  | <strong>magenta4</strong>
+  | <strong>orange</strong>
+  | <strong>pink</strong>
+  | <strong>pink2</strong>
+  | <strong>pink3</strong>
+  | <strong>pink4</strong>
+  | <strong>red</strong>
+  | <strong>red2</strong>
+  | <strong>red3</strong>
+  | <strong>red4</strong>
+  | <strong>white</strong>
+  | <strong>yellow</strong>
+  | <strong>(</strong> <a href="#nat">&lt;nat&gt;</a> <strong>,</strong> 
+       <a href="#nat">&lt;nat&gt;</a> <strong>,</strong>
+       <a href="#nat">&lt;nat&gt;</a> <strong>)</strong>
+</dd>
+
+<dt><a name="displayOptions">&lt;<em>displayOptions</em>&gt;:</a></dt>
+<dd><strong>hidden</strong> 
+  | <a href="#timeOffset">&lt;timeOffset&gt;</a>
+</dd>
+
+<dt><a name="timeOffset">&lt;<em>timeOffset</em>&gt;:</a></dt>
+<dd><strong>after</strong> <a href="#nat">&lt;nat&gt;</a> 
+  [<strong>ticks</strong> | <strong>ms</strong>]
+</dd>
+
+<dt><a name="timing">&lt;<em>timing</em>&gt;:</a></dt>
+<dd>[<a href="#timeOffset">&lt;timeOffset&gt;</a>]
+  [<strong>within</strong> <a href="#nat">&lt;nat&gt;</a> 
+    [<strong>ticks</strong> | <strong>ms</strong>]]
+</dd>
+
+<dt><a name="fontName">&lt;<em>fontName</em>&gt;:</a></dt>
+<dd><strong>Serif</strong>
+  | <strong>SansSerif</strong>
+  | <strong>Monospaced</strong>
+</dd>
+
+<dt><a name="nodeDefinition">&lt;<em>nodeDefinition</em>&gt;:</a></dt>
+<dd><strong>(</strong> <a href="#int">&lt;int&gt;</a><strong>,</strong>
+    <a href="#int">&lt;int&gt;</a> <strong>)</strong> 
+  | <a href="#offset">&lt;offset&gt;</a> 
+  | <strong>move</strong> <strong>(</strong><a href="#int">&lt;int&gt;</a>
+    <strong>,</strong> <a href="#int">&lt;int&gt;</a> <strong>)</strong>
+</dd>
+
+<dt><a name="offset">&lt;<em>offset</em>&gt;:</a></dt>
+<dd><strong>offset (</strong><a href="#int">&lt;int&gt;</a> <strong>,</strong>
+    <a href="#int">&lt;int&gt;</a>)
+    <strong>from "</strong><em>referenceID</em><strong>"</strong>
+    <strong>node</strong> <a href="#nat+">&lt;nat+&gt;</a>
+  | <strong>offset (</strong> <a href="#int">&lt;int&gt;</a> <strong>,</strong>
+     <a href="#int">&lt;int&gt;</a><strong>) from "</strong><em>referenceID</em><strong>"</strong>
+     <a href="#direction">&lt;direction&gt;</a>
+  | <strong>offset (</strong><a href="#int">&lt;int&gt;</a> <strong>,</strong>
+    <a href="#int">&lt;int&gt;</a>) 
+    <strong>from "</strong><em>locationID</em><strong>"</strong>
+  | <strong>offset (</strong><a href="#int">&lt;int&gt;</a> <strong>,</strong>
+    <a href="#int">&lt;int&gt;</a>) <strong>from "</strong><em>referenceID</em><strong>"</strong> 
+    <strong>baseline</strong> [<strong>start</strong> | <strong>end</strong>]
+</dd>
+
+<dt><a name="direction">&lt;<em>direction</em>&gt;:</a></dt>
+<dd><strong>NW</strong> 
+  | <strong>N</strong>
+  | <strong>NE</strong>
+  | <strong>W</strong>
+  | <strong>C</strong>
+  | <strong>E</strong>
+  | <strong>SW</strong>
+  | <strong>S</strong>
+  | <strong>SE</strong>
+  | <strong>Northwest</strong>
+  | <strong>North</strong>
+  | <strong>Northeast</strong>
+  | <strong>West</strong>
+  | <strong>Middle</strong>
+  | <strong>Center</strong>
+  | <strong>East</strong>
+  | <strong>Southwest</strong>
+  | <strong>South</strong>
+  | <strong>Southeast</strong>
+</dd>
+
+<dt><a name="arrowOptions">&lt;<em>arrowOptions</em>&gt;:</a></dt>
+<dd>[<strong>fwArrow</strong>] [<strong>bwArrow</strong>]</dd>
+
+<dt><a name="closedOptions">&lt;<em>closedOptions</em>&gt;:</a></dt>
+<dd><strong>closed</strong></dd>
+
+<dt><a name="fillOptions">&lt;<em>fillOptions</em>&gt;:</a></dt>
+<dd><strong>filled</strong>
+  [<strong>fillColor</strong> <a href="#color">&lt;color&gt;</a>]
+</dd>
+
+<dt><a name="font">&lt;<em>font</em>&gt;:</a></dt>
+<dd>[<strong>font</strong> <a href="#fontNames">&lt;fontNames&gt;</a>]
+  [<strong>size</strong> <a href="#nat+">&lt;nat+&gt;</a>]
+  [<strong>bold</strong>] 
+  [<strong>italic</strong>]
+</dd>
+
+<dt><a name="oids">&lt;<em>oids</em>&gt;:</a></dt>
+<dd>{ <strong>"</strong><em>targetOID</em><strong>"</strong> }</dd>
+
+<dt><a name="nat">&lt;<em>nat</em>&gt;:</a></dt>
+<dd><strong>0</strong>
+  | <a href="#nat+">&lt;nat+&gt;</a>  
+</dd>
+
+<dt><a name="nat+">&lt;<em>nat+</em>&gt;:</a></dt>
+<dd><strong>1</strong> 
+  | <em>...</em>
+</dd>
+
+<dt><a name="int">&lt;<em>int</em>&gt;:</a></dt>
+<dd><a href="#nat">&lt;nat&gt;</a>
+  | <strong>-</strong> <a href="#nat">&lt;nat&gt;</a>
+  | <strong>(</strong> <a href="#double">&lt;double&gt;</a>
+    <a href="#operator">&lt;operator&gt;</a>
+    <a href="#double">&lt;double&gt;</a>
+    <strong>)</strong>
+  | <strong>"</strong><em>objectID</em><strong>"</strong> 
+    <a href="#objectPosition">&lt;objectPosition&gt;</a>
+</dd>
+
+<dt><a name="operator">&lt;<em>operator</em>&gt;:</a></dt>
+<dd><strong>+</strong>
+  | <strong>-</strong>
+  | <strong>*</strong>
+  | <strong>:</strong>
+</dd>
+
+<dt><a name="objectPosition">&lt;<em>objectPosition</em>&gt;:</a></dt>
+<dd><strong>x</strong>
+  | <strong>y</strong>
+  | <strong>width</strong>
+  | <strong>height</strong>
+</dd>
+
+<dt><a name="extensionCommand">&lt;<em>extensionCommand</em>&gt;:</a></dt>
+<dd>&nbsp;</dd>
+</dl>
+
+</body>
+</html>

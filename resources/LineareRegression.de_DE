@@ -1,0 +1,60 @@
+noSuchKeyException=There is no ressource for the key {0}
+iconNotFound=Icon "{0}" not found
+
+title=Lineare Regression
+
+name=Lineare Regressionsgerade
+
+nopExecption=Anzahl der Punkte nicht im vorgegebenen Intervall.
+lowException=Untere Grenze nicht im vorgegebenen Intervall.
+upException=Obere Grenze nicht im vorgegebenen Intervall.
+
+scFirst=Regressionsgerade(points):
+
+label=Berechnung
+
+description0=Die folgende Animation zeigt ihnen, wie das statistische Verfahren der linearen Regression angewandt wird.
+description1=Hierbei wird als Eingabe eine Menge von zweidimensionalen Messpunkten genommen und aus diesen die Regressionsgerade errechnet.
+description2=Das Modell der linearen Regression h&auml;ngt von 2 Gr&ouml;ßen ab. Der Einflussgr&ouml;ße X, sowie der Zielgr&ouml;ße Y. Die Gerade wird durch die Menge der Eingabepunkte gelegt, sodass der linerae Zusammenhand dieser
+description3=deutlich wird.
+description4=Die Gerade wird in der klassischen Form y = ax + b beschrieben.
+description5=Die Regressionsgerade dient der Analyse und Verlauf einer Messung.
+description6=Hinweise zum Input:
+description7=Der Paramter numberOfPoints muss immer gesetzt sein, er gibt an wie viele Punkt betrachtet werden bzw. erstellt werden sollen (entspricht dann den x-Werten).
+description8=Dabei sollte numberOfPoints im Intervall [50,750] liegen.
+description9=Mit lowerBound und upperBound k&ouml;nnen sie die Grenzen eingeben, indem zuf&auml;llige Y-Werte erstellt werden.
+description10=Die lowerBound sollte sich im Intervall [0,350] und die upperBound im Intervall [50,350] befinden.
+description11=Achten Sie bitte darauf, dass lowerBound kleiner der upperBound ist, da sonst keine Punkte generiert werden.
+
+intro0=Die Regressionsgerade dient der Analyse und dem Verlauf einer Messung.
+intro1=Die linere Regression stellt den Zusammenhang zwischen einer Einflussgröße X und der dazugehörigen Zielgröße Y her.
+intro2=Die Größen X und Y werden dabei einer Menge von zweidimensionalen Messgrößen entnommen. Durch die Gerade,
+intro3=die in der klassischen Form y = ax + b dargestellt wird, können Verlauf und Fehler der Messung abgeschätzt werden.
+
+outro0=Die Animation zeigte Ihnen das statistische Verfahren der Linearen Regression.
+outro1=Die Genauigkeit der Regression hängt von der Korrelation zwischen der Einflussgröße X
+outro2=und der Zielgröße Y ab. Je höher die Korrelation, desto genauer ist die Prognose.
+outro3=Bei Messungen aus der Realität kann kein perfekter linearer Zusammenhang entstehen.
+outro4=Die Datenpunkte bilden meist Wolken, aus denen zwar ein grober Zusammenhang herausgelesen
+outro5=werden kann, jedoch ist eine exakte Aussage zu treffen nicht möglich.
+outro6=Vielen Dank für Ihre Aufmerksamkeit!
+
+question1=Welche Ordnung hat die Funktion?
+answer11=1
+answer12=2
+answer13=3
+
+question2=Wovon hängt die Genauigkeit des Verfahrens ab?
+answer21=Von der Anzahl der Messpunkte.
+answer22=Von der Korrelation zwischen den Größen X und Y.
+answer23=Mehrmaliges Berechnen der Kurve.
+
+question3=Gegeben sei folgendes Szenarion: Wassermelonen werden anhand ihrer Größe (X in cm) und ihres Gewichts (Y in kg) gemessen. Die daraus resultierende Regressionsgerade lautet y = 0.125x + 0.3. Wie lautet die Prognose des Gewichts, wenn eine Wassermelone 40 cm groß ist?
+answer31=4.7 kg
+answer32=5.3 kg
+answer33=4.3 kg
+
+right=Richtig!
+wrong1=Leider Falsch. Die richtige Antwort wäre 1.
+wrong2=Leider Falsch. Durch die Korrelation zwischen X und Y wäre richtig.
+wrong3=Leider Falsch. Die richtige antwort wäre 5.3 kg.

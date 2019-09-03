@@ -1,0 +1,32 @@
+[block]
+	Der Algorithmus von Prim dient zur Berechnung des minimalen Spannbaums in 
+	einem gewichteten Graphen.
+[/block]
+[block]
+	[h2]Der Algorithmus[/h2]
+	Im Gegensatz zum Algorithmus von Kruskal erzeugt dieses Verfahren während 
+	der Ausführung immer einen zusammenhängenden Baum. Daher kann der[br]
+	Algorithmus nur auf einem zusammenhängenden Graphen korrekt ausgeführt 
+	werden.[br]
+	Das Verfahren wurde 1930 vom Mathematiker Vojtech Jarnik entwickelt und 
+	später durch Robert Prim und Edsger Dijkstra wiederentdeckt, weshalb[br]
+	der Algorithmus manchmal auch als Prim-Dijkstra-Algorithmus oder 
+	Algorithmus von Jarník, Prim und Dijkstra bezeichnet wird. Der Algorithmus[br]
+	fügt, ausgehend von einem beliebigen Startknoten im Graphen, die nächste 
+	kürzeste Kante hinzu, die einen noch nicht verbundenen Knoten an den [br]
+	existierenden Baum anschließt. Der Baum wächst somit bis alle Knoten im 
+	Graphen erreicht sind. Das Verfahren arbeitet ähnlich wie der Algorithmus[br]
+	von Dijkstra und fällt ebenfalls in die Klasse der Greedy–Algorithmen.[br]
+	Die Laufzeit des Algorithmus von Prim wird durch die Schleife zum Besuch 
+	aller Knoten und die Implementierung der Auswahl der nächsten Kante bestimmt.[br]
+	Die Komplexität des Algorithmus setzt sich somit aus diesen beiden Komponenten 
+	zusammen und beträgt O(|E| x log(|V|)), womit diese der Komplexität des[br]
+	Algorithmus von Kruskal entspricht. In der Praxis ist jedoch der Algorithmus
+	von Prim bei einer großen Anzahl von Kanten dem Algorithmus von Kruskal[br] 
+	überlegen, da hier keine Sortierung aller Kanten durchgeführt werden muss, 
+	sondern lediglich die Kanten des aktuellen Knotens bewertet werden müssen.[br]
+	Die Berechnung des minimalen Spannbaums kann zur Planung einer 
+	Netzwerktopologie eingesetzt werden, bei denen eine bestimmte Anzahl von [br]
+	Knoten mit den geringsten Leistungskosten verbunden werden sollen und nur 
+	bestimmte Leitungen überhaupt eingerichtet werden können.
+[/block]

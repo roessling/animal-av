@@ -1,0 +1,94 @@
+noSuchKeyException=Es gibt keine Ressource für Eintrag {0}
+iconNotFound=Icon "{0}" not found
+
+
+###HTML###
+assert=�berpr�fe: 
+
+xintroSize=6
+xintro0=Die Norm IEEE 754 definiert Standarddarstellungen f�r bin�re Gleitkommazahlen in Computern und 
+xintro1=legt genaue Verfahren f�r die Durchf�hrung mathematischer Operationen, insbesondere f�r Rundungen, fest.
+xintro2=
+xintro3=Die Zahl setzt sich wie folgt zusammen: Vorzeichen * Mantisse * 2 ^ (Charakteristik - Biaswert)
+xintro4=wobei die Bitwerte in der Reihenfolge Vorzeichen,Charakteristik,Mantisse gespeichert werden.
+xintro5=Zus�tzliche gibt es Sonderf�lle f�r Null, denormalisiert, unendlich und keine Zahl.
+
+
+###UTF-8###
+title=IEEE 754 Converter
+
+introHeader=Einleitung
+introSize=6
+intro0=Die Norm IEEE 754 definiert Standarddarstellungen für binäre Gleitkommazahlen in Computern und 
+intro1=legt genaue Verfahren für die Durchführung mathematischer Operationen, insbesondere für Rundungen, fest.
+intro2=
+intro3=Die Zahl setzt sich wie folgt zusammen: Vorzeichen * Mantisse * 2 ^ (Charakteristik - Biaswert)
+intro4=wobei die Bitwerte in der Reihenfolge Vorzeichen,Charakteristik,Mantisse gespeichert werden.
+intro5=Zusätzliche gibt es Sonderfälle für Null, denormalisiert, unendlich und keine Zahl.
+
+calcHeader=Rechnung
+
+NumberToIEEE754=Dezimalzahl zu IEEE754
+NtI0=Spezialfallbetrachtung
+NtI1=Vorzeichen
+NtI2=Umwandlung zur Festkommazahl
+NtI3=Vorkommastellen
+NtI4=Nachkommastellen
+NtI5=Verschiebung
+NtI6=Berechnung der Charakteristik
+NtI7=Fertigstellung Mantisse
+
+IEEE754ToNumber=IEEE754 zu Dezimalzahl
+ItoN0=Spezialfallbetrachtung
+ItoN1=Berechnung des Exponenten
+ItoN2=Verschiebung
+ItoN3=Umwandlung zur Zahl
+ItoN4=Vorzeichen
+
+constants=Konstanten:
+bias=Der Bias: 
+size=Gesamtlänge: 
+lchar=Charakteristiklänge: 
+lmant=Mantissenlänge: 
+
+NaN=Es ist keine Zahl
+nNaN=Es ist eine Zahl
+Zero=Die Zahl ist 0
+Pos=Die Zahl ist positiv
+Neg=Die Zahl ist negativ
+Inf=Die Zahl ist unendlich
+nInf=Die Zahl ist nicht unendlich
+underflow=Die Zahl nähert sich dem Minimum an
+normal=Normalfall
+max=Die Charakteristik ist maximal
+min=Die Charakteristik ist minimal
+
+staticPoint=Festkommadarstellung: 
+floatingPoint=Die Fließkommazahl: 
+exponent=Exponent: 
+characteristic=Charakteristik: 
+number=Ergebnis: 
+IEEEInput=IEEE754 Zahl:
+
+toBinaryHead=Die Dezimalzahl {0} als Binärzahl: 
+pref=Nachkommastellen der 
+mantissa=Die {0}Fließkommazahl ab Index {1} einfügen und dann mit Nullen füllen.
+
+outroHeader=Zusammenfassung
+
+outIeeeSize=7
+outIeee0=Die IEEE754 Zahl setzt sich aus einem Vorzeichenbit, {4} Charakteristik-Bits und {5} Mantissen-Bits zusammen.
+outIeee1=Zuerst wird auf Randfälle überprüft und entsprechend Teile der Bit-Kette mit Tabellenwerten überschrieben.
+outIeee2=Für die Anschaulichkeit wird eine Festkommadarstellung errechnet: {2} 
+outIeee3=Diese wird durch Verschiebung auf eine normierte Form gebracht.
+outIeee4=Die Verschiebung verrechnet mit dem Bias, {3}, ergibt die Charakteristik.
+outIeee5=Die Fließkommazahl ohne die erste 1 ist die Mantisse.
+outIeee6=So wurde die Zahl {1} in die IEEE754 Bit-Kette {0} umgerechnet.
+
+outDoubleSize=6
+outDouble0=Die IEEE754 Zahl setzt sich aus einem Vorzeichenbit, {4} Charakteristik-Bits und {5} Mantissen-Bits zusammen.
+outDouble1=Bei Sonderfällen werden Tabellenwerte ausgelesen.
+outDouble2=Zu erst wird der Exponent aus den Charakteristik-Bits errechnet
+outDouble3=Dann wird an die Mantisse vorn "1." angehängt und verschoben: {2}
+outDouble4=Dies wird dann in die Dezimalzahl umgewandelt und mit dem Vorzeichen multipliziert.
+outDouble5=So wurde aus der IEEE754 Bit-Kette {0} die Zahl {1} errechnet.

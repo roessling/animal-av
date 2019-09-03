@@ -1,0 +1,38 @@
+noSuchKeyException=Es gibt keine Ressource f\u00fcr Eintrag {0}
+iconNotFound=Icon "{0}" not found
+
+algorithm_name=Chinesische Multiplikation
+description=Bei der chinesischen Multiplikation versucht man die Multiplikation auf eine einfache Art der Addition von Zahlen zur\u00FCckzuf\u00FChren. Dabei werden Linien in horizontaler Ausrichtung f\u00FCr den Multiplikator und Linien in vertikaler Ausrichtung f\u00FCr den Multiplikand aufgezeichnet. Anschlie\u00DFend werden die gebildeten Schnittpunkte, unter Beachtung der Dezimalstellen, zusammenaddiert und zum Ergebnis zusammengef\u00FChrt.
+source_code=1. Zeichne den Multiplikator\n2. Zeichne den Multiplikand\n3. Addiere die Schnittpunkte
+
+approach=Vorgehensweise
+step1=1. Die erste Zahl einzeichnen
+step2=2. Die zweite Zahl einzeichnen
+step3=3. Trennlinien einzeichnen
+step4=4. Schnittpunkte der Geraden z\u00e4hlen
+step5=5. Die zusammengez\u00e4hlten Punkte aus einem Bereich werden nun zu einer Zahl aufsummiert
+introduction=Einleitung
+result=Ergebnis
+
+line1=Die chinesische Multiplikation, oder auch St\u00e4bchen-Multiplikation, vereinzelt auch japanische Multiplikation genannt, ist eine Methode zum Multiplizieren von Zahlen.
+line2=Die Herkunft dieser Methode ist umstritten und wird nicht eindeutig festgelegt.
+line3=Man geht jedoch von einer Herkunft im alten China aus.
+line4=Bei der chinesischen Multiplikation versucht man die Multiplikation auf eine einfache Art der Addition von Zahlen zur\u00fcckzuf\u00fchren. 
+line5=Im folgendem sei nun das Vorgehen grob beschrieben
+line6=1. Multiplikator: Zeichne f\u00fcr jede Ziffer Linien in horizontaler Ausrichtung. Die Anzahl der Linien pro Ziffer ist die Ziffer selbst. Halte einen Abstand zwischen jeder Ziffern, sodass sie unterschieden werden k\u00f6nnen.
+line7=2. Multiplikand: Gleiche Vorgehensweise, aber in vertikaler Ausrichtung.
+line8=3. Schnittpunkte zusammenaddiert und zum Ergebnis zusammengef\u00fchrt: Das Raster wird in diagonale Abschnitte unterteilt. Beginnend von unten rechts repr\u00e4sentiert der erste Abschnitt die 1er, der zweite die 10er und so weiter.
+line9=Gibt es mehr als 9 Schnittpunkte in einem Abschnitt, so geht der \u00dcbertrag in die Berechnung des n\u00e4chsten Abschnitts mit hinein.
+line10=Diese Methode eignet sich besonders gut f\u00fcr zwei oder dreistellige Zahlen, bei denen die gr\u00f6\u00dfte vorkommende Ziffer die 5 nicht \u00fcberschreitet, da ansonsten auf Grund der zu Hohen Anzahl an Linien die Effizienz stark abnimmt.
+
+line11=Warum funktioniert diese Methode?
+line12=Die chinesische Multiplikation ist im Wesentlichen eine andere Darstellung unserer bekannten schriftlichen Multiplikation.
+line13=Betrachte im Folgenden das Beispiel  12 x 23 = 276.
+line14=Das Produkt der markierten Ziffern in der schriftlichen Multiplikation entspricht der Anzahl Schnittpunkte im eingekreisten Bereich.
+line15=Nun wird das Ergbnis anhand der Schnittpunkte zusammengesetzt.
+
+line16=Erster Schritt: Zeichne für jede Ziffer des Multiplikators Linien in Anzahl der Ziffer selbst. Die Linien verlaufen horizontal von links nach rechts.
+line17=Zweiter Schritt: Die Linien des Multiplikanden werden \u00FCberkreuzend mit den Linien des Multiplikators senkrecht von oben nach unten eingezeichnet.
+line18=Dritter Schritt: Nun werden, aus Gr\u00FCnden der besseren \u00DCbersicht, Trennlinien eingezeichnet, die die Bereiche unterteilen. Jeder Bereich stellt dabei einen Stellenwert im Dezimalsystem dar.
+line19=Vierter Schritt: Als n\u00E4chstes werden die Schnittpunkte der eingezeichneten Linien pro Bereich zusammengez\u00E4hlt.
+line20=Fünfter Schritt: Die zusammengez\u00e4hlten Punkte pro Bereich werden nun zum Ergebnis aufsummiert

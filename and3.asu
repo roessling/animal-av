@@ -1,0 +1,47 @@
+%Animal 2656*574
+{
+codeGroup "codeSource" at (292,60) color black highlightColor red
+addCodeLine "LIBRARY IEEE;" to "codeSource"
+addCodeLine "USE IEEE.STD_LOGIC_1164.ALL;" to "codeSource"
+addCodeLine "ENTITY and3 IS" to "codeSource"
+addCodeLine "PORT (a, b : IN STD_LOGIC; co : OUT STD_LOGIC);" to "codeSource" indentation 1
+addCodeLine "END ENTITY h_adder" to "codeSource"
+addCodeLine "" to "codeSource"
+addCodeLine "ARCHITECTURE fh1 OF and3 IS" to "codeSource"
+addCodeLine "BEGIN" to "codeSource" indentation 1
+addCodeLine "c <= (a and b);" to "codeSource" indentation 2
+addCodeLine "co <= a AND c;" to "codeSource" indentation 2
+addCodeLine "END ARCHITECTURE fh1;" to "codeSource"
+addCodeLine "" to "codeSource"
+}
+{
+relRectangle "0" (55, 100) (187, 333)  color black depth 16
+text "0" "and3" (55,85) color blue depth 16 font Monospaced size 14
+polyline "0" (40,164) (55,164) color black depth 16
+polyline "0" (40,214) (55,214) color black depth 16
+polyline "0" (242,347) (262,347) color black depth 16
+highlightCode on  "codeSource" line 2
+highlightCode on  "codeSource" line 3
+highlightCode on  "codeSource" line 4
+highlightCode on  "codeSource" line 5
+
+}
+
+{
+wire "wire_black" ( 40,164) ( 81,164) 
+wire "wire_black" ( 81,164) ( 65,164) ( 65,325) ( 81,325) 
+wire "wire_black" ( 40,214) ( 81,214) 
+wire "wire_black" ( 231,347) ( 262,347) 
+unhighlightCode on  "codeSource" line 0
+unhighlightCode on  "codeSource" line 1
+unhighlightCode on  "codeSource" line 2
+unhighlightCode on  "codeSource" line 3
+unhighlightCode on  "codeSource" line 4
+unhighlightCode on  "codeSource" line 5
+unhighlightCode on  "codeSource" line 6
+unhighlightCode on  "codeSource" line 7
+unhighlightCode on  "codeSource" line 8
+unhighlightCode on  "codeSource" line 9
+unhighlightCode on  "codeSource" line 10
+highlightCode on  "codeSource" line 11
+}

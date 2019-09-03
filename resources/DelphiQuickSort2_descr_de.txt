@@ -1,0 +1,17 @@
+Der Algorithmus in Worten
+
+Der Aufruf von Quicksort lautet QuickSort(A, iLo, iHi),
+wobei iLo, iHi die Unter- bzw. Obergrenzen des zu
+sortierenden Feldes sind.
+
+ 1. Setze Lo = iLo, Hi = iHi
+ 2. Setze Mid auf den Wert des Elements an Position (Lo + Hi) / 2
+ 3. Wiederhole folgende Befehle, bis Lo > Hi:
+    4. Solange A[Lo] < Mid, inkrementiere Lo
+    5. Solange A[Hi] > Mid, dekrementiere Hi
+    6. Falls Lo <= Hi:
+       7. Vertausche die Elemente an Position Lo, Hi
+       8. Inkrementiere Lo, dekrementiere Hi
+ 9. Falls Hi > iLo, rufe QuickSort(A, iLo, Hi) auf
+10. Falls Lo < iHi, rufe Quicksort(A, Lo, iHi) auf
+11. Beende den Algorithmus sobald das Feld sortiert ist

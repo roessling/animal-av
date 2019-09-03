@@ -1,0 +1,116 @@
+<project xmlns:ivy="antlib:org.apache.ivy.ant"
+       name="Export Jar for Project Animal" default="main" basedir=".">
+	<description>
+		Create a Java Project (JAR) with Ant build script
+	</description>
+
+	<property name="projectName" value="Animal" />
+	<property name="src.dir" location="src" />
+	<property name="build.dir" location="bin" />
+	<property name="lib.dir" value="lib" />
+	<property name="main-class" value="animal.main.Animal" />
+
+	
+	<!-- ivy start -->
+	<!-- ivy to get dependencies and copy to project lib folder automatically -->
+	<target name="resolve" description="retrieve dependencies with ivy">
+		<ivy:retrieve />
+	</target>
+
+	<!-- install ivy -->
+	<target name="ivy" description="Install ivy">
+		<mkdir dir="${user.home}/.ant/lib" />
+		<get dest="${user.home}/.ant/lib/ivy.jar" src="http://search.maven.org/remotecontent?filepath=org/apache/ivy/ivy/2.4.0-rc1/ivy-2.4.0-rc1.jar" />
+	</target>
+	<!-- ivy end -->
+
+	
+	<!-- delete old build.dir(bin) -->
+	<target name="clean" description="clean up">
+		<delete dir="${build.dir}" />  <!-- --><!-- when active you need to clean project after building jar  -->
+	</target>
+
+	<!-- make build.dir(bin) folder -->
+	<target name="init">
+		<mkdir dir="${build.dir}" />
+	</target>
+
+	<!-- external libraries classpath, we don't need sources and javadoc -->
+	<path id="classpath">
+		<fileset dir="${basedir}/">
+			<include name="${lib.dir}/*.jar" />
+			<exclude name="${lib.dir}/*sources.jar"/>
+			<exclude name="${lib.dir}/*javadoc.jar"/>
+		</fileset>
+    </path>
+
+	<!-- To work with external libraries, need classpath to compile -->
+	<target name="compile" depends="init" description="compile the source ">
+		<javac includeantruntime="false" srcdir="${src.dir}" destdir="${build.dir}" classpathref="classpath" encoding="UTF-8" /> <!-- Cp1252 UTF-8-->
+	</target>
+
+	<!-- constructs the external libraries classpath name -->
+	<pathconvert property="classpath.name" pathsep=" ">
+		<path refid="classpath" />
+		<mapper>
+			<chainedmapper>
+				<flattenmapper />
+				<globmapper from="*.jar" to="lib/*.jar" />
+			</chainedmapper>
+		</mapper>
+	</pathconvert>
+
+	<!-- PreRender to create txt-Files with informations -->
+	<target name="prerender" depends="compile">
+		<java classname="prerender.PreRender">
+		    <classpath>
+		        <pathelement path="bin"/>
+		    </classpath>
+		</java>
+    	<echo>Execute class.</echo>
+	</target>
+	
+	<!-- Copy Files to bin to resolve old Problems with not founded Files -->
+	<target name="copyFilesToBin" depends="prerender">
+		<copy todir="${build.dir}">
+		  <fileset dir="${src.dir}" excludes="**/*.java"/>
+		</copy>
+    	<echo>Copy Files to bin.</echo>
+	</target>
+	
+	<!-- jar it, and declares the ext libraries in manifest.mf file -->
+	<target name="jar" depends="compile, prerender, copyFilesToBin" description="package, output to JAR">
+
+		<echo message="classpath.name : ${classpath.name} " />								<!-- print all .jar files that are neccesary -->
+		
+		<property name="external" value="lib/external-libs.jar"/>							<!-- make a jar with all external-libs -->
+		<jar jarfile="${external}">
+		   	<zipgroupfileset dir="lib/">
+				<include name="**/*.jar"/>
+		    </zipgroupfileset>
+		</jar>
+		
+		<jar jarfile="${basedir}/${projectName}.jar" basedir="${build.dir}">
+			<manifest>
+				<attribute name="Main-Class" value="${main-class}" />
+				<attribute name="Class-Path" value="${classpath.name}" />
+                <attribute name="Rsrc-Main-Class" value="animal.main.Animal"/>
+			</manifest>
+            <zipfileset src="${external}">
+                <exclude name="META-INF/*.SF"/>
+            </zipfileset>
+			<zipfileset dir="${basedir}" includes="**/*" excludes="Animal.jar src/ bin/
+				.classpath .project animal.properties components.dat default.properties
+				VHDLEntityName VHDL.properties VHDLcomponents.dat"/>	<!-- Add all folders and files from the basedir except the excludes -->
+			<!-- <zipfileset dir="${src.dir}" includes="**/*" excludes="**/*.java"/>	-->			<!-- Add all folders and files from the srcdir except the .java files (no sources) -->  <!--Wenn copyFilesToBin nicht mehr notwendig dann Zeile wieder auskommentieren-->
+			<zipfileset dir="${src.dir}" includes="**/DummyGenerator.java"/>				<!-- Add all DummyGenerator.java files from the srcdir -->
+		</jar>
+		
+        <!--delete previously created extern .jar-->
+        <delete file="${external}"/>
+	</target>
+	
+	<!-- Default, run this -->
+	<target name="main" depends="clean, compile, jar" />
+
+</project>

@@ -1,0 +1,23 @@
+algoName=Straight Selection
+theName=Recursive Straight Selection (String; Pseudocode) [EN]
+outputLanguage=Pseudo-Code
+algoDesc=This algorithm looks for a value passed in in an array of int values. If the value is found, its position in the array is returned; otherwise, the result is -1.
+codeExample=int search(String[] array, String value, int lower, int upper):\n  if the input array is null or value is null:\n    return -1;\n  if the current position is outside the array:\n    return -1;\n  Set mid = (lower + upper) / 2.\n  if the element at position mid is equal to value:\h    return mid;\nif the element is less than the middle element:\n    return search(array, value, lower, mid - 1);\n  return search(array, value, mid +1, upper);
+animTitle=Recursive Straight Selection (String)
+algoAuthor=Dr. Guido Rößling (roessling@acm.org>
+algoTitle=Recursive Straight Selection
+animDesc=Description of the algorithm
+adForURL=Further animations can be found at http://www.animal.ahrgr.de in the online repository.
+nrSteps=The algorithm used a total of {0} assignments and {1} comparisons.
+description.filename=resources/PseudoRecursiveStraightStringSelection_descr_en.txt
+description.level=2
+description.labelSymbol=#
+code.filename=resources/PseudoRecursiveStraightStringSelection_code_en.txt
+code.level=2
+code.labelSymbol=#
+complexity.filename=resources/PseudoRecursiveStraightStringSelection_complexity_en.txt
+complexity.level=2
+complexity.labelSymbol=#
+nrAss=Assignments
+nrComp=Comparisons
+result=Result: {0}

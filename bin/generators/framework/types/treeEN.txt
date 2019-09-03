@@ -1,0 +1,26 @@
+Taken from Wikipedia, the free encyclopedia:
+
+In computer science, a tree is a widely-used computer data
+structure that emulates a tree structure with a set of linked
+nodes. Each node has zero or more child nodes,
+which are below it in the tree (in computer science, unlike 
+in nature, trees grow down, not up). A node that has a child 
+is called the child's parent node. A child has at 
+most one parent; a node without a parent is called the 
+root node (or root). Nodes with no children
+are called leaf nodes or leaves.
+
+In graph theory, a tree is a connected acyclic graph.
+A rooted tree is such a graph with a vertex singled 
+out as the root. In this case, any two vertices connected by 
+an edge inherit a parent-child relationship. An acyclic graph 
+with multiple connected components or a set of rooted trees
+is sometimes called a forest.
+
+There are two basic types of tree. In an unordered tree,
+there is no distinction between the various children of a node
+- none is the "first child" or "last child". A tree in which
+such distinctions are made is called an ordered tree,
+and data structures built on them are called ordered tree data
+structures. Ordered trees are by far the most common form of
+tree data structure.

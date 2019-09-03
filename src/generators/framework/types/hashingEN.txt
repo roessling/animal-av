@@ -1,0 +1,11 @@
+Taken from Wikipedia, the free encyclopedia:
+
+A fundamental property of all hash functions is that if
+two hashes (according to the same function) are different,
+then the two inputs were different in some way. This property
+is a consequence of hash functions being deterministic,
+mathematical functions, but they are generally not one-to-one,
+with a large domain and smaller range. Consequently, the 
+equality of two hash values does not guarantee the two
+inputs were the same, but in some cases, probability theoretic
+or computability theoretic guarantees apply.

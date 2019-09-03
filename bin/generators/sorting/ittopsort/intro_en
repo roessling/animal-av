@@ -1,0 +1,9 @@
+The topological sorting is used to create an order [br]
+of tasks such that dependencies between their execution[br]
+are respected[br][br]
+
+For that, each task is represented as a node in a directed[br]
+graph. An arc between node a and b means that task b can[br]
+be executed as soon as a has been executed.[br][br]
+
+The following algorithm uses an iterative approach.

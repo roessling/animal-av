@@ -1,0 +1,20 @@
+[block]
+	Dijkstra's algorithm determines the shortest path in a weighted graph with 
+	no negative edges. The paths are determined from a arbitrary but fixed[br]
+	start node.
+[/block]
+[block]
+	[h2]The Algorithm[/h2]
+	The method belongs to the class of greedy algorithms. In each step it adds 
+	the node with the shortest distance beginning from the start node to a list[br]
+	of visited nodes. Starting from this new node the algorithm calculates the 
+	distance to each neighbor and updates any shorter distances.[br]
+	The runtime of the algorithm is determined by the search for the next node with
+	shortest distance and is  O(|V|^2) using a simple array. Using a Fibonacci-[br]
+	Heap the complexity can be reduced to O(|E| x log(|V|)). A Fibonacci-Heap is a 
+	specialized data structure representing a priority queue.[br]
+	Dijkstra's algorithm is used in Link-State Routing protocols like Open Shortest 
+	Path where each node calculates the routes in the network knowing the[br]
+	complete network topology. The Optimized Link State Routing protocol was 
+	developed for use in ad-hoc networks and is also widely adopted.
+[/block]

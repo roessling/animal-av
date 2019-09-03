@@ -1,0 +1,46 @@
+noSuchKeyException=There is no ressource for the key {0}
+iconNotFound=Icon "{ }" not found
+
+descriptionGlobal=The algorithm of Edmonds and Karp is an graph algorithm, which computes the max flow within an network. A network or flow graph is a graph, which edges have a\nrespective individual capacity. A common example is a pipe system with a source (s) and a sink (t), where the diameters of the pipes are diverse.\nA flow assigns every edge of the network a value in between zero and its respective capacity. The flow respesents, how much water is running through\nthe pipes. The flowvalue is the sum of the flows from the source. The max flow of a network is the flow, which is maximal from all possible flows and\nsatisfies the flow perserving condintion. This condition implies, that the flow which runs into and which runs out of the node have to be equal. An exeption\nto this are the source and sink nodes. A flow augmenting path is a path from the source to the sink, s-t-path, which flow can be increased, while satisfying\nthe flow perserving condition. Hence, the flow is a max flow, if there is no flow augmenting path in the network.\nAn essential term for this concept is "residual network". For every network, there exists also an residual network. This network contains an edge between node A\nand B, if the residal capacity between these nodes is greater than zero. The residual capacity is the sum of the flows from node b to a and the difference of the\ncapacity and the flow of node a to b.\n(further reading: https://wiki.algo.informatik.tu-darmstadt.de/Basic_flow_definitions#Residual_network)\n\nThe last condition is exploited by the algorithm of Ford and Fulkerson as well as the algorithm of Edmonds and Karp. Both of these algorithms search for an flow\naugmenting path, until none is found. The algorithm of Edmonds and Karp searches for the shortest path from the source to the sink. Hence a breadth first search\nis used. Alongside such a path the flow is augmented with respect to the minimal difference of the capacity and the flow of each edge.
+
+summaryGlobal=As shown in the visualization of the algorithm, the flow augmenting path was the shortest path from source to sink. This implies, that the number of edges in an\flow augmenting path after m iterations is monotonously increasing, whereas m is the number of edges. Hence, the smallest number of edges on a flow augmenting path can never be\ngreater than n-1, whereas n is the number of nodes. Therefore the number of iterations is within O(nm). In the worst case, every edge of the network is selected to augment the flow.\nWith this, the complexity of the algorithm of Edmonds and Karp within O(nmm).\n\nThe complexity of this algorithm is the feature of Edmonds and Karp in contrast to Ford and Flukerson, which has a complexity dependent on the maximal capacity.
+
+generatorDescription=The algorithm of Edmonds and Karp computes the max flow of a network.\nWithin each iteration, the algorithm uses path from source to sink with the smallest number of\nnodes. Hence a breadth first search is used to find a flow augmenting path. The complexity of\nthis algorithm is independent of the capacity, which is a feature of Edmonds and Karp. This algorithm\nperforms more efficient on networks with high capacities.
+
+flowAugmentingPathNR=Flow augmenting path no.
+
+introduction=Introduction
+
+summaryString1=The execution of the EdmondsKarp algorithm resulted in the network to the left with the respective max flow.\n
+
+summaryString2=flow augmenting paths were found. The max flow value can be computed as the sum of the outgoing flow from\nthe startnode minus the incoming flow into the startnode or equivalently as the sum\n of the incoming flow into the targetnode minus the outgoing flow from the targetnode.\nThe flow value of the network at the left is
+
+summaryTitle=Summary
+
+outline=Outline
+
+ex1=The adjacency matrix needs to be quadratic.
+
+ex2=The capacity matrix needs to be quadratic.
+
+ex3=The adjacency and capacity matrices must have the same dimensions.
+
+ex4=The entries of the adjacency matrix need to be either 0 or 1.
+
+ex5=The ID of the target note needs to be greater or equal 0 and smaller than 
+
+be=,
+
+ex6=The ID of the starting node need to be greater or equal 0 and smaller than 
+
+ex7=The starting and the target must be different.
+
+ex8=The number of node positions must be equal to the number of nodes in the adjacency and capacity matrices.
+
+ex9=Every node position must consist of an x-value (first row) and an y-value (second row).
+
+generatorDescription=The algorithm of Edmonds and Karp computes the max flow within an network. In every iteration\n
+the path wie the smallest number of edges from source to the sink. Hence a breadth first search is used to find the\n
+flow augmenting path.\n\n
+One feature of this algorithm is, that the complexity is independent from the capacities of the edges in contrast to the\n
+algorithm of Ford and Fulkerson. Hence the EdmondsKarp-algorithm is more efficient for networks with high capacities.

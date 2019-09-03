@@ -1,0 +1,56 @@
+noSuchKeyException=There is no ressource for the key {0}
+iconNotFound=Icon ”{0}” not found
+
+heading_text=Trie : Search
+
+### Table of Contents ###
+introduction='Introduction'
+animation='Animation'
+summary='Summary'
+
+### Data Structure Description ###
+ds_heading='Data Structure'
+ds_desc01='A trie is a tree-like data structure that is used to store strings in such a'
+ds_desc02='way that they can be efficiently retrieved.'
+ds_desc03='Each node in the tree may have one outgoing branch for every character in the'
+ds_desc04='alphabet, so looking up a string is as simple as following its prefix path from'
+ds_desc05='the root node to a specially marked end node.'
+ds_desc06='This also means that shared prefixes are only stored once.'
+
+### Search Descritpion ###
+search_heading='Search'
+search_desc01='To search a string in a trie, follow its prefix path (always take the branch'
+search_desc02='that corresponds to the string's next character).'
+search_desc03='If there is no branch matching the next character, the string is not contained.'
+search_desc04='Otherwise, if the end of the string has been reached, the current node is checked'
+search_desc05='to see if its endOfString flag is set.'
+search_desc06='If this is the case, the string is contained; otherwise it is not.'
+search_desc07='The complexity of search is O(M) where M is the length of the string.'
+
+### Animation Description ###
+ani_heading='Animation'
+ani_desc01='The following animation demonstrates the search algorithm on a list of strings.'
+ani_desc02='Nodes are represented by circles and branches by arrows that are labeled with'
+ani_desc03='the corresponding character from the alphabet (a-z).'
+ani_desc04='A small circle inside a node indicates the end of a string.'
+
+### Info ###
+num_of_comparisons='# of comparisons = '
+
+### Summary ###
+summary_heading='Summary'
+summary_1=' comparisons were needed to search  '
+summary_2=' strings ('
+summary_3=' letters combined).'
+summary_4='This results in a comparison/letter ratio'
+summary_5='of '
+
+### Invalid Input ###
+radius_error='The circle radius must be in the range '
+hs_error='The horizontal spacing must be in the range '
+vs_error='The vertical spacing must be in the range '
+sp_error='The spacing must be >= circle radius'
+as_error='The allStrings array must have at least one entry'
+sts_error='The stringsToSearch array must have at least one entry'
+str_len_error='The string length must be less than 15 and greater than 0'
+str_ch_error='A string may only contain characters in the range a-z'

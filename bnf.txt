@@ -1,0 +1,139 @@
+# Defines the interaction elements.
+# There exist:
+# - documentation (a HTML-page)
+# - fill-in-the-blanks question
+# - multiple-choice question
+# - true/false question
+
+interactionElements:
+  documentation | fibQuestion | mcQuestion | tfQuestion
+
+# the documentation element.
+# In opposite to the other interaction
+# elements (questions) it gets only _one_
+# line of text as "parameter", this line
+# being the url of the documentation
+# to be displayed.
+# example of usage:
+#	documentation "foobar"
+# 	"http://www.animal.ahrgr.de"
+# 	endtext
+
+documentation:
+  'documentation' text EOL text EOL 'endtext'
+
+# Fill-in-the-blanks question. The question is displayed (everything
+# to "endtext"). The user has to do of the marked answers to answer
+# the question correctly.
+# example of usage:
+# 	fibquestion "pivotChoice"
+# 	questionGroup "pivotPosition"
+# 	nrRepeats 5
+# 	points 3
+# 	"Which pivot element will be chosen next?"
+# 	"Please enter only the position, not the value!"
+# 	endtext
+# 	answer
+# 	"5"
+# 	"Position 5"
+# 	"The last"
+# 	endanswer
+#
+# Every "answer"-line signifies an answer
+
+fibQuestion:
+  'fibquestion' text EOL [optionalComponents] { text EOL } 'endtext' EOL 
+  'answer' EOL { text EOL } 'endanswer' EOL [comment]
+
+# Parses a multiple-choice question. Important: The order of the possible
+# answers can be generated randomly, so that not always answer number 2 (for
+# example) is the correct one. The intValue of answer is the position of
+# the correct answer (beginning with 1!).
+# example of usage:
+# 	mcquestion "leftBorder"
+# 	"Where is located the lower border of the next recursion level?"
+# 	endtext
+# 	"At 1"
+# 	endchoice
+# 	"At 2"
+# 	endchoice
+# 	comment
+# 	"No, even the first element is not sorted yet."
+# 	endcomment
+# 	answer
+# 	1
+# 	endanswer
+
+mcQuestion:
+  'mcquestion' text EOL optionalComponents { text EOL } 'endtext' EOL 
+  { text EOL 'endchoice' EOL [pointsPossible] [comment] } 
+  'answer' intValue EOL 'endanswer' EOL
+
+# A true/false question.
+# example of usage:
+# 	tfquestion "sortingStopped"
+# 	"Has the sorting already reached it's end?"
+# 	endtext
+# 	answer
+# 	t
+# 	endanswer
+
+tfQuestion:
+  'tfquestion' text EOL optionalComponents { text EOL } 'endtext' EOL
+  'answer' tfClassifier EOL 'endanswer' EOL [comment]
+
+# Classification of answers
+
+tfClassifier:
+  't' | 'f'
+
+optionalComponents:
+  [questionGroup] [minCount] [pointsPossible]
+
+# Groups a number of questions.
+# If "enough" question of this group where answered correctly,
+# the other questions of the group won't be shown.
+# example of usage:
+# 	questionGroup "pivotPosition"
+
+questionGroup:
+  'questiongroup' text EOL
+
+# Minimal times, how often a question of a QuestionGroup (see above)
+# has to be answered correctly. If this number is reached, further questions
+# out of this group (and only this group!) are left out.
+# example of usage:
+# 	nrRepeats 5
+
+minCount:
+  'nrRepeats' naturalValue EOL
+
+# Count of points for a given answer. Using this a weighting between easy
+# and hard questions becomes possible, which might be interesting for grading.
+# example of usage:
+# 	points 3
+
+pointsPossible:
+  'points' naturalValue EOL
+
+# Used for commeting answers different than "true" and "wrong".
+# Can be used to point to errors in reasoning.
+# example of usage:
+# 	comment
+# 	"Very well done!"
+# 	endcomment
+
+comment:
+  'comment' EOL { text EOL } 'endcomment' EOL
+
+# Text in double quotes. "entry" can be practically
+# everything besides a double quote.
+# example of usage:
+# 	"Hello World! 42"
+
+text:
+  '"' entry '"'
+
+# line feed
+EOL:
+  '\n'

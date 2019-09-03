@@ -1,0 +1,255 @@
+%Animal 2 800*600
+title "Huffman Kodierung"
+author "Florian Lindner"
+{
+interactionDefinition "intDef20090103194234375.txt"
+text "Topic" "Huffman Encoding" (20, 50) color (255, 0, 0) depth 1 font Monospaced size 32 bold
+rectangle "topicRect" offset (-5, -5) from "Topic" NW offset (5, 5) from "Topic" SE color (0, 0, 0) depth 1
+}
+{
+text "inWords" "Der Algorithmus in Worten" (20, 100) color (0, 0, 0) depth 1 font Serif size 22 italic
+}
+{
+text "line1" "1) Ermittle die Häufigkeiten der Buchstaben in der Eingabe." offset (0, 100) from "Topic" SW color (0, 0, 0) depth 1 font SansSerif size 16
+}
+{
+text "line2" "2) Erstelle aus jedem auftretenden Buchstaben einen Knoten mit dessen Häufigkeit als Blatt eines Baumes." offset (0, 30) from "line1" SW color (0, 0, 0) depth 1 font SansSerif size 16
+}
+{
+text "line3" "3) Ermittle die zwei Teilbäume mit der geringsten Häufigkeit. Verbinde sie durch" offset (0, 30) from "line2" SW color (0, 0, 0) depth 1 font SansSerif size 16
+text "line31" "      einen Baum, bei dem die Häufigkeit der Summe der Häufigkeiten der beiden Söhne" offset (0, 20) from "line3" SW color (0, 0, 0) depth 1 font SansSerif size 16
+text "Text1" "      entspricht. Den Söhnen sei von nun an keine Häufigkeit mehr zugeordnet." offset (0, 20) from "line31" SW color (0, 0, 0) depth 1 font SansSerif size 16
+}
+{
+text "line4" "4) Wende Schritt 3 solange an, bis es nur noch einen Wurzelknoten gibt. Die Kanten" offset (0, 30) from "Text1" SW color (0, 0, 0) depth 1 font SansSerif size 16
+text "line32" "       nach links zeigend kodieren eine 0, die Rechts-Kanten eine 1. Um einen" offset (0, 20) from "line4" SW color (0, 0, 0) depth 1 font SansSerif size 16
+text "Text2" "       Buchstaben zu kodieren ,wird der Weg von der Wurzel zum Blatt verfolgt." offset (0, 20) from "line32" SW color (0, 0, 0) depth 1 font SansSerif size 16
+}
+{
+hide "inWords" 
+hide "line1" 
+hide "line2" 
+hide "line3" 
+hide "line31" 
+hide "Text1" 
+hide "line4" 
+hide "line32" 
+hide "Text2" 
+interaction "algoYear"
+}
+{
+setText of "inWords" to "Eingabe:  ABRACADABRA"
+show "inWords" 
+}
+{
+color "line1" (255, 0, 0)  
+show "line1" 
+}
+{
+grid "matrix" offset (115, -20) from "line2" NE lines 6 columns 3 color (0, 0, 0) textColor (0, 0, 0) fillColor (255, 255, 255) highlightTextColor (0, 0, 0) highlightBackColor (0, 0, 0) depth 1 
+setGridValue "matrix[0][0]" "char  "
+setGridValue "matrix[0][1]" "freq.  "
+setGridValue "matrix[0][2]" "code  "
+setGridValue "matrix[1][0]" "A:  "
+setGridValue "matrix[1][1]" "5"
+setGridValue "matrix[1][2]" "    "
+setGridValue "matrix[2][0]" "B:  "
+setGridValue "matrix[2][1]" "2"
+setGridValue "matrix[2][2]" "    "
+setGridValue "matrix[3][0]" "R:  "
+setGridValue "matrix[3][1]" "2"
+setGridValue "matrix[3][2]" "    "
+setGridValue "matrix[4][0]" "C:  "
+setGridValue "matrix[4][1]" "1"
+setGridValue "matrix[4][2]" "    "
+setGridValue "matrix[5][0]" "D:  "
+setGridValue "matrix[5][1]" "1"
+setGridValue "matrix[5][2]" "    " refresh
+}
+{
+color "line1" (0, 0, 0)  
+color "line2" (255, 0, 0)  
+color "line3" (255, 0, 0)  
+color "line31" (255, 0, 0)  
+color "Text1" (255, 0, 0)  
+color "line4" (255, 0, 0)  
+color "line32" (255, 0, 0)  
+color "Text2" (255, 0, 0)  
+show "line2" 
+}
+{
+graph "graph" size 9 color (0, 0, 0) bgColor (255, 255, 255) highlightColor (255, 255, 0) elemHighlightColor (0, 0, 0) nodeFontColor (0, 0, 0) edgeFontColor (0, 0, 0) weighted nodes {"" (350, 250), "A" (257, 450), "" (443, 450), "R" (397, 500), "" (489, 500), "B" (466, 550), "" (512, 550), "C" (501, 600), "D" (523, 600) } edges {(0, 1, "9") (0, 2, "1") (2, 3, "9") (2, 4, "1") (4, 5, "9") (4, 6, "1") (6, 7, "9") (6, 8, "1") } depth 1 
+hide "graph" type "hideNode 0" 
+hide "graph" type "hideNode 2" 
+hide "graph" type "hideNode 4" 
+hide "graph" type "hideNode 6" 
+}
+{
+color "line2" (0, 0, 0)  
+color "line3" (255, 0, 0)  
+color "line31" (255, 0, 0)  
+color "Text1" (255, 0, 0)  
+color "line4" (255, 0, 0)  
+color "line32" (255, 0, 0)  
+color "Text2" (255, 0, 0)  
+show "line3" 
+show "line31" 
+show "Text1" 
+show "line4" 
+show "line32" 
+show "Text2" 
+}
+{
+hide "line1" 
+hide "line2" 
+hide "line3" 
+hide "line31" 
+hide "Text1" 
+hide "line4" 
+hide "line32" 
+hide "Text2" 
+}
+{
+show "graph" type "showNode 6" 
+text "label" "2" (512, 550) color (0, 0, 0) depth 1 font SansSerif size 10
+color "label" (255, 0, 0)  
+highlightEdge on "graph" type "hide edge weight" (6, 7) 
+highlightEdge on "graph" type "hide edge weight" (6, 8) 
+}
+{
+show "graph" type "showNode 4" 
+text "Text3" "4" (489, 500) color (0, 0, 0) depth 1 font SansSerif size 10
+color "Text3" (255, 0, 0)  
+highlightEdge on "graph" type "hide edge weight" (4, 5) 
+highlightEdge on "graph" type "hide edge weight" (4, 6) 
+}
+{
+show "graph" type "showNode 2" 
+text "Text4" "6" (443, 450) color (0, 0, 0) depth 1 font SansSerif size 10
+color "Text4" (255, 0, 0)  
+highlightEdge on "graph" type "hide edge weight" (2, 3) 
+highlightEdge on "graph" type "hide edge weight" (2, 4) 
+}
+{
+show "graph" type "showNode 0" 
+text "Text5" "11" (350, 250) color (0, 0, 0) depth 1 font SansSerif size 10
+color "Text5" (255, 0, 0)  
+highlightEdge on "graph" type "hide edge weight" (0, 1) 
+highlightEdge on "graph" type "hide edge weight" (0, 2) 
+}
+{
+text "expl" "Um die Kodierung für jeden Buchstaben zu bestimmen, traversiere" offset (-150, 45) from "graph" SW color (0, 0, 0) depth 1 font SansSerif size 16
+text "Text6" "den Baum nach obigem Bitmuster." offset (0, 20) from "expl" SW color (0, 0, 0) depth 1 font SansSerif size 16
+}
+{
+highlightEdge on "graph" type "show edge weight" (0, 0) 
+highlightEdge on "graph" type "show edge weight" (1, 1) 
+highlightEdge on "graph" type "show edge weight" (2, 2) 
+highlightEdge on "graph" type "show edge weight" (3, 3) 
+highlightEdge on "graph" type "show edge weight" (4, 4) 
+highlightEdge on "graph" type "show edge weight" (5, 5) 
+highlightEdge on "graph" type "show edge weight" (6, 6) 
+highlightEdge on "graph" type "show edge weight" (7, 7) 
+highlightEdge on "graph" type "show edge weight" (8, 8) 
+}
+{
+interaction "bitcode0"
+}
+{
+setGridValue "matrix[1][2]" "0" refresh 
+highlightGridCell "matrix[1][2]" 
+highlightEdge on "graph" (1, 0) 
+}
+{
+unhighlightGridCell "matrix[1][2]" 
+unhighlightEdge on "graph" (0, 1) 
+unhighlightEdge on "graph" (1, 2) 
+unhighlightEdge on "graph" (2, 3) 
+unhighlightEdge on "graph" (3, 4) 
+unhighlightEdge on "graph" (4, 5) 
+unhighlightEdge on "graph" (5, 6) 
+unhighlightEdge on "graph" (6, 7) 
+unhighlightEdge on "graph" (7, 8) 
+interaction "bitcode1"
+}
+{
+setGridValue "matrix[2][2]" "110" refresh 
+highlightGridCell "matrix[2][2]" 
+highlightEdge on "graph" (5, 4) 
+highlightEdge on "graph" (4, 2) 
+highlightEdge on "graph" (2, 0) 
+}
+{
+unhighlightGridCell "matrix[2][2]" 
+unhighlightEdge on "graph" (0, 1) 
+unhighlightEdge on "graph" (1, 2) 
+unhighlightEdge on "graph" (2, 3) 
+unhighlightEdge on "graph" (3, 4) 
+unhighlightEdge on "graph" (4, 5) 
+unhighlightEdge on "graph" (5, 6) 
+unhighlightEdge on "graph" (6, 7) 
+unhighlightEdge on "graph" (7, 8) 
+interaction "bitcode2"
+}
+{
+setGridValue "matrix[3][2]" "10" refresh 
+highlightGridCell "matrix[3][2]" 
+highlightEdge on "graph" (3, 2) 
+highlightEdge on "graph" (2, 0) 
+}
+{
+unhighlightGridCell "matrix[3][2]" 
+unhighlightEdge on "graph" (0, 1) 
+unhighlightEdge on "graph" (1, 2) 
+unhighlightEdge on "graph" (2, 3) 
+unhighlightEdge on "graph" (3, 4) 
+unhighlightEdge on "graph" (4, 5) 
+unhighlightEdge on "graph" (5, 6) 
+unhighlightEdge on "graph" (6, 7) 
+unhighlightEdge on "graph" (7, 8) 
+interaction "bitcode3"
+}
+{
+setGridValue "matrix[4][2]" "1110" refresh 
+highlightGridCell "matrix[4][2]" 
+highlightEdge on "graph" (7, 6) 
+highlightEdge on "graph" (6, 4) 
+highlightEdge on "graph" (4, 2) 
+highlightEdge on "graph" (2, 0) 
+}
+{
+unhighlightGridCell "matrix[4][2]" 
+unhighlightEdge on "graph" (0, 1) 
+unhighlightEdge on "graph" (1, 2) 
+unhighlightEdge on "graph" (2, 3) 
+unhighlightEdge on "graph" (3, 4) 
+unhighlightEdge on "graph" (4, 5) 
+unhighlightEdge on "graph" (5, 6) 
+unhighlightEdge on "graph" (6, 7) 
+unhighlightEdge on "graph" (7, 8) 
+interaction "bitcode4"
+}
+{
+setGridValue "matrix[5][2]" "1111" refresh 
+highlightGridCell "matrix[5][2]" 
+highlightEdge on "graph" (8, 6) 
+highlightEdge on "graph" (6, 4) 
+highlightEdge on "graph" (4, 2) 
+highlightEdge on "graph" (2, 0) 
+}
+{
+unhighlightGridCell "matrix[5][2]" 
+unhighlightEdge on "graph" (0, 1) 
+unhighlightEdge on "graph" (1, 2) 
+unhighlightEdge on "graph" (2, 3) 
+unhighlightEdge on "graph" (3, 4) 
+unhighlightEdge on "graph" (4, 5) 
+unhighlightEdge on "graph" (5, 6) 
+unhighlightEdge on "graph" (6, 7) 
+unhighlightEdge on "graph" (7, 8) 
+text "Ausgabe" "Durch die bitweise Traversierung des Baumes können wir nun jeden" offset (0, 40) from "Text6" SW color (0, 0, 0) depth 1 font SansSerif size 16
+text "ausgabe" "Buchstaben der Eingabe einzeln kodieren. Dadurch erhalten wir:" offset (0, 20) from "Ausgabe" SW color (0, 0, 0) depth 1 font SansSerif size 16
+text "fazit" "0 110 10 0 1110 0 1111 0 110 10 0 " offset (0, 20) from "ausgabe" SW color (0, 0, 0) depth 1 font SansSerif size 16
+color "fazit" (0, 0, 255)  
+interaction "link"
+}

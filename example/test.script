@@ -1,0 +1,62 @@
+fibQuestion "foo"
+nrRepeats 2
+points 4
+questiongroup "test"
+"What is the answer?"
+endtext
+answer
+"42"
+"fourty-two"
+endanswer
+comment
+"Just think about your hitchhiker again!"
+endcomment
+
+mcQuestion "bar"
+points 6
+questiongroup "test"
+"What is the answer?"
+endtext
+"12"
+endchoice
+comment
+"Dumbass"
+endcomment
+"42"
+endchoice
+comment
+"Allright"
+endcomment
+"57"
+endchoice
+comment
+"No martin, it's not"
+endcomment
+"69"
+endchoice
+comment
+"out!"
+endcomment
+"10010100101"
+endchoice
+comment
+"nerd!"
+endcomment
+answer
+2
+endanswer
+
+tfQuestion "fnord"
+points 5
+"The answer is 42!"
+endtext
+answer
+t
+endanswer
+comment
+"Please, dinnt you read your douglas adams?"
+endcomment
+
+documentation "baz"
+"http://www.algoanim.info/Animal2"
+endtext

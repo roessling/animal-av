@@ -1,0 +1,272 @@
+%Animal 2.0
+title "Insertion Sort Animation"
+author "Jens Falk <Jens.Falk@epost.de>"
+embed "insertionSortHeader.asu"
+hideAll
+{
+  array "array" (20, 80) color black fillColor white elementColor black elemHighlight blue cellHighlight light Gray length 6 "6" "1" "4" "3" "2" "5"
+  codegroup "insertionCode" at (20,140) color black highlightColor red contextColor black font Monospaced size 11
+  addCodeLine "public void insertionSort(int[] a)" to "insertionCode" indentation 0
+  addCodeLine "{" to "insertionCode" indentation 0
+  addCodeLine " int i, j;                     // Schleifenzaehler" to "insertionCode" indentation 0
+  addCodeLine " int v;                        // Speicher fuer ein Element" to "insertionCode" indentation 0
+  addCodeLine " for (i=1; i<a.length; i++)" to "insertionCode" indentation 0
+  addCodeLine " {" to "insertionCode" indentation 0
+  addCodeLine "  v = a[i];                    // Speichern einzufuegendes Element" to "insertionCode" indentation 0
+  addCodeLine "  for (j=i; j>0 && v<a[j-1]; j--)" to "insertionCode" indentation 0
+  addCodeLine "  {" to "insertionCode" indentation 0
+  addCodeLine "   a[j] = a[j-1];              // Verschieben Element nach rechts" to "insertionCode" indentation 0
+  addCodeLine "  }" to "insertionCode" indentation 0
+  addCodeLine "  a[j] = v;                    // Einfuegen in sortiertes Feld" to "insertionCode" indentation 0
+  addCodeLine " }" to "insertionCode" indentation 0
+  addCodeLine "}" to "insertionCode" indentation 0
+}
+highlightCode on "insertionCode" line 0
+{
+  unhighlightCode on "insertionCode" line 0
+  arraymarker "i" on "array" atIndex 0 label "i" color black
+  arraymarker "j" on "array" atIndex 0 label "j" color gray
+  highlightCode on "insertionCode" line 2
+}
+{
+  unhighlightCode on "insertionCode" line 2
+  highlightCode on "insertionCode" line 3
+}
+{
+  unhighlightCode on "insertionCode" line 3
+  highlightArrayCell on "array" position 0 within 0 ticks
+  movemarker "i" to position 1 within 5 ticks
+  highlightCode on "insertionCode" line 4
+}
+{
+  unhighlightCode on "insertionCode" line 4
+  highlightArrayElem on "array" position 1 within 0 ticks
+  highlightCode on "insertionCode" line 6
+}
+{
+  unhighlightCode on "insertionCode" line 6
+  unhighlightArrayElem on "array" position 1 within 0 ticks
+  movemarker "j" to position 1 within 5 ticks
+  highlightCode on "insertionCode" line 7
+}
+{
+  unhighlightCode on "insertionCode" line 7
+  arrayPut "6" on "array" position 1
+  highlightArrayCell on "array" position 1 within 0 ticks
+  unhighlightArrayCell on "array" position 0 within 0 ticks
+  highlightCode on "insertionCode" line 9
+}
+{
+  unhighlightCode on "insertionCode" line 9
+  highlightCode on "insertionCode" line 7
+}
+{
+  unhighlightCode on "insertionCode" line 7
+  arrayPut "1" on "array" position 0
+  highlightArrayElem on "array" position 0 within 0 ticks
+  highlightCode on "insertionCode" line 11
+}
+{
+  highlightArrayCell on "array" position 0 within 0 ticks
+  unhighlightArrayElem on "array" position 0 within 0 ticks
+}
+{
+  unhighlightCode on "insertionCode" line 11
+  highlightArrayCell on "array" position 1 within 0 ticks
+  movemarker "i" to position 2 within 5 ticks
+  highlightCode on "insertionCode" line 4
+}
+{
+  unhighlightCode on "insertionCode" line 4
+  highlightArrayElem on "array" position 2 within 0 ticks
+  highlightCode on "insertionCode" line 6
+}
+{
+  unhighlightCode on "insertionCode" line 6
+  unhighlightArrayElem on "array" position 2 within 0 ticks
+  movemarker "j" to position 2 within 5 ticks
+  highlightCode on "insertionCode" line 7
+}
+{
+  unhighlightCode on "insertionCode" line 7
+  arrayPut "6" on "array" position 2
+  highlightArrayCell on "array" position 2 within 0 ticks
+  unhighlightArrayCell on "array" position 1 within 0 ticks
+  highlightCode on "insertionCode" line 9
+}
+{
+  unhighlightCode on "insertionCode" line 9
+  highlightCode on "insertionCode" line 7
+}
+{
+  unhighlightCode on "insertionCode" line 7
+  arrayPut "4" on "array" position 1
+  highlightArrayElem on "array" position 1 within 0 ticks
+  highlightCode on "insertionCode" line 11
+}
+{
+  highlightArrayCell on "array" position 1 within 0 ticks
+  unhighlightArrayElem on "array" position 1 within 0 ticks
+}
+{
+  unhighlightCode on "insertionCode" line 11
+  highlightArrayCell on "array" position 2 within 0 ticks
+  movemarker "i" to position 3 within 5 ticks
+  highlightCode on "insertionCode" line 4
+}
+{
+  unhighlightCode on "insertionCode" line 4
+  highlightArrayElem on "array" position 3 within 0 ticks
+  highlightCode on "insertionCode" line 6
+}
+{
+  unhighlightCode on "insertionCode" line 6
+  unhighlightArrayElem on "array" position 3 within 0 ticks
+  movemarker "j" to position 3 within 5 ticks
+  highlightCode on "insertionCode" line 7
+}
+{
+  unhighlightCode on "insertionCode" line 7
+  arrayPut "6" on "array" position 3
+  highlightArrayCell on "array" position 3 within 0 ticks
+  unhighlightArrayCell on "array" position 2 within 0 ticks
+  highlightCode on "insertionCode" line 9
+}
+{
+  unhighlightCode on "insertionCode" line 9
+  movemarker "j" to position 2 within 5 ticks
+  highlightCode on "insertionCode" line 7
+}
+{
+  unhighlightCode on "insertionCode" line 7
+  arrayPut "4" on "array" position 2
+  highlightArrayCell on "array" position 2 within 0 ticks
+  unhighlightArrayCell on "array" position 1 within 0 ticks
+  highlightCode on "insertionCode" line 9
+}
+{
+  unhighlightCode on "insertionCode" line 9
+  highlightCode on "insertionCode" line 7
+}
+{
+  unhighlightCode on "insertionCode" line 7
+  arrayPut "3" on "array" position 1
+  highlightArrayElem on "array" position 1 within 0 ticks
+  highlightCode on "insertionCode" line 11
+}
+{
+  highlightArrayCell on "array" position 1 within 0 ticks
+  unhighlightArrayElem on "array" position 1 within 0 ticks
+}
+{
+  unhighlightCode on "insertionCode" line 11
+  highlightArrayCell on "array" position 3 within 0 ticks
+  movemarker "i" to position 4 within 5 ticks
+  highlightCode on "insertionCode" line 4
+}
+{
+  unhighlightCode on "insertionCode" line 4
+  highlightArrayElem on "array" position 4 within 0 ticks
+  highlightCode on "insertionCode" line 6
+}
+{
+  unhighlightCode on "insertionCode" line 6
+  unhighlightArrayElem on "array" position 4 within 0 ticks
+  movemarker "j" to position 4 within 5 ticks
+  highlightCode on "insertionCode" line 7
+}
+{
+  unhighlightCode on "insertionCode" line 7
+  arrayPut "6" on "array" position 4
+  highlightArrayCell on "array" position 4 within 0 ticks
+  unhighlightArrayCell on "array" position 3 within 0 ticks
+  highlightCode on "insertionCode" line 9
+}
+{
+  unhighlightCode on "insertionCode" line 9
+  movemarker "j" to position 3 within 5 ticks
+  highlightCode on "insertionCode" line 7
+}
+{
+  unhighlightCode on "insertionCode" line 7
+  arrayPut "4" on "array" position 3
+  highlightArrayCell on "array" position 3 within 0 ticks
+  unhighlightArrayCell on "array" position 2 within 0 ticks
+  highlightCode on "insertionCode" line 9
+}
+{
+  unhighlightCode on "insertionCode" line 9
+  movemarker "j" to position 2 within 5 ticks
+  highlightCode on "insertionCode" line 7
+}
+{
+  unhighlightCode on "insertionCode" line 7
+  arrayPut "3" on "array" position 2
+  highlightArrayCell on "array" position 2 within 0 ticks
+  unhighlightArrayCell on "array" position 1 within 0 ticks
+  highlightCode on "insertionCode" line 9
+}
+{
+  unhighlightCode on "insertionCode" line 9
+  highlightCode on "insertionCode" line 7
+}
+{
+  unhighlightCode on "insertionCode" line 7
+  arrayPut "2" on "array" position 1
+  highlightArrayElem on "array" position 1 within 0 ticks
+  highlightCode on "insertionCode" line 11
+}
+{
+  highlightArrayCell on "array" position 1 within 0 ticks
+  unhighlightArrayElem on "array" position 1 within 0 ticks
+}
+{
+  unhighlightCode on "insertionCode" line 11
+  highlightArrayCell on "array" position 4 within 0 ticks
+  movemarker "i" to position 5 within 5 ticks
+  highlightCode on "insertionCode" line 4
+}
+{
+  unhighlightCode on "insertionCode" line 4
+  highlightArrayElem on "array" position 5 within 0 ticks
+  highlightCode on "insertionCode" line 6
+}
+{
+  unhighlightCode on "insertionCode" line 6
+  unhighlightArrayElem on "array" position 5 within 0 ticks
+  movemarker "j" to position 5 within 5 ticks
+  highlightCode on "insertionCode" line 7
+}
+{
+  unhighlightCode on "insertionCode" line 7
+  arrayPut "6" on "array" position 5
+  highlightArrayCell on "array" position 5 within 0 ticks
+  unhighlightArrayCell on "array" position 4 within 0 ticks
+  highlightCode on "insertionCode" line 9
+}
+{
+  unhighlightCode on "insertionCode" line 9
+  highlightCode on "insertionCode" line 7
+}
+{
+  unhighlightCode on "insertionCode" line 7
+  arrayPut "5" on "array" position 4
+  highlightArrayElem on "array" position 4 within 0 ticks
+  highlightCode on "insertionCode" line 11
+}
+{
+  highlightArrayCell on "array" position 4 within 0 ticks
+  unhighlightArrayElem on "array" position 4 within 0 ticks
+}
+{
+  unhighlightCode on "insertionCode" line 11
+  highlightCode on "insertionCode" line 4
+}
+unhighlightCode on "insertionCode" line 4
+{
+  variable "nrComparisons"
+  assign "nrComparisons" = 8
+  variable "nrAssignments"
+  assign "nrAssignments" = 18
+}
+embed "insertionSortFooter.asu"

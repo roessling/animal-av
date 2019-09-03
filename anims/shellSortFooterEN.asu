@@ -1,0 +1,8 @@
+hideAll
+{
+  Text "eoa" "End of animation" at (120,50) color black font SansSerif size 32
+}
+{
+  Text "comps" "Sorting took " +$"nrComparisons" asInt +" comparisons" at (20,100) color black font SansSerif size 24
+  Text "swaps" "and " +$"nrAssignments" asInt +" assignments." at (20,130) color black font SansSerif size 24
+}

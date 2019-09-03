@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<PropertiesTreeModel xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="PropertiesTreeModel.xsd">
+	<Folder name="Root">
+		<Primitive type="Color">
+			<name>farbHighlight</name>
+			<value><Color>(255, 0, 0)</Color></value>
+			<description>Farbe um wichtige Stellen hervorzuheben</description>
+		</Primitive>
+		<Primitive type="intArray">
+			<name>Threads</name>
+			<value><intArray>2, 10, 12, 4, 5, 7,6,8 </intArray></value>
+			<description>Einträge die nacheinader in den Speicher gelesen werden</description>
+		</Primitive>
+	</Folder>
+</PropertiesTreeModel>

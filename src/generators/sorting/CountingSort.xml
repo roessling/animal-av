@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<PropertiesTreeModel xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="PropertiesTreeModel.xsd">
+	<Folder name="Root">
+		<Primitive type="intArray">
+			<name>Liste der zu sortierenden Zahlen.</name>
+			<value><intArray>2, 7, 1, 8, 2, 8, 1, 8, 2, 8, 4, 5, 9, 0, 5</intArray></value>
+		</Primitive>
+		<Primitive type="int">
+			<name>Groesste Zahl, die in der Liste vorkommen kann.</name>
+			<value><int>9</int></value>
+		</Primitive>
+		<Primitive type="int">
+			<name>Kleinste Zahl, die in der Liste vorkommen kann.</name>
+			<value><int>0</int></value>
+		</Primitive>
+		<Primitive type="boolean">
+			<name>Die aktuelle Codezeile mit einem Pfeil markieren?</name>
+			<value><boolean value="true" /></value>
+		</Primitive>
+		<Primitive type="Color">
+			<name>Farbe zum Hervorheben von Text.</name>
+			<value><Color>(255, 0, 0)</Color></value>
+		</Primitive>
+		<Primitive type="Color">
+			<name>Farbe zum Hervorheben von Pseudocode.</name>
+			<value><Color>(255, 0, 0)</Color></value>
+		</Primitive>
+		<Primitive type="Color">
+			<name>Hintergrundfarbe zum Hervorheben von Text in Listen.</name>
+			<value><Color>(255, 255, 0)</Color></value>
+		</Primitive>
+		<Primitive type="Color">
+			<name>Farbe zum Hervorheben von Text in Listen.</name>
+			<value><Color>(255, 0, 0)</Color></value>
+		</Primitive>
+	</Folder>
+</PropertiesTreeModel>

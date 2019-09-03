@@ -1,0 +1,35 @@
+[block]
+	Distance Vector Routing is a dynamic routing protocol mostly 
+	used within a network or autonomous system. On the Internet[br]
+	the method is implemented as Routing Information Protocol (RIP)
+	and as Interior Gateway Routing Protocol (IGRP).
+[/block]
+[block]
+	[h2]The Method[/h2]
+	Using Distance Vector Routing each node on a network calculates
+	its routing tables autonomously and sends the new entries to[br]
+	its direct neighbors afterwards. The received updates are then
+	incorporated into the routing tables and any shorter routes[br]
+	are again announced to the neighbors.[br]
+	Each node on the network only remembers the next hop and the 
+	total distance of each route. The complete path is not known[br]
+	what can lead to loops within a route. This problem is addressed 
+	by the Path Vector Routing protocol where the complete path[br]
+	of a route is saved and cycles can be detected.[br]
+	Distance Vector protocols are self organizing and need little
+	maintenance.
+[/block]
+[block]
+	[h2]The Animation[/h2]
+	The routing table of each node is build dynamically during the 
+	animation and not every router on the network is necessarily[br]
+	known in advance. The sorting of routing targets must therefore
+	not be in alphabetical order. This behavior suits the real[br]
+	world implementations where participants further away in the 
+	network are not known in advance but added dynamically as[br]
+	updates for the routing tables are received.[br]
+	The animation is round based which means that all routing tables
+	are generated before any updates are sent. The newly[br]
+	received information is incorporated into the routing tables on
+	the next round even if they might be available earlier.
+[/block]

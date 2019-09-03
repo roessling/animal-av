@@ -1,0 +1,13 @@
+Interpolative Search is a very efficient algorithm for locating a given
+element in an array of sorted elements.
+
+The algorithm always regards only a certain partition of the array.
+The first partition covers the complete array. The partition is
+achieved in each iteration by selecting a 'current' element.
+If this current element is less or greater than the value to look for,
+the algorithm will only appropriate partition to the element's left 
+or right, respectively.
+If the value is found, its position is returned; otherwise, 
+the algorithm with return -1 as an 'error mark'.
+
+In the following animation, the current partition will be highlighted.

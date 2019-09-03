@@ -1,0 +1,34 @@
+start1#Der Algorithmus startet.
+start2# 
+endtree1#Dieser Baum ist das Ergebnis des Algorithmus.
+endtree2# 
+end1#Der Algorithmus endet.
+end2# 
+checkedoneclass1#Es wird geprüft, ob alle Beispiele einer Klasse angehören.
+checkedoneclass2#In diesem Fall würde ein Blatt erstellt und die Rekursion beendet werden.
+onlyoneclass1#Es gibt nur eine Klasse: '§'.
+onlyoneclass2# 
+notoneclass1#Es gibt Beispiele für 'ja' und 'nein'. Die Rekursion endet nicht.
+notoneclass2# 
+onlyoneclassrecend1#Es gibt nur eine Klasse: '§'.
+onlyoneclassrecend2#Die Rekursion endet. Ein Blatt wird erstellt.
+retleaf1#Der neu erstellte Baum (das Blatt) wird in den höheren Kontext zurückgegeben.
+retleaf2# 
+measure1#Eine Eigenschaft, welche die Klassen gut trennt, ist nützlich für die Erstellung des Baums.
+measure2#Es wird das Maß '§' genutzt, um eine solche Eigenschaft zu finden.
+featurechosen1#Die Eigenschaft '§' wurde ausgewählt (§ Wert mit §).
+featurechosen2# 
+createnode1#Ein neuer Knoten wird erstellt und mit '§' markiert.
+createnode2#Da es Beispiele verschiedener Klassen in der aktuellen Tabelle gibt, ist ein rekursiver Abstieg notwendig.
+allvalues1#Alle vorkommenden Werte für '§' müssen betrachtet werden.
+allvalues2#Dies sind: 	 §.
+allvaluescurrent1#Alle vorkommenden Werte für '§' müssen betrachtet werden.
+allvaluescurrent2#Dies sind: 	 §. 		Der aktuelle Wert ist '§'.
+reccall1#Rekursiver Aufruf für '§ : §'.
+reccall2# 
+reccreatetemptable1#Ein Baum wird rekursiv erstellt für alle Beispiele, die den neu erstellten Knoten '§' erreichen
+reccreatetemptable2#und den Wert '§' für diese Eigenschaft haben. Die Hilfstabelle oben zeigt diese Beispiele.
+attach1#Nun werden, um einen Subbaum zu erstellen, alle rekursiv erstellen Bäume für '§'
+attach2#an den Knoten '§' angehängt. Dies ergibt einen Baum, der zurückgegeben wird.
+highest#höchster
+lowest#geringster

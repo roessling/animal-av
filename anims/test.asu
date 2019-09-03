@@ -1,0 +1,263 @@
+%Animal 2
+{
+  array "quickSortArray" (20, 80) color black fillColor white elementColor black elementHighlight blue cellHighlight gray length 4 1 2 3 4
+  arrayIndex "i" on "quickSortArray" atIndex 0 label "i" color red
+  arrayIndex "j" on "quickSortArray" atIndex 0 label "j" color red
+}
+{
+  codegroup "quickSortArray code" at (20, 140) color black highlightColor redcontextColor blue2 font SansSerif size 11
+  addCodeLine "public void quickSort(int[] array, int l, int r)" to "quickSortArray code" indentation 0
+  addCodeLine "{" to "quickSortArray code" indentation 0
+  addCodeLine "int i, j, pivot;" to "quickSortArray code" indentation 1
+  addCodeLine "if (r>l)" to "quickSortArray code" indentation 1
+  addCodeLine "{" to "quickSortArray code" indentation 1
+  addCodeLine "pivot = array[r];" to "quickSortArray code" indentation 2
+  addCodeLine "for (i=l; j=r-1; i<j; )" to "quickSortArray code" indentation 2
+  addCodeLine "{" to "quickSortArray code" indentation 2
+  addCodeLine "while (array[i] <= pivot && j>i)" to "quickSortArray code" indentation 3
+  addCodeLine "i++;" to "quickSortArray code" indentation 4
+  addCodeLine "while (pivot < array[j] && j>i)" to "quickSortArray code" indentation 3
+  addCodeLine "j--;" to "quickSortArray code" indentation 4
+  addCodeLine "if (i<j)" to "quickSortArray code" indentation 3
+  addCodeLine "swap(array, i, j);" to "quickSortArray code" indentation 4
+  addCodeLine "if (pivot < array[i])" to "quickSortArray code" indentation 3
+  addCodeLine "swap(array, i, r);" to "quickSortArray code" indentation 4
+  addCodeLine "else" to "quickSortArray code" indentation 3
+  addCodeLine "i=r;" to "quickSortArray code" indentation 4
+  addCodeLine "quickSort(array, l, i-1);" to "quickSortArray code" indentation 3
+  addCodeLine "quickSort(array, i+1, r);" to "quickSortArray code" indentation 3
+  addCodeLine "}" to "quickSortArray code" indentation 2
+  addCodeLine "}" to "quickSortArray code" indentation 1
+  addCodeLine "}" to "quickSortArray code" indentation 0}
+  highlightCode on "quickSortArray code" line 0
+{
+  unhighlightCode on "quickSortArray code" line 0
+  highlightCode on "quickSortArray code" line 2
+}
+{
+  unhighlightCode on "quickSortArray code" line 2
+  highlightCode on "quickSortArray code" line 3
+}
+{
+  unhighlightCode on "quickSortArray code" line 3
+  highlightCode on "quickSortArray code" line 4
+}
+{
+  unhighlightCode on "quickSortArray code" line 4
+  highlightCode on "quickSortArray code" line 6
+}
+{
+  unhighlightCode on "quickSortArray code" line 6
+  moveMarker "i" to position 0 within 5 ticks
+  moveMarker "j" to position 2 within 5 ticks
+  highlightCode on "quickSortArray code" line 7
+}
+{
+  unhighlightCode on "quickSortArray code" line 7
+  highlightCode on "quickSortArray code" line 9
+  moveMarker "i" to position 1 within 5 ticks
+  highlightCode on "quickSortArray code" line 9
+  moveMarker "i" to position 2 within 5 ticks
+  highlightCode on "quickSortArray code" line 9
+}
+{
+  unhighlightCode on "quickSortArray code" line 9
+  highlightCode on "quickSortArray code" line 10
+}
+{
+  unhighlightCode on "quickSortArray code" line 10
+  highlightCode on "quickSortArray code" line 11
+}
+{
+  unhighlightCode on "quickSortArray code" line 11
+  highlightCode on "quickSortArray code" line 7
+}
+{
+  unhighlightCode on "quickSortArray code" line 7
+  highlightCode on "quickSortArray code" line 13
+}
+{
+  unhighlightCode on "quickSortArray code" line 13
+  highlightCode on "quickSortArray code" line 14
+}
+{
+  unhighlightCode on "quickSortArray code" line 14
+  highlightCode on "quickSortArray code" line 0
+}
+{
+  unhighlightCode on "quickSortArray code" line 0
+  highlightCode on "quickSortArray code" line 2
+}
+{
+  unhighlightCode on "quickSortArray code" line 2
+  highlightCode on "quickSortArray code" line 3
+}
+{
+  unhighlightCode on "quickSortArray code" line 3
+  highlightCode on "quickSortArray code" line 4
+}
+{
+  unhighlightCode on "quickSortArray code" line 4
+  highlightCode on "quickSortArray code" line 6
+}
+{
+  unhighlightCode on "quickSortArray code" line 6
+  moveMarker "i" to position 0 within 5 ticks
+  moveMarker "j" to position 1 within 5 ticks
+  highlightCode on "quickSortArray code" line 7
+}
+{
+  unhighlightCode on "quickSortArray code" line 7
+  highlightCode on "quickSortArray code" line 9
+  moveMarker "i" to position 1 within 5 ticks
+  highlightCode on "quickSortArray code" line 9
+}
+{
+  unhighlightCode on "quickSortArray code" line 9
+  highlightCode on "quickSortArray code" line 10
+}
+{
+  unhighlightCode on "quickSortArray code" line 10
+  highlightCode on "quickSortArray code" line 11
+}
+{
+  unhighlightCode on "quickSortArray code" line 11
+  highlightCode on "quickSortArray code" line 7
+}
+{
+  unhighlightCode on "quickSortArray code" line 7
+  highlightCode on "quickSortArray code" line 13
+}
+{
+  unhighlightCode on "quickSortArray code" line 13
+  highlightCode on "quickSortArray code" line 14
+}
+{
+  unhighlightCode on "quickSortArray code" line 14
+  highlightCode on "quickSortArray code" line 0
+}
+{
+  unhighlightCode on "quickSortArray code" line 0
+  highlightCode on "quickSortArray code" line 2
+}
+{
+  unhighlightCode on "quickSortArray code" line 2
+  highlightCode on "quickSortArray code" line 3
+}
+{
+  unhighlightCode on "quickSortArray code" line 3
+  highlightCode on "quickSortArray code" line 4
+}
+{
+  unhighlightCode on "quickSortArray code" line 4
+  highlightCode on "quickSortArray code" line 6
+}
+{
+  unhighlightCode on "quickSortArray code" line 6
+  highlightCode on "quickSortArray code" line 7
+}
+{
+  unhighlightCode on "quickSortArray code" line 7
+  highlightCode on "quickSortArray code" line 13
+}
+{
+  unhighlightCode on "quickSortArray code" line 13
+  highlightCode on "quickSortArray code" line 14
+}
+{
+  unhighlightCode on "quickSortArray code" line 14
+  highlightCode on "quickSortArray code" line 0
+}
+{
+  unhighlightCode on "quickSortArray code" line 0
+  highlightCode on "quickSortArray code" line 2
+}
+{
+  unhighlightCode on "quickSortArray code" line 2
+  highlightCode on "quickSortArray code" line 3
+}
+{
+  unhighlightCode on "quickSortArray code" line 3
+  highlightCode on "quickSortArray code" line 4
+}
+{
+  unhighlightCode on "quickSortArray code" line 4
+  highlightCode on "quickSortArray code" line 15
+}
+{
+  unhighlightCode on "quickSortArray code" line 15
+  highlightCode on "quickSortArray code" line 0
+}
+{
+  unhighlightCode on "quickSortArray code" line 0
+  highlightCode on "quickSortArray code" line 2
+}
+{
+  unhighlightCode on "quickSortArray code" line 2
+  highlightCode on "quickSortArray code" line 3
+}
+{
+  unhighlightCode on "quickSortArray code" line 3
+  highlightCode on "quickSortArray code" line 4
+}
+{
+  unhighlightCode on "quickSortArray code" line 4
+}
+{
+  highlightCode on "quickSortArray code" line 4
+}
+{
+  unhighlightCode on "quickSortArray code" line 4
+  highlightCode on "quickSortArray code" line 15
+}
+{
+  unhighlightCode on "quickSortArray code" line 15
+  highlightCode on "quickSortArray code" line 0
+}
+{
+  unhighlightCode on "quickSortArray code" line 0
+  highlightCode on "quickSortArray code" line 2
+}
+{
+  unhighlightCode on "quickSortArray code" line 2
+  highlightCode on "quickSortArray code" line 3
+}
+{
+  unhighlightCode on "quickSortArray code" line 3
+  highlightCode on "quickSortArray code" line 4
+}
+{
+  unhighlightCode on "quickSortArray code" line 4
+}
+{
+  highlightCode on "quickSortArray code" line 4
+}
+{
+  unhighlightCode on "quickSortArray code" line 4
+  highlightCode on "quickSortArray code" line 15
+}
+{
+  unhighlightCode on "quickSortArray code" line 15
+  highlightCode on "quickSortArray code" line 0
+}
+{
+  unhighlightCode on "quickSortArray code" line 0
+  highlightCode on "quickSortArray code" line 2
+}
+{
+  unhighlightCode on "quickSortArray code" line 2
+  highlightCode on "quickSortArray code" line 3
+}
+{
+  unhighlightCode on "quickSortArray code" line 3
+  highlightCode on "quickSortArray code" line 4
+}
+{
+  unhighlightCode on "quickSortArray code" line 4
+}
+{
+  highlightCode on "quickSortArray code" line 4
+}
+{
+  unhighlightCode on "quickSortArray code" line 4
+}

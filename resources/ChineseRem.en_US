@@ -1,0 +1,45 @@
+noSuchKeyException=Es gibt keine Ressource f\u00fcr Eintrag {0}
+iconNotFound=Icon "{0}" not found
+
+### introduction ###
+	title = Chinese Remainder Theorem
+	introduction = "Introduction"
+	desc1 = The Chinese remainder theorem was first published some time between the 3rd and 5th centuries by the Chinese mathematician Sun Tzu.
+	desc2 = The theorem will determine a number that, when divided by some given divisors leaves given remainders
+	appsInCrypt = Applications in Cryptography:
+	app1 = The Chinese remainder theorem is mostly used in RSA to optimize the decryption.
+	app2 = It  is also widely used in secret sharing, to recover a certain secret from the given set of shares.
+
+
+### problem ####
+	presentationOfProblem = Presentation of the problem
+	problem1 = Given the following system of congruences, where m1,..,mn are positive integers that are pairwise coprime, and a1,.., an are integers:
+	problem2 = The Chinese Remainder Theorem finds the unique (non-negative) solution of this system of congruences
+
+	calSteps = Calculation steps:
+	calSteps2 = Calculation steps
+
+	step1 = 1. In the first step, M is calculated by multiplying m1*m2*..*mn.
+	step2= 2. In the second step, M1= M/m1, M2=M/m2...Mn=M/mn are calculated.
+	step3 = 3. In the third step, y1,y2,...,yn (the inverses of M1, M2,..,Mn) are obtained by using the extended Euclidean algorithm.
+	step4 = 4. In the last step, the solution is determined by adding ai*yi*Mi where (i = 1,..n) and calculating the rest of this sum when divided by M.
+
+### sourcecode ###
+	note = Note:
+	noteText = The presented example shows a system of 3 congruences. The chinese remainder theorem works for systems of 2,..,n congruences.
+
+### chineseRemainder ###
+	example = Example:
+
+### summary ###
+	summary1= Summary:
+	summary2= Summary
+	summary3= The calculated number x = 
+	summary4=  is the solution of the given system of congruences, meaning: 
+
+### references ###
+	ref1= References:
+	ref2= References
+
+### description ###
+	getdesc = The Chinese remainder theorem will determine a number x that, when divided by some given divisors, leaves given remainders \n\n The Chinese remainder theorem is mostly used in RSA to optimize the decryption.\n\n It  is also widely used in secret sharing, to recover a certain secret from the given set of shares.

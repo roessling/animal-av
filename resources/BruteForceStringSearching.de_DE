@@ -1,0 +1,9 @@
+@import=resources/GenericSettings
+algoDesc=In dieser naiven Variante der Suche einer Suchmaske in einem Text wird iterativ jede Position des Textes als Start der Suchmaske ausprobiert. Falls das aktuelle Textzeichen dabei nicht zur aktuellen Position der Suchmaske passt, wird die gesamte Suchmaske um ein Zeichen verschoben und ab dem ersten Zeichen der Suchmaske erneut gesucht. Dies kann also auch ein Rückspringen im Text bedeuten, was das Verfahren für Suchen in Datein oder externen Daten ungeeignet macht. Die Komplexitätsklasse des Verfahrens ist O(m*n), wobei m die Länge der Suchmaske und n die Länge des Suchtextes ist.
+algoAuthor=Bjoern Dasbach <bjoern.dasbach@gmx.de>
+adForURL=Weitere Animationen finden Sie unter http://www.algoanim.info/Animal2 im Online-Repository
+animDesc=Beschreibung des Algorithmus
+nrSteps=Insgesamt verwendete der Algorithmus {0} Zuweisungen und {1} Vergleiche.
+nrAss=Zuweisungen
+nrComp=Vergleiche
+result=Ergebnis: {0}

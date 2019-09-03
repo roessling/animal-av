@@ -1,0 +1,57 @@
+pathDescriptionSlide=slides/Beschreibung_komplettEN.txt
+pathConclusion=slides/AbschlussEN.txt
+
+title=Binary Search Tree: insert and delete
+toInsert=Key to insert:
+toDelete=Key to delete:
+insert=Insert: {0}
+delete=Delete: {0}
+question=Which node is substituted for {0}?
+answerNotReplaced={0} is not replaced by another node.
+correctAnswerLeaf=Correct, {0} is a leaf and therefore not replaced by another node.
+correctAnswerOther=Correct, {0} is replaced by {1}.
+wrongAnswerLeaf=This answer is wrong! {0} is a leaf and therefore not replaced by another node.
+wrongAnswerOther=This answer is wrong! The correct answer is {0}.
+
+rootNoChildren=The root has no children,
+rootNoChildrenCont=so it can be deleted.
+rootLeftEmpty=The left subtree is empty, 
+rootLeftEmptyCont=therefore the root can be replaced by its right child.
+rootRightEmpty=The right subtree is empty,
+rootRightEmptyCont=therefore the root can be replaced by its left child.
+rootBothChildrenCont=To be able to work with it, its parent node is searched for.
+rootLeftRightmost=The roots left child is the biggest node in the left subtree, so it does not have a right child.
+rootLeftRightmostCont=It is therefore sufficient to replace the root by its left child and to set the old roots right child as the right child of the new root.
+
+deleteCheck=It is checked whether or not one of the child nodes is the node searched for.
+deleteNode=If this is the case, the node is deleted.
+deleteContinue=If this is not the case, the node, which is used to continue the search, is determined.
+deleteNoNode=If no node is existing in the correct direction, the node to delete is not contained in the tree.
+deleteNoChild=If there are no children, the node can be deleted.
+deleteAtLeastOne=If there is at least one child, it is checked whether or not the other child exists.
+deleteNoLeft=If the left child does not exist, the right child can replace the node to delete as the parents child.
+deleteNoRight=If the right child does not exist, the left child can replace the node to delete as the parents child.
+deleteBothChildren=Both child nodes exist, so the biggest node in the left subtree has to be determined.
+
+searchRightmostCheckLeft=It is checked if the biggest node in the left subtree is the left child of the node to delete.
+searchRightmostCheckLeftTrue=Because of this being the case, it is sufficient to replace the node to delete by its left child and to set its right child as the right child of the new node.
+searchRightmostCheckLeftFalse=If this is not the case, the found node has to be temporarily detached from the tree.
+searchRightmostLeaf=If the found node is a leaf, it can be moved.
+searchRightmostNoLeaf=If the node has a left subtree, the subtree is attached to the previously found parent node as the right subtree.
+searchRightmostNoLeafCont=Afterwards the node can be moved.
+
+readAcc=Read accesses:
+writeAcc=Write accesses:
+
+readAccLast=Number of reading accesses during the last operation: {0}
+readAccSum=Total number of reading accesses: {0}
+writeAccLast=Number of writing accesses during the last operation: {0}
+writeAccSum=Total number of writing accesses: {0}
+depth=Depth of the tree: {0}
+numNodes=Number of nodes in the tree: {0}
+accRelHeight=Number of accesses relative to tree height: {0}
+accRelNodes=Number of accesses relative to number of nodes: {0}
+
+legend1=current comparison
+legend2=basenode
+legend3=second comparison

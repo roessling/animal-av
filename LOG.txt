@@ -1,0 +1,1976 @@
+An error has occurred trying to import file demo.aml in Animals ASCII format: {1}
+Die Animationsdatei demo.aml wurde im Format animation/animal-ascii-compressed importiert.
+Inserting 'de': 
+	no children in parent null, insert @0
+	inserting at position 0
+		order now: 
+			de
+Inserting 'Pseudo-Code': 
+	no children in parent null, insert @0
+	inserting at position 0
+		order now: 
+			Pseudo-Code
+Inserting 'Sorting': 
+	no children in parent null, insert @0
+	inserting at position 0
+		order now: 
+			Sorting
+Inserting 'Adaptiertes 2-Phasen-2-Band Mischen': 
+	no children in parent null, insert @0
+	inserting at position 0
+		order now: 
+			Adaptiertes 2-Phasen-2-Band Mischen
+Inserting 'Adaptiertes 2-Phasen-2-Band Mischen': 
+	no children in parent null, insert @0
+	inserting at position 0
+		order now: 
+			Adaptiertes 2-Phasen-2-Band Mischen
+Inserting 'Java': 
+	< Pseudo-Code?true - true
+	inserting at position 0
+		order now: 
+			Java
+			Pseudo-Code
+Inserting 'Sorting': 
+	no children in parent null, insert @0
+	inserting at position 0
+		order now: 
+			Sorting
+Inserting 'ShakerSort': 
+	no children in parent null, insert @0
+	inserting at position 0
+		order now: 
+			ShakerSort
+Inserting 'ShakerSort': 
+	no children in parent null, insert @0
+	inserting at position 0
+		order now: 
+			ShakerSort
+Inserting 'Bucket Sort': 
+	< ShakerSort?true - true
+	inserting at position 0
+		order now: 
+			Bucket Sort
+			ShakerSort
+Inserting 'BucketSort': 
+	no children in parent null, insert @0
+	inserting at position 0
+		order now: 
+			BucketSort
+Inserting 'Bucket Sort': 
+	< BucketSort?true - true
+	inserting at position 0
+		order now: 
+			Bucket Sort
+			BucketSort
+Inserting 'Bucket Sort using Annotations': 
+	< Bucket Sort?false	< BucketSort?true - true
+	inserting at position 1
+		order now: 
+			Bucket Sort
+			Bucket Sort using Annotations
+			BucketSort
+Inserting 'BucketSort': 
+	< Bucket Sort?false	< ShakerSort?true - true
+	inserting at position 1
+		order now: 
+			Bucket Sort
+			BucketSort
+			ShakerSort
+Inserting 'Bucket Sort': 
+	no children in parent null, insert @0
+	inserting at position 0
+		order now: 
+			Bucket Sort
+Inserting 'en': 
+	< de?false	inserting at position 1
+		order now: 
+			de
+			en
+Inserting 'Java': 
+	no children in parent null, insert @0
+	inserting at position 0
+		order now: 
+			Java
+Inserting 'Sorting': 
+	no children in parent null, insert @0
+	inserting at position 0
+		order now: 
+			Sorting
+Inserting 'CocktailSort': 
+	no children in parent null, insert @0
+	inserting at position 0
+		order now: 
+			CocktailSort
+Inserting 'CocktailSort': 
+	no children in parent null, insert @0
+	inserting at position 0
+		order now: 
+			CocktailSort
+Inserting 'CombSort': 
+	< Bucket Sort?false	< BucketSort?false	< ShakerSort?true - true
+	inserting at position 2
+		order now: 
+			Bucket Sort
+			BucketSort
+			CombSort
+			ShakerSort
+Inserting 'CombSort': 
+	no children in parent null, insert @0
+	inserting at position 0
+		order now: 
+			CombSort
+Inserting 'CombSort': 
+	< CocktailSort?false	inserting at position 1
+		order now: 
+			CocktailSort
+			CombSort
+Inserting 'CombSort': 
+	no children in parent null, insert @0
+	inserting at position 0
+		order now: 
+			CombSort
+Inserting 'Counting Sort': 
+	< Bucket Sort?false	< BucketSort?false	< CombSort?false	< ShakerSort?true - true
+	inserting at position 3
+		order now: 
+			Bucket Sort
+			BucketSort
+			CombSort
+			Counting Sort
+			ShakerSort
+Inserting 'Das Sortierverfahren Counting-Sort': 
+	no children in parent null, insert @0
+	inserting at position 0
+		order now: 
+			Das Sortierverfahren Counting-Sort
+Inserting 'Counting Sort': 
+	< Das Sortierverfahren Counting-Sort?true - true
+	inserting at position 0
+		order now: 
+			Counting Sort
+			Das Sortierverfahren Counting-Sort
+Inserting 'CountingSortAnimation': 
+	< Counting Sort?false	< Das Sortierverfahren Counting-Sort?true - true
+	inserting at position 1
+		order now: 
+			Counting Sort
+			CountingSortAnimation
+			Das Sortierverfahren Counting-Sort
+Inserting 'DELPHI': 
+	< Java?true - true
+	inserting at position 0
+		order now: 
+			DELPHI
+			Java
+			Pseudo-Code
+Inserting 'Sorting': 
+	no children in parent null, insert @0
+	inserting at position 0
+		order now: 
+			Sorting
+Inserting 'Bubble Sort': 
+	no children in parent null, insert @0
+	inserting at position 0
+		order now: 
+			Bubble Sort
+Inserting 'Bubble Sort': 
+	no children in parent null, insert @0
+	inserting at position 0
+		order now: 
+			Bubble Sort
+Inserting 'Quicksort': 
+	< Bubble Sort?false	inserting at position 1
+		order now: 
+			Bubble Sort
+			Quicksort
+Inserting 'Quicksort': 
+	no children in parent null, insert @0
+	inserting at position 0
+		order now: 
+			Quicksort
+Inserting 'Quicksort': 
+	< Quicksort?false	inserting at position 1
+		order now: 
+			Quicksort
+			Quicksort
+Inserting 'Selection Sort': 
+	< Bubble Sort?false	< Quicksort?false	inserting at position 2
+		order now: 
+			Bubble Sort
+			Quicksort
+			Selection Sort
+Inserting 'Selection Sort': 
+	no children in parent null, insert @0
+	inserting at position 0
+		order now: 
+			Selection Sort
+Inserting 'Matlab': 
+	< Java?false	inserting at position 1
+		order now: 
+			Java
+			Matlab
+Inserting 'Sorting': 
+	no children in parent null, insert @0
+	inserting at position 0
+		order now: 
+			Sorting
+Inserting 'Bubble Sort': 
+	no children in parent null, insert @0
+	inserting at position 0
+		order now: 
+			Bubble Sort
+Inserting 'Bubble Sort for Matlab [EN]': 
+	no children in parent null, insert @0
+	inserting at position 0
+		order now: 
+			Bubble Sort for Matlab [EN]
+Inserting 'Matlab': 
+	< DELPHI?false	< Java?false	< Pseudo-Code?true - true
+	inserting at position 2
+		order now: 
+			DELPHI
+			Java
+			Matlab
+			Pseudo-Code
+Inserting 'Sorting': 
+	no children in parent null, insert @0
+	inserting at position 0
+		order now: 
+			Sorting
+Inserting 'Bubble Sort': 
+	no children in parent null, insert @0
+	inserting at position 0
+		order now: 
+			Bubble Sort
+Inserting 'Bubble Sort in Matlab [DE]': 
+	no children in parent null, insert @0
+	inserting at position 0
+		order now: 
+			Bubble Sort in Matlab [DE]
+Inserting 'GnomeSort': 
+	< CocktailSort?false	< CombSort?false	inserting at position 2
+		order now: 
+			CocktailSort
+			CombSort
+			GnomeSort
+Inserting 'GnomeSort': 
+	no children in parent null, insert @0
+	inserting at position 0
+		order now: 
+			GnomeSort
+Inserting 'GnomeSort': 
+	< Adaptiertes 2-Phasen-2-Band Mischen?false	inserting at position 1
+		order now: 
+			Adaptiertes 2-Phasen-2-Band Mischen
+			GnomeSort
+Inserting 'GnomeSort': 
+	no children in parent null, insert @0
+	inserting at position 0
+		order now: 
+			GnomeSort
+Inserting 'Gnome Sort': 
+	< GnomeSort?true - true
+	inserting at position 0
+		order now: 
+			Gnome Sort
+			GnomeSort
+Inserting 'GnomeSort': 
+	< GnomeSort?false	inserting at position 1
+		order now: 
+			GnomeSort
+			GnomeSort
+Inserting 'HeapSort': 
+	< Adaptiertes 2-Phasen-2-Band Mischen?false	< GnomeSort?false	inserting at position 2
+		order now: 
+			Adaptiertes 2-Phasen-2-Band Mischen
+			GnomeSort
+			HeapSort
+Inserting 'HeapSort': 
+	no children in parent null, insert @0
+	inserting at position 0
+		order now: 
+			HeapSort
+Inserting 'Heapsort': 
+	< CocktailSort?false	< CombSort?false	< GnomeSort?false	inserting at position 3
+		order now: 
+			CocktailSort
+			CombSort
+			GnomeSort
+			Heapsort
+Inserting 'Heapsort': 
+	no children in parent null, insert @0
+	inserting at position 0
+		order now: 
+			Heapsort
+Inserting 'Insertion Sort': 
+	< Bucket Sort?false	< BucketSort?false	< CombSort?false	< Counting Sort?false	< ShakerSort?true - true
+	inserting at position 4
+		order now: 
+			Bucket Sort
+			BucketSort
+			CombSort
+			Counting Sort
+			Insertion Sort
+			ShakerSort
+Inserting 'Insertion Sort (GdI 2)': 
+	no children in parent null, insert @0
+	inserting at position 0
+		order now: 
+			Insertion Sort (GdI 2)
+Inserting 'Pseudo-Code': 
+	< Java?false	< Matlab?false	inserting at position 2
+		order now: 
+			Java
+			Matlab
+			Pseudo-Code
+Inserting 'Sorting': 
+	no children in parent null, insert @0
+	inserting at position 0
+		order now: 
+			Sorting
+Inserting 'Odd-even sort': 
+	no children in parent null, insert @0
+	inserting at position 0
+		order now: 
+			Odd-even sort
+Inserting 'Odd-even Sort': 
+	no children in parent null, insert @0
+	inserting at position 0
+		order now: 
+			Odd-even Sort
+Inserting 'Selection Sort[Version 2]': 
+	< Adaptiertes 2-Phasen-2-Band Mischen?false	< GnomeSort?false	< HeapSort?false	inserting at position 3
+		order now: 
+			Adaptiertes 2-Phasen-2-Band Mischen
+			GnomeSort
+			HeapSort
+			Selection Sort[Version 2]
+Inserting 'Selection Sort': 
+	no children in parent null, insert @0
+	inserting at position 0
+		order now: 
+			Selection Sort
+Inserting 'ShakerSort': 
+	< Adaptiertes 2-Phasen-2-Band Mischen?false	< GnomeSort?false	< HeapSort?false	< Selection Sort[Version 2]?false	inserting at position 4
+		order now: 
+			Adaptiertes 2-Phasen-2-Band Mischen
+			GnomeSort
+			HeapSort
+			Selection Sort[Version 2]
+			ShakerSort
+Inserting 'ShakerSort': 
+	no children in parent null, insert @0
+	inserting at position 0
+		order now: 
+			ShakerSort
+Inserting 'ShakerSort': 
+	< CocktailSort?false	< CombSort?false	< GnomeSort?false	< Heapsort?false	inserting at position 4
+		order now: 
+			CocktailSort
+			CombSort
+			GnomeSort
+			Heapsort
+			ShakerSort
+Inserting 'ShakerSort': 
+	no children in parent null, insert @0
+	inserting at position 0
+		order now: 
+			ShakerSort
+Inserting 'Shaker Sort': 
+	< ShakerSort?true - true
+	inserting at position 0
+		order now: 
+			Shaker Sort
+			ShakerSort
+Inserting 'ShakerSortAnimation': 
+	< Shaker Sort?false	< ShakerSort?false	inserting at position 2
+		order now: 
+			Shaker Sort
+			ShakerSort
+			ShakerSortAnimation
+Inserting 'SimpleSort': 
+	< Adaptiertes 2-Phasen-2-Band Mischen?false	< GnomeSort?false	< HeapSort?false	< Selection Sort[Version 2]?false	< ShakerSort?false	inserting at position 5
+		order now: 
+			Adaptiertes 2-Phasen-2-Band Mischen
+			GnomeSort
+			HeapSort
+			Selection Sort[Version 2]
+			ShakerSort
+			SimpleSort
+Inserting 'SimpleSort': 
+	no children in parent null, insert @0
+	inserting at position 0
+		order now: 
+			SimpleSort
+Inserting 'Simple Sort': 
+	< Bucket Sort?false	< BucketSort?false	< CombSort?false	< Counting Sort?false	< Insertion Sort?false	< ShakerSort?false	inserting at position 6
+		order now: 
+			Bucket Sort
+			BucketSort
+			CombSort
+			Counting Sort
+			Insertion Sort
+			ShakerSort
+			Simple Sort
+Inserting 'Simple Sort': 
+	no children in parent null, insert @0
+	inserting at position 0
+		order now: 
+			Simple Sort
+Inserting 'StoogeSort': 
+	< Bucket Sort?false	< BucketSort?false	< CombSort?false	< Counting Sort?false	< Insertion Sort?false	< ShakerSort?false	< Simple Sort?false	inserting at position 7
+		order now: 
+			Bucket Sort
+			BucketSort
+			CombSort
+			Counting Sort
+			Insertion Sort
+			ShakerSort
+			Simple Sort
+			StoogeSort
+Inserting 'Stooge Sort': 
+	no children in parent null, insert @0
+	inserting at position 0
+		order now: 
+			Stooge Sort
+Inserting 'StoogeSort': 
+	< Adaptiertes 2-Phasen-2-Band Mischen?false	< GnomeSort?false	< HeapSort?false	< Selection Sort[Version 2]?false	< ShakerSort?false	< SimpleSort?false	inserting at position 6
+		order now: 
+			Adaptiertes 2-Phasen-2-Band Mischen
+			GnomeSort
+			HeapSort
+			Selection Sort[Version 2]
+			ShakerSort
+			SimpleSort
+			StoogeSort
+Inserting 'Stoogesort Ã¼bergebbarem sortierarray.': 
+	no children in parent null, insert @0
+	inserting at position 0
+		order now: 
+			Stoogesort Ã¼bergebbarem sortierarray.
+Inserting 'Swap Sort': 
+	< Bucket Sort?false	< BucketSort?false	< CombSort?false	< Counting Sort?false	< Insertion Sort?false	< ShakerSort?false	< Simple Sort?false	< StoogeSort?false	inserting at position 8
+		order now: 
+			Bucket Sort
+			BucketSort
+			CombSort
+			Counting Sort
+			Insertion Sort
+			ShakerSort
+			Simple Sort
+			StoogeSort
+			Swap Sort
+Inserting 'SwapSort': 
+	no children in parent null, insert @0
+	inserting at position 0
+		order now: 
+			SwapSort
+Inserting 'Swap Sort': 
+	< SwapSort?true - true
+	inserting at position 0
+		order now: 
+			Swap Sort
+			SwapSort
+Inserting 'Swap Sort': 
+	< Adaptiertes 2-Phasen-2-Band Mischen?false	< GnomeSort?false	< HeapSort?false	< Selection Sort[Version 2]?false	< ShakerSort?false	< SimpleSort?false	< StoogeSort?false	inserting at position 7
+		order now: 
+			Adaptiertes 2-Phasen-2-Band Mischen
+			GnomeSort
+			HeapSort
+			Selection Sort[Version 2]
+			ShakerSort
+			SimpleSort
+			StoogeSort
+			Swap Sort
+Inserting 'SwapSort3': 
+	no children in parent null, insert @0
+	inserting at position 0
+		order now: 
+			SwapSort3
+Inserting 'Bubble Sort': 
+	< CocktailSort?true - true
+	inserting at position 0
+		order now: 
+			Bubble Sort
+			CocktailSort
+			CombSort
+			GnomeSort
+			Heapsort
+			ShakerSort
+Inserting 'Bubble Sort [EN]': 
+	no children in parent null, insert @0
+	inserting at position 0
+		order now: 
+			Bubble Sort [EN]
+Inserting 'Bubble Sort': 
+	< Bucket Sort?true - true
+	inserting at position 0
+		order now: 
+			Bubble Sort
+			Bucket Sort
+			BucketSort
+			CombSort
+			Counting Sort
+			Insertion Sort
+			ShakerSort
+			Simple Sort
+			StoogeSort
+			Swap Sort
+Inserting 'Bubble Sort [DE]': 
+	no children in parent null, insert @0
+	inserting at position 0
+		order now: 
+			Bubble Sort [DE]
+Inserting 'Bubble Sort': 
+	< Odd-even sort?true - true
+	inserting at position 0
+		order now: 
+			Bubble Sort
+			Odd-even sort
+Inserting 'Bubble Sort (Pseudo Code) [EN]': 
+	no children in parent null, insert @0
+	inserting at position 0
+		order now: 
+			Bubble Sort (Pseudo Code) [EN]
+Inserting 'Bubble Sort': 
+	< Adaptiertes 2-Phasen-2-Band Mischen?false	< GnomeSort?true - true
+	inserting at position 1
+		order now: 
+			Adaptiertes 2-Phasen-2-Band Mischen
+			Bubble Sort
+			GnomeSort
+			HeapSort
+			Selection Sort[Version 2]
+			ShakerSort
+			SimpleSort
+			StoogeSort
+			Swap Sort
+Inserting 'Bubble Sort (Pseudocode) [DE]': 
+	no children in parent null, insert @0
+	inserting at position 0
+		order now: 
+			Bubble Sort (Pseudocode) [DE]
+Inserting 'Insertion Sort': 
+	< Bubble Sort?false	< CocktailSort?false	< CombSort?false	< GnomeSort?false	< Heapsort?false	< ShakerSort?true - true
+	inserting at position 5
+		order now: 
+			Bubble Sort
+			CocktailSort
+			CombSort
+			GnomeSort
+			Heapsort
+			Insertion Sort
+			ShakerSort
+Inserting 'Insertion Sort [EN]': 
+	no children in parent null, insert @0
+	inserting at position 0
+		order now: 
+			Insertion Sort [EN]
+Inserting 'Insertion Sort': 
+	< Bubble Sort?false	< Odd-even sort?true - true
+	inserting at position 1
+		order now: 
+			Bubble Sort
+			Insertion Sort
+			Odd-even sort
+Inserting 'Insertion Sort (Pseudo Code) [EN]': 
+	no children in parent null, insert @0
+	inserting at position 0
+		order now: 
+			Insertion Sort (Pseudo Code) [EN]
+Inserting 'Insertion Sort 2 [EN]': 
+	< Insertion Sort [EN]?true - true
+	inserting at position 0
+		order now: 
+			Insertion Sort 2 [EN]
+			Insertion Sort [EN]
+Inserting 'Insertion Sort 2 (Pseudo Code) [EN]': 
+	< Insertion Sort (Pseudo Code) [EN]?false	inserting at position 1
+		order now: 
+			Insertion Sort (Pseudo Code) [EN]
+			Insertion Sort 2 (Pseudo Code) [EN]
+Inserting 'Insertion Sort 3 [EN]': 
+	< Insertion Sort 2 [EN]?false	< Insertion Sort [EN]?true - true
+	inserting at position 1
+		order now: 
+			Insertion Sort 2 [EN]
+			Insertion Sort 3 [EN]
+			Insertion Sort [EN]
+Inserting 'Insertion Sort 3 (Pseudo Code) [EN]': 
+	< Insertion Sort (Pseudo Code) [EN]?false	< Insertion Sort 2 (Pseudo Code) [EN]?false	inserting at position 2
+		order now: 
+			Insertion Sort (Pseudo Code) [EN]
+			Insertion Sort 2 (Pseudo Code) [EN]
+			Insertion Sort 3 (Pseudo Code) [EN]
+Inserting 'Insertion Sort [DE]': 
+	< Insertion Sort (GdI 2)?false	inserting at position 1
+		order now: 
+			Insertion Sort (GdI 2)
+			Insertion Sort [DE]
+Inserting 'Insertion Sort': 
+	< Adaptiertes 2-Phasen-2-Band Mischen?false	< Bubble Sort?false	< GnomeSort?false	< HeapSort?false	< Selection Sort[Version 2]?true - true
+	inserting at position 4
+		order now: 
+			Adaptiertes 2-Phasen-2-Band Mischen
+			Bubble Sort
+			GnomeSort
+			HeapSort
+			Insertion Sort
+			Selection Sort[Version 2]
+			ShakerSort
+			SimpleSort
+			StoogeSort
+			Swap Sort
+Inserting 'Insertion Sort (Pseudo Code) [DE]': 
+	no children in parent null, insert @0
+	inserting at position 0
+		order now: 
+			Insertion Sort (Pseudo Code) [DE]
+Inserting 'Insertion Sort 2 [DE]': 
+	< Insertion Sort (GdI 2)?false	< Insertion Sort [DE]?true - true
+	inserting at position 1
+		order now: 
+			Insertion Sort (GdI 2)
+			Insertion Sort 2 [DE]
+			Insertion Sort [DE]
+Inserting 'Insertion Sort 2 (Pseudo Code) [DE]': 
+	< Insertion Sort (Pseudo Code) [DE]?false	inserting at position 1
+		order now: 
+			Insertion Sort (Pseudo Code) [DE]
+			Insertion Sort 2 (Pseudo Code) [DE]
+Inserting 'Insertion Sort 3 [DE]': 
+	< Insertion Sort (GdI 2)?false	< Insertion Sort 2 [DE]?false	< Insertion Sort [DE]?true - true
+	inserting at position 2
+		order now: 
+			Insertion Sort (GdI 2)
+			Insertion Sort 2 [DE]
+			Insertion Sort 3 [DE]
+			Insertion Sort [DE]
+Inserting 'Insertion Sort 3 (Pseudo Code) [DE]': 
+	< Insertion Sort (Pseudo Code) [DE]?false	< Insertion Sort 2 (Pseudo Code) [DE]?false	inserting at position 2
+		order now: 
+			Insertion Sort (Pseudo Code) [DE]
+			Insertion Sort 2 (Pseudo Code) [DE]
+			Insertion Sort 3 (Pseudo Code) [DE]
+Inserting 'bg': 
+	< de?true - true
+	inserting at position 0
+		order now: 
+			bg
+			de
+			en
+Inserting 'Java': 
+	no children in parent null, insert @0
+	inserting at position 0
+		order now: 
+			Java
+Inserting 'Sorting': 
+	no children in parent null, insert @0
+	inserting at position 0
+		order now: 
+			Sorting
+Inserting 'Insertion Sort': 
+	no children in parent null, insert @0
+	inserting at position 0
+		order now: 
+			Insertion Sort
+Inserting 'Insertion Sort [BG]': 
+	no children in parent null, insert @0
+	inserting at position 0
+		order now: 
+			Insertion Sort [BG]
+Inserting 'Merge Sort': 
+	< Bubble Sort?false	< CocktailSort?false	< CombSort?false	< GnomeSort?false	< Heapsort?false	< Insertion Sort?false	< ShakerSort?true - true
+	inserting at position 6
+		order now: 
+			Bubble Sort
+			CocktailSort
+			CombSort
+			GnomeSort
+			Heapsort
+			Insertion Sort
+			Merge Sort
+			ShakerSort
+Inserting 'Merge Sort [EN]': 
+	no children in parent null, insert @0
+	inserting at position 0
+		order now: 
+			Merge Sort [EN]
+Inserting 'Merge Sort': 
+	< Bubble Sort?false	< Insertion Sort?false	< Odd-even sort?true - true
+	inserting at position 2
+		order now: 
+			Bubble Sort
+			Insertion Sort
+			Merge Sort
+			Odd-even sort
+Inserting 'Merge Sort (Pseudo Code) [EN]': 
+	no children in parent null, insert @0
+	inserting at position 0
+		order now: 
+			Merge Sort (Pseudo Code) [EN]
+Inserting 'Merge Sort': 
+	< Bubble Sort?false	< Bucket Sort?false	< BucketSort?false	< CombSort?false	< Counting Sort?false	< Insertion Sort?false	< ShakerSort?true - true
+	inserting at position 6
+		order now: 
+			Bubble Sort
+			Bucket Sort
+			BucketSort
+			CombSort
+			Counting Sort
+			Insertion Sort
+			Merge Sort
+			ShakerSort
+			Simple Sort
+			StoogeSort
+			Swap Sort
+Inserting 'Merge Sort [DE]': 
+	no children in parent null, insert @0
+	inserting at position 0
+		order now: 
+			Merge Sort [DE]
+Inserting 'Merge Sort (Pseudo Code) [DE]': 
+	< Merge Sort [DE]?true - true
+	inserting at position 0
+		order now: 
+			Merge Sort (Pseudo Code) [DE]
+			Merge Sort [DE]
+Inserting 'Quicksort': 
+	< Bubble Sort?false	< CocktailSort?false	< CombSort?false	< GnomeSort?false	< Heapsort?false	< Insertion Sort?false	< Merge Sort?false	< ShakerSort?true - true
+	inserting at position 7
+		order now: 
+			Bubble Sort
+			CocktailSort
+			CombSort
+			GnomeSort
+			Heapsort
+			Insertion Sort
+			Merge Sort
+			Quicksort
+			ShakerSort
+Inserting 'Quick Sort [EN]': 
+	no children in parent null, insert @0
+	inserting at position 0
+		order now: 
+			Quick Sort [EN]
+Inserting 'Quicksort': 
+	< Bubble Sort?false	< Insertion Sort?false	< Merge Sort?false	< Odd-even sort?false	inserting at position 4
+		order now: 
+			Bubble Sort
+			Insertion Sort
+			Merge Sort
+			Odd-even sort
+			Quicksort
+Inserting 'Quick Sort (Pseudo Code) [EN]': 
+	no children in parent null, insert @0
+	inserting at position 0
+		order now: 
+			Quick Sort (Pseudo Code) [EN]
+Inserting 'Quicksort': 
+	< Bubble Sort?false	< Bucket Sort?false	< BucketSort?false	< CombSort?false	< Counting Sort?false	< Insertion Sort?false	< Merge Sort?false	< ShakerSort?true - true
+	inserting at position 7
+		order now: 
+			Bubble Sort
+			Bucket Sort
+			BucketSort
+			CombSort
+			Counting Sort
+			Insertion Sort
+			Merge Sort
+			Quicksort
+			ShakerSort
+			Simple Sort
+			StoogeSort
+			Swap Sort
+Inserting 'Quick Sort [DE]': 
+	no children in parent null, insert @0
+	inserting at position 0
+		order now: 
+			Quick Sort [DE]
+Inserting 'Quicksort': 
+	< Adaptiertes 2-Phasen-2-Band Mischen?false	< Bubble Sort?false	< GnomeSort?false	< HeapSort?false	< Insertion Sort?false	< Selection Sort[Version 2]?true - true
+	inserting at position 5
+		order now: 
+			Adaptiertes 2-Phasen-2-Band Mischen
+			Bubble Sort
+			GnomeSort
+			HeapSort
+			Insertion Sort
+			Quicksort
+			Selection Sort[Version 2]
+			ShakerSort
+			SimpleSort
+			StoogeSort
+			Swap Sort
+Inserting 'Quick Sort (Pseudo Code) [DE]': 
+	no children in parent null, insert @0
+	inserting at position 0
+		order now: 
+			Quick Sort (Pseudo Code) [DE]
+Inserting 'Selection Sort': 
+	< Bubble Sort?false	< CocktailSort?false	< CombSort?false	< GnomeSort?false	< Heapsort?false	< Insertion Sort?false	< Merge Sort?false	< Quicksort?false	< ShakerSort?true - true
+	inserting at position 8
+		order now: 
+			Bubble Sort
+			CocktailSort
+			CombSort
+			GnomeSort
+			Heapsort
+			Insertion Sort
+			Merge Sort
+			Quicksort
+			Selection Sort
+			ShakerSort
+Inserting 'Selection Sort [EN]': 
+	no children in parent null, insert @0
+	inserting at position 0
+		order now: 
+			Selection Sort [EN]
+Inserting 'Selection Sort': 
+	< Bubble Sort?false	< Insertion Sort?false	< Merge Sort?false	< Odd-even sort?false	< Quicksort?false	inserting at position 5
+		order now: 
+			Bubble Sort
+			Insertion Sort
+			Merge Sort
+			Odd-even sort
+			Quicksort
+			Selection Sort
+Inserting 'Selection Sort (Pseudo Code) [EN]': 
+	no children in parent null, insert @0
+	inserting at position 0
+		order now: 
+			Selection Sort (Pseudo Code) [EN]
+Inserting 'Selection Sort': 
+	< Bubble Sort?false	< Bucket Sort?false	< BucketSort?false	< CombSort?false	< Counting Sort?false	< Insertion Sort?false	< Merge Sort?false	< Quicksort?false	< ShakerSort?true - true
+	inserting at position 8
+		order now: 
+			Bubble Sort
+			Bucket Sort
+			BucketSort
+			CombSort
+			Counting Sort
+			Insertion Sort
+			Merge Sort
+			Quicksort
+			Selection Sort
+			ShakerSort
+			Simple Sort
+			StoogeSort
+			Swap Sort
+Inserting 'Selection Sort [DE]': 
+	no children in parent null, insert @0
+	inserting at position 0
+		order now: 
+			Selection Sort [DE]
+Inserting 'Selection Sort': 
+	< Adaptiertes 2-Phasen-2-Band Mischen?false	< Bubble Sort?false	< GnomeSort?false	< HeapSort?false	< Insertion Sort?false	< Quicksort?false	< Selection Sort[Version 2]?true - true
+	inserting at position 6
+		order now: 
+			Adaptiertes 2-Phasen-2-Band Mischen
+			Bubble Sort
+			GnomeSort
+			HeapSort
+			Insertion Sort
+			Quicksort
+			Selection Sort
+			Selection Sort[Version 2]
+			ShakerSort
+			SimpleSort
+			StoogeSort
+			Swap Sort
+Inserting 'Selection Sort (Pseudo Code) [DE]': 
+	no children in parent null, insert @0
+	inserting at position 0
+		order now: 
+			Selection Sort (Pseudo Code) [DE]
+Inserting 'Shell Sort': 
+	< Bubble Sort?false	< CocktailSort?false	< CombSort?false	< GnomeSort?false	< Heapsort?false	< Insertion Sort?false	< Merge Sort?false	< Quicksort?false	< Selection Sort?false	< ShakerSort?false	inserting at position 10
+		order now: 
+			Bubble Sort
+			CocktailSort
+			CombSort
+			GnomeSort
+			Heapsort
+			Insertion Sort
+			Merge Sort
+			Quicksort
+			Selection Sort
+			ShakerSort
+			Shell Sort
+Inserting 'Shell Sort [EN]': 
+	no children in parent null, insert @0
+	inserting at position 0
+		order now: 
+			Shell Sort [EN]
+Inserting 'Shell Sort': 
+	< Bubble Sort?false	< Insertion Sort?false	< Merge Sort?false	< Odd-even sort?false	< Quicksort?false	< Selection Sort?false	inserting at position 6
+		order now: 
+			Bubble Sort
+			Insertion Sort
+			Merge Sort
+			Odd-even sort
+			Quicksort
+			Selection Sort
+			Shell Sort
+Inserting 'Shell Sort (Pseudo Code) [EN]': 
+	no children in parent null, insert @0
+	inserting at position 0
+		order now: 
+			Shell Sort (Pseudo Code) [EN]
+Inserting 'Shell Sort': 
+	< Bubble Sort?false	< Bucket Sort?false	< BucketSort?false	< CombSort?false	< Counting Sort?false	< Insertion Sort?false	< Merge Sort?false	< Quicksort?false	< Selection Sort?false	< ShakerSort?false	< Simple Sort?true - true
+	inserting at position 10
+		order now: 
+			Bubble Sort
+			Bucket Sort
+			BucketSort
+			CombSort
+			Counting Sort
+			Insertion Sort
+			Merge Sort
+			Quicksort
+			Selection Sort
+			ShakerSort
+			Shell Sort
+			Simple Sort
+			StoogeSort
+			Swap Sort
+Inserting 'Shell Sort [DE]': 
+	no children in parent null, insert @0
+	inserting at position 0
+		order now: 
+			Shell Sort [DE]
+Inserting 'Shell Sort': 
+	< Adaptiertes 2-Phasen-2-Band Mischen?false	< Bubble Sort?false	< GnomeSort?false	< HeapSort?false	< Insertion Sort?false	< Quicksort?false	< Selection Sort?false	< Selection Sort[Version 2]?false	< ShakerSort?false	< SimpleSort?true - true
+	inserting at position 9
+		order now: 
+			Adaptiertes 2-Phasen-2-Band Mischen
+			Bubble Sort
+			GnomeSort
+			HeapSort
+			Insertion Sort
+			Quicksort
+			Selection Sort
+			Selection Sort[Version 2]
+			ShakerSort
+			Shell Sort
+			SimpleSort
+			StoogeSort
+			Swap Sort
+Inserting 'Shell Sort (Pseudo Code) [DE]': 
+	no children in parent null, insert @0
+	inserting at position 0
+		order now: 
+			Shell Sort (Pseudo Code) [DE]
+Inserting 'RadixSort': 
+	< Adaptiertes 2-Phasen-2-Band Mischen?false	< Bubble Sort?false	< GnomeSort?false	< HeapSort?false	< Insertion Sort?false	< Quicksort?false	< Selection Sort?true - true
+	inserting at position 6
+		order now: 
+			Adaptiertes 2-Phasen-2-Band Mischen
+			Bubble Sort
+			GnomeSort
+			HeapSort
+			Insertion Sort
+			Quicksort
+			RadixSort
+			Selection Sort
+			Selection Sort[Version 2]
+			ShakerSort
+			Shell Sort
+			SimpleSort
+			StoogeSort
+			Swap Sort
+Inserting 'RadixSort': 
+	no children in parent null, insert @0
+	inserting at position 0
+		order now: 
+			RadixSort
+Inserting 'Searching': 
+	< Sorting?true - true
+	inserting at position 0
+		order now: 
+			Searching
+			Sorting
+Inserting 'Levenshtein Distanzmass': 
+	no children in parent null, insert @0
+	inserting at position 0
+		order now: 
+			Levenshtein Distanzmass
+Inserting 'Levenshtein Distanz Algorithmus': 
+	no children in parent null, insert @0
+	inserting at position 0
+		order now: 
+			Levenshtein Distanz Algorithmus
+Inserting 'Searching': 
+	< Sorting?true - true
+	inserting at position 0
+		order now: 
+			Searching
+			Sorting
+Inserting 'Boyer-Moore': 
+	no children in parent null, insert @0
+	inserting at position 0
+		order now: 
+			Boyer-Moore
+Inserting 'Boyer/Moore-Suche in Strings': 
+	no children in parent null, insert @0
+	inserting at position 0
+		order now: 
+			Boyer/Moore-Suche in Strings
+Inserting 'Brute Force Searching': 
+	< Boyer-Moore?false	inserting at position 1
+		order now: 
+			Boyer-Moore
+			Brute Force Searching
+Inserting 'Brute Force String Searching (DE)': 
+	no children in parent null, insert @0
+	inserting at position 0
+		order now: 
+			Brute Force String Searching (DE)
+Inserting 'Searching': 
+	< Sorting?true - true
+	inserting at position 0
+		order now: 
+			Searching
+			Sorting
+Inserting 'Binary Searching': 
+	no children in parent null, insert @0
+	inserting at position 0
+		order now: 
+			Binary Searching
+Inserting 'Iterative Binary Searching (int; EN)': 
+	no children in parent null, insert @0
+	inserting at position 0
+		order now: 
+			Iterative Binary Searching (int; EN)
+Inserting 'Binary Searching': 
+	< Boyer-Moore?true - true
+	inserting at position 0
+		order now: 
+			Binary Searching
+			Boyer-Moore
+			Brute Force Searching
+Inserting 'Iterative Binäre Suche (int; DE)': 
+	no children in parent null, insert @0
+	inserting at position 0
+		order now: 
+			Iterative Binäre Suche (int; DE)
+Inserting 'Iterative Binary Searching (String; EN)': 
+	< Iterative Binary Searching (int; EN)?false	inserting at position 1
+		order now: 
+			Iterative Binary Searching (int; EN)
+			Iterative Binary Searching (String; EN)
+Inserting 'Iterative Binäre Suche (String; DE)': 
+	< Iterative Binäre Suche (int; DE)?false	inserting at position 1
+		order now: 
+			Iterative Binäre Suche (int; DE)
+			Iterative Binäre Suche (String; DE)
+Inserting 'Recursive Binary Searching (int; EN)': 
+	< Iterative Binary Searching (int; EN)?false	< Iterative Binary Searching (String; EN)?false	inserting at position 2
+		order now: 
+			Iterative Binary Searching (int; EN)
+			Iterative Binary Searching (String; EN)
+			Recursive Binary Searching (int; EN)
+Inserting 'Rekursive Binäre Suche (int; DE)': 
+	< Iterative Binäre Suche (int; DE)?false	< Iterative Binäre Suche (String; DE)?false	inserting at position 2
+		order now: 
+			Iterative Binäre Suche (int; DE)
+			Iterative Binäre Suche (String; DE)
+			Rekursive Binäre Suche (int; DE)
+Inserting 'Recursive Binary Searching (String; EN)': 
+	< Iterative Binary Searching (int; EN)?false	< Iterative Binary Searching (String; EN)?false	< Recursive Binary Searching (int; EN)?false	inserting at position 3
+		order now: 
+			Iterative Binary Searching (int; EN)
+			Iterative Binary Searching (String; EN)
+			Recursive Binary Searching (int; EN)
+			Recursive Binary Searching (String; EN)
+Inserting 'Rekursive Binäre Suche (String; DE)': 
+	< Iterative Binäre Suche (int; DE)?false	< Iterative Binäre Suche (String; DE)?false	< Rekursive Binäre Suche (int; DE)?false	inserting at position 3
+		order now: 
+			Iterative Binäre Suche (int; DE)
+			Iterative Binäre Suche (String; DE)
+			Rekursive Binäre Suche (int; DE)
+			Rekursive Binäre Suche (String; DE)
+Inserting 'Searching': 
+	< Sorting?true - true
+	inserting at position 0
+		order now: 
+			Searching
+			Sorting
+Inserting 'Binary Searching': 
+	no children in parent null, insert @0
+	inserting at position 0
+		order now: 
+			Binary Searching
+Inserting 'Iterative Binary Searching (int, Pseudocode; EN)': 
+	no children in parent null, insert @0
+	inserting at position 0
+		order now: 
+			Iterative Binary Searching (int, Pseudocode; EN)
+Inserting 'Binary Searching': 
+	< Levenshtein Distanzmass?true - true
+	inserting at position 0
+		order now: 
+			Binary Searching
+			Levenshtein Distanzmass
+Inserting 'Iterative Binäre Suche (int, Pseudocode; DE)': 
+	no children in parent null, insert @0
+	inserting at position 0
+		order now: 
+			Iterative Binäre Suche (int, Pseudocode; DE)
+Inserting 'Iterative Binary Searching (String, Pseudocode; EN)': 
+	< Iterative Binary Searching (int, Pseudocode; EN)?false	inserting at position 1
+		order now: 
+			Iterative Binary Searching (int, Pseudocode; EN)
+			Iterative Binary Searching (String, Pseudocode; EN)
+Inserting 'Iterative Binäre Suche (String, Pseudocode; DE)': 
+	< Iterative Binäre Suche (int, Pseudocode; DE)?false	inserting at position 1
+		order now: 
+			Iterative Binäre Suche (int, Pseudocode; DE)
+			Iterative Binäre Suche (String, Pseudocode; DE)
+Inserting 'Recursive Binary Searching (int, Pseudocode; EN)': 
+	< Iterative Binary Searching (int, Pseudocode; EN)?false	< Iterative Binary Searching (String, Pseudocode; EN)?false	inserting at position 2
+		order now: 
+			Iterative Binary Searching (int, Pseudocode; EN)
+			Iterative Binary Searching (String, Pseudocode; EN)
+			Recursive Binary Searching (int, Pseudocode; EN)
+Inserting 'Rekursive Binäre Suche (int, Pseudocode; DE)': 
+	< Iterative Binäre Suche (int, Pseudocode; DE)?false	< Iterative Binäre Suche (String, Pseudocode; DE)?false	inserting at position 2
+		order now: 
+			Iterative Binäre Suche (int, Pseudocode; DE)
+			Iterative Binäre Suche (String, Pseudocode; DE)
+			Rekursive Binäre Suche (int, Pseudocode; DE)
+Inserting 'Recursive Binary Searching (int, Pseudocode; EN)': 
+	< Iterative Binary Searching (int, Pseudocode; EN)?false	< Iterative Binary Searching (String, Pseudocode; EN)?false	< Recursive Binary Searching (int, Pseudocode; EN)?false	inserting at position 3
+		order now: 
+			Iterative Binary Searching (int, Pseudocode; EN)
+			Iterative Binary Searching (String, Pseudocode; EN)
+			Recursive Binary Searching (int, Pseudocode; EN)
+			Recursive Binary Searching (int, Pseudocode; EN)
+Inserting 'Rekursive Binäre Suche (String, Pseudocode; DE)': 
+	< Iterative Binäre Suche (int, Pseudocode; DE)?false	< Iterative Binäre Suche (String, Pseudocode; DE)?false	< Rekursive Binäre Suche (int, Pseudocode; DE)?false	inserting at position 3
+		order now: 
+			Iterative Binäre Suche (int, Pseudocode; DE)
+			Iterative Binäre Suche (String, Pseudocode; DE)
+			Rekursive Binäre Suche (int, Pseudocode; DE)
+			Rekursive Binäre Suche (String, Pseudocode; DE)
+Inserting 'Straight Selection': 
+	< Binary Searching?false	inserting at position 1
+		order now: 
+			Binary Searching
+			Straight Selection
+Inserting 'Iterative Straight Selection (int; EN)': 
+	no children in parent null, insert @0
+	inserting at position 0
+		order now: 
+			Iterative Straight Selection (int; EN)
+Inserting 'Straight Selection': 
+	< Binary Searching?false	< Boyer-Moore?false	< Brute Force Searching?false	inserting at position 3
+		order now: 
+			Binary Searching
+			Boyer-Moore
+			Brute Force Searching
+			Straight Selection
+Inserting 'Iterative Lineare Suche (int; DE)': 
+	no children in parent null, insert @0
+	inserting at position 0
+		order now: 
+			Iterative Lineare Suche (int; DE)
+Inserting 'Iterative Straight Selection (String) [EN]': 
+	< Iterative Straight Selection (int; EN)?false	inserting at position 1
+		order now: 
+			Iterative Straight Selection (int; EN)
+			Iterative Straight Selection (String) [EN]
+Inserting 'Iterative Lineare Suche (String; DE)': 
+	< Iterative Lineare Suche (int; DE)?false	inserting at position 1
+		order now: 
+			Iterative Lineare Suche (int; DE)
+			Iterative Lineare Suche (String; DE)
+Inserting 'Recursive Straight Selection (int) [EN]': 
+	< Iterative Straight Selection (int; EN)?false	< Iterative Straight Selection (String) [EN]?false	inserting at position 2
+		order now: 
+			Iterative Straight Selection (int; EN)
+			Iterative Straight Selection (String) [EN]
+			Recursive Straight Selection (int) [EN]
+Inserting 'Rekursive Lineare Suche (int)': 
+	< Iterative Lineare Suche (int; DE)?false	< Iterative Lineare Suche (String; DE)?false	inserting at position 2
+		order now: 
+			Iterative Lineare Suche (int; DE)
+			Iterative Lineare Suche (String; DE)
+			Rekursive Lineare Suche (int)
+Inserting 'Recursive Straight Selection (String) [EN]': 
+	< Iterative Straight Selection (int; EN)?false	< Iterative Straight Selection (String) [EN]?false	< Recursive Straight Selection (int) [EN]?false	inserting at position 3
+		order now: 
+			Iterative Straight Selection (int; EN)
+			Iterative Straight Selection (String) [EN]
+			Recursive Straight Selection (int) [EN]
+			Recursive Straight Selection (String) [EN]
+Inserting 'Rekursive Lineare Suche (String)': 
+	< Iterative Lineare Suche (int; DE)?false	< Iterative Lineare Suche (String; DE)?false	< Rekursive Lineare Suche (int)?false	inserting at position 3
+		order now: 
+			Iterative Lineare Suche (int; DE)
+			Iterative Lineare Suche (String; DE)
+			Rekursive Lineare Suche (int)
+			Rekursive Lineare Suche (String)
+Inserting 'Straight Selection': 
+	< Binary Searching?false	inserting at position 1
+		order now: 
+			Binary Searching
+			Straight Selection
+Inserting 'Iterative Straight Selection (int; Pseudocode; EN)': 
+	no children in parent null, insert @0
+	inserting at position 0
+		order now: 
+			Iterative Straight Selection (int; Pseudocode; EN)
+Inserting 'Straight Selection': 
+	< Binary Searching?false	< Levenshtein Distanzmass?false	inserting at position 2
+		order now: 
+			Binary Searching
+			Levenshtein Distanzmass
+			Straight Selection
+Inserting 'Iterative Lineare Suche (int; Pseudocode)': 
+	no children in parent null, insert @0
+	inserting at position 0
+		order now: 
+			Iterative Lineare Suche (int; Pseudocode)
+Inserting 'Iterative Straight Selection (String; Pseudocode) [EN]': 
+	< Iterative Straight Selection (int; Pseudocode; EN)?false	inserting at position 1
+		order now: 
+			Iterative Straight Selection (int; Pseudocode; EN)
+			Iterative Straight Selection (String; Pseudocode) [EN]
+Inserting 'Iterative Lineare Suche (String; Pseudocode)': 
+	< Iterative Lineare Suche (int; Pseudocode)?false	inserting at position 1
+		order now: 
+			Iterative Lineare Suche (int; Pseudocode)
+			Iterative Lineare Suche (String; Pseudocode)
+Inserting 'Recursive Straight Selection (int; Pseudocode) [EN]': 
+	< Iterative Straight Selection (int; Pseudocode; EN)?false	< Iterative Straight Selection (String; Pseudocode) [EN]?false	inserting at position 2
+		order now: 
+			Iterative Straight Selection (int; Pseudocode; EN)
+			Iterative Straight Selection (String; Pseudocode) [EN]
+			Recursive Straight Selection (int; Pseudocode) [EN]
+Inserting 'Rekursive Lineare Suche (int; Pseudocode)': 
+	< Iterative Lineare Suche (int; Pseudocode)?false	< Iterative Lineare Suche (String; Pseudocode)?false	inserting at position 2
+		order now: 
+			Iterative Lineare Suche (int; Pseudocode)
+			Iterative Lineare Suche (String; Pseudocode)
+			Rekursive Lineare Suche (int; Pseudocode)
+Inserting 'Recursive Straight Selection (String; Pseudocode) [EN]': 
+	< Iterative Straight Selection (int; Pseudocode; EN)?false	< Iterative Straight Selection (String; Pseudocode) [EN]?false	< Recursive Straight Selection (int; Pseudocode) [EN]?false	inserting at position 3
+		order now: 
+			Iterative Straight Selection (int; Pseudocode; EN)
+			Iterative Straight Selection (String; Pseudocode) [EN]
+			Recursive Straight Selection (int; Pseudocode) [EN]
+			Recursive Straight Selection (String; Pseudocode) [EN]
+Inserting 'Rekursive Lineare Suche (String, Pseudocode; DE)': 
+	< Iterative Lineare Suche (int; Pseudocode)?false	< Iterative Lineare Suche (String; Pseudocode)?false	< Rekursive Lineare Suche (int; Pseudocode)?false	inserting at position 3
+		order now: 
+			Iterative Lineare Suche (int; Pseudocode)
+			Iterative Lineare Suche (String; Pseudocode)
+			Rekursive Lineare Suche (int; Pseudocode)
+			Rekursive Lineare Suche (String, Pseudocode; DE)
+Inserting 'Interpolated Searching': 
+	< Binary Searching?false	< Straight Selection?true - true
+	inserting at position 1
+		order now: 
+			Binary Searching
+			Interpolated Searching
+			Straight Selection
+Inserting 'Iterative Interpolated Searching (int; EN)': 
+	no children in parent null, insert @0
+	inserting at position 0
+		order now: 
+			Iterative Interpolated Searching (int; EN)
+Inserting 'Interpolated Searching': 
+	< Binary Searching?false	< Boyer-Moore?false	< Brute Force Searching?false	< Straight Selection?true - true
+	inserting at position 3
+		order now: 
+			Binary Searching
+			Boyer-Moore
+			Brute Force Searching
+			Interpolated Searching
+			Straight Selection
+Inserting 'Iterative Interpolationssuche (int; DE)': 
+	no children in parent null, insert @0
+	inserting at position 0
+		order now: 
+			Iterative Interpolationssuche (int; DE)
+Inserting 'Recursive Interpolated Searching (int; EN)': 
+	< Iterative Interpolated Searching (int; EN)?false	inserting at position 1
+		order now: 
+			Iterative Interpolated Searching (int; EN)
+			Recursive Interpolated Searching (int; EN)
+Inserting 'Rekursive Interpolationssuche (int; DE)': 
+	< Iterative Interpolationssuche (int; DE)?false	inserting at position 1
+		order now: 
+			Iterative Interpolationssuche (int; DE)
+			Rekursive Interpolationssuche (int; DE)
+Inserting 'Interpolated Searching': 
+	< Binary Searching?false	< Straight Selection?true - true
+	inserting at position 1
+		order now: 
+			Binary Searching
+			Interpolated Searching
+			Straight Selection
+Inserting 'Iterative Interpolated Searching (int, Pseudocode; EN)': 
+	no children in parent null, insert @0
+	inserting at position 0
+		order now: 
+			Iterative Interpolated Searching (int, Pseudocode; EN)
+Inserting 'Interpolated Searching': 
+	< Binary Searching?false	< Levenshtein Distanzmass?true - true
+	inserting at position 1
+		order now: 
+			Binary Searching
+			Interpolated Searching
+			Levenshtein Distanzmass
+			Straight Selection
+Inserting 'Iterative Interpolationssuche (int, Pseudocode; DE)': 
+	no children in parent null, insert @0
+	inserting at position 0
+		order now: 
+			Iterative Interpolationssuche (int, Pseudocode; DE)
+Inserting 'Recursive Interpolated Searching (int, Pseudocode; EN)': 
+	< Iterative Interpolated Searching (int, Pseudocode; EN)?false	inserting at position 1
+		order now: 
+			Iterative Interpolated Searching (int, Pseudocode; EN)
+			Recursive Interpolated Searching (int, Pseudocode; EN)
+Inserting 'Rekursive Interpolationssuche (int, Pseudocode; DE)': 
+	< Iterative Interpolationssuche (int, Pseudocode; DE)?false	inserting at position 1
+		order now: 
+			Iterative Interpolationssuche (int, Pseudocode; DE)
+			Rekursive Interpolationssuche (int, Pseudocode; DE)
+Inserting 'Hashing': 
+	< Searching?true - true
+	inserting at position 0
+		order now: 
+			Hashing
+			Searching
+			Sorting
+Inserting 'Hashing': 
+	no children in parent null, insert @0
+	inserting at position 0
+		order now: 
+			Hashing
+Inserting 'Hashing mit alterneriend quadratischer Sondierung': 
+	no children in parent null, insert @0
+	inserting at position 0
+		order now: 
+			Hashing mit alterneriend quadratischer Sondierung
+Inserting 'Hashing': 
+	< Searching?true - true
+	inserting at position 0
+		order now: 
+			Hashing
+			Searching
+			Sorting
+Inserting 'Linear Hashing': 
+	no children in parent null, insert @0
+	inserting at position 0
+		order now: 
+			Linear Hashing
+Inserting 'Linear Hashing': 
+	no children in parent null, insert @0
+	inserting at position 0
+		order now: 
+			Linear Hashing
+Inserting 'Compression': 
+	< Hashing?true - true
+	inserting at position 0
+		order now: 
+			Compression
+			Hashing
+			Searching
+			Sorting
+Inserting 'Arithmetic Decoding': 
+	no children in parent null, insert @0
+	inserting at position 0
+		order now: 
+			Arithmetic Decoding
+Inserting 'Arithmetic Decoding': 
+	no children in parent null, insert @0
+	inserting at position 0
+		order now: 
+			Arithmetic Decoding
+Inserting 'Arithmetic Encoding': 
+	< Arithmetic Decoding?false	inserting at position 1
+		order now: 
+			Arithmetic Decoding
+			Arithmetic Encoding
+Inserting 'Arithmetic Encoding': 
+	no children in parent null, insert @0
+	inserting at position 0
+		order now: 
+			Arithmetic Encoding
+Inserting 'Burrows-Wheeler Transformation': 
+	< Arithmetic Decoding?false	< Arithmetic Encoding?false	inserting at position 2
+		order now: 
+			Arithmetic Decoding
+			Arithmetic Encoding
+			Burrows-Wheeler Transformation
+Inserting 'Burrows Wheeler Transformation': 
+	no children in parent null, insert @0
+	inserting at position 0
+		order now: 
+			Burrows Wheeler Transformation
+Inserting 'Burrows Wheeler Retransformation': 
+	< Burrows Wheeler Transformation?true - true
+	inserting at position 0
+		order now: 
+			Burrows Wheeler Retransformation
+			Burrows Wheeler Transformation
+Inserting 'Huffman': 
+	< Arithmetic Decoding?false	< Arithmetic Encoding?false	< Burrows-Wheeler Transformation?false	inserting at position 3
+		order now: 
+			Arithmetic Decoding
+			Arithmetic Encoding
+			Burrows-Wheeler Transformation
+			Huffman
+Inserting 'Huffman Encoding': 
+	no children in parent null, insert @0
+	inserting at position 0
+		order now: 
+			Huffman Encoding
+Inserting 'LZ77': 
+	< Arithmetic Decoding?false	< Arithmetic Encoding?false	< Burrows-Wheeler Transformation?false	< Huffman?false	inserting at position 4
+		order now: 
+			Arithmetic Decoding
+			Arithmetic Encoding
+			Burrows-Wheeler Transformation
+			Huffman
+			LZ77
+Inserting 'LZ77': 
+	no children in parent null, insert @0
+	inserting at position 0
+		order now: 
+			LZ77
+Inserting 'LZ77 Decoding': 
+	< Arithmetic Decoding?false	< Arithmetic Encoding?false	< Burrows-Wheeler Transformation?false	< Huffman?false	< LZ77?false	inserting at position 5
+		order now: 
+			Arithmetic Decoding
+			Arithmetic Encoding
+			Burrows-Wheeler Transformation
+			Huffman
+			LZ77
+			LZ77 Decoding
+Inserting 'LZ77 Decoding': 
+	no children in parent null, insert @0
+	inserting at position 0
+		order now: 
+			LZ77 Decoding
+Inserting 'LZ78': 
+	< Arithmetic Decoding?false	< Arithmetic Encoding?false	< Burrows-Wheeler Transformation?false	< Huffman?false	< LZ77?false	< LZ77 Decoding?false	inserting at position 6
+		order now: 
+			Arithmetic Decoding
+			Arithmetic Encoding
+			Burrows-Wheeler Transformation
+			Huffman
+			LZ77
+			LZ77 Decoding
+			LZ78
+Inserting 'LZ78': 
+	no children in parent null, insert @0
+	inserting at position 0
+		order now: 
+			LZ78
+Inserting 'LZ78 Decoding': 
+	< Arithmetic Decoding?false	< Arithmetic Encoding?false	< Burrows-Wheeler Transformation?false	< Huffman?false	< LZ77?false	< LZ77 Decoding?false	< LZ78?false	inserting at position 7
+		order now: 
+			Arithmetic Decoding
+			Arithmetic Encoding
+			Burrows-Wheeler Transformation
+			Huffman
+			LZ77
+			LZ77 Decoding
+			LZ78
+			LZ78 Decoding
+Inserting 'LZ78 Decoding': 
+	no children in parent null, insert @0
+	inserting at position 0
+		order now: 
+			LZ78 Decoding
+Inserting 'LZW': 
+	< Arithmetic Decoding?false	< Arithmetic Encoding?false	< Burrows-Wheeler Transformation?false	< Huffman?false	< LZ77?false	< LZ77 Decoding?false	< LZ78?false	< LZ78 Decoding?false	inserting at position 8
+		order now: 
+			Arithmetic Decoding
+			Arithmetic Encoding
+			Burrows-Wheeler Transformation
+			Huffman
+			LZ77
+			LZ77 Decoding
+			LZ78
+			LZ78 Decoding
+			LZW
+Inserting 'LZW': 
+	no children in parent null, insert @0
+	inserting at position 0
+		order now: 
+			LZW
+Inserting 'Compression': 
+	< Searching?true - true
+	inserting at position 0
+		order now: 
+			Compression
+			Searching
+			Sorting
+Inserting 'LZW': 
+	no children in parent null, insert @0
+	inserting at position 0
+		order now: 
+			LZW
+Inserting 'LZW': 
+	no children in parent null, insert @0
+	inserting at position 0
+		order now: 
+			LZW
+Inserting 'LZW': 
+	< LZW?false	inserting at position 1
+		order now: 
+			LZW
+			LZW
+Inserting 'LZW Decoding': 
+	< Arithmetic Decoding?false	< Arithmetic Encoding?false	< Burrows-Wheeler Transformation?false	< Huffman?false	< LZ77?false	< LZ77 Decoding?false	< LZ78?false	< LZ78 Decoding?false	< LZW?false	inserting at position 9
+		order now: 
+			Arithmetic Decoding
+			Arithmetic Encoding
+			Burrows-Wheeler Transformation
+			Huffman
+			LZ77
+			LZ77 Decoding
+			LZ78
+			LZ78 Decoding
+			LZW
+			LZW Decoding
+Inserting 'LZW Decoding': 
+	no children in parent null, insert @0
+	inserting at position 0
+		order now: 
+			LZW Decoding
+Inserting 'Move to Front': 
+	< Arithmetic Decoding?false	< Arithmetic Encoding?false	< Burrows-Wheeler Transformation?false	< Huffman?false	< LZ77?false	< LZ77 Decoding?false	< LZ78?false	< LZ78 Decoding?false	< LZW?false	< LZW Decoding?false	inserting at position 10
+		order now: 
+			Arithmetic Decoding
+			Arithmetic Encoding
+			Burrows-Wheeler Transformation
+			Huffman
+			LZ77
+			LZ77 Decoding
+			LZ78
+			LZ78 Decoding
+			LZW
+			LZW Decoding
+			Move to Front
+Inserting 'Move to Front': 
+	no children in parent null, insert @0
+	inserting at position 0
+		order now: 
+			Move to Front
+Inserting 'Move to Front Decoding': 
+	< Arithmetic Decoding?false	< Arithmetic Encoding?false	< Burrows-Wheeler Transformation?false	< Huffman?false	< LZ77?false	< LZ77 Decoding?false	< LZ78?false	< LZ78 Decoding?false	< LZW?false	< LZW Decoding?false	< Move to Front?false	inserting at position 11
+		order now: 
+			Arithmetic Decoding
+			Arithmetic Encoding
+			Burrows-Wheeler Transformation
+			Huffman
+			LZ77
+			LZ77 Decoding
+			LZ78
+			LZ78 Decoding
+			LZW
+			LZW Decoding
+			Move to Front
+			Move to Front Decoding
+Inserting 'Move to Front Decoding': 
+	no children in parent null, insert @0
+	inserting at position 0
+		order now: 
+			Move to Front Decoding
+Inserting 'Lauflängenkodierung': 
+	< Arithmetic Decoding?false	< Arithmetic Encoding?false	< Burrows-Wheeler Transformation?false	< Huffman?false	< LZ77?true - true
+	inserting at position 4
+		order now: 
+			Arithmetic Decoding
+			Arithmetic Encoding
+			Burrows-Wheeler Transformation
+			Huffman
+			Lauflängenkodierung
+			LZ77
+			LZ77 Decoding
+			LZ78
+			LZ78 Decoding
+			LZW
+			LZW Decoding
+			Move to Front
+			Move to Front Decoding
+Inserting 'Lauflängenkodierung': 
+	no children in parent null, insert @0
+	inserting at position 0
+		order now: 
+			Lauflängenkodierung
+Inserting 'Run Length Encoding': 
+	< LZW?false	inserting at position 1
+		order now: 
+			LZW
+			Run Length Encoding
+Inserting 'Run Length Encoding': 
+	no children in parent null, insert @0
+	inserting at position 0
+		order now: 
+			Run Length Encoding
+Inserting 'Sequitur': 
+	< Arithmetic Decoding?false	< Arithmetic Encoding?false	< Burrows-Wheeler Transformation?false	< Huffman?false	< Lauflängenkodierung?false	< LZ77?false	< LZ77 Decoding?false	< LZ78?false	< LZ78 Decoding?false	< LZW?false	< LZW Decoding?false	< Move to Front?false	< Move to Front Decoding?false	inserting at position 13
+		order now: 
+			Arithmetic Decoding
+			Arithmetic Encoding
+			Burrows-Wheeler Transformation
+			Huffman
+			Lauflängenkodierung
+			LZ77
+			LZ77 Decoding
+			LZ78
+			LZ78 Decoding
+			LZW
+			LZW Decoding
+			Move to Front
+			Move to Front Decoding
+			Sequitur
+Inserting 'Sequitur': 
+	no children in parent null, insert @0
+	inserting at position 0
+		order now: 
+			Sequitur
+Inserting 'Shannon Fano Kodierung': 
+	< Arithmetic Decoding?false	< Arithmetic Encoding?false	< Burrows-Wheeler Transformation?false	< Huffman?false	< Lauflängenkodierung?false	< LZ77?false	< LZ77 Decoding?false	< LZ78?false	< LZ78 Decoding?false	< LZW?false	< LZW Decoding?false	< Move to Front?false	< Move to Front Decoding?false	< Sequitur?false	inserting at position 14
+		order now: 
+			Arithmetic Decoding
+			Arithmetic Encoding
+			Burrows-Wheeler Transformation
+			Huffman
+			Lauflängenkodierung
+			LZ77
+			LZ77 Decoding
+			LZ78
+			LZ78 Decoding
+			LZW
+			LZW Decoding
+			Move to Front
+			Move to Front Decoding
+			Sequitur
+			Shannon Fano Kodierung
+Inserting 'Shannon Fano Kodierung': 
+	no children in parent null, insert @0
+	inserting at position 0
+		order now: 
+			Shannon Fano Kodierung
+Inserting 'Misc': 
+	< Compression?false	< Searching?true - true
+	inserting at position 1
+		order now: 
+			Compression
+			Misc
+			Searching
+			Sorting
+Inserting 'Flood Fill': 
+	no children in parent null, insert @0
+	inserting at position 0
+		order now: 
+			Flood Fill
+Inserting 'FloodFill (4-neighbor)': 
+	no children in parent null, insert @0
+	inserting at position 0
+		order now: 
+			FloodFill (4-neighbor)
+Inserting 'Misc': 
+	< Compression?false	< Hashing?false	< Searching?true - true
+	inserting at position 2
+		order now: 
+			Compression
+			Hashing
+			Misc
+			Searching
+			Sorting
+Inserting 'Matrix multiplication': 
+	no children in parent null, insert @0
+	inserting at position 0
+		order now: 
+			Matrix multiplication
+Inserting 'matrix multiplication': 
+	no children in parent null, insert @0
+	inserting at position 0
+		order now: 
+			matrix multiplication
+Inserting 'Das Pascalsche Dreieck - Konstruktion': 
+	< Matrix multiplication?true - true
+	inserting at position 0
+		order now: 
+			Das Pascalsche Dreieck - Konstruktion
+			Matrix multiplication
+Inserting 'Die Konstruktion des Pascalschen Dreiecks': 
+	no children in parent null, insert @0
+	inserting at position 0
+		order now: 
+			Die Konstruktion des Pascalschen Dreiecks
+Inserting 'Misc': 
+	< Hashing?false	< Searching?true - true
+	inserting at position 1
+		order now: 
+			Hashing
+			Misc
+			Searching
+			Sorting
+Inserting 'Vogelsche Approximationsmethode': 
+	no children in parent null, insert @0
+	inserting at position 0
+		order now: 
+			Vogelsche Approximationsmethode
+Inserting 'Vogelsche Approximation': 
+	no children in parent null, insert @0
+	inserting at position 0
+		order now: 
+			Vogelsche Approximation
+Inserting 'Graphs': 
+	< Compression?false	< Misc?true - true
+	inserting at position 1
+		order now: 
+			Compression
+			Graphs
+			Misc
+			Searching
+			Sorting
+Inserting 'BFS': 
+	no children in parent null, insert @0
+	inserting at position 0
+		order now: 
+			BFS
+Inserting 'BFS': 
+	no children in parent null, insert @0
+	inserting at position 0
+		order now: 
+			BFS
+Inserting 'DFS': 
+	< BFS?false	inserting at position 1
+		order now: 
+			BFS
+			DFS
+Inserting 'DFS': 
+	no children in parent null, insert @0
+	inserting at position 0
+		order now: 
+			DFS
+Inserting 'Dijkstra': 
+	< BFS?false	< DFS?false	inserting at position 2
+		order now: 
+			BFS
+			DFS
+			Dijkstra
+Inserting 'Dijkstra': 
+	no children in parent null, insert @0
+	inserting at position 0
+		order now: 
+			Dijkstra
+Inserting 'Floyd': 
+	< BFS?false	< DFS?false	< Dijkstra?false	inserting at position 3
+		order now: 
+			BFS
+			DFS
+			Dijkstra
+			Floyd
+Inserting 'Floyd': 
+	no children in parent null, insert @0
+	inserting at position 0
+		order now: 
+			Floyd
+Inserting 'Prim': 
+	< BFS?false	< DFS?false	< Dijkstra?false	< Floyd?false	inserting at position 4
+		order now: 
+			BFS
+			DFS
+			Dijkstra
+			Floyd
+			Prim
+Inserting 'Prim': 
+	no children in parent null, insert @0
+	inserting at position 0
+		order now: 
+			Prim
+Inserting 'Warshall': 
+	< BFS?false	< DFS?false	< Dijkstra?false	< Floyd?false	< Prim?false	inserting at position 5
+		order now: 
+			BFS
+			DFS
+			Dijkstra
+			Floyd
+			Prim
+			Warshall
+Inserting 'Warshall': 
+	no children in parent null, insert @0
+	inserting at position 0
+		order now: 
+			Warshall
+Inserting 'Warshall': 
+	< Warshall?false	inserting at position 1
+		order now: 
+			Warshall
+			Warshall
+Inserting 'Cryptography': 
+	< Compression?false	< Hashing?true - true
+	inserting at position 1
+		order now: 
+			Compression
+			Cryptography
+			Hashing
+			Misc
+			Searching
+			Sorting
+Inserting 'Caesar Cipher': 
+	no children in parent null, insert @0
+	inserting at position 0
+		order now: 
+			Caesar Cipher
+Inserting 'Caesar Cipher': 
+	no children in parent null, insert @0
+	inserting at position 0
+		order now: 
+			Caesar Cipher
+Inserting 'Cryptography': 
+	< Hashing?true - true
+	inserting at position 0
+		order now: 
+			Cryptography
+			Hashing
+			Misc
+			Searching
+			Sorting
+Inserting 'Caesar Cipher': 
+	no children in parent null, insert @0
+	inserting at position 0
+		order now: 
+			Caesar Cipher
+Inserting 'Caesar Chiffre': 
+	no children in parent null, insert @0
+	inserting at position 0
+		order now: 
+			Caesar Chiffre
+Inserting 'Cryptography': 
+	< Compression?false	< Graphs?true - true
+	inserting at position 1
+		order now: 
+			Compression
+			Cryptography
+			Graphs
+			Misc
+			Searching
+			Sorting
+Inserting 'Caesar Cipher': 
+	no children in parent null, insert @0
+	inserting at position 0
+		order now: 
+			Caesar Cipher
+Inserting 'Caesar-Chiffre': 
+	no children in parent null, insert @0
+	inserting at position 0
+		order now: 
+			Caesar-Chiffre
+Inserting 'Caesar-Chiffre': 
+	< Caesar Cipher?false	inserting at position 1
+		order now: 
+			Caesar Cipher
+			Caesar-Chiffre
+Inserting 'CaesarChiffre': 
+	< Caesar Cipher?false	< Caesar-Chiffre?false	inserting at position 2
+		order now: 
+			Caesar Cipher
+			Caesar-Chiffre
+			CaesarChiffre
+Inserting 'Verschlüsselung: Caesar': 
+	< Caesar Cipher?false	< Caesar-Chiffre?false	< CaesarChiffre?false	inserting at position 3
+		order now: 
+			Caesar Cipher
+			Caesar-Chiffre
+			CaesarChiffre
+			Verschlüsselung: Caesar
+Inserting 'CaesarImp': 
+	< Caesar Cipher?false	< Caesar-Chiffre?false	< CaesarChiffre?false	< Verschlüsselung: Caesar?true - true
+	inserting at position 3
+		order now: 
+			Caesar Cipher
+			Caesar-Chiffre
+			CaesarChiffre
+			CaesarImp
+			Verschlüsselung: Caesar
+Inserting 'Caesar Chiffre with variable Key': 
+	< Caesar Cipher?true - true
+	inserting at position 0
+		order now: 
+			Caesar Chiffre with variable Key
+			Caesar Cipher
+			Caesar-Chiffre
+			CaesarChiffre
+			CaesarImp
+			Verschlüsselung: Caesar
+Inserting 'Caesar Chiffre mit Ã¼bergebbarem Verschiebewert.': 
+	< Caesar Chiffre?false	inserting at position 1
+		order now: 
+			Caesar Chiffre
+			Caesar Chiffre mit Ã¼bergebbarem Verschiebewert.
+Inserting 'Vigenere Dekodierung': 
+	< Caesar Cipher?false	inserting at position 1
+		order now: 
+			Caesar Cipher
+			Vigenere Dekodierung
+Inserting 'Vigenère-Entschlüsselung': 
+	no children in parent null, insert @0
+	inserting at position 0
+		order now: 
+			Vigenère-Entschlüsselung
+Inserting 'Vigenere Decoding': 
+	< Caesar Cipher?false	inserting at position 1
+		order now: 
+			Caesar Cipher
+			Vigenere Decoding
+Inserting 'Vigenère-Decryption': 
+	no children in parent null, insert @0
+	inserting at position 0
+		order now: 
+			Vigenère-Decryption
+Inserting 'Vigenere Kodierung': 
+	< Caesar Cipher?false	< Vigenere Dekodierung?false	inserting at position 2
+		order now: 
+			Caesar Cipher
+			Vigenere Dekodierung
+			Vigenere Kodierung
+Inserting 'Vigenère-Verschlüsselung': 
+	no children in parent null, insert @0
+	inserting at position 0
+		order now: 
+			Vigenère-Verschlüsselung
+Inserting 'Vigenere Dekodierung': 
+	< Caesar Cipher?false	< Vigenere Decoding?false	inserting at position 2
+		order now: 
+			Caesar Cipher
+			Vigenere Decoding
+			Vigenere Dekodierung
+Inserting 'Vigenere Encryption': 
+	no children in parent null, insert @0
+	inserting at position 0
+		order now: 
+			Vigenere Encryption
+Inserting 'Data Structures': 
+	< Searching?true - true
+	inserting at position 0
+		order now: 
+			Data Structures
+			Searching
+			Sorting
+Inserting 'Binary Space Partitioning': 
+	no children in parent null, insert @0
+	inserting at position 0
+		order now: 
+			Binary Space Partitioning
+Inserting 'Autopartitioned node storing BSP': 
+	no children in parent null, insert @0
+	inserting at position 0
+		order now: 
+			Autopartitioned node storing BSP
+Vielen Dank fŸr das Nutzen von Animal Version 2.3.22, 10. 7. 2009 © Guido Rš§ling.

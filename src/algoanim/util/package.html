@@ -1,0 +1,107 @@
+<html>
+<body>
+<h1>Using the classes in the <em>animalscriptapi.util</em> package</h1>
+
+<p>The classes in the <em>animalscriptapi.util</em> package are utility
+classes that help in creating animation content. They address three 
+different aspects: definitions of <em>nodes, display options,</em> and
+<em>timing</em>.</p>
+
+<h2>Node Definition</h2>
+
+<p>Many operations in <span style="font-variant: small-caps">AnimalScript</span>
+and thus also in the <span style="font-variant: small-caps">AnimalScript</span> API
+expect the specification of (at least) one node. For example, each graphical object
+will have at least one node to specify its basic location, or to specify the first
+of multiple nodes that define the shape (e.g., a triangle has three nodes).</p>
+
+<p>The <span style="font-variant: small-caps">AnimalScript</span> API allows the following
+ways to define a node, based on the (empty) abstract class <em>animalscriptapi.util.Node</em>:</p>
+
+<dl>
+<dt>using absolute coordinates</dt>
+<dd>Absolute coordinates specify the node as a pair of <em>x</em> and <em>y</em> positions.
+Use the classe <em>animalscriptapi.util.Coordinates</em> if you want to use absolute
+coordinates. This class expects you to pass in the <em>int</em> values for x and y,
+respectively. Of course, you can use arbitrarily complex arithmetic expressions to
+define the values x and y, but they will ultimately be evaluated to a fixed value when
+the constructor is called.</dd<
+<dt>Using an offset from another element</dt>
+<dd>This more, represented by class <em>animalscriptapi.util.Offset</em>, allows you to
+place an object in relation to another element.
+<ul>
+<li>The other element can be another <em>graphical object</em> - in this case, you have 
+to pass this object as a parameter to the constructor call.</li>
+<li>It can also be an other <em>node</em>, such as the "fifth node of this
+polygon" - in this case, you have to pass a <em>Node</em> instance to the constructor
+call.</li>
+<li>Finally, it may also be an offset from a pre-assigned ID - in this case, you have to pass
+the String ID of this ID.</li>
+</ul> In all cases, the constructor also expects the offset (dx, dy) values and the <em>direction</em>.
+Typically, you should use the following direction constants defined in class 
+<em>animalscriptapi.animalscript.AnimalScript</em>:
+<ul>
+<li>DIRECTION_NW</li>
+<li>DIRECTION_N</li>
+<li>DIRECTION_NE</li>
+<li>DIRECTION_W</li>
+<li>DIRECTION_C</li>
+<li>DIRECTION_E</li>
+<li>DIRECTION_SW</li>
+<li>DIRECTION_S</li>
+<li>DIRECTION_SE</li>
+<li>DIRECTION_BASELINE_START</li>
+<li>DIRECTION_BASELINE_END</li>
+</ul>
+For all entries except for the last two, the offset will be determined based on the 
+<em>bounding box</em> of the underlying reference element. The bounding box of an
+object is defined as the <em>smallest rectangle that completely contains the object</em>.
+The <em>NW, NE, SW, SE</em> values are thus the four corners of this bounding box; <em>N, W, E, S</em>
+are the centers of the box edges, and <em>C</em> is the center of the bounding box.<br />
+"Baseline" refers to the base line of a text. As text characters may extrude under their base 
+line (e.g., for "g", "p" and "q"), the "SW" coordinate of the bounding box for a text may not
+have the same y coordinate as the text itself.</dd>
+</dl>
+
+<h2>Display Option</h2>
+
+<p>Display options toggle the display of a given graphical object. They are not concerned
+with attributes such as color or depth of the object, but rather concerned with <em>whether</em>
+and <em>how</em> a given object will appear.</p>
+
+<p>The base class for display options is the abstract class <em>animalscriptapi.util.DisplayOptions</em>.
+Its (empty) subclass <em>animalscriptapi.util.Hidden</em> should be used when a given primitive
+is supposed to be invisible (hidden from the viewer).</p>
+
+<p><em>Code groups</em> also have a special display options class, called <em>animalscriptapi.util.CodeGroupDisplayOptions</em>.
+In this class, the user can specify both the <em>offset</em> (how long after the start of a given step
+will it take before the code group starts to be displayed?) and the <em>duration</em> (how much time will
+the code group take from the offset until all elements are shown?).</p>
+
+<p><em>Arrays</em> also have thei own display options class: <em>animalscriptapi.util.ArrayDisplayOptions</em>.
+This class uses the <em>offset</em> and <em>duration</em> described above for code groups. Additionally,
+they have a boolean option <em>isCascaded</em>. If this option is set to <em>true</em>, the array
+will be shown element by element, instead of all elements at the same time.</p>
+
+<h2>Timing Specification</h2>
+
+<p>Timing is used in the <span style="font-variant: small-caps">AnimalScript</span> API to specify when
+effects start and how long they take. They are based on the class <em>animalscriptapi.util.Timing</em>,
+another subclass of <em>animalscriptapi.util.DisplayOptions</em> described above. Currently, 
+the <span style="font-variant: small-caps">AnimalScript</span> API supports the following timing-related
+classes:
+
+<dl>
+<dt>animalscriptapi.util.Timing</dt>
+<dd>This class allows setting only one <em>time value</em> as an int. This method is inherited by subclasses. 
+Please note that this class is <em>abstract</em>!</dd>
+<dt>MsTiming</dt>
+<dd>This class represents timing information measured on a millisecond (ms) base. Its constructor
+expects only the number of time units as an int value.</dd>
+<dt>TicksTiming</dt>
+<dd>This class represents timing information measured by the number of animation frames ("ticks"). Its constructor
+expects only the number of time units as an int value.</dd>
+</dl>
+
+</body>
+</html> 

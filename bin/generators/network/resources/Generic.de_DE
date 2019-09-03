@@ -1,0 +1,14 @@
+HOSTNAME=Hostname
+ADJACENCY_MATRIX=Adjazenzmatrix
+DISTANCE_FROM_NODE=Entfernung von Knoten {0}
+DIRECTED_GRAPH_MESSAGE=<strong>Hinweis:</strong> Für die korrekte Funktion dieses Algorithmus ist eine vollständig besetzte Matrix nötig. Daher wird für die Animation ein gerichteter Graph erzeugt. Sollten Sie einen ungerichteten Graph anlegen, so wird die obere Dreiecksmatrix an der ersten Hauptdiagonale gespiegelt, bevor der Algorithmus ausgeführt wird. Die Darstellung ändert sich durch diese Spiegelung jedoch nicht.
+UNDIRECTED_GRAPH_MESSAGE=<strong>Hinweis:</strong> Der Algorithmus arbeitet nur auf ungerichteten Graphen korrekt.
+LBL_TITLE_SLIDE=Titelfolie
+LBL_ANIM_START=Beginn der Animation
+LBL_ADD_EDGE=Kante zwischen Konten {0} und {1} hinzufügen
+LBL_SEARCH_SHORTEST_EDGE=Nächsten Nachbarn für Knoten {0} finden
+LBL_EXAMINE_EDGE=Kante zwischen Knoten {0} und {1} untersuchen
+LBL_EXAMINE_NODE= Knoten {0} untersuchen
+LBL_EXAMINE_DISTANCE=Entfernung zwischen Knoten {0} und {1} untersuchen
+ANS_CORRECT=Die Antwort ist korrekt
+ANS_WRONG=Die Antwort ist falsch

@@ -1,0 +1,42 @@
+noSuchKeyException=There is no ressource for the key {0}
+iconNotFound=Icon "{ }" not found
+
+descriptionGlobal=Der Algorithmus von Edmonds und Karp ist ein Graphalgorithmus, der den maximalen Fluss in einem Netzwerk berechnet.\nEin Netzwerk oder auch Flussgraph ist ein Graph dessen Kanten individuelle Kapazit\u00e4ten vorweisen. Dies kann man\nsich als Rohrsystem von einer Quelle (s) zu einem Ziel (t) vorstellen, wobei jedes Rohr unterschiedlich dick sein\nkann. Ein Fluss weist jeder Kante in dem Graph einen Wert im Intervall von 0 bis zur jeweiligen Kapazit\u00e4t zu. Der\nFluss bestimmt also, wieviel Wasser durch jedes Rohr flie\u00dft. Der Flusswert ist die Summe der Fl\u00fcsse, die aus der\nQuelle ausgehen. Der maximale Fluss eines Graphen ist der Fluss, dessen Flusswert maximal unter allen Fl\u00fcssen ist\nund die Flusserhaltungsbedingung erf\u00fcllt. Diese Bedingung besagt, dass in einen Knoten genauso viel Fluss eingeht\nwie auch aus dem Knoten ausgeht mit Ausnahme der Quelle und des Ziels. In einem Knoten des Rohrsystems kann auch\nnicht mehr Wasser ausstr\u00f6men als hereinstr\u00f6mt. Ein flusserh\u00f6hender Pfad von der Quelle zum Ziel ist ein s-t-Pfad\ndessen Fluss unter Ber\u00fccksichtigung der Flusserhaltungsbedingung erh\u00f6ht werden kann. Ein Fluss ist daher auch\nmaximal, wenn es keinen flusserh\u00fchenden Pfad mehr in dem Graph gibt.\nWichtig ist noch der Begriff des residualen Netzwerks. Zu einem Netzwerk geh\u00f6rt genau ein residuales Netzwerk.\nIn diesem Netzwerk existiert eine Kante zwischen von Knoten a zu Knoten b, wenn die residuale Kapazit\u00e4t zwischen\ndiesen Knoten gr\u00f6ßer als 0 ist. Die residuale Kapazit\u00e4t ist die Summe des Flusses der Kante von b zu a und der\nDifferenz der Kapazit\u00e4t und des Flusses der Kante von a zu b\n(siehe https://wiki.algo.informatik.tu-darmstadt.de/Basic_flow_definitions#Residual_network).\n\nDie letzte Bedingung machen sich der Algorithmus von Ford und Fulkerson wie auch der von Edmonds und Karp zunutze.\n\u00c4hnlich wie der Algorithmus von Ford und Fulkerson sucht auch der Algorithmus von Edmonds und Karp einen\nflusserh\u00f6henden Pfad, bis kein weiterer existiert. Der Algorithmus von Edmonds und Karp findet stets einen Pfad\nmit minimaler Anzahl an Kanten, weshalb konsequent eine Breitensuche zum Finden eines Pfades verwendet wird.\nEntlang eines solchen Pfades wird dann der Fluss um die minimale Differenz der Kapazit\u00e4ten und der Fl\u00fcsse einer\njeden Kante auf diesem Pfad erh\u00f6ht.
+
+summaryGlobal=Wie in der Ausf\u00fchrung des Algorithmus zu sehen war, wurde in jeder Iteration des Algorithmus ein flusserh\00f6hender\nPfad mit minimaler Anzahl an Kanten betrachtet. Dies impliziert, dass die kleinste Anzahl an Kanten auf einem\nflusserh\u00f6henden Pfad nach sp\u00e4testens m Iterationen echt monoton steigt, wobei m die Anzahl der Kanten ist.\nDie kleinste Anzahl an Kanten auf einem Pfad von s nach t kann nicht gr\u00f6\u00dfer als n - 1 sein, wobei n die Anzahl\nder Knoten ist. Damit ist die gesamte Anzahl an durchgef\u00fchrten Iterationen in O(nm). In jeder Iteration wird\nim schlimmsten Fall jede Kante des Graphen einmal betrachtet, um den Fluss entsprechend zu erh\u00f6hen. Damit ist\ndie asymptotitsche Komplexit\u00e4t des Algorithmus von Edmonds und Karp in O(nmm).\n\nDamit hat der Algorithmus einen Vorteil gegeben\u00fcber des Algorithmus von Ford und Fulkerson, dessen Komplexit\u00e4t\nvom maximalen Flusswert abh\u00e4ngt. F\u00fcr gro\u00dfe Fl\u00fcsse eignet sich daher der Algorithmus von Edmonds und Karp besser,\nda dieser lediglich von der Architektur des Graphen abh\u00e4ngt.
+
+generatorDescription=Der Algorithmus von Edmonds und Karp berechnet den maximalen Fluss in einem Netzwerk.\nDabei wird in jeder Iteration der Pfad mit der kleinsten Anzahl an Kanten von der Quelle\nzum Ziel betrachtet.\nDaher wird konsequent eine Breitensuche f\u00fcr das Finden eines flusserh\u00f6henden Pfads\nin jeder Iteration verwendet.\n\nDer Vorteil dieses Algorithmus liegt in der Unabh\u00e4ngigkeit seiner Komplexit\u00e4t von den\nKapazit\u00e4ten der Kanten im Vergleich zum Algorithmus von Ford und Fulkerson. So arbeitet\ndieser Algorithmus effizienter f\u00fcr Netzwerke, die gro\u00dfe Kapazit\u00e4ten beinhalten.
+
+flowAugmentingPathNR=Flusserh\u00f6hender Pfad Nr.
+
+introduction=Einf\u00fchrung
+
+summaryString1=Die Ausf\u00fchrung des Algorithmus von Edmonds und Karp hat das nebenstehende Netzwerk\nmit dem entsprechenden maximalen Fluss ergeben.\nDabei wurden
+
+summaryString2= flusserh\u00f6hende Pfade gefunden.\nDer maximale Flusswert berechnet sich aus der Summe des ausgehenden Flusses aus dem Startknoten\nminus des eingehenden Flusses in den Startknoten oder äquivalent aus der\nSumme des eingehenden Flusses in den Zielknoten minus des ausgehenden Flusses aus dem Zielknoten.\nDer Flusswert des nebenstehenden Netzwerks beträgt
+
+summaryTitle=Zusammenfassung
+
+outline=Fazit
+
+ex1=Die Adjazenzmatrix muss quadratisch sein.
+
+ex2=Die Kapazit\u00e4tsmatrix muss quadratisch sein.
+
+ex3=Die Adjazenz- und Kapazit\u00e4tsmatrix m\u00fcssen die gleichen Dimensionen haben.
+
+ex4=Die Eintr\u00e4ge in der Adjazenzmatrix m\u00fcssen entweder 0 oder 1 sein.
+
+ex5=Die ID des Zielknotens muss gr\u00f6ßer oder gleich 0 und kleiner als
+
+be=sein,
+
+ex6=Die ID des Startknotens muss gr\u00f6ßer oder gleich 0 und kleiner als
+
+ex7=Der Startknoten darf nicht der Zielknoten sein.
+
+ex8=Die Anzahl der Knotenpositionen muss mit der Anzahl der Knoten in der Adjazenzmatrix \u00fcbereinstimmen.
+
+ex9=Jede Knotenposition muss aus einem x-Wert (Erste Spalte) und einem y-Wert (Zweite Spalte) bestehen.
+
+generatorDescription=Der Algorithmus von Edmonds und Karp berechnet den maximalen Fluss in einem Netzwerk.\nDabei wird in jeder Iteration der Pfad mit der kleinsten Anzahl an Kanten von der Quelle\nzum Ziel betrachtet.\nDaher wird konsequent eine Breitensuche f\u00fcr das Finden eines flusserh\u00f6henden Pfads\nin jeder Iteration verwendet.\n\nDer Vorteil dieses Algorithmus liegt in der Unabh\u00e4ngigkeit seiner Komplexit\u00e4t von den\nKapazit\u00e4ten der Kanten im Vergleich zum Algorithmus von Ford und Fulkerson. So arbeitet\ndieser Algorithmus effizienter f\u00fcr Netzwerke, die große Kapazit\u00e4ten beinhalten.

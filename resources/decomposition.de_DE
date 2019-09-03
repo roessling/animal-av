@@ -1,0 +1,57 @@
+noSuchKeyException=Übersetzung fehlt {0}
+
+name=BCNF Zerlegungsalgorithmus
+algoName=Zerlegung eines Schemas in BCNF
+description=Der Zerlegungsalgorithmus(oder auch Dekompositionsalgorithmus genannt) ist ein Algorithmus der ein Relationenschema in Boyce-Codd-Normalform überführt. Das Vorgehen besteht darin, dass überprüft wird, ob die bestehenden Schemas bereits in BCNF sind. Ist dies nicht der Fall, wird die betrachtete Relation in zwei Relationenschemas zerlegt. Das erste Schema besteht dabei aus der Schnittmenge der Attribute der zerlegten Relation und der Attributhülle der BCNF verletzenden funktionalen Abhängigkeit. Die Schlüsselkandidaten müssen für diese Relation dann berechnet werden. Die zweite Relation besteht aus den Attributen der derzeitigen Relation ohne der Attribute der rechten Seite der verletzenden funktionalen Abhängigkeit. Die Schlüsselkandidaten entsprechen hier denen der zerlegten Relation. Sobald die beiden Zerlegungen errechnet wurden werden sie der Menge der Relationen hinzugefügt nachdem die BCNF-verletzende Relation entfernt wurden. Danach werden die Relationen wieder geprüft, ob sie die BCNF Bedingungen einhalten. Dies geschieht solange bis alle Relationen in BCNF sind. \nAnmerkung: Aufgrund der möglichen Implementierungen kann der Zerlegungsalgorithmus zu unterschiedlichen, aber korrekten Ergebnis führen. Beispielsweise lassen sich mehrere Kandidatenschlüssel errechnen. Die anschliessende Auswahl eines Schlüssel kann zu einem anderen Ergebnis führen.Ein anderer Fall ist, dass die funktionalen Abhängigkeiten in unterschiedlicher Reihenfolge verwendet werden.
+
+
+instructions=Starte mit Z = {R} \nSolange es noch ein Ri ∈ Z gibt, das nicht in BCNF ist:\nFinde eine FD (α → β) ∈ F mit \n    - α ∪ β ⊆ Ri \n    - α ∩ β = ∅\n    - α → Ri ∈/ FD⁺\n    - Zerlege Ri in Ri1 := FD⁺ ∩ Ri und Ri2 := Ri − β\n    - Entferne Ri aus Z und füge Ri1 und Ri2 ein, also\n      Z := (Z − {Ri}) ∪ {Ri1} ∪ {Ri2}
+
+symbolTable=\n \nSymbole:\nZ  bezeichnet eine Menge von Relationen\nRi bezeichnet eine Relation mit dem Index i\nFD⁺ bezeichnet die Attributhülle der funktionalen Abhängigkeit FD\nFD (Englisch für functional dependency) bezeichnet eine Funktionale Abhängigkeit\nF bezeichnet eine Menge von FDs
+
+
+introTextFirst=Die Boyce-Codd-Normalform(BCNF oder auch 3.5NF genannt) ist eine nochmals striktere Normalform\nals die dritte Normalform(3NF).Sie wird im Bereich der Datenbank verwendet um Anomalien zu\nvermeiden, die bei der 3NF noch entstehen können. Ein relationales Schema, dass in BCNF ist,\nenthält keine Redundanz basierend auf den funktionalen Abhängigkeiten(FD). Dabei ist eine\nRelation dann in BCNF wenn eine der folgenden zwei Bedingungen für alle funktionalen \nAbhängigkeiten gelten(X und Y sind jeweils Mengen von Attributen):\n- X -> Y ist eine triviale funktionale Abhängigkeit, dh. Y ist Teilmenge von X\n- X ist ein Kandidatenschlüssel des Relationenschemas
+introTextSecond=Der Zerlegungsalgorithmus(oder auch Dekompositionsalgorithmus genannt) ist ein Algorithmus \nder ein Relationenschema in Boyce-Codd-Normalform überführt. Das Vorgehen besteht darin, dass \nüberprüft wird, ob die bestehenden Schemas bereits in BCNF sind. Ist dies nicht der Fall, \nwird die betrachtete Relation in zwei Relationenschemas zerlegt. Das erste Schema besteht \ndabei aus der Schnittmenge der Attribute der zerlegten Relation und der Attributhülle \nder BCNF verletzenden funktionalen Abhängigkeit. Die Schlüsselkandidaten müssen für diese \nRelation dann berechnet werden. Die zweite Relation besteht aus den Attributen der derzeitigen \nRelation ohne der Attribute der rechten Seite der verletzenden funktionalen Abhängigkeit. \nDie Schlüsselkandidaten entsprechen hier denen der zerlegten Relation. Sobald die beiden \nZerlegungen errechnet wurden werden sie der Menge der Relationen hinzugefügt nachdem \ndie BCNF-verletzende Relation entfernt wurden. Danach werden die Relationen wieder geprüft, ob \nsie die BCNF Bedingungen einhalten. Dies geschieht solange bis alle Relationen in BCNF sind. \n \nAnmerkung: Aufgrund der möglichen Implementierungen kann der Zerlegungsalgorithmus zu unterschiedlichen, \naber korrekten Ergebnis führen. Beispielsweise lassen sich mehrere Kandidatenschlüssel errechnen. \nDie anschliessende Auswahl eines Schlüssel kann zu einem anderen Ergebnis führen.Ein anderer \nFall ist, dass die funktionalen Abhängigkeiten in unterschiedlicher Reihenfolge verwendet werden.
+mathHeader=Vorgehensweise
+
+closureHeader=Beispielhafte Berechnung einer Attributhülle
+closureInfo=Die Berechnung einer Attributhülle benötigt eine Menge von Attributen als Eingabe und \nwird iterativ auf einer Menge von funktionalen Abhängigkeiten berechnet. Für diese Beispiel wird die \n Attributhülle folgender Attribute berechnet: 
+closureOf=Attributhülle von
+funcDependencies=Funktionale Abhängigkeiten
+
+
+currentRelations=Derzeitige Relationen
+decomposedRelation=Zerlegte Relation
+wordKey=Schlüssel
+attributes=Attribute
+
+initialization=Nun beginnt der eigentliche Algorithmus. Es wird solange über die Relationen iteriert bis \nalle Relationen in BCNF-Form sind. Ist dies bei einer Relation nicht der Fall, wird\ndie entsprechende Relation in zwei Relationen zerlegt. Die Relation wird aus der Menge der Relationen\nentfernt und die beiden Zerlegungen werden hinzugefügt. Danach beginnt das Iterieren und prüfen der\nRelationen wieder von vorne.
+relationIsInBCNF=Diese Relation wurde bereits betrachtet und ist in BCNF-Form.
+attributesFirstSplit=Die Attribute der ersten Zerlegung entsprechen der Attributhülle der derzeitigen \nfunktionalen Abhängigkeit. Mithilfe dieser Menge und der funktionalen Abhängigkeiten müssen die \nSchlüsselkandidaten für die neue Relation errechnet werden.
+attributesSecondSplit=Die zweite Zerlegung wird gebildet, indem die Kandidatenschlüssel denen der derzeitigen \nRelation entsprechen. Die Menge der Attribute entspricht dabei denen der zerlegten \nRelation abzüglich der Attribute aus der Attributhülle der derzeitigen funktionalen \nAbhängigkeit(abgesehen von den Attributen der Determinate).
+finalRelationsColon=Die obigen Relationen sind final und alle von ihnen sind in Boyce-Codd Normalform. \nDie Startrelation bestand hierbei aus allen verwendeten Attributen und wurde solange zerlegt \nbis keine Relation die BCNF verletzt. Dadurch können jetzt weniger Anomalien beim Arbeiten mit dem neuen relationalen Schema entstehen.
+
+
+redIsInNotBcnf=Die rot markierte funktionale Abhängigkeit ist nicht in BCNF-Form, da sie \nweder trivial ist noch die Determinate ein Kandidatenschlüssel ist. \nDaher wird die markierte Relation zerlegt.
+redIsTrivial=Die rot markierte funktionale Abhängigkeit ist trivial(dh. die \nDeterminante ist Teilmenge der rechten Seite) und ist somit bereits in BCNF-Form.
+markedFdDeterminant=Die Determinante der markierten funktionalen Abhängigkeit ist ein\nKandidatenschlüssel und ist somit bereits in BCNF-Form.
+markedNotSubsetRelation=Die markierte funktionale Abhängigkeit gehört nicht \nzur Teilmenge der Attribute der derzeitigen Relation. \nDaher wird sie übersprungen.
+
+bcnfQPrompt=Welche Bedingungen müssen gelten damit eine Relation in BCNF ist?
+closureQPrompt=Welche dieser Attributmengen ist die Attributhülle von
+r1QPrompt=Geben sie die Menge der Attribute an, die sich in %s1 befinden werden für die Relation: %s (Diese müssen kommasepariert, ohne Leerzeichen und in lexikographischer Reihenfolge eingegeben werden. Beispiel: A,B,C,D)
+r2QPrompt=Geben sie die Menge der Attribute an, die sich in %s2 befinden werden für die Relation: %s (Diese müssen kommasepariert, ohne Leerzeichen und in lexikographischer Reihenfolge eingegeben werden. Beispiel: A,B,C,D)
+rightAnswer=Das ist die richtige Antwort.
+wrongAnswer=Das ist die falsche Antwort.
+bcnfAnswer1=Die funktionalen Abhängigkeiten müssen trivial sein.
+bcnfAnswer2=Die Attributhüllen der funktionalen Abhängigkeiten entsprechen den Attributen der Relation.
+bcnfAnswer3=Die Determinanten müssen Kandidatenschlüssel der Relation sein.
+bcnfAnswer4=Die Determinaten der funktionalen Abhängigkeiten bestehen aus mindestens 2 Attributen.
+bcnfFeedback1=Richtig, Trivialität ist eine der möglichen Bedingungen.
+bcnfFeedback3=Richtig, die Bedingung mit der Kandidatenschlüsseln ist die wichtigste Bedingung für die BCNF.
+finalTitle=Die finalen Relationen sehen wie folgt aus:
+
+closureAgain=Da die Attributhülle erweitert wurde beim Iterieren müssen alle funktionalen\nAbhängigkeiten nochmal überprüft werden, ob sie die Attributhülle erweitern.
+closureIsSubset=Die rot markierte funktionale Abhängigkeit wird betrachtet. Da die Determinante Teilmenge der\nbisherigen Attributhülle ist, wird die rechte Seite hinzugefügt.
+closureIsNotSubset=Die rot markierte funktionale Abhängigkeit wird betrachtet. Da die Determinante nicht Teilmenge der \nbisherigen Attributhülle ist wird diese funktionale Abhängigkeit übersprungen.
+closureTerminates=Da keine weiteren Attribute zur Attributhülle hinzugefügt wurden, terminiert\nder Algorithmus zur Berechnung der Attributhülle.

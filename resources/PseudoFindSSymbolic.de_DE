@@ -1,0 +1,38 @@
+algorithmName=Find-S (Symbolic) [DE]
+generatorName=Find-S (Symbolic) [DE]
+dataset=Trainingsdaten:
+cs=Koordinatensystem:
+hypo=Hypothesen:
+explanation=Erklärungen:
+start=Starte mit der spezifischsten Hypothese h = <false, false, ..., false>, die kein Beispiel abdeckt. false ist hierbei die Konjunktion aller Werte für jedes Attribut und steht für:
+foreach=Jedes Beispiel muss nun auf die Klassifizierung geprüft werden.
+negative=Das gefundene Beispiel ist negativ und wird nicht von der Hypothese abgedeckt. Es kann daher ignoriert werden.
+noConcept=Ein negatives Beispiel wurde abgedeckt. Ein Target Concept und eine gültige Hypothese existieren somit nicht.\nDer Algorithmus terminiert.
+positive=Ein positives Beispiel wurde gefunden.\nPrüfe für jede Bedingung der Hypothese, ob diese auch Bestandteil des Beispiels ist.
+coveredEx=Das Beispiel ist positiv und ist bereits von der Hypothese abgedeckt. Es findet daher keine Verallgemeinerung statt.
+negative=Ein negatives Beispiel wurde gefunden, das nicht von der Hypothese abgedeckt wird. Es kann also ignoriert werden.
+removeCon1=Entferne alle Bedingungen aus der aktuellen Hypothese außer
+removeCon2=, da diese das Beispiel abdeckt.
+removeCon3=Entferne
+removeCon4=, da es das Beispiel nicht abdeckt.
+newHypo=Die neue Hypothese lautet:
+attVal=Der Attributwert 
+covered=deckt das Beispiel ab und bleibt daher in der Hypothese.
+terminates=Der Algorithmus terminiert, da alle Beispiele durchlaufen wurden und alle positiven abgedeckt sind.\nDie endgültige Hypothese lautet: {0}
+description=Find-S findet die spezifischste Hypothese, die gerade noch alle positiven Beispiele abdeckt. Der Algorithmus startet mit der spezifischsten Hypothese h = <false, false, ..., false>, die keine Beispiele abdeckt.\nDie einzelnen Beispiele des Datensatzes werden in der gegebenen Reihenfolge bearbeitet. Falls ein positives Beispiel gefunden wird, das von der Hypothese noch nicht abgedeckt wird, findet eine Generalisierung von h statt.\nBei symbolischen Attributen werden die Belegungen verallgemeinert, sodass der eben gefundene Wert nun von der Hypothese abgedeckt wird. Sollte das positive Beispiel bereits von h abgedeckt sein, werden keine Änderungen vorgenommen.\nFalls ein negativ klassifiziertes Beispiel gesichtet wird, ignoriert der Algorithmus diese und führt keine zusätzlichen Änderungen durch.\nFalls für einen Datensatz das Target Concept existiert und dieses mit einer Hypothese beschrieben werden kann, liefert Find-S ein vollständiges und konsistentes Ergebnis.
+
+introQuestion=Welche Aussage ist korrekt? 
+introQuestionAnswer1=Find-S deckt möglichst viele positive Beispiele ab
+introQuestionFeedback1=Falsch! Find-S deckt alle positiven Beispiele ab
+introQuestionAnswer2=Find-S deckt alle positiven Beispiele ab
+introQuestionFeedback2=Richtig!
+introQuestionAnswer3=Find-S deckt möglichst wenig negative Beispiele ab
+introQuestionFeedback3=Falsch! Find-S deckt kein negatives Beispiel ab
+
+outroQuestion=Wieviele Generalisierungen führt der Algorithmus maximal durch?
+outroQuestionAnswer1=min( |Attribute| + 1, |positive Beispiele| )
+outroQuestionFeedback1=Richtig!
+outroQuestionAnswer2=min( |Attribute| + 1, |negative Beispiele| )
+outroQuestionFeedback2=Falsch! Änderungen finden nur bei positiven Beispielen statt
+outroQuestionAnswer3=min( |Attribute| + 1, |Beispiele| )
+outroQuestionFeedback3=Falsch! Änderungen finden nur bei positiven Beispielen statt

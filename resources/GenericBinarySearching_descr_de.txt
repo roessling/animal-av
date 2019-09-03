@@ -1,0 +1,22 @@
+Die BinŠre Suche ist ein effizientes Verfahren zum Finden eines
+gegebenen Elements in einem sortierten Feld.
+
+In jeder Iteration wird nur ein Teil des Feldes betrachtet (anfangs
+das gesamte Feld). Die Feldgrenzen werden in jeder Iteration angepasst,
+wobei das Feld immer halbiert wird. Wurde das gesuchte Element gefunden,
+so wird seine Position zurŸckgegeben, sonst -1 als 'Fehlermarkierung'.
+
+Der Algorithmus in Worten:
+
+Teste, ob das Feld existiert.
+Setze die Grenze des aktuellen Teilfelds: l = 0, r = FeldlŠnge - 1.
+Berechne die Mitte mid = (l + r) / 2.
+Solange r > l und array[mid] != value:
+  Falls value < array[mid]:
+    Setze r = mid - 1.
+  Sonst
+    Setze l = mid + 1.
+  Setze mid = (l + r) / 2.
+Falls array[mid] = value, gib mid zurŸck, sonst -1.
+
+In der Animation wird das aktuelle Teilfeld farbig hervorgehoben.

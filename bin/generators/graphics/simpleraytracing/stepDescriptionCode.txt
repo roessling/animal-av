@@ -1,0 +1,26 @@
+{pixiterate
+The algorithm now iterates over all pixels.
+}
+{createrays
+A ray is created from the origin of the camera through pixel i.
+}
+{findintersections
+The algorithm iterates now over all objects in the space and calculates all intersections with it. 
+The closest intersection point to the camera will be selected. 
+}
+{color1
+The pixel i will be colored with the same color of the intersecting object.
+}
+{shadow
+A line is created from the origin of the intersection point to the light source.
+}
+{shadowcontinue
+If there is an intersection with this line and any object in the scene,
+the pixel will be darkened, because the object is located in the shadow of another or of itself.
+}
+{darken
+The color will be darkened.
+}
+{updatepixels
+The color of the current Pixel is updated.
+}

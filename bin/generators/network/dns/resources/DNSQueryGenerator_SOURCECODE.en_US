@@ -1,0 +1,17 @@
+1. A client sends its request to the local name server
+
+2a. If the local name server has a cached answer it return the answer to the client
+	The request is fulfilled and the procedure terminates
+2b. The local server send a request for the host name to a root name server
+
+3a. The server answers with the IP address if the host name is known
+3b. The root name server responds with the address of the name server responsible for the known part of the host name
+
+4a. Should the local server receive an IP address it forwards the answer to the client
+	The request is fulfilled and the procedure terminates
+4b. If the response is the address of another name server a new query is sent
+
+5a. If known, the name server responds with the host name
+5b. The server returns the address of the next name server
+
+6. Go to step 4.

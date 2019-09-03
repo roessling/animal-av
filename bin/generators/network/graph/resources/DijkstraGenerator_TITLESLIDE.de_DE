@@ -1,0 +1,24 @@
+[block]
+	Der Algorithmus von Dijkstra bestimmt die kürzesten Wege in einem gewichteten 
+	Graphen ohne negative Kantengewichte. Die Pfade werden dabei ausgehend von[br]
+	einem beliebigen aber festen Startknoten bestimmt.
+[/block]
+[block]
+	[h2]Der Algorithmus[/h2]
+	Das Verfahren gehört zur Klasse der Greedy–Algorithmen und fügt, ausgehend 
+	vom Startknoten, in jedem Schritt den Knoten mit der kürzesten Gesamtdistanz[br]
+	einer Liste mit bereits besuchten Knoten hinzu. Ausgehend von diesem neuen 
+	Knoten können nun die Gesamtentfernungen der Nachbarn des hinzugefügten Knotens[br]
+	berechnet und eventuell existierende kürzere Entfernungen aktualisiert werden.[br]
+	Die Laufzeit des Algorithmus wird hauptsächlich durch die Implementierung der Suche
+	nach dem nächsten Knoten mit kürzester Distanz bestimmt und liegt bei der[br]
+	Nutzung eines einfachen Arrays bei O(|V|^2). Mit dem Einsatz eines Fibonacci-Heap, 
+	einer optimierten Datenstruktur zur Abbildung einer Prioritätswarteschlange, [br]
+	kann die Komplexität auf O(|E| x log(|V|)) reduziert werden.[br]
+	Der Algorithmus von Dijkstra wird in Link-State Routing Protokollen wie Open Shortest 
+	Path First eingesetzt, bei denen jeder Knoten in einem Netzwerk die Route zum[br]
+	jeweiligen Ziel aufgrund der vollständig bekannten Netztopologie berechnet. Ebenfalls 
+	weite Verbreitung hat das Optimized Link State Routing Protokoll, das als[br]
+	Routing–Protokoll für drahtlose ad–hoc Netze entwickelt wurde und ebenfalls auf dem 
+	Algorithmus von Dijkstra basiert.
+[/block]

@@ -1,0 +1,8 @@
+Probably the easiest conceptual sorting algorithm
+sorting by selecting minima.
+
+Verbal description:
+1. Set i = 0
+2. Search from position i for the smallest array element
+3. Swap this smallest element with position i
+4. Increment i and continue with step 2 until i == n

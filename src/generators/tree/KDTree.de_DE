@@ -1,0 +1,78 @@
+### exception handling ###
+
+	noSuchKeyException = Es gibt keinen Wert zu dem Schlüssel {0}
+	iconNotFound = Schlüssel "{0}" wurde nicht gefunden
+
+
+### introduction ###
+
+	TITLE = 2D-Baum
+	
+	INTRODUCTION_HTML = Ein KD-Baum ist ein Suchbaum zur Speicherung von Punkten aus dem R^k-Raum. \n\nEs gibt zwei unterschiedliche Versionen von kD-B&auml;umen: \n     - Homogene kD-B&auml;ume speichern in jedem Knoten einen Datensatz. \n     - Inhomogene kD-B&auml;ume speichern Datens&auml;tze nur in Bl&auml;ttern. \n\nIn unserer Visualisierung wird ein inhomogener 2D-Baum erstellt.\n\nIn jedem rekursiven Schritt wird die Punktemenge zun&auml;chst nach einer Achse sortiert und anschlie&szlig;end in zwei etwa gleich gro&szlig;e Punktemengen geteilt. Diese werden durch eine Hyperebene separiert, die senkrecht zu der Achse verl&auml;uft, nach der die Punkte sortiert wurden. Der Koordinatenwert der Hyperebene wird aus dem Mittelwert der beiden benachbarten Punkte berechnet, zwischen denen die Hyperebene verlaufen soll. Dieser Koordinatenwert wird als Schl&uuml;ssel in den neu gebildeten Knoten gespeichert. \n\nIn unserem Fall beginnen wir mit der x-Achse. Alle Punkte, die in den linken Teilbaum einsortiert werden, haben einen kleineren x-Wert als die Hyperebene, alle Punkte, die in den rechten Teilbaum einsortiert werden, haben einen gr&ouml;&szlig;eren x-Wert. \n\nDanach wird die Achse, aus der die Hyperebene bestimmt wird, zyklisch getauscht. Auf den somit neu erstellten Ebenen wird der Algorithmus rekursiv aufgerufen. \n\nAls Abbruchkriterium gibt es zwei m&ouml;gliche Kriterien: In unserer Visualisierung terminiert der Algorithmus, wenn sich nur noch ein einziger Punkt in der aktuell betrachteten Ebene befindet. Alternativ dazu kann vorher auch eine maximale Rekursionstiefe angegeben werden. Alle verbleibenden Punkte werden dann dem entsprechend in einem Blatt gespeichert. \n	
+	
+	INTRODUCTION_LENGTH = 25
+	INTRODUCTION_0  = Ein KD-Baum ist ein Suchbaum zur Speicherung von Punkten aus dem R^k-Raum. 
+	INTRODUCTION_1  = 
+	INTRODUCTION_2  = Es gibt zwei unterschiedliche Versionen von KD-Bäumen: 
+	INTRODUCTION_3  = \u0020\u0020\u0020\u0020\u0020- Homogene KD-Bäume speichern in jedem Knoten einen Datensatz. 
+	INTRODUCTION_4  = \u0020\u0020\u0020\u0020\u0020- Inhomogene KD-Bäume speichern Datensätze nur in Blättern.
+	INTRODUCTION_5  = 
+	INTRODUCTION_6  = In unserer Visualisierung wird ein inhomogener 2D-Baum erstellt. 
+	INTRODUCTION_7  = 
+	INTRODUCTION_8  = In jedem rekursiven Schritt werden die Punkte in zwei Punktemengen geteilt und durch 
+	INTRODUCTION_9  = eine Hyperebene geschnitten, die senkrecht zur Achse verläuft, nach der die Punkte 
+	INTRODUCTION_10 = sortiert wurden. Die beiden Punktemengen sollen dabei etwa gleich groß sein. Der 
+	INTRODUCTION_11 = Koordinatenwert der Hyperebene wird aus dem Mittelwert der beiden benachbarten Punkte 
+	INTRODUCTION_12 = berechnet, zwischen denen die Hyperebene verlaufen soll. Dieser Koordinatenwert wird als 
+	INTRODUCTION_13 = Schlüssel in den neu gebildeten Knoten gespeichert. 
+	INTRODUCTION_14 = 
+	INTRODUCTION_15 = In unserem Fall beginnen wir mit der x-Achse. Alle Punkte, die in den linken Teilbaum 
+	INTRODUCTION_16 = einsortiert werden, haben einen kleineren x-Wert als die Hyperebene, alle Punkte, die 
+	INTRODUCTION_17 = in den rechten Teilbaum einsortiert werden, haben einen größeren x-Wert. 
+	INTRODUCTION_18 = 
+	INTRODUCTION_19 = Danach wird die Achse, aus der die Hyperebene bestimmt wird, zyklisch getauscht. Auf 
+	INTRODUCTION_20 = den somit neu erstellten Ebenen wird der Algorithmus rekursiv aufgerufen. 
+	INTRODUCTION_21 = Als Abbruchkriterium gibt es zwei mögliche Kriterien: In unserer Visualisierung 
+	INTRODUCTION_22 = terminiert der Algorithmus, wenn sich nur noch ein einziger Punkt in der aktuell 
+	INTRODUCTION_23 = betrachteten Ebene befindet. Alternativ dazu kann vorher auch eine maximale 
+	INTRODUCTION_24 = Rekursionstiefe angegeben werden. Alle verbleibenden Punkte werden dann dem 
+	INTRODUCTION_25 = entsprechend in einem Blatt gespeichert.
+	
+	
+### conclusion ###
+
+	CONCLUSION_LENGTH = 5
+	CONCLUSION_0 = Der Algorithmus hat terminiert.
+	CONCLUSION_1 = Die Punktemenge ist vollständig aufgeteilt.
+	CONCLUSION_2 = Jeder Punkt ist nun alleine in einer durch Hyperebenen geschnittene Fläche.
+	CONCLUSION_3 = Jeder Knoten des Baums gibt die Position der jeweiligen Hyperebene an.
+	CONCLUSION_4 = Jedes Blatt des Baums enthält genau einen Punkt.
+
+
+### source code ###
+
+	SOURCE_CODE_INTRO = IF Punkte-Array enthält genau ein Element\n     Erstelle ein Blatt mit dem dazugehörigen Punkt\nELSE\n     Sortiere Punkte-Array nach der aktuell angegebenen Achse\n     Teile das Punkte-Array in der Mitte\n     Erstelle neuen Knoten mit Median\n     Erstelle Unterräume durch Schnitt senkrecht zur gegebenen Achse entlang des Medians\n     Rufe KD-Baum rekursiv auf die Unteräume auf\n
+	
+	SOURCE_CODE_LENGTH = 8
+	SOURCE_CODE_0 = IF Punkte-Array enthält genau ein Element
+	SOURCE_CODE_1 = \u0020\u0020\u0020\u0020\u0020Erstelle ein Blatt mit dem dazugehörigen Punkt
+	SOURCE_CODE_2 = ELSE
+	SOURCE_CODE_3 = \u0020\u0020\u0020\u0020\u0020Sortiere Punkte-Array nach der aktuell angegebenen Achse
+	SOURCE_CODE_4 = \u0020\u0020\u0020\u0020\u0020Teile das Punkte-Array in der Mitte
+	SOURCE_CODE_5 = \u0020\u0020\u0020\u0020\u0020Erstelle neuen Knoten mit Median
+	SOURCE_CODE_6 = \u0020\u0020\u0020\u0020\u0020Erstelle Unterräume durch Schnitt senkrecht zur gegebenen Achse entlang des Medians
+	SOURCE_CODE_7 = \u0020\u0020\u0020\u0020\u0020Rufe KD-Tree rekursiv auf die Unteräume auf
+	
+	
+### labels ###    
+
+	LABEL_INTRO = Einleitung
+	LABEL_INIT = Start des KD-Baum-Algorithmus
+	LABEL_CUT = Aufteilen des aktuellen Raums in zwei Unterräume
+	LABEL_CONCLUSION = Zusammenfassung
+
+### various ###
+
+	INFO_DOUBLES = \u0020Punkt(e) wurden entfernt, da sie identisch waren
+	INFO_OUTOFRANGE = Punkte außerhalb der Zeichenfläche wurden auf das Maximum der Zeichenfläche gesetzt
+

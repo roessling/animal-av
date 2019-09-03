@@ -1,0 +1,11 @@
+Example: A band wants to make a new album with a great title song on it. But currently, none of the band members has a clue
+how this title song should be. The guitar player has an idea: He gathers some information about the previous title songs and whether
+they became world hits or not (in the 'main table'). One entry contains information about the music style (STYLE), the text creativity
+(CREATIVITY) and whether a violin had a key part in it (VIOLIN). And finally, the class value (on the right, 'yes' or 'no') 
+describes whether the song became a hit or not. 
+ID3 takes these examples as an input to come up with a general concept about which songs become hits.
+
+Now, the band can come up with ideas about how to design their new song. The tree provides predictions 
+telling whether a song will become a world hit. And this is how to determine a prediction:
+Starting at the root node, follow the edges that correspond to the attribute values of the song; the 
+leaf that you'll reach tells the expectation (but, of course, only based on the previously seen examples).

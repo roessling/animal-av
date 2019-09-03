@@ -1,0 +1,7 @@
+Die Binäre Exponentiation ist ein Algorithmus zum effizienteren Potenzieren.
+
+Um zum Beispiel z = x^4 zu berechnen, kann man entweder z = x * x * x * x ausrechnen 
+(drei Multiplikationen) oder y = x * x, z = y * y (zwei Multiplikationen), also z = (x^2)^2.
+
+Ebenso können auch andere ganzzahlige Potenzen durch fortgesetztes Quadrieren
+und gelegentliches Multiplizieren effizient berechnet werden.

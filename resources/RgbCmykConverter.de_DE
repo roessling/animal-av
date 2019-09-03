@@ -1,0 +1,60 @@
+noSuchKeyException=Es gibt keine Ressource f\u00fcr Eintrag {0}
+
+iconNotFound=Icon \u201d{0}\u201d not found
+
+## Misc ###
+name = RGB / CMYK Konverter
+nameAlgorithm = RGB / CMYK Konvertierung
+
+headerRgbToCmyk = CMYK zu RGB Konvertierung
+headerCmykToRgb = RGB zu CMYK Konvertierung
+givenColor = Die gegebene Farbe, die in das andere Farbmodell umgerechnet wird
+descriptionHeader = Erkl\u00e4rung:
+RGB-Values = RGB-Werte: 
+CMYK-Values = CMYK-Werte (in %):
+description = RGB-Farbraum:\n	Am h\u00e4ufigsten genutze Form, um eine Farbe zu beschreiben. \n	Die Farbe wird durch den Rot-, Gr\u00fcn-, und Blau-Anteil definiert, \n	die Werte hierf\u00fcr liegen zwischen 0 und 255. \n \nCMYK-Farbraum:\n	Fast alle Drucker nutzen diese Form, dabei werden die Farben cyan (c), \n	magenta (m), gelb (y) & schwarz (k) gemischt. Die Werte der einzelnen\n	Farben liegen jeweils zwischen 0% und 100%. \n \nKonvertierung:\n	Die Konvertierung zwischen den Farbr\u00e4umen ist nicht eindeutig, \n	die Farbr\u00e4ume sind unterschiedlich gro\u00df. Ist die entsprechende Farbe \n	des RGB-Farbraums z.B. nicht im CMYK-Farbraum vorhanden, wird in \n	die n\u00e4chst \u00e4hnliche Farbe konvertiert.
+
+explanation1 = Zun\u00e4chst werden die RGB Farbwerte in Form eines
+explanation2 = Arrays \u00fcbergeben
+explanation3 = Alle drei Werte werden dann zun\u00e4chst durch 255 geteilt
+explanation4 = und in r, g & b zwischengespeichert
+explanation5 = Das Array 'cmyk' wird mit einer K\u00e4nge von vier erstellt,
+explanation6 = dort werden die berechneten Werte des CMYK-Farbraums
+explanation7 = gespeichert
+explanation8 = Erst wird der schwarze Wert (k) berechnet,
+explanation9 = da dieser f\u00fcr die anderen Berechnungen ben\u00f6tigt wird
+explanation10 = Dann werden cyan (c), magenta (m) und gelb (y)
+explanation11 = berechnet und wie schwarz im Array gespeichert
+explanation12 = Dann kann das Array cmyk mit den korrekten
+explanation13 = Werten zur\u00fcckgegeben werden
+
+explanation14 = Zun\u00e4chst werden die CMYK Farbwerte in Form
+explanation15 = eines Arrays \u00fcbergeben
+explanation16 = Das Array rgb wird mit einer L\u00e4nge von drei erstellt,
+explanation17 = dort werden die berechneten Werte des RGB-Farbraums
+explanation18 = gespeichert
+explanation19 = Die Werte rot (r), gr\u00fcn (g), und blau (b)
+explanation20 = werden berechnet und im Array gespeichert
+explanation21 = Dann kann das Array rgb mit den korrekten
+explanation22 = Werten zur\u00fcckgegeben werden
+
+summary1 = Umrechnung von: RGB (%d, %d, %d)
+summary2 = Die Umrechnung hat ergeben, dass sich die
+summary3 = (fast) gleiche Farbe im CMYK-Farbraum wie
+summary4 = folgt zusammensetzt:
+summary5 = Cyan-Anteil:
+summary6 = Magenta-Anteil:
+summary7 = Gelb-Anteil:
+summary8 = Schwarz-Anteil:
+summary9 = Umrechnung von: CMYK (%d%c, %d%c, %d%c, %d%c)
+summary10 = (fast) gleiche Farbe im RGB-Farbraum wie
+summary11 = Rot-Anteil:
+summary12 = Gr\u00fcn-Anteil:
+summary13 = Blau-Anteil:
+
+error1 = Bei Konvertierungsrichtung cmyk -> rgb m\u00fcssen alle Werte in cmyk zwischen 0 & 100 liegen
+error2 = Bei Konvertierungsrichtung rgb-> cmyk m\u00fcssen alle Werte in rgb zwischen 0 & 255 liegen
+
+introduction = Einleitung
+startAlgorithm = Start der Konvertierung
+end = Zusammenfassung | Ergebnis

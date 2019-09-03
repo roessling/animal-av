@@ -1,0 +1,15 @@
+Bubble Sort ist ein elementares Suchverfahren, das in
+vielen Informatikveranstaltungen gelehrt wird.
+
+Die Grundidee des Verfahrens ist es, benachbarte Elemente 
+so zu vertauschen, dass sie danach sortiert sind.
+
+Der Algorithmus in Worten:
+
+1. Setze i=n
+2. Setze j=1 und eine boole'sche Variable swapPerformed auf false
+3. Vertausche in einer Schleife die Elemente a[j-1] und a[j],
+  falls a[j-1] > a[j] ist und setze swapPerformed auf true
+4. Zähle j um eins hoch, bis j==i gilt
+5. Zähle i um eins herunter. Gilt i==-1 oder ist swapPerformed false,
+  so beende das Programm; andernfalls fahre fort bei Schritt 2

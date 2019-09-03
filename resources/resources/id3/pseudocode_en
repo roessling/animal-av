@@ -1,0 +1,18 @@
+procedure ID3
+
+if ( all examples belong to one class c )
+newLeaf = construct new leaf;
+label newLeaf with c;
+return newLeaf as the result tree;
+
+bestFeature = choose most informative feature with information measure;
+
+newNode = construct new node;
+label newNode with the feature's name;
+
+for ( each value of the bestFeature )
+call procedure ID3 for all examples with this value for bestFeature;
+
+newTree = construct a tree by attaching all constructed child trees to newNode;
+return newTree;
+ 

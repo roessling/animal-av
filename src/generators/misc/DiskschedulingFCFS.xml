@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<PropertiesTreeModel xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="PropertiesTreeModel.xsd">
+	<Folder name="Root">
+		<Primitive type="intArray">
+			<name>queue</name>
+			<value><intArray>98, 183, 37, 122, 14, 124, 65, 67</intArray></value>
+			<description>queue containing the requests (values from 0-199 are vaild)</description>
+		</Primitive>
+		<Primitive type="int">
+			<name>start</name>
+			<value><int>53</int></value>
+			<description>position where the head starts (values from 0-199 are vaild)</description>
+		</Primitive>
+	</Folder>
+</PropertiesTreeModel>

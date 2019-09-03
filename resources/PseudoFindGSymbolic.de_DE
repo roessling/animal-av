@@ -1,0 +1,35 @@
+algorithmName=Find-G (Symbolic) [DE]
+generatorName=Find-G (Symbolic) [DE]
+dataset=Trainingsdaten:
+cs=Koordinatensystem:
+hypo=Hypothesen:
+explanation=Erklärungen:
+start=Starte mit der generellsten Hypothese h = <?, ?, ..., ?>, die alle Beispiele abdeckt. ? ist hierbei die Disjunktion aller Werte für jedes Attribut und steht für:
+noConcept=Ein positives Beispiel wurde nicht abgedeckt. Ein Target Concept und eine gültige Hypothese existieren somit nicht.\nDer Algorithmus terminiert.
+foreach=Jedes Beispiel muss nun auf die Klassifizierung geprüft werden.
+negative=Ein negatives Beispiel wurde gefunden. Prüfe für eine beliebige Bedingung, ob diese negiert werden kann,\ndamit das aktuell betrachtete Beispiel nicht mehr abgedeckt und alle positiven, vorherigen abgedeckt werden.
+positive=Ein positives Beispiel wurde gefunden, das von der Hypothese abgedeckt wird. Es kann also ignoriert werden.
+negate1=Die Negation zum Wert
+negate2=führt dazu, dass das negative Beispiel nicht mehr abgedeckt wird und alle vorherigen positiven abgedeckt werden.
+newHypo=Die neue Hypothese lautet:
+noNegationPossible1=Es gibt keine Negation zu diesem Attribut, die alle vorherigen positiven abdeckt.
+noNegationPossible2=Es kann keine Spezifizierung gefunden werden, um dieses Beispiel auszuschließen.\nDadurch wird ein negatives Beispiel abgedeckt. Es existiert also kein Target Concept.
+notCovered=Ein negatives Beispiel wurde gefunden, das nicht abgedeckt wird. Es findet also keine Spezifizierung statt.
+terminates=Der Algorithmus terminiert, da alle Beispiele durchlaufen wurden und alle positiven abgedeckt sind.\nDie endgültige Hypothese lautet: {0}
+description=Find-G ist das Gegenstück zu Find-S und findet die generellste Hypothese, die gerade noch kein negatives Beispiel abdeckt. Der Algorithmus startet mit der generellsten Hypothese h = <?,?,...,?>\nund deckt somit zu Beginn alle Beispiele ab. Falls ein negatives Beispiel durchlaufen wird, das von der Hypothese abgedeckt wird, muss diese spezifiziert werden, um diese Instanz nicht mehr abzudecken.\nIm Falle von symbolischen Attributen wird für eine beliebige Bedingung des Beispiels geprüft, ob diese Bestandteil von h ist. Falls nicht, wird getestet, ob diese Bedingung mit einer anderen Wertebelegung\nin h negiert werden kann, sodass alle positiven Beispiele, die zuvor durchlaufen wurden, weiterhin abgedeckt sind. Falls dies nicht möglich ist, wird eine andere beliebige Bedingung gesucht. Sollte ein\nnegatives Beispiel nicht von der Hypothese abgedeckt werden, werden keine Änderungen vorgenommen. Positive Beispiele werden beim Durchlauf ignoriert. Ein entscheidender Nachteil in diesem Verfahren ist die\nVorgehensweise beim Spezifizieren. Hierbei wird ein beliebiges Attribut gewählt, das zum Ausschluss eines negativen Beispiels führt. Es kann jedoch auch weitere Attribute geben, die für diesen Schritt geeignet wären.\nEine falsche Wahl des Attributes kann dazu führen, dass das Target Concept nicht gefunden werden kann, obwohl eins existiert. Abhilfe für dieses Problem schafft der erweiterte Find-G-Set Algorithmus, der alle\nmöglichen Attribute betrachtet und die optimalste Lösung findet.
+
+introQuestion=Welche Aussage ist korrekt? 
+introQuestionAnswer1=Find-G deckt möglichst viele positive Beispiele ab.
+introQuestionFeedback1=Falsch! Find-G deckt alle positiven Beispiele ab.
+introQuestionAnswer2=Find-G deckt alle positiven Beispiele ab.
+introQuestionFeedback2=Richtig!
+introQuestionAnswer3=Find-G deckt möglichst wenig negative Beispiele ab.
+introQuestionFeedback3=Falsch! Find-G deckt kein negatives Beispiel ab.
+
+outroQuestion=Wieviele Spezifizierungen führt der Algorithmus maximal durch?
+outroQuestionAnswer1=min( |Attribute| + 1, |negative Beispiele| )
+outroQuestionFeedback1=Richtig!
+outroQuestionAnswer2=min( |Attribute| + 1, |positive Beispiele| )
+outroQuestionFeedback2=Falsch! Änderungen finden nur bei negativen Beispielen statt.
+outroQuestionAnswer3=min( |Attribute| + 1, |Beispiele| )
+outroQuestionFeedback3=Falsch! Änderungen finden nur bei negativen Beispielen statt.

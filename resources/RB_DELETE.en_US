@@ -1,0 +1,435 @@
+noSuchKeyException=There is no resource for the key {0}
+iconNotFound=Icon "{0}" not found
+
+noTextInput=No text was entered.
+noPatternInput=No pattern was entered.
+label_Text=Text:
+label_Pattern=Pattern:
+
+algorithmName=Red-Black Trees - Delete
+
+
+----- CASE TEXTS -----
+
+generalInformation=General information
+specificInformation=Specific information
+allgemeineInformationen=Here general information will be displayed
+spezifischeInformationen=Here specific information will be displayed
+
+----- TABLE OF CONTENTS -----
+
+tableOfContentsStart=Start
+tableOfContentsDelete=Delete Node number {0}
+tableOfContentsFinished=All nodes deleted
+tableOfContentsFinal=Conclusion
+
+
+----- DESCRIPTION -----
+
+
+descriptionLine1=Red-Black Trees are an extended version of binary search trees. A binary search tree with height h yields the complexity of O(h) for all basic operations like Search, Minimum, Maximum, Insert, Delete.
+
+descriptionLine2=Obiosly a tree with a smaller height yields faster operations than a tree with a bigger height. In the worst case all operations are in O(n), where n is the number of nodes, which is equal to a LinkedList. To avoid this worst case a red-black tree balances the binary tree and a complexity of O(log n) is provided
+
+descriptionLine3=Red black trees add a extra field for every node, which saves the color of the node. The color is red or black. The colors of the nodes on paths from a node to a descendant leave are restricted, so a simple path from a node has length at most twice than every other path to a descendent leaf. This balances the tree.
+
+descriptionLine4=Every node has the properties color, value, left child, right child and parent. Does a child or parent not exist the fields of the node point to black nodes with the value NULL. Thus every leaf of the tree is a black NULL node and every key-bearing node is an internal node. The parent of the root is likewise pointing to a black NULL node. These black NULL nodes are going to be represented as a single black node T.null.
+
+
+----- PROPERTIES OF RB TREES -----
+
+propertyHead=Properties of red-black trees
+
+property1=1. Every node is either red or black.
+
+property2=2. The root is black.
+
+property3=3. Every leaf (NULL) is black.
+
+property4=4. If a node is red, then both its children are black.
+
+property5=5. For each node, all simple paths from the node to the descendeant leaves 
+property51= contain the same number of black nodes.
+
+	----- INTRO -----
+
+intro01=Intro
+
+intro02=The operation Delete modifies the RB-Tree. The result potentially violates one of the five 
+intro03=necessary properties of red-black trees. To restore these properties colors and 
+intro04=pointers of nodes have to be changed.
+
+Delete
+Um einen Knoten z zu löschen werden wir einen Knoten y suchen und z durch ihn ersetzen. Ein dritter Knoten x wird die 
+
+ursprünglich Position von y einnehmen. Sollte z kein oder ein Kind haben so ist y z selber und x der Nullknoten oder
+das einzige Kind von z. Hat z dagegen zwei Kinder so wählen wir y als den direkten Nachfolger von z im Baum und x als
+das einzige Kind von y oder den Nullknoten. Da wir den Knoten y aus dem Baum löschen müssen wir uns seine Farbe merken,
+um in Abhängigkeit davon später eventuelle Verstöße gegen die Eigenschaften von Rot-Schwarzbäumen zu beheben. Da x den 
+Platz von y einnimmt führen wir an dieser Stelle im Baum die Fixupmethode aus. 
+
+To delete a node z we are going to look for a node y and replace z with y. A third node x is going to replace y in the tree. If z does not have a child or has exactly one child we will choose y equal z and x is going to be the null node or the only child of z. Does z have two children we are going to choose the successor of z in the tree as y and the only child of y or the null node as x. Since we delete the node y from the tree we have to remember its color and depending on the color have to choose wheter the removal of the node y violates one of the properties of red-black trees. Since x replaces y in the tree we call the fixup on x.
+
+intro11=Delete
+intro12=To delete a node z we are going to look for a node y and replace z with y. A third node x is going to replace 
+intro13=y in the tree. If z does not have a child or has exactly one child we will choose y equal z and x is going to
+intro14=be the null node or the only child of z. Does z have two children we are going to choose the successor of z
+intro15=in the tree as y and the only child of y or the null node as x. Since we delete the node y from the tree we
+intro16=have to remember its color and depending on the color have to choose wheter the removal of the node y 
+intro17=violates one of the properties of red-black trees. Since x replaces y in the tree we call the fixup on x.
+
+
+Welche Eigenschaften können beim Löschen verletzt werden?
+
+Falls der Knoten y rot war sind alle Eigenschaften erfüllt, da sich die Anzahl der schwarzen Knoten auf keinem
+Pfad verändert hat, keine zwei roten Knoten adjazent gemacht wurden, da y als roter Knoten keine roten Kinder hatte
+und da y nicht die Wurzel sein konnte bleibt die Wurzel schwarz. 
+
+Falls y allerdings schwarz war können drei Probleme auftauchen. War y die Wurzel und ein rotes Kind von y wird die
+neue Wurzel, so verstoßen wir gegen Eigenschaft 2. Falls x und y.p rot sind haben wir eine Verletzung der 4. Eigenschaft eingeführt.
+Da wir y als schwarzen Knoten nach oben an die Stelle von z gezogen haben und y schwarz war fehlt nun auf jedem Pfad, der vorher
+den Knoten y enthielt ein schwarzer Knoten. Dies stellt eine Verletzung der fünften Eigenschaft dar. Um das Problem zu beheben
+ordnen wir dem Knoten x, der an die Stelle von y getreten ist, einen extra Schwarzwert zu, x zählt nun doppelt, allerdings ist 
+nun x weder schwarz noch rot, sondern entweder doppelt schwarz oder schwarz rot, dies ist eine Verletzung der ersten Eigenschaft.
+
+intro21=Which properties can be violated by deleting a node from the tree?
+intro22=If the node y was red every property holds after deleting the node, because the number of black nodes on any
+intro23=path changed, no red nodes were made adjacent, since y as a red node could not have red children and y could
+intro24=not have been the root and it remains black.
+
+intro25=If the node y was black three problems could arise. First if y was the root and a red child of y takes its
+intro26=place we violate property 2. Second if x and y.p are red we violate property 4. Third since y was a black
+intro27=node and we moved it up the tree to replace z there is one black node missing on every path which contained y.
+intro28=This violates property 5. We can shift the problem to property 1 if we assign the node x an extra black color
+intro29=The node x is now either red-and-black or double black, this is a violation of property 1.
+intro210=
+
+
+Which properties can be violated by deleting a node from the tree?
+If the node y was red every property holds after deleting the node, because the number of black nodes on any path changed, no red nodes were made adjacent, since y as a red node could not have red children and y could not have been the root and it remains black.
+
+If the node y was black three problems could arise. First if y was the root and a red child of y takes its place we violate property 2. Second if x and y.p are red we violate property 4. Third since y was a black node and we moved it up the tree to replace z there is one black node missing on every path which contained y. This violates property 5. We can shift the problem to property 1 if we assign the node x an extra black color.The node x is now either red-and-black or double black, this is a violation of property 1.
+
+
+
+intro31=Fixup
+
+Die while-Schleife in der Fixupmethode stellt die 1. Eigenschaft wieder her, indem sie den extra Schwarzwert auf x wieder
+entfernt, die letzte Anweisung sorgt dafür, dass die Wurzel schwarz ist und x und x.p nicht beide rot sein können. 
+In der Schleife wird der zusätzliche Schwarzwert solange den Baum hochgereicht, bis x entweder auf einen schwarz-roten Knoten
+zeigt, dann wird x einfach schwarz gefärbt, x auf die Wurzel zeigt, hier kann die extra Farbe einfach entfernt werden oder
+nach passenden Rotationen und Umfärbungen die Schleife verlassen werden kann.
+
+intro32=The while loop in the fixup method restores the first property by removing the extra black on x, while the
+intro33=last statement ensures the blackness of the root and both x and x.p are not red. The extra black is moved up
+intro34=tree until x points either on a red-black node or the root. In the first case we can color the node black to 
+intro35=remove the extra black and in the second case we can easily remove the extra black or we can recolor some
+intro36=nodes and terminate the while loop instantly.
+
+The while loop in the fixup method restores the first property by removing the extra black on x, while the last statement ensures the blackness of the root and both x and x.p are not red. The extra black is moved up tree until x points either on a red-black node or the root. In the first case we can color the node black to remove the extra black and in the second case we can easily remove the extra black or we can recolor some nodes and terminate the while loop instantly.
+
+intro41=Rotations
+
+intro42=Rotations change the pointer structure without violating the properties of a binary search tree. Two adjacent
+intro43=nodes are interchanged. To achieve this the three remaining subtrees have to be interchanged accordingly.
+intro44=There are two variations of rotations: The left-rotation and the right-rotation. 
+intro45=Both of these need a constant number of steps and thus are in O(1).
+
+intro51=Properties of nodes
+intro52=Every node has the properties color, value, left child, right child and parent. Does a child or
+intro53=parent not exist the fields of the node point to black nodes with the value NULL.
+intro54=Thus every leaf of the tree is a black NULL node and every key-bearing node is an internal node.
+intro55=The parent of the root is likewise pointing to a black NULL node. These black NULL nodes are going
+intro56=to be represented as a single black node T.null.
+
+Direkter Nachfolger
+
+Wir benötigen die Funktion TREE-SUCCESSOR(x) im Algorithmus. Diese gibt entweder den Knoten mit dem kleinsten Wert
+im rechten Unterbaum, dessen Wurzel x ist, oder den größten Wert im linken Unterbaum, dessen Wurzel x ist, aus. 
+Wir kriegen also den direkten Nachfolger oder Vorgänger im Baum von x, wenn wir alle Werte sortiert vorliegen hätten.
+
+intro61=Successor
+intro62=We are going to need the function TREE-SUCCESSOR(x) in the algorithm. It returns the node with the smallest
+intro63=value in the right subtree, which root is x, or the biggest value in the left subtree, which root is x.
+intro64=We are recieving the direct successor or predecessor in the tree of x.
+
+We are going to need the function TREE-SUCCESSOR(x) in the algorithm. It returns the node with the smallest value in the right subtree, which root is x, or the biggest value in the left subtree, which root is x. We are recieving the direct successor or predecessor in the tree of x, if we would have
+
+	----- OUTRO -----
+
+outro00=Runtime of RB-DELETE
+
+outro10=The operation RB-DELETE(T, z) has a runtime of O(log n).
+
+outro20=Delete
+outro21=Since the height of a red-black tree is in O(log n) the runtime of the
+outro22=RB-DELETE without the call to RB-DELETE-FIXUP is in O(log n) too.
+
+outro30=Fixup 
+outro31=Each of the cases 1, 3 and 4 (5, 7 and 8) of the RB-DELETE-FIXUP method terminates
+outro32=after performing a constant number of color changes and at most three rotations.
+outro33=Case 2 (6) is the only case in which the while loop is repeated. The pointer x 
+outro34=moves up the tree at most O(log n) times after executing the case.
+
+outro40=Rotations
+outro41=Since all rotations have a constant runtime the functions
+outro42=LEFT-ROTATE and RIGHT-ROTATE are in O(1) and add
+outro43=nothing to the runtime of RB-DELETE
+
+
+
+        ----- DELETE -----
+
+generalInformationDelete0=We are looking for a suitable successor to y to overwrite z in the tree T.
+generalInformationDelete1=We are looking for a suitable replacement x for the node y.
+generalInformationDelete2=We are going to replace the node y with the node x.
+generalInformationDelete3=The node z was successfully deleted.
+
+specificInformationDelete0=The tree T and the node z are passed to the deletion method.
+specificInformationDelete1True=The node z has at most one child, take the if branch.
+specificInformationDelete1False=The node z has two children, take the else branch.
+specificInformationDelete3=Since z has at most one child we can choose y as the node z itself.
+specificInformationDelete4=elseAnweisung
+specificInformationDelete5=Since z has two children we have to look for the successor.
+specificInformationDelete6=We are saving the original color value of y.
+specificInformationDelete7True=The left child of y is not T.null and it is the only child, take the if branch.
+specificInformationDelete7False=The right child of y is either the only child or T.null, take the else branch.
+specificInformationDelete8=We choose the only child of y as the node x.
+specificInformationDelete9=elseAnweisung
+specificInformationDelete10=We choose the only child of y or T.null as the node x.
+specificInformationDelete11=To replace y the node x inherits the parent of y.
+specificInformationDelete12True=The parent of y is T.null, y must be the root, take the if branch.
+specificInformationDelete12False=The parent of y is not T.null, y can not be the root, take the else branch.
+specificInformationDelete13=Since y is the root, x is going to be the new root.
+specificInformationDelete14=elseAnweisung
+specificInformationDelete15True=Node y is not the root, but a left child, take the if branch.
+specificInformationDelete15False=Node y is not the root, but a right child, take the else branch.
+specificInformationDelete16=Assign x as the new left child of the parent of y.
+specificInformationDelete17=elseAnweisung
+specificInformationDelete18=Assign x as the new right child of the parent of y.
+specificInformationDelete19True=Node z had two children, y is unequal z, take the if branch.
+specificInformationDelete19False=Node z had at most one child, y is equal z, x is going to replace z.
+specificInformationDelete20=We assign the value of y to the node z to delete z from the tree.
+specificInformationDelete21True=Node y had once the color black, take the if branch.
+specificInformationDelete21False=Node y had once the color red, skip the Fixup.
+specificInformationDelete22=Call the Fixup to restore all of the properties.
+specificInformation200=Call the Fixup method to restore all red-black properties
+
+specificInformationDeleteLast=We have successfully deleted z from the tree.
+generalInformationDeleteLast=The Fixup method has successfully solved all property conflicts.
+
+generalInformationDeleteViolation=The tree is violating {0} property.
+die1=the 1.
+die2=the 2.
+die4=the 4.
+
+        ----- FIXUP -----
+
+generalInformationDeleteFixupV1=We have to remove the extra black from x.
+specificInformationDeleteFixupV1=If x is the root or red, this is an easy task.
+
+generalInformationDeleteFixupV2=We have to color the root black again.
+specificInformationDeleteFixupV2=We can do this easily.
+
+generalInformationDeleteFixupV4=We have to color one of the adjacent red nodes black.
+specificInformationDeleteFixupV4=We can easily color x black.
+
+generalInformationDeleteFixup10=The sibling of x is red, this is case 1.
+generalInformationDeleteFixup11=We are going to swap the colors of w and x.p and rotate.
+generalInformationDeleteFixup12=We have transformed case 1 into case 2, 3 or 4.
+
+generalInformationDeleteFixup20=The sibling of w and its children are black this is case 2.
+generalInformationDeleteFixup21=We are removing the extra black from x and w and add it on x.p.
+generalInformationDeleteFixup22=Since x.p has now an extra black we are going to repeat the while-loop.
+
+generalInformationDeleteFixup30=The sibling w and its right child are black, this is case 3.
+generalInformationDeleteFixup31=We swap the colors of w and w.left and execute a right rotation on w.
+generalInformationDeleteFixup32=By recoloring and rotating we have transformed case 3 into case 4.
+
+generalInformationDeleteFixup40=The sibling w is black and w.right is red, this is case 4.
+generalInformationDeleteFixup41=We are going to recolor and do a rotation to remove the extra black.
+generalInformationDeleteFixup42=The extra black on x can be removed without violating the properties.
+
+
+generalInformationDeleteFixup50=Der Geschwisterknoten von x ist rot, dies ist Fall 5.
+generalInformationDeleteFixup51=Wir werden die Farben von w und x.p tauschen und rotieren.
+generalInformationDeleteFixup52=Nun haben wir Fall 5 nach Fall 6, 7 oder 8 überführt.
+
+generalInformationDeleteFixup60=Der Geschwisterknoten w und seine Kinder sind schwarz, dies ist Fall 6.
+generalInformationDeleteFixup61=Wir entfernen nun den extra Schwarzwert von x und von w und legen ihn auf x.p.
+generalInformationDeleteFixup62=Da nun x.p einen Schwarzwert zu viel hat wiederholen wir die Schleife mit x.p.
+
+generalInformationDeleteFixup70=The sibling w and its right child are black, this is case 7.
+generalInformationDeleteFixup71=We swap the colors of w and w.left and execute a left rotation on w.
+generalInformationDeleteFixup72=By recoloring and rotating we have transformed case 7 intro case 8.
+
+generalInformationDeleteFixup80=The sibling w is black and w.right is red, this is case 8.
+generalInformationDeleteFixup81=We are going to recolor and do a rotation to remove the extra black.
+generalInformationDeleteFixup82=The extra black on x can be removed without violating the properties.
+
+
+specificInformationDeleteFixup1True=Node x is not the root and black, enter the while loop.
+specificInformationDeleteFixup1False=Node x is the root or is not black, skip the while loop.
+specificInformationDeleteFixup3True=Node x is a left child, take the if branch.
+specificInformationDeleteFixup3False=Node x is a right child, take the else branch.
+
+
+specificInformationDeleteFixup4=Choose the sibling of x as w.
+specificInformationDeleteFixup5True=The sibling of x (w) is red, take the if branch.
+specificInformationDeleteFixup5False=The sibling of x (w) is black, skip the if statement
+specificInformationDeleteFixup6=Recolor w from red to black.
+specificInformationDeleteFixup7=Recolor the parent of x from black to red.
+specificInformationDeleteFixup8=Execute a leftrotation to shift x.p to the lower left.
+specificInformationDeleteFixup9=The rotation has changed the sibling of x, we update w.
+specificInformationDeleteFixup10True=Both children of w are black, take the if branch.
+specificInformationDeleteFixup10False=At least one child of w is not black, take the if else branch.
+specificInformationDeleteFixup12=Recolor w from black to red, to remove an extra black.
+specificInformationDeleteFixup13=Assign the parent of x as the new x and repeat the loop.
+specificInformationDeleteFixup14=elseAnweisung
+specificInformationDeleteFixup15True=Node w and w.right are black, w.left is red, take the if branch.
+specificInformationDeleteFixup15False=Node w and w.left are black, w.right is red, skip the if statement.
+specificInformationDeleteFixup16=Recolor the left child of w from red to black.
+specificInformationDeleteFixup17=Recolor w from black to red.
+specificInformationDeleteFixup18=Execute a rightrotation to shift w to the lower right.
+specificInformationDeleteFixup19=The rotation has changed the sibling of x, we update w.
+specificInformationDeleteFixup20=Color the node w with the color of its parent.
+specificInformationDeleteFixup21=Color the parent of x black.
+specificInformationDeleteFixup22=Color the right child of w black.
+specificInformationDeleteFixup23=Rotate the parent of x to the lower left.
+specificInformationDeleteFixup24=We assign x to the root of the tree to terminate the while loop.
+
+specificInformationDeleteFixup25=elseAnweisung
+
+specificInformationDeleteFixup26=Choose the sibling of x as w.
+specificInformationDeleteFixup27True=The sibling of x (w) is red, take the if branch.
+specificInformationDeleteFixup27False=The sibling of x (w) is black, skip the if statement
+specificInformationDeleteFixup28=Recolor w from red to black.
+specificInformationDeleteFixup29=Recolor the parent of x from black to red.
+specificInformationDeleteFixup30=Execute a rightrotation to shift x.p to the lower right.
+specificInformationDeleteFixup31=The rotation has changed the siblinf of x, we update w.
+specificInformationDeleteFixup32True=Both children of w are black, take the if branch,
+specificInformationDeleteFixup32False=At least one child of w is not black, take the else branch.
+specificInformationDeleteFixup34=Recolor w from black to red, to remove an extra black.
+specificInformationDeleteFixup35=Assign the parent of x as the new x and repeat the loop.
+specificInformationDeleteFixup36=elseAnweisung
+specificInformationDeleteFixup37True=Node w and w.left are black, w.right is red, take the if branch.
+specificInformationDeleteFixup37False=Node w and w.right are black, w.left is red, skip the if statement.
+specificInformationDeleteFixup38=Recolor the right child from red to black.
+specificInformationDeleteFixup39=Recolor w from black to red.
+specificInformationDeleteFixup40=Execute a leftrotation to to shoft w to the lower left.
+specificInformationDeleteFixup41=The rotation has changed the sibling of x, we update w.
+specificInformationDeleteFixup42=Color the node w with the color of its parent.
+specificInformationDeleteFixup43=Color the parent of x black.
+specificInformationDeleteFixup44=Color the left child of w black.
+specificInformationDeleteFixup45=Rotate the parent of x to the lower right.
+specificInformationDeleteFixup46=We assign x to the root of the tree to terminate the while loop.
+
+specificInformationDeleteFixup47=We color the node x black to assure the properties 2 and 4.
+generalInformationDeleteFixup47=The node x is either the root or red, we can easily color it black.
+
+
+	----- LEFT ROTATE -----
+
+generalInformationLeftRotate0=We rotate so the right child of x (y) is taking the former place from y
+specificInformationLeftRotate0=This method only changes the pointer from the nodes x and y
+
+specificInformationLeftRotate1=Pointer y is initialized as the right child from x
+specificInformationLeftRotate2=The new right subtree from x is the old left subtree from y
+specificInformationLeftRotate3True=The left subtree from y does not point on T.null, take the if branch
+specificInformationLeftRotate3False=The left subtree from y does point on T.null, skip the statement
+specificInformationLeftRotate4=The node x is going to be the new parent of y
+specificInformationLeftRotate5=The parent of y is now the the parent of x
+
+specificInformationLeftRotate6True=Parent of x is T.null, x is the root of the tree, take the if branch
+specificInformationLeftRotate6False=parent of x is not T.null, x is not the root of the tree, take the else branch
+specificInformationLeftRotate7=Assign y as the new root of the tree
+specificInformationLeftRotate8=elseAnweisung
+
+specificInformationLeftRotate9True=Node x was not the root of the tree and is a left child
+specificInformationLeftRotate9False=Node x was not the root of the tree and is a right child
+specificInformationLeftRotate10=Node x is a left child and the new left child of x.p is going to be y, instead x
+specificInformationLeftRotate11=elseAnweisung
+specificInformationLeftRotate12=Node x is a right child and the new right child of x.p is going to be y, instead x
+specificInformationLeftRotate13=Node x is going to be the new left child of y, since y moved up in the tree
+specificInformationLeftRotate14=Assign y as parent node of x
+
+generalInformationLeftRotateLast=Node y was assigned the new root of the subtree with x as the new left child
+specificInformationLeftRotateLast=The former left child of y is now the new right child of x
+
+
+	----- RIGHT ROTATE -----
+
+
+generalInformationRightRotate0=We rotate so the left child of x (y) is taking the former place of x
+specificInformationRightRotate0=This method only changes the pointer from the nodes x and y
+
+
+specificInformationRightRotate1=Pointer y is initialized as the left child from x
+specificInformationRightRotate2=The new left subtree from x is the old right subtree from y
+specificInformationRightRotate3True=The right subtree from y does not point on T.null, take the if branch
+specificInformationRightRotate3False=The right subtree from y does point on T.null, skip the statement
+specificInformationRightRotate4=The node x is going to be the new parent of y's right child
+specificInformationRightRotate5=The parent from x is now the parent of y
+
+specificInformationRightRotate6True=Parent of x is T.null, x is the tree's root, take the if branch
+specificInformationRightRotate6False=Parent of x is not T.null, x is not the tree's root, take the else branch
+specificInformationRightRotate7=Assign y as the new root of the tree
+
+specificInformationRightRotate8=elseAnweisung
+
+specificInformationRightRotate9True=Node x was not the root and is a right child, take the if branch
+specificInformationRightRotate9False=Node x was not the root and is a left child, take the else branch
+
+specificInformationRightRotate10=The node x is a right child and the new right child is going to be y, former x
+
+specificInformationRightRotate11=elseAnweisung
+
+specificInformationRightRotate12=The node x is a left child and the new left child is going to be y, former x
+
+specificInformationRightRotate13=The node x is going to be the new right child from y, because y moved up
+
+specificInformationRightRotate14=Assign y as the new parent node from x
+
+generalInformationRightRotateLast=Node y was assigned as the new root of the subtree with x as the new right child
+
+specificInformationRightRotateLast=The former right child from y is now x's new left child
+
+-=-
+
+
+	----- QUESTIONS -----
+
+questionCorrectAnswerColor=Correct, the colors are Red and Black!
+questionWhichColor=Which colors does a red-black tree have?
+questionAnswer1=Black
+questionAnswer2=Red
+questionAnswer3=Green
+questionAnswer4=Blue
+questionAnswer5=White
+questionCorrectAnswerColor=Correct, the colors are Red and Black!
+
+questionWrongAnswer=Wrong, the answer was {0} 
+
+questionand=and
+
+
+--------
+
+questionRuntime=What is the runtime of RB-DELETE?
+
+questionCorrectAnswerRuntime=Correct, RB-DELETE is in O(log n)!
+
+questionWrongAnswerRuntime=Wrong, RB-DELETE is in O(log n)!
+
+--------
+
+questionCorrectAnswer=Right, {0} was violated!
+
+questionWhichViolation=Which property of red-black trees was violated by deleting z?
+questionWrongAnswer=Wrong, the correct answer would have been: {0}
+
+none=no
+none2=none
+d1=the 1.
+d2=the 2.
+d4=the 4.

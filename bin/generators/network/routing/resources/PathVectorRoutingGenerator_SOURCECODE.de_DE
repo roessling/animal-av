@@ -1,0 +1,6 @@
+1. Erzeuge eine Routingtabelle mit den Einträgen für die direkten Nachbarn
+	Ein Eintrag besteht aus der Gesamtentfernung und allen Zwischenschritten
+2. Sende jeden neuen Eintrag an alle Nachbarn, sofern dieser die kürzeste Distanz zum Zielknoten enthält
+3. Empfange die aktualisierten Einträge der Nachbarn
+4. Aktualisiere die Einträge in der Routingtabelle mit den empfangenen Daten
+5. Wenn Einträge aktualisiert wurden, gehe zu 2.

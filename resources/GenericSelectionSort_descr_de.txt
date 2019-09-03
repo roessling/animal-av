@@ -1,0 +1,9 @@
+Das naheliegendste Verfahren zur Sortierung
+ist Sortieren durch Auswahl, auch als
+Selection Sort bezeichnet.
+
+Der Algorithmus in Worten
+1. Setze i=0
+2. Suche ab Position i das kleinste Element im Feld
+3. Vertausche das kleinste Element mit dem Element ab Position i
+4. Setze i=i+1 und fahre bei Schritt 2 fort bis i==n

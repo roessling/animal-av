@@ -1,0 +1,18 @@
+Prozedur ID3
+
+falls ( alle Beispiele gehören einer Klasse c an )
+blatt = erstelle ein neues Blatt;
+beschrifte blatt mit c;
+gib blatt als resultierenden Baum zurück;
+
+besteEigenschaft = wähle die informativste Eigenschaft mithilfe der gewählten Maßes aus;
+
+knoten = erstelle einen neuen Knoten;
+beschrifte knoten mit dem Namen der Eigenschaft;
+
+für ( jeden Wert von besteEigenschaft )
+rufe die Prozedur ID3 mit allen Beispielen dieses Wertes für besteEigenschaft auf;
+
+neuerBaum = erstelle neuen Baum, indem erzeugte Subbäume an knoten befestigt werden;
+gib neuerBaum zurück;
+ 

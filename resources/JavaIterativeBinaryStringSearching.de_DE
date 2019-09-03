@@ -1,0 +1,9 @@
+@import=resources/GenericBinarySearch.de_DE
+algoName=Bin\u00e4re Suche
+theName=Iterative Bin\u00e4re Suche (String; DE)
+codeExample=public int iterativeBinarySearch(String[] array, String value) {\n  if (array == null || array.length == 0 || value == null) {\n    return -1;\n  }\n  int nrElems = array.length();\n  int l = 0;\n  int r = nrElems - 1;\n  int mid = (l + r) / 2;\n  while (r > l && !(array[mid].equals(value))) {\n    if (value.compareTo(array[mid]) < 0) {\n      r = mid - 1;\n    } else {\n      l = mid + 1;\n    }\n    mid = (l + r) / 2;\n  }\n  if (array[mid].equals(value)) {\n    return mid;\n  } else {\n    return -1;\n  }\n}
+animTitle=Iterative Binäre Suche (String)
+algoTitle=Iterative Binäre Suche
+description.filename=resources/GenericBinarySearching_descr_de.txt
+code.filename=resources/JavaIterativeBinaryStringSearching_code.txt
+complexity.filename=resources/GenericBinarySearching_complexity_de.txt

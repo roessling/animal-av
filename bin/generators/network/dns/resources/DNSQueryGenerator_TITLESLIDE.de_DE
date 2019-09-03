@@ -1,0 +1,64 @@
+[block]
+	Das Domain Name System (DNS) ist einer der wichtigsten Dienste im Netzwerk. 
+	Seine Hauptaufgabe ist die Beantwortung von Anfragen zur Namensauflösung.[br]
+	In Analogie zu einer Telefonauskunft soll das DNS bei Anfrage mit einem Hostnamen 
+	(dem für Menschen merkbaren Namen eines Rechners im Internet) - zum[br]
+	Beispiel www.example.org - als Antwort die zugehörige IP-Adresse (die 
+	'Anschlussnummer' im Internet) - zum Beispiel eine IPv4-Adresse der Form 192.0.2.42[br]
+	oder eine IPv6-Adresse wie 2001:db8:85a3:8d3:1319:8a2e:370:7347 - nennen.
+[/block]
+[block]
+	[h2]Die Nameserver[/h2]
+	Ein autoritativer Nameserver ist verantwortlich für eine Zone. Seine Informationen 
+	über  diese Zone werden deshalb als gesichert angesehen. Für jede[br]
+	Zone existiert mindestens ein autoritativer Server, der Primary Nameserver. 
+	Dieser wird im SOA Resource Record einer Zonendatei aufgeführt.[br]
+	Aus Redundanz- und Lastverteilungsgründen werden autoritative Nameserver fast 
+	immer als Server-Cluster realisiert, wobei die Zonendaten identisch[br]
+	auf einem oder mehreren Secondary Nameservern liegen. Die Synchronisation 
+	zwischen  Primary und Secondary Nameservern erfolgt per Zonentransfer.[br]
+	Ein nicht-autoritativer Nameserver bezieht seine Informationen über eine 
+	Zone von anderen Nameservern sozusagen aus zweiter oder dritter Hand. Seine[br]
+	Informationen werden als nicht gesichert angesehen. Da sich DNS-Daten normalerweise 
+	nur sehr selten ändern, speichern nicht-autoritative Nameserver die[br]
+	einmal von einem Resolver angefragten Informationen im lokalen RAM ab, damit 
+	diese bei einer erneuten Anfrage schneller vorliegen. Diese Technik wird[br]
+	als Caching bezeichnet. Jeder dieser Einträge besitzt ein eigenes Verfallsdatum 
+	(TTL time to live), nach dessen Ablauf der Eintrag aus dem Cache gelöscht[br]
+	wird. Die TTL wird dabei durch einen autoritativen Nameserver für diesen Eintrag 
+	festgelegt und wird nach der Änderungswahrscheinlichkeit des Eintrages[br]
+	bestimmt (sich häufig ändernde DNS-Daten erhalten eine niedrige TTL). Das kann 
+	unter Umständen aber auch bedeuten, dass der Nameserver in dieser Zeit[br]
+	falsche Informationen liefern kann, wenn sich die Daten zwischenzeitlich geändert haben.[br]
+	Ein Spezialfall ist der Caching Only Nameserver. In diesem Fall ist der Nameserver 
+	für keine Zone verantwortlich und muss alle eintreffenden Anfragen[br]
+	über weitere Nameserver (Forwarder) auflösen.
+[/block]
+[block]
+	[h2]Die Animation[/h2]
+	In dieser Animation werden zur Vereinfachung nur zwei Typen von Nameservern verwendet.[br]
+	Zum Einen werden autoritative Server für die einzelnen Zonen genutzt, die eine Auflösung 
+	der Namen bereitstellen. Diese Server besitzen den gleichen Namen[br]
+	wie die von ihnen verwaltete Zone, wobei der Root Nameserver mit einem Punkt (.) für die Rootzone gekennzeichnet ist.[br]
+	Zum Anderen existiert ein Caching Only Nameserver als lokaler Server, der die Anfragen 
+	des Clients beantwortet und eventuell bei den autoritativen Servern[br]
+	weitere Informationen zur Namensauflösung einholt. Der lokale Nameserver hat 
+	einen Cache der Größe {0}. Er speichert also die Ergebnisse der letzten {0}[br]
+	vollständigen Anfragen zwischen. Es werden dabei nicht nur aufgelöste IP Adressen 
+	gespeichert sondern auch die Zwischenergebnisse der iterativen Anfragen.[br]
+	Bei der Auflösung von www.example.org werden somit folgende Ergebnisse in den 
+	Cache eingetragen: Nameserver für org, Nameserver für example.org und die[br]
+	IP Adresse für den Host www.example.org.[br]
+	Die Sortierung der Nameserver innerhalb der Darstellung ist dabei beliebig.
+[/block]
+[block]
+	Die in dieser Animation verwendeten IP Adressen entsprechen den realen Adressen 
+	im Domain Name System, sofern ein Hostname dort vorhanden ist und eine Auflösung[br]
+	durchgeführt werden kann. Sollte der Name nicht aufgelöst werden können, weil dieser 
+	entweder nicht im DNS eingetragen ist oder keine Verbindung zu einem Nameserver[br]
+	besteht, so wird eine IP Adresse aus dem privaten Subnetz 10.0.0.0/8 zurückgeliefert. 
+	Damit werden alle Namen innerhalb der Animation aufgelöst und es werden keine[br]
+	negativen Ergebnisse von den Servern zurückgeliefert.[br]
+	
+	[copy]Texte aus Wikipedia, der freien Enzyklopädie[/copy]
+[/block]

@@ -1,0 +1,75 @@
+title=Ritter''s bounding sphere
+description=\
+Ritter''s bounding sphere ist ein Algorithmus, der von Jack Ritter \
+in 1990 vorgestellt wurde, um eine umh\u00fcllende Sph\u00e4re f\u00fcr eine Menge \
+an Punkten zu finden.\n\
+\n\
+Der Ansatz von Ritter erzeugt nicht immer die beste m\u00f6gliche L\u00f6sung, \
+aber ist dennoch eine beliebte Methode, wegen der Effizienz und einfachen \
+Implementierung.
+
+stepLabelIntro=Einleitung
+stepLabelInit=Initialisierung
+stepLabelX=W\u00e4hle x
+stepLabelY=Finde y
+stepLabelZ=Finde z
+stepLabelCenter=Berechne Mittelpunkt m
+stepLabelRadius=Berechne Radius r
+stepLabelSphere=Konstruiere umh\u00fcllende Sph\u00e4re
+stepLabelOutro=Fazit
+
+intro1=\
+Ritters umh\u00fcllende Sph\u00e4re ist ein Algorithmus, um eine Sph\u00e4re im\n\
+n-dimensionlen Raum zu finden, die eine Menge an Punkten P enth\u00e4lt.
+
+intro2=\
+Dieser Ansatz ist nicht optimal, weil die resultierende Sph\u00e4re nicht\n\
+immer die kleinst m\u00f6gliche umh\u00fcllende sphere ist.
+
+intro3=\
+Der Algorithmus arbeitet in 4 Schritten:
+
+step1=Schritt 1: W\u00e4hle einen Punkt x aus P
+step2=Schritt 2: Finde einen Punkt y aus P mit maximaler Distanz zu x
+step3=Schritt 3: Finde einen Punkt z aus P mit maximaler Distanz zu y
+step4=Schritt 4: Erzeuge eine Sph\u00e4re an dem Mittelpunkt von y and z mit einem Radius gleich der H\u00e4lfte des Abstands zwischen y und z
+
+task=\
+Aufgabe: Finde eine umh\u00fcllende Sph\u00e4re f\u00fcr die Punkte\n\
+P = [\n\
+{0}\n\
+]
+
+outro1=\
+Mit Hilfe von Ritters Algorithmus konnten wir eine umh\u00fcllende Sph\u00e4re\n\
+f\u00fcr die gegebenen Punkte\n\
+P = [\n\
+{0}\n\
+]\n\
+am Mittelpunkt m = {1} mit Radius r = {2} finden.
+
+outro2=\
+Dieser Ansatz gibt zwar nicht immer die besten Ergebnisse, aber ist\n\
+daf\u00fcr eine effiziente L\u00f6sung f\u00fcr das umh\u00fcllende Sph\u00e4re Problem.
+
+outro3=\
+Um diese Sph\u00e4re zu finden mussten wir 2 Punkte mit maximaler Distanz\n\
+in 2 x {0} = {1}, also O(2n), Schritten suchen.
+
+questionX.prompt=Haben wir x = p0 aus einem bestimmten Grund gew\u00e4hlt?
+questionX.feedback.wrong=Nein, die Wahl hatte keinen Grund. p0 wurde zur Einfachheit gew\u00e4hlt
+questionX.feedback.correct=Das ist richtig, p0 wurde zur Einfachheit gew\u00e4hlt
+
+questionDistance.prompt=Welche zwei Punkte werden jetzt untersucht? (W\u00e4hle 1 oder 2 M\u00f6glichkeiten)
+questionDistance.feedback.correct=Richtig
+questionDistance.feedback.wrong=Nein, das passiert in einer anderen Iteration
+
+error=Fehler in den Eingaben
+error.fontSize=Die Schriftgr\u00f6\u00dfe darf nicht 1 sein
+error.scaling=Die Skalierung des Koordinatensystems darf 1 sein
+error.width=Die Breite des Koordinatensystems darf 10 nicht unterschreiten
+error.height=Die H\u00f6he des Koordinatensystems darf 10 nicht unterschreiten
+error.points.length=Es m\u00fcssen mindestens 2 Punkte gegeben sein
+error.points.syntax=Die Punkte m\u00fcssen in genau 2 Spalten angegeben werden
+error.points.coords=Die Punkte m\u00fcssen innerhalb der Breite und H\u00f6he des Koordinatensystems plaziert werden
+error.probability=Die questionProbability muss zwischen 0 und 1 liegen

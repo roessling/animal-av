@@ -1,0 +1,12 @@
+@import=generators/network/resources/Generic.de_DE
+ALGOCLASS=Graph Algorithms
+ALGONAME=Kruskal
+LBL_QS_TOTAL_WEIGHT=Frage: Gesamtgewicht
+QS_TOTAL_WEIGHT=Welches Gesamtgewicht haben die Kanten im minimalen Spannbaum?
+ANS_TOTAL_WEIGHT=Die Kanten des minimalen Spannbaums haben ein Gesamtgewicht von {0}
+LBL_QS_NEXT_EDGE=Frage: Nächste Kante
+QS_NEXT_EDGE=Welche Kante wird als nächste hinzugefügt?
+ANS_NEXT_EDGE=Die nächste Kante, die hinzugefügt wird, ist {0} mit Gewicht {1}.
+ANS_NEXT_EDGE_WEIGHT_ERROR=Die nächste Kante, die hinzugefügt wird, ist {0} mit Gewicht {1}. Die gewählte Kante hat ein höheres Gewicht und wird daher nicht ausgewählt.
+ANS_NEXT_EDGE_SORT_ERROR=Die nächste Kante, die hinzugefügt wird, ist {0} mit Gewicht {1}. Die gewählte Kante besitzt zwar das gleiche Gewicht, ist aber in der Sortierung der Liste weiter hinten.
+ANS_NEXT_EDGE_LOOP_ERROR=Die nächste Kante, die hinzugefügt wird, ist {0} mit Gewicht {1}. Die gewählte Kante erzeugt einen Zyklus im Graphen, der in einem Spannbaum nicht erlaubt ist.

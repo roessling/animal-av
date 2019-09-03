@@ -1,0 +1,6 @@
+Quicksort sorts an array of elements by choosing a pivot element.
+All elements are then divided into two groups - smaller then the pivot
+and bigger than the pivot. The function is then called recursively
+for both those groups.
+
+In this case the pivot element is the bigger of the first two elements.

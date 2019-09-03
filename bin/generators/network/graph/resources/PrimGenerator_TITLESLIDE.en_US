@@ -1,0 +1,29 @@
+[block]
+	Prim's algorithm is used to calculate the minumum spanning tree in a 
+	weighted graph.
+[/block]
+[block]
+	[h2]The Algorithm[/h2]
+	Unlike Kruskal's algorithm this method always creates a connected tree
+	during execution. Therefore the algorithm only works on a connected[br]
+	graph.[br]
+	The algorithm was first developed by the mathematician Vojtech Jarnik 
+	in 1930 and was later rediscovered by Robert Prim and Edsger Dijkstra.[br]
+	The method is therefore often called Prim-Dijkstra-Algorithm or the 
+	algorithm of Jarník, Prim and Dijkstra. The algorithm starts from any[br]
+	node in the graph and adds the next shortest edge that connects a yet
+	unconnected node to the spanning tree. The tree grows until all nodes[br]
+	in the graph are reached.[br]
+	The method works similar to Dijkstra's algorithm and belongs to the class
+	of greedy algorithms. The running time of Prim's algorithm is determined[br]
+	by the loop visiting all nodes and the implementation selecting the next 
+	edge.[br]
+	The complexity of the algorithm consists of those two components and is 
+	O(|E| x log(|V|)). The complexity is the same as for Kruskal's algorithm[br]
+	but Prim's algorithm is superior if the graph has a great number of edges as
+	there is no need for sorting all edges by weight. It only looks and[br]
+	evaluates the outgoing edges of the current node.[br]
+	The minimum spanning tree is used to create a network topology where a 
+	certain number of nodes should be connected with minimum costs or where[br]
+	only certain connections are available.
+[/block]

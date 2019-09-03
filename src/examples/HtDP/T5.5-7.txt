@@ -1,0 +1,52 @@
+<html><body><h1>Visualizing <em>How to Design Programs Teaching Languages</h1><p>Visualized expression(s) and definition(s):</p><p><pre>
+;; T5.5-7
+;; contains-doll?: (listof symbol) ->  boolean 
+;; to determine whether alos contains the symbol 'doll
+;; example: (contains-doll? '(car bike doll)) is true
+(define (contains-doll? alos) 
+  (cond 
+    [(empty? alos) false] 
+    [else 
+      (cond 
+        [(symbol=? (first alos) 'doll) true] 
+        [else 
+          (contains-doll? (rest alos ))])])) 
+
+;; contains-car?: (listof symbol) -> boolean
+;; to determine whether a contains the symbol 'car
+;; example: (contains-car? '(car bike doll)) is true
+(define (contains-car? alos) 
+  (cond 
+    [(empty? alos) false] 
+    [else 
+      (cond 
+         [(symbol=? (first alos) 'car) true] 
+         [else 
+           (contains-car? (rest alos))])])) 
+
+;; abstracted function
+;; contains?: symbol (listof symbol) -> boolean
+;; determines if the list of symbols contains the symbol
+;; example: (contains? 'car '(car bike doll)) is true
+(define (contains? s alos)
+  (cond
+    [(empty? alos) false]
+    [else
+      (cond
+        [(symbol=? (first alos) s) true]
+        [else  
+          (contains? s (rest alos))])]))
+
+;; Tests
+(check-expect (contains-doll? '(car bike doll)) true)
+(check-expect (contains-doll? '(car bike dull)) false)
+(check-expect (contains-doll? '(car bike doll doll)) true)
+(check-expect (contains-car? '(car bike doll)) true)
+(check-expect (contains-car? '(cur bike doll)) false)
+(check-expect (contains-car? '(car bike doll car)) true)
+(check-expect (contains? 'car '(car bike doll)) true)
+(check-expect (contains? 'doll '(car bike doll)) true)
+(check-expect (contains? 'car '(cor bike doll)) false)
+(check-expect (contains? 'doll '(car bike doll)) false)
+(check-expect (contains? 'bill '(car bike doll doll)) false)
+</pre></body></html>

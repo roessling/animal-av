@@ -1,0 +1,157 @@
+%Animal 2
+title "Arithmetic Decoding"
+author "Florian Lindner"
+{
+  text "Topic" "Aritmetic Decoding" (20, 50) color (255, 0, 0) depth 1 font Monospaced size 32 bold
+  rectangle "topicRect" offset (-5, -5) from "Topic" NW offset (5, 5) from "Topic" SE color (0, 0, 0) depth 1
+}
+{
+  text "inWords" "Der Algorithmus in Worten" (20, 100) color (0, 0, 0) depth 1 font Serif size 22 italic
+}
+{
+  text "line1" "0) Gegeben ist eine Tabelle absoluter Häufigkeiten und eine Kodierung als Gleitkommazahl." offset (0, 100) from "Topic" SW color (0, 0, 0) depth 1 font SansSerif size 16
+}
+{
+  text "line2" "1) Bilde ein Intervall I in [0,1], welches entsprechend der Häufigkeiten" offset (0, 30) from "line1" SW color (0, 0, 0) depth 1 font SansSerif size 16
+  text "Text3" "       proportional auf die Buchstaben aufgeteilt wird." offset (0, 20) from "line2" SW color (0, 0, 0) depth 1 font SansSerif size 16
+}
+{
+  text "line3" "2) Wähle das Teilintervall, in dem sich die Gleitkommzahl befindet und betrachte" offset (0, 30) from "Text3" SW color (0, 0, 0) depth 1 font SansSerif size 16
+  text "line31" "      dieses als neues Intervall. Der Buchstabe, der zu diesem Intervall gehörte" offset (0, 20) from "line3" SW color (0, 0, 0) depth 1 font SansSerif size 16
+  text "Text4" "     wird für die Ausgabe notiert. Das neue Intervall wird wie in 1) unterteilt." offset (0, 20) from "line31" SW color (0, 0, 0) depth 1 font SansSerif size 16
+}
+{
+  text "line4" "3) Schritt 2 wird entsprechend der Anzahl der Gesamtbuchstaben, die aus der Tabelle" offset (0, 30) from "Text4" SW color (0, 0, 0) depth 1 font SansSerif size 16
+  text "line32" "      der Häufigkeiten ermittelt werden kann, wiederholt." offset (0, 20) from "line4" SW color (0, 0, 0) depth 1 font SansSerif size 16
+}
+{
+  setText of "inWords" to "Eingabe:  HALLO"  
+  show "inWords" 
+  hide "inWords" "line1" "line2" "Text3" "line3" "line31" "Text4" "line4" "line32" 
+}
+{
+  text "Text5" "Wir erhalten die Häufigkeiten, sowie die kodierte Zahl der Eingabe:       0.68512" offset (0, 0) from "line1" SW color (0, 0, 0) depth 1 font SansSerif size 16
+  text "Text6" "Durch die Häufigkeiten lässt sich das initiale Intervall herstellen." offset (0, 20) from "Text5" SW color (0, 0, 0) depth 1 font SansSerif size 16
+  text "ausgabe" "Ausgabe:" offset (0, 30) from "Text6" SW color (0, 0, 0) depth 1 font SansSerif size 16
+  text "Text7" "" offset (10, -5) from "ausgabe" SE color (0, 0, 0) depth 1 font SansSerif size 16
+  color "Text7" (0, 0, 255)  
+}
+{
+  rectangle "rectangle" offset (0, 40) from "Text6" SW offset (280, 65) from "Text6" SW color (0, 0, 0) depth 1
+  text "text" "L" offset (140, 20) from "rectangle" M color (0, 0, 0) depth 1 font SansSerif size 16
+  text "startValue" "0.0" offset (2, 9) from "rectangle" SW color (0, 0, 0) depth 1 font SansSerif size 10
+  rectangle "Rect1" offset (280, 40) from "Text6" SW offset (420, 65) from "Text6" SW color (0, 0, 0) depth 1
+  text "Text8" "A" offset (70, 20) from "Rect1" M color (0, 0, 0) depth 1 font SansSerif size 10
+  text "Text9" "0.4" offset (2, 9) from "Rect1" SW color (0, 0, 0) depth 1 font SansSerif size 10
+  rectangle "Rect2" offset (420, 40) from "Text6" SW offset (560, 65) from "Text6" SW color (0, 0, 0) depth 1
+  text "Text10" "H" offset (70, 20) from "Rect2" M color (0, 0, 0) depth 1 font SansSerif size 10
+  text "Text11" "0.6" offset (2, 9) from "Rect2" SW color (0, 0, 0) depth 1 font SansSerif size 10
+  rectangle "Rect3" offset (560, 40) from "Text6" SW offset (700, 65) from "Text6" SW color (0, 0, 0) depth 1
+  text "Text12" "O" offset (70, 20) from "Rect3" M color (0, 0, 0) depth 1 font SansSerif size 10
+  text "Text13" "0.8" offset (2, 9) from "Rect3" SW color (0, 0, 0) depth 1 font SansSerif size 10
+  text "Text14" "1.0" offset (685, 10) from "rectangle" SW color (0, 0, 0) depth 1 font SansSerif size 10
+  rectangle "rect" offset (420, 40) from "Text6" SW offset (560, 65) from "Text6" SW color (0, 0, 0) depth 2 filled  fillColor (255, 255, 0)
+  hide "Rect2" 
+}
+{
+  setText of "Text7" to "H"  
+}
+{
+  rectangle "Rect4" offset (0, 40) from "rectangle" SW offset (279, 65) from "rectangle" SW color (0, 0, 0) depth 1
+  text "Text15" "L" offset (139, 20) from "Rect4" M color (0, 0, 0) depth 1 font SansSerif size 10
+  text "Text16" "0.6" offset (2, 9) from "Rect4" SW color (0, 0, 0) depth 1 font SansSerif size 10
+  rectangle "Rect5" offset (279, 40) from "rectangle" SW offset (420, 65) from "rectangle" SW color (0, 0, 0) depth 1
+  text "Text17" "A" offset (70, 20) from "Rect5" M color (0, 0, 0) depth 1 font SansSerif size 10
+  text "Text18" "0.68" offset (2, 9) from "Rect5" SW color (0, 0, 0) depth 1 font SansSerif size 10
+  rectangle "Rect6" offset (420, 40) from "rectangle" SW offset (559, 65) from "rectangle" SW color (0, 0, 0) depth 1
+  text "Text19" "H" offset (69, 20) from "Rect6" M color (0, 0, 0) depth 1 font SansSerif size 10
+  text "Text20" "0.72" offset (2, 9) from "Rect6" SW color (0, 0, 0) depth 1 font SansSerif size 10
+  rectangle "Rect7" offset (559, 40) from "rectangle" SW offset (699, 65) from "rectangle" SW color (0, 0, 0) depth 1
+  text "Text21" "O" offset (70, 20) from "Rect7" M color (0, 0, 0) depth 1 font SansSerif size 10
+  text "Text22" "0.76" offset (2, 9) from "Rect7" SW color (0, 0, 0) depth 1 font SansSerif size 10
+  text "Text23" "0.8" offset (685, 10) from "Rect4" SW color (0, 0, 0) depth 1 font SansSerif size 10
+  rectangle "Rect8" offset (279, 40) from "rectangle" SW offset (420, 65) from "rectangle" SW color (0, 0, 0) depth 2 filled  fillColor (255, 255, 0)
+  hide "Rect5" 
+}
+{
+  setText of "Text7" to "HA"  
+}
+{
+  rectangle "Rect9" offset (0, 40) from "Rect4" SW offset (280, 65) from "Rect4" SW color (0, 0, 0) depth 1
+  text "Text24" "L" offset (140, 20) from "Rect9" M color (0, 0, 0) depth 1 font SansSerif size 10
+  text "Text25" "0.68" offset (2, 9) from "Rect9" SW color (0, 0, 0) depth 1 font SansSerif size 10
+  rectangle "Rect10" offset (280, 40) from "Rect4" SW offset (419, 65) from "Rect4" SW color (0, 0, 0) depth 1
+  text "Text26" "A" offset (69, 20) from "Rect10" M color (0, 0, 0) depth 1 font SansSerif size 10
+  text "Text27" "0.69600004" offset (2, 9) from "Rect10" SW color (0, 0, 0) depth 1 font SansSerif size 10
+  rectangle "Rect11" offset (419, 40) from "Rect4" SW offset (559, 65) from "Rect4" SW color (0, 0, 0) depth 1
+  text "Text28" "H" offset (70, 20) from "Rect11" M color (0, 0, 0) depth 1 font SansSerif size 10
+  text "Text29" "0.704" offset (2, 9) from "Rect11" SW color (0, 0, 0) depth 1 font SansSerif size 10
+  rectangle "Rect12" offset (559, 40) from "Rect4" SW offset (700, 65) from "Rect4" SW color (0, 0, 0) depth 1
+  text "Text30" "O" offset (70, 20) from "Rect12" M color (0, 0, 0) depth 1 font SansSerif size 10
+  text "Text31" "0.712" offset (2, 9) from "Rect12" SW color (0, 0, 0) depth 1 font SansSerif size 10
+  text "Text32" "0.72" offset (685, 10) from "Rect9" SW color (0, 0, 0) depth 1 font SansSerif size 10
+  rectangle "Rect13" offset (0, 40) from "Rect4" SW offset (280, 65) from "Rect4" SW color (0, 0, 0) depth 2 filled  fillColor (255, 255, 0)
+  hide "Rect9" 
+}
+{
+  setText of "Text7" to "HAL"  
+}
+{
+  rectangle "Rect14" offset (0, 40) from "Rect9" SW offset (279, 65) from "Rect9" SW color (0, 0, 0) depth 1
+  text "Text33" "L" offset (139, 20) from "Rect14" M color (0, 0, 0) depth 1 font SansSerif size 10
+  text "Text34" "0.68" offset (2, 9) from "Rect14" SW color (0, 0, 0) depth 1 font SansSerif size 10
+  rectangle "Rect15" offset (279, 40) from "Rect9" SW offset (420, 65) from "Rect9" SW color (0, 0, 0) depth 1
+  text "Text35" "A" offset (70, 20) from "Rect15" M color (0, 0, 0) depth 1 font SansSerif size 10
+  text "Text36" "0.6864" offset (2, 9) from "Rect15" SW color (0, 0, 0) depth 1 font SansSerif size 10
+  rectangle "Rect16" offset (420, 40) from "Rect9" SW offset (560, 65) from "Rect9" SW color (0, 0, 0) depth 1
+  text "Text37" "H" offset (70, 20) from "Rect16" M color (0, 0, 0) depth 1 font SansSerif size 10
+  text "Text38" "0.68960005" offset (2, 9) from "Rect16" SW color (0, 0, 0) depth 1 font SansSerif size 10
+  rectangle "Rect17" offset (560, 40) from "Rect9" SW offset (700, 65) from "Rect9" SW color (0, 0, 0) depth 1
+  text "Text39" "O" offset (70, 20) from "Rect17" M color (0, 0, 0) depth 1 font SansSerif size 10
+  text "Text40" "0.69280005" offset (2, 9) from "Rect17" SW color (0, 0, 0) depth 1 font SansSerif size 10
+  text "Text41" "0.69600004" offset (685, 10) from "Rect14" SW color (0, 0, 0) depth 1 font SansSerif size 10
+  rectangle "Rect18" offset (0, 40) from "Rect9" SW offset (279, 65) from "Rect9" SW color (0, 0, 0) depth 2 filled  fillColor (255, 255, 0)
+  hide "Rect14" 
+}
+{
+  setText of "Text7" to "HALL"  
+}
+{
+  rectangle "Rect19" offset (0, 40) from "Rect14" SW offset (280, 65) from "Rect14" SW color (0, 0, 0) depth 1
+  text "Text42" "L" offset (140, 20) from "Rect19" M color (0, 0, 0) depth 1 font SansSerif size 10
+  text "Text43" "0.68" offset (2, 9) from "Rect19" SW color (0, 0, 0) depth 1 font SansSerif size 10
+  rectangle "Rect20" offset (280, 40) from "Rect14" SW offset (419, 65) from "Rect14" SW color (0, 0, 0) depth 1
+  text "Text44" "A" offset (69, 20) from "Rect20" M color (0, 0, 0) depth 1 font SansSerif size 10
+  text "Text45" "0.68256" offset (2, 9) from "Rect20" SW color (0, 0, 0) depth 1 font SansSerif size 10
+  rectangle "Rect21" offset (419, 40) from "Rect14" SW offset (559, 65) from "Rect14" SW color (0, 0, 0) depth 1
+  text "Text46" "H" offset (70, 20) from "Rect21" M color (0, 0, 0) depth 1 font SansSerif size 10
+  text "Text47" "0.68384" offset (2, 9) from "Rect21" SW color (0, 0, 0) depth 1 font SansSerif size 10
+  rectangle "Rect22" offset (559, 40) from "Rect14" SW offset (700, 65) from "Rect14" SW color (0, 0, 0) depth 1
+  text "Text48" "O" offset (70, 20) from "Rect22" M color (0, 0, 0) depth 1 font SansSerif size 10
+  text "Text49" "0.68512" offset (2, 9) from "Rect22" SW color (0, 0, 0) depth 1 font SansSerif size 10
+  text "Text50" "0.6864" offset (685, 10) from "Rect19" SW color (0, 0, 0) depth 1 font SansSerif size 10
+  rectangle "Rect23" offset (559, 40) from "Rect14" SW offset (700, 65) from "Rect14" SW color (0, 0, 0) depth 2 filled  fillColor (255, 255, 0)
+  hide "Rect22" 
+}
+{
+  setText of "Text7" to "HALLO"  
+}
+{
+  rectangle "Rect24" offset (0, 40) from "Rect19" SW offset (280, 65) from "Rect19" SW color (0, 0, 0) depth 1
+  text "Text51" "L" offset (140, 20) from "Rect24" M color (0, 0, 0) depth 1 font SansSerif size 10
+  text "Text52" "0.68512" offset (2, 9) from "Rect24" SW color (0, 0, 0) depth 1 font SansSerif size 10
+  rectangle "Rect25" offset (280, 40) from "Rect19" SW offset (420, 65) from "Rect19" SW color (0, 0, 0) depth 1
+  text "Text53" "A" offset (70, 20) from "Rect25" M color (0, 0, 0) depth 1 font SansSerif size 10
+  text "Text54" "0.685632" offset (2, 9) from "Rect25" SW color (0, 0, 0) depth 1 font SansSerif size 10
+  rectangle "Rect26" offset (420, 40) from "Rect19" SW offset (560, 65) from "Rect19" SW color (0, 0, 0) depth 1
+  text "Text55" "H" offset (70, 20) from "Rect26" M color (0, 0, 0) depth 1 font SansSerif size 10
+  text "Text56" "0.685888" offset (2, 9) from "Rect26" SW color (0, 0, 0) depth 1 font SansSerif size 10
+  rectangle "Rect27" offset (560, 40) from "Rect19" SW offset (700, 65) from "Rect19" SW color (0, 0, 0) depth 1
+  text "Text57" "O" offset (70, 20) from "Rect27" M color (0, 0, 0) depth 1 font SansSerif size 10
+  text "Text58" "0.686144" offset (2, 9) from "Rect27" SW color (0, 0, 0) depth 1 font SansSerif size 10
+  text "Text59" "0.6864" offset (685, 10) from "Rect24" SW color (0, 0, 0) depth 1 font SansSerif size 10
+  text "Ausgabe" "Die Ausgabe entspricht genau der erwarteten Eingabe. Die kodierte Zahl stammt aus dem" offset (0, 90) from "Rect24" SW color (0, 0, 0) depth 1 font SansSerif size 16
+  text "Text60" "letzten aufgeführtem Intervall. Dabei ist es nicht wichtig, welche Zahl innerhalb dieses Intervals gewählt" offset (0, 20) from "Ausgabe" SW color (0, 0, 0) depth 1 font SansSerif size 16
+  text "fazit" "wurde. Für eine gute Kompression sollten allerdings Zahlen gewählt werden, die sich mit" offset (0, 20) from "Text60" SW color (0, 0, 0) depth 1 font SansSerif size 16
+  text "Text61" "möglichst wenigen Bits kodieren lassen." offset (0, 20) from "fazit" SW color (0, 0, 0) depth 1 font SansSerif size 16
+}

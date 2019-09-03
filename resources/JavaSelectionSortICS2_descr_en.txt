@@ -1,0 +1,8 @@
+Probably the easiest conceptual sorting algorithm
+sorting by selecting maxima.
+
+Verbal description:
+1. Set i = length-1
+2. Search from position 0 for the biggest array element
+3. Swap this biggest element with position i
+4. Decrement i and continue with step 2 until i == 0

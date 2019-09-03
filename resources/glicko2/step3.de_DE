@@ -1,0 +1,13 @@
+Nun berechnen wir die geschätzte Varianz
+unseres aktuellen Spielers. Wir müssen hierfür zwei
+Hilfsfunktionen definieren: g(Phi) und E(my, my_j, Phi_j)
+Hier sind my_j und Phi_j das konvertierte Rating
+und die Wertungsabweichung des Gegners j. Wir benötigen
+diese Funktionen außerdem auch noch später im Algorithmus.
+Beachte, dass dies die Rundenergebnisse noch nicht berücksichtigt.
+
+    define g(Phi) := sqrt(1 + 3 * (Phi^2 / pi^2))^-1
+    define E(my, my_j, Phi_j) := (1 + exp(-g(Phi_j) * (my - my_j))^-1
+    
+    set ny := [SUM from j=1 to m (g(Phi_j)^2
+               * E(my,my_j,Phi_j) * (1-E(my,my_j,Phi_j))]^-1

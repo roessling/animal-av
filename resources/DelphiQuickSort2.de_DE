@@ -1,0 +1,16 @@
+@import=resources/GenericSettings
+algoDesc=QuickSort w&auml;hlt ein Element aus der zu sortierenden Liste aus (Pivotelement) und zerlegt die Liste in zwei Teillisten: eine untere, die alle Elemente kleiner und eine obere, die alle Elemente gleich oder gr&ouml;&szlig;er dem Pivotelement enth&auml;lt.<br />Dazu wird zun&auml;chst ein Element von unten gesucht, das gr&ouml;&szlig;er als (oder gleichgro&szlig; wie) das Pivotelement ist und damit f&uuml;r die untere Liste zu gro&szlig; ist. Entsprechend wird von oben ein kleineres Element als das Pivotelement gesucht. Die beiden Elemente werden dann vertauscht und landen damit in der jeweils richtigen Liste.<br />Der Vorgang wird fortgesetzt, bis sich die untere und obere Grenze treffen. Damit sind die oben erw&auml;hnten Teillisten in einem einzigen Durchlauf entstanden. Suche und Vertauschung k&ouml;nnen in-place durchgef&uuml;hrt werden.<p>Die noch unsortierten Teillisten werden &uuml;ber denselben Algorithmus in noch kleinere Teillisten zerlegt (z. B. mittels Rekursion) und, sobald nur noch Listen mit je einem Element vorhanden sind, wieder zusammengesetzt. Die Sortierung ist damit abgeschlossen.
+algoAuthor=Guido Roessling <roessling@acm.org>
+animDesc=Beschreibung des Algorithmus
+adForURL=Weitere Animationen finden Sie unter http://www.algoanim.info/Animal2 im Online-Repository
+nrSteps=Insgesamt verwendete der Algorithmus {0} Zuweisungen und {1} Vergleiche.
+nrAss=Zuweisungen
+nrComp=Vergleiche
+outputLanguage=DELPHI
+codeExample={ TQuickSort }\nprocedure TQuickSortSort(var A: array of Integer);\n\nprocedure QuickSort(var A: array of Integer; iLo, iHi: Integer);\n var Lo, Hi, Mid, T: Integer;\n begin\n   Lo := iLo;\n   Hi := iHi;\n   Mid := A[(Lo + Hi) div 2];\n   repeat\n     while A[Lo] < Mid do Inc(Lo);\n     while A[Hi] > Mid do Dec(Hi);\n     if Lo <= Hi then\n     begin\n       T := A[Lo];\n       A[Lo] := A[Hi];\n       A[Hi] := T;\n       Inc(Lo);\n       Dec(Hi);\n     end;\n   until Lo > Hi;\n   if Hi > iLo then QuickSort(A, iLo, Hi);\n   if Lo < iHi then QuickSort(A, Lo, iHi);\n   if Terminated then Exit;\n end;
+animTitle=QuickSort
+algoTitle=QuickSort
+theName=Quicksort
+description.filename=resources/DelphiQuickSort_descr_de.txt
+code.filename=resources/DelphiQuickSort_code.txt
+complexity.filename=resources/GenericQuickSort_complexity_de.txt

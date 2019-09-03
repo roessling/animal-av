@@ -1,0 +1,2884 @@
+%Animal 2
+title "Distance Vector Routing"
+author "Christian Rosskopf"
+{
+  text "title" "Distance-Vector-Routing" (20, 20) color (0, 0, 255) depth 1 font Monospaced size 16 bold
+  graph "Graph" size 6 color (0, 0, 255) bgColor (0, 255, 255) highlightColor (255, 0, 0) elemHighlightColor (255, 0, 255) nodeFontColor (0, 0, 0) edgeFontColor (0, 0, 0) weighted nodes {"A" (40, 50), "B" (360, 50), "C" (40, 250), "D" (360, 250), "E" (100, 150), "F" (300, 150) } edges {(0, 1, "4") (0, 2, "3") (0, 4, "2") (1, 0, "4") (1, 4, "5") (1, 5, "7") (2, 0, "3") (2, 3, "5") (3, 2, "5") (3, 4, "3") (3, 5, "1") (4, 0, "2") (4, 1, "5") (4, 3, "3") (4, 5, "9") (5, 1, "7") (5, 3, "1") (5, 4, "9") } depth 1 
+  codegroup "source" at offset (0, 20) from "Graph" SW color (0, 0, 0) highlightColor (0, 0, 255) contextColor (0, 255, 0) font SansSerif size 12 depth 1
+  addCodeLine "Initialization" to "source"
+  addCodeLine "Init Routingtables" to "source" indentation 1
+  addCodeLine "Init Distance Vector" to "source" indentation 1
+  addCodeLine "" to "source"
+  addCodeLine "Start Algorithm" to "source"
+  addCodeLine "boolean changed = true" to "source" indentation 1
+  addCodeLine "while (changed) {" to "source" indentation 1
+  addCodeLine "changed = false;" to "source" indentation 2
+  addCodeLine "Every node sends Distance Vector to its Neighbours" to "source" indentation 2
+  addCodeLine "for (Node n : Graph) {" to "source" indentation 2
+  addCodeLine "Update RoutingTable with received Distance Vectors" to "source" indentation 3
+  addCodeLine "Update Distance Vector" to "source" indentation 3
+  addCodeLine "If (distanceVector.hasChanged()) {" to "source" indentation 3
+  addCodeLine "changed = true; " to "source" indentation 4
+  addCodeLine "} else {" to "source" indentation 3
+  addCodeLine "skip;" to "source" indentation 4
+  addCodeLine "}" to "source" indentation 3
+  addCodeLine "}" to "source" indentation 2
+  addCodeLine "}" to "source" indentation 1
+  addCodeLine "Finished: Display Shortest Routes" to "source"
+}
+{
+  grid "g1" offset (200, 0) from "title" NE lines 7 columns 7 color (0, 0, 255) textColor (0, 0, 255) fillColor (255, 255, 255) highlightTextColor (255, 255, 0) highlightBackColor (0, 255, 0) depth 1 
+  setGridValue "g1[0][0]" "A"
+  setGridValue "g1[0][1]" "via A"
+  setGridValue "g1[0][2]" "via B"
+  setGridValue "g1[0][3]" "via C"
+  setGridValue "g1[0][4]" "via D"
+  setGridValue "g1[0][5]" "via E"
+  setGridValue "g1[0][6]" "via F"
+  setGridValue "g1[1][0]" "to A "
+  setGridValue "g1[1][1]" "#"
+  setGridValue "g1[1][2]" "#"
+  setGridValue "g1[1][3]" "#"
+  setGridValue "g1[1][4]" "#"
+  setGridValue "g1[1][5]" "#"
+  setGridValue "g1[1][6]" "#"
+  setGridValue "g1[2][0]" "to B "
+  setGridValue "g1[2][1]" "#"
+  setGridValue "g1[2][2]" " "
+  setGridValue "g1[2][3]" " "
+  setGridValue "g1[2][4]" "#"
+  setGridValue "g1[2][5]" " "
+  setGridValue "g1[2][6]" "#"
+  setGridValue "g1[3][0]" "to C "
+  setGridValue "g1[3][1]" "#"
+  setGridValue "g1[3][2]" " "
+  setGridValue "g1[3][3]" " "
+  setGridValue "g1[3][4]" "#"
+  setGridValue "g1[3][5]" " "
+  setGridValue "g1[3][6]" "#"
+  setGridValue "g1[4][0]" "to D "
+  setGridValue "g1[4][1]" "#"
+  setGridValue "g1[4][2]" " "
+  setGridValue "g1[4][3]" " "
+  setGridValue "g1[4][4]" "#"
+  setGridValue "g1[4][5]" " "
+  setGridValue "g1[4][6]" "#"
+  setGridValue "g1[5][0]" "to E "
+  setGridValue "g1[5][1]" "#"
+  setGridValue "g1[5][2]" " "
+  setGridValue "g1[5][3]" " "
+  setGridValue "g1[5][4]" "#"
+  setGridValue "g1[5][5]" " "
+  setGridValue "g1[5][6]" "#"
+  setGridValue "g1[6][0]" "to F "
+  setGridValue "g1[6][1]" "#"
+  setGridValue "g1[6][2]" " "
+  setGridValue "g1[6][3]" " "
+  setGridValue "g1[6][4]" "#"
+  setGridValue "g1[6][5]" " "
+  setGridValue "g1[6][6]" "#" refresh
+  setGridFont "g1[0][0]" font Monospaced size 18 bold
+  setGridColor "g1[0][0]" color (144 , 0 , 144)
+}
+{
+  grid "StringMatrix1" offset (200, 240) from "title" NE lines 7 columns 7 color (0, 0, 255) textColor (0, 0, 255) fillColor (255, 255, 255) highlightTextColor (255, 255, 0) highlightBackColor (0, 255, 0) depth 1 
+  setGridValue "StringMatrix1[0][0]" "B"
+  setGridValue "StringMatrix1[0][1]" "via A"
+  setGridValue "StringMatrix1[0][2]" "via B"
+  setGridValue "StringMatrix1[0][3]" "via C"
+  setGridValue "StringMatrix1[0][4]" "via D"
+  setGridValue "StringMatrix1[0][5]" "via E"
+  setGridValue "StringMatrix1[0][6]" "via F"
+  setGridValue "StringMatrix1[1][0]" "to A "
+  setGridValue "StringMatrix1[1][1]" " "
+  setGridValue "StringMatrix1[1][2]" "#"
+  setGridValue "StringMatrix1[1][3]" "#"
+  setGridValue "StringMatrix1[1][4]" "#"
+  setGridValue "StringMatrix1[1][5]" " "
+  setGridValue "StringMatrix1[1][6]" " "
+  setGridValue "StringMatrix1[2][0]" "to B "
+  setGridValue "StringMatrix1[2][1]" "#"
+  setGridValue "StringMatrix1[2][2]" "#"
+  setGridValue "StringMatrix1[2][3]" "#"
+  setGridValue "StringMatrix1[2][4]" "#"
+  setGridValue "StringMatrix1[2][5]" "#"
+  setGridValue "StringMatrix1[2][6]" "#"
+  setGridValue "StringMatrix1[3][0]" "to C "
+  setGridValue "StringMatrix1[3][1]" " "
+  setGridValue "StringMatrix1[3][2]" "#"
+  setGridValue "StringMatrix1[3][3]" "#"
+  setGridValue "StringMatrix1[3][4]" "#"
+  setGridValue "StringMatrix1[3][5]" " "
+  setGridValue "StringMatrix1[3][6]" " "
+  setGridValue "StringMatrix1[4][0]" "to D "
+  setGridValue "StringMatrix1[4][1]" " "
+  setGridValue "StringMatrix1[4][2]" "#"
+  setGridValue "StringMatrix1[4][3]" "#"
+  setGridValue "StringMatrix1[4][4]" "#"
+  setGridValue "StringMatrix1[4][5]" " "
+  setGridValue "StringMatrix1[4][6]" " "
+  setGridValue "StringMatrix1[5][0]" "to E "
+  setGridValue "StringMatrix1[5][1]" " "
+  setGridValue "StringMatrix1[5][2]" "#"
+  setGridValue "StringMatrix1[5][3]" "#"
+  setGridValue "StringMatrix1[5][4]" "#"
+  setGridValue "StringMatrix1[5][5]" " "
+  setGridValue "StringMatrix1[5][6]" " "
+  setGridValue "StringMatrix1[6][0]" "to F "
+  setGridValue "StringMatrix1[6][1]" " "
+  setGridValue "StringMatrix1[6][2]" "#"
+  setGridValue "StringMatrix1[6][3]" "#"
+  setGridValue "StringMatrix1[6][4]" "#"
+  setGridValue "StringMatrix1[6][5]" " "
+  setGridValue "StringMatrix1[6][6]" " " refresh
+  setGridFont "StringMatrix1[0][0]" font Monospaced size 18 bold
+  setGridColor "StringMatrix1[0][0]" color (144 , 0 , 144)
+}
+{
+  grid "StringMatrix2" offset (200, 480) from "title" NE lines 7 columns 7 color (0, 0, 255) textColor (0, 0, 255) fillColor (255, 255, 255) highlightTextColor (255, 255, 0) highlightBackColor (0, 255, 0) depth 1 
+  setGridValue "StringMatrix2[0][0]" "C"
+  setGridValue "StringMatrix2[0][1]" "via A"
+  setGridValue "StringMatrix2[0][2]" "via B"
+  setGridValue "StringMatrix2[0][3]" "via C"
+  setGridValue "StringMatrix2[0][4]" "via D"
+  setGridValue "StringMatrix2[0][5]" "via E"
+  setGridValue "StringMatrix2[0][6]" "via F"
+  setGridValue "StringMatrix2[1][0]" "to A "
+  setGridValue "StringMatrix2[1][1]" " "
+  setGridValue "StringMatrix2[1][2]" "#"
+  setGridValue "StringMatrix2[1][3]" "#"
+  setGridValue "StringMatrix2[1][4]" " "
+  setGridValue "StringMatrix2[1][5]" "#"
+  setGridValue "StringMatrix2[1][6]" "#"
+  setGridValue "StringMatrix2[2][0]" "to B "
+  setGridValue "StringMatrix2[2][1]" " "
+  setGridValue "StringMatrix2[2][2]" "#"
+  setGridValue "StringMatrix2[2][3]" "#"
+  setGridValue "StringMatrix2[2][4]" " "
+  setGridValue "StringMatrix2[2][5]" "#"
+  setGridValue "StringMatrix2[2][6]" "#"
+  setGridValue "StringMatrix2[3][0]" "to C "
+  setGridValue "StringMatrix2[3][1]" "#"
+  setGridValue "StringMatrix2[3][2]" "#"
+  setGridValue "StringMatrix2[3][3]" "#"
+  setGridValue "StringMatrix2[3][4]" "#"
+  setGridValue "StringMatrix2[3][5]" "#"
+  setGridValue "StringMatrix2[3][6]" "#"
+  setGridValue "StringMatrix2[4][0]" "to D "
+  setGridValue "StringMatrix2[4][1]" " "
+  setGridValue "StringMatrix2[4][2]" "#"
+  setGridValue "StringMatrix2[4][3]" "#"
+  setGridValue "StringMatrix2[4][4]" " "
+  setGridValue "StringMatrix2[4][5]" "#"
+  setGridValue "StringMatrix2[4][6]" "#"
+  setGridValue "StringMatrix2[5][0]" "to E "
+  setGridValue "StringMatrix2[5][1]" " "
+  setGridValue "StringMatrix2[5][2]" "#"
+  setGridValue "StringMatrix2[5][3]" "#"
+  setGridValue "StringMatrix2[5][4]" " "
+  setGridValue "StringMatrix2[5][5]" "#"
+  setGridValue "StringMatrix2[5][6]" "#"
+  setGridValue "StringMatrix2[6][0]" "to F "
+  setGridValue "StringMatrix2[6][1]" " "
+  setGridValue "StringMatrix2[6][2]" "#"
+  setGridValue "StringMatrix2[6][3]" "#"
+  setGridValue "StringMatrix2[6][4]" " "
+  setGridValue "StringMatrix2[6][5]" "#"
+  setGridValue "StringMatrix2[6][6]" "#" refresh
+  setGridFont "StringMatrix2[0][0]" font Monospaced size 18 bold
+  setGridColor "StringMatrix2[0][0]" color (144 , 0 , 144)
+}
+{
+  grid "StringMatrix3" offset (560, 0) from "title" NE lines 7 columns 7 color (0, 0, 255) textColor (0, 0, 255) fillColor (255, 255, 255) highlightTextColor (255, 255, 0) highlightBackColor (0, 255, 0) depth 1 
+  setGridValue "StringMatrix3[0][0]" "D"
+  setGridValue "StringMatrix3[0][1]" "via A"
+  setGridValue "StringMatrix3[0][2]" "via B"
+  setGridValue "StringMatrix3[0][3]" "via C"
+  setGridValue "StringMatrix3[0][4]" "via D"
+  setGridValue "StringMatrix3[0][5]" "via E"
+  setGridValue "StringMatrix3[0][6]" "via F"
+  setGridValue "StringMatrix3[1][0]" "to A "
+  setGridValue "StringMatrix3[1][1]" "#"
+  setGridValue "StringMatrix3[1][2]" "#"
+  setGridValue "StringMatrix3[1][3]" " "
+  setGridValue "StringMatrix3[1][4]" "#"
+  setGridValue "StringMatrix3[1][5]" " "
+  setGridValue "StringMatrix3[1][6]" " "
+  setGridValue "StringMatrix3[2][0]" "to B "
+  setGridValue "StringMatrix3[2][1]" "#"
+  setGridValue "StringMatrix3[2][2]" "#"
+  setGridValue "StringMatrix3[2][3]" " "
+  setGridValue "StringMatrix3[2][4]" "#"
+  setGridValue "StringMatrix3[2][5]" " "
+  setGridValue "StringMatrix3[2][6]" " "
+  setGridValue "StringMatrix3[3][0]" "to C "
+  setGridValue "StringMatrix3[3][1]" "#"
+  setGridValue "StringMatrix3[3][2]" "#"
+  setGridValue "StringMatrix3[3][3]" " "
+  setGridValue "StringMatrix3[3][4]" "#"
+  setGridValue "StringMatrix3[3][5]" " "
+  setGridValue "StringMatrix3[3][6]" " "
+  setGridValue "StringMatrix3[4][0]" "to D "
+  setGridValue "StringMatrix3[4][1]" "#"
+  setGridValue "StringMatrix3[4][2]" "#"
+  setGridValue "StringMatrix3[4][3]" "#"
+  setGridValue "StringMatrix3[4][4]" "#"
+  setGridValue "StringMatrix3[4][5]" "#"
+  setGridValue "StringMatrix3[4][6]" "#"
+  setGridValue "StringMatrix3[5][0]" "to E "
+  setGridValue "StringMatrix3[5][1]" "#"
+  setGridValue "StringMatrix3[5][2]" "#"
+  setGridValue "StringMatrix3[5][3]" " "
+  setGridValue "StringMatrix3[5][4]" "#"
+  setGridValue "StringMatrix3[5][5]" " "
+  setGridValue "StringMatrix3[5][6]" " "
+  setGridValue "StringMatrix3[6][0]" "to F "
+  setGridValue "StringMatrix3[6][1]" "#"
+  setGridValue "StringMatrix3[6][2]" "#"
+  setGridValue "StringMatrix3[6][3]" " "
+  setGridValue "StringMatrix3[6][4]" "#"
+  setGridValue "StringMatrix3[6][5]" " "
+  setGridValue "StringMatrix3[6][6]" " " refresh
+  setGridFont "StringMatrix3[0][0]" font Monospaced size 18 bold
+  setGridColor "StringMatrix3[0][0]" color (144 , 0 , 144)
+}
+{
+  grid "StringMatrix4" offset (560, 240) from "title" NE lines 7 columns 7 color (0, 0, 255) textColor (0, 0, 255) fillColor (255, 255, 255) highlightTextColor (255, 255, 0) highlightBackColor (0, 255, 0) depth 1 
+  setGridValue "StringMatrix4[0][0]" "E"
+  setGridValue "StringMatrix4[0][1]" "via A"
+  setGridValue "StringMatrix4[0][2]" "via B"
+  setGridValue "StringMatrix4[0][3]" "via C"
+  setGridValue "StringMatrix4[0][4]" "via D"
+  setGridValue "StringMatrix4[0][5]" "via E"
+  setGridValue "StringMatrix4[0][6]" "via F"
+  setGridValue "StringMatrix4[1][0]" "to A "
+  setGridValue "StringMatrix4[1][1]" " "
+  setGridValue "StringMatrix4[1][2]" " "
+  setGridValue "StringMatrix4[1][3]" "#"
+  setGridValue "StringMatrix4[1][4]" " "
+  setGridValue "StringMatrix4[1][5]" "#"
+  setGridValue "StringMatrix4[1][6]" " "
+  setGridValue "StringMatrix4[2][0]" "to B "
+  setGridValue "StringMatrix4[2][1]" " "
+  setGridValue "StringMatrix4[2][2]" " "
+  setGridValue "StringMatrix4[2][3]" "#"
+  setGridValue "StringMatrix4[2][4]" " "
+  setGridValue "StringMatrix4[2][5]" "#"
+  setGridValue "StringMatrix4[2][6]" " "
+  setGridValue "StringMatrix4[3][0]" "to C "
+  setGridValue "StringMatrix4[3][1]" " "
+  setGridValue "StringMatrix4[3][2]" " "
+  setGridValue "StringMatrix4[3][3]" "#"
+  setGridValue "StringMatrix4[3][4]" " "
+  setGridValue "StringMatrix4[3][5]" "#"
+  setGridValue "StringMatrix4[3][6]" " "
+  setGridValue "StringMatrix4[4][0]" "to D "
+  setGridValue "StringMatrix4[4][1]" " "
+  setGridValue "StringMatrix4[4][2]" " "
+  setGridValue "StringMatrix4[4][3]" "#"
+  setGridValue "StringMatrix4[4][4]" " "
+  setGridValue "StringMatrix4[4][5]" "#"
+  setGridValue "StringMatrix4[4][6]" " "
+  setGridValue "StringMatrix4[5][0]" "to E "
+  setGridValue "StringMatrix4[5][1]" "#"
+  setGridValue "StringMatrix4[5][2]" "#"
+  setGridValue "StringMatrix4[5][3]" "#"
+  setGridValue "StringMatrix4[5][4]" "#"
+  setGridValue "StringMatrix4[5][5]" "#"
+  setGridValue "StringMatrix4[5][6]" "#"
+  setGridValue "StringMatrix4[6][0]" "to F "
+  setGridValue "StringMatrix4[6][1]" " "
+  setGridValue "StringMatrix4[6][2]" " "
+  setGridValue "StringMatrix4[6][3]" "#"
+  setGridValue "StringMatrix4[6][4]" " "
+  setGridValue "StringMatrix4[6][5]" "#"
+  setGridValue "StringMatrix4[6][6]" " " refresh
+  setGridFont "StringMatrix4[0][0]" font Monospaced size 18 bold
+  setGridColor "StringMatrix4[0][0]" color (144 , 0 , 144)
+}
+{
+  grid "StringMatrix5" offset (560, 480) from "title" NE lines 7 columns 7 color (0, 0, 255) textColor (0, 0, 255) fillColor (255, 255, 255) highlightTextColor (255, 255, 0) highlightBackColor (0, 255, 0) depth 1 
+  setGridValue "StringMatrix5[0][0]" "F"
+  setGridValue "StringMatrix5[0][1]" "via A"
+  setGridValue "StringMatrix5[0][2]" "via B"
+  setGridValue "StringMatrix5[0][3]" "via C"
+  setGridValue "StringMatrix5[0][4]" "via D"
+  setGridValue "StringMatrix5[0][5]" "via E"
+  setGridValue "StringMatrix5[0][6]" "via F"
+  setGridValue "StringMatrix5[1][0]" "to A "
+  setGridValue "StringMatrix5[1][1]" "#"
+  setGridValue "StringMatrix5[1][2]" " "
+  setGridValue "StringMatrix5[1][3]" "#"
+  setGridValue "StringMatrix5[1][4]" " "
+  setGridValue "StringMatrix5[1][5]" " "
+  setGridValue "StringMatrix5[1][6]" "#"
+  setGridValue "StringMatrix5[2][0]" "to B "
+  setGridValue "StringMatrix5[2][1]" "#"
+  setGridValue "StringMatrix5[2][2]" " "
+  setGridValue "StringMatrix5[2][3]" "#"
+  setGridValue "StringMatrix5[2][4]" " "
+  setGridValue "StringMatrix5[2][5]" " "
+  setGridValue "StringMatrix5[2][6]" "#"
+  setGridValue "StringMatrix5[3][0]" "to C "
+  setGridValue "StringMatrix5[3][1]" "#"
+  setGridValue "StringMatrix5[3][2]" " "
+  setGridValue "StringMatrix5[3][3]" "#"
+  setGridValue "StringMatrix5[3][4]" " "
+  setGridValue "StringMatrix5[3][5]" " "
+  setGridValue "StringMatrix5[3][6]" "#"
+  setGridValue "StringMatrix5[4][0]" "to D "
+  setGridValue "StringMatrix5[4][1]" "#"
+  setGridValue "StringMatrix5[4][2]" " "
+  setGridValue "StringMatrix5[4][3]" "#"
+  setGridValue "StringMatrix5[4][4]" " "
+  setGridValue "StringMatrix5[4][5]" " "
+  setGridValue "StringMatrix5[4][6]" "#"
+  setGridValue "StringMatrix5[5][0]" "to E "
+  setGridValue "StringMatrix5[5][1]" "#"
+  setGridValue "StringMatrix5[5][2]" " "
+  setGridValue "StringMatrix5[5][3]" "#"
+  setGridValue "StringMatrix5[5][4]" " "
+  setGridValue "StringMatrix5[5][5]" " "
+  setGridValue "StringMatrix5[5][6]" "#"
+  setGridValue "StringMatrix5[6][0]" "to F "
+  setGridValue "StringMatrix5[6][1]" "#"
+  setGridValue "StringMatrix5[6][2]" "#"
+  setGridValue "StringMatrix5[6][3]" "#"
+  setGridValue "StringMatrix5[6][4]" "#"
+  setGridValue "StringMatrix5[6][5]" "#"
+  setGridValue "StringMatrix5[6][6]" "#" refresh
+  setGridFont "StringMatrix5[0][0]" font Monospaced size 18 bold
+  setGridColor "StringMatrix5[0][0]" color (144 , 0 , 144)
+}
+{
+  text "status" "" (20, 700) color (255, 0, 0) depth 1 font Monospaced size 12
+  text "calc" "" offset (0, 10) from "status" SW color (255, 0, 0) depth 1 font Monospaced size 12
+  text "changed" "" offset (0, 10) from "calc" SW color (255, 0, 0) depth 1 font Monospaced size 12
+  highlightCode on "source" line 0 row 0
+}
+{
+  highlightCode on "source" line 0 row 0 context
+  highlightCode on "source" line 1 row 0
+  highlightNode on "Graph" nodes 0
+  setText of "status" to "Initialize routingtable for Node A"
+  setGridValue "g1[2][2]" "4" refresh 
+  setGridColor "g1[2][2]" color (255 , 0 , 0)
+  setGridValue "g1[3][3]" "3" refresh 
+  setGridColor "g1[3][3]" color (255 , 0 , 0)
+  setGridValue "g1[5][5]" "2" refresh 
+  setGridColor "g1[5][5]" color (255 , 0 , 0)
+}
+{
+  unhighlightNode on "Graph" nodes 0
+  highlightNode on "Graph" nodes 1
+  setText of "status" to "Initialize routingtable for Node B"
+  setGridValue "StringMatrix1[1][1]" "4" refresh 
+  setGridColor "StringMatrix1[1][1]" color (255 , 0 , 0)
+  setGridValue "StringMatrix1[5][5]" "5" refresh 
+  setGridColor "StringMatrix1[5][5]" color (255 , 0 , 0)
+  setGridValue "StringMatrix1[6][6]" "7" refresh 
+  setGridColor "StringMatrix1[6][6]" color (255 , 0 , 0)
+}
+{
+  unhighlightNode on "Graph" nodes 1
+  highlightNode on "Graph" nodes 2
+  setText of "status" to "Initialize routingtable for Node C"
+  setGridValue "StringMatrix2[1][1]" "3" refresh 
+  setGridColor "StringMatrix2[1][1]" color (255 , 0 , 0)
+  setGridValue "StringMatrix2[4][4]" "5" refresh 
+  setGridColor "StringMatrix2[4][4]" color (255 , 0 , 0)
+}
+{
+  unhighlightNode on "Graph" nodes 2
+  highlightNode on "Graph" nodes 3
+  setText of "status" to "Initialize routingtable for Node D"
+  setGridValue "StringMatrix3[3][3]" "5" refresh 
+  setGridColor "StringMatrix3[3][3]" color (255 , 0 , 0)
+  setGridValue "StringMatrix3[5][5]" "3" refresh 
+  setGridColor "StringMatrix3[5][5]" color (255 , 0 , 0)
+  setGridValue "StringMatrix3[6][6]" "1" refresh 
+  setGridColor "StringMatrix3[6][6]" color (255 , 0 , 0)
+}
+{
+  unhighlightNode on "Graph" nodes 3
+  highlightNode on "Graph" nodes 4
+  setText of "status" to "Initialize routingtable for Node E"
+  setGridValue "StringMatrix4[1][1]" "2" refresh 
+  setGridColor "StringMatrix4[1][1]" color (255 , 0 , 0)
+  setGridValue "StringMatrix4[2][2]" "5" refresh 
+  setGridColor "StringMatrix4[2][2]" color (255 , 0 , 0)
+  setGridValue "StringMatrix4[4][4]" "3" refresh 
+  setGridColor "StringMatrix4[4][4]" color (255 , 0 , 0)
+  setGridValue "StringMatrix4[6][6]" "9" refresh 
+  setGridColor "StringMatrix4[6][6]" color (255 , 0 , 0)
+}
+{
+  unhighlightNode on "Graph" nodes 4
+  highlightNode on "Graph" nodes 5
+  setText of "status" to "Initialize routingtable for Node F"
+  setGridValue "StringMatrix5[2][2]" "7" refresh 
+  setGridColor "StringMatrix5[2][2]" color (255 , 0 , 0)
+  setGridValue "StringMatrix5[4][4]" "1" refresh 
+  setGridColor "StringMatrix5[4][4]" color (255 , 0 , 0)
+  setGridValue "StringMatrix5[5][5]" "9" refresh 
+  setGridColor "StringMatrix5[5][5]" color (255 , 0 , 0)
+}
+{
+  unhighlightNode on "Graph" nodes 5
+  setText of "status" to "Get Distance Vector"
+  unhighlightCode on "source" line 1 row 0
+}
+{
+  setGridColor "g1[][]" color (0 , 0 , 255)
+  setGridColor "g1[0][0]" color (144 , 0 , 144)
+  setGridColor "StringMatrix1[][]" color (0 , 0 , 255)
+  setGridColor "StringMatrix1[0][0]" color (144 , 0 , 144)
+  setGridColor "StringMatrix2[][]" color (0 , 0 , 255)
+  setGridColor "StringMatrix2[0][0]" color (144 , 0 , 144)
+  setGridColor "StringMatrix3[][]" color (0 , 0 , 255)
+  setGridColor "StringMatrix3[0][0]" color (144 , 0 , 144)
+  setGridColor "StringMatrix4[][]" color (0 , 0 , 255)
+  setGridColor "StringMatrix4[0][0]" color (144 , 0 , 144)
+  setGridColor "StringMatrix5[][]" color (0 , 0 , 255)
+  setGridColor "StringMatrix5[0][0]" color (144 , 0 , 144)
+}
+{
+  highlightCode on "source" line 2 row 0
+  highlightNode on "Graph" nodes 0
+  setText of "status" to "Distance Vector for Node A is [#, 4, 3, #, 2, #]"
+}
+{
+  unhighlightNode on "Graph" nodes 0
+  highlightNode on "Graph" nodes 1
+  setText of "status" to "Distance Vector for Node B is [4, #, #, #, 5, 7]"
+}
+{
+  unhighlightNode on "Graph" nodes 1
+  highlightNode on "Graph" nodes 2
+  setText of "status" to "Distance Vector for Node C is [3, #, #, 5, #, #]"
+}
+{
+  unhighlightNode on "Graph" nodes 2
+  highlightNode on "Graph" nodes 3
+  setText of "status" to "Distance Vector for Node D is [#, #, 5, #, 3, 1]"
+}
+{
+  unhighlightNode on "Graph" nodes 3
+  highlightNode on "Graph" nodes 4
+  setText of "status" to "Distance Vector for Node E is [2, 5, #, 3, #, 9]"
+}
+{
+  unhighlightNode on "Graph" nodes 4
+  highlightNode on "Graph" nodes 5
+  setText of "status" to "Distance Vector for Node F is [#, 7, #, 1, 9, #]"
+}
+{
+  unhighlightNode on "Graph" nodes 5
+  setText of "status" to ""
+  unhighlightCode on "source" line 0 row 0
+  unhighlightCode on "source" line 2 row 0
+  highlightCode on "source" line 4 row 0
+}
+{
+  highlightCode on "source" line 4 row 0 context
+  highlightCode on "source" line 5 row 0
+  setText of "status" to "Initialize boolean changed with true"
+  setText of "changed" to "changed = true"
+  color "changed" (0, 255, 0)  
+}
+{
+  setText of "status" to "changed == true"
+  unhighlightCode on "source" line 5 row 0
+  highlightCode on "source" line 6 row 0
+}
+{
+  highlightCode on "source" line 6 row 0 context
+  highlightCode on "source" line 7 row 0
+  setText of "status" to "Set changed to false"
+  setText of "changed" to "changed = false"
+  color "changed" (255, 0, 0)  
+}
+{
+  unhighlightCode on "source" line 7 row 0
+  highlightCode on "source" line 8 row 0
+  highlightNode on "Graph" nodes 0
+  highlightEdge on "Graph" (0, 1) 
+  highlightEdge on "Graph" (0, 2) 
+  highlightEdge on "Graph" (0, 4) 
+  setText of "status" to "Node A sends Distance Vector [#, 4, 3, #, 2, #] to B, C, E"
+}
+{
+  unhighlightNode on "Graph" nodes 0
+  unhighlightEdge on "Graph" (0, 1) 
+  unhighlightEdge on "Graph" (0, 2) 
+  unhighlightEdge on "Graph" (0, 4) 
+  setText of "status" to ""
+  highlightNode on "Graph" nodes 1
+  highlightEdge on "Graph" (0, 1) 
+  highlightEdge on "Graph" (1, 4) 
+  highlightEdge on "Graph" (1, 5) 
+  setText of "status" to "Node B sends Distance Vector [4, #, #, #, 5, 7] to A, E, F"
+}
+{
+  unhighlightNode on "Graph" nodes 1
+  unhighlightEdge on "Graph" (0, 1) 
+  unhighlightEdge on "Graph" (1, 4) 
+  unhighlightEdge on "Graph" (1, 5) 
+  setText of "status" to ""
+  highlightNode on "Graph" nodes 2
+  highlightEdge on "Graph" (0, 2) 
+  highlightEdge on "Graph" (2, 3) 
+  setText of "status" to "Node C sends Distance Vector [3, #, #, 5, #, #] to A, D"
+}
+{
+  unhighlightNode on "Graph" nodes 2
+  unhighlightEdge on "Graph" (0, 2) 
+  unhighlightEdge on "Graph" (2, 3) 
+  setText of "status" to ""
+  highlightNode on "Graph" nodes 3
+  highlightEdge on "Graph" (2, 3) 
+  highlightEdge on "Graph" (3, 4) 
+  highlightEdge on "Graph" (3, 5) 
+  setText of "status" to "Node D sends Distance Vector [#, #, 5, #, 3, 1] to C, E, F"
+}
+{
+  unhighlightNode on "Graph" nodes 3
+  unhighlightEdge on "Graph" (2, 3) 
+  unhighlightEdge on "Graph" (3, 4) 
+  unhighlightEdge on "Graph" (3, 5) 
+  setText of "status" to ""
+  highlightNode on "Graph" nodes 4
+  highlightEdge on "Graph" (0, 4) 
+  highlightEdge on "Graph" (1, 4) 
+  highlightEdge on "Graph" (3, 4) 
+  highlightEdge on "Graph" (4, 5) 
+  setText of "status" to "Node E sends Distance Vector [2, 5, #, 3, #, 9] to A, B, D, F"
+}
+{
+  unhighlightNode on "Graph" nodes 4
+  unhighlightEdge on "Graph" (0, 4) 
+  unhighlightEdge on "Graph" (1, 4) 
+  unhighlightEdge on "Graph" (3, 4) 
+  unhighlightEdge on "Graph" (4, 5) 
+  setText of "status" to ""
+  highlightNode on "Graph" nodes 5
+  highlightEdge on "Graph" (1, 5) 
+  highlightEdge on "Graph" (3, 5) 
+  highlightEdge on "Graph" (4, 5) 
+  setText of "status" to "Node F sends Distance Vector [#, 7, #, 1, 9, #] to B, D, E"
+}
+{
+  unhighlightNode on "Graph" nodes 5
+  unhighlightEdge on "Graph" (1, 5) 
+  unhighlightEdge on "Graph" (3, 5) 
+  unhighlightEdge on "Graph" (4, 5) 
+  setText of "status" to ""
+  setText of "status" to "Update Routing Table of Node A"
+  unhighlightCode on "source" line 8 row 0
+  highlightCode on "source" line 9 row 0
+  highlightNode on "Graph" nodes 0
+}
+{
+  highlightCode on "source" line 9 row 0 context
+  highlightCode on "source" line 10 row 0
+  setText of "status" to "Processing Distance Vector [4, #, #, #, 5, 7] from Node B"
+}
+{
+  setText of "calc" to ""
+  setText of "calc" to ""
+  setText of "calc" to ""
+  setText of "calc" to ""
+  setText of "calc" to "Way to E via B is 5 + 4 = 9"
+}
+{
+  setText of "calc" to "Way to 4 via B is 9: Update Table"
+  setGridValue "g1[5][2]" "9" refresh 
+  setGridColor "g1[5][2]" color (255 ,  0 ,0)
+}
+{
+  setText of "calc" to ""
+  setText of "calc" to "Way to F via B is 7 + 4 = 11"
+}
+{
+  setText of "calc" to "Way to 5 via B is 11: Update Table"
+  setGridValue "g1[6][2]" "11" refresh 
+  setGridColor "g1[6][2]" color (255 ,  0 ,0)
+}
+{
+  setText of "calc" to ""
+  setText of "status" to "Processing Distance Vector [3, #, #, 5, #, #] from Node C"
+}
+{
+  setText of "calc" to ""
+  setText of "calc" to ""
+  setText of "calc" to ""
+  setText of "calc" to "Way to D via C is 5 + 3 = 8"
+}
+{
+  setText of "calc" to "Way to 3 via C is 8: Update Table"
+  setGridValue "g1[4][3]" "8" refresh 
+  setGridColor "g1[4][3]" color (255 ,  0 ,0)
+}
+{
+  setText of "calc" to ""
+  setText of "calc" to ""
+  setText of "calc" to ""
+  setText of "status" to "Processing Distance Vector [2, 5, #, 3, #, 9] from Node E"
+}
+{
+  setText of "calc" to ""
+  setText of "calc" to "Way to B via E is 5 + 2 = 7"
+}
+{
+  setText of "calc" to "Way to 1 via E is 7: Update Table"
+  setGridValue "g1[2][5]" "7" refresh 
+  setGridColor "g1[2][5]" color (255 ,  0 ,0)
+}
+{
+  setText of "calc" to ""
+  setText of "calc" to ""
+  setText of "calc" to "Way to D via E is 3 + 2 = 5"
+}
+{
+  setText of "calc" to "Way to 3 via E is 5: Update Table"
+  setGridValue "g1[4][5]" "5" refresh 
+  setGridColor "g1[4][5]" color (255 ,  0 ,0)
+}
+{
+  setText of "calc" to ""
+  setText of "calc" to ""
+  setText of "calc" to "Way to F via E is 9 + 2 = 11"
+}
+{
+  setText of "calc" to "Way to 5 via E is 11: Update Table"
+  setGridValue "g1[6][5]" "11" refresh 
+  setGridColor "g1[6][5]" color (255 ,  0 ,0)
+}
+{
+  setText of "calc" to ""
+  setGridColor "g1[][]" color (0 , 0 , 255)
+  setGridColor "g1[0][0]" color (144 , 0 , 144)
+  unhighlightCode on "source" line 10 row 0
+  highlightCode on "source" line 11 row 0
+  setText of "status" to "Update Distance Vector of Node A"
+  setGridColor "g1[2][2]"color (0 , 255 , 0)
+  setGridColor "g1[3][3]"color (0 , 255 , 0)
+  setGridColor "g1[4][5]"color (0 , 255 , 255)
+  setGridColor "g1[5][5]"color (0 , 255 , 0)
+  setGridColor "g1[6][2]"color (0 , 255 , 255)
+}
+{
+  unhighlightCode on "source" line 11 row 0
+  highlightCode on "source" line 12 row 0 context
+  highlightCode on "source" line 13 row 0
+  setText of "status" to "Distance Vector changed to [#, 4, 3, 5, 2, 11]"
+  setText of "changed" to "changed = true"
+  color "changed" (0, 255, 0)  
+}
+{
+  unhighlightCode on "source" line 12 row 0
+  unhighlightCode on "source" line 13 row 0
+  unhighlightCode on "source" line 14 row 0
+  unhighlightCode on "source" line 15 row 0
+  setText of "status" to ""
+  unhighlightNode on "Graph" nodes 0
+  setText of "status" to "Update Routing Table of Node B"
+  unhighlightCode on "source" line 8 row 0
+  highlightCode on "source" line 9 row 0
+  highlightNode on "Graph" nodes 1
+}
+{
+  highlightCode on "source" line 9 row 0 context
+  highlightCode on "source" line 10 row 0
+  setText of "status" to "Processing Distance Vector [#, 4, 3, #, 2, #] from Node A"
+}
+{
+  setText of "calc" to ""
+  setText of "calc" to ""
+  setText of "calc" to "Way to C via A is 3 + 4 = 7"
+}
+{
+  setText of "calc" to "Way to 2 via A is 7: Update Table"
+  setGridValue "StringMatrix1[3][1]" "7" refresh 
+  setGridColor "StringMatrix1[3][1]" color (255 ,  0 ,0)
+}
+{
+  setText of "calc" to ""
+  setText of "calc" to ""
+  setText of "calc" to "Way to E via A is 2 + 4 = 6"
+}
+{
+  setText of "calc" to "Way to 4 via A is 6: Update Table"
+  setGridValue "StringMatrix1[5][1]" "6" refresh 
+  setGridColor "StringMatrix1[5][1]" color (255 ,  0 ,0)
+}
+{
+  setText of "calc" to ""
+  setText of "calc" to ""
+  setText of "status" to "Processing Distance Vector [2, 5, #, 3, #, 9] from Node E"
+}
+{
+  setText of "calc" to "Way to A via E is 2 + 5 = 7"
+}
+{
+  setText of "calc" to "Way to 0 via E is 7: Update Table"
+  setGridValue "StringMatrix1[1][5]" "7" refresh 
+  setGridColor "StringMatrix1[1][5]" color (255 ,  0 ,0)
+}
+{
+  setText of "calc" to ""
+  setText of "calc" to ""
+  setText of "calc" to ""
+  setText of "calc" to "Way to D via E is 3 + 5 = 8"
+}
+{
+  setText of "calc" to "Way to 3 via E is 8: Update Table"
+  setGridValue "StringMatrix1[4][5]" "8" refresh 
+  setGridColor "StringMatrix1[4][5]" color (255 ,  0 ,0)
+}
+{
+  setText of "calc" to ""
+  setText of "calc" to ""
+  setText of "calc" to "Way to F via E is 9 + 5 = 14"
+}
+{
+  setText of "calc" to "Way to 5 via E is 14: Update Table"
+  setGridValue "StringMatrix1[6][5]" "14" refresh 
+  setGridColor "StringMatrix1[6][5]" color (255 ,  0 ,0)
+}
+{
+  setText of "calc" to ""
+  setText of "status" to "Processing Distance Vector [#, 7, #, 1, 9, #] from Node F"
+}
+{
+  setText of "calc" to ""
+  setText of "calc" to ""
+  setText of "calc" to ""
+  setText of "calc" to "Way to D via F is 1 + 7 = 8"
+}
+{
+  setText of "calc" to "Way to 3 via F is 8: Update Table"
+  setGridValue "StringMatrix1[4][6]" "8" refresh 
+  setGridColor "StringMatrix1[4][6]" color (255 ,  0 ,0)
+}
+{
+  setText of "calc" to ""
+  setText of "calc" to "Way to E via F is 9 + 7 = 16"
+}
+{
+  setText of "calc" to "Way to 4 via F is 16: Update Table"
+  setGridValue "StringMatrix1[5][6]" "16" refresh 
+  setGridColor "StringMatrix1[5][6]" color (255 ,  0 ,0)
+}
+{
+  setText of "calc" to ""
+  setText of "calc" to ""
+  setGridColor "StringMatrix1[][]" color (0 , 0 , 255)
+  setGridColor "StringMatrix1[0][0]" color (144 , 0 , 144)
+  unhighlightCode on "source" line 10 row 0
+  highlightCode on "source" line 11 row 0
+  setText of "status" to "Update Distance Vector of Node B"
+  setGridColor "StringMatrix1[1][1]"color (0 , 255 , 0)
+  setGridColor "StringMatrix1[3][1]"color (0 , 255 , 255)
+  setGridColor "StringMatrix1[4][5]"color (0 , 255 , 255)
+  setGridColor "StringMatrix1[5][5]"color (0 , 255 , 0)
+  setGridColor "StringMatrix1[6][6]"color (0 , 255 , 0)
+}
+{
+  unhighlightCode on "source" line 11 row 0
+  highlightCode on "source" line 12 row 0 context
+  highlightCode on "source" line 13 row 0
+  setText of "status" to "Distance Vector changed to [4, #, 7, 8, 5, 7]"
+  setText of "changed" to "changed = true"
+  color "changed" (0, 255, 0)  
+}
+{
+  unhighlightCode on "source" line 12 row 0
+  unhighlightCode on "source" line 13 row 0
+  unhighlightCode on "source" line 14 row 0
+  unhighlightCode on "source" line 15 row 0
+  setText of "status" to ""
+  unhighlightNode on "Graph" nodes 1
+  setText of "status" to "Update Routing Table of Node C"
+  unhighlightCode on "source" line 8 row 0
+  highlightCode on "source" line 9 row 0
+  highlightNode on "Graph" nodes 2
+}
+{
+  highlightCode on "source" line 9 row 0 context
+  highlightCode on "source" line 10 row 0
+  setText of "status" to "Processing Distance Vector [#, 4, 3, #, 2, #] from Node A"
+}
+{
+  setText of "calc" to ""
+  setText of "calc" to "Way to B via A is 4 + 3 = 7"
+}
+{
+  setText of "calc" to "Way to 1 via A is 7: Update Table"
+  setGridValue "StringMatrix2[2][1]" "7" refresh 
+  setGridColor "StringMatrix2[2][1]" color (255 ,  0 ,0)
+}
+{
+  setText of "calc" to ""
+  setText of "calc" to ""
+  setText of "calc" to ""
+  setText of "calc" to "Way to E via A is 2 + 3 = 5"
+}
+{
+  setText of "calc" to "Way to 4 via A is 5: Update Table"
+  setGridValue "StringMatrix2[5][1]" "5" refresh 
+  setGridColor "StringMatrix2[5][1]" color (255 ,  0 ,0)
+}
+{
+  setText of "calc" to ""
+  setText of "calc" to ""
+  setText of "status" to "Processing Distance Vector [#, #, 5, #, 3, 1] from Node D"
+}
+{
+  setText of "calc" to ""
+  setText of "calc" to ""
+  setText of "calc" to ""
+  setText of "calc" to ""
+  setText of "calc" to "Way to E via D is 3 + 5 = 8"
+}
+{
+  setText of "calc" to "Way to 4 via D is 8: Update Table"
+  setGridValue "StringMatrix2[5][4]" "8" refresh 
+  setGridColor "StringMatrix2[5][4]" color (255 ,  0 ,0)
+}
+{
+  setText of "calc" to ""
+  setText of "calc" to "Way to F via D is 1 + 5 = 6"
+}
+{
+  setText of "calc" to "Way to 5 via D is 6: Update Table"
+  setGridValue "StringMatrix2[6][4]" "6" refresh 
+  setGridColor "StringMatrix2[6][4]" color (255 ,  0 ,0)
+}
+{
+  setText of "calc" to ""
+  setGridColor "StringMatrix2[][]" color (0 , 0 , 255)
+  setGridColor "StringMatrix2[0][0]" color (144 , 0 , 144)
+  unhighlightCode on "source" line 10 row 0
+  highlightCode on "source" line 11 row 0
+  setText of "status" to "Update Distance Vector of Node C"
+  setGridColor "StringMatrix2[1][1]"color (0 , 255 , 0)
+  setGridColor "StringMatrix2[2][1]"color (0 , 255 , 255)
+  setGridColor "StringMatrix2[4][4]"color (0 , 255 , 0)
+  setGridColor "StringMatrix2[5][1]"color (0 , 255 , 255)
+  setGridColor "StringMatrix2[6][4]"color (0 , 255 , 255)
+}
+{
+  unhighlightCode on "source" line 11 row 0
+  highlightCode on "source" line 12 row 0 context
+  highlightCode on "source" line 13 row 0
+  setText of "status" to "Distance Vector changed to [3, 7, #, 5, 5, 6]"
+  setText of "changed" to "changed = true"
+  color "changed" (0, 255, 0)  
+}
+{
+  unhighlightCode on "source" line 12 row 0
+  unhighlightCode on "source" line 13 row 0
+  unhighlightCode on "source" line 14 row 0
+  unhighlightCode on "source" line 15 row 0
+  setText of "status" to ""
+  unhighlightNode on "Graph" nodes 2
+  setText of "status" to "Update Routing Table of Node D"
+  unhighlightCode on "source" line 8 row 0
+  highlightCode on "source" line 9 row 0
+  highlightNode on "Graph" nodes 3
+}
+{
+  highlightCode on "source" line 9 row 0 context
+  highlightCode on "source" line 10 row 0
+  setText of "status" to "Processing Distance Vector [3, #, #, 5, #, #] from Node C"
+}
+{
+  setText of "calc" to "Way to A via C is 3 + 5 = 8"
+}
+{
+  setText of "calc" to "Way to 0 via C is 8: Update Table"
+  setGridValue "StringMatrix3[1][3]" "8" refresh 
+  setGridColor "StringMatrix3[1][3]" color (255 ,  0 ,0)
+}
+{
+  setText of "calc" to ""
+  setText of "calc" to ""
+  setText of "calc" to ""
+  setText of "calc" to ""
+  setText of "calc" to ""
+  setText of "calc" to ""
+  setText of "status" to "Processing Distance Vector [2, 5, #, 3, #, 9] from Node E"
+}
+{
+  setText of "calc" to "Way to A via E is 2 + 3 = 5"
+}
+{
+  setText of "calc" to "Way to 0 via E is 5: Update Table"
+  setGridValue "StringMatrix3[1][5]" "5" refresh 
+  setGridColor "StringMatrix3[1][5]" color (255 ,  0 ,0)
+}
+{
+  setText of "calc" to ""
+  setText of "calc" to "Way to B via E is 5 + 3 = 8"
+}
+{
+  setText of "calc" to "Way to 1 via E is 8: Update Table"
+  setGridValue "StringMatrix3[2][5]" "8" refresh 
+  setGridColor "StringMatrix3[2][5]" color (255 ,  0 ,0)
+}
+{
+  setText of "calc" to ""
+  setText of "calc" to ""
+  setText of "calc" to ""
+  setText of "calc" to ""
+  setText of "calc" to "Way to F via E is 9 + 3 = 12"
+}
+{
+  setText of "calc" to "Way to 5 via E is 12: Update Table"
+  setGridValue "StringMatrix3[6][5]" "12" refresh 
+  setGridColor "StringMatrix3[6][5]" color (255 ,  0 ,0)
+}
+{
+  setText of "calc" to ""
+  setText of "status" to "Processing Distance Vector [#, 7, #, 1, 9, #] from Node F"
+}
+{
+  setText of "calc" to ""
+  setText of "calc" to "Way to B via F is 7 + 1 = 8"
+}
+{
+  setText of "calc" to "Way to 1 via F is 8: Update Table"
+  setGridValue "StringMatrix3[2][6]" "8" refresh 
+  setGridColor "StringMatrix3[2][6]" color (255 ,  0 ,0)
+}
+{
+  setText of "calc" to ""
+  setText of "calc" to ""
+  setText of "calc" to ""
+  setText of "calc" to "Way to E via F is 9 + 1 = 10"
+}
+{
+  setText of "calc" to "Way to 4 via F is 10: Update Table"
+  setGridValue "StringMatrix3[5][6]" "10" refresh 
+  setGridColor "StringMatrix3[5][6]" color (255 ,  0 ,0)
+}
+{
+  setText of "calc" to ""
+  setText of "calc" to ""
+  setGridColor "StringMatrix3[][]" color (0 , 0 , 255)
+  setGridColor "StringMatrix3[0][0]" color (144 , 0 , 144)
+  unhighlightCode on "source" line 10 row 0
+  highlightCode on "source" line 11 row 0
+  setText of "status" to "Update Distance Vector of Node D"
+  setGridColor "StringMatrix3[1][5]"color (0 , 255 , 255)
+  setGridColor "StringMatrix3[2][5]"color (0 , 255 , 255)
+  setGridColor "StringMatrix3[3][3]"color (0 , 255 , 0)
+  setGridColor "StringMatrix3[5][5]"color (0 , 255 , 0)
+  setGridColor "StringMatrix3[6][6]"color (0 , 255 , 0)
+}
+{
+  unhighlightCode on "source" line 11 row 0
+  highlightCode on "source" line 12 row 0 context
+  highlightCode on "source" line 13 row 0
+  setText of "status" to "Distance Vector changed to [5, 8, 5, #, 3, 1]"
+  setText of "changed" to "changed = true"
+  color "changed" (0, 255, 0)  
+}
+{
+  unhighlightCode on "source" line 12 row 0
+  unhighlightCode on "source" line 13 row 0
+  unhighlightCode on "source" line 14 row 0
+  unhighlightCode on "source" line 15 row 0
+  setText of "status" to ""
+  unhighlightNode on "Graph" nodes 3
+  setText of "status" to "Update Routing Table of Node E"
+  unhighlightCode on "source" line 8 row 0
+  highlightCode on "source" line 9 row 0
+  highlightNode on "Graph" nodes 4
+}
+{
+  highlightCode on "source" line 9 row 0 context
+  highlightCode on "source" line 10 row 0
+  setText of "status" to "Processing Distance Vector [#, 4, 3, #, 2, #] from Node A"
+}
+{
+  setText of "calc" to ""
+  setText of "calc" to "Way to B via A is 4 + 2 = 6"
+}
+{
+  setText of "calc" to "Way to 1 via A is 6: Update Table"
+  setGridValue "StringMatrix4[2][1]" "6" refresh 
+  setGridColor "StringMatrix4[2][1]" color (255 ,  0 ,0)
+}
+{
+  setText of "calc" to ""
+  setText of "calc" to "Way to C via A is 3 + 2 = 5"
+}
+{
+  setText of "calc" to "Way to 2 via A is 5: Update Table"
+  setGridValue "StringMatrix4[3][1]" "5" refresh 
+  setGridColor "StringMatrix4[3][1]" color (255 ,  0 ,0)
+}
+{
+  setText of "calc" to ""
+  setText of "calc" to ""
+  setText of "calc" to ""
+  setText of "calc" to ""
+  setText of "status" to "Processing Distance Vector [4, #, #, #, 5, 7] from Node B"
+}
+{
+  setText of "calc" to "Way to A via B is 4 + 5 = 9"
+}
+{
+  setText of "calc" to "Way to 0 via B is 9: Update Table"
+  setGridValue "StringMatrix4[1][2]" "9" refresh 
+  setGridColor "StringMatrix4[1][2]" color (255 ,  0 ,0)
+}
+{
+  setText of "calc" to ""
+  setText of "calc" to ""
+  setText of "calc" to ""
+  setText of "calc" to ""
+  setText of "calc" to ""
+  setText of "calc" to "Way to F via B is 7 + 5 = 12"
+}
+{
+  setText of "calc" to "Way to 5 via B is 12: Update Table"
+  setGridValue "StringMatrix4[6][2]" "12" refresh 
+  setGridColor "StringMatrix4[6][2]" color (255 ,  0 ,0)
+}
+{
+  setText of "calc" to ""
+  setText of "status" to "Processing Distance Vector [#, #, 5, #, 3, 1] from Node D"
+}
+{
+  setText of "calc" to ""
+  setText of "calc" to ""
+  setText of "calc" to "Way to C via D is 5 + 3 = 8"
+}
+{
+  setText of "calc" to "Way to 2 via D is 8: Update Table"
+  setGridValue "StringMatrix4[3][4]" "8" refresh 
+  setGridColor "StringMatrix4[3][4]" color (255 ,  0 ,0)
+}
+{
+  setText of "calc" to ""
+  setText of "calc" to ""
+  setText of "calc" to ""
+  setText of "calc" to "Way to F via D is 1 + 3 = 4"
+}
+{
+  setText of "calc" to "Way to 5 via D is 4: Update Table"
+  setGridValue "StringMatrix4[6][4]" "4" refresh 
+  setGridColor "StringMatrix4[6][4]" color (255 ,  0 ,0)
+}
+{
+  setText of "calc" to ""
+  setText of "status" to "Processing Distance Vector [#, 7, #, 1, 9, #] from Node F"
+}
+{
+  setText of "calc" to ""
+  setText of "calc" to "Way to B via F is 7 + 9 = 16"
+}
+{
+  setText of "calc" to "Way to 1 via F is 16: Update Table"
+  setGridValue "StringMatrix4[2][6]" "16" refresh 
+  setGridColor "StringMatrix4[2][6]" color (255 ,  0 ,0)
+}
+{
+  setText of "calc" to ""
+  setText of "calc" to ""
+  setText of "calc" to "Way to D via F is 1 + 9 = 10"
+}
+{
+  setText of "calc" to "Way to 3 via F is 10: Update Table"
+  setGridValue "StringMatrix4[4][6]" "10" refresh 
+  setGridColor "StringMatrix4[4][6]" color (255 ,  0 ,0)
+}
+{
+  setText of "calc" to ""
+  setText of "calc" to ""
+  setText of "calc" to ""
+  setGridColor "StringMatrix4[][]" color (0 , 0 , 255)
+  setGridColor "StringMatrix4[0][0]" color (144 , 0 , 144)
+  unhighlightCode on "source" line 10 row 0
+  highlightCode on "source" line 11 row 0
+  setText of "status" to "Update Distance Vector of Node E"
+  setGridColor "StringMatrix4[1][1]"color (0 , 255 , 0)
+  setGridColor "StringMatrix4[2][2]"color (0 , 255 , 0)
+  setGridColor "StringMatrix4[3][1]"color (0 , 255 , 255)
+  setGridColor "StringMatrix4[4][4]"color (0 , 255 , 0)
+  setGridColor "StringMatrix4[6][4]"color (0 , 255 , 255)
+}
+{
+  unhighlightCode on "source" line 11 row 0
+  highlightCode on "source" line 12 row 0 context
+  highlightCode on "source" line 13 row 0
+  setText of "status" to "Distance Vector changed to [2, 5, 5, 3, #, 4]"
+  setText of "changed" to "changed = true"
+  color "changed" (0, 255, 0)  
+}
+{
+  unhighlightCode on "source" line 12 row 0
+  unhighlightCode on "source" line 13 row 0
+  unhighlightCode on "source" line 14 row 0
+  unhighlightCode on "source" line 15 row 0
+  setText of "status" to ""
+  unhighlightNode on "Graph" nodes 4
+  setText of "status" to "Update Routing Table of Node F"
+  unhighlightCode on "source" line 8 row 0
+  highlightCode on "source" line 9 row 0
+  highlightNode on "Graph" nodes 5
+}
+{
+  highlightCode on "source" line 9 row 0 context
+  highlightCode on "source" line 10 row 0
+  setText of "status" to "Processing Distance Vector [4, #, #, #, 5, 7] from Node B"
+}
+{
+  setText of "calc" to "Way to A via B is 4 + 7 = 11"
+}
+{
+  setText of "calc" to "Way to 0 via B is 11: Update Table"
+  setGridValue "StringMatrix5[1][2]" "11" refresh 
+  setGridColor "StringMatrix5[1][2]" color (255 ,  0 ,0)
+}
+{
+  setText of "calc" to ""
+  setText of "calc" to ""
+  setText of "calc" to ""
+  setText of "calc" to ""
+  setText of "calc" to "Way to E via B is 5 + 7 = 12"
+}
+{
+  setText of "calc" to "Way to 4 via B is 12: Update Table"
+  setGridValue "StringMatrix5[5][2]" "12" refresh 
+  setGridColor "StringMatrix5[5][2]" color (255 ,  0 ,0)
+}
+{
+  setText of "calc" to ""
+  setText of "calc" to ""
+  setText of "status" to "Processing Distance Vector [#, #, 5, #, 3, 1] from Node D"
+}
+{
+  setText of "calc" to ""
+  setText of "calc" to ""
+  setText of "calc" to "Way to C via D is 5 + 1 = 6"
+}
+{
+  setText of "calc" to "Way to 2 via D is 6: Update Table"
+  setGridValue "StringMatrix5[3][4]" "6" refresh 
+  setGridColor "StringMatrix5[3][4]" color (255 ,  0 ,0)
+}
+{
+  setText of "calc" to ""
+  setText of "calc" to ""
+  setText of "calc" to "Way to E via D is 3 + 1 = 4"
+}
+{
+  setText of "calc" to "Way to 4 via D is 4: Update Table"
+  setGridValue "StringMatrix5[5][4]" "4" refresh 
+  setGridColor "StringMatrix5[5][4]" color (255 ,  0 ,0)
+}
+{
+  setText of "calc" to ""
+  setText of "calc" to ""
+  setText of "status" to "Processing Distance Vector [2, 5, #, 3, #, 9] from Node E"
+}
+{
+  setText of "calc" to "Way to A via E is 2 + 9 = 11"
+}
+{
+  setText of "calc" to "Way to 0 via E is 11: Update Table"
+  setGridValue "StringMatrix5[1][5]" "11" refresh 
+  setGridColor "StringMatrix5[1][5]" color (255 ,  0 ,0)
+}
+{
+  setText of "calc" to ""
+  setText of "calc" to "Way to B via E is 5 + 9 = 14"
+}
+{
+  setText of "calc" to "Way to 1 via E is 14: Update Table"
+  setGridValue "StringMatrix5[2][5]" "14" refresh 
+  setGridColor "StringMatrix5[2][5]" color (255 ,  0 ,0)
+}
+{
+  setText of "calc" to ""
+  setText of "calc" to ""
+  setText of "calc" to "Way to D via E is 3 + 9 = 12"
+}
+{
+  setText of "calc" to "Way to 3 via E is 12: Update Table"
+  setGridValue "StringMatrix5[4][5]" "12" refresh 
+  setGridColor "StringMatrix5[4][5]" color (255 ,  0 ,0)
+}
+{
+  setText of "calc" to ""
+  setText of "calc" to ""
+  setText of "calc" to ""
+  setGridColor "StringMatrix5[][]" color (0 , 0 , 255)
+  setGridColor "StringMatrix5[0][0]" color (144 , 0 , 144)
+  unhighlightCode on "source" line 10 row 0
+  highlightCode on "source" line 11 row 0
+  setText of "status" to "Update Distance Vector of Node F"
+  setGridColor "StringMatrix5[1][2]"color (0 , 255 , 255)
+  setGridColor "StringMatrix5[2][2]"color (0 , 255 , 0)
+  setGridColor "StringMatrix5[3][4]"color (0 , 255 , 255)
+  setGridColor "StringMatrix5[4][4]"color (0 , 255 , 0)
+  setGridColor "StringMatrix5[5][4]"color (0 , 255 , 255)
+}
+{
+  unhighlightCode on "source" line 11 row 0
+  highlightCode on "source" line 12 row 0 context
+  highlightCode on "source" line 13 row 0
+  setText of "status" to "Distance Vector changed to [11, 7, 6, 1, 4, #]"
+  setText of "changed" to "changed = true"
+  color "changed" (0, 255, 0)  
+}
+{
+  unhighlightCode on "source" line 12 row 0
+  unhighlightCode on "source" line 13 row 0
+  unhighlightCode on "source" line 14 row 0
+  unhighlightCode on "source" line 15 row 0
+  setText of "status" to ""
+  unhighlightNode on "Graph" nodes 5
+  unhighlightCode on "source" line 9 row 0
+}
+{
+  setGridColor "g1[][]" color (0 , 0 , 255)
+  setGridColor "g1[0][0]" color (144 , 0 , 144)
+  setGridColor "StringMatrix1[][]" color (0 , 0 , 255)
+  setGridColor "StringMatrix1[0][0]" color (144 , 0 , 144)
+  setGridColor "StringMatrix2[][]" color (0 , 0 , 255)
+  setGridColor "StringMatrix2[0][0]" color (144 , 0 , 144)
+  setGridColor "StringMatrix3[][]" color (0 , 0 , 255)
+  setGridColor "StringMatrix3[0][0]" color (144 , 0 , 144)
+  setGridColor "StringMatrix4[][]" color (0 , 0 , 255)
+  setGridColor "StringMatrix4[0][0]" color (144 , 0 , 144)
+  setGridColor "StringMatrix5[][]" color (0 , 0 , 255)
+  setGridColor "StringMatrix5[0][0]" color (144 , 0 , 144)
+}
+{
+  setText of "status" to "changed == true"
+  unhighlightCode on "source" line 5 row 0
+  highlightCode on "source" line 6 row 0
+}
+{
+  highlightCode on "source" line 6 row 0 context
+  highlightCode on "source" line 7 row 0
+  setText of "status" to "Set changed to false"
+  setText of "changed" to "changed = false"
+  color "changed" (255, 0, 0)  
+}
+{
+  unhighlightCode on "source" line 7 row 0
+  highlightCode on "source" line 8 row 0
+  highlightNode on "Graph" nodes 0
+  highlightEdge on "Graph" (0, 1) 
+  highlightEdge on "Graph" (0, 2) 
+  highlightEdge on "Graph" (0, 4) 
+  setText of "status" to "Node A sends Distance Vector [#, 4, 3, 5, 2, 11] to B, C, E"
+}
+{
+  unhighlightNode on "Graph" nodes 0
+  unhighlightEdge on "Graph" (0, 1) 
+  unhighlightEdge on "Graph" (0, 2) 
+  unhighlightEdge on "Graph" (0, 4) 
+  setText of "status" to ""
+  highlightNode on "Graph" nodes 1
+  highlightEdge on "Graph" (0, 1) 
+  highlightEdge on "Graph" (1, 4) 
+  highlightEdge on "Graph" (1, 5) 
+  setText of "status" to "Node B sends Distance Vector [4, #, 7, 8, 5, 7] to A, E, F"
+}
+{
+  unhighlightNode on "Graph" nodes 1
+  unhighlightEdge on "Graph" (0, 1) 
+  unhighlightEdge on "Graph" (1, 4) 
+  unhighlightEdge on "Graph" (1, 5) 
+  setText of "status" to ""
+  highlightNode on "Graph" nodes 2
+  highlightEdge on "Graph" (0, 2) 
+  highlightEdge on "Graph" (2, 3) 
+  setText of "status" to "Node C sends Distance Vector [3, 7, #, 5, 5, 6] to A, D"
+}
+{
+  unhighlightNode on "Graph" nodes 2
+  unhighlightEdge on "Graph" (0, 2) 
+  unhighlightEdge on "Graph" (2, 3) 
+  setText of "status" to ""
+  highlightNode on "Graph" nodes 3
+  highlightEdge on "Graph" (2, 3) 
+  highlightEdge on "Graph" (3, 4) 
+  highlightEdge on "Graph" (3, 5) 
+  setText of "status" to "Node D sends Distance Vector [5, 8, 5, #, 3, 1] to C, E, F"
+}
+{
+  unhighlightNode on "Graph" nodes 3
+  unhighlightEdge on "Graph" (2, 3) 
+  unhighlightEdge on "Graph" (3, 4) 
+  unhighlightEdge on "Graph" (3, 5) 
+  setText of "status" to ""
+  highlightNode on "Graph" nodes 4
+  highlightEdge on "Graph" (0, 4) 
+  highlightEdge on "Graph" (1, 4) 
+  highlightEdge on "Graph" (3, 4) 
+  highlightEdge on "Graph" (4, 5) 
+  setText of "status" to "Node E sends Distance Vector [2, 5, 5, 3, #, 4] to A, B, D, F"
+}
+{
+  unhighlightNode on "Graph" nodes 4
+  unhighlightEdge on "Graph" (0, 4) 
+  unhighlightEdge on "Graph" (1, 4) 
+  unhighlightEdge on "Graph" (3, 4) 
+  unhighlightEdge on "Graph" (4, 5) 
+  setText of "status" to ""
+  highlightNode on "Graph" nodes 5
+  highlightEdge on "Graph" (1, 5) 
+  highlightEdge on "Graph" (3, 5) 
+  highlightEdge on "Graph" (4, 5) 
+  setText of "status" to "Node F sends Distance Vector [11, 7, 6, 1, 4, #] to B, D, E"
+}
+{
+  unhighlightNode on "Graph" nodes 5
+  unhighlightEdge on "Graph" (1, 5) 
+  unhighlightEdge on "Graph" (3, 5) 
+  unhighlightEdge on "Graph" (4, 5) 
+  setText of "status" to ""
+  setText of "status" to "Update Routing Table of Node A"
+  unhighlightCode on "source" line 8 row 0
+  highlightCode on "source" line 9 row 0
+  highlightNode on "Graph" nodes 0
+}
+{
+  highlightCode on "source" line 9 row 0 context
+  highlightCode on "source" line 10 row 0
+  setText of "status" to "Processing Distance Vector [4, #, 7, 8, 5, 7] from Node B"
+}
+{
+  setText of "calc" to ""
+  setText of "calc" to ""
+  setText of "calc" to "Way to C via B is 7 + 4 = 11"
+}
+{
+  setText of "calc" to "Way to 2 via B is 11: Update Table"
+  setGridValue "g1[3][2]" "11" refresh 
+  setGridColor "g1[3][2]" color (255 ,  0 ,0)
+}
+{
+  setText of "calc" to ""
+  setText of "calc" to "Way to D via B is 8 + 4 = 12"
+}
+{
+  setText of "calc" to "Way to 3 via B is 12: Update Table"
+  setGridValue "g1[4][2]" "12" refresh 
+  setGridColor "g1[4][2]" color (255 ,  0 ,0)
+}
+{
+  setText of "calc" to ""
+  setText of "calc" to "Way to E via B is 5 + 4 = 9"
+}
+{
+  setText of "calc" to ""
+  setText of "calc" to "Way to F via B is 7 + 4 = 11"
+}
+{
+  setText of "calc" to ""
+  setText of "status" to "Processing Distance Vector [3, 7, #, 5, 5, 6] from Node C"
+}
+{
+  setText of "calc" to ""
+  setText of "calc" to "Way to B via C is 7 + 3 = 10"
+}
+{
+  setText of "calc" to "Way to 1 via C is 10: Update Table"
+  setGridValue "g1[2][3]" "10" refresh 
+  setGridColor "g1[2][3]" color (255 ,  0 ,0)
+}
+{
+  setText of "calc" to ""
+  setText of "calc" to ""
+  setText of "calc" to "Way to D via C is 5 + 3 = 8"
+}
+{
+  setText of "calc" to ""
+  setText of "calc" to "Way to E via C is 5 + 3 = 8"
+}
+{
+  setText of "calc" to "Way to 4 via C is 8: Update Table"
+  setGridValue "g1[5][3]" "8" refresh 
+  setGridColor "g1[5][3]" color (255 ,  0 ,0)
+}
+{
+  setText of "calc" to ""
+  setText of "calc" to "Way to F via C is 6 + 3 = 9"
+}
+{
+  setText of "calc" to "Way to 5 via C is 9: Update Table"
+  setGridValue "g1[6][3]" "9" refresh 
+  setGridColor "g1[6][3]" color (255 ,  0 ,0)
+}
+{
+  setText of "calc" to ""
+  setText of "status" to "Processing Distance Vector [2, 5, 5, 3, #, 4] from Node E"
+}
+{
+  setText of "calc" to ""
+  setText of "calc" to "Way to B via E is 5 + 2 = 7"
+}
+{
+  setText of "calc" to ""
+  setText of "calc" to "Way to C via E is 5 + 2 = 7"
+}
+{
+  setText of "calc" to "Way to 2 via E is 7: Update Table"
+  setGridValue "g1[3][5]" "7" refresh 
+  setGridColor "g1[3][5]" color (255 ,  0 ,0)
+}
+{
+  setText of "calc" to ""
+  setText of "calc" to "Way to D via E is 3 + 2 = 5"
+}
+{
+  setText of "calc" to ""
+  setText of "calc" to ""
+  setText of "calc" to "Way to F via E is 4 + 2 = 6"
+}
+{
+  setText of "calc" to "Way to 5 via E is 6: Update Table"
+  setGridValue "g1[6][5]" "6" refresh 
+  setGridColor "g1[6][5]" color (255 ,  0 ,0)
+}
+{
+  setText of "calc" to ""
+  setGridColor "g1[][]" color (0 , 0 , 255)
+  setGridColor "g1[0][0]" color (144 , 0 , 144)
+  unhighlightCode on "source" line 10 row 0
+  highlightCode on "source" line 11 row 0
+  setText of "status" to "Update Distance Vector of Node A"
+  setGridColor "g1[2][2]"color (0 , 255 , 0)
+  setGridColor "g1[3][3]"color (0 , 255 , 0)
+  setGridColor "g1[4][5]"color (0 , 255 , 0)
+  setGridColor "g1[5][5]"color (0 , 255 , 0)
+  setGridColor "g1[6][5]"color (0 , 255 , 255)
+}
+{
+  unhighlightCode on "source" line 11 row 0
+  highlightCode on "source" line 12 row 0 context
+  highlightCode on "source" line 13 row 0
+  setText of "status" to "Distance Vector changed to [#, 4, 3, 5, 2, 6]"
+  setText of "changed" to "changed = true"
+  color "changed" (0, 255, 0)  
+}
+{
+  unhighlightCode on "source" line 12 row 0
+  unhighlightCode on "source" line 13 row 0
+  unhighlightCode on "source" line 14 row 0
+  unhighlightCode on "source" line 15 row 0
+  setText of "status" to ""
+  unhighlightNode on "Graph" nodes 0
+  setText of "status" to "Update Routing Table of Node B"
+  unhighlightCode on "source" line 8 row 0
+  highlightCode on "source" line 9 row 0
+  highlightNode on "Graph" nodes 1
+}
+{
+  highlightCode on "source" line 9 row 0 context
+  highlightCode on "source" line 10 row 0
+  setText of "status" to "Processing Distance Vector [#, 4, 3, 5, 2, 11] from Node A"
+}
+{
+  setText of "calc" to ""
+  setText of "calc" to ""
+  setText of "calc" to "Way to C via A is 3 + 4 = 7"
+}
+{
+  setText of "calc" to ""
+  setText of "calc" to "Way to D via A is 5 + 4 = 9"
+}
+{
+  setText of "calc" to "Way to 3 via A is 9: Update Table"
+  setGridValue "StringMatrix1[4][1]" "9" refresh 
+  setGridColor "StringMatrix1[4][1]" color (255 ,  0 ,0)
+}
+{
+  setText of "calc" to ""
+  setText of "calc" to "Way to E via A is 2 + 4 = 6"
+}
+{
+  setText of "calc" to ""
+  setText of "calc" to "Way to F via A is 11 + 4 = 15"
+}
+{
+  setText of "calc" to "Way to 5 via A is 15: Update Table"
+  setGridValue "StringMatrix1[6][1]" "15" refresh 
+  setGridColor "StringMatrix1[6][1]" color (255 ,  0 ,0)
+}
+{
+  setText of "calc" to ""
+  setText of "status" to "Processing Distance Vector [2, 5, 5, 3, #, 4] from Node E"
+}
+{
+  setText of "calc" to "Way to A via E is 2 + 5 = 7"
+}
+{
+  setText of "calc" to ""
+  setText of "calc" to ""
+  setText of "calc" to "Way to C via E is 5 + 5 = 10"
+}
+{
+  setText of "calc" to "Way to 2 via E is 10: Update Table"
+  setGridValue "StringMatrix1[3][5]" "10" refresh 
+  setGridColor "StringMatrix1[3][5]" color (255 ,  0 ,0)
+}
+{
+  setText of "calc" to ""
+  setText of "calc" to "Way to D via E is 3 + 5 = 8"
+}
+{
+  setText of "calc" to ""
+  setText of "calc" to ""
+  setText of "calc" to "Way to F via E is 4 + 5 = 9"
+}
+{
+  setText of "calc" to "Way to 5 via E is 9: Update Table"
+  setGridValue "StringMatrix1[6][5]" "9" refresh 
+  setGridColor "StringMatrix1[6][5]" color (255 ,  0 ,0)
+}
+{
+  setText of "calc" to ""
+  setText of "status" to "Processing Distance Vector [11, 7, 6, 1, 4, #] from Node F"
+}
+{
+  setText of "calc" to "Way to A via F is 11 + 7 = 18"
+}
+{
+  setText of "calc" to "Way to 0 via F is 18: Update Table"
+  setGridValue "StringMatrix1[1][6]" "18" refresh 
+  setGridColor "StringMatrix1[1][6]" color (255 ,  0 ,0)
+}
+{
+  setText of "calc" to ""
+  setText of "calc" to ""
+  setText of "calc" to "Way to C via F is 6 + 7 = 13"
+}
+{
+  setText of "calc" to "Way to 2 via F is 13: Update Table"
+  setGridValue "StringMatrix1[3][6]" "13" refresh 
+  setGridColor "StringMatrix1[3][6]" color (255 ,  0 ,0)
+}
+{
+  setText of "calc" to ""
+  setText of "calc" to "Way to D via F is 1 + 7 = 8"
+}
+{
+  setText of "calc" to ""
+  setText of "calc" to "Way to E via F is 4 + 7 = 11"
+}
+{
+  setText of "calc" to "Way to 4 via F is 11: Update Table"
+  setGridValue "StringMatrix1[5][6]" "11" refresh 
+  setGridColor "StringMatrix1[5][6]" color (255 ,  0 ,0)
+}
+{
+  setText of "calc" to ""
+  setText of "calc" to ""
+  setGridColor "StringMatrix1[][]" color (0 , 0 , 255)
+  setGridColor "StringMatrix1[0][0]" color (144 , 0 , 144)
+  unhighlightCode on "source" line 10 row 0
+  highlightCode on "source" line 11 row 0
+  setText of "status" to "Update Distance Vector of Node B"
+  setGridColor "StringMatrix1[1][1]"color (0 , 255 , 0)
+  setGridColor "StringMatrix1[3][1]"color (0 , 255 , 0)
+  setGridColor "StringMatrix1[4][5]"color (0 , 255 , 0)
+  setGridColor "StringMatrix1[5][5]"color (0 , 255 , 0)
+  setGridColor "StringMatrix1[6][6]"color (0 , 255 , 0)
+}
+{
+  unhighlightCode on "source" line 11 row 0
+  highlightCode on "source" line 12 row 0 context
+  highlightCode on "source" line 14 row 0 context
+  highlightCode on "source" line 15 row 0
+  setText of "status" to "Distance Vector is still [4, #, 7, 8, 5, 7]"
+}
+{
+  unhighlightCode on "source" line 12 row 0
+  unhighlightCode on "source" line 13 row 0
+  unhighlightCode on "source" line 14 row 0
+  unhighlightCode on "source" line 15 row 0
+  setText of "status" to ""
+  unhighlightNode on "Graph" nodes 1
+  setText of "status" to "Update Routing Table of Node C"
+  unhighlightCode on "source" line 8 row 0
+  highlightCode on "source" line 9 row 0
+  highlightNode on "Graph" nodes 2
+}
+{
+  highlightCode on "source" line 9 row 0 context
+  highlightCode on "source" line 10 row 0
+  setText of "status" to "Processing Distance Vector [#, 4, 3, 5, 2, 11] from Node A"
+}
+{
+  setText of "calc" to ""
+  setText of "calc" to "Way to B via A is 4 + 3 = 7"
+}
+{
+  setText of "calc" to ""
+  setText of "calc" to ""
+  setText of "calc" to "Way to D via A is 5 + 3 = 8"
+}
+{
+  setText of "calc" to "Way to 3 via A is 8: Update Table"
+  setGridValue "StringMatrix2[4][1]" "8" refresh 
+  setGridColor "StringMatrix2[4][1]" color (255 ,  0 ,0)
+}
+{
+  setText of "calc" to ""
+  setText of "calc" to "Way to E via A is 2 + 3 = 5"
+}
+{
+  setText of "calc" to ""
+  setText of "calc" to "Way to F via A is 11 + 3 = 14"
+}
+{
+  setText of "calc" to "Way to 5 via A is 14: Update Table"
+  setGridValue "StringMatrix2[6][1]" "14" refresh 
+  setGridColor "StringMatrix2[6][1]" color (255 ,  0 ,0)
+}
+{
+  setText of "calc" to ""
+  setText of "status" to "Processing Distance Vector [5, 8, 5, #, 3, 1] from Node D"
+}
+{
+  setText of "calc" to "Way to A via D is 5 + 5 = 10"
+}
+{
+  setText of "calc" to "Way to 0 via D is 10: Update Table"
+  setGridValue "StringMatrix2[1][4]" "10" refresh 
+  setGridColor "StringMatrix2[1][4]" color (255 ,  0 ,0)
+}
+{
+  setText of "calc" to ""
+  setText of "calc" to "Way to B via D is 8 + 5 = 13"
+}
+{
+  setText of "calc" to "Way to 1 via D is 13: Update Table"
+  setGridValue "StringMatrix2[2][4]" "13" refresh 
+  setGridColor "StringMatrix2[2][4]" color (255 ,  0 ,0)
+}
+{
+  setText of "calc" to ""
+  setText of "calc" to ""
+  setText of "calc" to ""
+  setText of "calc" to "Way to E via D is 3 + 5 = 8"
+}
+{
+  setText of "calc" to ""
+  setText of "calc" to "Way to F via D is 1 + 5 = 6"
+}
+{
+  setText of "calc" to ""
+  setGridColor "StringMatrix2[][]" color (0 , 0 , 255)
+  setGridColor "StringMatrix2[0][0]" color (144 , 0 , 144)
+  unhighlightCode on "source" line 10 row 0
+  highlightCode on "source" line 11 row 0
+  setText of "status" to "Update Distance Vector of Node C"
+  setGridColor "StringMatrix2[1][1]"color (0 , 255 , 0)
+  setGridColor "StringMatrix2[2][1]"color (0 , 255 , 0)
+  setGridColor "StringMatrix2[4][4]"color (0 , 255 , 0)
+  setGridColor "StringMatrix2[5][1]"color (0 , 255 , 0)
+  setGridColor "StringMatrix2[6][4]"color (0 , 255 , 0)
+}
+{
+  unhighlightCode on "source" line 11 row 0
+  highlightCode on "source" line 12 row 0 context
+  highlightCode on "source" line 14 row 0 context
+  highlightCode on "source" line 15 row 0
+  setText of "status" to "Distance Vector is still [3, 7, #, 5, 5, 6]"
+}
+{
+  unhighlightCode on "source" line 12 row 0
+  unhighlightCode on "source" line 13 row 0
+  unhighlightCode on "source" line 14 row 0
+  unhighlightCode on "source" line 15 row 0
+  setText of "status" to ""
+  unhighlightNode on "Graph" nodes 2
+  setText of "status" to "Update Routing Table of Node D"
+  unhighlightCode on "source" line 8 row 0
+  highlightCode on "source" line 9 row 0
+  highlightNode on "Graph" nodes 3
+}
+{
+  highlightCode on "source" line 9 row 0 context
+  highlightCode on "source" line 10 row 0
+  setText of "status" to "Processing Distance Vector [3, 7, #, 5, 5, 6] from Node C"
+}
+{
+  setText of "calc" to "Way to A via C is 3 + 5 = 8"
+}
+{
+  setText of "calc" to ""
+  setText of "calc" to "Way to B via C is 7 + 5 = 12"
+}
+{
+  setText of "calc" to "Way to 1 via C is 12: Update Table"
+  setGridValue "StringMatrix3[2][3]" "12" refresh 
+  setGridColor "StringMatrix3[2][3]" color (255 ,  0 ,0)
+}
+{
+  setText of "calc" to ""
+  setText of "calc" to ""
+  setText of "calc" to ""
+  setText of "calc" to "Way to E via C is 5 + 5 = 10"
+}
+{
+  setText of "calc" to "Way to 4 via C is 10: Update Table"
+  setGridValue "StringMatrix3[5][3]" "10" refresh 
+  setGridColor "StringMatrix3[5][3]" color (255 ,  0 ,0)
+}
+{
+  setText of "calc" to ""
+  setText of "calc" to "Way to F via C is 6 + 5 = 11"
+}
+{
+  setText of "calc" to "Way to 5 via C is 11: Update Table"
+  setGridValue "StringMatrix3[6][3]" "11" refresh 
+  setGridColor "StringMatrix3[6][3]" color (255 ,  0 ,0)
+}
+{
+  setText of "calc" to ""
+  setText of "status" to "Processing Distance Vector [2, 5, 5, 3, #, 4] from Node E"
+}
+{
+  setText of "calc" to "Way to A via E is 2 + 3 = 5"
+}
+{
+  setText of "calc" to ""
+  setText of "calc" to "Way to B via E is 5 + 3 = 8"
+}
+{
+  setText of "calc" to ""
+  setText of "calc" to "Way to C via E is 5 + 3 = 8"
+}
+{
+  setText of "calc" to "Way to 2 via E is 8: Update Table"
+  setGridValue "StringMatrix3[3][5]" "8" refresh 
+  setGridColor "StringMatrix3[3][5]" color (255 ,  0 ,0)
+}
+{
+  setText of "calc" to ""
+  setText of "calc" to ""
+  setText of "calc" to ""
+  setText of "calc" to "Way to F via E is 4 + 3 = 7"
+}
+{
+  setText of "calc" to "Way to 5 via E is 7: Update Table"
+  setGridValue "StringMatrix3[6][5]" "7" refresh 
+  setGridColor "StringMatrix3[6][5]" color (255 ,  0 ,0)
+}
+{
+  setText of "calc" to ""
+  setText of "status" to "Processing Distance Vector [11, 7, 6, 1, 4, #] from Node F"
+}
+{
+  setText of "calc" to "Way to A via F is 11 + 1 = 12"
+}
+{
+  setText of "calc" to "Way to 0 via F is 12: Update Table"
+  setGridValue "StringMatrix3[1][6]" "12" refresh 
+  setGridColor "StringMatrix3[1][6]" color (255 ,  0 ,0)
+}
+{
+  setText of "calc" to ""
+  setText of "calc" to "Way to B via F is 7 + 1 = 8"
+}
+{
+  setText of "calc" to ""
+  setText of "calc" to "Way to C via F is 6 + 1 = 7"
+}
+{
+  setText of "calc" to "Way to 2 via F is 7: Update Table"
+  setGridValue "StringMatrix3[3][6]" "7" refresh 
+  setGridColor "StringMatrix3[3][6]" color (255 ,  0 ,0)
+}
+{
+  setText of "calc" to ""
+  setText of "calc" to ""
+  setText of "calc" to "Way to E via F is 4 + 1 = 5"
+}
+{
+  setText of "calc" to "Way to 4 via F is 5: Update Table"
+  setGridValue "StringMatrix3[5][6]" "5" refresh 
+  setGridColor "StringMatrix3[5][6]" color (255 ,  0 ,0)
+}
+{
+  setText of "calc" to ""
+  setText of "calc" to ""
+  setGridColor "StringMatrix3[][]" color (0 , 0 , 255)
+  setGridColor "StringMatrix3[0][0]" color (144 , 0 , 144)
+  unhighlightCode on "source" line 10 row 0
+  highlightCode on "source" line 11 row 0
+  setText of "status" to "Update Distance Vector of Node D"
+  setGridColor "StringMatrix3[1][5]"color (0 , 255 , 0)
+  setGridColor "StringMatrix3[2][5]"color (0 , 255 , 0)
+  setGridColor "StringMatrix3[3][3]"color (0 , 255 , 0)
+  setGridColor "StringMatrix3[5][5]"color (0 , 255 , 0)
+  setGridColor "StringMatrix3[6][6]"color (0 , 255 , 0)
+}
+{
+  unhighlightCode on "source" line 11 row 0
+  highlightCode on "source" line 12 row 0 context
+  highlightCode on "source" line 14 row 0 context
+  highlightCode on "source" line 15 row 0
+  setText of "status" to "Distance Vector is still [5, 8, 5, #, 3, 1]"
+}
+{
+  unhighlightCode on "source" line 12 row 0
+  unhighlightCode on "source" line 13 row 0
+  unhighlightCode on "source" line 14 row 0
+  unhighlightCode on "source" line 15 row 0
+  setText of "status" to ""
+  unhighlightNode on "Graph" nodes 3
+  setText of "status" to "Update Routing Table of Node E"
+  unhighlightCode on "source" line 8 row 0
+  highlightCode on "source" line 9 row 0
+  highlightNode on "Graph" nodes 4
+}
+{
+  highlightCode on "source" line 9 row 0 context
+  highlightCode on "source" line 10 row 0
+  setText of "status" to "Processing Distance Vector [#, 4, 3, 5, 2, 11] from Node A"
+}
+{
+  setText of "calc" to ""
+  setText of "calc" to "Way to B via A is 4 + 2 = 6"
+}
+{
+  setText of "calc" to ""
+  setText of "calc" to "Way to C via A is 3 + 2 = 5"
+}
+{
+  setText of "calc" to ""
+  setText of "calc" to "Way to D via A is 5 + 2 = 7"
+}
+{
+  setText of "calc" to "Way to 3 via A is 7: Update Table"
+  setGridValue "StringMatrix4[4][1]" "7" refresh 
+  setGridColor "StringMatrix4[4][1]" color (255 ,  0 ,0)
+}
+{
+  setText of "calc" to ""
+  setText of "calc" to ""
+  setText of "calc" to "Way to F via A is 11 + 2 = 13"
+}
+{
+  setText of "calc" to "Way to 5 via A is 13: Update Table"
+  setGridValue "StringMatrix4[6][1]" "13" refresh 
+  setGridColor "StringMatrix4[6][1]" color (255 ,  0 ,0)
+}
+{
+  setText of "calc" to ""
+  setText of "status" to "Processing Distance Vector [4, #, 7, 8, 5, 7] from Node B"
+}
+{
+  setText of "calc" to "Way to A via B is 4 + 5 = 9"
+}
+{
+  setText of "calc" to ""
+  setText of "calc" to ""
+  setText of "calc" to "Way to C via B is 7 + 5 = 12"
+}
+{
+  setText of "calc" to "Way to 2 via B is 12: Update Table"
+  setGridValue "StringMatrix4[3][2]" "12" refresh 
+  setGridColor "StringMatrix4[3][2]" color (255 ,  0 ,0)
+}
+{
+  setText of "calc" to ""
+  setText of "calc" to "Way to D via B is 8 + 5 = 13"
+}
+{
+  setText of "calc" to "Way to 3 via B is 13: Update Table"
+  setGridValue "StringMatrix4[4][2]" "13" refresh 
+  setGridColor "StringMatrix4[4][2]" color (255 ,  0 ,0)
+}
+{
+  setText of "calc" to ""
+  setText of "calc" to ""
+  setText of "calc" to "Way to F via B is 7 + 5 = 12"
+}
+{
+  setText of "calc" to ""
+  setText of "status" to "Processing Distance Vector [5, 8, 5, #, 3, 1] from Node D"
+}
+{
+  setText of "calc" to "Way to A via D is 5 + 3 = 8"
+}
+{
+  setText of "calc" to "Way to 0 via D is 8: Update Table"
+  setGridValue "StringMatrix4[1][4]" "8" refresh 
+  setGridColor "StringMatrix4[1][4]" color (255 ,  0 ,0)
+}
+{
+  setText of "calc" to ""
+  setText of "calc" to "Way to B via D is 8 + 3 = 11"
+}
+{
+  setText of "calc" to "Way to 1 via D is 11: Update Table"
+  setGridValue "StringMatrix4[2][4]" "11" refresh 
+  setGridColor "StringMatrix4[2][4]" color (255 ,  0 ,0)
+}
+{
+  setText of "calc" to ""
+  setText of "calc" to "Way to C via D is 5 + 3 = 8"
+}
+{
+  setText of "calc" to ""
+  setText of "calc" to ""
+  setText of "calc" to ""
+  setText of "calc" to "Way to F via D is 1 + 3 = 4"
+}
+{
+  setText of "calc" to ""
+  setText of "status" to "Processing Distance Vector [11, 7, 6, 1, 4, #] from Node F"
+}
+{
+  setText of "calc" to "Way to A via F is 11 + 9 = 20"
+}
+{
+  setText of "calc" to "Way to 0 via F is 20: Update Table"
+  setGridValue "StringMatrix4[1][6]" "20" refresh 
+  setGridColor "StringMatrix4[1][6]" color (255 ,  0 ,0)
+}
+{
+  setText of "calc" to ""
+  setText of "calc" to "Way to B via F is 7 + 9 = 16"
+}
+{
+  setText of "calc" to ""
+  setText of "calc" to "Way to C via F is 6 + 9 = 15"
+}
+{
+  setText of "calc" to "Way to 2 via F is 15: Update Table"
+  setGridValue "StringMatrix4[3][6]" "15" refresh 
+  setGridColor "StringMatrix4[3][6]" color (255 ,  0 ,0)
+}
+{
+  setText of "calc" to ""
+  setText of "calc" to "Way to D via F is 1 + 9 = 10"
+}
+{
+  setText of "calc" to ""
+  setText of "calc" to ""
+  setText of "calc" to ""
+  setGridColor "StringMatrix4[][]" color (0 , 0 , 255)
+  setGridColor "StringMatrix4[0][0]" color (144 , 0 , 144)
+  unhighlightCode on "source" line 10 row 0
+  highlightCode on "source" line 11 row 0
+  setText of "status" to "Update Distance Vector of Node E"
+  setGridColor "StringMatrix4[1][1]"color (0 , 255 , 0)
+  setGridColor "StringMatrix4[2][2]"color (0 , 255 , 0)
+  setGridColor "StringMatrix4[3][1]"color (0 , 255 , 0)
+  setGridColor "StringMatrix4[4][4]"color (0 , 255 , 0)
+  setGridColor "StringMatrix4[6][4]"color (0 , 255 , 0)
+}
+{
+  unhighlightCode on "source" line 11 row 0
+  highlightCode on "source" line 12 row 0 context
+  highlightCode on "source" line 14 row 0 context
+  highlightCode on "source" line 15 row 0
+  setText of "status" to "Distance Vector is still [2, 5, 5, 3, #, 4]"
+}
+{
+  unhighlightCode on "source" line 12 row 0
+  unhighlightCode on "source" line 13 row 0
+  unhighlightCode on "source" line 14 row 0
+  unhighlightCode on "source" line 15 row 0
+  setText of "status" to ""
+  unhighlightNode on "Graph" nodes 4
+  setText of "status" to "Update Routing Table of Node F"
+  unhighlightCode on "source" line 8 row 0
+  highlightCode on "source" line 9 row 0
+  highlightNode on "Graph" nodes 5
+}
+{
+  highlightCode on "source" line 9 row 0 context
+  highlightCode on "source" line 10 row 0
+  setText of "status" to "Processing Distance Vector [4, #, 7, 8, 5, 7] from Node B"
+}
+{
+  setText of "calc" to "Way to A via B is 4 + 7 = 11"
+}
+{
+  setText of "calc" to ""
+  setText of "calc" to ""
+  setText of "calc" to "Way to C via B is 7 + 7 = 14"
+}
+{
+  setText of "calc" to "Way to 2 via B is 14: Update Table"
+  setGridValue "StringMatrix5[3][2]" "14" refresh 
+  setGridColor "StringMatrix5[3][2]" color (255 ,  0 ,0)
+}
+{
+  setText of "calc" to ""
+  setText of "calc" to "Way to D via B is 8 + 7 = 15"
+}
+{
+  setText of "calc" to "Way to 3 via B is 15: Update Table"
+  setGridValue "StringMatrix5[4][2]" "15" refresh 
+  setGridColor "StringMatrix5[4][2]" color (255 ,  0 ,0)
+}
+{
+  setText of "calc" to ""
+  setText of "calc" to "Way to E via B is 5 + 7 = 12"
+}
+{
+  setText of "calc" to ""
+  setText of "calc" to ""
+  setText of "status" to "Processing Distance Vector [5, 8, 5, #, 3, 1] from Node D"
+}
+{
+  setText of "calc" to "Way to A via D is 5 + 1 = 6"
+}
+{
+  setText of "calc" to "Way to 0 via D is 6: Update Table"
+  setGridValue "StringMatrix5[1][4]" "6" refresh 
+  setGridColor "StringMatrix5[1][4]" color (255 ,  0 ,0)
+}
+{
+  setText of "calc" to ""
+  setText of "calc" to "Way to B via D is 8 + 1 = 9"
+}
+{
+  setText of "calc" to "Way to 1 via D is 9: Update Table"
+  setGridValue "StringMatrix5[2][4]" "9" refresh 
+  setGridColor "StringMatrix5[2][4]" color (255 ,  0 ,0)
+}
+{
+  setText of "calc" to ""
+  setText of "calc" to "Way to C via D is 5 + 1 = 6"
+}
+{
+  setText of "calc" to ""
+  setText of "calc" to ""
+  setText of "calc" to "Way to E via D is 3 + 1 = 4"
+}
+{
+  setText of "calc" to ""
+  setText of "calc" to ""
+  setText of "status" to "Processing Distance Vector [2, 5, 5, 3, #, 4] from Node E"
+}
+{
+  setText of "calc" to "Way to A via E is 2 + 9 = 11"
+}
+{
+  setText of "calc" to ""
+  setText of "calc" to "Way to B via E is 5 + 9 = 14"
+}
+{
+  setText of "calc" to ""
+  setText of "calc" to "Way to C via E is 5 + 9 = 14"
+}
+{
+  setText of "calc" to "Way to 2 via E is 14: Update Table"
+  setGridValue "StringMatrix5[3][5]" "14" refresh 
+  setGridColor "StringMatrix5[3][5]" color (255 ,  0 ,0)
+}
+{
+  setText of "calc" to ""
+  setText of "calc" to "Way to D via E is 3 + 9 = 12"
+}
+{
+  setText of "calc" to ""
+  setText of "calc" to ""
+  setText of "calc" to ""
+  setGridColor "StringMatrix5[][]" color (0 , 0 , 255)
+  setGridColor "StringMatrix5[0][0]" color (144 , 0 , 144)
+  unhighlightCode on "source" line 10 row 0
+  highlightCode on "source" line 11 row 0
+  setText of "status" to "Update Distance Vector of Node F"
+  setGridColor "StringMatrix5[1][4]"color (0 , 255 , 255)
+  setGridColor "StringMatrix5[2][2]"color (0 , 255 , 0)
+  setGridColor "StringMatrix5[3][4]"color (0 , 255 , 0)
+  setGridColor "StringMatrix5[4][4]"color (0 , 255 , 0)
+  setGridColor "StringMatrix5[5][4]"color (0 , 255 , 0)
+}
+{
+  unhighlightCode on "source" line 11 row 0
+  highlightCode on "source" line 12 row 0 context
+  highlightCode on "source" line 13 row 0
+  setText of "status" to "Distance Vector changed to [6, 7, 6, 1, 4, #]"
+  setText of "changed" to "changed = true"
+  color "changed" (0, 255, 0)  
+}
+{
+  unhighlightCode on "source" line 12 row 0
+  unhighlightCode on "source" line 13 row 0
+  unhighlightCode on "source" line 14 row 0
+  unhighlightCode on "source" line 15 row 0
+  setText of "status" to ""
+  unhighlightNode on "Graph" nodes 5
+  unhighlightCode on "source" line 9 row 0
+}
+{
+  setGridColor "g1[][]" color (0 , 0 , 255)
+  setGridColor "g1[0][0]" color (144 , 0 , 144)
+  setGridColor "StringMatrix1[][]" color (0 , 0 , 255)
+  setGridColor "StringMatrix1[0][0]" color (144 , 0 , 144)
+  setGridColor "StringMatrix2[][]" color (0 , 0 , 255)
+  setGridColor "StringMatrix2[0][0]" color (144 , 0 , 144)
+  setGridColor "StringMatrix3[][]" color (0 , 0 , 255)
+  setGridColor "StringMatrix3[0][0]" color (144 , 0 , 144)
+  setGridColor "StringMatrix4[][]" color (0 , 0 , 255)
+  setGridColor "StringMatrix4[0][0]" color (144 , 0 , 144)
+  setGridColor "StringMatrix5[][]" color (0 , 0 , 255)
+  setGridColor "StringMatrix5[0][0]" color (144 , 0 , 144)
+}
+{
+  setText of "status" to "changed == true"
+  unhighlightCode on "source" line 5 row 0
+  highlightCode on "source" line 6 row 0
+}
+{
+  highlightCode on "source" line 6 row 0 context
+  highlightCode on "source" line 7 row 0
+  setText of "status" to "Set changed to false"
+  setText of "changed" to "changed = false"
+  color "changed" (255, 0, 0)  
+}
+{
+  unhighlightCode on "source" line 7 row 0
+  highlightCode on "source" line 8 row 0
+  highlightNode on "Graph" nodes 0
+  highlightEdge on "Graph" (0, 1) 
+  highlightEdge on "Graph" (0, 2) 
+  highlightEdge on "Graph" (0, 4) 
+  setText of "status" to "Node A sends Distance Vector [#, 4, 3, 5, 2, 6] to B, C, E"
+}
+{
+  unhighlightNode on "Graph" nodes 0
+  unhighlightEdge on "Graph" (0, 1) 
+  unhighlightEdge on "Graph" (0, 2) 
+  unhighlightEdge on "Graph" (0, 4) 
+  setText of "status" to ""
+  highlightNode on "Graph" nodes 1
+  highlightEdge on "Graph" (0, 1) 
+  highlightEdge on "Graph" (1, 4) 
+  highlightEdge on "Graph" (1, 5) 
+  setText of "status" to "Node B sends Distance Vector [4, #, 7, 8, 5, 7] to A, E, F"
+}
+{
+  unhighlightNode on "Graph" nodes 1
+  unhighlightEdge on "Graph" (0, 1) 
+  unhighlightEdge on "Graph" (1, 4) 
+  unhighlightEdge on "Graph" (1, 5) 
+  setText of "status" to ""
+  highlightNode on "Graph" nodes 2
+  highlightEdge on "Graph" (0, 2) 
+  highlightEdge on "Graph" (2, 3) 
+  setText of "status" to "Node C sends Distance Vector [3, 7, #, 5, 5, 6] to A, D"
+}
+{
+  unhighlightNode on "Graph" nodes 2
+  unhighlightEdge on "Graph" (0, 2) 
+  unhighlightEdge on "Graph" (2, 3) 
+  setText of "status" to ""
+  highlightNode on "Graph" nodes 3
+  highlightEdge on "Graph" (2, 3) 
+  highlightEdge on "Graph" (3, 4) 
+  highlightEdge on "Graph" (3, 5) 
+  setText of "status" to "Node D sends Distance Vector [5, 8, 5, #, 3, 1] to C, E, F"
+}
+{
+  unhighlightNode on "Graph" nodes 3
+  unhighlightEdge on "Graph" (2, 3) 
+  unhighlightEdge on "Graph" (3, 4) 
+  unhighlightEdge on "Graph" (3, 5) 
+  setText of "status" to ""
+  highlightNode on "Graph" nodes 4
+  highlightEdge on "Graph" (0, 4) 
+  highlightEdge on "Graph" (1, 4) 
+  highlightEdge on "Graph" (3, 4) 
+  highlightEdge on "Graph" (4, 5) 
+  setText of "status" to "Node E sends Distance Vector [2, 5, 5, 3, #, 4] to A, B, D, F"
+}
+{
+  unhighlightNode on "Graph" nodes 4
+  unhighlightEdge on "Graph" (0, 4) 
+  unhighlightEdge on "Graph" (1, 4) 
+  unhighlightEdge on "Graph" (3, 4) 
+  unhighlightEdge on "Graph" (4, 5) 
+  setText of "status" to ""
+  highlightNode on "Graph" nodes 5
+  highlightEdge on "Graph" (1, 5) 
+  highlightEdge on "Graph" (3, 5) 
+  highlightEdge on "Graph" (4, 5) 
+  setText of "status" to "Node F sends Distance Vector [6, 7, 6, 1, 4, #] to B, D, E"
+}
+{
+  unhighlightNode on "Graph" nodes 5
+  unhighlightEdge on "Graph" (1, 5) 
+  unhighlightEdge on "Graph" (3, 5) 
+  unhighlightEdge on "Graph" (4, 5) 
+  setText of "status" to ""
+  setText of "status" to "Update Routing Table of Node A"
+  unhighlightCode on "source" line 8 row 0
+  highlightCode on "source" line 9 row 0
+  highlightNode on "Graph" nodes 0
+}
+{
+  highlightCode on "source" line 9 row 0 context
+  highlightCode on "source" line 10 row 0
+  setText of "status" to "Processing Distance Vector [4, #, 7, 8, 5, 7] from Node B"
+}
+{
+  setText of "calc" to ""
+  setText of "calc" to ""
+  setText of "calc" to "Way to C via B is 7 + 4 = 11"
+}
+{
+  setText of "calc" to ""
+  setText of "calc" to "Way to D via B is 8 + 4 = 12"
+}
+{
+  setText of "calc" to ""
+  setText of "calc" to "Way to E via B is 5 + 4 = 9"
+}
+{
+  setText of "calc" to ""
+  setText of "calc" to "Way to F via B is 7 + 4 = 11"
+}
+{
+  setText of "calc" to ""
+  setText of "status" to "Processing Distance Vector [3, 7, #, 5, 5, 6] from Node C"
+}
+{
+  setText of "calc" to ""
+  setText of "calc" to "Way to B via C is 7 + 3 = 10"
+}
+{
+  setText of "calc" to ""
+  setText of "calc" to ""
+  setText of "calc" to "Way to D via C is 5 + 3 = 8"
+}
+{
+  setText of "calc" to ""
+  setText of "calc" to "Way to E via C is 5 + 3 = 8"
+}
+{
+  setText of "calc" to ""
+  setText of "calc" to "Way to F via C is 6 + 3 = 9"
+}
+{
+  setText of "calc" to ""
+  setText of "status" to "Processing Distance Vector [2, 5, 5, 3, #, 4] from Node E"
+}
+{
+  setText of "calc" to ""
+  setText of "calc" to "Way to B via E is 5 + 2 = 7"
+}
+{
+  setText of "calc" to ""
+  setText of "calc" to "Way to C via E is 5 + 2 = 7"
+}
+{
+  setText of "calc" to ""
+  setText of "calc" to "Way to D via E is 3 + 2 = 5"
+}
+{
+  setText of "calc" to ""
+  setText of "calc" to ""
+  setText of "calc" to "Way to F via E is 4 + 2 = 6"
+}
+{
+  setText of "calc" to ""
+  setGridColor "g1[][]" color (0 , 0 , 255)
+  setGridColor "g1[0][0]" color (144 , 0 , 144)
+  unhighlightCode on "source" line 10 row 0
+  highlightCode on "source" line 11 row 0
+  setText of "status" to "Update Distance Vector of Node A"
+  setGridColor "g1[2][2]"color (0 , 255 , 0)
+  setGridColor "g1[3][3]"color (0 , 255 , 0)
+  setGridColor "g1[4][5]"color (0 , 255 , 0)
+  setGridColor "g1[5][5]"color (0 , 255 , 0)
+  setGridColor "g1[6][5]"color (0 , 255 , 0)
+}
+{
+  unhighlightCode on "source" line 11 row 0
+  highlightCode on "source" line 12 row 0 context
+  highlightCode on "source" line 14 row 0 context
+  highlightCode on "source" line 15 row 0
+  setText of "status" to "Distance Vector is still [#, 4, 3, 5, 2, 6]"
+}
+{
+  unhighlightCode on "source" line 12 row 0
+  unhighlightCode on "source" line 13 row 0
+  unhighlightCode on "source" line 14 row 0
+  unhighlightCode on "source" line 15 row 0
+  setText of "status" to ""
+  unhighlightNode on "Graph" nodes 0
+  setText of "status" to "Update Routing Table of Node B"
+  unhighlightCode on "source" line 8 row 0
+  highlightCode on "source" line 9 row 0
+  highlightNode on "Graph" nodes 1
+}
+{
+  highlightCode on "source" line 9 row 0 context
+  highlightCode on "source" line 10 row 0
+  setText of "status" to "Processing Distance Vector [#, 4, 3, 5, 2, 6] from Node A"
+}
+{
+  setText of "calc" to ""
+  setText of "calc" to ""
+  setText of "calc" to "Way to C via A is 3 + 4 = 7"
+}
+{
+  setText of "calc" to ""
+  setText of "calc" to "Way to D via A is 5 + 4 = 9"
+}
+{
+  setText of "calc" to ""
+  setText of "calc" to "Way to E via A is 2 + 4 = 6"
+}
+{
+  setText of "calc" to ""
+  setText of "calc" to "Way to F via A is 6 + 4 = 10"
+}
+{
+  setText of "calc" to "Way to 5 via A is 10: Update Table"
+  setGridValue "StringMatrix1[6][1]" "10" refresh 
+  setGridColor "StringMatrix1[6][1]" color (255 ,  0 ,0)
+}
+{
+  setText of "calc" to ""
+  setText of "status" to "Processing Distance Vector [2, 5, 5, 3, #, 4] from Node E"
+}
+{
+  setText of "calc" to "Way to A via E is 2 + 5 = 7"
+}
+{
+  setText of "calc" to ""
+  setText of "calc" to ""
+  setText of "calc" to "Way to C via E is 5 + 5 = 10"
+}
+{
+  setText of "calc" to ""
+  setText of "calc" to "Way to D via E is 3 + 5 = 8"
+}
+{
+  setText of "calc" to ""
+  setText of "calc" to ""
+  setText of "calc" to "Way to F via E is 4 + 5 = 9"
+}
+{
+  setText of "calc" to ""
+  setText of "status" to "Processing Distance Vector [6, 7, 6, 1, 4, #] from Node F"
+}
+{
+  setText of "calc" to "Way to A via F is 6 + 7 = 13"
+}
+{
+  setText of "calc" to "Way to 0 via F is 13: Update Table"
+  setGridValue "StringMatrix1[1][6]" "13" refresh 
+  setGridColor "StringMatrix1[1][6]" color (255 ,  0 ,0)
+}
+{
+  setText of "calc" to ""
+  setText of "calc" to ""
+  setText of "calc" to "Way to C via F is 6 + 7 = 13"
+}
+{
+  setText of "calc" to ""
+  setText of "calc" to "Way to D via F is 1 + 7 = 8"
+}
+{
+  setText of "calc" to ""
+  setText of "calc" to "Way to E via F is 4 + 7 = 11"
+}
+{
+  setText of "calc" to ""
+  setText of "calc" to ""
+  setGridColor "StringMatrix1[][]" color (0 , 0 , 255)
+  setGridColor "StringMatrix1[0][0]" color (144 , 0 , 144)
+  unhighlightCode on "source" line 10 row 0
+  highlightCode on "source" line 11 row 0
+  setText of "status" to "Update Distance Vector of Node B"
+  setGridColor "StringMatrix1[1][1]"color (0 , 255 , 0)
+  setGridColor "StringMatrix1[3][1]"color (0 , 255 , 0)
+  setGridColor "StringMatrix1[4][5]"color (0 , 255 , 0)
+  setGridColor "StringMatrix1[5][5]"color (0 , 255 , 0)
+  setGridColor "StringMatrix1[6][6]"color (0 , 255 , 0)
+}
+{
+  unhighlightCode on "source" line 11 row 0
+  highlightCode on "source" line 12 row 0 context
+  highlightCode on "source" line 14 row 0 context
+  highlightCode on "source" line 15 row 0
+  setText of "status" to "Distance Vector is still [4, #, 7, 8, 5, 7]"
+}
+{
+  unhighlightCode on "source" line 12 row 0
+  unhighlightCode on "source" line 13 row 0
+  unhighlightCode on "source" line 14 row 0
+  unhighlightCode on "source" line 15 row 0
+  setText of "status" to ""
+  unhighlightNode on "Graph" nodes 1
+  setText of "status" to "Update Routing Table of Node C"
+  unhighlightCode on "source" line 8 row 0
+  highlightCode on "source" line 9 row 0
+  highlightNode on "Graph" nodes 2
+}
+{
+  highlightCode on "source" line 9 row 0 context
+  highlightCode on "source" line 10 row 0
+  setText of "status" to "Processing Distance Vector [#, 4, 3, 5, 2, 6] from Node A"
+}
+{
+  setText of "calc" to ""
+  setText of "calc" to "Way to B via A is 4 + 3 = 7"
+}
+{
+  setText of "calc" to ""
+  setText of "calc" to ""
+  setText of "calc" to "Way to D via A is 5 + 3 = 8"
+}
+{
+  setText of "calc" to ""
+  setText of "calc" to "Way to E via A is 2 + 3 = 5"
+}
+{
+  setText of "calc" to ""
+  setText of "calc" to "Way to F via A is 6 + 3 = 9"
+}
+{
+  setText of "calc" to "Way to 5 via A is 9: Update Table"
+  setGridValue "StringMatrix2[6][1]" "9" refresh 
+  setGridColor "StringMatrix2[6][1]" color (255 ,  0 ,0)
+}
+{
+  setText of "calc" to ""
+  setText of "status" to "Processing Distance Vector [5, 8, 5, #, 3, 1] from Node D"
+}
+{
+  setText of "calc" to "Way to A via D is 5 + 5 = 10"
+}
+{
+  setText of "calc" to ""
+  setText of "calc" to "Way to B via D is 8 + 5 = 13"
+}
+{
+  setText of "calc" to ""
+  setText of "calc" to ""
+  setText of "calc" to ""
+  setText of "calc" to "Way to E via D is 3 + 5 = 8"
+}
+{
+  setText of "calc" to ""
+  setText of "calc" to "Way to F via D is 1 + 5 = 6"
+}
+{
+  setText of "calc" to ""
+  setGridColor "StringMatrix2[][]" color (0 , 0 , 255)
+  setGridColor "StringMatrix2[0][0]" color (144 , 0 , 144)
+  unhighlightCode on "source" line 10 row 0
+  highlightCode on "source" line 11 row 0
+  setText of "status" to "Update Distance Vector of Node C"
+  setGridColor "StringMatrix2[1][1]"color (0 , 255 , 0)
+  setGridColor "StringMatrix2[2][1]"color (0 , 255 , 0)
+  setGridColor "StringMatrix2[4][4]"color (0 , 255 , 0)
+  setGridColor "StringMatrix2[5][1]"color (0 , 255 , 0)
+  setGridColor "StringMatrix2[6][4]"color (0 , 255 , 0)
+}
+{
+  unhighlightCode on "source" line 11 row 0
+  highlightCode on "source" line 12 row 0 context
+  highlightCode on "source" line 14 row 0 context
+  highlightCode on "source" line 15 row 0
+  setText of "status" to "Distance Vector is still [3, 7, #, 5, 5, 6]"
+}
+{
+  unhighlightCode on "source" line 12 row 0
+  unhighlightCode on "source" line 13 row 0
+  unhighlightCode on "source" line 14 row 0
+  unhighlightCode on "source" line 15 row 0
+  setText of "status" to ""
+  unhighlightNode on "Graph" nodes 2
+  setText of "status" to "Update Routing Table of Node D"
+  unhighlightCode on "source" line 8 row 0
+  highlightCode on "source" line 9 row 0
+  highlightNode on "Graph" nodes 3
+}
+{
+  highlightCode on "source" line 9 row 0 context
+  highlightCode on "source" line 10 row 0
+  setText of "status" to "Processing Distance Vector [3, 7, #, 5, 5, 6] from Node C"
+}
+{
+  setText of "calc" to "Way to A via C is 3 + 5 = 8"
+}
+{
+  setText of "calc" to ""
+  setText of "calc" to "Way to B via C is 7 + 5 = 12"
+}
+{
+  setText of "calc" to ""
+  setText of "calc" to ""
+  setText of "calc" to ""
+  setText of "calc" to "Way to E via C is 5 + 5 = 10"
+}
+{
+  setText of "calc" to ""
+  setText of "calc" to "Way to F via C is 6 + 5 = 11"
+}
+{
+  setText of "calc" to ""
+  setText of "status" to "Processing Distance Vector [2, 5, 5, 3, #, 4] from Node E"
+}
+{
+  setText of "calc" to "Way to A via E is 2 + 3 = 5"
+}
+{
+  setText of "calc" to ""
+  setText of "calc" to "Way to B via E is 5 + 3 = 8"
+}
+{
+  setText of "calc" to ""
+  setText of "calc" to "Way to C via E is 5 + 3 = 8"
+}
+{
+  setText of "calc" to ""
+  setText of "calc" to ""
+  setText of "calc" to ""
+  setText of "calc" to "Way to F via E is 4 + 3 = 7"
+}
+{
+  setText of "calc" to ""
+  setText of "status" to "Processing Distance Vector [6, 7, 6, 1, 4, #] from Node F"
+}
+{
+  setText of "calc" to "Way to A via F is 6 + 1 = 7"
+}
+{
+  setText of "calc" to "Way to 0 via F is 7: Update Table"
+  setGridValue "StringMatrix3[1][6]" "7" refresh 
+  setGridColor "StringMatrix3[1][6]" color (255 ,  0 ,0)
+}
+{
+  setText of "calc" to ""
+  setText of "calc" to "Way to B via F is 7 + 1 = 8"
+}
+{
+  setText of "calc" to ""
+  setText of "calc" to "Way to C via F is 6 + 1 = 7"
+}
+{
+  setText of "calc" to ""
+  setText of "calc" to ""
+  setText of "calc" to "Way to E via F is 4 + 1 = 5"
+}
+{
+  setText of "calc" to ""
+  setText of "calc" to ""
+  setGridColor "StringMatrix3[][]" color (0 , 0 , 255)
+  setGridColor "StringMatrix3[0][0]" color (144 , 0 , 144)
+  unhighlightCode on "source" line 10 row 0
+  highlightCode on "source" line 11 row 0
+  setText of "status" to "Update Distance Vector of Node D"
+  setGridColor "StringMatrix3[1][5]"color (0 , 255 , 0)
+  setGridColor "StringMatrix3[2][5]"color (0 , 255 , 0)
+  setGridColor "StringMatrix3[3][3]"color (0 , 255 , 0)
+  setGridColor "StringMatrix3[5][5]"color (0 , 255 , 0)
+  setGridColor "StringMatrix3[6][6]"color (0 , 255 , 0)
+}
+{
+  unhighlightCode on "source" line 11 row 0
+  highlightCode on "source" line 12 row 0 context
+  highlightCode on "source" line 14 row 0 context
+  highlightCode on "source" line 15 row 0
+  setText of "status" to "Distance Vector is still [5, 8, 5, #, 3, 1]"
+}
+{
+  unhighlightCode on "source" line 12 row 0
+  unhighlightCode on "source" line 13 row 0
+  unhighlightCode on "source" line 14 row 0
+  unhighlightCode on "source" line 15 row 0
+  setText of "status" to ""
+  unhighlightNode on "Graph" nodes 3
+  setText of "status" to "Update Routing Table of Node E"
+  unhighlightCode on "source" line 8 row 0
+  highlightCode on "source" line 9 row 0
+  highlightNode on "Graph" nodes 4
+}
+{
+  highlightCode on "source" line 9 row 0 context
+  highlightCode on "source" line 10 row 0
+  setText of "status" to "Processing Distance Vector [#, 4, 3, 5, 2, 6] from Node A"
+}
+{
+  setText of "calc" to ""
+  setText of "calc" to "Way to B via A is 4 + 2 = 6"
+}
+{
+  setText of "calc" to ""
+  setText of "calc" to "Way to C via A is 3 + 2 = 5"
+}
+{
+  setText of "calc" to ""
+  setText of "calc" to "Way to D via A is 5 + 2 = 7"
+}
+{
+  setText of "calc" to ""
+  setText of "calc" to ""
+  setText of "calc" to "Way to F via A is 6 + 2 = 8"
+}
+{
+  setText of "calc" to "Way to 5 via A is 8: Update Table"
+  setGridValue "StringMatrix4[6][1]" "8" refresh 
+  setGridColor "StringMatrix4[6][1]" color (255 ,  0 ,0)
+}
+{
+  setText of "calc" to ""
+  setText of "status" to "Processing Distance Vector [4, #, 7, 8, 5, 7] from Node B"
+}
+{
+  setText of "calc" to "Way to A via B is 4 + 5 = 9"
+}
+{
+  setText of "calc" to ""
+  setText of "calc" to ""
+  setText of "calc" to "Way to C via B is 7 + 5 = 12"
+}
+{
+  setText of "calc" to ""
+  setText of "calc" to "Way to D via B is 8 + 5 = 13"
+}
+{
+  setText of "calc" to ""
+  setText of "calc" to ""
+  setText of "calc" to "Way to F via B is 7 + 5 = 12"
+}
+{
+  setText of "calc" to ""
+  setText of "status" to "Processing Distance Vector [5, 8, 5, #, 3, 1] from Node D"
+}
+{
+  setText of "calc" to "Way to A via D is 5 + 3 = 8"
+}
+{
+  setText of "calc" to ""
+  setText of "calc" to "Way to B via D is 8 + 3 = 11"
+}
+{
+  setText of "calc" to ""
+  setText of "calc" to "Way to C via D is 5 + 3 = 8"
+}
+{
+  setText of "calc" to ""
+  setText of "calc" to ""
+  setText of "calc" to ""
+  setText of "calc" to "Way to F via D is 1 + 3 = 4"
+}
+{
+  setText of "calc" to ""
+  setText of "status" to "Processing Distance Vector [6, 7, 6, 1, 4, #] from Node F"
+}
+{
+  setText of "calc" to "Way to A via F is 6 + 9 = 15"
+}
+{
+  setText of "calc" to "Way to 0 via F is 15: Update Table"
+  setGridValue "StringMatrix4[1][6]" "15" refresh 
+  setGridColor "StringMatrix4[1][6]" color (255 ,  0 ,0)
+}
+{
+  setText of "calc" to ""
+  setText of "calc" to "Way to B via F is 7 + 9 = 16"
+}
+{
+  setText of "calc" to ""
+  setText of "calc" to "Way to C via F is 6 + 9 = 15"
+}
+{
+  setText of "calc" to ""
+  setText of "calc" to "Way to D via F is 1 + 9 = 10"
+}
+{
+  setText of "calc" to ""
+  setText of "calc" to ""
+  setText of "calc" to ""
+  setGridColor "StringMatrix4[][]" color (0 , 0 , 255)
+  setGridColor "StringMatrix4[0][0]" color (144 , 0 , 144)
+  unhighlightCode on "source" line 10 row 0
+  highlightCode on "source" line 11 row 0
+  setText of "status" to "Update Distance Vector of Node E"
+  setGridColor "StringMatrix4[1][1]"color (0 , 255 , 0)
+  setGridColor "StringMatrix4[2][2]"color (0 , 255 , 0)
+  setGridColor "StringMatrix4[3][1]"color (0 , 255 , 0)
+  setGridColor "StringMatrix4[4][4]"color (0 , 255 , 0)
+  setGridColor "StringMatrix4[6][4]"color (0 , 255 , 0)
+}
+{
+  unhighlightCode on "source" line 11 row 0
+  highlightCode on "source" line 12 row 0 context
+  highlightCode on "source" line 14 row 0 context
+  highlightCode on "source" line 15 row 0
+  setText of "status" to "Distance Vector is still [2, 5, 5, 3, #, 4]"
+}
+{
+  unhighlightCode on "source" line 12 row 0
+  unhighlightCode on "source" line 13 row 0
+  unhighlightCode on "source" line 14 row 0
+  unhighlightCode on "source" line 15 row 0
+  setText of "status" to ""
+  unhighlightNode on "Graph" nodes 4
+  setText of "status" to "Update Routing Table of Node F"
+  unhighlightCode on "source" line 8 row 0
+  highlightCode on "source" line 9 row 0
+  highlightNode on "Graph" nodes 5
+}
+{
+  highlightCode on "source" line 9 row 0 context
+  highlightCode on "source" line 10 row 0
+  setText of "status" to "Processing Distance Vector [4, #, 7, 8, 5, 7] from Node B"
+}
+{
+  setText of "calc" to "Way to A via B is 4 + 7 = 11"
+}
+{
+  setText of "calc" to ""
+  setText of "calc" to ""
+  setText of "calc" to "Way to C via B is 7 + 7 = 14"
+}
+{
+  setText of "calc" to ""
+  setText of "calc" to "Way to D via B is 8 + 7 = 15"
+}
+{
+  setText of "calc" to ""
+  setText of "calc" to "Way to E via B is 5 + 7 = 12"
+}
+{
+  setText of "calc" to ""
+  setText of "calc" to ""
+  setText of "status" to "Processing Distance Vector [5, 8, 5, #, 3, 1] from Node D"
+}
+{
+  setText of "calc" to "Way to A via D is 5 + 1 = 6"
+}
+{
+  setText of "calc" to ""
+  setText of "calc" to "Way to B via D is 8 + 1 = 9"
+}
+{
+  setText of "calc" to ""
+  setText of "calc" to "Way to C via D is 5 + 1 = 6"
+}
+{
+  setText of "calc" to ""
+  setText of "calc" to ""
+  setText of "calc" to "Way to E via D is 3 + 1 = 4"
+}
+{
+  setText of "calc" to ""
+  setText of "calc" to ""
+  setText of "status" to "Processing Distance Vector [2, 5, 5, 3, #, 4] from Node E"
+}
+{
+  setText of "calc" to "Way to A via E is 2 + 9 = 11"
+}
+{
+  setText of "calc" to ""
+  setText of "calc" to "Way to B via E is 5 + 9 = 14"
+}
+{
+  setText of "calc" to ""
+  setText of "calc" to "Way to C via E is 5 + 9 = 14"
+}
+{
+  setText of "calc" to ""
+  setText of "calc" to "Way to D via E is 3 + 9 = 12"
+}
+{
+  setText of "calc" to ""
+  setText of "calc" to ""
+  setText of "calc" to ""
+  setGridColor "StringMatrix5[][]" color (0 , 0 , 255)
+  setGridColor "StringMatrix5[0][0]" color (144 , 0 , 144)
+  unhighlightCode on "source" line 10 row 0
+  highlightCode on "source" line 11 row 0
+  setText of "status" to "Update Distance Vector of Node F"
+  setGridColor "StringMatrix5[1][4]"color (0 , 255 , 0)
+  setGridColor "StringMatrix5[2][2]"color (0 , 255 , 0)
+  setGridColor "StringMatrix5[3][4]"color (0 , 255 , 0)
+  setGridColor "StringMatrix5[4][4]"color (0 , 255 , 0)
+  setGridColor "StringMatrix5[5][4]"color (0 , 255 , 0)
+}
+{
+  unhighlightCode on "source" line 11 row 0
+  highlightCode on "source" line 12 row 0 context
+  highlightCode on "source" line 14 row 0 context
+  highlightCode on "source" line 15 row 0
+  setText of "status" to "Distance Vector is still [6, 7, 6, 1, 4, #]"
+}
+{
+  unhighlightCode on "source" line 12 row 0
+  unhighlightCode on "source" line 13 row 0
+  unhighlightCode on "source" line 14 row 0
+  unhighlightCode on "source" line 15 row 0
+  setText of "status" to ""
+  unhighlightNode on "Graph" nodes 5
+  unhighlightCode on "source" line 9 row 0
+}
+{
+  setGridColor "g1[][]" color (0 , 0 , 255)
+  setGridColor "g1[0][0]" color (144 , 0 , 144)
+  setGridColor "StringMatrix1[][]" color (0 , 0 , 255)
+  setGridColor "StringMatrix1[0][0]" color (144 , 0 , 144)
+  setGridColor "StringMatrix2[][]" color (0 , 0 , 255)
+  setGridColor "StringMatrix2[0][0]" color (144 , 0 , 144)
+  setGridColor "StringMatrix3[][]" color (0 , 0 , 255)
+  setGridColor "StringMatrix3[0][0]" color (144 , 0 , 144)
+  setGridColor "StringMatrix4[][]" color (0 , 0 , 255)
+  setGridColor "StringMatrix4[0][0]" color (144 , 0 , 144)
+  setGridColor "StringMatrix5[][]" color (0 , 0 , 255)
+  setGridColor "StringMatrix5[0][0]" color (144 , 0 , 144)
+}
+{
+  unhighlightCode on "source" line 4 row 0
+  unhighlightCode on "source" line 6 row 0
+  highlightCode on "source" line 19 row 0
+  setText of "status" to "All Routes Calculated"
+  setText of "changed" to ""
+  setGridColor "g1[2][2]" color (0 , 255 , 0)
+  setGridColor "g1[3][3]" color (0 , 255 , 0)
+  setGridColor "g1[4][5]" color (0 , 255 , 0)
+  setGridColor "g1[5][5]" color (0 , 255 , 0)
+  setGridColor "g1[6][5]" color (0 , 255 , 0)
+  setGridColor "StringMatrix1[1][1]" color (0 , 255 , 0)
+  setGridColor "StringMatrix1[3][1]" color (0 , 255 , 0)
+  setGridColor "StringMatrix1[4][5]" color (0 , 255 , 0)
+  setGridColor "StringMatrix1[5][5]" color (0 , 255 , 0)
+  setGridColor "StringMatrix1[6][6]" color (0 , 255 , 0)
+  setGridColor "StringMatrix2[1][1]" color (0 , 255 , 0)
+  setGridColor "StringMatrix2[2][1]" color (0 , 255 , 0)
+  setGridColor "StringMatrix2[4][4]" color (0 , 255 , 0)
+  setGridColor "StringMatrix2[5][1]" color (0 , 255 , 0)
+  setGridColor "StringMatrix2[6][4]" color (0 , 255 , 0)
+  setGridColor "StringMatrix3[1][5]" color (0 , 255 , 0)
+  setGridColor "StringMatrix3[2][5]" color (0 , 255 , 0)
+  setGridColor "StringMatrix3[3][3]" color (0 , 255 , 0)
+  setGridColor "StringMatrix3[5][5]" color (0 , 255 , 0)
+  setGridColor "StringMatrix3[6][6]" color (0 , 255 , 0)
+  setGridColor "StringMatrix4[1][1]" color (0 , 255 , 0)
+  setGridColor "StringMatrix4[2][2]" color (0 , 255 , 0)
+  setGridColor "StringMatrix4[3][1]" color (0 , 255 , 0)
+  setGridColor "StringMatrix4[4][4]" color (0 , 255 , 0)
+  setGridColor "StringMatrix4[6][4]" color (0 , 255 , 0)
+  setGridColor "StringMatrix5[1][4]" color (0 , 255 , 0)
+  setGridColor "StringMatrix5[2][2]" color (0 , 255 , 0)
+  setGridColor "StringMatrix5[3][4]" color (0 , 255 , 0)
+  setGridColor "StringMatrix5[4][4]" color (0 , 255 , 0)
+  setGridColor "StringMatrix5[5][4]" color (0 , 255 , 0)
+}
+

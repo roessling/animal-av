@@ -1,0 +1,1559 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<ns2:exercise xmlns:ns2="http://www.algoanim.info/Animal2/">
+    <chainPath>/Sorting/Insertion Sort/Java/de/Insertion_Sort_[DE]</chainPath>
+    <description>This generator sorts the provided array values using Insertion Sort. The algorithm takes an element (for example, the first element) from the set of unsorted elements and inserts it into the correct place in the (initially empty) output set. The algorithm therefore works in-place. If the algorithm chooses elements according to their initial order, the algorithm is also stable The correct insertion position can be determined e.g. by binary search and is therefore relatively efficient. When used on an array, the elements after the new insertion position have to be moved. This is the expensive operation in Insertion Sort.
+
+Code Example
+public void insertionSort(int[] array)
+{
+  int i, j, v;
+  for (i=1; i 0 &amp;&amp; v     array[j] = v;
+  }
+}
+
+The array is [9,0,8,7,1,2].</description>
+    <generatorName>generators.sorting.insertionsort.GenericAnnotatedInsertionSort</generatorName>
+    <initialVariables>
+        <name>array</name>
+        <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">9,0,8,7,1,2</value>
+    </initialVariables>
+    <questionsList>
+        <decisionBox xsi:type="scriptBox" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+            <inputVariables>
+                <name>x</name>
+            </inputVariables>
+            <next xsi:type="assignBox">
+                <next xsi:type="assignBox">
+                    <next xsi:type="assignBox">
+                        <next xsi:type="assignBox">
+                            <next xsi:type="assignBox">
+                                <next xsi:type="functionBox">
+                                    <next xsi:type="assignBox">
+                                        <next xsi:type="assignBox">
+                                            <next xsi:type="functionBox">
+                                                <next xsi:type="functionBox">
+                                                    <next xsi:type="functionBox">
+                                                        <function xsi:type="check"/>
+                                                        <arguments xsi:type="valueOfIdentifier">
+                                                            <variableName>position8</variableName>
+                                                        </arguments>
+                                                        <arguments xsi:type="valueOfIdentifier">
+                                                            <variableName>x</variableName>
+                                                        </arguments>
+                                                    </next>
+                                                    <function xsi:type="debug"/>
+                                                </next>
+                                                <function xsi:type="comment"/>
+                                                <arguments xsi:type="constantValue">
+                                                    <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">Hint: The last element in the array is %d.</value>
+                                                </arguments>
+                                                <arguments xsi:type="valueOfIdentifier">
+                                                    <variableName>a</variableName>
+                                                </arguments>
+                                            </next>
+                                            <variableName>position8</variableName>
+                                            <expression xsi:type="functionBox">
+                                                <function xsi:type="max"/>
+                                                <arguments xsi:type="valueOfIdentifier">
+                                                    <variableName>last8moveIndex</variableName>
+                                                </arguments>
+                                                <arguments xsi:type="valueOfIdentifier">
+                                                    <variableName>insert8Index</variableName>
+                                                </arguments>
+                                            </expression>
+                                        </next>
+                                        <variableName>insert8Index</variableName>
+                                        <expression xsi:type="functionBox">
+                                            <function xsi:type="retrieve"/>
+                                            <arguments xsi:type="constantValue">
+                                                <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">events/insert[value = $a]/index</value>
+                                            </arguments>
+                                        </expression>
+                                    </next>
+                                    <function xsi:type="animate"/>
+                                    <arguments xsi:type="valueOfIdentifier">
+                                        <variableName>move8Forward</variableName>
+                                    </arguments>
+                                    <arguments xsi:type="valueOfIdentifier">
+                                        <variableName>insertElement</variableName>
+                                    </arguments>
+                                </next>
+                                <variableName>insertElement</variableName>
+                                <expression xsi:type="functionBox">
+                                    <function xsi:type="retrieve"/>
+                                    <arguments xsi:type="constantValue">
+                                        <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">events/insert[value = $a]</value>
+                                    </arguments>
+                                </expression>
+                            </next>
+                            <variableName>last8moveIndex</variableName>
+                            <expression xsi:type="functionBox">
+                                <function xsi:type="retrieve"/>
+                                <arguments xsi:type="constantValue">
+                                    <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">/index_dest</value>
+                                </arguments>
+                                <arguments xsi:type="valueOfIdentifier">
+                                    <variableName>last8move</variableName>
+                                </arguments>
+                            </expression>
+                        </next>
+                        <variableName>last8move</variableName>
+                        <expression xsi:type="functionBox">
+                            <function xsi:type="retrieve"/>
+                            <arguments xsi:type="constantValue">
+                                <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">/list[not(@seqnr &lt;= preceding-sibling::list/@seqnr) and not(@seqnr &lt;= following-sibling::list/@seqnr)]</value>
+                            </arguments>
+                            <arguments xsi:type="valueOfIdentifier">
+                                <variableName>move8Forward</variableName>
+                            </arguments>
+                        </expression>
+                    </next>
+                    <variableName>move8Forward</variableName>
+                    <expression xsi:type="functionBox">
+                        <function xsi:type="retrieve"/>
+                        <arguments xsi:type="constantValue">
+                            <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">events/moveForward[value = $a]</value>
+                        </arguments>
+                    </expression>
+                </next>
+                <variableName>a</variableName>
+                <expression xsi:type="constantValue">
+                    <value xsi:type="xs:int" xmlns:xs="http://www.w3.org/2001/XMLSchema">9</value>
+                </expression>
+            </next>
+            <AssignBox>
+                <next xsi:type="assignBox">
+                    <next xsi:type="assignBox">
+                        <next xsi:type="assignBox">
+                            <next xsi:type="assignBox">
+                                <next xsi:type="functionBox">
+                                    <next xsi:type="assignBox">
+                                        <next xsi:type="assignBox">
+                                            <next xsi:type="functionBox">
+                                                <next xsi:type="functionBox">
+                                                    <next xsi:type="functionBox">
+                                                        <function xsi:type="check"/>
+                                                        <arguments xsi:type="valueOfIdentifier">
+                                                            <variableName>position8</variableName>
+                                                        </arguments>
+                                                        <arguments xsi:type="valueOfIdentifier">
+                                                            <variableName>x</variableName>
+                                                        </arguments>
+                                                    </next>
+                                                    <function xsi:type="debug"/>
+                                                </next>
+                                                <function xsi:type="comment"/>
+                                                <arguments xsi:type="constantValue">
+                                                    <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">Hint: The last element in the array is %d.</value>
+                                                </arguments>
+                                                <arguments xsi:type="valueOfIdentifier">
+                                                    <variableName>a</variableName>
+                                                </arguments>
+                                            </next>
+                                            <variableName>position8</variableName>
+                                            <expression xsi:type="functionBox">
+                                                <function xsi:type="max"/>
+                                                <arguments xsi:type="valueOfIdentifier">
+                                                    <variableName>last8moveIndex</variableName>
+                                                </arguments>
+                                                <arguments xsi:type="valueOfIdentifier">
+                                                    <variableName>insert8Index</variableName>
+                                                </arguments>
+                                            </expression>
+                                        </next>
+                                        <variableName>insert8Index</variableName>
+                                        <expression xsi:type="functionBox">
+                                            <function xsi:type="retrieve"/>
+                                            <arguments xsi:type="constantValue">
+                                                <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">events/insert[value = $a]/index</value>
+                                            </arguments>
+                                        </expression>
+                                    </next>
+                                    <function xsi:type="animate"/>
+                                    <arguments xsi:type="valueOfIdentifier">
+                                        <variableName>move8Forward</variableName>
+                                    </arguments>
+                                    <arguments xsi:type="valueOfIdentifier">
+                                        <variableName>insertElement</variableName>
+                                    </arguments>
+                                </next>
+                                <variableName>insertElement</variableName>
+                                <expression xsi:type="functionBox">
+                                    <function xsi:type="retrieve"/>
+                                    <arguments xsi:type="constantValue">
+                                        <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">events/insert[value = $a]</value>
+                                    </arguments>
+                                </expression>
+                            </next>
+                            <variableName>last8moveIndex</variableName>
+                            <expression xsi:type="functionBox">
+                                <function xsi:type="retrieve"/>
+                                <arguments xsi:type="constantValue">
+                                    <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">/index_dest</value>
+                                </arguments>
+                                <arguments xsi:type="valueOfIdentifier">
+                                    <variableName>last8move</variableName>
+                                </arguments>
+                            </expression>
+                        </next>
+                        <variableName>last8move</variableName>
+                        <expression xsi:type="functionBox">
+                            <function xsi:type="retrieve"/>
+                            <arguments xsi:type="constantValue">
+                                <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">/list[not(@seqnr &lt;= preceding-sibling::list/@seqnr) and not(@seqnr &lt;= following-sibling::list/@seqnr)]</value>
+                            </arguments>
+                            <arguments xsi:type="valueOfIdentifier">
+                                <variableName>move8Forward</variableName>
+                            </arguments>
+                        </expression>
+                    </next>
+                    <variableName>move8Forward</variableName>
+                    <expression xsi:type="functionBox">
+                        <function xsi:type="retrieve"/>
+                        <arguments xsi:type="constantValue">
+                            <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">events/moveForward[value = $a]</value>
+                        </arguments>
+                    </expression>
+                </next>
+                <variableName>a</variableName>
+                <expression xsi:type="constantValue">
+                    <value xsi:type="xs:int" xmlns:xs="http://www.w3.org/2001/XMLSchema">9</value>
+                </expression>
+            </AssignBox>
+            <AssignBox>
+                <next xsi:type="assignBox">
+                    <next xsi:type="assignBox">
+                        <next xsi:type="assignBox">
+                            <next xsi:type="functionBox">
+                                <next xsi:type="assignBox">
+                                    <next xsi:type="assignBox">
+                                        <next xsi:type="functionBox">
+                                            <next xsi:type="functionBox">
+                                                <next xsi:type="functionBox">
+                                                    <function xsi:type="check"/>
+                                                    <arguments xsi:type="valueOfIdentifier">
+                                                        <variableName>position8</variableName>
+                                                    </arguments>
+                                                    <arguments xsi:type="valueOfIdentifier">
+                                                        <variableName>x</variableName>
+                                                    </arguments>
+                                                </next>
+                                                <function xsi:type="debug"/>
+                                            </next>
+                                            <function xsi:type="comment"/>
+                                            <arguments xsi:type="constantValue">
+                                                <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">Hint: The last element in the array is %d.</value>
+                                            </arguments>
+                                            <arguments xsi:type="valueOfIdentifier">
+                                                <variableName>a</variableName>
+                                            </arguments>
+                                        </next>
+                                        <variableName>position8</variableName>
+                                        <expression xsi:type="functionBox">
+                                            <function xsi:type="max"/>
+                                            <arguments xsi:type="valueOfIdentifier">
+                                                <variableName>last8moveIndex</variableName>
+                                            </arguments>
+                                            <arguments xsi:type="valueOfIdentifier">
+                                                <variableName>insert8Index</variableName>
+                                            </arguments>
+                                        </expression>
+                                    </next>
+                                    <variableName>insert8Index</variableName>
+                                    <expression xsi:type="functionBox">
+                                        <function xsi:type="retrieve"/>
+                                        <arguments xsi:type="constantValue">
+                                            <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">events/insert[value = $a]/index</value>
+                                        </arguments>
+                                    </expression>
+                                </next>
+                                <function xsi:type="animate"/>
+                                <arguments xsi:type="valueOfIdentifier">
+                                    <variableName>move8Forward</variableName>
+                                </arguments>
+                                <arguments xsi:type="valueOfIdentifier">
+                                    <variableName>insertElement</variableName>
+                                </arguments>
+                            </next>
+                            <variableName>insertElement</variableName>
+                            <expression xsi:type="functionBox">
+                                <function xsi:type="retrieve"/>
+                                <arguments xsi:type="constantValue">
+                                    <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">events/insert[value = $a]</value>
+                                </arguments>
+                            </expression>
+                        </next>
+                        <variableName>last8moveIndex</variableName>
+                        <expression xsi:type="functionBox">
+                            <function xsi:type="retrieve"/>
+                            <arguments xsi:type="constantValue">
+                                <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">/index_dest</value>
+                            </arguments>
+                            <arguments xsi:type="valueOfIdentifier">
+                                <variableName>last8move</variableName>
+                            </arguments>
+                        </expression>
+                    </next>
+                    <variableName>last8move</variableName>
+                    <expression xsi:type="functionBox">
+                        <function xsi:type="retrieve"/>
+                        <arguments xsi:type="constantValue">
+                            <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">/list[not(@seqnr &lt;= preceding-sibling::list/@seqnr) and not(@seqnr &lt;= following-sibling::list/@seqnr)]</value>
+                        </arguments>
+                        <arguments xsi:type="valueOfIdentifier">
+                            <variableName>move8Forward</variableName>
+                        </arguments>
+                    </expression>
+                </next>
+                <variableName>move8Forward</variableName>
+                <expression xsi:type="functionBox">
+                    <function xsi:type="retrieve"/>
+                    <arguments xsi:type="constantValue">
+                        <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">events/moveForward[value = $a]</value>
+                    </arguments>
+                </expression>
+            </AssignBox>
+            <AssignBox>
+                <next xsi:type="assignBox">
+                    <next xsi:type="assignBox">
+                        <next xsi:type="functionBox">
+                            <next xsi:type="assignBox">
+                                <next xsi:type="assignBox">
+                                    <next xsi:type="functionBox">
+                                        <next xsi:type="functionBox">
+                                            <next xsi:type="functionBox">
+                                                <function xsi:type="check"/>
+                                                <arguments xsi:type="valueOfIdentifier">
+                                                    <variableName>position8</variableName>
+                                                </arguments>
+                                                <arguments xsi:type="valueOfIdentifier">
+                                                    <variableName>x</variableName>
+                                                </arguments>
+                                            </next>
+                                            <function xsi:type="debug"/>
+                                        </next>
+                                        <function xsi:type="comment"/>
+                                        <arguments xsi:type="constantValue">
+                                            <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">Hint: The last element in the array is %d.</value>
+                                        </arguments>
+                                        <arguments xsi:type="valueOfIdentifier">
+                                            <variableName>a</variableName>
+                                        </arguments>
+                                    </next>
+                                    <variableName>position8</variableName>
+                                    <expression xsi:type="functionBox">
+                                        <function xsi:type="max"/>
+                                        <arguments xsi:type="valueOfIdentifier">
+                                            <variableName>last8moveIndex</variableName>
+                                        </arguments>
+                                        <arguments xsi:type="valueOfIdentifier">
+                                            <variableName>insert8Index</variableName>
+                                        </arguments>
+                                    </expression>
+                                </next>
+                                <variableName>insert8Index</variableName>
+                                <expression xsi:type="functionBox">
+                                    <function xsi:type="retrieve"/>
+                                    <arguments xsi:type="constantValue">
+                                        <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">events/insert[value = $a]/index</value>
+                                    </arguments>
+                                </expression>
+                            </next>
+                            <function xsi:type="animate"/>
+                            <arguments xsi:type="valueOfIdentifier">
+                                <variableName>move8Forward</variableName>
+                            </arguments>
+                            <arguments xsi:type="valueOfIdentifier">
+                                <variableName>insertElement</variableName>
+                            </arguments>
+                        </next>
+                        <variableName>insertElement</variableName>
+                        <expression xsi:type="functionBox">
+                            <function xsi:type="retrieve"/>
+                            <arguments xsi:type="constantValue">
+                                <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">events/insert[value = $a]</value>
+                            </arguments>
+                        </expression>
+                    </next>
+                    <variableName>last8moveIndex</variableName>
+                    <expression xsi:type="functionBox">
+                        <function xsi:type="retrieve"/>
+                        <arguments xsi:type="constantValue">
+                            <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">/index_dest</value>
+                        </arguments>
+                        <arguments xsi:type="valueOfIdentifier">
+                            <variableName>last8move</variableName>
+                        </arguments>
+                    </expression>
+                </next>
+                <variableName>last8move</variableName>
+                <expression xsi:type="functionBox">
+                    <function xsi:type="retrieve"/>
+                    <arguments xsi:type="constantValue">
+                        <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">/list[not(@seqnr &lt;= preceding-sibling::list/@seqnr) and not(@seqnr &lt;= following-sibling::list/@seqnr)]</value>
+                    </arguments>
+                    <arguments xsi:type="valueOfIdentifier">
+                        <variableName>move8Forward</variableName>
+                    </arguments>
+                </expression>
+            </AssignBox>
+            <AssignBox>
+                <next xsi:type="assignBox">
+                    <next xsi:type="functionBox">
+                        <next xsi:type="assignBox">
+                            <next xsi:type="assignBox">
+                                <next xsi:type="functionBox">
+                                    <next xsi:type="functionBox">
+                                        <next xsi:type="functionBox">
+                                            <function xsi:type="check"/>
+                                            <arguments xsi:type="valueOfIdentifier">
+                                                <variableName>position8</variableName>
+                                            </arguments>
+                                            <arguments xsi:type="valueOfIdentifier">
+                                                <variableName>x</variableName>
+                                            </arguments>
+                                        </next>
+                                        <function xsi:type="debug"/>
+                                    </next>
+                                    <function xsi:type="comment"/>
+                                    <arguments xsi:type="constantValue">
+                                        <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">Hint: The last element in the array is %d.</value>
+                                    </arguments>
+                                    <arguments xsi:type="valueOfIdentifier">
+                                        <variableName>a</variableName>
+                                    </arguments>
+                                </next>
+                                <variableName>position8</variableName>
+                                <expression xsi:type="functionBox">
+                                    <function xsi:type="max"/>
+                                    <arguments xsi:type="valueOfIdentifier">
+                                        <variableName>last8moveIndex</variableName>
+                                    </arguments>
+                                    <arguments xsi:type="valueOfIdentifier">
+                                        <variableName>insert8Index</variableName>
+                                    </arguments>
+                                </expression>
+                            </next>
+                            <variableName>insert8Index</variableName>
+                            <expression xsi:type="functionBox">
+                                <function xsi:type="retrieve"/>
+                                <arguments xsi:type="constantValue">
+                                    <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">events/insert[value = $a]/index</value>
+                                </arguments>
+                            </expression>
+                        </next>
+                        <function xsi:type="animate"/>
+                        <arguments xsi:type="valueOfIdentifier">
+                            <variableName>move8Forward</variableName>
+                        </arguments>
+                        <arguments xsi:type="valueOfIdentifier">
+                            <variableName>insertElement</variableName>
+                        </arguments>
+                    </next>
+                    <variableName>insertElement</variableName>
+                    <expression xsi:type="functionBox">
+                        <function xsi:type="retrieve"/>
+                        <arguments xsi:type="constantValue">
+                            <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">events/insert[value = $a]</value>
+                        </arguments>
+                    </expression>
+                </next>
+                <variableName>last8moveIndex</variableName>
+                <expression xsi:type="functionBox">
+                    <function xsi:type="retrieve"/>
+                    <arguments xsi:type="constantValue">
+                        <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">/index_dest</value>
+                    </arguments>
+                    <arguments xsi:type="valueOfIdentifier">
+                        <variableName>last8move</variableName>
+                    </arguments>
+                </expression>
+            </AssignBox>
+            <AssignBox>
+                <next xsi:type="functionBox">
+                    <next xsi:type="assignBox">
+                        <next xsi:type="assignBox">
+                            <next xsi:type="functionBox">
+                                <next xsi:type="functionBox">
+                                    <next xsi:type="functionBox">
+                                        <function xsi:type="check"/>
+                                        <arguments xsi:type="valueOfIdentifier">
+                                            <variableName>position8</variableName>
+                                        </arguments>
+                                        <arguments xsi:type="valueOfIdentifier">
+                                            <variableName>x</variableName>
+                                        </arguments>
+                                    </next>
+                                    <function xsi:type="debug"/>
+                                </next>
+                                <function xsi:type="comment"/>
+                                <arguments xsi:type="constantValue">
+                                    <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">Hint: The last element in the array is %d.</value>
+                                </arguments>
+                                <arguments xsi:type="valueOfIdentifier">
+                                    <variableName>a</variableName>
+                                </arguments>
+                            </next>
+                            <variableName>position8</variableName>
+                            <expression xsi:type="functionBox">
+                                <function xsi:type="max"/>
+                                <arguments xsi:type="valueOfIdentifier">
+                                    <variableName>last8moveIndex</variableName>
+                                </arguments>
+                                <arguments xsi:type="valueOfIdentifier">
+                                    <variableName>insert8Index</variableName>
+                                </arguments>
+                            </expression>
+                        </next>
+                        <variableName>insert8Index</variableName>
+                        <expression xsi:type="functionBox">
+                            <function xsi:type="retrieve"/>
+                            <arguments xsi:type="constantValue">
+                                <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">events/insert[value = $a]/index</value>
+                            </arguments>
+                        </expression>
+                    </next>
+                    <function xsi:type="animate"/>
+                    <arguments xsi:type="valueOfIdentifier">
+                        <variableName>move8Forward</variableName>
+                    </arguments>
+                    <arguments xsi:type="valueOfIdentifier">
+                        <variableName>insertElement</variableName>
+                    </arguments>
+                </next>
+                <variableName>insertElement</variableName>
+                <expression xsi:type="functionBox">
+                    <function xsi:type="retrieve"/>
+                    <arguments xsi:type="constantValue">
+                        <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">events/insert[value = $a]</value>
+                    </arguments>
+                </expression>
+            </AssignBox>
+            <FunctionBox>
+                <next xsi:type="assignBox">
+                    <next xsi:type="assignBox">
+                        <next xsi:type="functionBox">
+                            <next xsi:type="functionBox">
+                                <next xsi:type="functionBox">
+                                    <function xsi:type="check"/>
+                                    <arguments xsi:type="valueOfIdentifier">
+                                        <variableName>position8</variableName>
+                                    </arguments>
+                                    <arguments xsi:type="valueOfIdentifier">
+                                        <variableName>x</variableName>
+                                    </arguments>
+                                </next>
+                                <function xsi:type="debug"/>
+                            </next>
+                            <function xsi:type="comment"/>
+                            <arguments xsi:type="constantValue">
+                                <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">Hint: The last element in the array is %d.</value>
+                            </arguments>
+                            <arguments xsi:type="valueOfIdentifier">
+                                <variableName>a</variableName>
+                            </arguments>
+                        </next>
+                        <variableName>position8</variableName>
+                        <expression xsi:type="functionBox">
+                            <function xsi:type="max"/>
+                            <arguments xsi:type="valueOfIdentifier">
+                                <variableName>last8moveIndex</variableName>
+                            </arguments>
+                            <arguments xsi:type="valueOfIdentifier">
+                                <variableName>insert8Index</variableName>
+                            </arguments>
+                        </expression>
+                    </next>
+                    <variableName>insert8Index</variableName>
+                    <expression xsi:type="functionBox">
+                        <function xsi:type="retrieve"/>
+                        <arguments xsi:type="constantValue">
+                            <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">events/insert[value = $a]/index</value>
+                        </arguments>
+                    </expression>
+                </next>
+                <function xsi:type="animate"/>
+                <arguments xsi:type="valueOfIdentifier">
+                    <variableName>move8Forward</variableName>
+                </arguments>
+                <arguments xsi:type="valueOfIdentifier">
+                    <variableName>insertElement</variableName>
+                </arguments>
+            </FunctionBox>
+            <AssignBox>
+                <next xsi:type="assignBox">
+                    <next xsi:type="functionBox">
+                        <next xsi:type="functionBox">
+                            <next xsi:type="functionBox">
+                                <function xsi:type="check"/>
+                                <arguments xsi:type="valueOfIdentifier">
+                                    <variableName>position8</variableName>
+                                </arguments>
+                                <arguments xsi:type="valueOfIdentifier">
+                                    <variableName>x</variableName>
+                                </arguments>
+                            </next>
+                            <function xsi:type="debug"/>
+                        </next>
+                        <function xsi:type="comment"/>
+                        <arguments xsi:type="constantValue">
+                            <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">Hint: The last element in the array is %d.</value>
+                        </arguments>
+                        <arguments xsi:type="valueOfIdentifier">
+                            <variableName>a</variableName>
+                        </arguments>
+                    </next>
+                    <variableName>position8</variableName>
+                    <expression xsi:type="functionBox">
+                        <function xsi:type="max"/>
+                        <arguments xsi:type="valueOfIdentifier">
+                            <variableName>last8moveIndex</variableName>
+                        </arguments>
+                        <arguments xsi:type="valueOfIdentifier">
+                            <variableName>insert8Index</variableName>
+                        </arguments>
+                    </expression>
+                </next>
+                <variableName>insert8Index</variableName>
+                <expression xsi:type="functionBox">
+                    <function xsi:type="retrieve"/>
+                    <arguments xsi:type="constantValue">
+                        <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">events/insert[value = $a]/index</value>
+                    </arguments>
+                </expression>
+            </AssignBox>
+            <AssignBox>
+                <next xsi:type="functionBox">
+                    <next xsi:type="functionBox">
+                        <next xsi:type="functionBox">
+                            <function xsi:type="check"/>
+                            <arguments xsi:type="valueOfIdentifier">
+                                <variableName>position8</variableName>
+                            </arguments>
+                            <arguments xsi:type="valueOfIdentifier">
+                                <variableName>x</variableName>
+                            </arguments>
+                        </next>
+                        <function xsi:type="debug"/>
+                    </next>
+                    <function xsi:type="comment"/>
+                    <arguments xsi:type="constantValue">
+                        <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">Hint: The last element in the array is %d.</value>
+                    </arguments>
+                    <arguments xsi:type="valueOfIdentifier">
+                        <variableName>a</variableName>
+                    </arguments>
+                </next>
+                <variableName>position8</variableName>
+                <expression xsi:type="functionBox">
+                    <function xsi:type="max"/>
+                    <arguments xsi:type="valueOfIdentifier">
+                        <variableName>last8moveIndex</variableName>
+                    </arguments>
+                    <arguments xsi:type="valueOfIdentifier">
+                        <variableName>insert8Index</variableName>
+                    </arguments>
+                </expression>
+            </AssignBox>
+            <FunctionBox>
+                <next xsi:type="functionBox">
+                    <next xsi:type="functionBox">
+                        <function xsi:type="check"/>
+                        <arguments xsi:type="valueOfIdentifier">
+                            <variableName>position8</variableName>
+                        </arguments>
+                        <arguments xsi:type="valueOfIdentifier">
+                            <variableName>x</variableName>
+                        </arguments>
+                    </next>
+                    <function xsi:type="debug"/>
+                </next>
+                <function xsi:type="comment"/>
+                <arguments xsi:type="constantValue">
+                    <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">Hint: The last element in the array is %d.</value>
+                </arguments>
+                <arguments xsi:type="valueOfIdentifier">
+                    <variableName>a</variableName>
+                </arguments>
+            </FunctionBox>
+            <FunctionBox>
+                <next xsi:type="functionBox">
+                    <function xsi:type="check"/>
+                    <arguments xsi:type="valueOfIdentifier">
+                        <variableName>position8</variableName>
+                    </arguments>
+                    <arguments xsi:type="valueOfIdentifier">
+                        <variableName>x</variableName>
+                    </arguments>
+                </next>
+                <function xsi:type="debug"/>
+            </FunctionBox>
+            <FunctionBox>
+                <function xsi:type="check"/>
+                <arguments xsi:type="valueOfIdentifier">
+                    <variableName>position8</variableName>
+                </arguments>
+                <arguments xsi:type="valueOfIdentifier">
+                    <variableName>x</variableName>
+                </arguments>
+            </FunctionBox>
+        </decisionBox>
+        <inputVariables>
+            <name>x</name>
+        </inputVariables>
+        <questionId>Question-3454406021278810449743</questionId>
+        <questionText>1. After execution the algorithm, on which position will be placed the the last element of the array?</questionText>
+        <script>// This script answers the question: On which position is places the element 'a'?
+a = 9;
+
+// This query selects  all moveForward events, where the value was &lt;element&gt;
+move8Forward = Retrieve("events/moveForward[value = $a]");
+
+// Get the last event from the list move6Forward
+last8move = Retrieve("/list[not(@seqnr &lt;= preceding-sibling::list/@seqnr) and not(@seqnr &lt;= following-sibling::list/@seqnr)]", move8Forward);
+
+// Get the position of the element from the event
+last8moveIndex = Retrieve("/index_dest", last8move);
+
+insertElement = Retrieve("events/insert[value = $a]");
+
+// Defines these event as interesting events
+Animate(move8Forward,insertElement );
+
+// Get the position where the element was initially inserted
+insert8Index = Retrieve("events/insert[value = $a]/index");
+
+position8 = Max(last8moveIndex, insert8Index);
+
+Comment("Hint: The last element in the array is %d.", a);
+Debug();
+Check(position8, x);</script>
+    </questionsList>
+    <questionsList>
+        <decisionBox xsi:type="scriptBox" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+            <inputVariables>
+                <name>x</name>
+            </inputVariables>
+            <next xsi:type="assignBox">
+                <next xsi:type="assignBox">
+                    <next xsi:type="functionBox">
+                        <next xsi:type="assignBox">
+                            <next xsi:type="functionBox">
+                                <next xsi:type="functionBox">
+                                    <function xsi:type="check"/>
+                                    <arguments xsi:type="valueOfIdentifier">
+                                        <variableName>insert8Index</variableName>
+                                    </arguments>
+                                    <arguments xsi:type="valueOfIdentifier">
+                                        <variableName>x</variableName>
+                                    </arguments>
+                                </next>
+                                <function xsi:type="debug"/>
+                            </next>
+                            <variableName>insert8Index</variableName>
+                            <expression xsi:type="functionBox">
+                                <function xsi:type="retrieve"/>
+                                <arguments xsi:type="constantValue">
+                                    <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">events/insert[value = $element]/index</value>
+                                </arguments>
+                            </expression>
+                        </next>
+                        <function xsi:type="animate"/>
+                        <arguments xsi:type="valueOfIdentifier">
+                            <variableName>insert</variableName>
+                        </arguments>
+                    </next>
+                    <variableName>insert</variableName>
+                    <expression xsi:type="functionBox">
+                        <function xsi:type="retrieve"/>
+                        <arguments xsi:type="constantValue">
+                            <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">events/insert[value = $element]</value>
+                        </arguments>
+                    </expression>
+                </next>
+                <variableName>element</variableName>
+                <expression xsi:type="constantValue">
+                    <value xsi:type="xs:int" xmlns:xs="http://www.w3.org/2001/XMLSchema">2</value>
+                </expression>
+            </next>
+            <AssignBox>
+                <next xsi:type="assignBox">
+                    <next xsi:type="functionBox">
+                        <next xsi:type="assignBox">
+                            <next xsi:type="functionBox">
+                                <next xsi:type="functionBox">
+                                    <function xsi:type="check"/>
+                                    <arguments xsi:type="valueOfIdentifier">
+                                        <variableName>insert8Index</variableName>
+                                    </arguments>
+                                    <arguments xsi:type="valueOfIdentifier">
+                                        <variableName>x</variableName>
+                                    </arguments>
+                                </next>
+                                <function xsi:type="debug"/>
+                            </next>
+                            <variableName>insert8Index</variableName>
+                            <expression xsi:type="functionBox">
+                                <function xsi:type="retrieve"/>
+                                <arguments xsi:type="constantValue">
+                                    <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">events/insert[value = $element]/index</value>
+                                </arguments>
+                            </expression>
+                        </next>
+                        <function xsi:type="animate"/>
+                        <arguments xsi:type="valueOfIdentifier">
+                            <variableName>insert</variableName>
+                        </arguments>
+                    </next>
+                    <variableName>insert</variableName>
+                    <expression xsi:type="functionBox">
+                        <function xsi:type="retrieve"/>
+                        <arguments xsi:type="constantValue">
+                            <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">events/insert[value = $element]</value>
+                        </arguments>
+                    </expression>
+                </next>
+                <variableName>element</variableName>
+                <expression xsi:type="constantValue">
+                    <value xsi:type="xs:int" xmlns:xs="http://www.w3.org/2001/XMLSchema">2</value>
+                </expression>
+            </AssignBox>
+            <AssignBox>
+                <next xsi:type="functionBox">
+                    <next xsi:type="assignBox">
+                        <next xsi:type="functionBox">
+                            <next xsi:type="functionBox">
+                                <function xsi:type="check"/>
+                                <arguments xsi:type="valueOfIdentifier">
+                                    <variableName>insert8Index</variableName>
+                                </arguments>
+                                <arguments xsi:type="valueOfIdentifier">
+                                    <variableName>x</variableName>
+                                </arguments>
+                            </next>
+                            <function xsi:type="debug"/>
+                        </next>
+                        <variableName>insert8Index</variableName>
+                        <expression xsi:type="functionBox">
+                            <function xsi:type="retrieve"/>
+                            <arguments xsi:type="constantValue">
+                                <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">events/insert[value = $element]/index</value>
+                            </arguments>
+                        </expression>
+                    </next>
+                    <function xsi:type="animate"/>
+                    <arguments xsi:type="valueOfIdentifier">
+                        <variableName>insert</variableName>
+                    </arguments>
+                </next>
+                <variableName>insert</variableName>
+                <expression xsi:type="functionBox">
+                    <function xsi:type="retrieve"/>
+                    <arguments xsi:type="constantValue">
+                        <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">events/insert[value = $element]</value>
+                    </arguments>
+                </expression>
+            </AssignBox>
+            <FunctionBox>
+                <next xsi:type="assignBox">
+                    <next xsi:type="functionBox">
+                        <next xsi:type="functionBox">
+                            <function xsi:type="check"/>
+                            <arguments xsi:type="valueOfIdentifier">
+                                <variableName>insert8Index</variableName>
+                            </arguments>
+                            <arguments xsi:type="valueOfIdentifier">
+                                <variableName>x</variableName>
+                            </arguments>
+                        </next>
+                        <function xsi:type="debug"/>
+                    </next>
+                    <variableName>insert8Index</variableName>
+                    <expression xsi:type="functionBox">
+                        <function xsi:type="retrieve"/>
+                        <arguments xsi:type="constantValue">
+                            <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">events/insert[value = $element]/index</value>
+                        </arguments>
+                    </expression>
+                </next>
+                <function xsi:type="animate"/>
+                <arguments xsi:type="valueOfIdentifier">
+                    <variableName>insert</variableName>
+                </arguments>
+            </FunctionBox>
+            <AssignBox>
+                <next xsi:type="functionBox">
+                    <next xsi:type="functionBox">
+                        <function xsi:type="check"/>
+                        <arguments xsi:type="valueOfIdentifier">
+                            <variableName>insert8Index</variableName>
+                        </arguments>
+                        <arguments xsi:type="valueOfIdentifier">
+                            <variableName>x</variableName>
+                        </arguments>
+                    </next>
+                    <function xsi:type="debug"/>
+                </next>
+                <variableName>insert8Index</variableName>
+                <expression xsi:type="functionBox">
+                    <function xsi:type="retrieve"/>
+                    <arguments xsi:type="constantValue">
+                        <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">events/insert[value = $element]/index</value>
+                    </arguments>
+                </expression>
+            </AssignBox>
+            <FunctionBox>
+                <next xsi:type="functionBox">
+                    <function xsi:type="check"/>
+                    <arguments xsi:type="valueOfIdentifier">
+                        <variableName>insert8Index</variableName>
+                    </arguments>
+                    <arguments xsi:type="valueOfIdentifier">
+                        <variableName>x</variableName>
+                    </arguments>
+                </next>
+                <function xsi:type="debug"/>
+            </FunctionBox>
+            <FunctionBox>
+                <function xsi:type="check"/>
+                <arguments xsi:type="valueOfIdentifier">
+                    <variableName>insert8Index</variableName>
+                </arguments>
+                <arguments xsi:type="valueOfIdentifier">
+                    <variableName>x</variableName>
+                </arguments>
+            </FunctionBox>
+        </decisionBox>
+        <inputVariables>
+            <name>x</name>
+        </inputVariables>
+        <questionId>Question-3454406021278810968747</questionId>
+        <questionText>2. On which positon will be the value '2' initialy inserted?</questionText>
+        <script>// Get the position where the element was inserted
+element = 2;
+
+insert = Retrieve("events/insert[value = $element]");
+Animate(insert);
+
+insert8Index = Retrieve("events/insert[value = $element]/index");
+
+Debug();
+Check(insert8Index, x);</script>
+    </questionsList>
+    <questionsList>
+        <decisionBox xsi:type="scriptBox" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+            <inputVariables>
+                <name>x</name>
+            </inputVariables>
+            <next xsi:type="assignBox">
+                <next xsi:type="assignBox">
+                    <next xsi:type="assignBox">
+                        <next xsi:type="assignBox">
+                            <next xsi:type="assignBox">
+                                <next xsi:type="functionBox">
+                                    <next xsi:type="assignBox">
+                                        <next xsi:type="assignBox">
+                                            <next xsi:type="functionBox">
+                                                <next xsi:type="functionBox">
+                                                    <function xsi:type="check"/>
+                                                    <arguments xsi:type="valueOfIdentifier">
+                                                        <variableName>count</variableName>
+                                                    </arguments>
+                                                    <arguments xsi:type="valueOfIdentifier">
+                                                        <variableName>x</variableName>
+                                                    </arguments>
+                                                </next>
+                                                <function xsi:type="debug"/>
+                                            </next>
+                                            <variableName>count</variableName>
+                                            <expression xsi:type="functionBox">
+                                                <function xsi:type="retrieve"/>
+                                                <arguments xsi:type="constantValue">
+                                                    <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">count(/list)</value>
+                                                </arguments>
+                                                <arguments xsi:type="valueOfIdentifier">
+                                                    <variableName>all</variableName>
+                                                </arguments>
+                                            </expression>
+                                        </next>
+                                        <variableName>all</variableName>
+                                        <expression xsi:type="functionBox">
+                                            <function xsi:type="retrieve"/>
+                                            <arguments xsi:type="constantValue">
+                                                <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">events/moveForward[(animstep &gt; $prevInsertEventStep) and (animstep&lt; $insertEventStep)]</value>
+                                            </arguments>
+                                        </expression>
+                                    </next>
+                                    <function xsi:type="animate"/>
+                                    <arguments xsi:type="valueOfIdentifier">
+                                        <variableName>insertEvent</variableName>
+                                    </arguments>
+                                    <arguments xsi:type="valueOfIdentifier">
+                                        <variableName>prevInsertEvent</variableName>
+                                    </arguments>
+                                </next>
+                                <variableName>prevInsertEventStep</variableName>
+                                <expression xsi:type="functionBox">
+                                    <function xsi:type="retrieve"/>
+                                    <arguments xsi:type="constantValue">
+                                        <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">/animstep</value>
+                                    </arguments>
+                                    <arguments xsi:type="valueOfIdentifier">
+                                        <variableName>prevInsertEvent</variableName>
+                                    </arguments>
+                                </expression>
+                            </next>
+                            <variableName>prevInsertEvent</variableName>
+                            <expression xsi:type="functionBox">
+                                <function xsi:type="retrieve"/>
+                                <arguments xsi:type="constantValue">
+                                    <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">events/insert[value = $value]/preceding-sibling::insert[1]</value>
+                                </arguments>
+                            </expression>
+                        </next>
+                        <variableName>insertEventStep</variableName>
+                        <expression xsi:type="functionBox">
+                            <function xsi:type="retrieve"/>
+                            <arguments xsi:type="constantValue">
+                                <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">/animstep</value>
+                            </arguments>
+                            <arguments xsi:type="valueOfIdentifier">
+                                <variableName>insertEvent</variableName>
+                            </arguments>
+                        </expression>
+                    </next>
+                    <variableName>insertEvent</variableName>
+                    <expression xsi:type="functionBox">
+                        <function xsi:type="retrieve"/>
+                        <arguments xsi:type="constantValue">
+                            <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">events/insert[value = $value]</value>
+                        </arguments>
+                    </expression>
+                </next>
+                <variableName>value</variableName>
+                <expression xsi:type="constantValue">
+                    <value xsi:type="xs:int" xmlns:xs="http://www.w3.org/2001/XMLSchema">2</value>
+                </expression>
+            </next>
+            <AssignBox>
+                <next xsi:type="assignBox">
+                    <next xsi:type="assignBox">
+                        <next xsi:type="assignBox">
+                            <next xsi:type="assignBox">
+                                <next xsi:type="functionBox">
+                                    <next xsi:type="assignBox">
+                                        <next xsi:type="assignBox">
+                                            <next xsi:type="functionBox">
+                                                <next xsi:type="functionBox">
+                                                    <function xsi:type="check"/>
+                                                    <arguments xsi:type="valueOfIdentifier">
+                                                        <variableName>count</variableName>
+                                                    </arguments>
+                                                    <arguments xsi:type="valueOfIdentifier">
+                                                        <variableName>x</variableName>
+                                                    </arguments>
+                                                </next>
+                                                <function xsi:type="debug"/>
+                                            </next>
+                                            <variableName>count</variableName>
+                                            <expression xsi:type="functionBox">
+                                                <function xsi:type="retrieve"/>
+                                                <arguments xsi:type="constantValue">
+                                                    <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">count(/list)</value>
+                                                </arguments>
+                                                <arguments xsi:type="valueOfIdentifier">
+                                                    <variableName>all</variableName>
+                                                </arguments>
+                                            </expression>
+                                        </next>
+                                        <variableName>all</variableName>
+                                        <expression xsi:type="functionBox">
+                                            <function xsi:type="retrieve"/>
+                                            <arguments xsi:type="constantValue">
+                                                <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">events/moveForward[(animstep &gt; $prevInsertEventStep) and (animstep&lt; $insertEventStep)]</value>
+                                            </arguments>
+                                        </expression>
+                                    </next>
+                                    <function xsi:type="animate"/>
+                                    <arguments xsi:type="valueOfIdentifier">
+                                        <variableName>insertEvent</variableName>
+                                    </arguments>
+                                    <arguments xsi:type="valueOfIdentifier">
+                                        <variableName>prevInsertEvent</variableName>
+                                    </arguments>
+                                </next>
+                                <variableName>prevInsertEventStep</variableName>
+                                <expression xsi:type="functionBox">
+                                    <function xsi:type="retrieve"/>
+                                    <arguments xsi:type="constantValue">
+                                        <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">/animstep</value>
+                                    </arguments>
+                                    <arguments xsi:type="valueOfIdentifier">
+                                        <variableName>prevInsertEvent</variableName>
+                                    </arguments>
+                                </expression>
+                            </next>
+                            <variableName>prevInsertEvent</variableName>
+                            <expression xsi:type="functionBox">
+                                <function xsi:type="retrieve"/>
+                                <arguments xsi:type="constantValue">
+                                    <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">events/insert[value = $value]/preceding-sibling::insert[1]</value>
+                                </arguments>
+                            </expression>
+                        </next>
+                        <variableName>insertEventStep</variableName>
+                        <expression xsi:type="functionBox">
+                            <function xsi:type="retrieve"/>
+                            <arguments xsi:type="constantValue">
+                                <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">/animstep</value>
+                            </arguments>
+                            <arguments xsi:type="valueOfIdentifier">
+                                <variableName>insertEvent</variableName>
+                            </arguments>
+                        </expression>
+                    </next>
+                    <variableName>insertEvent</variableName>
+                    <expression xsi:type="functionBox">
+                        <function xsi:type="retrieve"/>
+                        <arguments xsi:type="constantValue">
+                            <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">events/insert[value = $value]</value>
+                        </arguments>
+                    </expression>
+                </next>
+                <variableName>value</variableName>
+                <expression xsi:type="constantValue">
+                    <value xsi:type="xs:int" xmlns:xs="http://www.w3.org/2001/XMLSchema">2</value>
+                </expression>
+            </AssignBox>
+            <AssignBox>
+                <next xsi:type="assignBox">
+                    <next xsi:type="assignBox">
+                        <next xsi:type="assignBox">
+                            <next xsi:type="functionBox">
+                                <next xsi:type="assignBox">
+                                    <next xsi:type="assignBox">
+                                        <next xsi:type="functionBox">
+                                            <next xsi:type="functionBox">
+                                                <function xsi:type="check"/>
+                                                <arguments xsi:type="valueOfIdentifier">
+                                                    <variableName>count</variableName>
+                                                </arguments>
+                                                <arguments xsi:type="valueOfIdentifier">
+                                                    <variableName>x</variableName>
+                                                </arguments>
+                                            </next>
+                                            <function xsi:type="debug"/>
+                                        </next>
+                                        <variableName>count</variableName>
+                                        <expression xsi:type="functionBox">
+                                            <function xsi:type="retrieve"/>
+                                            <arguments xsi:type="constantValue">
+                                                <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">count(/list)</value>
+                                            </arguments>
+                                            <arguments xsi:type="valueOfIdentifier">
+                                                <variableName>all</variableName>
+                                            </arguments>
+                                        </expression>
+                                    </next>
+                                    <variableName>all</variableName>
+                                    <expression xsi:type="functionBox">
+                                        <function xsi:type="retrieve"/>
+                                        <arguments xsi:type="constantValue">
+                                            <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">events/moveForward[(animstep &gt; $prevInsertEventStep) and (animstep&lt; $insertEventStep)]</value>
+                                        </arguments>
+                                    </expression>
+                                </next>
+                                <function xsi:type="animate"/>
+                                <arguments xsi:type="valueOfIdentifier">
+                                    <variableName>insertEvent</variableName>
+                                </arguments>
+                                <arguments xsi:type="valueOfIdentifier">
+                                    <variableName>prevInsertEvent</variableName>
+                                </arguments>
+                            </next>
+                            <variableName>prevInsertEventStep</variableName>
+                            <expression xsi:type="functionBox">
+                                <function xsi:type="retrieve"/>
+                                <arguments xsi:type="constantValue">
+                                    <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">/animstep</value>
+                                </arguments>
+                                <arguments xsi:type="valueOfIdentifier">
+                                    <variableName>prevInsertEvent</variableName>
+                                </arguments>
+                            </expression>
+                        </next>
+                        <variableName>prevInsertEvent</variableName>
+                        <expression xsi:type="functionBox">
+                            <function xsi:type="retrieve"/>
+                            <arguments xsi:type="constantValue">
+                                <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">events/insert[value = $value]/preceding-sibling::insert[1]</value>
+                            </arguments>
+                        </expression>
+                    </next>
+                    <variableName>insertEventStep</variableName>
+                    <expression xsi:type="functionBox">
+                        <function xsi:type="retrieve"/>
+                        <arguments xsi:type="constantValue">
+                            <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">/animstep</value>
+                        </arguments>
+                        <arguments xsi:type="valueOfIdentifier">
+                            <variableName>insertEvent</variableName>
+                        </arguments>
+                    </expression>
+                </next>
+                <variableName>insertEvent</variableName>
+                <expression xsi:type="functionBox">
+                    <function xsi:type="retrieve"/>
+                    <arguments xsi:type="constantValue">
+                        <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">events/insert[value = $value]</value>
+                    </arguments>
+                </expression>
+            </AssignBox>
+            <AssignBox>
+                <next xsi:type="assignBox">
+                    <next xsi:type="assignBox">
+                        <next xsi:type="functionBox">
+                            <next xsi:type="assignBox">
+                                <next xsi:type="assignBox">
+                                    <next xsi:type="functionBox">
+                                        <next xsi:type="functionBox">
+                                            <function xsi:type="check"/>
+                                            <arguments xsi:type="valueOfIdentifier">
+                                                <variableName>count</variableName>
+                                            </arguments>
+                                            <arguments xsi:type="valueOfIdentifier">
+                                                <variableName>x</variableName>
+                                            </arguments>
+                                        </next>
+                                        <function xsi:type="debug"/>
+                                    </next>
+                                    <variableName>count</variableName>
+                                    <expression xsi:type="functionBox">
+                                        <function xsi:type="retrieve"/>
+                                        <arguments xsi:type="constantValue">
+                                            <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">count(/list)</value>
+                                        </arguments>
+                                        <arguments xsi:type="valueOfIdentifier">
+                                            <variableName>all</variableName>
+                                        </arguments>
+                                    </expression>
+                                </next>
+                                <variableName>all</variableName>
+                                <expression xsi:type="functionBox">
+                                    <function xsi:type="retrieve"/>
+                                    <arguments xsi:type="constantValue">
+                                        <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">events/moveForward[(animstep &gt; $prevInsertEventStep) and (animstep&lt; $insertEventStep)]</value>
+                                    </arguments>
+                                </expression>
+                            </next>
+                            <function xsi:type="animate"/>
+                            <arguments xsi:type="valueOfIdentifier">
+                                <variableName>insertEvent</variableName>
+                            </arguments>
+                            <arguments xsi:type="valueOfIdentifier">
+                                <variableName>prevInsertEvent</variableName>
+                            </arguments>
+                        </next>
+                        <variableName>prevInsertEventStep</variableName>
+                        <expression xsi:type="functionBox">
+                            <function xsi:type="retrieve"/>
+                            <arguments xsi:type="constantValue">
+                                <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">/animstep</value>
+                            </arguments>
+                            <arguments xsi:type="valueOfIdentifier">
+                                <variableName>prevInsertEvent</variableName>
+                            </arguments>
+                        </expression>
+                    </next>
+                    <variableName>prevInsertEvent</variableName>
+                    <expression xsi:type="functionBox">
+                        <function xsi:type="retrieve"/>
+                        <arguments xsi:type="constantValue">
+                            <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">events/insert[value = $value]/preceding-sibling::insert[1]</value>
+                        </arguments>
+                    </expression>
+                </next>
+                <variableName>insertEventStep</variableName>
+                <expression xsi:type="functionBox">
+                    <function xsi:type="retrieve"/>
+                    <arguments xsi:type="constantValue">
+                        <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">/animstep</value>
+                    </arguments>
+                    <arguments xsi:type="valueOfIdentifier">
+                        <variableName>insertEvent</variableName>
+                    </arguments>
+                </expression>
+            </AssignBox>
+            <AssignBox>
+                <next xsi:type="assignBox">
+                    <next xsi:type="functionBox">
+                        <next xsi:type="assignBox">
+                            <next xsi:type="assignBox">
+                                <next xsi:type="functionBox">
+                                    <next xsi:type="functionBox">
+                                        <function xsi:type="check"/>
+                                        <arguments xsi:type="valueOfIdentifier">
+                                            <variableName>count</variableName>
+                                        </arguments>
+                                        <arguments xsi:type="valueOfIdentifier">
+                                            <variableName>x</variableName>
+                                        </arguments>
+                                    </next>
+                                    <function xsi:type="debug"/>
+                                </next>
+                                <variableName>count</variableName>
+                                <expression xsi:type="functionBox">
+                                    <function xsi:type="retrieve"/>
+                                    <arguments xsi:type="constantValue">
+                                        <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">count(/list)</value>
+                                    </arguments>
+                                    <arguments xsi:type="valueOfIdentifier">
+                                        <variableName>all</variableName>
+                                    </arguments>
+                                </expression>
+                            </next>
+                            <variableName>all</variableName>
+                            <expression xsi:type="functionBox">
+                                <function xsi:type="retrieve"/>
+                                <arguments xsi:type="constantValue">
+                                    <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">events/moveForward[(animstep &gt; $prevInsertEventStep) and (animstep&lt; $insertEventStep)]</value>
+                                </arguments>
+                            </expression>
+                        </next>
+                        <function xsi:type="animate"/>
+                        <arguments xsi:type="valueOfIdentifier">
+                            <variableName>insertEvent</variableName>
+                        </arguments>
+                        <arguments xsi:type="valueOfIdentifier">
+                            <variableName>prevInsertEvent</variableName>
+                        </arguments>
+                    </next>
+                    <variableName>prevInsertEventStep</variableName>
+                    <expression xsi:type="functionBox">
+                        <function xsi:type="retrieve"/>
+                        <arguments xsi:type="constantValue">
+                            <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">/animstep</value>
+                        </arguments>
+                        <arguments xsi:type="valueOfIdentifier">
+                            <variableName>prevInsertEvent</variableName>
+                        </arguments>
+                    </expression>
+                </next>
+                <variableName>prevInsertEvent</variableName>
+                <expression xsi:type="functionBox">
+                    <function xsi:type="retrieve"/>
+                    <arguments xsi:type="constantValue">
+                        <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">events/insert[value = $value]/preceding-sibling::insert[1]</value>
+                    </arguments>
+                </expression>
+            </AssignBox>
+            <AssignBox>
+                <next xsi:type="functionBox">
+                    <next xsi:type="assignBox">
+                        <next xsi:type="assignBox">
+                            <next xsi:type="functionBox">
+                                <next xsi:type="functionBox">
+                                    <function xsi:type="check"/>
+                                    <arguments xsi:type="valueOfIdentifier">
+                                        <variableName>count</variableName>
+                                    </arguments>
+                                    <arguments xsi:type="valueOfIdentifier">
+                                        <variableName>x</variableName>
+                                    </arguments>
+                                </next>
+                                <function xsi:type="debug"/>
+                            </next>
+                            <variableName>count</variableName>
+                            <expression xsi:type="functionBox">
+                                <function xsi:type="retrieve"/>
+                                <arguments xsi:type="constantValue">
+                                    <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">count(/list)</value>
+                                </arguments>
+                                <arguments xsi:type="valueOfIdentifier">
+                                    <variableName>all</variableName>
+                                </arguments>
+                            </expression>
+                        </next>
+                        <variableName>all</variableName>
+                        <expression xsi:type="functionBox">
+                            <function xsi:type="retrieve"/>
+                            <arguments xsi:type="constantValue">
+                                <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">events/moveForward[(animstep &gt; $prevInsertEventStep) and (animstep&lt; $insertEventStep)]</value>
+                            </arguments>
+                        </expression>
+                    </next>
+                    <function xsi:type="animate"/>
+                    <arguments xsi:type="valueOfIdentifier">
+                        <variableName>insertEvent</variableName>
+                    </arguments>
+                    <arguments xsi:type="valueOfIdentifier">
+                        <variableName>prevInsertEvent</variableName>
+                    </arguments>
+                </next>
+                <variableName>prevInsertEventStep</variableName>
+                <expression xsi:type="functionBox">
+                    <function xsi:type="retrieve"/>
+                    <arguments xsi:type="constantValue">
+                        <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">/animstep</value>
+                    </arguments>
+                    <arguments xsi:type="valueOfIdentifier">
+                        <variableName>prevInsertEvent</variableName>
+                    </arguments>
+                </expression>
+            </AssignBox>
+            <FunctionBox>
+                <next xsi:type="assignBox">
+                    <next xsi:type="assignBox">
+                        <next xsi:type="functionBox">
+                            <next xsi:type="functionBox">
+                                <function xsi:type="check"/>
+                                <arguments xsi:type="valueOfIdentifier">
+                                    <variableName>count</variableName>
+                                </arguments>
+                                <arguments xsi:type="valueOfIdentifier">
+                                    <variableName>x</variableName>
+                                </arguments>
+                            </next>
+                            <function xsi:type="debug"/>
+                        </next>
+                        <variableName>count</variableName>
+                        <expression xsi:type="functionBox">
+                            <function xsi:type="retrieve"/>
+                            <arguments xsi:type="constantValue">
+                                <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">count(/list)</value>
+                            </arguments>
+                            <arguments xsi:type="valueOfIdentifier">
+                                <variableName>all</variableName>
+                            </arguments>
+                        </expression>
+                    </next>
+                    <variableName>all</variableName>
+                    <expression xsi:type="functionBox">
+                        <function xsi:type="retrieve"/>
+                        <arguments xsi:type="constantValue">
+                            <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">events/moveForward[(animstep &gt; $prevInsertEventStep) and (animstep&lt; $insertEventStep)]</value>
+                        </arguments>
+                    </expression>
+                </next>
+                <function xsi:type="animate"/>
+                <arguments xsi:type="valueOfIdentifier">
+                    <variableName>insertEvent</variableName>
+                </arguments>
+                <arguments xsi:type="valueOfIdentifier">
+                    <variableName>prevInsertEvent</variableName>
+                </arguments>
+            </FunctionBox>
+            <AssignBox>
+                <next xsi:type="assignBox">
+                    <next xsi:type="functionBox">
+                        <next xsi:type="functionBox">
+                            <function xsi:type="check"/>
+                            <arguments xsi:type="valueOfIdentifier">
+                                <variableName>count</variableName>
+                            </arguments>
+                            <arguments xsi:type="valueOfIdentifier">
+                                <variableName>x</variableName>
+                            </arguments>
+                        </next>
+                        <function xsi:type="debug"/>
+                    </next>
+                    <variableName>count</variableName>
+                    <expression xsi:type="functionBox">
+                        <function xsi:type="retrieve"/>
+                        <arguments xsi:type="constantValue">
+                            <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">count(/list)</value>
+                        </arguments>
+                        <arguments xsi:type="valueOfIdentifier">
+                            <variableName>all</variableName>
+                        </arguments>
+                    </expression>
+                </next>
+                <variableName>all</variableName>
+                <expression xsi:type="functionBox">
+                    <function xsi:type="retrieve"/>
+                    <arguments xsi:type="constantValue">
+                        <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">events/moveForward[(animstep &gt; $prevInsertEventStep) and (animstep&lt; $insertEventStep)]</value>
+                    </arguments>
+                </expression>
+            </AssignBox>
+            <AssignBox>
+                <next xsi:type="functionBox">
+                    <next xsi:type="functionBox">
+                        <function xsi:type="check"/>
+                        <arguments xsi:type="valueOfIdentifier">
+                            <variableName>count</variableName>
+                        </arguments>
+                        <arguments xsi:type="valueOfIdentifier">
+                            <variableName>x</variableName>
+                        </arguments>
+                    </next>
+                    <function xsi:type="debug"/>
+                </next>
+                <variableName>count</variableName>
+                <expression xsi:type="functionBox">
+                    <function xsi:type="retrieve"/>
+                    <arguments xsi:type="constantValue">
+                        <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema">count(/list)</value>
+                    </arguments>
+                    <arguments xsi:type="valueOfIdentifier">
+                        <variableName>all</variableName>
+                    </arguments>
+                </expression>
+            </AssignBox>
+            <FunctionBox>
+                <next xsi:type="functionBox">
+                    <function xsi:type="check"/>
+                    <arguments xsi:type="valueOfIdentifier">
+                        <variableName>count</variableName>
+                    </arguments>
+                    <arguments xsi:type="valueOfIdentifier">
+                        <variableName>x</variableName>
+                    </arguments>
+                </next>
+                <function xsi:type="debug"/>
+            </FunctionBox>
+            <FunctionBox>
+                <function xsi:type="check"/>
+                <arguments xsi:type="valueOfIdentifier">
+                    <variableName>count</variableName>
+                </arguments>
+                <arguments xsi:type="valueOfIdentifier">
+                    <variableName>x</variableName>
+                </arguments>
+            </FunctionBox>
+        </decisionBox>
+        <inputVariables>
+            <name>x</name>
+        </inputVariables>
+        <questionId>Question-3454406021278858535930</questionId>
+        <questionText>3. When the value 2 is being inserted, how many element should be moved?</questionText>
+        <script>// 1b. Wie viele Elemente m�ssen verschoben werden, um den Wert %a einzuf�gen?
+value = 2;
+// Get the position where the 2 was inserted
+insertEvent = Retrieve("events/insert[value = $value]");
+// Take the animation step on which this event has occured
+insertEventStep = Retrieve("/animstep", insertEvent);
+
+// Take all previous insert operation
+prevInsertEvent = Retrieve("events/insert[value = $value]/preceding-sibling::insert[1]");
+// Take the animation step of this event
+prevInsertEventStep = Retrieve("/animstep", prevInsertEvent);
+Animate(insertEvent, prevInsertEvent);
+
+// Get all moveForward events between the two insert events
+all = Retrieve("events/moveForward[(animstep &gt; $prevInsertEventStep) and (animstep&lt; $insertEventStep)]");
+
+// Count them
+count = Retrieve("count(/list)", all); 
+
+Debug();
+Check(count, x);</script>
+    </questionsList>
+    <subTitle>Insertion Sort [EN]
+Basic Algorithm: Insertion Sort
+Output Language: Java
+Content Locale: en_US
+File Extension: .asu
+Author: Dr. Guido Roessling</subTitle>
+    <title>Exercise 2 - Insertion Sort</title>
+</ns2:exercise>

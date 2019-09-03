@@ -1,0 +1,15 @@
+Insertion sort is a simple sorting algorithm, a comparison sort 
+in which the sorted array (or list) is built one entry at a time.
+
+The process is similar to sorting a deck of cards: in each step a
+new card will be inserted in the already sorted ones.
+
+Verbal description of Insertion Sort:
+
+1. Set i = 1
+2. Save a[i] in variable v and set j = i
+3. While j>0 and v is smaller than a[j-1], copy
+  a[j-1] at position a[j] and set j = j - 1
+4. Insert element v at position j
+5. If i is smaller than n, increment i with one and continue
+  with step 2

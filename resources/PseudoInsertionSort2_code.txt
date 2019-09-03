@@ -1,0 +1,9 @@
+InsertionSort(int[] array) #header
+  Declare int i, j, temp; #variables
+    loop for i=1 until i < array length: #outerLoop
+      j = i; #setJ
+      temp = array[i]; #takeOut
+        loop while j > 0 and array[j-1] > temp): #innerLoop
+          array[j] = array[j-1]; #moveForward
+          j = j - 1; #decrementJ
+        array[j] = temp; #insert

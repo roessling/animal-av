@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<PropertiesTreeModel xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="PropertiesTreeModel.xsd">
+	<Folder name="Root">
+		<Primitive type="intArray">
+			<name>Eingabe</name>
+			<value><intArray>3, 0, 6, 5</intArray></value>
+		</Primitive>
+		<Folder name="Font Style und Farbe">
+			<Primitive type="Font">
+				<name>Schriftart</name>
+				<value><Font>SansSerif</Font></value>
+			</Primitive>
+			<Primitive type="Color">
+				<name>Schriftfarbe</name>
+				<value><Color>(0, 0, 0)</Color></value>
+			</Primitive>
+		</Folder>
+		<Folder name="Elementen Farbe">
+			<Primitive type="Color">
+				<name>EingabeFarbe</name>
+				<value><Color>(0, 0, 0)</Color></value>
+			</Primitive>
+			<Primitive type="Color">
+				<name>AusgabeFarbe</name>
+				<value><Color>(0, 0, 0)</Color></value>
+			</Primitive>
+		</Folder>
+		<Folder name="Farben Highlighting">
+			<Primitive type="Color">
+				<name>EingabeArrayCH</name>
+				<value><Color>(255, 255, 0)</Color></value>
+			</Primitive>
+			<Primitive type="Color">
+				<name>AusgabeArrayCH</name>
+				<value><Color>(255, 255, 0)</Color></value>
+			</Primitive>
+		</Folder>
+		<Folder name="Elementen Highlight Farbe">
+			<Primitive type="Color">
+				<name>EingabeArrayHC</name>
+				<value><Color>(135, 206, 255)</Color></value>
+			</Primitive>
+			<Primitive type="Color">
+				<name>AusgabeArrayHC</name>
+				<value><Color>(135, 206, 255)</Color></value>
+			</Primitive>
+		</Folder>
+	</Folder>
+</PropertiesTreeModel>

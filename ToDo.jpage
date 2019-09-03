@@ -1,0 +1,103 @@
+- Adapt @animal.graphics:
+  * PTArray
+    * PTIntArray
+    * PTStringArray
+  # PTNode
+  # PTGraph
+  - PTGraphicObject
+
+- ToDo @animal.animator:
+  - Put-Animator ist defekt; wie reparieren?
+    -- sollte auch dringend (!) nicht mehr auf den AnimState zugreifen; wie anders machen?
+  
+- Integrate
+  - PTMatrix
+ 
+- Refactor
+  - animal.editor --> animal.editor.primitives; animal.editor.animators (useful???)
+
+  
+  
+* GraphSupport for AnimalScript
+
+* insertToMenuAndToolBar --> splitten, so nur einmal übersetzt...!
+
+Umlaute:
+  
+  ä	\u00e4		Ä \u00c4
+  ö \u00f6    Ö \u00d6
+  ü \u00fc    Ü \u00dc
+  ß \u00df
+
+@I18N:
+OK  animal.animator
+OK  animal.dialog
+OK  animal.editor
+--  animal.exchange --> AnimalASCIIImporter, does it make sense to translate all parse args?
+    -- animal.exchange.animalascii: to do (if at all...)
+    -- animal.exchange.animalscript: to do (if at all...)
+OK animal.graphics
+OK animal.gui
+OK animal.handler
+OK animal.main
+OK animal.misc
+   -- ohne (ohnehin veralteten) ComponentConfigurer
+
+-- animalscript.*
+
+* Übersetzung von Tabs in den Editors
+* Check, wo noch Übersetzungen fehlen bei Umschalten En -> De!
+
+* Check nach Type Casts und "instanceof"
+
+------------------------
+
+
+@B animalscript.extensions.ArraySupport
+   * seems like the getObjectProperties() table is not properly maintained,
+	   array code seems not to appear - why? Reference to non-static properties?
+	 * problem is NOT restricted to array code -- general AnimalScript issue!!! 
+	 
+@T animal.main.Animal.java:
+     * Eliminieren der GUI
+		   --> PrintJob, alles Swing (außer JOptionPane...)
+			 --> message, errorMsg nun in animal.misc.MessageDisplay inkl. aller Konstanten dazu
+     * Update-Nachrichten "passend" versenden
+       z.B. Line 1898, "setMagnification(100%)"
+         --> nun im AnimationControlToolBar! Wie "verlagern?"
+         ==> Ist das Rücksetzen auf 100% überhaupt sinnvoll bei Reload?!?
+
+@? boundingBox --> java.lang.NullPointerException
+--> nur in manchen "kaputten" Animationen
+
+@T showAnimWin, play: java.lang.NullPointerException
+at animal.main.AnimationWindow.setStep(AnimationWindow.java:439)
+at animal.main.AnimationWindow.playAnimation(AnimationWindow.java:309)
+
+@compConfig: java.lang.NullPointerException
+at animal.misc.ComponentConfigurer.insertExportFiltersTo(ComponentConfigurer.java:233)
+at animal.misc.ComponentConfigurer.<init>(ComponentConfigurer.java:169)
+at animal.gui.OptionMenuController.actionPerformed(OptionMenuController.java:75)
+at javax.swing.AbstractButton.fireActionPerformed(AbstractButton.java:1767)
+at javax.swing.AbstractButton$ForwardActionEvents.actionPerformed(AbstractButton.java:1820)
+at javax.swing.DefaultButtonModel.fireActionPerformed(DefaultButtonModel.java:419)
+at javax.swing.DefaultButtonModel.setPressed(DefaultButtonModel.java:257)
+at javax.swing.AbstractButton.doClick(AbstractButton.java:289)
+at javax.swing.plaf.basic.BasicMenuItemUI.doClick(BasicMenuItemUI.java:1092)
+at javax.swing.plaf.basic.BasicMenuItemUI$MouseInputHandler.mouseReleased(BasicMenuItemUI.java:932)
+at java.awt.AWTEventMulticaster.mouseReleased(AWTEventMulticaster.java:227)
+
+@T chooseLang: java.lang.NullPointerException
+at translator.ExtendedAction.actionPerformed(ExtendedAction.java:578)
+at javax.swing.AbstractButton.fireActionPerformed(AbstractButton.java:1767)
+at javax.swing.AbstractButton$ForwardActionEvents.actionPerformed(AbstractButton.java:1820)
+at javax.swing.DefaultButtonModel.fireActionPerformed(DefaultButtonModel.java:419)
+@D animal.gui package created
+
+@D Bug removed --> Animation.get().doChange in animal.editor
+   now is Animation anim = Animation.get();
+          if (anim != null)
+            anim.doChange();
+            
+@T image icons für MenuItems!           
+

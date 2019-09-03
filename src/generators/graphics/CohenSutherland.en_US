@@ -1,0 +1,120 @@
+### exception handling ###
+
+	noSuchKeyException= There is no resource for the key {0}
+	iconNotFound = Icon "{0}" not found
+
+
+### introduction ###
+
+	TITLE = Cohen-Sutherland algorithm
+	
+	INTRODUCTION_HTML = The Cohen-Sutherland algorithm (CSA) is used for line clipping at a rectangle. It is suited for situations where the most lines are completely inside or outside the clipping plane.\n\nFor each final point of a line it is determined, if this point is above, below, right or left of the rectangle. Therefore for each point a 4-bit code is generated, which indicates in which half space the point lies. If the point lies in the appropriate half space, the code gets a 1 at the appropriate digit. \n\nposition 0: upper half space\nposition 1: lower half space\nposition 2: right half space\nposition 3: left half space\n\nIf the point lies in two half spaces at once, the code gets a 1 at both half space digits.\n\nAfter that the line segments are analyzed. There are three different cases:\n\nIf the result of the logical OR operation of the final points' codes is 0000, the line segment is completely INSIDE the rectangle and does not need to be clipped. \n\nIf the result of the logical AND operation of the final points' codes is NOT 0000, the line segment is completely OUTSIDE the rectangle and does not need to be clipped.\n\nOtherwise the line segment has to be clipped at the rectangles borders. In this case the logical OR operations result is the indicator for the line of intersection, where the line segment has to be clipped. For each intersection, the point of intersection has to be calculated. This is repeated for all half spaces which are intersected. The intersection point calculation will be computed with the Liang-Barsky algorithm, which will not be discussed further here. \n\nTo clarify the functioning of the Cohen-Sutherland algorithm, several lines are processed consecutively, because the algorithm will only be executed more than one time if the line intersects more than one half space.\n\nClosely related with the CSA is the Sutherland-Hodgman algorithm (SHA). The variant of the CSA presented here generally does not work for closed polygons because CSA is not able to rebuild closed polygons after clipping, whereas SHA is able to do that because it clips the polygon successive at the window border. \n\nNote for changing the clipping plane:\nThe values in the matrix are in the following order:\n    up left    down right\nx\ny\n
+	
+	INTRODUCTION_1_LENGTH = 16
+	INTRODUCTION_1_0  = The Cohen-Sutherland algorithm (CSA) is used for line clipping at a rectangle. It is suited for 
+	INTRODUCTION_1_1  = situations where the most lines are completely inside or outside the clipping plane.
+	INTRODUCTION_1_2  = 
+	INTRODUCTION_1_3  = For each final point of a line it is determined, if this point is above, below, right or 
+	INTRODUCTION_1_4  = left of the rectangle. Therefore for each point a 4-bit code is generated, which indicates in 
+	INTRODUCTION_1_5  = which half space the point lies. If the point lies in the appropriate half space, the code 
+	INTRODUCTION_1_6  = gets a 1 at the appropriate digit.
+	INTRODUCTION_1_7  = 
+	INTRODUCTION_1_8  = \u0020\u0020\u0020\u0020\u0020position 0: upper half space
+	INTRODUCTION_1_9  = \u0020\u0020\u0020\u0020\u0020position 1: lower half space
+	INTRODUCTION_1_10 = \u0020\u0020\u0020\u0020\u0020position 2: right half space
+	INTRODUCTION_1_11 = \u0020\u0020\u0020\u0020\u0020position 3: left half space
+	INTRODUCTION_1_12 = 
+	INTRODUCTION_1_13 = If the point lies in two half spaces at once, the code gets a 1 at both half space digits.
+	INTRODUCTION_1_14 = 
+	INTRODUCTION_1_15 = The following chart represents the different half spaces:
+	
+	INTRODUCTION_2_LENGTH = 13
+	INTRODUCTION_2_0  = In the next step, the line segments are analyzed. There are three different cases: 
+	INTRODUCTION_2_1  = 
+	INTRODUCTION_2_2  = If the result of the logical OR operation of the final points' codes is 0000, the line  
+	INTRODUCTION_2_3  = segment is completely INSIDE the rectangle and does not need to be clipped. 
+	INTRODUCTION_2_4  = 
+	INTRODUCTION_2_5  = If the result of the logical AND operation of the final points' codes is NOT 0000, the 
+	INTRODUCTION_2_6  = line segment is completely OUTSIDE the rectangle and does not need to be clipped.
+	INTRODUCTION_2_7  = 
+	INTRODUCTION_2_8  = Otherwise the line segment has to be clipped at the rectangles borders. In this case the logical OR 
+	INTRODUCTION_2_9  = operations result is the indicator for the line of intersection, where the line segment has to be 
+	INTRODUCTION_2_10 = clipped. For each intersection, the point of intersection has to be calculated. This is 
+	INTRODUCTION_2_11 = repeated for all half spaces which are intersected. The intersection point calculation will be computed  
+	INTRODUCTION_2_12 = with the Liang-Barsky algorithm, which will not be discussed further here. 
+
+	INTRODUCTION_3_LENGTH = 5
+	INTRODUCTION_3_0 = Important note!
+	INTRODUCTION_3_1 = 
+	INTRODUCTION_3_2 = To clarify the functioning of the Cohen-Sutherland algorithm, several lines are processed
+	INTRODUCTION_3_3 = consecutively, because the algorithm will only be executed more than one time if the line 
+	INTRODUCTION_3_4 = intersects more than one half space.
+	
+	
+### conclusion ###
+
+	CONCLUSION_1_LENGTH = 2
+	CONCLUSION_1_0 = The Cohen-Sutherland algorithm calculates  
+	CONCLUSION_1_1 = all intersection points with Liang-Barsky.
+	CONCLUSION_1_X = (clipped lines:\u0020
+	
+	
+	CONCLUSION_2_LENGTH = 3
+	CONCLUSION_2_0 = If a line does not lie completely inside or outside
+	CONCLUSION_2_1 = of the rectangle, no intersection point was
+	CONCLUSION_2_2 = calculated. 
+	CONCLUSION_2_X = (unchanged lines:\u0020
+
+
+
+### source code ###
+
+	SOURCE_CODE_INTRO = FOR final points A and B\n     IF final point is in upper half space\n          set code at position 0 to 1\n     IF final point is in lower half space\n          set code at position 1 to 1\n     IF final point is in right half space\n          set code at position 2 to 1\n     IF final point is in left half space\n          set code at position 3 to 1\n\nIF A | B == 0000\n     terminate (line segment lies inside)\nIF A & B != 0000\n     terminate (line segment lies outside)\nELSE\n     S = A | B\n     IF S[0] == 1\n          calculate intersection point SP0 with upper line of intersection\n     IF S[1] == 1\n          calculate intersection point SP0 with lower line of intersection\n     IF S[2] == 1\n          calculate intersection point SP0 with right line of intersection\n     IF S[3] == 1\n          calculate intersection point SP0 with left line of intersection\n		
+	
+	SOURCE_CODE_LENGTH = 24
+	SOURCE_CODE_0  = FOR final points A and B
+	SOURCE_CODE_1  = \u0020\u0020\u0020\u0020\u0020IF final point is in upper half space
+	SOURCE_CODE_2  = \u0020\u0020\u0020\u0020\u0020\u0020\u0020\u0020\u0020\u0020set code at position 0 to 1
+	SOURCE_CODE_3  = \u0020\u0020\u0020\u0020\u0020IF final point is in lower half space
+	SOURCE_CODE_4  = \u0020\u0020\u0020\u0020\u0020\u0020\u0020\u0020\u0020\u0020set code at position 1 to 1
+	SOURCE_CODE_5  = \u0020\u0020\u0020\u0020\u0020IF final point is in right half space
+	SOURCE_CODE_6  = \u0020\u0020\u0020\u0020\u0020\u0020\u0020\u0020\u0020\u0020set code at position 2 to 1
+	SOURCE_CODE_7  = \u0020\u0020\u0020\u0020\u0020IF final point is in left half space
+	SOURCE_CODE_8  = \u0020\u0020\u0020\u0020\u0020\u0020\u0020\u0020\u0020\u0020set code at position 3 to 1
+	SOURCE_CODE_9  = 
+	SOURCE_CODE_10 = IF A | B == 0000
+	SOURCE_CODE_11 = \u0020\u0020\u0020\u0020\u0020terminate (line segment lies inside)
+	SOURCE_CODE_12 = IF A & B != 0000
+	SOURCE_CODE_13 = \u0020\u0020\u0020\u0020\u0020terminate (line segment lies outside)
+	SOURCE_CODE_14 = ELSE
+	SOURCE_CODE_15 = \u0020\u0020\u0020\u0020\u0020S = A | B
+	SOURCE_CODE_16 = \u0020\u0020\u0020\u0020\u0020IF S[0] == 1
+	SOURCE_CODE_17 = \u0020\u0020\u0020\u0020\u0020\u0020\u0020\u0020\u0020\u0020calculate intersection point SP0 with upper line of intersection
+	SOURCE_CODE_18 = \u0020\u0020\u0020\u0020\u0020IF S[1] == 1
+	SOURCE_CODE_19 = \u0020\u0020\u0020\u0020\u0020\u0020\u0020\u0020\u0020\u0020calculate intersection point SP0 with lower line of intersection
+	SOURCE_CODE_20 = \u0020\u0020\u0020\u0020\u0020IF S[2] == 1
+	SOURCE_CODE_21 = \u0020\u0020\u0020\u0020\u0020\u0020\u0020\u0020\u0020\u0020calculate intersection point SP0 with right line of intersection
+	SOURCE_CODE_22 = \u0020\u0020\u0020\u0020\u0020IF S[3] == 1
+	SOURCE_CODE_23 = \u0020\u0020\u0020\u0020\u0020\u0020\u0020\u0020\u0020\u0020calculate intersection point SP0 with left line of intersection
+	
+	
+### labels ###
+
+    LABEL_INTRO = introduction
+    LABEL_INIT_ALGO = start of the CSA with line\u0020
+    LABEL_TERMINATED = algorithm has terminated.
+    LABEL_CONCLUSION = conclusion
+    
+    
+### infos ###
+	
+	INFO_OUTOFRANGE = \u0020line(s) were deleted from the list, because they were not valid or outside of the display area.
+	INFO_NO_VALID_LINE1 = None of the given lines were not valid or outside the display area\u0020 
+	INFO_NO_VALID_LINE2 = \u0020, so a random line will be used.
+	INFO_CLIP_PLANE = The given clipping plane was edited, because it was outside the display area or not valid.
+	
+		
+### other ###
+
+	INTERSECTION_POINT = IP
+	

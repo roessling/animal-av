@@ -1,0 +1,11 @@
+A block cipher is a ciphering mode to map blocks of a constant length 
+to blocks of the same length. Modes of operation enable the repeated
+and secure use of block ciphers under a single key. One of those modes
+of operation is the Output Feedback Mode aka OFB Mode. The OFB turns
+block ciphers into a synchronous stream Cipher by generating keystream
+blocks which are then XORed with the plaintext blocks to get the
+ciphertext blocks."
+
+OFB Mode is pretty useful to encode long texts because same blocks
+will be mapped on different blocks. So same blocks will never be encoded
+as the block before.

@@ -1,0 +1,10 @@
+Binary Search is an efficient algorithm for locating a given
+element in an array of sorted elements.
+
+Binary Search always regards only a certain partition of the array.
+The first partition covers the complete array. The partition is
+halved in each iteration by adapting the partition borders.
+If the value is found, its position is returned; otherwise, 
+the algorithm with return -1 as an 'error mark'.
+
+In the following animation, the current partition will be highlighted.

@@ -1,0 +1,36 @@
+noSuchKeyException=Es gibt keine Ressource fÃƒÂ¼r Eintrag {0}
+iconNotFound=Icon "{0}" not found
+
+###HTML###
+assert=überprüfe: 
+errColumn=die Eingabematrix muss zwei Spalten haben.
+errDouble=die Eingabematrix muss double Werte enthalten. (zum Beispiel 2.0)
+ 
+xtitle=Marzullo´s Algorithmus
+xintroSize=3
+xintro0=Marzullo´s Algorithmus berechnet den ersten Intervall,
+xintro1=welcher die größtmögliche Schnittmenge über die Eingabeintervalle darstellt.
+xintro2=Dies kann zum Beispiel für Uhrenvergleiche oder für "set estimation" Algorithmen verwendet werden.
+
+
+###UTF-8###
+title=MarzulloÂ´s Algorithmus
+
+introHeader=Einleitung
+introSize=3
+intro0=MarzulloÂ´s Algorithmus berechnet den ersten Intervall,
+intro1=welcher die grÃ¶ÃŸtmÃ¶gliche Schnittmenge Ã¼ber die Eingabeintervalle darstellt.
+intro2=Dies kann zum Beispiel fÃ¼r Uhrenvergleiche oder fÃ¼r Â´set estimationÂ´ Algorithmen verwendet werden.
+
+intervals=Intervalle: 
+outroHeader=Zusammenfassung
+outroSize=3
+outro0=Der beste Intervall geht von {0} bis {1};  [{2} Â± {3}]
+outro1=Dieser wurde in {4} Iterationen berechnet und
+outro2=beschreibt die Schnittmenge aus {5} von {6} Intervallen.
+
+input=Eingegebene Werte:
+inputToTable1=Die eingegebenen Intervalle der Form [Position Â± Offset]
+inputToTable2=werden in Tuple der Form (Startposition, -1), (Endposition, 1) tabelliert
+
+marzCodeHeader=Der Algorithmus:

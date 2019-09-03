@@ -1,0 +1,9 @@
+Straight Selection is probably the most obvious searching algorithm
+
+Starting with the first element, each element is compared sequentially
+with the value to be searched for. If the current element matches the
+value to look for, the current position is returned as a result.
+Otherwise, searching continues with the next element.
+
+If the element searched for is not found, the algorithm with return
+-1 as an 'error mark' once all elements where examined.

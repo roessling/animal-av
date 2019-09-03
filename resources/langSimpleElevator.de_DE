@@ -1,0 +1,66 @@
+noSuchKeyException=Es gibt keine Ressource f\u00fcr Eintrag{0}
+iconNotFound=Icon”{0}”not found
+
+
+### FINAL FRAME ####
+showFinalFrame.t1 = Wie wir gesehen haben, wurden alle Anfragen mittels des
+showFinalFrame.t2 = Simple Elevator Algorithmus in
+showFinalFrame.t3 = Schritten abgearbeitet.
+showFinalFrame.t4 = Im Vergleich, w\u00e4ren alle Schritte ohne r\u00fccksicht auf andere
+showFinalFrame.t5 = Anfragen abgearbeitet worden, h\u00e4tte es
+showFinalFrame.t6 = Schritte ben\u00f6tigt
+showFinalFrame.t7 = Vielen Dank f\u00fcr das Benzutzen der Animation
+
+### INITAL FRAME ###
+showInitialFrame.t1 = Mit der folgenden Animation wollen wir zeigen, wie sich
+showInitialFrame.t2 = der Aufzug verh\u00e4lt, wenn er folgende Reihe an Anfragen bekommt:
+showInitialFrame.t3 = (VON,ZU,ZEITPUNKT)
+showInitialFrame.t4 = Die Animation besteht dabei aus folgenden Teilen:
+showInitialFrame.t5 = (1) Oben links ist eine Schlange (Queue) von Anfragen, die am 
+showInitialFrame.t6 = Anfragen von dir also dem Benutzer eingegben worden sind. Bei entsprechendem
+showInitialFrame.t7 = Zeitpunkt tauchen diese in Form eines Kreises mit aufsteigender
+showInitialFrame.t8 = Nummer als Passagier(2) etwa in der Mitte der Animation auf.
+showInitialFrame.t9 = Links in der Mitte ist das Herzst\u00fcck der Animation.
+showInitialFrame.t10 = Also der (3)Aufzug mit den Passagieren
+showInitialFrame.t11 = welche sich entsprechend mit dem Aufzug bewegen.
+showInitialFrame.t12 = Direkt darunter finden sich weitere Angaben des (4)Status des Aufzugs.
+showInitialFrame.t13 = Und zu guter letzt haben wir rechts den (5)Pseudocode,
+showInitialFrame.t14 = welcher beim groben verst\u00e4ndnis des Algorithmus helfen soll.
+showInitialFrame.t15 = Es ist desswegen nur Pseudocode, da der reale Code viel zu lang
+showInitialFrame.t16 = ist und die filligranen Feinheiten nicht sonderlich zum
+showInitialFrame.t17 = Vers\u00e4ndnis des Lesers beitragen.
+
+### runElevator ###
+direction_up = RICHTUNG: HOCH
+direction_down = RICHTUNG: RUNTER
+direction_none = RICHTUNG: NICHTS
+timing = ZEIT
+stepcounter = Schritz\u00e4hler
+
+### DESCRIPTION ####
+description.t1 = Dieser algorithmus zeigt den Ablauf (Managing) eines einfachen Aufzugalgorithmus f\u00fcr
+description.t2 = die folgenden Regeln:
+
+description.t3 = (1) Gehe zu der n\u00e4chsten Anfrage in Fahrtrichtung
+description.t4 = (2) \u00e4ndere die Fahrtrichtung ausschli\u00dfich, wenn keine weiteren Anfragen in der momentanen Fahrtrichtung sind
+description.t5 = (3) Wenn keine weiteren Anfragen vorhanden sind, warte
+
+description.t6 = Eine Anfrage entspricht dem Wunsch eines Passagiers entweder abgeholt
+description.t7 = als auch an eine bestimmte Stelle gebracht zu werden.
+
+description.t8 = Dieser einfache Auzugsalgorithmus wird nicht nur f\u00fcr Geb\u00e4ude verwendet, sonder auch z.B. in Festplatten. Dort
+description.t9 = gilt es jeden Richtungswechsel des Lesekopfs zu vermeiden, da dies zu Ungenauigkeiten und damit zu noch l\u00e4ngeren
+description.t10 = Lesezeiten f\u00fchrt.
+
+description.t11 = Der Benutzer kann folgende Variablen festlegen:
+description.t12 = (a) die Anzahl der Stockwerke
+description.t13 = (b) die Form der Anfragen (Von, Zu, Zeitpunkt)
+description.t14 = (c) die maximale Anzahl an Fragen, die ihm gestellt werden
+
+### QUESITON###
+right = Richtig
+wrong = Falsch
+questionOne = Wohin geht der Aufzug?
+up = Hoch
+down = Runter
+none = Nichts

@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<PropertiesTreeModel xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="PropertiesTreeModel.xsd">
+	<Folder name="Root">
+		<Primitive type="StringMatrix">
+			<name>playerStats</name>
+			<value><StringMatrix>1500, 200, 0.06, true; 1400, 30, 0.06, true; 1550, 100, 0.06, true; 1700, 300, 0.06, true</StringMatrix></value>
+			<description>Each row is an individual player. C1 = rating, C2 = rating deviation, C3 = votality, C4 = rated</description>
+		</Primitive>
+		<Primitive type="intMatrix">
+			<name>roundResults</name>
+			<value><intMatrix>-2, 2, 0, 0; -2, -2, -1, 0; -2, -2, -2, 2;</intMatrix></value>
+			<description>Use 2 = win, 1 = draw, 0 = loose, -1 = no participation, -2 = ignored</description>
+		</Primitive>
+		<Primitive type="int">
+			<name>ratingPeriod</name>
+			<value><int>1</int></value>
+			<description>Determines the length of a single rating period in rounds.</description>
+		</Primitive>
+		<Primitive type="double">
+			<name>tau</name>
+			<value>
+				<double>0.5</double></value>
+			<description>Constant used to constrain volatility change over time. Lower value = Less change. Higher value = More change.</description></Primitive>
+			<Primitive type="boolean">
+				<name>displayCodeOnly</name>
+				<value>
+					<boolean value="false"/>
+					</value>
+				<description>Display only data column and code.</description></Primitive>
+		<Primitive type="Color">
+			<name>codeHighlightColor</name>
+			<value>
+				<Color>(255,0,0)</Color></value>
+			<description>Color of code highlighting</description></Primitive>
+			<Primitive type="Color">
+				<name>ratingBarColor</name>
+				<value>
+					<Color>(255,165,0)</Color></value>
+				<description>Color of bars used in the rating visualization.</description></Primitive>
+		</Folder>
+</PropertiesTreeModel>

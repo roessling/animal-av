@@ -1,0 +1,21 @@
+{0
+Simple Ray Tracing: a short introduction
+}
+{1
+\t \t Raytracing is a technique used in computer graphics, to generate a usually 2-dimensional image from 3-dimensional objects in a virtual space.
+\t \t In order to get a picture on a computer screen, this algorithm calculates the color of each pixel 
+\t \t by virtually tracing the path of light through the pixels and then simulating light effects, 
+\t \t like shadow or reflection, on the encounter with objects.
+}
+{2
+\t \t To explain the basic concept of the algorithm, it is simplified by creating only 1-dimensional image from a 2-dimensional scene, 
+\t \t and the only light effect used will be the determination, if an object is located in the shadow of another, depending on the light source.
+}
+{3
+\t \t There is a camera, representing the perspective on the scene, a screen with several pixels in front of it, 
+\t \t a light source like the sun or a lamp and several simple geometric objects.
+}
+{4
+\t \t Knowing how to calculate an intersection point between a ray and a line (and therefore with any 2D object consisting of lines) 
+\t \t is presumed in this example.
+}

@@ -1,0 +1,18 @@
+public Tree id3(List<Example> examples) {
+
+if ( examples.classCount() == 1 )
+Leaf newLeaf = new Leaf();
+newLeaf.setLabel( examples.getClassOfAllExamples() );
+return new Tree( newLeaf );
+
+String bestFeature = chooseMostInformativeFeature();
+
+Node newNode = new Node();
+newNode.setLabel( bestFeature );
+
+for ( String value : getValues(bestFeature) )
+id3( examples.getReducedExampleTableFor(value) );
+
+Tree newTree = new Tree( newNode.attach(getAllCreatedSubtrees()) );
+return newTree; 
+} 

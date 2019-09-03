@@ -1,0 +1,24 @@
+LIBRARY IEEE;
+USE IEEE.STD_LOGIC_1164.ALL;
+ENTITY mux1 IS
+	PORT (a, b,c,d,e: IN BOOLEAN;
+	output: z BOOLEAN);
+END ENTITY mux1;
+ARCHITECTURE example OF control_stmts IS
+	BEGIN
+		PROCESS (a, b)
+			VARIABLE n: BOOLEAN;
+			BEGIN
+				IF (p1='1') THEN 
+					z<=a;
+				ELSIF (p2='1') THEN
+					z<=b;
+				ELSIF (p3='1') THEN
+					z<=c;
+				ELSIF (p4='1') THEN
+					z<=d;
+				ELSE
+					z<=e;
+				END IF
+		END PROCESS
+END ARCHITECTURE example;

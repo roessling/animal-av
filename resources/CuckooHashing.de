@@ -1,0 +1,33 @@
+### Start trying to add an element ###
+tryInsert=Es wird versucht ein Element einzufuegen.\nBegonnen wird mit der ersten Hashtabelle.
+
+### Max attempts exceeded ###
+maxAttempsExc=Nach dem erfolglosen Versuch das Element einzufuegen wird der Algorithmus gestoppt.\nAn dieser Stelle muss gesagt sein, dass falls das Einfuegen nicht moeglich ist werden beide Hashtabellen mit neuen Hashfunktion aufgebaut.\nDies funktioniert dann wie das normale Einfuegen von Elementen.\nDa dies trivial ist wird hier darauf verzichtet. 
+
+### Epiloque ###
+endInformation=Das Gute am Cuckoo-Hashing ist, dass ein Element sich immer nur an zwei Positionen befinden kann:\nan der berechneten Position in der ersten oder zweiten Hashtable.\nSomit kann ein Lookup immer konstant abgeschlossen werden.\nDas Wichtigste ist allerdings die Wahl der Hashfunktionen, diese sollten sehr gut gewaehlt werden.\n Die Funktionen hier wurden von https://de.wikipedia.org/wiki/Kuckucks-Hashing uebernommen.
+
+
+### Explain termination ###
+ifTerminate=Sollte sich an der besagten Stelle wie hier kein Element befunden haben,\nwird versucht das naechste Element einzufuegen.\nOder falls keine mehr vorhanden sind terminiert der Algorithmus.
+
+### Changes table ###
+tableSwitch=Befand sich an der besagten Position wie hier ein Element, wird versucht das besagte Element bei der anderen Hashtabelle einzufuegen.
+
+### Swap element with position ###
+elemSwitch=Das einzufuegende Element wird mit dem sich an der Position befindenden Element ausgetauscht.
+
+### Calculate first hash ###
+calcHashOne=Mit der 1. Hashfunktion wird die Position berechnet,\nan welche das Element in die 1. Hashtabelle eingefuegt werden soll.
+
+### Calculate second hash ###
+calcHashTwo=Mit der 2. Hashfunktion wird die Position berechnet\nan welche das Element in die 2. Hashtabelle eingefuegt werden soll.
+
+### Prologue ###
+startInformation=Beim Cuckoo-Hashing handelt es sich um einen Algorithmus zum Speichern von Elementen in zwei Hashtabellen.\nHierzu werden zwei unterschiedliche Hashfunktionen verwendet, um die jeweiligen Positionen zu berechnen.\nBeim Einfuegen eines Elementes wird zuerst mit der ersten Hashfunktion die Position in der ersten Hashtabelle berechnet.\nBefindet sich dort kein Element, so wird das einzufuegende Element dort eingefuegt und der Algorithmus terminiert an dieser Stelle.\nSollte sich dort allerdings ein Element befinden, so wird es dennoch eingefuegt und versucht das Element welches sich\ndort befand in der anderen Hashtabelle mit der dazugehoerigen Hashfunktion einzusetzen.\nDies wird wiederholt, bis entweder ein leerer Platz gefunden wurde oder es nach einer bestimmten Anzahl von Versuchen\naufgegeben wird. Im letzteren Fall werden alle Elemente mit neuen Hashfunktionen neu eingefuegt und damit ist dieser Schritt\neine Wiederholung des zuvor beschriebenen. Bei der Animation wird insofern es nicht moeglich ist ein Element\neinzufuegen der Algorithmus terminiert, da das Neueinfuegen trivial\nzum zuvor beschriebenen funktioniert. Im schlimmsten Fall braucht der Algorithmus eine konstante\nZeit ein Element zu finden, da dieses sich beim Suchen immer nur an zwei Positionen befinden kann.
+
+### Requirements Information ###
+reqInformation=Benoetigt wird:\n1. Eine Laenge fuer die Groesse der beiden Hashtables\n2. Zwei geeignete Hashfunktionen welche auf den Bereich [0, Datenstruktur Laenge -1] abbilden.\n2.1 Zusaetzlich muessen diese unterschiedliche Ergebnisse liefern.\n2.2 In dem hier gezeigten Beispiel wird ein Interface verwendet und per Lambda die jeweilige Hashfunktion implementiert.\n3. Die maximale Anzahl an Versuchen zum Einfuegen eines Elements 
+
+### Description ###
+description=Beim Cuckoo-Hashing handelt es sich um einen Algorithmus zum Speichern von Elementen in zwei Hashtabellen.\nHierzu werden zwei unterschiedliche Hashfunktionen verwendet, um die jeweiligen Positionen zu berechnen.\nBeim Einfuegen eines Elementes wird zuerst mit der ersten Hashfunktion die Position in der ersten Hashtabelle berechnet.\nBefindet sich dort kein Element, so wird das einzufuegende Element dort eingefuegt und der Algorithmus terminiert an dieser Stelle.\nSollte sich dort allerdings ein Element befinden, so wird es dennoch eingefuegt und versucht das Element welches sich\ndort befand in der anderen Hashtabelle mit der dazugehoerigen Hashfunktion einzusetzen.\nDies wird wiederholt, bis entweder ein leerer Platz gefunden wurde oder es nach einer bestimmten Anzahl von Versuchen\naufgegeben wird. Im letzteren Fall werden alle Elemente mit neuen Hashfunktionen neu eingefuegt und damit ist dieser Schritt\neine Wiederholung des zuvor beschriebenen.\nIm schlimmsten Fall braucht der Algorithmus eine konstante\nZeit ein Element zu finden, da dieses sich beim Suchen immer nur an zwei Positionen befinden kann.

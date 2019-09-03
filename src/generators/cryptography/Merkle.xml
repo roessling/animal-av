@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<PropertiesTreeModel xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="PropertiesTreeModel.xsd">
+	<Folder name="Root">
+		<Primitive type="StringArray">
+			<name>leafNodes</name>
+			<value><StringArray>001, 101, 111, 010, 100, 110, 000, 011</StringArray></value>
+		</Primitive>
+		<Primitive type="Color">
+			<name>colorSignature</name>
+			<value><Color>(255, 200, 0)</Color></value>
+		</Primitive>
+		<Primitive type="Color">
+			<name>colorSigning</name>
+			<value><Color>(208, 0, 0)</Color></value>
+		</Primitive>
+		<Primitive type="Color">
+			<name>colorVerification</name>
+			<value><Color>(0, 176, 0)</Color></value>
+		</Primitive>
+		<Primitive type="Color">
+			<name>colorVerification2</name>
+			<value><Color>(0, 144, 0)</Color></value>
+		</Primitive>
+		<Primitive type="Color">
+			<name>colorHash</name>
+			<value><Color>(255, 0, 255)</Color></value>
+		</Primitive>
+		<Primitive type="Color">
+			<name>colorHashHighlight</name>
+			<value><Color>(144, 0, 144)</Color></value>
+		</Primitive>
+	</Folder>
+</PropertiesTreeModel>

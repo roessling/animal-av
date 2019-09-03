@@ -1,0 +1,26 @@
+{
+text "f1-01" "Selection Sort" at (120,50) color black font SansSerif size 32 bold
+}
+{
+text "f1-02a" "Das naheliegendste Verfahren zur Sortierung" at (20,100) color black font SansSerif size 24
+text "f1-02b" "ist Sortieren durch Auswahl, auch als" at (20,130) color black font SansSerif size 24
+text "f1-02c" "Selection Sort bezeichnet." at (20,160) color black font SansSerif size 24
+}
+{
+hideAll
+}
+{
+text "f2-01" "Der Algorithmus in Worten" at (120,50) color black font SansSerif size 32 bold
+}
+{
+text "f2-02" "1. Setze i=0" at (20,100) color black font SansSerif size 24
+}
+{
+text "f2-03" "2. Suche ab Position i das kleinste Element im Feld" at (20,140) color black font SansSerif size 24
+}
+{
+text "f2-04" "3. Vertausche das kleinste Element mit dem Element ab Position i" at (20,180) color black font SansSerif size 24
+}
+{
+text "f2-05" "4. Setze i=i+1 und fahre bei Schritt 2 fort bis i==n" at (20,220) color black font SansSerif size 24
+}

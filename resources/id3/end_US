@@ -1,0 +1,11 @@
+ID3 has created a decision tree which explains the data. 
+
+Two remarks:
+- If such a learning algorithm is used in practice, there should be much more example observations. 
+This small number of examples is definitely not sufficient to build a general concept.
+ID3 classifies new examples based on the training data. This data should therefore be representative.
+	
+- ID3 is not perfect. Some generated trees can't explain ANY new observation: It may happen that during classification 
+there is no corresponding edge for a NEW value of an example's feature, because ID3 did not know this value during 
+tree construction. ID3 will also not terminate in case of inconsistencies in the data: At least two data points 
+differ ONLY in the class value.

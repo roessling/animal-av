@@ -1,0 +1,16 @@
+public void insertionSort(int[] array) #header
+{
+  int currentPos, insertPos, currentVal; #variables
+  currentPos = 1; #setCurrentPos
+  while (currentPos<array.length) #outerLoop
+  {
+    insertPos = currentPos; #setInsertPos
+    currentVal = array[currentPos]; #takeOut
+    while (insertPos > 0 && array[insertPos-1] > currentVal){ #innerLoop
+      array[insertPos] = array[insertPos-1]; #moveForward
+      insertPos = insertPos - 1; #decrementInsertPos
+    }
+    array[insertPos] = currentVal; #insert
+    currentPos = currentPos + 1; #incrementCurrentPos
+  }
+}

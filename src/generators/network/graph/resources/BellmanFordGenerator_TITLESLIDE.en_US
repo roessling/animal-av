@@ -1,0 +1,18 @@
+[block]
+	The Bellman-Ford Algorithm is used to determine all shortest paths from
+	an arbitrary but fixed start node in a graph.
+[/block]
+[block]
+	[h2]The Algorithm[/h2]
+	Unlike Dikstra's algorithm the algorithm of Bellman and Ford can also be 
+	used on graphs with negative edges. The method detects a negative cycle[br]
+	within the graph and returns the information that no path starting from the 
+	selected node could be found.[br] 
+	During each loop the Bellman-Ford algorithm searches for the shortest path 
+	to all nodes in the graph. It adds each reachable node to the existing path[br]
+	and checks if a new shorter path is created.[br]
+	Each shortest path contains at most |V| − 1 edges the search for a shorter path 
+	is run that often. The complexity of the algorithm contains of the search for[br]
+	the shortest path and the check for negative weighted cycles and is therefore
+	O(|V | x |E|).[br]
+[/block]

@@ -1,0 +1,8 @@
+Jetzt berechnen wir die geschätzte Verbesserung
+der Wertung unseres aktuellen Spielers. Beachte,
+dass wir nun die Rundenergebnisse der Gegner mit in
+die Rechnung einbeziehen.
+s_j ist das Ergebniss (loss := 0, win := 1, draw := 0.5)
+des aktuellen Spielers gegen den Spieler j.
+
+    set Delta := ny * [SUM from j=1 to m (g(Phi_j)*(s_j - E(my, my_j, Phi_j))]

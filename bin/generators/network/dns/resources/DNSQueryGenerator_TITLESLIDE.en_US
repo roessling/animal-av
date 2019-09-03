@@ -1,0 +1,58 @@
+[block]
+	The domain name system (DNS) is one of the most vital services on a
+	network. It's main purpose is to resolve a host name (the human readable[br]
+	name of a computer on the network) like www.example.org to the 
+	corresponding IP address (the 'telephone number'). This could be[br]
+	a IPv4 address of the form 192.0.2.42 or a IPv6 address of the
+	form 2001:db8:85a3:8d3:1319:8a2e:370:7347. As an analogy to the[br]
+	telephone system it is often also called the telephone book of[br]
+	the Internet.
+[/block]
+[block]
+	[h2]The Name Servers[/h2]
+	An authoritative name server is responsible for a zone within the domain 
+	name system. Its information is therefore seen as always correct. For[br]
+	each zone exists at least one authoritative server, the primary name
+	server. This server is listed in the SOA record of a zone file. Due to load[br]
+	balancing and redundancy often more than one server is responsible for 
+	a zone. Those additional servers are called secondary name servers and[br]
+	hold the same information as the primary one. The synchronization
+	between these systems is done using zone transfers.[br]
+	A non-authoritative name server can only provide second or third hand 
+	information about a zone and its information are therefore not seen as[br]
+	secured. As DNS information normally do not change rapidly each 
+	non-authoritative server saves the information resolved earlier to[br]
+	answer consecutive requests faster. The procedure is known as caching. 
+	Each result is assigned a maximum time the entry is valid for (TTL time[br]
+	to live). The TTL is set by the authoritative name server and after the 
+	given time period a non-authoritative server should delete the entry[br]
+	from its cache. A longer time to live creates less load on the authoritative
+	servers as the information is cached for a longer period of time but[br]
+	also implies that a name server can serve invalid information until the 
+	caching limit is reached.[br]
+	A special case of a non-authoritative server is the caching only nam server. 
+	It is not responsible for a zone and has to resolve all incoming[br]
+	requests via other systems.   
+[/block]
+[block]
+	[h2]The Animation[/h2]
+	For simplification only two types of name servers are used within the 
+	animation. An authoritative server is used for each zone to provide[br]
+	name resolution. These servers have the same name as the zone they are 
+	responsible for. The root name server is marked with a dot (.) for the[br]
+	root zone.[br]
+	On the other side a caching only name server is used to accept queries from
+	a client and to forward them to the authoritative servers. It also caches[br]
+	any responses received. This might be the actual IP address or an intermediate
+	result from the iterative request. The caching only name server as a cache[br]
+	size of {0} and can therefore hold the responses from the last {0} queries sent 
+	by the client.
+[/block]
+[block]
+	All IP addresses used in this animation correspond to the real addresses 
+	used in the domain name system as far as a host name exists and can be[br]
+	resolved. If a host name does not exists within the DNS or can currently 
+	not be resolved a ip address from the private subnet 10.0.0.0/8 is[br]
+	returned. Therefore all host names are resolvable in the animation and 
+	no negative results are returned by the servers.
+[/block]

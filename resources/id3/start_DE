@@ -1,0 +1,9 @@
+Der Algorithmus ID3 erhält eine Liste von Datenpunkten (Beispielen) und erstellt rekursiv einen Entscheidungsbaum,
+der aus Knoten (korrespondieren zu Eigenschaften der Daten), Blättern (korrespondieren zu den Klassen der Daten) 
+und Kanten (verbinden Knoten und Blätter miteinander) besteht.
+Beispiele bestehen wiederum aus Eigenschaft-Wert-Paaren und einer Klasse. Die Verteilung der Klassen soll für die 
+aktuellen Beispiele durch den Baum erklärt werden und für zukünftige Beispiele möglichst gut vorhergesagt werden.
+ 
+
+Natürlich ist das nur eine beispielhafte Anwendung - ID3 kann Bäume für jegliche Art von Daten 
+erzeugen, vorausgesetzt, die zugehörigen Beispiele können als Eigenschaft-Wert-Paare beschrieben werden.

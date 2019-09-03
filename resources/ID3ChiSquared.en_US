@@ -1,0 +1,63 @@
+intro1 = ID3 is a Data Mining/Machine Learning algorithm to build a decision tree based on a consistent training data set.
+intro2 = All training data contain the same amount of attributes and a label that describes to which class each data example belongs.
+intro3 = Initially we create the root node and pass the data set to it.
+intro4 = First we need to estimate the entropy of the root node:
+intro5 = Entropy = Sum over each class of (-distribution of class * log2(distribution of class) )
+intro6 = Afterwards the algorithm checks which attribute creates the best split in the data set.
+intro7 = (The optimal solution would be an attribute that splits the data set, so that the data set for each child node contains only one class.)
+intro8 = Therefore we need to estimate for every attribute the entropy of each child node so that we can compute the gain of each attribute:
+intro9 = Gain = Entropy of node - sum over each child( entropy of child node * |data set of child| / |data set of node| )
+intro10 = The attribute with the highest gain produces the best split.
+intro11 = But before we can expand the tree, we need to compute the chi squared test on the best attribute to check if the split is significant enough.
+intro12 = In this way we want to avoid creating a whole subtree, just because i.e. one out ten examples in the data set belongs to another class.
+intro13 = If the test fails the node is simply classified to the class which appears the most in the data set.
+intro14 = The test runs as follows:
+intro15 = First we create an observed matrix. The columns represent the values of the given attribute, the rows represent the classes in the data set.
+intro16 = The element (i,j) is the number of examples in the data set which have the value j of the attribute and belong to the class i.
+intro17 = Next we compute the sums of each row, each column and each element. We need these information to compute the expected matrix.
+intro18 = The element (i,j) of the expected matrix is estimated by:
+intro19 = (Sum of row i * sum of column j) / sum of each element.
+intro20 = Finally we can compute chi squared:
+intro21 = chi squared = Sum for all i,j of ((expected[i][j] - observed[i][j])^2 / expected[i][j])
+intro22 = The test is successful if chi squared is greater than a given threshold.
+intro23 = Now if the test if successful the split on the attribute with the highest gain is performed.
+intro24 = The algorithm creates one child node for each value of the attribute.
+intro25 = Each child node receives the data set containing only the examples which have the appropriate value on the attribute
+intro26 = and the attribute itself is removed from the data set.
+intro27 = (For example: The attribute Weather with the three values sunny, rainy and cloudy has the highest gain and the chi squared test was successful.
+intro28 = The first child node receives the data set which only contains the examples with the value sunny on the attribute Weather.
+intro29 = The second data set contains only the examples with value rainy, etc.)
+intro30 = Finally we apply the algorithm recursively on every child node. The algorithm terminates if the data set contains only one class or the test fails.
+description = ID3 is a Data Mining/Machine Learning algorithm to build a decision tree based on a consistent training data set. All training data contain the same amount of attributes and a label that describes to which class each data example belongs.\n\
+    Consistent means that no two data examples of the data set have the exact values for each attribute.\n\
+    The algorithm checks which attribute would be the best to split the data set. When you split the data set the algorithm creates one child node for each value of the chosen attribute.\n\
+    The algorithm terminates if there is only one class in the data set or the chi_squared test fails.\n\n\
+    You can change the data set, the threshold used for the chi_squared test and the color, which is used when one of the nodes is highlighted.
+pseu1 = if only one class in data set
+pseu2 = then classify node and return
+pseu3 = estimate entropy of node
+pseu4 = for each attribute:
+pseu5 = |   create one child for every value of current attribute
+pseu6 = |   estimate Entropy for each child
+pseu7 = |   estimate Gain
+pseu8 = choose attribute with the highest gain and store winner children
+pseu9 = estimate chi squared for chosen attribute
+pseu10 = if chi_squared > threshhold
+pseu11 = then draw children
+pseu12 = call ID3 recursively for each child
+pseu13 = else
+pseu14 = classify node and return
+best_attribute = Best Attribute =
+class = class
+distribution = distribution
+class_distribution = class distribution
+chi_squared_test = Chi Squared Test
+expected_formula = expected[x][y] = Appearance of Class x * Appearance of Value y / Sum of all Appearances
+expected = Expected
+observed = Observed
+sum = sum
+chi_formula = Chi squared = Sum of ((expected[x][y] - observed[x][y])^2 / expected[x][y])
+threshold = threshold
+summary = The tree has been created successfully. You can try another threshold to see how your tree changes.
+introduction = Introduction
+result = Result

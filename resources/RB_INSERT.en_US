@@ -1,0 +1,383 @@
+
+
+noSuchKeyException=There is no resource for the key {0}
+iconNotFound=Icon "{0}" not found
+
+noTextInput=No text was entered.
+noPatternInput=No pattern was entered.
+label_Text=Text:
+label_Pattern=Pattern:
+
+
+algorithmName=Red-Black Trees - Insert
+
+----- TABLE OF CONTENTS -----
+
+tableOfContentsStart=Start
+tableOfContentsInsert=Insert Node number {0}
+tableOfContentsFinished=All nodes inserted
+tableOfContentsFinal=Conclusion
+
+----- DESCRIPTION -----
+
+
+descriptionLine1=Red-Black Trees are an extended version of binary search trees. A binary search tree with height h yields the complexity of O(h) for all basic operations like Search, Minimum, Maximum, Insert, Delete.
+
+descriptionLine2=Obiosly a tree with a smaller height yields faster operations than a tree with a bigger height. In the worst case all operations are in O(n), where n is the number of nodes, which is equal to a LinkedList. To avoid this worst case a red-black tree balances the binary tree and a complexity of O(log n) is provided
+
+descriptionLine3=Red black trees add a extra field for every node, which saves the color of the node. The color is red or black. The colors of the nodes on paths from a node to a descendant leave are restricted, so a simple path from a node has length at most twice than every other path to a descendent leaf. This balances the tree.
+
+descriptionLine4=Every node has the properties color, value, left child, right child and parent. Does a child or parent not exist the fields of the node point to black nodes with the value NULL. Thus every leaf of the tree is a black NULL node and every key-bearing node is an internal node. The parent of the root is likewise pointing to a black NULL node. These black NULL nodes are going to be represented as a single black node T.null.
+
+----- INTRO -----
+
+intro01=Intro
+
+in2=Die Operationen Einfügen und Löschen modifizieren den RB Baum. Das Resultat verletzt möglicherweise eine
+in3=der fünf notwendigen Eigenschaften von RB Bäumen. Um die Eigenschaften wieder herzustellen müssen Farben und 
+in4=Verweise von Knoten verändert werden. 
+
+intro02=The operation Insert modifies the RB-Tree. The result potentially violates one of the five 
+intro03=necessary properties of red-black trees. To restore these properties colors and 
+intro04=pointers of nodes have to be changed.
+
+
+intro11=Rotationen
+
+intro12=Rotationen ändern die Verweisstruktur ohne die Eigenschaften eines binären Suchbaumes zu verletzen. Zwei
+intro13=adjazente Knoten werden miteinander vertauscht, dafür müssen die drei Unterbäume entsprechend mitvertauscht
+intro14=werden. Es gibt zwei Arten von Rotationen: Die Left-Rotation und die Right-Rotation. Beide benötigen eine
+intro15=konstante Anzahl von Schritten.
+
+Rotations change the pointer structure without violating the properties of a binary search tree. Two adjacent nodes are interchanged. To achieve this the three remaining subtrees have to be interchanged accordingly. There are two variations of rotations: The left-rotation and the right-rotation. Both of these need a constant number of steps and thus are in O(1).
+
+intro12=Rotations change the pointer structure without violating the properties of a binary search tree. Two adjacent
+intro13=nodes are interchanged. To achieve this the three remaining subtrees have to be interchanged accordingly.
+intro14=There are two variations of rotations: The left-rotation and the right-rotation. 
+intro15=Both of these need a constant number of steps and thus are in O(1).
+
+intro21=Fixup
+
+im=Welche Eigenschaften können beim Einfügen gebrochen werden?
+im=Es ist möglich, dass Eigenschaft 2 und 4 gebrochen werden können, die restlichen 3 werden nicht verletzt.
+im=Beide Möglichkeiten werden dadurch verletzt, dass z als roter Knoten eingefügt wird, da die Wurzel nicht
+im=schwarz sein darf und ein roter Knoten nicht auf ein rotes Kind verweisen darf. Die while-Schleife behebt 
+im=einen Verstoß gegen Eigenschaft 4, die letzte Anweisung in RB-INSERT-FIXUP einen gegen Eigenschaft 2.
+
+intro22=Which properties can be violated by inserting a node into the tree?
+intro23=The only properties which might be violated are property 2, the node must be black, and property 4,
+intro24=the children of a red node must be black. Both violations can occur since we are inserting a red node
+intro25=into the tree. The while loop in RB-INSERT-FIXUP resolves the problem of a violation of
+intro26=property 4 and the last statement a violation of property 2, since it colors the root black.
+
+The only properties which might be violated are property 2, the node must be black, and property 4, the children of a red node must be black. Both violations can occur since we are inserting a red node into the tree. The while loop in RB-INSERT-FIXUP resolves the problem of a violation of property 4 and the last statement a violation of property 2, since it colors the root black.
+
+im=While Loop in Fixup
+im=Wir betrachten insgesamt 6 Fälle in der while-Schleife, allerdings sind die Fälle 1, 2 und 3 symmetrisch zu
+im=den Fällen 4, 5 und 6. Der Unterschied zwischen diesen besteht darin, dass z's Elternknoten einmal ein 
+im=linkes und einmal ein rechtes Kind ist. Der Fall 1 beziehungsweise 4 wird von 2, 3 und 5, 6 unterschieden je 
+im=nach dem welche Farbe der Geschwisterknoten des Elterknoten von z hat (z.p.p.left / z.p.p.right). Sollte 
+im=dieser Knoten rot sein so wird Fall 1 / 4 ausgeführt, sollte er schwarz sein so führen wir Fall 2, 3 oder 5,
+im=6 aus. Diese unterscheiden sich darin, ob z ein rechtes oder ein linkes Kind ist. Fall 2 wird daraufhin mit 
+im=Hilfe einer Rotation nach Fall 3 überführt und Fall 5 nach Fall 6. 
+
+intro31=While Loop in Fixup
+im=We are considering 6 cases in total in the while loop, but the the cases 1, 2 and 3 are symmetric to the cases
+im=4, 5 and 6. The difference between those is in the difference if the parent of z is a left child or a right child.
+im=Case 1, respectively case 4, is going to be differentiated from 2, 3, respectively 4, 5, with respect to the color of 
+im=the siblings of the parent of z (z.p.p.left / z.p.p.right), referred as the "uncle" of z. Should this node be red case 1 / 4 
+im=is being executed. Is the uncle black we will executed case 2, 3 or 5, 5. This differentiate in respect to whether z is a
+im=right or left child. Case 2 is going to be transformed into case 3 via a rotation and case 5 is transformed into case 6.
+
+intro32=We are considering 6 cases in total in the while loop, but the the cases 1, 2 and 3 are symmetric
+intro33=to the cases 4, 5 and 6. The difference between those is in the difference if the parent of z is a
+intro34=left child or a right child. Case 1, respectively case 4, is going to be differentiated from 2, 3, 
+intro35=respectively 4, 5, with respect to the color of the siblings of the parent of z (z.p.p.left / z.p.p.right), 
+intro36=referred as the uncle of z. Should this node be red case 1 / 4 is being executed.
+intro37=Is the uncle black we will executed case 2, 3 or 5, 5. This differentiate in respect to whether z is a
+intro38=right or left child. Case 2 is going to be transformed into case 3 via a rotation and case 5 is transformed into case 6.
+
+in1=Properties of nodes
+in2=Jeder Knoten besitzt nun die Eigenschaften Farbe, Wert, Linkes Kind, Rechtes Kind und Elter. Sollte ein Kind 
+in3=oder das Elter nicht existieren so zeigen diese Eigenschaften auf schwarze Knoten mit dem Wert NULL.
+in4=Jedes Blatt des Baums ist also ein schwarzer NULL Knoten und alle Knoten mit einem gültigen Wert sind
+in5=interne Knoten. Das Elter der Wurzel verweist ebenfalls auf einen schwarzen NULL Knoten. Diese
+in6=schwarzen NULL Knoten werden im Folgenden als ein einziger Knoten T.null dargestellt.
+
+intro41=Properties of nodes
+intro42=Every node has the properties color, value, left child, right child and parent. Does a child or
+intro43=parent not exist the fields of the node point to black nodes with the value NULL.
+intro44=Thus every leaf of the tree is a black NULL node and every key-bearing node is an internal node.
+intro45=The parent of the root is likewise pointing to a black NULL node. These black NULL nodes are going
+intro46=to be represented as a single black node T.null.
+
+----- OUTRO -----
+
+outro0=Runtime of RB-INSERT
+
+outro1=The operation RB-INSERT has a runtime of O(log n).
+
+outro105=Insert
+outro2=The operation RB-INSERT has a runtime of O(log n),
+outro3=since the height of a Red-Black tree is also in O(logn n).
+
+outro4=Fixup
+outro5=Only on the occurance of the 1. or 4. case the while-loop is going to be
+outro6=evaluated more than once. In both of these cases the pointer z moves two levels up.
+
+outro7=The total number of executions of the while loop is likewise in O(log n).
+
+outro8=Every insert operation never performs more than two rotations,
+outro9=since after execution of cases 2,3,5 or 6 the loop terminates.
+
+
+outro10=Rotations
+outro11=Since all rotations have a constant runtime the functions
+outro12=LEFT-ROTATE and RIGHT-ROTATE are in O(1) and add
+outro13=nothing to the runtime of RB-INSERT
+
+outro14=This yields a total running time of O(log n).
+
+
+----- PROPERTIES OF RB TREES -----
+
+propertyHead=Properties of red-black trees
+
+property1=1. Every node is either red or black.
+
+property2=2. The root is black.
+
+property3=3. Every leaf (NULL) is black.
+
+property4=4. If a node is red, then both its children are black.
+
+property5=5. For each node, all simple paths from the node to the descendeant leaves 
+property51= contain the same number of black nodes.
+
+
+------
+
+generalInformation=General information
+specificInformation=Specific information
+
+
+------ INSERT -----
+
+generalInformationInsert=We are looking for a appropiate place to insert z into the tree T
+
+specificInformationInsert0=The tree T and the node z are passed to the insert method
+
+specificInformationInsert1=Pointer y is initialized as T.null
+specificInformationInsert2=Pointer x is initialized as T.root
+
+specificInformationInsert3True=Node x is not equal T.null, take the if branch
+specificInformationInsert3False=Node x is equal T.null, skip the loop
+
+specificInformationInsert4=Pointer y is following the poiner x in the tree
+
+specificInformationInsert5True=The value of z is smaller than the value of x, descend into the left subtree
+specificInformationInsert5False=The value of z is bigger tahn the value of x, descend into the right subtree
+
+specificInformationInsert9=Assign node y as the parent of z
+
+specificInformationInsert10True=Pointer y is pointing on T.null, assign z as the root of the tree
+specificInformationInsert10False=Pointer y is not pointing on T.null, take the else branch
+
+specificInformationInsert13True=The value of z is smaller than the value of y, take the if branch
+specificInformationInsert13False=The value of z is bigger than the value of y, take the else branch
+
+specificInformationInsert14=Assign z as the left child of y with both children as T.null
+
+specificInformationInsert16=Assign z as the right child of y with both children as T.null
+
+specificInformation200=Call the Fixup method to restore all red-black properties
+specificInformation20=The node z is inserted, we leave the method
+
+generalInformationReturnToInsert=The tree T maintains all properties of red-black trees
+
+
+
+generalInformationFixupCall=The tree is violating {0} property.
+keine=no
+die2=with z the 2.
+die4=with z and z.p the 4.
+
+allgemeineInformationen=Here general information will be displayed
+spezifischeInformationen=Here specific information will be displayed
+
+
+
+	----- FIXUP -----
+
+generalInformationFixup0=
+specificInformationFixup1True=Parent of z is red, take the loop
+specificInformationFixup1False=Parent of z is black, skip the loop
+specificInformationFixup2True=Parent of z is a left child, take the if branch
+specificInformationFixup2False=Parent of z is a right child, take the else branch
+
+specificInformationFixup3=Initialize y as the right uncle of z
+specificInformationFixup4True=The uncle of z is red, this is case 1. Take the if branch
+specificInformationFixup4False=The uncle of z is black, take the else branch
+specificInformationFixup5=Change the color of z's parent from red to black
+specificInformationFixup6=Change the color of z's uncle from red to black
+specificInformationFixup7=Assign the grandparent of x the color red
+specificInformationFixup8=Assign the grandparent of z as the new z node and repeat the loop
+specificInformationFixup9=elseZweig
+
+specificInformationFixup10True=Node z is a right child and the uncle of z is black, this is case 2
+specificInformationFixup10False=Node z is a left child and the uncle of z is lback, this is calse 3
+specificInformationFixup11=Move z one level up the tree to prepare the rotation
+specificInformationFixup12=Trough rotation z is changing from a right to a left child
+specificInformationFixup13=We are coloring the parent of z black
+specificInformationFixup14=We are coloring the grandparent of z red
+specificInformationFixup15=We rotate the grandparent from z to the right
+
+generalInformationFixupCase1=Parent of z and z's uncle have the color red, thus the grandparent of z is black
+generalInformationFixupCase11=We invert the colors of z.p, z.p.p and the uncle of z to solve the problem locally
+generalInformationFixupCase12=Since we recolored some nodes we may have introduced a new violation
+
+generalInformationFixupCase2=Uncle of z is black and z is a right child
+generalInformationFixupCase21=We are going to transform case 2 into case 3 using a rotation
+generalInformationFixupCase22=We transform z to a left child using a left rotation
+
+generalInformationFixupCase3=Uncle of z is black and z is a left child
+generalInformationFixupCase31=We invert the colors of z's parent and grandparent
+generalInformationFixupCase32=Now we just have to execute a right rotation to resolve the problem
+
+specificInformationFixup16=elseZweig
+
+specificInformationFixup17=Initialize y as the left uncle of z
+specificInformationFixup18True=The uncle of z is red, this is case 4. Take the if branch
+specificInformationFixup18False=The uncle of z is black, take the else branch
+specificInformationFixup19=Change the color of z's parent from red to black
+specificInformationFixup20=Change the color of z's uncle from red to black
+specificInformationFixup21=Assign the grandparent of x the color red
+specificInformationFixup22=Assign the grandparent of z as the new z node and repeat the loop
+specificInformationFixup23=elseZweig
+
+specificInformationFixup24True=Node z is a left child and uncle of z is black, this is case 5
+specificInformationFixup24False=Node z is a right child and uncle of z is black, this is case 6
+specificInformationFixup25=Move z up one level up the tree to prepare the rotation
+specificInformationFixup26=Through rotation z is changing from a right to a left child
+specificInformationFixup27=We are coloring the parent of z black
+specificInformationFixup28=We are coloring the parent of z red
+specificInformationFixup29=We rotate the grandparent of z ro the right
+
+
+specificInformationFixup30=To ensure that property 2 holds the root is colored black
+
+generalInformationFixupCase4=Parent of z and the uncle of z are red, thus the grandparent of z is black
+generalInformationFixupCase41=We invert the colors of z.p, z.pp and the uncle of z to solve the problem locally
+generalInformationFixupCase42=Since we recolored some nodes we may have introduced a new violation
+
+generalInformationFixupCase5=Uncle of z is black and z is a left child
+generalInformationFixupCase51=We are going to transform case 5 intro case 6 using a rotation
+generalInformationFixupCase52=We transform z to a right child using a right rotation
+
+generalInformationFixupCase6=Uncle of z is black and z is a right child
+generalInformationFixupCase61=We ivert the colors of z's parent and grandparent
+generalInformationFixupCase62=Now we just have to execute a left rotation to resolve the problem
+
+
+	----- LEFT ROTATE -----
+
+generalInformationLeftRotate0=We rotate so the right child of x (y) is taking the former place from y
+specificInformationLeftRotate0=This method only changes the pointer from the nodes x and y
+
+specificInformationLeftRotate1=Pointer y is initialized as the right child from x
+specificInformationLeftRotate2=The new right subtree from x is the old left subtree from y
+specificInformationLeftRotate3True=The left subtree from y does not point on T.null, take the if branch
+specificInformationLeftRotate3False=The left subtree from y does point on T.null, skip the statement
+specificInformationLeftRotate4=The node x is going to be the new parent of y
+specificInformationLeftRotate5=The parent of y is now the the parent of x
+
+specificInformationLeftRotate6True=Parent of x is T.null, x is the root of the tree, take the if branch
+specificInformationLeftRotate6False=parent of x is not T.null, x is not the root of the tree, take the else branch
+specificInformationLeftRotate7=Assign y as the new root of the tree
+specificInformationLeftRotate8=elseAnweisung
+
+specificInformationLeftRotate9True=Node x was not the root of the tree and is a left child
+specificInformationLeftRotate9False=Node x was not the root of the tree and is a right child
+specificInformationLeftRotate10=Node x is a left child and the new left child of x.p is going to be y, instead x
+specificInformationLeftRotate11=elseAnweisung
+specificInformationLeftRotate12=Node x is a right child and the new right child of x.p is going to be y, instead x
+specificInformationLeftRotate13=Node x is going to be the new left child of y, since y moved up in the tree
+specificInformationLeftRotate14=Assign y as parent node of x
+
+generalInformationLeftRotateLast=Node y was assigned the new root of the subtree with x as the new left child
+specificInformationLeftRotateLast=The former left child of y is now the new right child of x
+
+
+	----- RIGHT ROTATE -----
+
+
+generalInformationRightRotate0=We rotate so the left child of x (y) is taking the former place of x
+specificInformationRightRotate0=This method only changes the pointer from the nodes x and y
+
+
+specificInformationRightRotate1=Pointer y is initialized as the left child from x
+specificInformationRightRotate2=The new left subtree from x is the old right subtree from y
+specificInformationRightRotate3True=The right subtree from y does not point on T.null, take the if branch
+specificInformationRightRotate3False=The right subtree from y does point on T.null, skip the statement
+specificInformationRightRotate4=The node x is going to be the new parent of y's right child
+specificInformationRightRotate5=The parent from x is now the parent of y
+
+specificInformationRightRotate6True=Parent of x is T.null, x is the tree's root, take the if branch
+specificInformationRightRotate6False=Parent of x is not T.null, x is not the tree's root, take the else branch
+specificInformationRightRotate7=Assign y as the new root of the tree
+
+specificInformationRightRotate8=elseAnweisung
+
+specificInformationRightRotate9True=Node x was not the root and is a right child, take the if branch
+specificInformationRightRotate9False=Node x was not the root and is a left child, take the else branch
+
+specificInformationRightRotate10=The node x is a right child and the new right child is going to be y, former x
+
+specificInformationRightRotate11=elseAnweisung
+
+specificInformationRightRotate12=The node x is a left child and the new left child is going to be y, former x
+
+specificInformationRightRotate13=The node x is going to be the new right child from y, because y moved up
+
+specificInformationRightRotate14=Assign y as the new parent node from x
+
+generalInformationRightRotateLast=Node y was assigned as the new root of the subtree with x as the new right child
+
+specificInformationRightRotateLast=The former right child from y is now x's new left child
+
+-=-
+
+------ QUESTIONS ------
+
+
+questionWhichViolation=Which property of Red-Black trees is violated by inserting z into the tree?
+
+questionCorrectAnswer=Correct, {0} property is violated!
+
+questionWrongAnswer=Wrong, the correct answer would be: {0}!
+
+none=none
+d2=the 2.
+d4=the 4.
+
+----
+questionCorrectAnswerColor=Correct, the colors are red and black!
+questionWhichColor=Which colors does a red-black tree have?
+questionAnswer1=Black
+questionAnswer2=Red
+questionAnswer3=Green
+questionAnswer4=Blue
+questionAnswer5=White
+questionCorrectAnswerColor=Correct, the colors are red and black!
+
+questionWrongAnswer=Wrong, the answer was {0} 
+
+questionand=and
+
+---
+
+questionRuntime=What is the runtime of RB-INSERT?
+
+questionCorrectAnswerRuntime=Correct, RB-INSERT is in O(log n)!
+
+questionWrongAnswerRuntime=Wrong, RB-INSERT is in O(log n)!

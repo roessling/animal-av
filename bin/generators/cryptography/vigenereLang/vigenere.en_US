@@ -1,0 +1,41 @@
+noSuchKeyException=There is no resource for entry {0}
+iconNotFound=Icon "{0}" not found
+
+algorithm_name=Vigen\u00E8re Cipher
+description=Vigen\u00E8re encoding dates back to french diplomat and cryptographer Blaise de Vigen\u00E8re. The Vigen\u00E8re cipher belongs therefore to the class of polyalphabetic ciphers. For long time this cipher was regarded as unbreakable. Finally, Friedrich Wilhelm Kasiski published a method to decode a text that was encoded with a Vigen\u00E8re cipher.
+
+introduction=Introduction
+translation=Encryption
+result=Result
+conclusion=Conclusion
+
+matrix=Vigenere-Square
+keyword=Keyword
+cleartext=Plaintext
+ciphertext=Ciphertext
+right=Correct
+
+line1=Until the 16. century mono-alphabetical encryption methods has been used almost exclusively 
+line2=The mono-alphabetical encryption method replaces the same character of the plaintext always with the same cipher-code
+line3=An especially simple and historical meaningful example is given by the Caeser-encryption.  
+line4=All mono-alphabetical algorithms show their inherent defect that encrypted texts are relatively easy cracked by a frequency analysis. 
+line5=The French diplomat Blaise de Vigen\u00E8re (1523 - 1596) developed the encryption method named by himself  
+line6=to overcome the deficiencies of the mono-alphabetical encryption methods. 
+line7=Instead of a single alphabet the Vigen\u00E8re encryption uses several (mostly 26) alphabets, which come into existence by 
+line8=cyclical shifting the origin alphabet by one character and writing them one below the other to get the so called Vigen\u00E8re-Quadrat 
+line9=By using a keyword it will be determined which alphabet will be used for substituting a character respectively.  
+line10=If a character occurs repeatedly it usually will be translated into distinct characters.   
+line11=These kind of encryption methods are called poly-alphabetical (or poly-alphabetical substitution) 
+line12=Historically the Vigen\u00E8re-Encryption represents the first poly-alphabetical substitution.
+
+line13=Vigen\u00E8re Cipher has linear complexity O(n), where n is the length of message.
+line14=An attack through frequency analysis is useless for the Vignere-encryption because of the evenly distributed characters. 
+line15=However also this encryption is easily cracked with methods known today. 
+line16=The most important goal for the analysis of a Vigen\u00E8re-Cipher is the determination of the keyword-length k.
+line17=The reason is that if the length of the key is known, the rest of the encryption is the same as for the mono-alphabetical encryptions.
+line18=There are two big Methods to determine the keyword-length k:
+line19=The Kasisiki-Test searches in the chipertext after repetitions of string sequences und calculates their distance. This method relies on the fact, that
+line20=related on the length of the text a relatively short keyword is repeated constantly. 
+line21=The Friedma-Test is a static method, which is based on the probability of two randomly chosen character being equal. 
+
+question=Encrypt the message HELLO with the keyword KEY.

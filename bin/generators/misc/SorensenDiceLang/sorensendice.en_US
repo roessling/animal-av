@@ -1,0 +1,18 @@
+noSuchKeyException=There is no resource for entry {0}
+iconNotFound=Icon "{0}" not found
+description1=The Sørensen–Dice index, also known by other names, is a statistic used for comparing the similarity of two samples.
+description2=It was independently developed by the botanists Thorvald Sørensen and Lee Raymond Dice, who published in 1948 and 1945 respectively.
+description3=Sørensen's original formula was intended to be applied to presence/absence data, and is:
+description4=QS=2|X∩Y|/|X|+|Y|
+description5=where :
+description6=|X| and |Y| are the numbers of species in the two samples.
+description7=QS is the quotient of similarity and ranges between 0 and 1.
+description8=It can be viewed as a similarity measure over sets.
+conclusion1=The Sørensen–Dice coefficient is mainly useful for ecological community data (e.g. Looman & Campbell, 1960).
+conclusion2=Justification for its use is primarily empirical rather than theoretical although it can be justified theoretically as the
+conclusion3=intersection of two fuzzy sets. As compared to Euclidean distance, Sørensen distance retains sensitivity in more
+conclusion4=heterogeneous data sets and gives less weight to outliers.Recently the Dice score and its variations, e.g. logDice
+conclusion5=taking a logarithm of it has become popular in computer lexicography for measuring the lexical association score of
+conclusion6=two given words. It is also commonly used in Image segmentation, in particular for comparing algorithm output
+conclusion7=against reference masks in medical applications.
+conclusion8=If we are Using the algorithm to compare 2 Sample of sizes |X| and |Y| then the algorithm has a complexity of O(|X|*|Y|)

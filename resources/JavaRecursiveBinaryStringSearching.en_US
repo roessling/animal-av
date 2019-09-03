@@ -1,0 +1,22 @@
+algoName=Binary Search
+theName=Recursive Binary Search (String; EN)
+algoDesc=This algorithm looks for a value passed in in a sorted array of int values. If the value is found, its position in the array is returned; otherwise, the result is -1.
+codeExample=public int recursiveBinarySearch(String[] array, String value, int l, int r) {\n  if (array == null || value == null) {\n    return -1;\n  }\n  if (l > r || l < 0 || r >= array.length) {\n    return -1;\n  }\n  int mid = (l + r) / 2;\n  if (array[mid].equals(value)) {\n    return mid;\n  else if (value.compareTo(array[mid]) < 0) {\n    return recursiveBinarySearch(array, value, l, mid - 1);\n  }\n  return recursiveBinarySearch(array, value, mid + 1, r);\n  }\n}
+animTitle=Recursive Binary Search (String)
+algoAuthor=Dr. Guido Rößling (roessling@acm.org>
+algoTitle=Binary Search
+animDesc=Description of the algorithm
+adForURL=Further animations can be found at http://www.algoanim.info/Animal2 in the online repository.
+nrSteps=The algorithm used a total of {0} assignments and {1} comparisons.
+description.filename=resources/JavaRecursiveBinaryStringSearching_descr_en.txt
+description.level=2
+description.labelSymbol=#
+code.filename=resources/JavaRecursiveBinaryStringSearching_code.txt
+code.level=2
+code.labelSymbol=#
+complexity.filename=resources/JavaRecursiveBinaryStringSearching_complexity_en.txt
+complexity.level=2
+complexity.labelSymbol=#
+nrAss=Assignments
+nrComp=Comparisons
+result=Result: {0}

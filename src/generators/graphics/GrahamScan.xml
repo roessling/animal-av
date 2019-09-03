@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<PropertiesTreeModel xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="PropertiesTreeModel.xsd">
+	<Folder name="Root">
+		<Primitive type="intMatrix">
+			<name>points</name>
+			<value><intMatrix>30, 40, 20, 70, -50, -70, 50; 70, 70, 60, 80, 70, -100, -70</intMatrix></value>
+		</Primitive>
+		<Primitive type="boolean">
+			<name>questions</name>
+			<value><boolean value="true" /></value>
+		</Primitive>
+		<Primitive type="Color">
+			<name>standart_Line_Color</name>
+			<value><Color>(0, 0, 0)</Color></value>
+		</Primitive>
+		<Primitive type="Color">
+			<name>highlighted_Line_Color</name>
+			<value><Color>(0, 255, 0)</Color></value>
+		</Primitive>
+		<Primitive type="Color">
+			<name>standart_Point_Color</name>
+			<value><Color>(0, 0, 0)</Color></value>
+		</Primitive>
+		<Primitive type="Color">
+			<name>highlighted_Point_Color</name>
+			<value><Color>(208, 0, 0)</Color></value>
+		</Primitive>
+	</Folder>
+</PropertiesTreeModel>

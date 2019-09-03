@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<PropertiesTreeModel xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="PropertiesTreeModel.xsd">
+	<Folder name="Root">
+		<Folder name="Primitives">
+			<Primitive type="StringMatrix">
+				<name>AdjacencyMatrix</name>
+				<value><StringMatrix>0, 1, 2, 0, 0, 0; 1, 0, 3, 0, 0, 6; 2, 3, 0, 5, 6, 0; 10, 0, 5, 0, 1, 0; 0, 0, 7, 1, 0, 3; 0, 0, 9, 0, 3, 0</StringMatrix></value>
+			</Primitive>
+			<Primitive type="StringArray">
+				<name>NodeLabels</name>
+				<value><StringArray>A, B, C, D, E, A</StringArray></value>
+			</Primitive>
+			<Primitive type="String">
+				<name>StartNode</name>
+				<value><String>A</String></value>
+			</Primitive>
+			<Primitive type="String">
+				<name>EndNode</name>
+				<value><String>E</String></value>
+			</Primitive>
+			<Primitive type="intMatrix">
+				<name>EstimateDistances</name>
+				<value><intMatrix>5, 4, 3, 2, 1, 0; 3, 0, 1, 6, 9, 8</intMatrix></value>
+			</Primitive>
+		</Folder>
+	</Folder>
+</PropertiesTreeModel>

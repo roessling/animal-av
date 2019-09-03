@@ -1,0 +1,1786 @@
+%Animal 2 1000*600
+title "Drop-Heuristik [DE]"
+author "Julian Bonrath, Benjamin Björngen-Schmidt"
+{
+  interactionDefinition "intDef20120901190812127.txt"
+  text "dropCost_into_Header" "Einleitung" (10, 40) color (0, 0, 0) depth 1 font SansSerif size 28 bold
+  rectangle "backgroundRectInto" offset (-5, -5) from "dropCost_into_Header" NW offset (7, 5) from "dropCost_into_Header" SE color (0, 0, 0) depth 5 filled  fillColor (128, 128, 128)
+  text "dropCost_into_Header2" "Grundidee des Drop-Verfahrens" offset (25, 40) from "dropCost_into_Header" NW color (0, 0, 0) depth 1 font SansSerif size 16 bold
+  text "dropCost_introProblem1" "Der Drop-Algorithmus ist eine Heuristik zur Lösung eines diskreten Warehouse Location Problem." offset (10, 20) from "dropCost_into_Header2" NW color (0, 0, 0) depth 1 font SansSerif size 12
+  text "dropCost_introProblem2" "In diesem Problem geht es um die Fragen welche Lagerhäuser, von einer gegeben" offset (0, 15) from "dropCost_introProblem1" NW color (0, 0, 0) depth 1 font SansSerif size 12
+  text "dropCost_introProblem3" "Menge an Lagerhäuser weiterhin betrieben werden soll. Das Ziel " offset (0, 30) from "dropCost_introProblem1" NW color (0, 0, 0) depth 1 font SansSerif size 12
+  text "dropCost_introProblem4" "ist die minimierung von fixen Kosten für das Betreiben von Lagerhäusern sowie" offset (0, 45) from "dropCost_introProblem1" NW color (0, 0, 0) depth 1 font SansSerif size 12
+  text "dropCost_introProblem5" "den anfallenden Transportkosten von Lagerhäusern zu Kunden." offset (0, 60) from "dropCost_introProblem1" NW color (0, 0, 0) depth 1 font SansSerif size 12
+  text "dropCost_introIdea1" "Der Drop-Algorithmus geht von der Startsituation aus, dass alle potentiellen" offset (10, 115) from "dropCost_into_Header2" NW color (0, 0, 0) depth 1 font SansSerif size 12
+  text "dropCost_introIdea2" "Lagerstandorte  vorläufig einbezogen sind. Zu Beginn entspricht der Ziel-" offset (0, 15) from "dropCost_introIdea1" NW color (0, 0, 0) depth 1 font SansSerif size 12
+  text "dropCost_introIdea3" "funktionswert der Summe der Fixkosten aller Standorte und der minimalen" offset (0, 30) from "dropCost_introIdea1" NW color (0, 0, 0) depth 1 font SansSerif size 12
+  text "dropCost_introIdea4" "Transportkosten." offset (0, 45) from "dropCost_introIdea1" NW color (0, 0, 0) depth 1 font SansSerif size 12
+  text "dropCost_introIdea5" "Mit jeder Iteration wird nun derjenige Standort endgultig ausgeschlossen, durch" offset (0, 60) from "dropCost_introIdea1" NW color (0, 0, 0) depth 1 font SansSerif size 12
+  text "dropCost_introIdea6" "dessen Schließung die größtmögliche Verringerung des Zielfunktionswertes erlangt wird." offset (0, 75) from "dropCost_introIdea1" NW color (0, 0, 0) depth 1 font SansSerif size 12
+  text "dropCost_introIdea7" "Der Algorithmus endet, sobald durch die Schließung eines weiteren" offset (0, 90) from "dropCost_introIdea1" NW color (0, 0, 0) depth 1 font SansSerif size 12
+  text "dropCost_introIdea8" "Standortes keine zusatzliche Senkung des Zielfunktionswertes erreicht werden" offset (0, 105) from "dropCost_introIdea1" NW color (0, 0, 0) depth 1 font SansSerif size 12
+  text "dropCost_introIdea9" "kann. Alle Standorte, die nicht ausgeschlossen wurden, werden nun endgültig" offset (0, 120) from "dropCost_introIdea1" NW color (0, 0, 0) depth 1 font SansSerif size 12
+  text "dropCost_introIdea10" "einbezogen. [SCHILDT 1994]" offset (0, 135) from "dropCost_introIdea1" NW color (0, 0, 0) depth 1 font SansSerif size 12
+}
+label "Einleitung"
+{
+  text "dropCost_into_Header23" "Der Algorithmus" (10, 40) color (0, 0, 0) depth 1 font SansSerif size 28 bold
+  interaction "trueFalseQuestion"
+  rectangle "backgroundRectAlgo" offset (-5, -5) from "dropCost_into_Header23" NW offset (7, 5) from "dropCost_into_Header23" SE color (0, 0, 0) depth 5 filled  fillColor (128, 128, 128)
+  text "dropCost_Header" "Kosten" offset (25, 50) from "dropCost_into_Header23" NW color (0, 0, 0) depth 1 font SansSerif size 16 bold
+  codegroup "sourceCode" at offset (580, -20) from "dropCost_Header" NW color (0, 0, 0) highlightColor (255, 0, 0) contextColor (0, 0, 255) font Monospaced size 12 depth 1
+  addCodeLine "Erläuterung:" to "sourceCode" indentation 1
+  addCodeLine "Menge aller Lagerhäuser I" to "sourceCode" indentation 2
+  addCodeLine "c_i1,j := Transportkosten von Kunde j zum 'nächstgelegenen' Lager i1" to "sourceCode" indentation 2
+  addCodeLine "c_i2,j := Transportkosten von Kunde j zu 'übernächstem' Lager i2" to "sourceCode" indentation 2
+  addCodeLine "Fülle Tabellen mit Transportkosten und Warenhaus Fixkosten" to "sourceCode" indentation 2
+  addCodeLine "" to "sourceCode" indentation 1
+  addCodeLine "Iteration:" to "sourceCode" indentation 1
+  addCodeLine "a) Minimale Kosten" to "sourceCode" indentation 2
+  addCodeLine "Finde minimale Kosten c_i1, c_i2 für alle j und i aus I" to "sourceCode" indentation 2
+  addCodeLine "Trage geringste  Kosten in Zeilen c_i1 und " to "sourceCode" indentation 3
+  addCodeLine "zweitgeringste Kosten in Zeilen c_i2 ein" to "sourceCode" indentation 3
+  addCodeLine "b) Kostenerhöhung" to "sourceCode" indentation 2
+  addCodeLine "Berechnung der Transportkostenerhöhung w_ij (zu Kunde j) bei " to "sourceCode" indentation 2
+  addCodeLine "Schließung von Lager i in I:" to "sourceCode" indentation 2
+  addCodeLine "w_ij = c_i2 - c_i1 , falls i = i1 (Differenz der geringsten und zweitgeringsten Kosten)" to "sourceCode" indentation 3
+  addCodeLine "w_ij = 0           , sonst" to "sourceCode" indentation 3
+  addCodeLine "Bereche Transportkostenerhöhung bei Schließung des Lagers i" to "sourceCode" indentation 2
+  addCodeLine "E_i = Summe_i (w_ij) für alle i aus I" to "sourceCode" indentation 3
+  addCodeLine "c) Kostenersparniss" to "sourceCode" indentation 2
+  addCodeLine "Berechne Gesamtkostenersparniss d_i bei Schließung des Lagers i" to "sourceCode" indentation 2
+  addCodeLine "d_i = f_i - E_i    für alle nicht geschlossen Lager" to "sourceCode" indentation 3
+  addCodeLine " Falls d_i <= 0 dann bleibt Lager i immer offen" to "sourceCode" indentation 3
+  addCodeLine "d) Schließen" to "sourceCode" indentation 2
+  addCodeLine "Schließung des Lagers k mit der größten Einsparung" to "sourceCode" indentation 2
+  addCodeLine "k = argmax {d_i} für die gilt d_i > 0 und i in I" to "sourceCode" indentation 3
+  addCodeLine "I := I /k" to "sourceCode" indentation 3
+  addCodeLine "e) Abbruch?" to "sourceCode" indentation 2
+  addCodeLine "falls d_i <= 0 für alle i aus I" to "sourceCode" indentation 3
+  text "infoText1" "1" offset (0, 440) from "dropCost_Header" NW color (0, 0, 0) depth 1 font SansSerif size 12
+  text "infoText2" "2" offset (0, 10) from "infoText1" SW color (0, 0, 0) depth 1 font SansSerif size 12
+  text "dropCost_TableHead_0" "c_ij*r_j" offset (10, 0) from "dropCost_Header" SW color (0, 0, 0) depth 1 font SansSerif size 12
+  hide "dropCost_into_Header" "dropCost_into_Header2" "dropCost_introProblem1" "dropCost_introProblem2" "dropCost_introProblem3" "dropCost_introProblem4" "dropCost_introProblem5" "dropCost_introIdea1" "dropCost_introIdea2" "dropCost_introIdea3" "dropCost_introIdea4" "dropCost_introIdea5" "dropCost_introIdea6" "dropCost_introIdea7" "dropCost_introIdea8" "dropCost_introIdea9" "dropCost_introIdea10" "backgroundRectInto" 
+}
+{
+  polyline "dropCost_TableHeadLine" offset (0, 5) from "dropCost_TableHead_0" SW offset (250, 5) from "dropCost_TableHead_0" SE color (0, 0, 0) depth 1
+  polyline "dropCost_TableFootLine" offset (0, 130) from "dropCost_TableHead_0" SW offset (250, 130) from "dropCost_TableHead_0" SE color (0, 0, 0) depth 1
+  text "dropCost_TableHead_1" "j=1" offset (25, 0) from "dropCost_TableHead_0" NE color (0, 0, 0) depth 1 font SansSerif size 12
+  text "dropCost_TableHead_2" "2" offset (55, 0) from "dropCost_TableHead_0" NE color (0, 0, 0) depth 1 font SansSerif size 12
+  text "dropCost_TableHead_3" "3" offset (85, 0) from "dropCost_TableHead_0" NE color (0, 0, 0) depth 1 font SansSerif size 12
+  text "dropCost_TableHead_4" "4" offset (115, 0) from "dropCost_TableHead_0" NE color (0, 0, 0) depth 1 font SansSerif size 12
+  text "dropCost_TableHead_5" "5" offset (145, 0) from "dropCost_TableHead_0" NE color (0, 0, 0) depth 1 font SansSerif size 12
+  text "dropCost_TableHead_6" "6" offset (175, 0) from "dropCost_TableHead_0" NE color (0, 0, 0) depth 1 font SansSerif size 12
+  text "dropCost_TableHead_7" "7" offset (205, 0) from "dropCost_TableHead_0" NE color (0, 0, 0) depth 1 font SansSerif size 12
+  text "dropCost_TableHead_8" "8" offset (235, 0) from "dropCost_TableHead_0" NE color (0, 0, 0) depth 1 font SansSerif size 12
+  text "dropCost_TableLeft_1" "i=1" offset (0, 10) from "dropCost_TableHead_0" S color (0, 0, 0) depth 1 font SansSerif size 12
+  text "dropCost_TableLeft_2" "2" offset (0, 30) from "dropCost_TableHead_0" S color (0, 0, 0) depth 1 font SansSerif size 12
+  text "dropCost_TableLeft_3" "3" offset (0, 50) from "dropCost_TableHead_0" S color (0, 0, 0) depth 1 font SansSerif size 12
+  text "dropCost_TableLeft_4" "4" offset (0, 70) from "dropCost_TableHead_0" S color (0, 0, 0) depth 1 font SansSerif size 12
+  text "dropCost_TableLeft_5" "5" offset (0, 90) from "dropCost_TableHead_0" S color (0, 0, 0) depth 1 font SansSerif size 12
+  text "dropCost_TableLeft_6" "6" offset (0, 110) from "dropCost_TableHead_0" S color (0, 0, 0) depth 1 font SansSerif size 12
+  text "dropCost_TableLeft_8" "c_i1,j" offset (0, 135) from "dropCost_TableHead_0" SW color (0, 0, 0) depth 1 font SansSerif size 12
+  text "dropCost_TableLeft_9" "c_i2,j" offset (0, 155) from "dropCost_TableHead_0" SW color (0, 0, 0) depth 1 font SansSerif size 12
+  polyline "dropCost_TableLeftLineNodes" offset (5, 0) from "dropCost_TableHead_0" NE offset (5, 190) from "dropCost_TableHead_0" NE color (0, 0, 0) depth 1
+  text "dropCost0:0" "" offset (25, 10) from "dropCost_TableHead_0" SE color (0, 0, 0) depth 1 font SansSerif size 12
+  text "dropCost1:0" "" offset (55, 10) from "dropCost_TableHead_0" SE color (0, 0, 0) depth 1 font SansSerif size 12
+  text "dropCost2:0" "" offset (85, 10) from "dropCost_TableHead_0" SE color (0, 0, 0) depth 1 font SansSerif size 12
+  text "dropCost3:0" "" offset (115, 10) from "dropCost_TableHead_0" SE color (0, 0, 0) depth 1 font SansSerif size 12
+  text "dropCost4:0" "" offset (145, 10) from "dropCost_TableHead_0" SE color (0, 0, 0) depth 1 font SansSerif size 12
+  text "dropCost5:0" "" offset (175, 10) from "dropCost_TableHead_0" SE color (0, 0, 0) depth 1 font SansSerif size 12
+  text "dropCost6:0" "" offset (205, 10) from "dropCost_TableHead_0" SE color (0, 0, 0) depth 1 font SansSerif size 12
+  text "dropCost7:0" "" offset (235, 10) from "dropCost_TableHead_0" SE color (0, 0, 0) depth 1 font SansSerif size 12
+  text "dropCost0:1" "" offset (25, 30) from "dropCost_TableHead_0" SE color (0, 0, 0) depth 1 font SansSerif size 12
+  text "dropCost1:1" "" offset (55, 30) from "dropCost_TableHead_0" SE color (0, 0, 0) depth 1 font SansSerif size 12
+  text "dropCost2:1" "" offset (85, 30) from "dropCost_TableHead_0" SE color (0, 0, 0) depth 1 font SansSerif size 12
+  text "dropCost3:1" "" offset (115, 30) from "dropCost_TableHead_0" SE color (0, 0, 0) depth 1 font SansSerif size 12
+  text "dropCost4:1" "" offset (145, 30) from "dropCost_TableHead_0" SE color (0, 0, 0) depth 1 font SansSerif size 12
+  text "dropCost5:1" "" offset (175, 30) from "dropCost_TableHead_0" SE color (0, 0, 0) depth 1 font SansSerif size 12
+  text "dropCost6:1" "" offset (205, 30) from "dropCost_TableHead_0" SE color (0, 0, 0) depth 1 font SansSerif size 12
+  text "dropCost7:1" "" offset (235, 30) from "dropCost_TableHead_0" SE color (0, 0, 0) depth 1 font SansSerif size 12
+  text "dropCost0:2" "" offset (25, 50) from "dropCost_TableHead_0" SE color (0, 0, 0) depth 1 font SansSerif size 12
+  text "dropCost1:2" "" offset (55, 50) from "dropCost_TableHead_0" SE color (0, 0, 0) depth 1 font SansSerif size 12
+  text "dropCost2:2" "" offset (85, 50) from "dropCost_TableHead_0" SE color (0, 0, 0) depth 1 font SansSerif size 12
+  text "dropCost3:2" "" offset (115, 50) from "dropCost_TableHead_0" SE color (0, 0, 0) depth 1 font SansSerif size 12
+  text "dropCost4:2" "" offset (145, 50) from "dropCost_TableHead_0" SE color (0, 0, 0) depth 1 font SansSerif size 12
+  text "dropCost5:2" "" offset (175, 50) from "dropCost_TableHead_0" SE color (0, 0, 0) depth 1 font SansSerif size 12
+  text "dropCost6:2" "" offset (205, 50) from "dropCost_TableHead_0" SE color (0, 0, 0) depth 1 font SansSerif size 12
+  text "dropCost7:2" "" offset (235, 50) from "dropCost_TableHead_0" SE color (0, 0, 0) depth 1 font SansSerif size 12
+  text "dropCost0:3" "" offset (25, 70) from "dropCost_TableHead_0" SE color (0, 0, 0) depth 1 font SansSerif size 12
+  text "dropCost1:3" "" offset (55, 70) from "dropCost_TableHead_0" SE color (0, 0, 0) depth 1 font SansSerif size 12
+  text "dropCost2:3" "" offset (85, 70) from "dropCost_TableHead_0" SE color (0, 0, 0) depth 1 font SansSerif size 12
+  text "dropCost3:3" "" offset (115, 70) from "dropCost_TableHead_0" SE color (0, 0, 0) depth 1 font SansSerif size 12
+  text "dropCost4:3" "" offset (145, 70) from "dropCost_TableHead_0" SE color (0, 0, 0) depth 1 font SansSerif size 12
+  text "dropCost5:3" "" offset (175, 70) from "dropCost_TableHead_0" SE color (0, 0, 0) depth 1 font SansSerif size 12
+  text "dropCost6:3" "" offset (205, 70) from "dropCost_TableHead_0" SE color (0, 0, 0) depth 1 font SansSerif size 12
+  text "dropCost7:3" "" offset (235, 70) from "dropCost_TableHead_0" SE color (0, 0, 0) depth 1 font SansSerif size 12
+  text "dropCost0:4" "" offset (25, 90) from "dropCost_TableHead_0" SE color (0, 0, 0) depth 1 font SansSerif size 12
+  text "dropCost1:4" "" offset (55, 90) from "dropCost_TableHead_0" SE color (0, 0, 0) depth 1 font SansSerif size 12
+  text "dropCost2:4" "" offset (85, 90) from "dropCost_TableHead_0" SE color (0, 0, 0) depth 1 font SansSerif size 12
+  text "dropCost3:4" "" offset (115, 90) from "dropCost_TableHead_0" SE color (0, 0, 0) depth 1 font SansSerif size 12
+  text "dropCost4:4" "" offset (145, 90) from "dropCost_TableHead_0" SE color (0, 0, 0) depth 1 font SansSerif size 12
+  text "dropCost5:4" "" offset (175, 90) from "dropCost_TableHead_0" SE color (0, 0, 0) depth 1 font SansSerif size 12
+  text "dropCost6:4" "" offset (205, 90) from "dropCost_TableHead_0" SE color (0, 0, 0) depth 1 font SansSerif size 12
+  text "dropCost7:4" "" offset (235, 90) from "dropCost_TableHead_0" SE color (0, 0, 0) depth 1 font SansSerif size 12
+  text "dropCost0:5" "" offset (25, 110) from "dropCost_TableHead_0" SE color (0, 0, 0) depth 1 font SansSerif size 12
+  text "dropCost1:5" "" offset (55, 110) from "dropCost_TableHead_0" SE color (0, 0, 0) depth 1 font SansSerif size 12
+  text "dropCost2:5" "" offset (85, 110) from "dropCost_TableHead_0" SE color (0, 0, 0) depth 1 font SansSerif size 12
+  text "dropCost3:5" "" offset (115, 110) from "dropCost_TableHead_0" SE color (0, 0, 0) depth 1 font SansSerif size 12
+  text "dropCost4:5" "" offset (145, 110) from "dropCost_TableHead_0" SE color (0, 0, 0) depth 1 font SansSerif size 12
+  text "dropCost5:5" "" offset (175, 110) from "dropCost_TableHead_0" SE color (0, 0, 0) depth 1 font SansSerif size 12
+  text "dropCost6:5" "" offset (205, 110) from "dropCost_TableHead_0" SE color (0, 0, 0) depth 1 font SansSerif size 12
+  text "dropCost7:5" "" offset (235, 110) from "dropCost_TableHead_0" SE color (0, 0, 0) depth 1 font SansSerif size 12
+  text "dropCostMin0:0" "" offset (25, 135) from "dropCost_TableHead_0" SE color (0, 0, 0) depth 1 font SansSerif size 12
+  text "dropCostMin1:0" "" offset (55, 135) from "dropCost_TableHead_0" SE color (0, 0, 0) depth 1 font SansSerif size 12
+  text "dropCostMin2:0" "" offset (85, 135) from "dropCost_TableHead_0" SE color (0, 0, 0) depth 1 font SansSerif size 12
+  text "dropCostMin3:0" "" offset (115, 135) from "dropCost_TableHead_0" SE color (0, 0, 0) depth 1 font SansSerif size 12
+  text "dropCostMin4:0" "" offset (145, 135) from "dropCost_TableHead_0" SE color (0, 0, 0) depth 1 font SansSerif size 12
+  text "dropCostMin5:0" "" offset (175, 135) from "dropCost_TableHead_0" SE color (0, 0, 0) depth 1 font SansSerif size 12
+  text "dropCostMin6:0" "" offset (205, 135) from "dropCost_TableHead_0" SE color (0, 0, 0) depth 1 font SansSerif size 12
+  text "dropCostMin7:0" "" offset (235, 135) from "dropCost_TableHead_0" SE color (0, 0, 0) depth 1 font SansSerif size 12
+  text "dropCostMin0:1" "" offset (25, 155) from "dropCost_TableHead_0" SE color (0, 0, 0) depth 1 font SansSerif size 12
+  text "dropCostMin1:1" "" offset (55, 155) from "dropCost_TableHead_0" SE color (0, 0, 0) depth 1 font SansSerif size 12
+  text "dropCostMin2:1" "" offset (85, 155) from "dropCost_TableHead_0" SE color (0, 0, 0) depth 1 font SansSerif size 12
+  text "dropCostMin3:1" "" offset (115, 155) from "dropCost_TableHead_0" SE color (0, 0, 0) depth 1 font SansSerif size 12
+  text "dropCostMin4:1" "" offset (145, 155) from "dropCost_TableHead_0" SE color (0, 0, 0) depth 1 font SansSerif size 12
+  text "dropCostMin5:1" "" offset (175, 155) from "dropCost_TableHead_0" SE color (0, 0, 0) depth 1 font SansSerif size 12
+  text "dropCostMin6:1" "" offset (205, 155) from "dropCost_TableHead_0" SE color (0, 0, 0) depth 1 font SansSerif size 12
+  text "dropCostMin7:1" "" offset (235, 155) from "dropCost_TableHead_0" SE color (0, 0, 0) depth 1 font SansSerif size 12
+  setText of "infoText1" to "Erstelle Kostentabelle"  
+  setText of "infoText2" to ""  
+}
+{
+  text "dilveryRise_Header" "Kostensteigerung" offset (0, 240) from "dropCost_Header" NW color (0, 0, 0) depth 1 font SansSerif size 16 bold
+  text "dilveryRise_TableHead_0" "w_ij" offset (25, 10) from "dilveryRise_Header" SW color (0, 0, 0) depth 1 font SansSerif size 12
+  polyline "dilveryRise_TableHeadLine" offset (0, 5) from "dilveryRise_TableHead_0" SW offset (340, 5) from "dilveryRise_TableHead_0" SE color (0, 0, 0) depth 1
+  text "dilveryRise_TableHead_1" "1" offset (25, 0) from "dilveryRise_TableHead_0" NE color (0, 0, 0) depth 1 font SansSerif size 12
+  text "dilveryRise_TableHead_2" "2" offset (55, 0) from "dilveryRise_TableHead_0" NE color (0, 0, 0) depth 1 font SansSerif size 12
+  text "dilveryRise_TableHead_3" "3" offset (85, 0) from "dilveryRise_TableHead_0" NE color (0, 0, 0) depth 1 font SansSerif size 12
+  text "dilveryRise_TableHead_4" "4" offset (115, 0) from "dilveryRise_TableHead_0" NE color (0, 0, 0) depth 1 font SansSerif size 12
+  text "dilveryRise_TableHead_5" "5" offset (145, 0) from "dilveryRise_TableHead_0" NE color (0, 0, 0) depth 1 font SansSerif size 12
+  text "dilveryRise_TableHead_6" "6" offset (175, 0) from "dilveryRise_TableHead_0" NE color (0, 0, 0) depth 1 font SansSerif size 12
+  text "dilveryRise_TableHead_7" "7" offset (205, 0) from "dilveryRise_TableHead_0" NE color (0, 0, 0) depth 1 font SansSerif size 12
+  text "dilveryRise_TableHead_8" "8" offset (235, 0) from "dilveryRise_TableHead_0" NE color (0, 0, 0) depth 1 font SansSerif size 12
+  text "dilveryRise_TableHead_9" "E" offset (265, 0) from "dilveryRise_TableHead_0" NE color (0, 0, 0) depth 1 font SansSerif size 12
+  text "dilveryRise_TableHead_10" "f_i" offset (295, 0) from "dilveryRise_TableHead_0" NE color (0, 0, 0) depth 1 font SansSerif size 12
+  text "dilveryRise_TableHead_11" "d_i" offset (325, 0) from "dilveryRise_TableHead_0" NE color (0, 0, 0) depth 1 font SansSerif size 12
+  text "dilveryRise_TableLeft_1" "1" offset (0, 10) from "dilveryRise_TableHead_0" S color (0, 0, 0) depth 1 font SansSerif size 12
+  text "dilveryRise_TableLeft_2" "2" offset (0, 30) from "dilveryRise_TableHead_0" S color (0, 0, 0) depth 1 font SansSerif size 12
+  text "dilveryRise_TableLeft_3" "3" offset (0, 50) from "dilveryRise_TableHead_0" S color (0, 0, 0) depth 1 font SansSerif size 12
+  text "dilveryRise_TableLeft_4" "4" offset (0, 70) from "dilveryRise_TableHead_0" S color (0, 0, 0) depth 1 font SansSerif size 12
+  text "dilveryRise_TableLeft_5" "5" offset (0, 90) from "dilveryRise_TableHead_0" S color (0, 0, 0) depth 1 font SansSerif size 12
+  text "dilveryRise_TableLeft_6" "6" offset (0, 110) from "dilveryRise_TableHead_0" S color (0, 0, 0) depth 1 font SansSerif size 12
+  polyline "dilveryRise_TableLeftLineNodes" offset (5, 0) from "dilveryRise_TableHead_0" NE offset (5, 150) from "dilveryRise_TableHead_0" NE color (0, 0, 0) depth 1
+  polyline "dilveryRise_TableLeftLineNodesE" offset (255, 0) from "dilveryRise_TableHead_0" NE offset (255, 150) from "dilveryRise_TableHead_0" NE color (0, 0, 0) depth 1
+  polyline "dilveryRise_TableLeftLineNodesF" offset (285, 0) from "dilveryRise_TableHead_0" NE offset (285, 150) from "dilveryRise_TableHead_0" NE color (0, 0, 0) depth 1
+  polyline "dilveryRise_TableLeftLineNodesD" offset (315, 0) from "dilveryRise_TableHead_0" NE offset (315, 150) from "dilveryRise_TableHead_0" NE color (0, 0, 0) depth 1
+  text "dilveryRise0:0" "" offset (25, 10) from "dilveryRise_TableHead_0" SE color (0, 0, 0) depth 1 font SansSerif size 12
+  text "dilveryRise1:0" "" offset (55, 10) from "dilveryRise_TableHead_0" SE color (0, 0, 0) depth 1 font SansSerif size 12
+  text "dilveryRise2:0" "" offset (85, 10) from "dilveryRise_TableHead_0" SE color (0, 0, 0) depth 1 font SansSerif size 12
+  text "dilveryRise3:0" "" offset (115, 10) from "dilveryRise_TableHead_0" SE color (0, 0, 0) depth 1 font SansSerif size 12
+  text "dilveryRise4:0" "" offset (145, 10) from "dilveryRise_TableHead_0" SE color (0, 0, 0) depth 1 font SansSerif size 12
+  text "dilveryRise5:0" "" offset (175, 10) from "dilveryRise_TableHead_0" SE color (0, 0, 0) depth 1 font SansSerif size 12
+  text "dilveryRise6:0" "" offset (205, 10) from "dilveryRise_TableHead_0" SE color (0, 0, 0) depth 1 font SansSerif size 12
+  text "dilveryRise7:0" "" offset (235, 10) from "dilveryRise_TableHead_0" SE color (0, 0, 0) depth 1 font SansSerif size 12
+  text "dilveryRise8:0" "" offset (265, 10) from "dilveryRise_TableHead_0" SE color (0, 0, 0) depth 1 font SansSerif size 12
+  text "dilveryRise9:0" "" offset (295, 10) from "dilveryRise_TableHead_0" SE color (0, 0, 0) depth 1 font SansSerif size 12
+  text "dilveryRise10:0" "" offset (325, 10) from "dilveryRise_TableHead_0" SE color (0, 0, 0) depth 1 font SansSerif size 12
+  text "dilveryRise0:1" "" offset (25, 30) from "dilveryRise_TableHead_0" SE color (0, 0, 0) depth 1 font SansSerif size 12
+  text "dilveryRise1:1" "" offset (55, 30) from "dilveryRise_TableHead_0" SE color (0, 0, 0) depth 1 font SansSerif size 12
+  text "dilveryRise2:1" "" offset (85, 30) from "dilveryRise_TableHead_0" SE color (0, 0, 0) depth 1 font SansSerif size 12
+  text "dilveryRise3:1" "" offset (115, 30) from "dilveryRise_TableHead_0" SE color (0, 0, 0) depth 1 font SansSerif size 12
+  text "dilveryRise4:1" "" offset (145, 30) from "dilveryRise_TableHead_0" SE color (0, 0, 0) depth 1 font SansSerif size 12
+  text "dilveryRise5:1" "" offset (175, 30) from "dilveryRise_TableHead_0" SE color (0, 0, 0) depth 1 font SansSerif size 12
+  text "dilveryRise6:1" "" offset (205, 30) from "dilveryRise_TableHead_0" SE color (0, 0, 0) depth 1 font SansSerif size 12
+  text "dilveryRise7:1" "" offset (235, 30) from "dilveryRise_TableHead_0" SE color (0, 0, 0) depth 1 font SansSerif size 12
+  text "dilveryRise8:1" "" offset (265, 30) from "dilveryRise_TableHead_0" SE color (0, 0, 0) depth 1 font SansSerif size 12
+  text "dilveryRise9:1" "" offset (295, 30) from "dilveryRise_TableHead_0" SE color (0, 0, 0) depth 1 font SansSerif size 12
+  text "dilveryRise10:1" "" offset (325, 30) from "dilveryRise_TableHead_0" SE color (0, 0, 0) depth 1 font SansSerif size 12
+  text "dilveryRise0:2" "" offset (25, 50) from "dilveryRise_TableHead_0" SE color (0, 0, 0) depth 1 font SansSerif size 12
+  text "dilveryRise1:2" "" offset (55, 50) from "dilveryRise_TableHead_0" SE color (0, 0, 0) depth 1 font SansSerif size 12
+  text "dilveryRise2:2" "" offset (85, 50) from "dilveryRise_TableHead_0" SE color (0, 0, 0) depth 1 font SansSerif size 12
+  text "dilveryRise3:2" "" offset (115, 50) from "dilveryRise_TableHead_0" SE color (0, 0, 0) depth 1 font SansSerif size 12
+  text "dilveryRise4:2" "" offset (145, 50) from "dilveryRise_TableHead_0" SE color (0, 0, 0) depth 1 font SansSerif size 12
+  text "dilveryRise5:2" "" offset (175, 50) from "dilveryRise_TableHead_0" SE color (0, 0, 0) depth 1 font SansSerif size 12
+  text "dilveryRise6:2" "" offset (205, 50) from "dilveryRise_TableHead_0" SE color (0, 0, 0) depth 1 font SansSerif size 12
+  text "dilveryRise7:2" "" offset (235, 50) from "dilveryRise_TableHead_0" SE color (0, 0, 0) depth 1 font SansSerif size 12
+  text "dilveryRise8:2" "" offset (265, 50) from "dilveryRise_TableHead_0" SE color (0, 0, 0) depth 1 font SansSerif size 12
+  text "dilveryRise9:2" "" offset (295, 50) from "dilveryRise_TableHead_0" SE color (0, 0, 0) depth 1 font SansSerif size 12
+  text "dilveryRise10:2" "" offset (325, 50) from "dilveryRise_TableHead_0" SE color (0, 0, 0) depth 1 font SansSerif size 12
+  text "dilveryRise0:3" "" offset (25, 70) from "dilveryRise_TableHead_0" SE color (0, 0, 0) depth 1 font SansSerif size 12
+  text "dilveryRise1:3" "" offset (55, 70) from "dilveryRise_TableHead_0" SE color (0, 0, 0) depth 1 font SansSerif size 12
+  text "dilveryRise2:3" "" offset (85, 70) from "dilveryRise_TableHead_0" SE color (0, 0, 0) depth 1 font SansSerif size 12
+  text "dilveryRise3:3" "" offset (115, 70) from "dilveryRise_TableHead_0" SE color (0, 0, 0) depth 1 font SansSerif size 12
+  text "dilveryRise4:3" "" offset (145, 70) from "dilveryRise_TableHead_0" SE color (0, 0, 0) depth 1 font SansSerif size 12
+  text "dilveryRise5:3" "" offset (175, 70) from "dilveryRise_TableHead_0" SE color (0, 0, 0) depth 1 font SansSerif size 12
+  text "dilveryRise6:3" "" offset (205, 70) from "dilveryRise_TableHead_0" SE color (0, 0, 0) depth 1 font SansSerif size 12
+  text "dilveryRise7:3" "" offset (235, 70) from "dilveryRise_TableHead_0" SE color (0, 0, 0) depth 1 font SansSerif size 12
+  text "dilveryRise8:3" "" offset (265, 70) from "dilveryRise_TableHead_0" SE color (0, 0, 0) depth 1 font SansSerif size 12
+  text "dilveryRise9:3" "" offset (295, 70) from "dilveryRise_TableHead_0" SE color (0, 0, 0) depth 1 font SansSerif size 12
+  text "dilveryRise10:3" "" offset (325, 70) from "dilveryRise_TableHead_0" SE color (0, 0, 0) depth 1 font SansSerif size 12
+  text "dilveryRise0:4" "" offset (25, 90) from "dilveryRise_TableHead_0" SE color (0, 0, 0) depth 1 font SansSerif size 12
+  text "dilveryRise1:4" "" offset (55, 90) from "dilveryRise_TableHead_0" SE color (0, 0, 0) depth 1 font SansSerif size 12
+  text "dilveryRise2:4" "" offset (85, 90) from "dilveryRise_TableHead_0" SE color (0, 0, 0) depth 1 font SansSerif size 12
+  text "dilveryRise3:4" "" offset (115, 90) from "dilveryRise_TableHead_0" SE color (0, 0, 0) depth 1 font SansSerif size 12
+  text "dilveryRise4:4" "" offset (145, 90) from "dilveryRise_TableHead_0" SE color (0, 0, 0) depth 1 font SansSerif size 12
+  text "dilveryRise5:4" "" offset (175, 90) from "dilveryRise_TableHead_0" SE color (0, 0, 0) depth 1 font SansSerif size 12
+  text "dilveryRise6:4" "" offset (205, 90) from "dilveryRise_TableHead_0" SE color (0, 0, 0) depth 1 font SansSerif size 12
+  text "dilveryRise7:4" "" offset (235, 90) from "dilveryRise_TableHead_0" SE color (0, 0, 0) depth 1 font SansSerif size 12
+  text "dilveryRise8:4" "" offset (265, 90) from "dilveryRise_TableHead_0" SE color (0, 0, 0) depth 1 font SansSerif size 12
+  text "dilveryRise9:4" "" offset (295, 90) from "dilveryRise_TableHead_0" SE color (0, 0, 0) depth 1 font SansSerif size 12
+  text "dilveryRise10:4" "" offset (325, 90) from "dilveryRise_TableHead_0" SE color (0, 0, 0) depth 1 font SansSerif size 12
+  text "dilveryRise0:5" "" offset (25, 110) from "dilveryRise_TableHead_0" SE color (0, 0, 0) depth 1 font SansSerif size 12
+  text "dilveryRise1:5" "" offset (55, 110) from "dilveryRise_TableHead_0" SE color (0, 0, 0) depth 1 font SansSerif size 12
+  text "dilveryRise2:5" "" offset (85, 110) from "dilveryRise_TableHead_0" SE color (0, 0, 0) depth 1 font SansSerif size 12
+  text "dilveryRise3:5" "" offset (115, 110) from "dilveryRise_TableHead_0" SE color (0, 0, 0) depth 1 font SansSerif size 12
+  text "dilveryRise4:5" "" offset (145, 110) from "dilveryRise_TableHead_0" SE color (0, 0, 0) depth 1 font SansSerif size 12
+  text "dilveryRise5:5" "" offset (175, 110) from "dilveryRise_TableHead_0" SE color (0, 0, 0) depth 1 font SansSerif size 12
+  text "dilveryRise6:5" "" offset (205, 110) from "dilveryRise_TableHead_0" SE color (0, 0, 0) depth 1 font SansSerif size 12
+  text "dilveryRise7:5" "" offset (235, 110) from "dilveryRise_TableHead_0" SE color (0, 0, 0) depth 1 font SansSerif size 12
+  text "dilveryRise8:5" "" offset (265, 110) from "dilveryRise_TableHead_0" SE color (0, 0, 0) depth 1 font SansSerif size 12
+  text "dilveryRise9:5" "" offset (295, 110) from "dilveryRise_TableHead_0" SE color (0, 0, 0) depth 1 font SansSerif size 12
+  text "dilveryRise10:5" "" offset (325, 110) from "dilveryRise_TableHead_0" SE color (0, 0, 0) depth 1 font SansSerif size 12
+  setText of "infoText1" to "Erstelle Kostensteigerungstabelle"  
+  setText of "infoText2" to ""  
+}
+{
+  text "refPointCWD" "" offset (330, -20) from "dropCost_Header" NW color (0, 0, 0) depth 1 font SansSerif size 12
+  text "CWD_Warehouse_Text_0" "1" offset (0, 10) from "refPointCWD" SW color (0, 0, 0) depth 1 font SansSerif size 12
+  circle "CWD_Warehouse_Circle_0" offset (0, 25) from "refPointCWD" C radius 10 color (0, 0, 0) depth 7 filled  fillColor (255, 255, 255)
+  text "CWD_Warehouse_Text_1" "2" offset (0, 35) from "refPointCWD" SW color (0, 0, 0) depth 1 font SansSerif size 12
+  circle "CWD_Warehouse_Circle_1" offset (0, 50) from "refPointCWD" C radius 10 color (0, 0, 0) depth 7 filled  fillColor (255, 255, 255)
+  text "CWD_Warehouse_Text_2" "3" offset (0, 60) from "refPointCWD" SW color (0, 0, 0) depth 1 font SansSerif size 12
+  circle "CWD_Warehouse_Circle_2" offset (0, 75) from "refPointCWD" C radius 10 color (0, 0, 0) depth 7 filled  fillColor (255, 255, 255)
+  text "CWD_Warehouse_Text_3" "4" offset (0, 85) from "refPointCWD" SW color (0, 0, 0) depth 1 font SansSerif size 12
+  circle "CWD_Warehouse_Circle_3" offset (0, 100) from "refPointCWD" C radius 10 color (0, 0, 0) depth 7 filled  fillColor (255, 255, 255)
+  text "CWD_Warehouse_Text_4" "5" offset (0, 110) from "refPointCWD" SW color (0, 0, 0) depth 1 font SansSerif size 12
+  circle "CWD_Warehouse_Circle_4" offset (0, 125) from "refPointCWD" C radius 10 color (0, 0, 0) depth 7 filled  fillColor (255, 255, 255)
+  text "CWD_Warehouse_Text_5" "6" offset (0, 135) from "refPointCWD" SW color (0, 0, 0) depth 1 font SansSerif size 12
+  circle "CWD_Warehouse_Circle_5" offset (0, 150) from "refPointCWD" C radius 10 color (0, 0, 0) depth 7 filled  fillColor (255, 255, 255)
+  text "CWD_Customer_Text_0" "1" offset (40, 155) from "refPointCWD" S color (0, 0, 0) depth 1 font SansSerif size 12
+  square "CWD_Customer_Square_0" offset (33, 153) from "refPointCWD" S 20 color (0, 0, 0) depth 1
+  text "CWD_Customer_Text_1" "2" offset (65, 155) from "refPointCWD" S color (0, 0, 0) depth 1 font SansSerif size 12
+  square "CWD_Customer_Square_1" offset (58, 153) from "refPointCWD" S 20 color (0, 0, 0) depth 1
+  text "CWD_Customer_Text_2" "3" offset (90, 155) from "refPointCWD" S color (0, 0, 0) depth 1 font SansSerif size 12
+  square "CWD_Customer_Square_2" offset (83, 153) from "refPointCWD" S 20 color (0, 0, 0) depth 1
+  text "CWD_Customer_Text_3" "4" offset (115, 155) from "refPointCWD" S color (0, 0, 0) depth 1 font SansSerif size 12
+  square "CWD_Customer_Square_3" offset (108, 153) from "refPointCWD" S 20 color (0, 0, 0) depth 1
+  text "CWD_Customer_Text_4" "5" offset (140, 155) from "refPointCWD" S color (0, 0, 0) depth 1 font SansSerif size 12
+  square "CWD_Customer_Square_4" offset (133, 153) from "refPointCWD" S 20 color (0, 0, 0) depth 1
+  text "CWD_Customer_Text_5" "6" offset (165, 155) from "refPointCWD" S color (0, 0, 0) depth 1 font SansSerif size 12
+  square "CWD_Customer_Square_5" offset (158, 153) from "refPointCWD" S 20 color (0, 0, 0) depth 1
+  text "CWD_Customer_Text_6" "7" offset (190, 155) from "refPointCWD" S color (0, 0, 0) depth 1 font SansSerif size 12
+  square "CWD_Customer_Square_6" offset (183, 153) from "refPointCWD" S 20 color (0, 0, 0) depth 1
+  text "CWD_Customer_Text_7" "8" offset (215, 155) from "refPointCWD" S color (0, 0, 0) depth 1 font SansSerif size 12
+  square "CWD_Customer_Square_7" offset (208, 153) from "refPointCWD" S 20 color (0, 0, 0) depth 1
+  polyline "CWD_Connection_Line_0:0" offset (0, 0) from "CWD_Warehouse_Circle_0" E offset (0, 0) from "CWD_Customer_Square_0" N color (0, 0, 0) depth 1 hidden
+  polyline "CWD_Connection_Line_1:0" offset (0, 0) from "CWD_Warehouse_Circle_0" E offset (0, 0) from "CWD_Customer_Square_1" N color (0, 0, 0) depth 1 hidden
+  polyline "CWD_Connection_Line_2:0" offset (0, 0) from "CWD_Warehouse_Circle_0" E offset (0, 0) from "CWD_Customer_Square_2" N color (0, 0, 0) depth 1 hidden
+  polyline "CWD_Connection_Line_3:0" offset (0, 0) from "CWD_Warehouse_Circle_0" E offset (0, 0) from "CWD_Customer_Square_3" N color (0, 0, 0) depth 1 hidden
+  polyline "CWD_Connection_Line_4:0" offset (0, 0) from "CWD_Warehouse_Circle_0" E offset (0, 0) from "CWD_Customer_Square_4" N color (0, 0, 0) depth 1 hidden
+  polyline "CWD_Connection_Line_5:0" offset (0, 0) from "CWD_Warehouse_Circle_0" E offset (0, 0) from "CWD_Customer_Square_5" N color (0, 0, 0) depth 1 hidden
+  polyline "CWD_Connection_Line_6:0" offset (0, 0) from "CWD_Warehouse_Circle_0" E offset (0, 0) from "CWD_Customer_Square_6" N color (0, 0, 0) depth 1 hidden
+  polyline "CWD_Connection_Line_7:0" offset (0, 0) from "CWD_Warehouse_Circle_0" E offset (0, 0) from "CWD_Customer_Square_7" N color (0, 0, 0) depth 1 hidden
+  polyline "CWD_Connection_Line_0:1" offset (0, 0) from "CWD_Warehouse_Circle_1" E offset (0, 0) from "CWD_Customer_Square_0" N color (0, 0, 0) depth 1 hidden
+  polyline "CWD_Connection_Line_1:1" offset (0, 0) from "CWD_Warehouse_Circle_1" E offset (0, 0) from "CWD_Customer_Square_1" N color (0, 0, 0) depth 1 hidden
+  polyline "CWD_Connection_Line_2:1" offset (0, 0) from "CWD_Warehouse_Circle_1" E offset (0, 0) from "CWD_Customer_Square_2" N color (0, 0, 0) depth 1 hidden
+  polyline "CWD_Connection_Line_3:1" offset (0, 0) from "CWD_Warehouse_Circle_1" E offset (0, 0) from "CWD_Customer_Square_3" N color (0, 0, 0) depth 1 hidden
+  polyline "CWD_Connection_Line_4:1" offset (0, 0) from "CWD_Warehouse_Circle_1" E offset (0, 0) from "CWD_Customer_Square_4" N color (0, 0, 0) depth 1 hidden
+  polyline "CWD_Connection_Line_5:1" offset (0, 0) from "CWD_Warehouse_Circle_1" E offset (0, 0) from "CWD_Customer_Square_5" N color (0, 0, 0) depth 1 hidden
+  polyline "CWD_Connection_Line_6:1" offset (0, 0) from "CWD_Warehouse_Circle_1" E offset (0, 0) from "CWD_Customer_Square_6" N color (0, 0, 0) depth 1 hidden
+  polyline "CWD_Connection_Line_7:1" offset (0, 0) from "CWD_Warehouse_Circle_1" E offset (0, 0) from "CWD_Customer_Square_7" N color (0, 0, 0) depth 1 hidden
+  polyline "CWD_Connection_Line_0:2" offset (0, 0) from "CWD_Warehouse_Circle_2" E offset (0, 0) from "CWD_Customer_Square_0" N color (0, 0, 0) depth 1 hidden
+  polyline "CWD_Connection_Line_1:2" offset (0, 0) from "CWD_Warehouse_Circle_2" E offset (0, 0) from "CWD_Customer_Square_1" N color (0, 0, 0) depth 1 hidden
+  polyline "CWD_Connection_Line_2:2" offset (0, 0) from "CWD_Warehouse_Circle_2" E offset (0, 0) from "CWD_Customer_Square_2" N color (0, 0, 0) depth 1 hidden
+  polyline "CWD_Connection_Line_3:2" offset (0, 0) from "CWD_Warehouse_Circle_2" E offset (0, 0) from "CWD_Customer_Square_3" N color (0, 0, 0) depth 1 hidden
+  polyline "CWD_Connection_Line_4:2" offset (0, 0) from "CWD_Warehouse_Circle_2" E offset (0, 0) from "CWD_Customer_Square_4" N color (0, 0, 0) depth 1 hidden
+  polyline "CWD_Connection_Line_5:2" offset (0, 0) from "CWD_Warehouse_Circle_2" E offset (0, 0) from "CWD_Customer_Square_5" N color (0, 0, 0) depth 1 hidden
+  polyline "CWD_Connection_Line_6:2" offset (0, 0) from "CWD_Warehouse_Circle_2" E offset (0, 0) from "CWD_Customer_Square_6" N color (0, 0, 0) depth 1 hidden
+  polyline "CWD_Connection_Line_7:2" offset (0, 0) from "CWD_Warehouse_Circle_2" E offset (0, 0) from "CWD_Customer_Square_7" N color (0, 0, 0) depth 1 hidden
+  polyline "CWD_Connection_Line_0:3" offset (0, 0) from "CWD_Warehouse_Circle_3" E offset (0, 0) from "CWD_Customer_Square_0" N color (0, 0, 0) depth 1 hidden
+  polyline "CWD_Connection_Line_1:3" offset (0, 0) from "CWD_Warehouse_Circle_3" E offset (0, 0) from "CWD_Customer_Square_1" N color (0, 0, 0) depth 1 hidden
+  polyline "CWD_Connection_Line_2:3" offset (0, 0) from "CWD_Warehouse_Circle_3" E offset (0, 0) from "CWD_Customer_Square_2" N color (0, 0, 0) depth 1 hidden
+  polyline "CWD_Connection_Line_3:3" offset (0, 0) from "CWD_Warehouse_Circle_3" E offset (0, 0) from "CWD_Customer_Square_3" N color (0, 0, 0) depth 1 hidden
+  polyline "CWD_Connection_Line_4:3" offset (0, 0) from "CWD_Warehouse_Circle_3" E offset (0, 0) from "CWD_Customer_Square_4" N color (0, 0, 0) depth 1 hidden
+  polyline "CWD_Connection_Line_5:3" offset (0, 0) from "CWD_Warehouse_Circle_3" E offset (0, 0) from "CWD_Customer_Square_5" N color (0, 0, 0) depth 1 hidden
+  polyline "CWD_Connection_Line_6:3" offset (0, 0) from "CWD_Warehouse_Circle_3" E offset (0, 0) from "CWD_Customer_Square_6" N color (0, 0, 0) depth 1 hidden
+  polyline "CWD_Connection_Line_7:3" offset (0, 0) from "CWD_Warehouse_Circle_3" E offset (0, 0) from "CWD_Customer_Square_7" N color (0, 0, 0) depth 1 hidden
+  polyline "CWD_Connection_Line_0:4" offset (0, 0) from "CWD_Warehouse_Circle_4" E offset (0, 0) from "CWD_Customer_Square_0" N color (0, 0, 0) depth 1 hidden
+  polyline "CWD_Connection_Line_1:4" offset (0, 0) from "CWD_Warehouse_Circle_4" E offset (0, 0) from "CWD_Customer_Square_1" N color (0, 0, 0) depth 1 hidden
+  polyline "CWD_Connection_Line_2:4" offset (0, 0) from "CWD_Warehouse_Circle_4" E offset (0, 0) from "CWD_Customer_Square_2" N color (0, 0, 0) depth 1 hidden
+  polyline "CWD_Connection_Line_3:4" offset (0, 0) from "CWD_Warehouse_Circle_4" E offset (0, 0) from "CWD_Customer_Square_3" N color (0, 0, 0) depth 1 hidden
+  polyline "CWD_Connection_Line_4:4" offset (0, 0) from "CWD_Warehouse_Circle_4" E offset (0, 0) from "CWD_Customer_Square_4" N color (0, 0, 0) depth 1 hidden
+  polyline "CWD_Connection_Line_5:4" offset (0, 0) from "CWD_Warehouse_Circle_4" E offset (0, 0) from "CWD_Customer_Square_5" N color (0, 0, 0) depth 1 hidden
+  polyline "CWD_Connection_Line_6:4" offset (0, 0) from "CWD_Warehouse_Circle_4" E offset (0, 0) from "CWD_Customer_Square_6" N color (0, 0, 0) depth 1 hidden
+  polyline "CWD_Connection_Line_7:4" offset (0, 0) from "CWD_Warehouse_Circle_4" E offset (0, 0) from "CWD_Customer_Square_7" N color (0, 0, 0) depth 1 hidden
+  polyline "CWD_Connection_Line_0:5" offset (0, 0) from "CWD_Warehouse_Circle_5" E offset (0, 0) from "CWD_Customer_Square_0" N color (0, 0, 0) depth 1 hidden
+  polyline "CWD_Connection_Line_1:5" offset (0, 0) from "CWD_Warehouse_Circle_5" E offset (0, 0) from "CWD_Customer_Square_1" N color (0, 0, 0) depth 1 hidden
+  polyline "CWD_Connection_Line_2:5" offset (0, 0) from "CWD_Warehouse_Circle_5" E offset (0, 0) from "CWD_Customer_Square_2" N color (0, 0, 0) depth 1 hidden
+  polyline "CWD_Connection_Line_3:5" offset (0, 0) from "CWD_Warehouse_Circle_5" E offset (0, 0) from "CWD_Customer_Square_3" N color (0, 0, 0) depth 1 hidden
+  polyline "CWD_Connection_Line_4:5" offset (0, 0) from "CWD_Warehouse_Circle_5" E offset (0, 0) from "CWD_Customer_Square_4" N color (0, 0, 0) depth 1 hidden
+  polyline "CWD_Connection_Line_5:5" offset (0, 0) from "CWD_Warehouse_Circle_5" E offset (0, 0) from "CWD_Customer_Square_5" N color (0, 0, 0) depth 1 hidden
+  polyline "CWD_Connection_Line_6:5" offset (0, 0) from "CWD_Warehouse_Circle_5" E offset (0, 0) from "CWD_Customer_Square_6" N color (0, 0, 0) depth 1 hidden
+  polyline "CWD_Connection_Line_7:5" offset (0, 0) from "CWD_Warehouse_Circle_5" E offset (0, 0) from "CWD_Customer_Square_7" N color (0, 0, 0) depth 1 hidden
+  setText of "dilveryRise9:0" to "5"  
+  setText of "dilveryRise9:1" to "7"  
+  setText of "dilveryRise9:2" to "5"  
+  setText of "dilveryRise9:3" to "6"  
+  setText of "dilveryRise9:4" to "5"  
+  setText of "dilveryRise9:5" to "9"  
+  setText of "dropCost0:0" to "1"  
+  setText of "dropCost1:0" to "2"  
+  setText of "dropCost2:0" to "3"  
+  setText of "dropCost3:0" to "4"  
+  setText of "dropCost4:0" to "5"  
+  setText of "dropCost5:0" to "6"  
+  setText of "dropCost6:0" to "7"  
+  setText of "dropCost7:0" to "6"  
+  setText of "dropCost0:1" to "2"  
+  setText of "dropCost1:1" to "9"  
+  setText of "dropCost2:1" to "0"  
+  setText of "dropCost3:1" to "7"  
+  setText of "dropCost4:1" to "3"  
+  setText of "dropCost5:1" to "6"  
+  setText of "dropCost6:1" to "10"  
+  setText of "dropCost7:1" to "2"  
+  setText of "dropCost0:2" to "7"  
+  setText of "dropCost1:2" to "6"  
+  setText of "dropCost2:2" to "0"  
+  setText of "dropCost3:2" to "5"  
+  setText of "dropCost4:2" to "3"  
+  setText of "dropCost5:2" to "10"  
+  setText of "dropCost6:2" to "5"  
+  setText of "dropCost7:2" to "4"  
+  setText of "dropCost0:3" to "6"  
+  setText of "dropCost1:3" to "5"  
+  setText of "dropCost2:3" to "10"  
+  setText of "dropCost3:3" to "5"  
+  setText of "dropCost4:3" to "6"  
+  setText of "dropCost5:3" to "3"  
+  setText of "dropCost6:3" to "6"  
+  setText of "dropCost7:3" to "9"  
+  setText of "dropCost0:4" to "6"  
+  setText of "dropCost1:4" to "4"  
+  setText of "dropCost2:4" to "6"  
+  setText of "dropCost3:4" to "3"  
+  setText of "dropCost4:4" to "7"  
+  setText of "dropCost5:4" to "2"  
+  setText of "dropCost6:4" to "6"  
+  setText of "dropCost7:4" to "8"  
+  setText of "dropCost0:5" to "1"  
+  setText of "dropCost1:5" to "4"  
+  setText of "dropCost2:5" to "6"  
+  setText of "dropCost3:5" to "8"  
+  setText of "dropCost4:5" to "7"  
+  setText of "dropCost5:5" to "2"  
+  setText of "dropCost6:5" to "6"  
+  setText of "dropCost7:5" to "8"  
+  setText of "infoText1" to "Füge Kosten c_ij in Kostentabelle ein"  
+  setText of "infoText2" to "Füge Fixkosten f_i der Lagerhäuser in Kostensteigerungstabelle ein"  
+}
+{
+  show "CWD_Connection_Line_0:5" 
+  rectangle "markMin0:5" offset (-5, -1) from "dropCost0:5" NW offset (20, 1) from "dropCost0:5" SW color (255, 255, 0) depth 5 filled  fillColor (255, 255, 0)
+  rectangle "markMin0:0" offset (-5, -1) from "dropCost0:0" NW offset (20, 1) from "dropCost0:0" SW color (255, 200, 0) depth 5 filled  fillColor (255, 200, 0)
+  show "CWD_Connection_Line_1:0" 
+  rectangle "markMin1:0" offset (-5, -1) from "dropCost1:0" NW offset (20, 1) from "dropCost1:0" SW color (255, 255, 0) depth 5 filled  fillColor (255, 255, 0)
+  rectangle "markMin1:4" offset (-5, -1) from "dropCost1:4" NW offset (20, 1) from "dropCost1:4" SW color (255, 200, 0) depth 5 filled  fillColor (255, 200, 0)
+  show "CWD_Connection_Line_2:2" 
+  rectangle "markMin2:2" offset (-5, -1) from "dropCost2:2" NW offset (20, 1) from "dropCost2:2" SW color (255, 255, 0) depth 5 filled  fillColor (255, 255, 0)
+  rectangle "markMin2:1" offset (-5, -1) from "dropCost2:1" NW offset (20, 1) from "dropCost2:1" SW color (255, 200, 0) depth 5 filled  fillColor (255, 200, 0)
+  show "CWD_Connection_Line_3:4" 
+  rectangle "markMin3:4" offset (-5, -1) from "dropCost3:4" NW offset (20, 1) from "dropCost3:4" SW color (255, 255, 0) depth 5 filled  fillColor (255, 255, 0)
+  rectangle "markMin3:0" offset (-5, -1) from "dropCost3:0" NW offset (20, 1) from "dropCost3:0" SW color (255, 200, 0) depth 5 filled  fillColor (255, 200, 0)
+  show "CWD_Connection_Line_4:2" 
+  rectangle "markMin4:2" offset (-5, -1) from "dropCost4:2" NW offset (20, 1) from "dropCost4:2" SW color (255, 255, 0) depth 5 filled  fillColor (255, 255, 0)
+  rectangle "markMin4:1" offset (-5, -1) from "dropCost4:1" NW offset (20, 1) from "dropCost4:1" SW color (255, 200, 0) depth 5 filled  fillColor (255, 200, 0)
+  show "CWD_Connection_Line_5:5" 
+  rectangle "markMin5:5" offset (-5, -1) from "dropCost5:5" NW offset (20, 1) from "dropCost5:5" SW color (255, 255, 0) depth 5 filled  fillColor (255, 255, 0)
+  rectangle "markMin5:4" offset (-5, -1) from "dropCost5:4" NW offset (20, 1) from "dropCost5:4" SW color (255, 200, 0) depth 5 filled  fillColor (255, 200, 0)
+  show "CWD_Connection_Line_6:2" 
+  rectangle "markMin6:2" offset (-5, -1) from "dropCost6:2" NW offset (20, 1) from "dropCost6:2" SW color (255, 255, 0) depth 5 filled  fillColor (255, 255, 0)
+  rectangle "markMin6:3" offset (-5, -1) from "dropCost6:3" NW offset (20, 1) from "dropCost6:3" SW color (255, 200, 0) depth 5 filled  fillColor (255, 200, 0)
+  show "CWD_Connection_Line_7:1" 
+  rectangle "markMin7:1" offset (-5, -1) from "dropCost7:1" NW offset (20, 1) from "dropCost7:1" SW color (255, 255, 0) depth 5 filled  fillColor (255, 255, 0)
+  rectangle "markMin7:2" offset (-5, -1) from "dropCost7:2" NW offset (20, 1) from "dropCost7:2" SW color (255, 200, 0) depth 5 filled  fillColor (255, 200, 0)
+  setText of "infoText1" to "Markiere minimale Kosten"  
+  setText of "infoText2" to ""  
+  setText of "dilveryRise_Header" to "Iteration 1 a:"  
+  highlightCode on "sourceCode" line 6 row 0  
+  highlightCode on "sourceCode" line 7 row 0  
+  highlightCode on "sourceCode" line 8 row 0  
+  highlightCode on "sourceCode" line 9 row 0  
+  highlightCode on "sourceCode" line 10 row 0  
+}
+label "Iteration 1: a)"
+{
+  setText of "dropCostMin0:0" to "1"  
+  setText of "dropCostMin1:0" to "2"  
+  setText of "dropCostMin2:0" to "0"  
+  setText of "dropCostMin3:0" to "3"  
+  setText of "dropCostMin4:0" to "3"  
+  setText of "dropCostMin5:0" to "2"  
+  setText of "dropCostMin6:0" to "5"  
+  setText of "dropCostMin7:0" to "2"  
+  setText of "dropCostMin0:1" to "1"  
+  setText of "dropCostMin1:1" to "4"  
+  setText of "dropCostMin2:1" to "0"  
+  setText of "dropCostMin3:1" to "4"  
+  setText of "dropCostMin4:1" to "3"  
+  setText of "dropCostMin5:1" to "2"  
+  setText of "dropCostMin6:1" to "6"  
+  setText of "dropCostMin7:1" to "4"  
+  setText of "infoText1" to "Füge Minimalekosten in c_i1 und c_i2 Zeile ein"  
+  setText of "infoText2" to ""  
+}
+{
+  rectangle "markedMinCosts" offset (-5, -1) from "dropCost_TableLeft_8" NW offset (20, 1) from "dropCostMin7:0" SW color (255, 255, 0) depth 5 filled  fillColor (255, 255, 0)
+  rectangle "markedSecMinCosts" offset (-5, -1) from "dropCost_TableLeft_9" NW offset (20, 1) from "dropCostMin7:1" SW color (255, 200, 0) depth 5 filled  fillColor (255, 200, 0)
+}
+{
+  text "targetFunctionValueText" "" offset (350, 200) from "dropCost_Header" NW color (0, 0, 0) depth 1 font SansSerif size 16 bold
+  setText of "targetFunctionValueText" to "Gesamtkosten: 37  + 18 = 55"  
+  setText of "infoText1" to "Berechne aktuelle Kosten neu"  
+  setText of "infoText2" to "Summe Fixe Lagerkosten von f_i 37 und Summe Transportkosten c_1,j von 18"  
+}
+{
+  setText of "dilveryRise_Header" to "Iteration 1 b:"  
+  unhighlightCode on "sourceCode" line 7 row 0  
+  unhighlightCode on "sourceCode" line 8 row 0  
+  unhighlightCode on "sourceCode" line 9 row 0  
+  unhighlightCode on "sourceCode" line 10 row 0  
+  highlightCode on "sourceCode" line 11 row 0  
+  highlightCode on "sourceCode" line 12 row 0  
+  highlightCode on "sourceCode" line 13 row 0  
+  highlightCode on "sourceCode" line 14 row 0  
+  highlightCode on "sourceCode" line 15 row 0  
+  setText of "dilveryRise0:0" to ""  
+  setText of "dilveryRise1:0" to "2"  
+  setText of "dilveryRise2:0" to ""  
+  setText of "dilveryRise3:0" to ""  
+  setText of "dilveryRise4:0" to ""  
+  setText of "dilveryRise5:0" to ""  
+  setText of "dilveryRise6:0" to ""  
+  setText of "dilveryRise7:0" to ""  
+  setText of "dilveryRise0:1" to ""  
+  setText of "dilveryRise1:1" to ""  
+  setText of "dilveryRise2:1" to ""  
+  setText of "dilveryRise3:1" to ""  
+  setText of "dilveryRise4:1" to ""  
+  setText of "dilveryRise5:1" to ""  
+  setText of "dilveryRise6:1" to ""  
+  setText of "dilveryRise7:1" to "2"  
+  setText of "dilveryRise0:2" to ""  
+  setText of "dilveryRise1:2" to ""  
+  setText of "dilveryRise2:2" to "0"  
+  setText of "dilveryRise3:2" to ""  
+  setText of "dilveryRise4:2" to "0"  
+  setText of "dilveryRise5:2" to ""  
+  setText of "dilveryRise6:2" to "1"  
+  setText of "dilveryRise7:2" to ""  
+  setText of "dilveryRise0:3" to ""  
+  setText of "dilveryRise1:3" to ""  
+  setText of "dilveryRise2:3" to ""  
+  setText of "dilveryRise3:3" to ""  
+  setText of "dilveryRise4:3" to ""  
+  setText of "dilveryRise5:3" to ""  
+  setText of "dilveryRise6:3" to ""  
+  setText of "dilveryRise7:3" to ""  
+  setText of "dilveryRise0:4" to ""  
+  setText of "dilveryRise1:4" to ""  
+  setText of "dilveryRise2:4" to ""  
+  setText of "dilveryRise3:4" to "1"  
+  setText of "dilveryRise4:4" to ""  
+  setText of "dilveryRise5:4" to ""  
+  setText of "dilveryRise6:4" to ""  
+  setText of "dilveryRise7:4" to ""  
+  setText of "dilveryRise0:5" to "0"  
+  setText of "dilveryRise1:5" to ""  
+  setText of "dilveryRise2:5" to ""  
+  setText of "dilveryRise3:5" to ""  
+  setText of "dilveryRise4:5" to ""  
+  setText of "dilveryRise5:5" to "0"  
+  setText of "dilveryRise6:5" to ""  
+  setText of "dilveryRise7:5" to ""  
+  setText of "infoText1" to "Bereche Kostensteigerung w_ij"  
+  setText of "infoText2" to "w_ij entspricht Erhöhung der Kosten wenn das günstigste Lagerhaus für Kunde j schliest"  
+}
+label "Iteration 1: b)"
+{
+  unhighlightCode on "sourceCode" line 11 row 0  
+  unhighlightCode on "sourceCode" line 12 row 0  
+  unhighlightCode on "sourceCode" line 13 row 0  
+  unhighlightCode on "sourceCode" line 14 row 0  
+  unhighlightCode on "sourceCode" line 15 row 0  
+  highlightCode on "sourceCode" line 16 row 0  
+  highlightCode on "sourceCode" line 17 row 0  
+  setText of "dilveryRise8:0" to "2"  
+  setText of "dilveryRise8:1" to "2"  
+  setText of "dilveryRise8:2" to "1"  
+  setText of "dilveryRise8:3" to "0"  
+  setText of "dilveryRise8:4" to "1"  
+  setText of "dilveryRise8:5" to "0"  
+  setText of "infoText1" to "Bereche Summe der zusätzlichen Kosten E_i wenn Lagerhaus i geschlossen wird"  
+  setText of "infoText2" to "E_i = Summe aller w_ij pro Zeile"  
+}
+{
+  setText of "dilveryRise10:0" to "3"  
+  setText of "dilveryRise10:1" to "5"  
+  setText of "dilveryRise10:2" to "4"  
+  setText of "dilveryRise10:3" to "6"  
+  setText of "dilveryRise10:4" to "4"  
+  setText of "dilveryRise10:5" to "9"  
+  setText of "infoText1" to "Bereche gesamte Kostensteigerung d_i wenn Lagerhaus i geschlossen wird"  
+  setText of "infoText2" to "d_i = f_i - E_i   =>   Koststeigerung = Gesparte Lagerhauskosten - Zusätzliche Transportwege"  
+  setText of "dilveryRise_Header" to "Iteration 1 c:"  
+  unhighlightCode on "sourceCode" line 16 row 0  
+  unhighlightCode on "sourceCode" line 17 row 0  
+  highlightCode on "sourceCode" line 18 row 0  
+  highlightCode on "sourceCode" line 19 row 0  
+  highlightCode on "sourceCode" line 20 row 0  
+  highlightCode on "sourceCode" line 21 row 0  
+}
+label "Iteration 1: c)"
+{
+  hide "markMin0:5" "markMin0:0" "markMin1:0" "markMin1:4" "markMin2:2" "markMin2:1" "markMin3:4" "markMin3:0" "markMin4:2" "markMin4:1" "markMin5:5" "markMin5:4" "markMin6:2" "markMin6:3" "markMin7:1" "markMin7:2" "markedMinCosts" "markedSecMinCosts" 
+}
+{
+  setText of "infoText1" to "Markiere 0 Kunden die nun fest Lagerhäusern zugeordnet sind"  
+  setText of "infoText2" to "Diese Kunden vom markierten Lagerhaus zu beliefern ist am günstigsten."  
+}
+{
+  interaction "multipleSelectionQuestion5"
+  rectangle "markedClosedWarehouse_6" offset (-15, 6) from "dilveryRise_TableLeft_6" NW offset (20, -6) from "dilveryRise10:5" SW color (255, 0, 0) depth 5 filled  fillColor (255, 0, 0)
+  rectangle "markedClosedWarehouse_r6" offset (-8, 6) from "dilveryRise_TableLeft_6" NW offset (10, -6) from "dilveryRise_TableLeft_6" SW color (255, 0, 0) depth 5 filled  fillColor (255, 0, 0)
+  rectangle "markedClosedWarehouse_c6" offset (-8, 6) from "dropCost_TableLeft_6" NW offset (10, -6) from "dropCost_TableLeft_6" SW color (255, 0, 0) depth 5 filled  fillColor (255, 0, 0)
+  setText of "infoText1" to "Schliese Lagerhaus 6 für immer"  
+  setText of "infoText2" to "Das Schliesen des Lagerhauses verringert die Gesamtenkosten ZF am meisten."  
+  rectangle "CWD_Warehouse_Circle_Del2_5" offset (-13, -2) from "CWD_Warehouse_Circle_5" C offset (13, 2) from "CWD_Warehouse_Circle_5" C color (255, 0, 0) depth 7 filled  fillColor (255, 0, 0)
+  unhighlightCode on "sourceCode" line 18 row 0  
+  unhighlightCode on "sourceCode" line 19 row 0  
+  unhighlightCode on "sourceCode" line 20 row 0  
+  unhighlightCode on "sourceCode" line 21 row 0  
+  highlightCode on "sourceCode" line 22 row 0  
+  highlightCode on "sourceCode" line 23 row 0  
+  highlightCode on "sourceCode" line 24 row 0  
+  highlightCode on "sourceCode" line 25 row 0  
+  setText of "dilveryRise_Header" to "Iteration 1 d:"  
+  hide "CWD_Connection_Line_0:5" "CWD_Connection_Line_5:5" 
+}
+label "Iteration 1: d)"
+{
+  unhighlightCode on "sourceCode" line 22 row 0  
+  unhighlightCode on "sourceCode" line 23 row 0  
+  unhighlightCode on "sourceCode" line 24 row 0  
+  unhighlightCode on "sourceCode" line 25 row 0  
+  highlightCode on "sourceCode" line 26 row 0  
+  highlightCode on "sourceCode" line 27 row 0  
+  setText of "dilveryRise_Header" to "Iteration 1 e:"  
+  setText of "infoText1" to "Es existieren noch nicht geschlossende Lagerhäuser,"  
+  setText of "infoText2" to "die eine potenzielle Kostensteigerung (d_i > 0) aufweisen"  
+}
+label "Iteration 1: e)"
+{
+  setText of "dilveryRise0:0" to ""  
+  setText of "dilveryRise1:0" to ""  
+  setText of "dilveryRise2:0" to ""  
+  setText of "dilveryRise3:0" to ""  
+  setText of "dilveryRise4:0" to ""  
+  setText of "dilveryRise5:0" to ""  
+  setText of "dilveryRise6:0" to ""  
+  setText of "dilveryRise7:0" to ""  
+  setText of "dilveryRise8:0" to ""  
+  setText of "dilveryRise9:0" to ""  
+  setText of "dilveryRise10:0" to ""  
+  setText of "dilveryRise0:1" to ""  
+  setText of "dilveryRise1:1" to ""  
+  setText of "dilveryRise2:1" to ""  
+  setText of "dilveryRise3:1" to ""  
+  setText of "dilveryRise4:1" to ""  
+  setText of "dilveryRise5:1" to ""  
+  setText of "dilveryRise6:1" to ""  
+  setText of "dilveryRise7:1" to ""  
+  setText of "dilveryRise8:1" to ""  
+  setText of "dilveryRise9:1" to ""  
+  setText of "dilveryRise10:1" to ""  
+  setText of "dilveryRise0:2" to ""  
+  setText of "dilveryRise1:2" to ""  
+  setText of "dilveryRise2:2" to ""  
+  setText of "dilveryRise3:2" to ""  
+  setText of "dilveryRise4:2" to ""  
+  setText of "dilveryRise5:2" to ""  
+  setText of "dilveryRise6:2" to ""  
+  setText of "dilveryRise7:2" to ""  
+  setText of "dilveryRise8:2" to ""  
+  setText of "dilveryRise9:2" to ""  
+  setText of "dilveryRise10:2" to ""  
+  setText of "dilveryRise0:3" to ""  
+  setText of "dilveryRise1:3" to ""  
+  setText of "dilveryRise2:3" to ""  
+  setText of "dilveryRise3:3" to ""  
+  setText of "dilveryRise4:3" to ""  
+  setText of "dilveryRise5:3" to ""  
+  setText of "dilveryRise6:3" to ""  
+  setText of "dilveryRise7:3" to ""  
+  setText of "dilveryRise8:3" to ""  
+  setText of "dilveryRise9:3" to ""  
+  setText of "dilveryRise10:3" to ""  
+  setText of "dilveryRise0:4" to ""  
+  setText of "dilveryRise1:4" to ""  
+  setText of "dilveryRise2:4" to ""  
+  setText of "dilveryRise3:4" to ""  
+  setText of "dilveryRise4:4" to ""  
+  setText of "dilveryRise5:4" to ""  
+  setText of "dilveryRise6:4" to ""  
+  setText of "dilveryRise7:4" to ""  
+  setText of "dilveryRise8:4" to ""  
+  setText of "dilveryRise9:4" to ""  
+  setText of "dilveryRise10:4" to ""  
+  setText of "dilveryRise0:5" to ""  
+  setText of "dilveryRise1:5" to ""  
+  setText of "dilveryRise2:5" to ""  
+  setText of "dilveryRise3:5" to ""  
+  setText of "dilveryRise4:5" to ""  
+  setText of "dilveryRise5:5" to ""  
+  setText of "dilveryRise6:5" to ""  
+  setText of "dilveryRise7:5" to ""  
+  setText of "dilveryRise8:5" to ""  
+  setText of "dilveryRise9:5" to ""  
+  setText of "dilveryRise10:5" to ""  
+  setText of "infoText1" to "Bereite Tabelle für erneute Iteration vor"  
+  setText of "infoText2" to "Leere Kostensteigerungstabelle"  
+  setText of "dilveryRise9:0" to "5"  
+  setText of "dilveryRise9:1" to "7"  
+  setText of "dilveryRise9:2" to "5"  
+  setText of "dilveryRise9:3" to "6"  
+  setText of "dilveryRise9:4" to "5"  
+  setText of "dropCost0:0" to "1"  
+  setText of "dropCost1:0" to "2"  
+  setText of "dropCost2:0" to "3"  
+  setText of "dropCost3:0" to "4"  
+  setText of "dropCost4:0" to "5"  
+  setText of "dropCost5:0" to "6"  
+  setText of "dropCost6:0" to "7"  
+  setText of "dropCost7:0" to "6"  
+  setText of "dropCost0:1" to "2"  
+  setText of "dropCost1:1" to "9"  
+  setText of "dropCost2:1" to "0"  
+  setText of "dropCost3:1" to "7"  
+  setText of "dropCost4:1" to "3"  
+  setText of "dropCost5:1" to "6"  
+  setText of "dropCost6:1" to "10"  
+  setText of "dropCost7:1" to "2"  
+  setText of "dropCost0:2" to "7"  
+  setText of "dropCost1:2" to "6"  
+  setText of "dropCost2:2" to "0"  
+  setText of "dropCost3:2" to "5"  
+  setText of "dropCost4:2" to "3"  
+  setText of "dropCost5:2" to "10"  
+  setText of "dropCost6:2" to "5"  
+  setText of "dropCost7:2" to "4"  
+  setText of "dropCost0:3" to "6"  
+  setText of "dropCost1:3" to "5"  
+  setText of "dropCost2:3" to "10"  
+  setText of "dropCost3:3" to "5"  
+  setText of "dropCost4:3" to "6"  
+  setText of "dropCost5:3" to "3"  
+  setText of "dropCost6:3" to "6"  
+  setText of "dropCost7:3" to "9"  
+  setText of "dropCost0:4" to "6"  
+  setText of "dropCost1:4" to "4"  
+  setText of "dropCost2:4" to "6"  
+  setText of "dropCost3:4" to "3"  
+  setText of "dropCost4:4" to "7"  
+  setText of "dropCost5:4" to "2"  
+  setText of "dropCost6:4" to "6"  
+  setText of "dropCost7:4" to "8"  
+  setText of "dropCost0:5" to ""  
+  setText of "dropCost1:5" to ""  
+  setText of "dropCost2:5" to ""  
+  setText of "dropCost3:5" to ""  
+  setText of "dropCost4:5" to ""  
+  setText of "dropCost5:5" to ""  
+  setText of "dropCost6:5" to ""  
+  setText of "dropCost7:5" to ""  
+  setText of "dropCostMin0:0" to ""  
+  setText of "dropCostMin1:0" to ""  
+  setText of "dropCostMin2:0" to ""  
+  setText of "dropCostMin3:0" to ""  
+  setText of "dropCostMin4:0" to ""  
+  setText of "dropCostMin5:0" to ""  
+  setText of "dropCostMin6:0" to ""  
+  setText of "dropCostMin7:0" to ""  
+  setText of "dropCostMin0:1" to ""  
+  setText of "dropCostMin1:1" to ""  
+  setText of "dropCostMin2:1" to ""  
+  setText of "dropCostMin3:1" to ""  
+  setText of "dropCostMin4:1" to ""  
+  setText of "dropCostMin5:1" to ""  
+  setText of "dropCostMin6:1" to ""  
+  setText of "dropCostMin7:1" to ""  
+  setText of "infoText1" to "Füge nur Kosten für nicht zugeordnete Kunden und"  
+  setText of "infoText2" to "nicht geschlossene Lagerhäuser ein"  
+  setText of "dilveryRise_Header" to "Vorbereitung für nächste Iteration"  
+  unhighlightCode on "sourceCode" line 26 row 0  
+  unhighlightCode on "sourceCode" line 27 row 0  
+  hide "markedClosedWarehouse_6" 
+}
+{
+  show "CWD_Connection_Line_0:0" 
+  rectangle "Rect1" offset (-5, -1) from "dropCost0:0" NW offset (20, 1) from "dropCost0:0" SW color (255, 255, 0) depth 5 filled  fillColor (255, 255, 0)
+  rectangle "markMin0:1" offset (-5, -1) from "dropCost0:1" NW offset (20, 1) from "dropCost0:1" SW color (255, 200, 0) depth 5 filled  fillColor (255, 200, 0)
+  rectangle "Rect2" offset (-5, -1) from "dropCost1:0" NW offset (20, 1) from "dropCost1:0" SW color (255, 255, 0) depth 5 filled  fillColor (255, 255, 0)
+  rectangle "Rect3" offset (-5, -1) from "dropCost1:4" NW offset (20, 1) from "dropCost1:4" SW color (255, 200, 0) depth 5 filled  fillColor (255, 200, 0)
+  rectangle "Rect4" offset (-5, -1) from "dropCost2:2" NW offset (20, 1) from "dropCost2:2" SW color (255, 255, 0) depth 5 filled  fillColor (255, 255, 0)
+  rectangle "Rect5" offset (-5, -1) from "dropCost2:1" NW offset (20, 1) from "dropCost2:1" SW color (255, 200, 0) depth 5 filled  fillColor (255, 200, 0)
+  rectangle "Rect6" offset (-5, -1) from "dropCost3:4" NW offset (20, 1) from "dropCost3:4" SW color (255, 255, 0) depth 5 filled  fillColor (255, 255, 0)
+  rectangle "Rect7" offset (-5, -1) from "dropCost3:0" NW offset (20, 1) from "dropCost3:0" SW color (255, 200, 0) depth 5 filled  fillColor (255, 200, 0)
+  rectangle "Rect8" offset (-5, -1) from "dropCost4:2" NW offset (20, 1) from "dropCost4:2" SW color (255, 255, 0) depth 5 filled  fillColor (255, 255, 0)
+  rectangle "Rect9" offset (-5, -1) from "dropCost4:1" NW offset (20, 1) from "dropCost4:1" SW color (255, 200, 0) depth 5 filled  fillColor (255, 200, 0)
+  show "CWD_Connection_Line_5:4" 
+  rectangle "Rect10" offset (-5, -1) from "dropCost5:4" NW offset (20, 1) from "dropCost5:4" SW color (255, 255, 0) depth 5 filled  fillColor (255, 255, 0)
+  rectangle "markMin5:3" offset (-5, -1) from "dropCost5:3" NW offset (20, 1) from "dropCost5:3" SW color (255, 200, 0) depth 5 filled  fillColor (255, 200, 0)
+  rectangle "Rect11" offset (-5, -1) from "dropCost6:2" NW offset (20, 1) from "dropCost6:2" SW color (255, 255, 0) depth 5 filled  fillColor (255, 255, 0)
+  rectangle "Rect12" offset (-5, -1) from "dropCost6:3" NW offset (20, 1) from "dropCost6:3" SW color (255, 200, 0) depth 5 filled  fillColor (255, 200, 0)
+  rectangle "Rect13" offset (-5, -1) from "dropCost7:1" NW offset (20, 1) from "dropCost7:1" SW color (255, 255, 0) depth 5 filled  fillColor (255, 255, 0)
+  rectangle "Rect14" offset (-5, -1) from "dropCost7:2" NW offset (20, 1) from "dropCost7:2" SW color (255, 200, 0) depth 5 filled  fillColor (255, 200, 0)
+  setText of "infoText1" to "Markiere minimale Kosten"  
+  setText of "infoText2" to ""  
+  highlightCode on "sourceCode" line 6 row 0  
+  highlightCode on "sourceCode" line 7 row 0  
+  highlightCode on "sourceCode" line 8 row 0  
+  highlightCode on "sourceCode" line 9 row 0  
+  highlightCode on "sourceCode" line 10 row 0  
+  setText of "dilveryRise_Header" to "Iteration 2 a:"  
+  hide "markedClosedWarehouse_6" 
+}
+label "Iteration 2: a)"
+{
+  setText of "dropCostMin0:0" to "1"  
+  setText of "dropCostMin1:0" to "2"  
+  setText of "dropCostMin2:0" to "0"  
+  setText of "dropCostMin3:0" to "3"  
+  setText of "dropCostMin4:0" to "3"  
+  setText of "dropCostMin5:0" to "2"  
+  setText of "dropCostMin6:0" to "5"  
+  setText of "dropCostMin7:0" to "2"  
+  setText of "dropCostMin0:1" to "2"  
+  setText of "dropCostMin1:1" to "4"  
+  setText of "dropCostMin2:1" to "0"  
+  setText of "dropCostMin3:1" to "4"  
+  setText of "dropCostMin4:1" to "3"  
+  setText of "dropCostMin5:1" to "3"  
+  setText of "dropCostMin6:1" to "6"  
+  setText of "dropCostMin7:1" to "4"  
+  setText of "infoText1" to "Füge Minimalekosten in c_i1 und c_i2 Zeile ein"  
+  setText of "infoText2" to ""  
+}
+{
+  rectangle "Rect15" offset (-5, -1) from "dropCost_TableLeft_8" NW offset (20, 1) from "dropCostMin7:0" SW color (255, 255, 0) depth 5 filled  fillColor (255, 255, 0)
+  rectangle "Rect16" offset (-5, -1) from "dropCost_TableLeft_9" NW offset (20, 1) from "dropCostMin7:1" SW color (255, 200, 0) depth 5 filled  fillColor (255, 200, 0)
+}
+{
+  setText of "targetFunctionValueText" to "Gesamtkosten: 28  + 18 = 46"  
+  setText of "infoText1" to "Berechne aktuelle Kosten neu"  
+  setText of "infoText2" to "Summe Fixe Lagerkosten von f_i 28 und Summe Transportkosten c_1,j von 18"  
+}
+{
+  setText of "dilveryRise_Header" to "Iteration 2 b:"  
+  unhighlightCode on "sourceCode" line 7 row 0  
+  unhighlightCode on "sourceCode" line 8 row 0  
+  unhighlightCode on "sourceCode" line 9 row 0  
+  unhighlightCode on "sourceCode" line 10 row 0  
+  highlightCode on "sourceCode" line 11 row 0  
+  highlightCode on "sourceCode" line 12 row 0  
+  highlightCode on "sourceCode" line 13 row 0  
+  highlightCode on "sourceCode" line 14 row 0  
+  highlightCode on "sourceCode" line 15 row 0  
+  setText of "dilveryRise0:0" to "1"  
+  setText of "dilveryRise1:0" to "2"  
+  setText of "dilveryRise2:0" to ""  
+  setText of "dilveryRise3:0" to ""  
+  setText of "dilveryRise4:0" to ""  
+  setText of "dilveryRise5:0" to ""  
+  setText of "dilveryRise6:0" to ""  
+  setText of "dilveryRise7:0" to ""  
+  setText of "dilveryRise0:1" to ""  
+  setText of "dilveryRise1:1" to ""  
+  setText of "dilveryRise2:1" to ""  
+  setText of "dilveryRise3:1" to ""  
+  setText of "dilveryRise4:1" to ""  
+  setText of "dilveryRise5:1" to ""  
+  setText of "dilveryRise6:1" to ""  
+  setText of "dilveryRise7:1" to "2"  
+  setText of "dilveryRise0:2" to ""  
+  setText of "dilveryRise1:2" to ""  
+  setText of "dilveryRise2:2" to "0"  
+  setText of "dilveryRise3:2" to ""  
+  setText of "dilveryRise4:2" to "0"  
+  setText of "dilveryRise5:2" to ""  
+  setText of "dilveryRise6:2" to "1"  
+  setText of "dilveryRise7:2" to ""  
+  setText of "dilveryRise0:3" to ""  
+  setText of "dilveryRise1:3" to ""  
+  setText of "dilveryRise2:3" to ""  
+  setText of "dilveryRise3:3" to ""  
+  setText of "dilveryRise4:3" to ""  
+  setText of "dilveryRise5:3" to ""  
+  setText of "dilveryRise6:3" to ""  
+  setText of "dilveryRise7:3" to ""  
+  setText of "dilveryRise0:4" to ""  
+  setText of "dilveryRise1:4" to ""  
+  setText of "dilveryRise2:4" to ""  
+  setText of "dilveryRise3:4" to "1"  
+  setText of "dilveryRise4:4" to ""  
+  setText of "dilveryRise5:4" to "1"  
+  setText of "dilveryRise6:4" to ""  
+  setText of "dilveryRise7:4" to ""  
+  setText of "dilveryRise0:5" to ""  
+  setText of "dilveryRise1:5" to ""  
+  setText of "dilveryRise2:5" to ""  
+  setText of "dilveryRise3:5" to ""  
+  setText of "dilveryRise4:5" to ""  
+  setText of "dilveryRise5:5" to ""  
+  setText of "dilveryRise6:5" to ""  
+  setText of "dilveryRise7:5" to ""  
+  setText of "infoText1" to "Bereche Kostensteigerung w_ij"  
+  setText of "infoText2" to "w_ij entspricht Erhöhung der Kosten wenn das günstigste Lagerhaus für Kunde j schliest"  
+}
+label "Iteration 2: b)"
+{
+  unhighlightCode on "sourceCode" line 11 row 0  
+  unhighlightCode on "sourceCode" line 12 row 0  
+  unhighlightCode on "sourceCode" line 13 row 0  
+  unhighlightCode on "sourceCode" line 14 row 0  
+  unhighlightCode on "sourceCode" line 15 row 0  
+  highlightCode on "sourceCode" line 16 row 0  
+  highlightCode on "sourceCode" line 17 row 0  
+  setText of "dilveryRise8:0" to "3"  
+  setText of "dilveryRise8:1" to "2"  
+  setText of "dilveryRise8:2" to "1"  
+  setText of "dilveryRise8:3" to "0"  
+  setText of "dilveryRise8:4" to "2"  
+  setText of "infoText1" to "Bereche Summe der zusätzlichen Kosten E_i wenn Lagerhaus i geschlossen wird"  
+  setText of "infoText2" to "E_i = Summe aller w_ij pro Zeile"  
+}
+{
+  setText of "dilveryRise10:0" to "2"  
+  setText of "dilveryRise10:1" to "5"  
+  setText of "dilveryRise10:2" to "4"  
+  setText of "dilveryRise10:3" to "6"  
+  setText of "dilveryRise10:4" to "3"  
+  setText of "infoText1" to "Bereche gesamte Kostensteigerung d_i wenn Lagerhaus i geschlossen wird"  
+  setText of "infoText2" to "d_i = f_i - E_i   =>   Koststeigerung = Gesparte Lagerhauskosten - Zusätzliche Transportwege"  
+  setText of "dilveryRise_Header" to "Iteration 2 c:"  
+  unhighlightCode on "sourceCode" line 16 row 0  
+  unhighlightCode on "sourceCode" line 17 row 0  
+  highlightCode on "sourceCode" line 18 row 0  
+  highlightCode on "sourceCode" line 19 row 0  
+  highlightCode on "sourceCode" line 20 row 0  
+  highlightCode on "sourceCode" line 21 row 0  
+}
+label "Iteration 2: c)"
+{
+  hide "Rect1" "markMin0:1" "Rect2" "Rect3" "Rect4" "Rect5" "Rect6" "Rect7" "Rect8" "Rect9" "Rect10" "markMin5:3" "Rect11" "Rect12" "Rect13" "Rect14" "Rect15" "Rect16" 
+}
+{
+  setText of "infoText1" to "Markiere 0 Kunden die nun fest Lagerhäusern zugeordnet sind"  
+  setText of "infoText2" to "Diese Kunden vom markierten Lagerhaus zu beliefern ist am günstigsten."  
+}
+{
+  interaction "multipleSelectionQuestion3"
+  rectangle "markedClosedWarehouse_4" offset (-15, 6) from "dilveryRise_TableLeft_4" NW offset (20, -6) from "dilveryRise10:3" SW color (255, 0, 0) depth 5 filled  fillColor (255, 0, 0)
+  rectangle "markedClosedWarehouse_r4" offset (-8, 6) from "dilveryRise_TableLeft_4" NW offset (10, -6) from "dilveryRise_TableLeft_4" SW color (255, 0, 0) depth 5 filled  fillColor (255, 0, 0)
+  rectangle "markedClosedWarehouse_c4" offset (-8, 6) from "dropCost_TableLeft_4" NW offset (10, -6) from "dropCost_TableLeft_4" SW color (255, 0, 0) depth 5 filled  fillColor (255, 0, 0)
+  setText of "infoText1" to "Schliese Lagerhaus 4 für immer"  
+  setText of "infoText2" to "Das Schliesen des Lagerhauses verringert die Gesamtenkosten ZF am meisten."  
+  rectangle "CWD_Warehouse_Circle_Del2_3" offset (-13, -2) from "CWD_Warehouse_Circle_3" C offset (13, 2) from "CWD_Warehouse_Circle_3" C color (255, 0, 0) depth 7 filled  fillColor (255, 0, 0)
+  unhighlightCode on "sourceCode" line 18 row 0  
+  unhighlightCode on "sourceCode" line 19 row 0  
+  unhighlightCode on "sourceCode" line 20 row 0  
+  unhighlightCode on "sourceCode" line 21 row 0  
+  highlightCode on "sourceCode" line 22 row 0  
+  highlightCode on "sourceCode" line 23 row 0  
+  highlightCode on "sourceCode" line 24 row 0  
+  highlightCode on "sourceCode" line 25 row 0  
+  setText of "dilveryRise_Header" to "Iteration 2 d:"  
+}
+label "Iteration 2: d)"
+{
+  unhighlightCode on "sourceCode" line 22 row 0  
+  unhighlightCode on "sourceCode" line 23 row 0  
+  unhighlightCode on "sourceCode" line 24 row 0  
+  unhighlightCode on "sourceCode" line 25 row 0  
+  highlightCode on "sourceCode" line 26 row 0  
+  highlightCode on "sourceCode" line 27 row 0  
+  setText of "dilveryRise_Header" to "Iteration 2 e:"  
+  setText of "infoText1" to "Es existieren noch nicht geschlossende Lagerhäuser,"  
+  setText of "infoText2" to "die eine potenzielle Kostensteigerung (d_i > 0) aufweisen"  
+}
+label "Iteration 2: e)"
+{
+  setText of "dilveryRise0:0" to ""  
+  setText of "dilveryRise1:0" to ""  
+  setText of "dilveryRise2:0" to ""  
+  setText of "dilveryRise3:0" to ""  
+  setText of "dilveryRise4:0" to ""  
+  setText of "dilveryRise5:0" to ""  
+  setText of "dilveryRise6:0" to ""  
+  setText of "dilveryRise7:0" to ""  
+  setText of "dilveryRise8:0" to ""  
+  setText of "dilveryRise9:0" to ""  
+  setText of "dilveryRise10:0" to ""  
+  setText of "dilveryRise0:1" to ""  
+  setText of "dilveryRise1:1" to ""  
+  setText of "dilveryRise2:1" to ""  
+  setText of "dilveryRise3:1" to ""  
+  setText of "dilveryRise4:1" to ""  
+  setText of "dilveryRise5:1" to ""  
+  setText of "dilveryRise6:1" to ""  
+  setText of "dilveryRise7:1" to ""  
+  setText of "dilveryRise8:1" to ""  
+  setText of "dilveryRise9:1" to ""  
+  setText of "dilveryRise10:1" to ""  
+  setText of "dilveryRise0:2" to ""  
+  setText of "dilveryRise1:2" to ""  
+  setText of "dilveryRise2:2" to ""  
+  setText of "dilveryRise3:2" to ""  
+  setText of "dilveryRise4:2" to ""  
+  setText of "dilveryRise5:2" to ""  
+  setText of "dilveryRise6:2" to ""  
+  setText of "dilveryRise7:2" to ""  
+  setText of "dilveryRise8:2" to ""  
+  setText of "dilveryRise9:2" to ""  
+  setText of "dilveryRise10:2" to ""  
+  setText of "dilveryRise0:3" to ""  
+  setText of "dilveryRise1:3" to ""  
+  setText of "dilveryRise2:3" to ""  
+  setText of "dilveryRise3:3" to ""  
+  setText of "dilveryRise4:3" to ""  
+  setText of "dilveryRise5:3" to ""  
+  setText of "dilveryRise6:3" to ""  
+  setText of "dilveryRise7:3" to ""  
+  setText of "dilveryRise8:3" to ""  
+  setText of "dilveryRise9:3" to ""  
+  setText of "dilveryRise10:3" to ""  
+  setText of "dilveryRise0:4" to ""  
+  setText of "dilveryRise1:4" to ""  
+  setText of "dilveryRise2:4" to ""  
+  setText of "dilveryRise3:4" to ""  
+  setText of "dilveryRise4:4" to ""  
+  setText of "dilveryRise5:4" to ""  
+  setText of "dilveryRise6:4" to ""  
+  setText of "dilveryRise7:4" to ""  
+  setText of "dilveryRise8:4" to ""  
+  setText of "dilveryRise9:4" to ""  
+  setText of "dilveryRise10:4" to ""  
+  setText of "dilveryRise0:5" to ""  
+  setText of "dilveryRise1:5" to ""  
+  setText of "dilveryRise2:5" to ""  
+  setText of "dilveryRise3:5" to ""  
+  setText of "dilveryRise4:5" to ""  
+  setText of "dilveryRise5:5" to ""  
+  setText of "dilveryRise6:5" to ""  
+  setText of "dilveryRise7:5" to ""  
+  setText of "dilveryRise8:5" to ""  
+  setText of "dilveryRise9:5" to ""  
+  setText of "dilveryRise10:5" to ""  
+  setText of "infoText1" to "Bereite Tabelle für erneute Iteration vor"  
+  setText of "infoText2" to "Leere Kostensteigerungstabelle"  
+  setText of "dilveryRise9:0" to "5"  
+  setText of "dilveryRise9:1" to "7"  
+  setText of "dilveryRise9:2" to "5"  
+  setText of "dilveryRise9:4" to "5"  
+  setText of "dropCost0:0" to "1"  
+  setText of "dropCost1:0" to "2"  
+  setText of "dropCost2:0" to "3"  
+  setText of "dropCost3:0" to "4"  
+  setText of "dropCost4:0" to "5"  
+  setText of "dropCost5:0" to "6"  
+  setText of "dropCost6:0" to "7"  
+  setText of "dropCost7:0" to "6"  
+  setText of "dropCost0:1" to "2"  
+  setText of "dropCost1:1" to "9"  
+  setText of "dropCost2:1" to "0"  
+  setText of "dropCost3:1" to "7"  
+  setText of "dropCost4:1" to "3"  
+  setText of "dropCost5:1" to "6"  
+  setText of "dropCost6:1" to "10"  
+  setText of "dropCost7:1" to "2"  
+  setText of "dropCost0:2" to "7"  
+  setText of "dropCost1:2" to "6"  
+  setText of "dropCost2:2" to "0"  
+  setText of "dropCost3:2" to "5"  
+  setText of "dropCost4:2" to "3"  
+  setText of "dropCost5:2" to "10"  
+  setText of "dropCost6:2" to "5"  
+  setText of "dropCost7:2" to "4"  
+  setText of "dropCost0:3" to ""  
+  setText of "dropCost1:3" to ""  
+  setText of "dropCost2:3" to ""  
+  setText of "dropCost3:3" to ""  
+  setText of "dropCost4:3" to ""  
+  setText of "dropCost5:3" to ""  
+  setText of "dropCost6:3" to ""  
+  setText of "dropCost7:3" to ""  
+  setText of "dropCost0:4" to "6"  
+  setText of "dropCost1:4" to "4"  
+  setText of "dropCost2:4" to "6"  
+  setText of "dropCost3:4" to "3"  
+  setText of "dropCost4:4" to "7"  
+  setText of "dropCost5:4" to "2"  
+  setText of "dropCost6:4" to "6"  
+  setText of "dropCost7:4" to "8"  
+  setText of "dropCost0:5" to ""  
+  setText of "dropCost1:5" to ""  
+  setText of "dropCost2:5" to ""  
+  setText of "dropCost3:5" to ""  
+  setText of "dropCost4:5" to ""  
+  setText of "dropCost5:5" to ""  
+  setText of "dropCost6:5" to ""  
+  setText of "dropCost7:5" to ""  
+  setText of "dropCostMin0:0" to ""  
+  setText of "dropCostMin1:0" to ""  
+  setText of "dropCostMin2:0" to ""  
+  setText of "dropCostMin3:0" to ""  
+  setText of "dropCostMin4:0" to ""  
+  setText of "dropCostMin5:0" to ""  
+  setText of "dropCostMin6:0" to ""  
+  setText of "dropCostMin7:0" to ""  
+  setText of "dropCostMin0:1" to ""  
+  setText of "dropCostMin1:1" to ""  
+  setText of "dropCostMin2:1" to ""  
+  setText of "dropCostMin3:1" to ""  
+  setText of "dropCostMin4:1" to ""  
+  setText of "dropCostMin5:1" to ""  
+  setText of "dropCostMin6:1" to ""  
+  setText of "dropCostMin7:1" to ""  
+  setText of "infoText1" to "Füge nur Kosten für nicht zugeordnete Kunden und"  
+  setText of "infoText2" to "nicht geschlossene Lagerhäuser ein"  
+  setText of "dilveryRise_Header" to "Vorbereitung für nächste Iteration"  
+  unhighlightCode on "sourceCode" line 26 row 0  
+  unhighlightCode on "sourceCode" line 27 row 0  
+  hide "markedClosedWarehouse_4" 
+}
+{
+  rectangle "Rect17" offset (-5, -1) from "dropCost0:0" NW offset (20, 1) from "dropCost0:0" SW color (255, 255, 0) depth 5 filled  fillColor (255, 255, 0)
+  rectangle "Rect18" offset (-5, -1) from "dropCost0:1" NW offset (20, 1) from "dropCost0:1" SW color (255, 200, 0) depth 5 filled  fillColor (255, 200, 0)
+  rectangle "Rect19" offset (-5, -1) from "dropCost1:0" NW offset (20, 1) from "dropCost1:0" SW color (255, 255, 0) depth 5 filled  fillColor (255, 255, 0)
+  rectangle "Rect20" offset (-5, -1) from "dropCost1:4" NW offset (20, 1) from "dropCost1:4" SW color (255, 200, 0) depth 5 filled  fillColor (255, 200, 0)
+  rectangle "Rect21" offset (-5, -1) from "dropCost2:2" NW offset (20, 1) from "dropCost2:2" SW color (255, 255, 0) depth 5 filled  fillColor (255, 255, 0)
+  rectangle "Rect22" offset (-5, -1) from "dropCost2:1" NW offset (20, 1) from "dropCost2:1" SW color (255, 200, 0) depth 5 filled  fillColor (255, 200, 0)
+  rectangle "Rect23" offset (-5, -1) from "dropCost3:4" NW offset (20, 1) from "dropCost3:4" SW color (255, 255, 0) depth 5 filled  fillColor (255, 255, 0)
+  rectangle "Rect24" offset (-5, -1) from "dropCost3:0" NW offset (20, 1) from "dropCost3:0" SW color (255, 200, 0) depth 5 filled  fillColor (255, 200, 0)
+  rectangle "Rect25" offset (-5, -1) from "dropCost4:2" NW offset (20, 1) from "dropCost4:2" SW color (255, 255, 0) depth 5 filled  fillColor (255, 255, 0)
+  rectangle "Rect26" offset (-5, -1) from "dropCost4:1" NW offset (20, 1) from "dropCost4:1" SW color (255, 200, 0) depth 5 filled  fillColor (255, 200, 0)
+  rectangle "Rect27" offset (-5, -1) from "dropCost5:4" NW offset (20, 1) from "dropCost5:4" SW color (255, 255, 0) depth 5 filled  fillColor (255, 255, 0)
+  rectangle "markMin5:1" offset (-5, -1) from "dropCost5:1" NW offset (20, 1) from "dropCost5:1" SW color (255, 200, 0) depth 5 filled  fillColor (255, 200, 0)
+  rectangle "Rect28" offset (-5, -1) from "dropCost6:2" NW offset (20, 1) from "dropCost6:2" SW color (255, 255, 0) depth 5 filled  fillColor (255, 255, 0)
+  rectangle "markMin6:4" offset (-5, -1) from "dropCost6:4" NW offset (20, 1) from "dropCost6:4" SW color (255, 200, 0) depth 5 filled  fillColor (255, 200, 0)
+  rectangle "Rect29" offset (-5, -1) from "dropCost7:1" NW offset (20, 1) from "dropCost7:1" SW color (255, 255, 0) depth 5 filled  fillColor (255, 255, 0)
+  rectangle "Rect30" offset (-5, -1) from "dropCost7:2" NW offset (20, 1) from "dropCost7:2" SW color (255, 200, 0) depth 5 filled  fillColor (255, 200, 0)
+  setText of "infoText1" to "Markiere minimale Kosten"  
+  setText of "infoText2" to ""  
+  highlightCode on "sourceCode" line 6 row 0  
+  highlightCode on "sourceCode" line 7 row 0  
+  highlightCode on "sourceCode" line 8 row 0  
+  highlightCode on "sourceCode" line 9 row 0  
+  highlightCode on "sourceCode" line 10 row 0  
+  setText of "dilveryRise_Header" to "Iteration 3 a:"  
+  hide "markedClosedWarehouse_4" 
+}
+label "Iteration 3: a)"
+{
+  setText of "dropCostMin0:0" to "1"  
+  setText of "dropCostMin1:0" to "2"  
+  setText of "dropCostMin2:0" to "0"  
+  setText of "dropCostMin3:0" to "3"  
+  setText of "dropCostMin4:0" to "3"  
+  setText of "dropCostMin5:0" to "2"  
+  setText of "dropCostMin6:0" to "5"  
+  setText of "dropCostMin7:0" to "2"  
+  setText of "dropCostMin0:1" to "2"  
+  setText of "dropCostMin1:1" to "4"  
+  setText of "dropCostMin2:1" to "0"  
+  setText of "dropCostMin3:1" to "4"  
+  setText of "dropCostMin4:1" to "3"  
+  setText of "dropCostMin5:1" to "6"  
+  setText of "dropCostMin6:1" to "6"  
+  setText of "dropCostMin7:1" to "4"  
+  setText of "infoText1" to "Füge Minimalekosten in c_i1 und c_i2 Zeile ein"  
+  setText of "infoText2" to ""  
+}
+{
+  rectangle "Rect31" offset (-5, -1) from "dropCost_TableLeft_8" NW offset (20, 1) from "dropCostMin7:0" SW color (255, 255, 0) depth 5 filled  fillColor (255, 255, 0)
+  rectangle "Rect32" offset (-5, -1) from "dropCost_TableLeft_9" NW offset (20, 1) from "dropCostMin7:1" SW color (255, 200, 0) depth 5 filled  fillColor (255, 200, 0)
+}
+{
+  setText of "targetFunctionValueText" to "Gesamtkosten: 22  + 18 = 40"  
+  setText of "infoText1" to "Berechne aktuelle Kosten neu"  
+  setText of "infoText2" to "Summe Fixe Lagerkosten von f_i 22 und Summe Transportkosten c_1,j von 18"  
+}
+{
+  setText of "dilveryRise_Header" to "Iteration 3 b:"  
+  unhighlightCode on "sourceCode" line 7 row 0  
+  unhighlightCode on "sourceCode" line 8 row 0  
+  unhighlightCode on "sourceCode" line 9 row 0  
+  unhighlightCode on "sourceCode" line 10 row 0  
+  highlightCode on "sourceCode" line 11 row 0  
+  highlightCode on "sourceCode" line 12 row 0  
+  highlightCode on "sourceCode" line 13 row 0  
+  highlightCode on "sourceCode" line 14 row 0  
+  highlightCode on "sourceCode" line 15 row 0  
+  setText of "dilveryRise0:0" to "1"  
+  setText of "dilveryRise1:0" to "2"  
+  setText of "dilveryRise2:0" to ""  
+  setText of "dilveryRise3:0" to ""  
+  setText of "dilveryRise4:0" to ""  
+  setText of "dilveryRise5:0" to ""  
+  setText of "dilveryRise6:0" to ""  
+  setText of "dilveryRise7:0" to ""  
+  setText of "dilveryRise0:1" to ""  
+  setText of "dilveryRise1:1" to ""  
+  setText of "dilveryRise2:1" to ""  
+  setText of "dilveryRise3:1" to ""  
+  setText of "dilveryRise4:1" to ""  
+  setText of "dilveryRise5:1" to ""  
+  setText of "dilveryRise6:1" to ""  
+  setText of "dilveryRise7:1" to "2"  
+  setText of "dilveryRise0:2" to ""  
+  setText of "dilveryRise1:2" to ""  
+  setText of "dilveryRise2:2" to "0"  
+  setText of "dilveryRise3:2" to ""  
+  setText of "dilveryRise4:2" to "0"  
+  setText of "dilveryRise5:2" to ""  
+  setText of "dilveryRise6:2" to "1"  
+  setText of "dilveryRise7:2" to ""  
+  setText of "dilveryRise0:3" to ""  
+  setText of "dilveryRise1:3" to ""  
+  setText of "dilveryRise2:3" to ""  
+  setText of "dilveryRise3:3" to ""  
+  setText of "dilveryRise4:3" to ""  
+  setText of "dilveryRise5:3" to ""  
+  setText of "dilveryRise6:3" to ""  
+  setText of "dilveryRise7:3" to ""  
+  setText of "dilveryRise0:4" to ""  
+  setText of "dilveryRise1:4" to ""  
+  setText of "dilveryRise2:4" to ""  
+  setText of "dilveryRise3:4" to "1"  
+  setText of "dilveryRise4:4" to ""  
+  setText of "dilveryRise5:4" to "4"  
+  setText of "dilveryRise6:4" to ""  
+  setText of "dilveryRise7:4" to ""  
+  setText of "dilveryRise0:5" to ""  
+  setText of "dilveryRise1:5" to ""  
+  setText of "dilveryRise2:5" to ""  
+  setText of "dilveryRise3:5" to ""  
+  setText of "dilveryRise4:5" to ""  
+  setText of "dilveryRise5:5" to ""  
+  setText of "dilveryRise6:5" to ""  
+  setText of "dilveryRise7:5" to ""  
+  setText of "infoText1" to "Bereche Kostensteigerung w_ij"  
+  setText of "infoText2" to "w_ij entspricht Erhöhung der Kosten wenn das günstigste Lagerhaus für Kunde j schliest"  
+}
+label "Iteration 3: b)"
+{
+  unhighlightCode on "sourceCode" line 11 row 0  
+  unhighlightCode on "sourceCode" line 12 row 0  
+  unhighlightCode on "sourceCode" line 13 row 0  
+  unhighlightCode on "sourceCode" line 14 row 0  
+  unhighlightCode on "sourceCode" line 15 row 0  
+  highlightCode on "sourceCode" line 16 row 0  
+  highlightCode on "sourceCode" line 17 row 0  
+  setText of "dilveryRise8:0" to "3"  
+  setText of "dilveryRise8:1" to "2"  
+  setText of "dilveryRise8:2" to "1"  
+  setText of "dilveryRise8:4" to "5"  
+  setText of "infoText1" to "Bereche Summe der zusätzlichen Kosten E_i wenn Lagerhaus i geschlossen wird"  
+  setText of "infoText2" to "E_i = Summe aller w_ij pro Zeile"  
+}
+{
+  setText of "dilveryRise10:0" to "2"  
+  setText of "dilveryRise10:1" to "5"  
+  setText of "dilveryRise10:2" to "4"  
+  setText of "dilveryRise10:4" to "0"  
+  setText of "infoText1" to "Bereche gesamte Kostensteigerung d_i wenn Lagerhaus i geschlossen wird"  
+  setText of "infoText2" to "d_i = f_i - E_i   =>   Koststeigerung = Gesparte Lagerhauskosten - Zusätzliche Transportwege"  
+  setText of "dilveryRise_Header" to "Iteration 3 c:"  
+  unhighlightCode on "sourceCode" line 16 row 0  
+  unhighlightCode on "sourceCode" line 17 row 0  
+  highlightCode on "sourceCode" line 18 row 0  
+  highlightCode on "sourceCode" line 19 row 0  
+  highlightCode on "sourceCode" line 20 row 0  
+  highlightCode on "sourceCode" line 21 row 0  
+}
+label "Iteration 3: c)"
+{
+  rectangle "markedOpenWarehouse_4" offset (-15, -1) from "dilveryRise_TableLeft_5" NW offset (20, -1) from "dilveryRise10:4" SW color (0, 255, 0) depth 5 filled  fillColor (0, 255, 0)
+  rectangle "markedOpenWarehouse_r4" offset (-8, 6) from "dilveryRise_TableLeft_5" NW offset (10, -6) from "dilveryRise_TableLeft_5" SW color (0, 255, 0) depth 5 filled  fillColor (0, 255, 0)
+  rectangle "markedOpenWarehouse_c4" offset (-8, 6) from "dropCost_TableLeft_5" NW offset (10, -6) from "dropCost_TableLeft_5" SW color (0, 255, 0) depth 5 filled  fillColor (0, 255, 0)
+  setText of "infoText1" to "Makiere Lagerhaus  5"  
+  setText of "infoText2" to "Dieses ist absofort immer geöffnet"  
+  hide "Rect17" "Rect18" "Rect19" "Rect20" "Rect21" "Rect22" "Rect23" "Rect24" "Rect25" "Rect26" "Rect27" "markMin5:1" "Rect28" "markMin6:4" "Rect29" "Rect30" "Rect31" "Rect32" 
+}
+{
+  rectangle "markedRiseCustomer_3" offset (-6, -1) from "dilveryRise_TableHead_4" NW offset (16, 5) from "dilveryRise3:5" SW color (0, 255, 0) depth 5 filled  fillColor (0, 255, 0)
+  rectangle "markedCostCustomer_3" offset (-6, -1) from "dropCost_TableHead_4" NW offset (16, 2) from "dropCostMin3:1" SW color (0, 255, 0) depth 5 filled  fillColor (0, 255, 0)
+  rectangle "markedRiseCustomer_5" offset (-6, -1) from "dilveryRise_TableHead_6" NW offset (16, 5) from "dilveryRise5:5" SW color (0, 255, 0) depth 5 filled  fillColor (0, 255, 0)
+  rectangle "markedCostCustomer_5" offset (-6, -1) from "dropCost_TableHead_6" NW offset (16, 2) from "dropCostMin5:1" SW color (0, 255, 0) depth 5 filled  fillColor (0, 255, 0)
+  color "CWD_Warehouse_Circle_4" type "fillColor" (0, 255, 0)  
+  color "CWD_Connection_Line_3:4" (0, 255, 0)  
+  color "CWD_Connection_Line_5:4" (0, 255, 0)  
+  setText of "infoText1" to "Markiere 2 Kunden die nun fest Lagerhäusern zugeordnet sind"  
+  setText of "infoText2" to "Diese Kunden vom markierten Lagerhaus zu beliefern ist am günstigsten."  
+}
+{
+  interaction "multipleSelectionQuestion1"
+  rectangle "markedClosedWarehouse_2" offset (-15, 6) from "dilveryRise_TableLeft_2" NW offset (20, -6) from "dilveryRise10:1" SW color (255, 0, 0) depth 5 filled  fillColor (255, 0, 0)
+  rectangle "markedClosedWarehouse_r2" offset (-8, 6) from "dilveryRise_TableLeft_2" NW offset (10, -6) from "dilveryRise_TableLeft_2" SW color (255, 0, 0) depth 5 filled  fillColor (255, 0, 0)
+  rectangle "markedClosedWarehouse_c2" offset (-8, 6) from "dropCost_TableLeft_2" NW offset (10, -6) from "dropCost_TableLeft_2" SW color (255, 0, 0) depth 5 filled  fillColor (255, 0, 0)
+  setText of "infoText1" to "Schliese Lagerhaus 2 für immer"  
+  setText of "infoText2" to "Das Schliesen des Lagerhauses verringert die Gesamtenkosten ZF am meisten."  
+  rectangle "CWD_Warehouse_Circle_Del2_1" offset (-13, -2) from "CWD_Warehouse_Circle_1" C offset (13, 2) from "CWD_Warehouse_Circle_1" C color (255, 0, 0) depth 7 filled  fillColor (255, 0, 0)
+  unhighlightCode on "sourceCode" line 18 row 0  
+  unhighlightCode on "sourceCode" line 19 row 0  
+  unhighlightCode on "sourceCode" line 20 row 0  
+  unhighlightCode on "sourceCode" line 21 row 0  
+  highlightCode on "sourceCode" line 22 row 0  
+  highlightCode on "sourceCode" line 23 row 0  
+  highlightCode on "sourceCode" line 24 row 0  
+  highlightCode on "sourceCode" line 25 row 0  
+  setText of "dilveryRise_Header" to "Iteration 3 d:"  
+  hide "CWD_Connection_Line_7:1" 
+}
+label "Iteration 3: d)"
+{
+  unhighlightCode on "sourceCode" line 22 row 0  
+  unhighlightCode on "sourceCode" line 23 row 0  
+  unhighlightCode on "sourceCode" line 24 row 0  
+  unhighlightCode on "sourceCode" line 25 row 0  
+  highlightCode on "sourceCode" line 26 row 0  
+  highlightCode on "sourceCode" line 27 row 0  
+  setText of "dilveryRise_Header" to "Iteration 3 e:"  
+  setText of "infoText1" to "Es existieren noch nicht geschlossende Lagerhäuser,"  
+  setText of "infoText2" to "die eine potenzielle Kostensteigerung (d_i > 0) aufweisen"  
+}
+label "Iteration 3: e)"
+{
+  setText of "dilveryRise0:0" to ""  
+  setText of "dilveryRise1:0" to ""  
+  setText of "dilveryRise2:0" to ""  
+  setText of "dilveryRise3:0" to ""  
+  setText of "dilveryRise4:0" to ""  
+  setText of "dilveryRise5:0" to ""  
+  setText of "dilveryRise6:0" to ""  
+  setText of "dilveryRise7:0" to ""  
+  setText of "dilveryRise8:0" to ""  
+  setText of "dilveryRise9:0" to ""  
+  setText of "dilveryRise10:0" to ""  
+  setText of "dilveryRise0:1" to ""  
+  setText of "dilveryRise1:1" to ""  
+  setText of "dilveryRise2:1" to ""  
+  setText of "dilveryRise3:1" to ""  
+  setText of "dilveryRise4:1" to ""  
+  setText of "dilveryRise5:1" to ""  
+  setText of "dilveryRise6:1" to ""  
+  setText of "dilveryRise7:1" to ""  
+  setText of "dilveryRise8:1" to ""  
+  setText of "dilveryRise9:1" to ""  
+  setText of "dilveryRise10:1" to ""  
+  setText of "dilveryRise0:2" to ""  
+  setText of "dilveryRise1:2" to ""  
+  setText of "dilveryRise2:2" to ""  
+  setText of "dilveryRise3:2" to ""  
+  setText of "dilveryRise4:2" to ""  
+  setText of "dilveryRise5:2" to ""  
+  setText of "dilveryRise6:2" to ""  
+  setText of "dilveryRise7:2" to ""  
+  setText of "dilveryRise8:2" to ""  
+  setText of "dilveryRise9:2" to ""  
+  setText of "dilveryRise10:2" to ""  
+  setText of "dilveryRise0:3" to ""  
+  setText of "dilveryRise1:3" to ""  
+  setText of "dilveryRise2:3" to ""  
+  setText of "dilveryRise3:3" to ""  
+  setText of "dilveryRise4:3" to ""  
+  setText of "dilveryRise5:3" to ""  
+  setText of "dilveryRise6:3" to ""  
+  setText of "dilveryRise7:3" to ""  
+  setText of "dilveryRise8:3" to ""  
+  setText of "dilveryRise9:3" to ""  
+  setText of "dilveryRise10:3" to ""  
+  setText of "dilveryRise0:4" to ""  
+  setText of "dilveryRise1:4" to ""  
+  setText of "dilveryRise2:4" to ""  
+  setText of "dilveryRise3:4" to ""  
+  setText of "dilveryRise4:4" to ""  
+  setText of "dilveryRise5:4" to ""  
+  setText of "dilveryRise6:4" to ""  
+  setText of "dilveryRise7:4" to ""  
+  setText of "dilveryRise8:4" to ""  
+  setText of "dilveryRise9:4" to ""  
+  setText of "dilveryRise10:4" to ""  
+  setText of "dilveryRise0:5" to ""  
+  setText of "dilveryRise1:5" to ""  
+  setText of "dilveryRise2:5" to ""  
+  setText of "dilveryRise3:5" to ""  
+  setText of "dilveryRise4:5" to ""  
+  setText of "dilveryRise5:5" to ""  
+  setText of "dilveryRise6:5" to ""  
+  setText of "dilveryRise7:5" to ""  
+  setText of "dilveryRise8:5" to ""  
+  setText of "dilveryRise9:5" to ""  
+  setText of "dilveryRise10:5" to ""  
+  setText of "infoText1" to "Bereite Tabelle für erneute Iteration vor"  
+  setText of "infoText2" to "Leere Kostensteigerungstabelle"  
+  setText of "dilveryRise9:0" to "5"  
+  setText of "dilveryRise9:2" to "5"  
+  setText of "dropCost0:0" to "1"  
+  setText of "dropCost1:0" to "2"  
+  setText of "dropCost2:0" to "3"  
+  setText of "dropCost3:0" to ""  
+  setText of "dropCost4:0" to "5"  
+  setText of "dropCost5:0" to ""  
+  setText of "dropCost6:0" to "7"  
+  setText of "dropCost7:0" to "6"  
+  setText of "dropCost0:1" to ""  
+  setText of "dropCost1:1" to ""  
+  setText of "dropCost2:1" to ""  
+  setText of "dropCost3:1" to ""  
+  setText of "dropCost4:1" to ""  
+  setText of "dropCost5:1" to ""  
+  setText of "dropCost6:1" to ""  
+  setText of "dropCost7:1" to ""  
+  setText of "dropCost0:2" to "7"  
+  setText of "dropCost1:2" to "6"  
+  setText of "dropCost2:2" to "0"  
+  setText of "dropCost3:2" to ""  
+  setText of "dropCost4:2" to "3"  
+  setText of "dropCost5:2" to ""  
+  setText of "dropCost6:2" to "5"  
+  setText of "dropCost7:2" to "4"  
+  setText of "dropCost0:3" to ""  
+  setText of "dropCost1:3" to ""  
+  setText of "dropCost2:3" to ""  
+  setText of "dropCost3:3" to ""  
+  setText of "dropCost4:3" to ""  
+  setText of "dropCost5:3" to ""  
+  setText of "dropCost6:3" to ""  
+  setText of "dropCost7:3" to ""  
+  setText of "dropCost0:4" to "6"  
+  setText of "dropCost1:4" to "4"  
+  setText of "dropCost2:4" to "6"  
+  setText of "dropCost3:4" to ""  
+  setText of "dropCost4:4" to "7"  
+  setText of "dropCost5:4" to ""  
+  setText of "dropCost6:4" to "6"  
+  setText of "dropCost7:4" to "8"  
+  setText of "dropCost0:5" to ""  
+  setText of "dropCost1:5" to ""  
+  setText of "dropCost2:5" to ""  
+  setText of "dropCost3:5" to ""  
+  setText of "dropCost4:5" to ""  
+  setText of "dropCost5:5" to ""  
+  setText of "dropCost6:5" to ""  
+  setText of "dropCost7:5" to ""  
+  setText of "dropCostMin0:0" to ""  
+  setText of "dropCostMin1:0" to ""  
+  setText of "dropCostMin2:0" to ""  
+  setText of "dropCostMin3:0" to ""  
+  setText of "dropCostMin4:0" to ""  
+  setText of "dropCostMin5:0" to ""  
+  setText of "dropCostMin6:0" to ""  
+  setText of "dropCostMin7:0" to ""  
+  setText of "dropCostMin0:1" to ""  
+  setText of "dropCostMin1:1" to ""  
+  setText of "dropCostMin2:1" to ""  
+  setText of "dropCostMin3:1" to ""  
+  setText of "dropCostMin4:1" to ""  
+  setText of "dropCostMin5:1" to ""  
+  setText of "dropCostMin6:1" to ""  
+  setText of "dropCostMin7:1" to ""  
+  setText of "infoText1" to "Füge nur Kosten für nicht zugeordnete Kunden und"  
+  setText of "infoText2" to "nicht geschlossene Lagerhäuser ein"  
+  setText of "dilveryRise_Header" to "Vorbereitung für nächste Iteration"  
+  unhighlightCode on "sourceCode" line 26 row 0  
+  unhighlightCode on "sourceCode" line 27 row 0  
+  hide "markedOpenWarehouse_4" "markedRiseCustomer_3" "markedRiseCustomer_5" "markedClosedWarehouse_2" 
+}
+{
+  rectangle "Rect33" offset (-5, -1) from "dropCost0:0" NW offset (20, 1) from "dropCost0:0" SW color (255, 255, 0) depth 5 filled  fillColor (255, 255, 0)
+  rectangle "markMin0:4" offset (-5, -1) from "dropCost0:4" NW offset (20, 1) from "dropCost0:4" SW color (255, 200, 0) depth 5 filled  fillColor (255, 200, 0)
+  rectangle "Rect34" offset (-5, -1) from "dropCost1:0" NW offset (20, 1) from "dropCost1:0" SW color (255, 255, 0) depth 5 filled  fillColor (255, 255, 0)
+  rectangle "Rect35" offset (-5, -1) from "dropCost1:4" NW offset (20, 1) from "dropCost1:4" SW color (255, 200, 0) depth 5 filled  fillColor (255, 200, 0)
+  rectangle "Rect36" offset (-5, -1) from "dropCost2:2" NW offset (20, 1) from "dropCost2:2" SW color (255, 255, 0) depth 5 filled  fillColor (255, 255, 0)
+  rectangle "markMin2:0" offset (-5, -1) from "dropCost2:0" NW offset (20, 1) from "dropCost2:0" SW color (255, 200, 0) depth 5 filled  fillColor (255, 200, 0)
+  rectangle "Rect37" offset (-5, -1) from "dropCost4:2" NW offset (20, 1) from "dropCost4:2" SW color (255, 255, 0) depth 5 filled  fillColor (255, 255, 0)
+  rectangle "markMin4:0" offset (-5, -1) from "dropCost4:0" NW offset (20, 1) from "dropCost4:0" SW color (255, 200, 0) depth 5 filled  fillColor (255, 200, 0)
+  rectangle "Rect38" offset (-5, -1) from "dropCost6:2" NW offset (20, 1) from "dropCost6:2" SW color (255, 255, 0) depth 5 filled  fillColor (255, 255, 0)
+  rectangle "Rect39" offset (-5, -1) from "dropCost6:4" NW offset (20, 1) from "dropCost6:4" SW color (255, 200, 0) depth 5 filled  fillColor (255, 200, 0)
+  show "CWD_Connection_Line_7:2" 
+  rectangle "Rect40" offset (-5, -1) from "dropCost7:2" NW offset (20, 1) from "dropCost7:2" SW color (255, 255, 0) depth 5 filled  fillColor (255, 255, 0)
+  rectangle "markMin7:0" offset (-5, -1) from "dropCost7:0" NW offset (20, 1) from "dropCost7:0" SW color (255, 200, 0) depth 5 filled  fillColor (255, 200, 0)
+  setText of "infoText1" to "Markiere minimale Kosten"  
+  setText of "infoText2" to ""  
+  highlightCode on "sourceCode" line 6 row 0  
+  highlightCode on "sourceCode" line 7 row 0  
+  highlightCode on "sourceCode" line 8 row 0  
+  highlightCode on "sourceCode" line 9 row 0  
+  highlightCode on "sourceCode" line 10 row 0  
+  setText of "dilveryRise_Header" to "Iteration 4 a:"  
+  hide "markedOpenWarehouse_4" "markedRiseCustomer_3" "markedCostCustomer_3" "markedRiseCustomer_5" "markedCostCustomer_5" "markedClosedWarehouse_2" 
+}
+label "Iteration 4: a)"
+{
+  setText of "dropCostMin0:0" to "1"  
+  setText of "dropCostMin1:0" to "2"  
+  setText of "dropCostMin2:0" to "0"  
+  setText of "dropCostMin3:0" to ""  
+  setText of "dropCostMin4:0" to "3"  
+  setText of "dropCostMin5:0" to ""  
+  setText of "dropCostMin6:0" to "5"  
+  setText of "dropCostMin7:0" to "4"  
+  setText of "dropCostMin0:1" to "6"  
+  setText of "dropCostMin1:1" to "4"  
+  setText of "dropCostMin2:1" to "3"  
+  setText of "dropCostMin3:1" to ""  
+  setText of "dropCostMin4:1" to "5"  
+  setText of "dropCostMin5:1" to ""  
+  setText of "dropCostMin6:1" to "6"  
+  setText of "dropCostMin7:1" to "6"  
+  setText of "infoText1" to "Füge Minimalekosten in c_i1 und c_i2 Zeile ein"  
+  setText of "infoText2" to ""  
+}
+{
+  rectangle "Rect41" offset (-5, -1) from "dropCost_TableLeft_8" NW offset (20, 1) from "dropCostMin7:0" SW color (255, 255, 0) depth 5 filled  fillColor (255, 255, 0)
+  rectangle "Rect42" offset (-5, -1) from "dropCost_TableLeft_9" NW offset (20, 1) from "dropCostMin7:1" SW color (255, 200, 0) depth 5 filled  fillColor (255, 200, 0)
+}
+{
+  setText of "targetFunctionValueText" to "Gesamtkosten: 15  + 20 = 35"  
+  setText of "infoText1" to "Berechne aktuelle Kosten neu"  
+  setText of "infoText2" to "Summe Fixe Lagerkosten von f_i 15 und Summe Transportkosten c_1,j von 20"  
+}
+{
+  setText of "dilveryRise_Header" to "Iteration 4 b:"  
+  unhighlightCode on "sourceCode" line 7 row 0  
+  unhighlightCode on "sourceCode" line 8 row 0  
+  unhighlightCode on "sourceCode" line 9 row 0  
+  unhighlightCode on "sourceCode" line 10 row 0  
+  highlightCode on "sourceCode" line 11 row 0  
+  highlightCode on "sourceCode" line 12 row 0  
+  highlightCode on "sourceCode" line 13 row 0  
+  highlightCode on "sourceCode" line 14 row 0  
+  highlightCode on "sourceCode" line 15 row 0  
+  setText of "dilveryRise0:0" to "5"  
+  setText of "dilveryRise1:0" to "2"  
+  setText of "dilveryRise2:0" to ""  
+  setText of "dilveryRise3:0" to ""  
+  setText of "dilveryRise4:0" to ""  
+  setText of "dilveryRise5:0" to ""  
+  setText of "dilveryRise6:0" to ""  
+  setText of "dilveryRise7:0" to ""  
+  setText of "dilveryRise0:1" to ""  
+  setText of "dilveryRise1:1" to ""  
+  setText of "dilveryRise2:1" to ""  
+  setText of "dilveryRise3:1" to ""  
+  setText of "dilveryRise4:1" to ""  
+  setText of "dilveryRise5:1" to ""  
+  setText of "dilveryRise6:1" to ""  
+  setText of "dilveryRise7:1" to ""  
+  setText of "dilveryRise0:2" to ""  
+  setText of "dilveryRise1:2" to ""  
+  setText of "dilveryRise2:2" to "3"  
+  setText of "dilveryRise3:2" to ""  
+  setText of "dilveryRise4:2" to "2"  
+  setText of "dilveryRise5:2" to ""  
+  setText of "dilveryRise6:2" to "1"  
+  setText of "dilveryRise7:2" to "2"  
+  setText of "dilveryRise0:3" to ""  
+  setText of "dilveryRise1:3" to ""  
+  setText of "dilveryRise2:3" to ""  
+  setText of "dilveryRise3:3" to ""  
+  setText of "dilveryRise4:3" to ""  
+  setText of "dilveryRise5:3" to ""  
+  setText of "dilveryRise6:3" to ""  
+  setText of "dilveryRise7:3" to ""  
+  setText of "dilveryRise0:4" to ""  
+  setText of "dilveryRise1:4" to ""  
+  setText of "dilveryRise2:4" to ""  
+  setText of "dilveryRise3:4" to ""  
+  setText of "dilveryRise4:4" to ""  
+  setText of "dilveryRise5:4" to ""  
+  setText of "dilveryRise6:4" to ""  
+  setText of "dilveryRise7:4" to ""  
+  setText of "dilveryRise0:5" to ""  
+  setText of "dilveryRise1:5" to ""  
+  setText of "dilveryRise2:5" to ""  
+  setText of "dilveryRise3:5" to ""  
+  setText of "dilveryRise4:5" to ""  
+  setText of "dilveryRise5:5" to ""  
+  setText of "dilveryRise6:5" to ""  
+  setText of "dilveryRise7:5" to ""  
+  setText of "infoText1" to "Bereche Kostensteigerung w_ij"  
+  setText of "infoText2" to "w_ij entspricht Erhöhung der Kosten wenn das günstigste Lagerhaus für Kunde j schliest"  
+}
+label "Iteration 4: b)"
+{
+  unhighlightCode on "sourceCode" line 11 row 0  
+  unhighlightCode on "sourceCode" line 12 row 0  
+  unhighlightCode on "sourceCode" line 13 row 0  
+  unhighlightCode on "sourceCode" line 14 row 0  
+  unhighlightCode on "sourceCode" line 15 row 0  
+  highlightCode on "sourceCode" line 16 row 0  
+  highlightCode on "sourceCode" line 17 row 0  
+  setText of "dilveryRise8:0" to "7"  
+  setText of "dilveryRise8:2" to "8"  
+  setText of "infoText1" to "Bereche Summe der zusätzlichen Kosten E_i wenn Lagerhaus i geschlossen wird"  
+  setText of "infoText2" to "E_i = Summe aller w_ij pro Zeile"  
+}
+{
+  setText of "dilveryRise10:0" to "-2"  
+  setText of "dilveryRise10:2" to "-3"  
+  setText of "infoText1" to "Bereche gesamte Kostensteigerung d_i wenn Lagerhaus i geschlossen wird"  
+  setText of "infoText2" to "d_i = f_i - E_i   =>   Koststeigerung = Gesparte Lagerhauskosten - Zusätzliche Transportwege"  
+  setText of "dilveryRise_Header" to "Iteration 4 c:"  
+  unhighlightCode on "sourceCode" line 16 row 0  
+  unhighlightCode on "sourceCode" line 17 row 0  
+  highlightCode on "sourceCode" line 18 row 0  
+  highlightCode on "sourceCode" line 19 row 0  
+  highlightCode on "sourceCode" line 20 row 0  
+  highlightCode on "sourceCode" line 21 row 0  
+}
+label "Iteration 4: c)"
+{
+  rectangle "markedOpenWarehouse_0" offset (-15, -1) from "dilveryRise_TableLeft_1" NW offset (20, -1) from "dilveryRise10:0" SW color (0, 255, 0) depth 5 filled  fillColor (0, 255, 0)
+  rectangle "markedOpenWarehouse_r0" offset (-8, 6) from "dilveryRise_TableLeft_1" NW offset (10, -6) from "dilveryRise_TableLeft_1" SW color (0, 255, 0) depth 5 filled  fillColor (0, 255, 0)
+  rectangle "markedOpenWarehouse_c0" offset (-8, 6) from "dropCost_TableLeft_1" NW offset (10, -6) from "dropCost_TableLeft_1" SW color (0, 255, 0) depth 5 filled  fillColor (0, 255, 0)
+  rectangle "markedOpenWarehouse_2" offset (-15, -1) from "dilveryRise_TableLeft_3" NW offset (20, -1) from "dilveryRise10:2" SW color (0, 255, 0) depth 5 filled  fillColor (0, 255, 0)
+  rectangle "markedOpenWarehouse_r2" offset (-8, 6) from "dilveryRise_TableLeft_3" NW offset (10, -6) from "dilveryRise_TableLeft_3" SW color (0, 255, 0) depth 5 filled  fillColor (0, 255, 0)
+  rectangle "markedOpenWarehouse_c2" offset (-8, 6) from "dropCost_TableLeft_3" NW offset (10, -6) from "dropCost_TableLeft_3" SW color (0, 255, 0) depth 5 filled  fillColor (0, 255, 0)
+  setText of "infoText1" to "Makiere Lagerhaus  1 & 3"  
+  setText of "infoText2" to "Dieses ist absofort immer geöffnet"  
+  hide "Rect33" "markMin0:4" "Rect34" "Rect35" "Rect36" "markMin2:0" "Rect37" "markMin4:0" "Rect38" "Rect39" "Rect40" "markMin7:0" "Rect41" "Rect42" 
+}
+{
+  rectangle "markedRiseCustomer_0" offset (-6, -1) from "dilveryRise_TableHead_1" NW offset (16, 5) from "dilveryRise0:5" SW color (0, 255, 0) depth 5 filled  fillColor (0, 255, 0)
+  rectangle "markedCostCustomer_0" offset (-6, -1) from "dropCost_TableHead_1" NW offset (16, 2) from "dropCostMin0:1" SW color (0, 255, 0) depth 5 filled  fillColor (0, 255, 0)
+  rectangle "markedRiseCustomer_1" offset (-6, -1) from "dilveryRise_TableHead_2" NW offset (16, 5) from "dilveryRise1:5" SW color (0, 255, 0) depth 5 filled  fillColor (0, 255, 0)
+  rectangle "markedCostCustomer_1" offset (-6, -1) from "dropCost_TableHead_2" NW offset (16, 2) from "dropCostMin1:1" SW color (0, 255, 0) depth 5 filled  fillColor (0, 255, 0)
+  rectangle "markedRiseCustomer_2" offset (-6, -1) from "dilveryRise_TableHead_3" NW offset (16, 5) from "dilveryRise2:5" SW color (0, 255, 0) depth 5 filled  fillColor (0, 255, 0)
+  rectangle "markedCostCustomer_2" offset (-6, -1) from "dropCost_TableHead_3" NW offset (16, 2) from "dropCostMin2:1" SW color (0, 255, 0) depth 5 filled  fillColor (0, 255, 0)
+  rectangle "markedRiseCustomer_4" offset (-6, -1) from "dilveryRise_TableHead_5" NW offset (16, 5) from "dilveryRise4:5" SW color (0, 255, 0) depth 5 filled  fillColor (0, 255, 0)
+  rectangle "markedCostCustomer_4" offset (-6, -1) from "dropCost_TableHead_5" NW offset (16, 2) from "dropCostMin4:1" SW color (0, 255, 0) depth 5 filled  fillColor (0, 255, 0)
+  rectangle "markedRiseCustomer_6" offset (-6, -1) from "dilveryRise_TableHead_7" NW offset (16, 5) from "dilveryRise6:5" SW color (0, 255, 0) depth 5 filled  fillColor (0, 255, 0)
+  rectangle "markedCostCustomer_6" offset (-6, -1) from "dropCost_TableHead_7" NW offset (16, 2) from "dropCostMin6:1" SW color (0, 255, 0) depth 5 filled  fillColor (0, 255, 0)
+  rectangle "markedRiseCustomer_7" offset (-6, -1) from "dilveryRise_TableHead_8" NW offset (16, 5) from "dilveryRise7:5" SW color (0, 255, 0) depth 5 filled  fillColor (0, 255, 0)
+  rectangle "markedCostCustomer_7" offset (-6, -1) from "dropCost_TableHead_8" NW offset (16, 2) from "dropCostMin7:1" SW color (0, 255, 0) depth 5 filled  fillColor (0, 255, 0)
+  color "CWD_Warehouse_Circle_0" type "fillColor" (0, 255, 0)  
+  color "CWD_Connection_Line_0:0" (0, 255, 0)  
+  color "CWD_Connection_Line_1:0" (0, 255, 0)  
+  color "CWD_Warehouse_Circle_2" type "fillColor" (0, 255, 0)  
+  color "CWD_Connection_Line_2:2" (0, 255, 0)  
+  color "CWD_Connection_Line_4:2" (0, 255, 0)  
+  color "CWD_Connection_Line_6:2" (0, 255, 0)  
+  color "CWD_Connection_Line_7:2" (0, 255, 0)  
+  setText of "infoText1" to "Markiere 6 Kunden die nun fest Lagerhäusern zugeordnet sind"  
+  setText of "infoText2" to "Diese Kunden vom markierten Lagerhaus zu beliefern ist am günstigsten."  
+}
+{
+  interaction "multipleSelectionQuestion-1"
+  setText of "infoText1" to "Es wird kein Lagerhaus geschlossen"  
+  setText of "infoText2" to ""  
+  unhighlightCode on "sourceCode" line 18 row 0  
+  unhighlightCode on "sourceCode" line 19 row 0  
+  unhighlightCode on "sourceCode" line 20 row 0  
+  unhighlightCode on "sourceCode" line 21 row 0  
+  highlightCode on "sourceCode" line 22 row 0  
+  highlightCode on "sourceCode" line 23 row 0  
+  highlightCode on "sourceCode" line 24 row 0  
+  highlightCode on "sourceCode" line 25 row 0  
+  setText of "dilveryRise_Header" to "Iteration 4 d:"  
+}
+label "Iteration 4: d)"
+{
+  unhighlightCode on "sourceCode" line 22 row 0  
+  unhighlightCode on "sourceCode" line 23 row 0  
+  unhighlightCode on "sourceCode" line 24 row 0  
+  unhighlightCode on "sourceCode" line 25 row 0  
+  highlightCode on "sourceCode" line 26 row 0  
+  highlightCode on "sourceCode" line 27 row 0  
+  setText of "dilveryRise_Header" to "Iteration 4 e:"  
+  setText of "dilveryRise_Header" to "Abbruch nach Iteration: 4"  
+  setText of "infoText1" to "Wir haben nun den Algorithmus komplett durchlaufen"  
+  setText of "infoText2" to "Eine Auslieferung an alle Kunden kostet 35Einheiten"  
+  setText of "targetFunctionValueText" to "Gesamtkosten: 15  + 20 = 35"  
+}
+label "Iteration 4: e)"
+{
+  setText of "dropCost0:0" to "1"  
+  setText of "dropCost1:0" to "2"  
+  setText of "dropCost2:0" to "3"  
+  setText of "dropCost3:0" to "4"  
+  setText of "dropCost4:0" to "5"  
+  setText of "dropCost5:0" to "6"  
+  setText of "dropCost6:0" to "7"  
+  setText of "dropCost7:0" to "6"  
+  setText of "dropCost0:1" to ""  
+  setText of "dropCost1:1" to ""  
+  setText of "dropCost2:1" to ""  
+  setText of "dropCost3:1" to ""  
+  setText of "dropCost4:1" to ""  
+  setText of "dropCost5:1" to ""  
+  setText of "dropCost6:1" to ""  
+  setText of "dropCost7:1" to ""  
+  setText of "dropCost0:2" to "7"  
+  setText of "dropCost1:2" to "6"  
+  setText of "dropCost2:2" to "0"  
+  setText of "dropCost3:2" to "5"  
+  setText of "dropCost4:2" to "3"  
+  setText of "dropCost5:2" to "10"  
+  setText of "dropCost6:2" to "5"  
+  setText of "dropCost7:2" to "4"  
+  setText of "dropCost0:3" to ""  
+  setText of "dropCost1:3" to ""  
+  setText of "dropCost2:3" to ""  
+  setText of "dropCost3:3" to ""  
+  setText of "dropCost4:3" to ""  
+  setText of "dropCost5:3" to ""  
+  setText of "dropCost6:3" to ""  
+  setText of "dropCost7:3" to ""  
+  setText of "dropCost0:4" to "6"  
+  setText of "dropCost1:4" to "4"  
+  setText of "dropCost2:4" to "6"  
+  setText of "dropCost3:4" to "3"  
+  setText of "dropCost4:4" to "7"  
+  setText of "dropCost5:4" to "2"  
+  setText of "dropCost6:4" to "6"  
+  setText of "dropCost7:4" to "8"  
+  setText of "dropCost0:5" to ""  
+  setText of "dropCost1:5" to ""  
+  setText of "dropCost2:5" to ""  
+  setText of "dropCost3:5" to ""  
+  setText of "dropCost4:5" to ""  
+  setText of "dropCost5:5" to ""  
+  setText of "dropCost6:5" to ""  
+  setText of "dropCost7:5" to ""  
+  setText of "dropCostMin0:0" to "1"  
+  setText of "dropCostMin1:0" to "2"  
+  setText of "dropCostMin2:0" to "0"  
+  setText of "dropCostMin3:0" to "3"  
+  setText of "dropCostMin4:0" to "3"  
+  setText of "dropCostMin5:0" to "2"  
+  setText of "dropCostMin6:0" to "5"  
+  setText of "dropCostMin7:0" to "4"  
+  setText of "dropCostMin0:1" to ""  
+  setText of "dropCostMin1:1" to ""  
+  setText of "dropCostMin2:1" to ""  
+  setText of "dropCostMin3:1" to ""  
+  setText of "dropCostMin4:1" to ""  
+  setText of "dropCostMin5:1" to ""  
+  setText of "dropCostMin6:1" to ""  
+  setText of "dropCostMin7:1" to ""  
+  setText of "infoText1" to "Füge Minimalekosten in c_i1 und c_i2 Zeile ein"  
+  setText of "infoText2" to ""  
+  setText of "dilveryRise0:0" to "5"  
+  setText of "dilveryRise1:0" to "2"  
+  setText of "dilveryRise2:0" to ""  
+  setText of "dilveryRise3:0" to ""  
+  setText of "dilveryRise4:0" to ""  
+  setText of "dilveryRise5:0" to ""  
+  setText of "dilveryRise6:0" to ""  
+  setText of "dilveryRise7:0" to ""  
+  setText of "dilveryRise0:1" to ""  
+  setText of "dilveryRise1:1" to ""  
+  setText of "dilveryRise2:1" to ""  
+  setText of "dilveryRise3:1" to ""  
+  setText of "dilveryRise4:1" to ""  
+  setText of "dilveryRise5:1" to ""  
+  setText of "dilveryRise6:1" to ""  
+  setText of "dilveryRise7:1" to ""  
+  setText of "dilveryRise0:2" to ""  
+  setText of "dilveryRise1:2" to ""  
+  setText of "dilveryRise2:2" to "3"  
+  setText of "dilveryRise3:2" to ""  
+  setText of "dilveryRise4:2" to "2"  
+  setText of "dilveryRise5:2" to ""  
+  setText of "dilveryRise6:2" to "1"  
+  setText of "dilveryRise7:2" to "2"  
+  setText of "dilveryRise0:3" to ""  
+  setText of "dilveryRise1:3" to ""  
+  setText of "dilveryRise2:3" to ""  
+  setText of "dilveryRise3:3" to ""  
+  setText of "dilveryRise4:3" to ""  
+  setText of "dilveryRise5:3" to ""  
+  setText of "dilveryRise6:3" to ""  
+  setText of "dilveryRise7:3" to ""  
+  setText of "dilveryRise0:4" to ""  
+  setText of "dilveryRise1:4" to ""  
+  setText of "dilveryRise2:4" to ""  
+  setText of "dilveryRise3:4" to "1"  
+  setText of "dilveryRise4:4" to ""  
+  setText of "dilveryRise5:4" to "4"  
+  setText of "dilveryRise6:4" to ""  
+  setText of "dilveryRise7:4" to ""  
+  setText of "dilveryRise0:5" to ""  
+  setText of "dilveryRise1:5" to ""  
+  setText of "dilveryRise2:5" to ""  
+  setText of "dilveryRise3:5" to ""  
+  setText of "dilveryRise4:5" to ""  
+  setText of "dilveryRise5:5" to ""  
+  setText of "dilveryRise6:5" to ""  
+  setText of "dilveryRise7:5" to ""  
+  setText of "infoText1" to "Bereche Kostensteigerung w_ij"  
+  setText of "infoText2" to "w_ij entspricht Erhöhung der Kosten wenn das günstigste Lagerhaus für Kunde j schliest"  
+  setText of "dilveryRise8:0" to "7"  
+  setText of "dilveryRise8:2" to "8"  
+  setText of "dilveryRise8:4" to "5"  
+  setText of "infoText1" to "Bereche Summe der zusätzlichen Kosten E_i wenn Lagerhaus i geschlossen wird"  
+  setText of "infoText2" to "E_i = Summe aller w_ij pro Zeile"  
+  setText of "dilveryRise9:0" to "5"  
+  setText of "dilveryRise9:2" to "5"  
+  setText of "dilveryRise9:4" to "5"  
+  setText of "dilveryRise10:0" to "-2"  
+  setText of "dilveryRise10:2" to "-3"  
+  setText of "dilveryRise10:4" to "0"  
+  setText of "infoText1" to "Bereche gesamte Kostensteigerung d_i wenn Lagerhaus i geschlossen wird"  
+  setText of "infoText2" to "d_i = f_i - E_i   =>   Koststeigerung = Gesparte Lagerhauskosten - Zusätzliche Transportwege"  
+  rectangle "Rect43" offset (-5, -1) from "dropCost0:0" NW offset (20, 1) from "dropCost0:0" SW color (255, 255, 0) depth 5 filled  fillColor (255, 255, 0)
+  rectangle "Rect44" offset (-5, -1) from "dropCost1:0" NW offset (20, 1) from "dropCost1:0" SW color (255, 255, 0) depth 5 filled  fillColor (255, 255, 0)
+  rectangle "Rect45" offset (-5, -1) from "dropCost2:2" NW offset (20, 1) from "dropCost2:2" SW color (255, 255, 0) depth 5 filled  fillColor (255, 255, 0)
+  rectangle "Rect46" offset (-5, -1) from "dropCost3:4" NW offset (20, 1) from "dropCost3:4" SW color (255, 255, 0) depth 5 filled  fillColor (255, 255, 0)
+  rectangle "Rect47" offset (-5, -1) from "dropCost4:2" NW offset (20, 1) from "dropCost4:2" SW color (255, 255, 0) depth 5 filled  fillColor (255, 255, 0)
+  rectangle "Rect48" offset (-5, -1) from "dropCost5:4" NW offset (20, 1) from "dropCost5:4" SW color (255, 255, 0) depth 5 filled  fillColor (255, 255, 0)
+  rectangle "Rect49" offset (-5, -1) from "dropCost6:2" NW offset (20, 1) from "dropCost6:2" SW color (255, 255, 0) depth 5 filled  fillColor (255, 255, 0)
+  rectangle "Rect50" offset (-5, -1) from "dropCost7:2" NW offset (20, 1) from "dropCost7:2" SW color (255, 255, 0) depth 5 filled  fillColor (255, 255, 0)
+  setText of "infoText1" to "Markiere minimale Kosten"  
+  setText of "infoText2" to ""  
+  setText of "dilveryRise_Header" to "Endkostentabelle"  
+  setText of "infoText1" to "Füge nur notwendige Daten zur Veranschaulichung der Lösung ein"  
+  setText of "infoText2" to ""  
+  text "dropCost_endInfoHeader" "Erläuterung" offset (0, 20) from "infoText2" NW color (0, 0, 0) depth 1 font SansSerif size 16 bold
+  text "dropCost_endInfo1" "Die Markierungen in der oberen Tabellen stehen für die Zuordnung von Warenhaus i zu Kunde j " offset (10, 30) from "dropCost_endInfoHeader" NW color (0, 0, 0) depth 1 font SansSerif size 12
+  text "Text1" "wobei die markierten Zahlen für die anfallenden Kosten stehen. Zählt man diese zusammen so " offset (0, 15) from "dropCost_endInfo1" NW color (0, 0, 0) depth 1 font SansSerif size 12
+  text "Text2" "ergeben sich Transportkosten von 20 Einheiten" offset (0, 30) from "dropCost_endInfo1" NW color (0, 0, 0) depth 1 font SansSerif size 12
+  text "Text3" "Zählt man in der unteren Tabelle die Warenhausfixkosten f_i der geöffneten Warenhäuser zusammen so" offset (0, 45) from "dropCost_endInfo1" NW color (0, 0, 0) depth 1 font SansSerif size 12
+  text "Text4" "ergeben sich Warenhauskosten von 15 Einheiten" offset (0, 60) from "dropCost_endInfo1" NW color (0, 0, 0) depth 1 font SansSerif size 12
+  text "Text5" "In Summe macht das 35 Einheiten für Betrieb der Warenhäuser und Transport der Waren" offset (0, 75) from "dropCost_endInfo1" NW color (0, 0, 0) depth 1 font SansSerif size 12
+  hide "sourceCode" "markedOpenWarehouse_0" "markedOpenWarehouse_2" "markedRiseCustomer_0" "markedRiseCustomer_1" "markedRiseCustomer_2" "markedRiseCustomer_4" "markedRiseCustomer_6" "markedRiseCustomer_7" "markedOpenWarehouse_0" "markedOpenWarehouse_2" "markedRiseCustomer_0" "markedCostCustomer_0" "markedRiseCustomer_1" "markedCostCustomer_1" "markedRiseCustomer_2" "markedCostCustomer_2" "markedRiseCustomer_4" "markedCostCustomer_4" "markedRiseCustomer_6" "markedCostCustomer_6" "markedRiseCustomer_7" "markedCostCustomer_7" 
+}
+label "Lösungserläuterung"
+hideAll
+{
+  text "dropCost_end_Header" "Abschlussfolie" (10, 40) color (0, 0, 0) depth 1 font SansSerif size 28 bold
+  rectangle "backgroundRectEnding" offset (-5, -5) from "dropCost_end_Header" NW offset (7, 5) from "dropCost_end_Header" SE color (0, 0, 0) depth 5 filled  fillColor (128, 128, 128)
+  text "dropCost_end_Header2" "Zusammenfassung" offset (25, 40) from "dropCost_end_Header" NW color (0, 0, 0) depth 1 font SansSerif size 16 bold
+  text "dropCost_endProblem1" "Der Drop-Algorithmus hat innerhalb von 4 Iterationen eine Lösung zu unseren Problem gefunden." offset (10, 20) from "dropCost_end_Header2" NW color (0, 0, 0) depth 1 font SansSerif size 12
+  text "dropCost_endProblem2" "Dabei haben wir 3 Lagerhäuser geschlossen und unsere Kosten ingesamt um 20 Einheiten reduziert." offset (0, 15) from "dropCost_endProblem1" NW color (0, 0, 0) depth 1 font SansSerif size 12
+  text "dropCost_endProblem3" "Somit beliefern wir unsere 6 Kunden aus 5 Warenhäusern." offset (0, 30) from "dropCost_endProblem1" NW color (0, 0, 0) depth 1 font SansSerif size 12
+  text "dropCost_endIdea1" "Wir hoffen euch ist die funktionsweise des Algorithmuses nun besser verständlich" offset (10, 110) from "dropCost_end_Header2" NW color (0, 0, 0) depth 1 font SansSerif size 12
+  text "dropCost_endIdea2" "und ihr seid in der Lage diesen nun auf Papier durch zuführen" offset (0, 15) from "dropCost_endIdea1" NW color (0, 0, 0) depth 1 font SansSerif size 12
+  text "dropCost_endIdea3" "" offset (0, 30) from "dropCost_endIdea1" NW color (0, 0, 0) depth 1 font SansSerif size 12
+  text "dropCost_endIdea4" "Wir bedanken uns für deine Aufmerksamkeit und wünschen dir viel Spass mit Animal" offset (0, 45) from "dropCost_endIdea1" NW color (0, 0, 0) depth 1 font SansSerif size 12
+}
+label "Ende"
+{
+  text "dropCost_end_Finsh" "ENDE" offset (50, 130) from "dropCost_endIdea1" NW color (0, 0, 0) depth 1 font SansSerif size 28 bold
+}

@@ -1,0 +1,11 @@
+Jetzt konvertieren wir die Werte wieder
+in unsere ursprüngliche Glicko-2-Skala und
+aktualisieren die Wertungen des Spielers.
+
+    set r' := 173.7178*my' + 1500
+    set RD' := 173.7178*Phi'
+    set sigma := sigma'
+
+Details zur Umsetzung:
+Man darf nicht vergessen hier NICHT
+die Werte der Arbeitskopie zu ändern!

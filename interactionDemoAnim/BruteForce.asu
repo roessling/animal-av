@@ -1,0 +1,741 @@
+%Animal 2 640*480
+title "Brute Force Suche in einem String"
+author "Bjoern Dasbach <bjoern.dasbach@gmx.de>"
+{
+text "title" "Brute Force Suche in einem String" (20, 35) color (0, 0, 0) depth 1 font SansSerif size 20 bold
+rectangle "headerRect" offset (-5, -5) from "title" NW offset (5, 5) from "title" SE color (0, 0, 0) depth 3 filled fillColor (192, 192, 192)
+text "descrHd" "Beschreibung des Algorithmus" (20, 80) color (0, 0, 0) depth 1 font SansSerif size 20 bold
+codegroup "descr" at offset (0, 30) from "descrHd" SW color (0, 0, 0) highlightColor (255, 0, 0) contextColor (0, 0, 0) font SansSerif size 16 bold depth 3
+addCodeLine "In dieser naiven Variante der Suche einer Suchmaske in einem Text wird iterativ" to "descr"
+addCodeLine "jede Position des Textes als Start der Suchmaske ausprobiert. Falls das aktuelle" to "descr"
+addCodeLine "Textzeichen dabei nicht zur aktuellen Position der Suchmaske passt, wird die gesamte" to "descr"
+addCodeLine "Suchmaske um ein Zeichen verschoben und ab dem ersten Zeichen der Suchmaske erneut gesucht." to "descr"
+addCodeLine "Dies kann also auch ein Rückspringen im Text bedeuten, was das Verfahren für Suchen in" to "descr"
+addCodeLine "Dateien oder externen Daten ungeeignet macht. Die Komplexitätsklasse des Verfahrens ist" to "descr"
+addCodeLine "O(m*n), wobei m die Länge der Suchmaske und n die Länge des Suchtextes ist." to "descr"
+}
+{
+hide "descrHd" 
+hide "descr" 
+array "array" (30, 150) color (0, 0, 0) fillColor (128, 128, 128) elementColor (0, 0, 0) elemHighlight (0, 255, 0) cellHighlight (255, 200, 0) horizontal length 15 "D" "R" "E" "I" "U" "N" "D" "D" "R" "E" "I" "S" "S" "I" "G" depth 1 
+codegroup "code" at offset (0, 20) from "array" SW color (0, 0, 0) highlightColor (255, 0, 255) contextColor (0, 0, 0) font Monospaced size 16 bold depth 3
+addCodeLine "1. Betrachte jeweils das erste Zeichen in Text und zu suchender Zeichenkette" to "code"
+addCodeLine "2. Ist entweder das Ende des Textes oder der Zeichenkette erreicht?" to "code"
+addCodeLine "- Wenn ja, gehe zu Schritt 9" to "code" indentation 1
+addCodeLine "3. Sind die beiden betrachteten Zeichen gleich?" to "code"
+addCodeLine "- Wenn ja, gehe zu Schritt 7" to "code" indentation 1
+addCodeLine "4. Betrachte im Text das Zeichen direkt hinter der letzten 'Startposition' des Vergleichs" to "code"
+addCodeLine "5. Betrachte in der zu suchenden Zeichenkette wieder das erste Zeichen" to "code"
+addCodeLine "6. gehe zu Schritt 2 (Startposition des Vergleichs wird angepasst)" to "code"
+addCodeLine "7. gehe in Text und Zeichenkette jeweils ein Zeichen weiter" to "code"
+addCodeLine "8. gehe zu Schritt 2" to "code"
+addCodeLine "9. Ist das Ende der Zeichenkette erreicht?" to "code"
+addCodeLine "- Wenn ja, gib die letzte 'Startposition' des Vergleichs zurück" to "code" indentation 1
+addCodeLine "- sonst wurde das Element nicht gefunden" to "code" indentation 1
+text "#A" "Zuweisungen" offset (80, -80) from "array" SE color (0, 0, 0) depth 1 font SansSerif size 20 bold
+rectangle "Zuweisungen" offset (10, 0) from "#A" NE offset (11, 0) from "#A" SE color (0, 0, 255) depth 2 filled fillColor (0, 0, 255)
+text "#C" "Vergleiche" offset (0, 35) from "#A" NW color (0, 0, 0) depth 1 font SansSerif size 20 bold
+rectangle "Vergleiche" offset (0, 35) from "Zuweisungen" NW offset (1, 35) from "Zuweisungen" SW color (0, 0, 255) depth 2 filled fillColor (0, 0, 255)
+interactionDefinition "intDef20090128085740765.txt"
+text "Text3" "Suchstring:" (500, 180) color (0, 0, 0) depth 1 font SansSerif size 20 bold
+array "searchString" (650, 180) color (0, 0, 0) fillColor (128, 128, 128) elementColor (0, 0, 0) elemHighlight (0, 255, 0) cellHighlight (255, 200, 0) horizontal length 8 "D" "R" "E" "I" "S" "S" "I" "G" depth 1 
+}
+{
+arrayMarker "lMarker" on "array" atIndex 0 label "l" color (0, 0, 255) depth 1
+move "Zuweisungen" type "translate #2" along line (0, 0) (2, 0)  
+arrayMarker "rMarker" on "searchString" atIndex 0 label "r" color (255, 0, 0) depth 1
+move "Zuweisungen" type "translate #2" along line (0, 0) (2, 0)  
+}
+{
+highlightCode on "code" line 0
+}
+{
+unhighlightCode on "code" line 0
+}
+{
+interaction "howOften"
+}
+{
+move "Vergleiche" type "translate #2" along line (0, 0) (4, 0)  
+highlightCode on "code" line 1
+}
+{
+unhighlightCode on "code" line 1
+highlightCode on "code" line 3
+highlightArrayCell on "array" from 0 to 0
+highlightArrayCell on "searchString" from 0 to 0
+}
+{
+move "Vergleiche" type "translate #2" along line (0, 0) (2, 0)  
+move "Vergleiche" type "translate #2" along line (0, 0) (2, 0)  
+move "Zuweisungen" type "translate #2" along line (0, 0) (2, 0)  
+move "Zuweisungen" type "translate #2" along line (0, 0) (2, 0)  
+unhighlightCode on "code" line 3
+highlightCode on "code" line 4
+}
+{
+unhighlightCode on "code" line 4
+highlightCode on "code" line 8
+}
+{
+moveArrayMarker "lMarker" to position 1   within 10 ticks
+move "Zuweisungen" type "translate #2" along line (0, 0) (2, 0)  
+moveArrayMarker "rMarker" to position 1   within 10 ticks
+move "Zuweisungen" type "translate #2" along line (0, 0) (2, 0)  
+}
+{
+unhighlightCode on "code" line 8
+highlightCode on "code" line 9
+}
+{
+unhighlightCode on "code" line 9
+move "Vergleiche" type "translate #2" along line (0, 0) (4, 0)  
+highlightCode on "code" line 1
+}
+{
+unhighlightCode on "code" line 1
+highlightCode on "code" line 3
+highlightArrayCell on "array" from 0 to 1
+highlightArrayCell on "searchString" from 0 to 1
+}
+{
+move "Vergleiche" type "translate #2" along line (0, 0) (2, 0)  
+move "Vergleiche" type "translate #2" along line (0, 0) (2, 0)  
+unhighlightCode on "code" line 3
+highlightCode on "code" line 4
+}
+{
+unhighlightCode on "code" line 4
+highlightCode on "code" line 8
+}
+{
+moveArrayMarker "lMarker" to position 2   within 10 ticks
+move "Zuweisungen" type "translate #2" along line (0, 0) (2, 0)  
+moveArrayMarker "rMarker" to position 2   within 10 ticks
+move "Zuweisungen" type "translate #2" along line (0, 0) (2, 0)  
+}
+{
+unhighlightCode on "code" line 8
+highlightCode on "code" line 9
+}
+{
+unhighlightCode on "code" line 9
+move "Vergleiche" type "translate #2" along line (0, 0) (4, 0)  
+highlightCode on "code" line 1
+}
+{
+unhighlightCode on "code" line 1
+highlightCode on "code" line 3
+highlightArrayCell on "array" from 0 to 2
+highlightArrayCell on "searchString" from 0 to 2
+}
+{
+move "Vergleiche" type "translate #2" along line (0, 0) (2, 0)  
+move "Vergleiche" type "translate #2" along line (0, 0) (2, 0)  
+unhighlightCode on "code" line 3
+highlightCode on "code" line 4
+}
+{
+unhighlightCode on "code" line 4
+highlightCode on "code" line 8
+}
+{
+moveArrayMarker "lMarker" to position 3   within 10 ticks
+move "Zuweisungen" type "translate #2" along line (0, 0) (2, 0)  
+moveArrayMarker "rMarker" to position 3   within 10 ticks
+move "Zuweisungen" type "translate #2" along line (0, 0) (2, 0)  
+}
+{
+unhighlightCode on "code" line 8
+highlightCode on "code" line 9
+}
+{
+unhighlightCode on "code" line 9
+move "Vergleiche" type "translate #2" along line (0, 0) (4, 0)  
+highlightCode on "code" line 1
+}
+{
+unhighlightCode on "code" line 1
+highlightCode on "code" line 3
+highlightArrayCell on "array" from 0 to 3
+highlightArrayCell on "searchString" from 0 to 3
+}
+{
+move "Vergleiche" type "translate #2" along line (0, 0) (2, 0)  
+move "Vergleiche" type "translate #2" along line (0, 0) (2, 0)  
+unhighlightCode on "code" line 3
+highlightCode on "code" line 4
+}
+{
+unhighlightCode on "code" line 4
+highlightCode on "code" line 8
+}
+{
+moveArrayMarker "lMarker" to position 4   within 10 ticks
+move "Zuweisungen" type "translate #2" along line (0, 0) (2, 0)  
+moveArrayMarker "rMarker" to position 4   within 10 ticks
+move "Zuweisungen" type "translate #2" along line (0, 0) (2, 0)  
+}
+{
+unhighlightCode on "code" line 8
+highlightCode on "code" line 9
+}
+{
+unhighlightCode on "code" line 9
+move "Vergleiche" type "translate #2" along line (0, 0) (4, 0)  
+highlightCode on "code" line 1
+}
+{
+unhighlightCode on "code" line 1
+highlightCode on "code" line 3
+highlightArrayCell on "array" from 0 to 4
+highlightArrayCell on "searchString" from 0 to 4
+}
+{
+move "Vergleiche" type "translate #2" along line (0, 0) (2, 0)  
+unhighlightCode on "code" line 3
+highlightCode on "code" line 5
+}
+{
+moveArrayMarker "lMarker" to position 1   within 10 ticks
+move "Zuweisungen" type "translate #2" along line (0, 0) (2, 0)  
+move "Zuweisungen" type "translate #2" along line (0, 0) (2, 0)  
+move "Zuweisungen" type "translate #2" along line (0, 0) (2, 0)  
+unhighlightArrayCell on "array" from 0 to 14
+highlightArrayCell on "array" from 1 to 1
+}
+{
+unhighlightCode on "code" line 5
+highlightCode on "code" line 6
+}
+{
+moveArrayMarker "rMarker" to position 0   within 10 ticks
+move "Zuweisungen" type "translate #2" along line (0, 0) (2, 0)  
+unhighlightArrayCell on "searchString" from 0 to 7
+highlightArrayCell on "searchString" from 0 to 0
+}
+{
+unhighlightCode on "code" line 6
+highlightCode on "code" line 7
+}
+{
+unhighlightCode on "code" line 7
+move "Vergleiche" type "translate #2" along line (0, 0) (4, 0)  
+highlightCode on "code" line 1
+}
+{
+unhighlightCode on "code" line 1
+highlightCode on "code" line 3
+highlightArrayCell on "array" from 1 to 1
+highlightArrayCell on "searchString" from 0 to 0
+}
+{
+move "Vergleiche" type "translate #2" along line (0, 0) (2, 0)  
+unhighlightCode on "code" line 3
+highlightCode on "code" line 5
+}
+{
+moveArrayMarker "lMarker" to position 2   within 10 ticks
+move "Zuweisungen" type "translate #2" along line (0, 0) (2, 0)  
+move "Zuweisungen" type "translate #2" along line (0, 0) (2, 0)  
+move "Zuweisungen" type "translate #2" along line (0, 0) (2, 0)  
+unhighlightArrayCell on "array" from 0 to 14
+highlightArrayCell on "array" from 2 to 2
+}
+{
+unhighlightCode on "code" line 5
+highlightCode on "code" line 6
+}
+{
+moveArrayMarker "rMarker" to position 0   within 10 ticks
+move "Zuweisungen" type "translate #2" along line (0, 0) (2, 0)  
+unhighlightArrayCell on "searchString" from 0 to 7
+highlightArrayCell on "searchString" from 0 to 0
+}
+{
+unhighlightCode on "code" line 6
+highlightCode on "code" line 7
+}
+{
+unhighlightCode on "code" line 7
+move "Vergleiche" type "translate #2" along line (0, 0) (4, 0)  
+highlightCode on "code" line 1
+}
+{
+unhighlightCode on "code" line 1
+highlightCode on "code" line 3
+highlightArrayCell on "array" from 2 to 2
+highlightArrayCell on "searchString" from 0 to 0
+}
+{
+move "Vergleiche" type "translate #2" along line (0, 0) (2, 0)  
+unhighlightCode on "code" line 3
+highlightCode on "code" line 5
+}
+{
+moveArrayMarker "lMarker" to position 3   within 10 ticks
+move "Zuweisungen" type "translate #2" along line (0, 0) (2, 0)  
+move "Zuweisungen" type "translate #2" along line (0, 0) (2, 0)  
+move "Zuweisungen" type "translate #2" along line (0, 0) (2, 0)  
+unhighlightArrayCell on "array" from 0 to 14
+highlightArrayCell on "array" from 3 to 3
+}
+{
+unhighlightCode on "code" line 5
+highlightCode on "code" line 6
+}
+{
+moveArrayMarker "rMarker" to position 0   within 10 ticks
+move "Zuweisungen" type "translate #2" along line (0, 0) (2, 0)  
+unhighlightArrayCell on "searchString" from 0 to 7
+highlightArrayCell on "searchString" from 0 to 0
+}
+{
+unhighlightCode on "code" line 6
+highlightCode on "code" line 7
+}
+{
+unhighlightCode on "code" line 7
+move "Vergleiche" type "translate #2" along line (0, 0) (4, 0)  
+highlightCode on "code" line 1
+}
+{
+unhighlightCode on "code" line 1
+highlightCode on "code" line 3
+highlightArrayCell on "array" from 3 to 3
+highlightArrayCell on "searchString" from 0 to 0
+}
+{
+move "Vergleiche" type "translate #2" along line (0, 0) (2, 0)  
+unhighlightCode on "code" line 3
+highlightCode on "code" line 5
+}
+{
+moveArrayMarker "lMarker" to position 4   within 10 ticks
+move "Zuweisungen" type "translate #2" along line (0, 0) (2, 0)  
+move "Zuweisungen" type "translate #2" along line (0, 0) (2, 0)  
+move "Zuweisungen" type "translate #2" along line (0, 0) (2, 0)  
+unhighlightArrayCell on "array" from 0 to 14
+highlightArrayCell on "array" from 4 to 4
+}
+{
+unhighlightCode on "code" line 5
+highlightCode on "code" line 6
+}
+{
+moveArrayMarker "rMarker" to position 0   within 10 ticks
+move "Zuweisungen" type "translate #2" along line (0, 0) (2, 0)  
+unhighlightArrayCell on "searchString" from 0 to 7
+highlightArrayCell on "searchString" from 0 to 0
+}
+{
+unhighlightCode on "code" line 6
+highlightCode on "code" line 7
+}
+{
+unhighlightCode on "code" line 7
+move "Vergleiche" type "translate #2" along line (0, 0) (4, 0)  
+highlightCode on "code" line 1
+}
+{
+unhighlightCode on "code" line 1
+highlightCode on "code" line 3
+highlightArrayCell on "array" from 4 to 4
+highlightArrayCell on "searchString" from 0 to 0
+}
+{
+move "Vergleiche" type "translate #2" along line (0, 0) (2, 0)  
+unhighlightCode on "code" line 3
+highlightCode on "code" line 5
+}
+{
+moveArrayMarker "lMarker" to position 5   within 10 ticks
+move "Zuweisungen" type "translate #2" along line (0, 0) (2, 0)  
+move "Zuweisungen" type "translate #2" along line (0, 0) (2, 0)  
+move "Zuweisungen" type "translate #2" along line (0, 0) (2, 0)  
+unhighlightArrayCell on "array" from 0 to 14
+highlightArrayCell on "array" from 5 to 5
+}
+{
+unhighlightCode on "code" line 5
+highlightCode on "code" line 6
+}
+{
+moveArrayMarker "rMarker" to position 0   within 10 ticks
+move "Zuweisungen" type "translate #2" along line (0, 0) (2, 0)  
+unhighlightArrayCell on "searchString" from 0 to 7
+highlightArrayCell on "searchString" from 0 to 0
+}
+{
+unhighlightCode on "code" line 6
+highlightCode on "code" line 7
+}
+{
+unhighlightCode on "code" line 7
+move "Vergleiche" type "translate #2" along line (0, 0) (4, 0)  
+highlightCode on "code" line 1
+}
+{
+unhighlightCode on "code" line 1
+highlightCode on "code" line 3
+highlightArrayCell on "array" from 5 to 5
+highlightArrayCell on "searchString" from 0 to 0
+}
+{
+move "Vergleiche" type "translate #2" along line (0, 0) (2, 0)  
+unhighlightCode on "code" line 3
+highlightCode on "code" line 5
+}
+{
+moveArrayMarker "lMarker" to position 6   within 10 ticks
+move "Zuweisungen" type "translate #2" along line (0, 0) (2, 0)  
+move "Zuweisungen" type "translate #2" along line (0, 0) (2, 0)  
+move "Zuweisungen" type "translate #2" along line (0, 0) (2, 0)  
+unhighlightArrayCell on "array" from 0 to 14
+highlightArrayCell on "array" from 6 to 6
+}
+{
+unhighlightCode on "code" line 5
+highlightCode on "code" line 6
+}
+{
+moveArrayMarker "rMarker" to position 0   within 10 ticks
+move "Zuweisungen" type "translate #2" along line (0, 0) (2, 0)  
+unhighlightArrayCell on "searchString" from 0 to 7
+highlightArrayCell on "searchString" from 0 to 0
+}
+{
+unhighlightCode on "code" line 6
+highlightCode on "code" line 7
+}
+{
+unhighlightCode on "code" line 7
+move "Vergleiche" type "translate #2" along line (0, 0) (4, 0)  
+highlightCode on "code" line 1
+}
+{
+unhighlightCode on "code" line 1
+highlightCode on "code" line 3
+highlightArrayCell on "array" from 6 to 6
+highlightArrayCell on "searchString" from 0 to 0
+}
+{
+move "Vergleiche" type "translate #2" along line (0, 0) (2, 0)  
+move "Vergleiche" type "translate #2" along line (0, 0) (2, 0)  
+move "Zuweisungen" type "translate #2" along line (0, 0) (2, 0)  
+move "Zuweisungen" type "translate #2" along line (0, 0) (2, 0)  
+unhighlightCode on "code" line 3
+highlightCode on "code" line 4
+}
+{
+unhighlightCode on "code" line 4
+highlightCode on "code" line 8
+}
+{
+moveArrayMarker "lMarker" to position 7   within 10 ticks
+move "Zuweisungen" type "translate #2" along line (0, 0) (2, 0)  
+moveArrayMarker "rMarker" to position 1   within 10 ticks
+move "Zuweisungen" type "translate #2" along line (0, 0) (2, 0)  
+}
+{
+unhighlightCode on "code" line 8
+highlightCode on "code" line 9
+}
+{
+unhighlightCode on "code" line 9
+move "Vergleiche" type "translate #2" along line (0, 0) (4, 0)  
+highlightCode on "code" line 1
+}
+{
+unhighlightCode on "code" line 1
+highlightCode on "code" line 3
+highlightArrayCell on "array" from 6 to 7
+highlightArrayCell on "searchString" from 0 to 1
+}
+{
+move "Vergleiche" type "translate #2" along line (0, 0) (2, 0)  
+unhighlightCode on "code" line 3
+highlightCode on "code" line 5
+}
+{
+moveArrayMarker "lMarker" to position 7   within 10 ticks
+move "Zuweisungen" type "translate #2" along line (0, 0) (2, 0)  
+move "Zuweisungen" type "translate #2" along line (0, 0) (2, 0)  
+move "Zuweisungen" type "translate #2" along line (0, 0) (2, 0)  
+unhighlightArrayCell on "array" from 0 to 14
+highlightArrayCell on "array" from 7 to 7
+}
+{
+unhighlightCode on "code" line 5
+highlightCode on "code" line 6
+}
+{
+moveArrayMarker "rMarker" to position 0   within 10 ticks
+move "Zuweisungen" type "translate #2" along line (0, 0) (2, 0)  
+unhighlightArrayCell on "searchString" from 0 to 7
+highlightArrayCell on "searchString" from 0 to 0
+}
+{
+unhighlightCode on "code" line 6
+highlightCode on "code" line 7
+}
+{
+unhighlightCode on "code" line 7
+move "Vergleiche" type "translate #2" along line (0, 0) (4, 0)  
+highlightCode on "code" line 1
+}
+{
+unhighlightCode on "code" line 1
+highlightCode on "code" line 3
+highlightArrayCell on "array" from 7 to 7
+highlightArrayCell on "searchString" from 0 to 0
+}
+{
+move "Vergleiche" type "translate #2" along line (0, 0) (2, 0)  
+move "Vergleiche" type "translate #2" along line (0, 0) (2, 0)  
+move "Zuweisungen" type "translate #2" along line (0, 0) (2, 0)  
+move "Zuweisungen" type "translate #2" along line (0, 0) (2, 0)  
+unhighlightCode on "code" line 3
+highlightCode on "code" line 4
+}
+{
+unhighlightCode on "code" line 4
+highlightCode on "code" line 8
+}
+{
+moveArrayMarker "lMarker" to position 8   within 10 ticks
+move "Zuweisungen" type "translate #2" along line (0, 0) (2, 0)  
+moveArrayMarker "rMarker" to position 1   within 10 ticks
+move "Zuweisungen" type "translate #2" along line (0, 0) (2, 0)  
+}
+{
+unhighlightCode on "code" line 8
+highlightCode on "code" line 9
+}
+{
+unhighlightCode on "code" line 9
+move "Vergleiche" type "translate #2" along line (0, 0) (4, 0)  
+highlightCode on "code" line 1
+}
+{
+unhighlightCode on "code" line 1
+highlightCode on "code" line 3
+highlightArrayCell on "array" from 7 to 8
+highlightArrayCell on "searchString" from 0 to 1
+}
+{
+move "Vergleiche" type "translate #2" along line (0, 0) (2, 0)  
+move "Vergleiche" type "translate #2" along line (0, 0) (2, 0)  
+unhighlightCode on "code" line 3
+highlightCode on "code" line 4
+}
+{
+unhighlightCode on "code" line 4
+highlightCode on "code" line 8
+}
+{
+moveArrayMarker "lMarker" to position 9   within 10 ticks
+move "Zuweisungen" type "translate #2" along line (0, 0) (2, 0)  
+moveArrayMarker "rMarker" to position 2   within 10 ticks
+move "Zuweisungen" type "translate #2" along line (0, 0) (2, 0)  
+}
+{
+unhighlightCode on "code" line 8
+highlightCode on "code" line 9
+}
+{
+unhighlightCode on "code" line 9
+move "Vergleiche" type "translate #2" along line (0, 0) (4, 0)  
+highlightCode on "code" line 1
+}
+{
+unhighlightCode on "code" line 1
+highlightCode on "code" line 3
+highlightArrayCell on "array" from 7 to 9
+highlightArrayCell on "searchString" from 0 to 2
+}
+{
+move "Vergleiche" type "translate #2" along line (0, 0) (2, 0)  
+move "Vergleiche" type "translate #2" along line (0, 0) (2, 0)  
+unhighlightCode on "code" line 3
+highlightCode on "code" line 4
+}
+{
+unhighlightCode on "code" line 4
+highlightCode on "code" line 8
+}
+{
+moveArrayMarker "lMarker" to position 10   within 10 ticks
+move "Zuweisungen" type "translate #2" along line (0, 0) (2, 0)  
+moveArrayMarker "rMarker" to position 3   within 10 ticks
+move "Zuweisungen" type "translate #2" along line (0, 0) (2, 0)  
+}
+{
+unhighlightCode on "code" line 8
+highlightCode on "code" line 9
+}
+{
+unhighlightCode on "code" line 9
+move "Vergleiche" type "translate #2" along line (0, 0) (4, 0)  
+highlightCode on "code" line 1
+}
+{
+unhighlightCode on "code" line 1
+highlightCode on "code" line 3
+highlightArrayCell on "array" from 7 to 10
+highlightArrayCell on "searchString" from 0 to 3
+}
+{
+move "Vergleiche" type "translate #2" along line (0, 0) (2, 0)  
+move "Vergleiche" type "translate #2" along line (0, 0) (2, 0)  
+unhighlightCode on "code" line 3
+highlightCode on "code" line 4
+}
+{
+unhighlightCode on "code" line 4
+highlightCode on "code" line 8
+}
+{
+moveArrayMarker "lMarker" to position 11   within 10 ticks
+move "Zuweisungen" type "translate #2" along line (0, 0) (2, 0)  
+moveArrayMarker "rMarker" to position 4   within 10 ticks
+move "Zuweisungen" type "translate #2" along line (0, 0) (2, 0)  
+}
+{
+unhighlightCode on "code" line 8
+highlightCode on "code" line 9
+}
+{
+unhighlightCode on "code" line 9
+move "Vergleiche" type "translate #2" along line (0, 0) (4, 0)  
+highlightCode on "code" line 1
+}
+{
+unhighlightCode on "code" line 1
+highlightCode on "code" line 3
+highlightArrayCell on "array" from 7 to 11
+highlightArrayCell on "searchString" from 0 to 4
+}
+{
+move "Vergleiche" type "translate #2" along line (0, 0) (2, 0)  
+move "Vergleiche" type "translate #2" along line (0, 0) (2, 0)  
+unhighlightCode on "code" line 3
+highlightCode on "code" line 4
+}
+{
+unhighlightCode on "code" line 4
+highlightCode on "code" line 8
+}
+{
+moveArrayMarker "lMarker" to position 12   within 10 ticks
+move "Zuweisungen" type "translate #2" along line (0, 0) (2, 0)  
+moveArrayMarker "rMarker" to position 5   within 10 ticks
+move "Zuweisungen" type "translate #2" along line (0, 0) (2, 0)  
+}
+{
+unhighlightCode on "code" line 8
+highlightCode on "code" line 9
+}
+{
+unhighlightCode on "code" line 9
+move "Vergleiche" type "translate #2" along line (0, 0) (4, 0)  
+highlightCode on "code" line 1
+}
+{
+unhighlightCode on "code" line 1
+highlightCode on "code" line 3
+highlightArrayCell on "array" from 7 to 12
+highlightArrayCell on "searchString" from 0 to 5
+}
+{
+move "Vergleiche" type "translate #2" along line (0, 0) (2, 0)  
+move "Vergleiche" type "translate #2" along line (0, 0) (2, 0)  
+unhighlightCode on "code" line 3
+highlightCode on "code" line 4
+}
+{
+unhighlightCode on "code" line 4
+highlightCode on "code" line 8
+}
+{
+moveArrayMarker "lMarker" to position 13   within 10 ticks
+move "Zuweisungen" type "translate #2" along line (0, 0) (2, 0)  
+moveArrayMarker "rMarker" to position 6   within 10 ticks
+move "Zuweisungen" type "translate #2" along line (0, 0) (2, 0)  
+}
+{
+unhighlightCode on "code" line 8
+highlightCode on "code" line 9
+}
+{
+unhighlightCode on "code" line 9
+move "Vergleiche" type "translate #2" along line (0, 0) (4, 0)  
+highlightCode on "code" line 1
+}
+{
+unhighlightCode on "code" line 1
+highlightCode on "code" line 3
+highlightArrayCell on "array" from 7 to 13
+highlightArrayCell on "searchString" from 0 to 6
+}
+{
+move "Vergleiche" type "translate #2" along line (0, 0) (2, 0)  
+move "Vergleiche" type "translate #2" along line (0, 0) (2, 0)  
+unhighlightCode on "code" line 3
+highlightCode on "code" line 4
+}
+{
+unhighlightCode on "code" line 4
+highlightCode on "code" line 8
+}
+{
+moveArrayMarker "lMarker" to position 14   within 10 ticks
+move "Zuweisungen" type "translate #2" along line (0, 0) (2, 0)  
+moveArrayMarker "rMarker" to position 7   within 10 ticks
+move "Zuweisungen" type "translate #2" along line (0, 0) (2, 0)  
+}
+{
+unhighlightCode on "code" line 8
+highlightCode on "code" line 9
+}
+{
+unhighlightCode on "code" line 9
+highlightCode on "code" line 1
+}
+{
+unhighlightCode on "code" line 1
+highlightCode on "code" line 2
+highlightArrayCell on "array" from 7 to 14
+highlightArrayCell on "searchString" from 0 to 7
+}
+{
+unhighlightCode on "code" line 2
+highlightCode on "code" line 10
+}
+{
+interaction "link"
+}
+{
+move "Vergleiche" type "translate #2" along line (0, 0) (2, 0)  
+unhighlightCode on "code" line 10
+highlightCode on "code" line 11
+}
+{
+hide "Text3" 
+hide "searchString" 
+text "nrSteps" "Insgesamt verwendete der Algorithmus 60 Zuweisungen und 70 Vergleiche." offset (0, 30) from "code" SW color (0, 0, 0) depth 1 font SansSerif size 20 bold
+}
+{
+hide "nrSteps" 
+hide "code" 
+hide "Zuweisungen" 
+hide "#A" 
+hide "Vergleiche" 
+hide "#C" 
+hide "array" 
+codegroup "complexity" at offset (0, 30) from "title" SW color (0, 0, 0) highlightColor (255, 0, 0) contextColor (0, 0, 0) font SansSerif size 16 bold depth 3
+}
+{
+hide "complexity" 
+text "adForURL" "Weitere Animationen finden Sie unter http://www.algoanim.info/Animal2 im Online-Repository" offset (0, 50) from "title" SW color (0, 0, 0) depth 1 font SansSerif size 20 bold
+}
