@@ -1,0 +1,48 @@
+noSuchKeyException = There is no ressource for the key {0}
+iconNotFound = Icon "{0}" not found
+Ä -> \u00c4
+ä -> \u00e4
+Ö -> \u00d6
+ö -> \u00f6
+Ü -> \u00dc
+ü -> \u00fc
+ß -> \u00df
+
+NAME = Skalarprodukt
+TITLE = Skalarprodukt
+Skalarprodukt = Skalarprodukt
+VEKTOR = Vektor
+Description = Das Skalarprodukt zweier Vektoren ist die Summe aller Multiplikationen derjenigen Elemente, die sich an der jeweils gleichen Position in den Vektoren befinden.
+returnGeneral = Das Skalarprodukt kann nur auf zwei Vektoren angewendet werden, die die gleiche Länge haben. 
+RETURN = Es wird das Skalarprodukt von zwei Vektoren zurückgegeben.
+Beispiel = Beispiel
+Beschreibung = Beschreibung 
+SourceCode = Quellcode
+question1 = Mit dem Skalarprodukt werden zwei Vektoren subtrahiert.
+answer1.0 = Richtig
+answer1.1 = Falsch
+question1FeedbackW = Das ist korrekt.
+question1FeedbackR = Das ist nicht korrekt. 
+question2 = Was lässt sich über die Position von zwei Vektoren sagen, wenn das Skalarprodukt 0 ist?
+answer2.0 = Sie sind parallel zueinander.
+answer2.1 = Sie sind orthogonal zueinander.
+answer2.2 = Keine Aussage möglich.
+question2FeedbackW = Das ist nicht richtig.
+question2FeedbackR = Das ist richtig.
+question3 = Das Skalarprodukt findet hauptsächlich Anwendung in der Statistik. 
+answer3.0 = Richtig
+answer3.1 = Flasch
+question3FeedbackW = Das ist nicht korrekt.
+question3FeedbackR = Das ist korrekt.
+Thesolutionis = Die Lösung ist: 
+Zusammenfassung = Nach der Anwendung des Skalarprodukts auf die zwei eingegebenen Vektoren, kann man die skalare Größe bezüglich des Winkels interpretieren. 
+Solution = Lösung
+FORMEL = Formel: 
+eingesetzt = Eingesetzt 
+zusammenfassung = Ein Ergebnis des Types int wurde erstellt.
+emptycase = Einer oder beide eingegebenen Vektoren sind leer 
+emptyCASE= Empty-Fall
+nullException = Einer oder beide Vektoren wurden nicht korrekt angegeben
+nullEXCEPTION = NullException
+algorithmenbeschreibung = Das Skalarprodukt zweier Vektoren ist die Summe aller Multiplikationen derjenigen Elemente, die sich an der jeweils gleichen Position in den Vektoren befinden.\nEs wird also immer das erste Element des ersten Vektors mit dem ersten Element des zweiten Vektors multipliziert, dann das zweite Element beider Vektoren, dann das jeweils dritte und so weiter.\nVoraussetzung hierfür ist, dass beide Vektoren gleich lang sind.\nDas Skalarprodukt findet hauptsächlich Anwendung in der linearen Algebra. \nAnhand des Skalarprodukts kann man die Winkel zwischen den beiden Vektoren bestimmen, ist das Ergebnis zum Beispiel 0, so sind die Vektoren orthogonal zueinander.
+

@@ -1,0 +1,106 @@
+noSuchKeyException=There i s no ressource the key {0}
+iconNotFound=Ic on "{0}" not found
+
+title = JPEG Compression
+
+intro1 = JPEG (Joint Photographic Experts Group) is a family of algorithms for
+intro2 = digital images which was standarized under
+intro3 = ISO 10918.
+intro4 = JPEG contains lossy and unlossy compression.
+intro5 = The compression is divided by the following sections:
+intro6 = 1. Color space transformation to YCrCb
+intro7 = 2. Downsampling
+intro8 = 3. Discrete cosine transform
+intro9 = 4. Quantization
+intro10 = 5. Entropy coding
+
+description1 = JPEG is a standard for the saving of  digital images.
+description2 = The advantage of the JPEG format, is the low space usage on the basis of compression.
+
+conversion_title =  1. Color space transformation to YCrCb
+conversion1 = The RGB color values will be transformed to the Y'CbCr color space.
+conversion2 = Transforming the color as:
+conversion3 = - Y     Luminance
+conversion4 = - Cb    Blue difference
+conversion5 = - Cr    Red difference
+conversion6 = That gives us:
+conversion_rgb_matrix_title = RGB-Matrix
+conversion_seperate = Which will be seperated
+conversion_convert = and transformed
+
+
+subsampling_title = 2. Downsampling
+subsampling1 = Because humans can see luminance better than color,
+subsampling2 = we can safe the color space in reduced resolution,
+subsampling3 = without the observer being affected to much.
+subsampling4 = Different ratios give us different compression and loss results.
+subsampling5 = Common in JPEG is the ratio (Y:Cb:Cr = 4:2:0). That means, 8Y, 2 Cb, 2 Cr values per 4x2 pixel.
+subsampling6 = Also often used are 4:4:4 and 4:2:2.
+
+subsampling444_title = 4:4:4
+subsampling444_desc1 = For each Y' pixel there is a Cb pixel and a Cr pixel.
+subsampling444_desc2 = This ratio brings no loss.
+
+subsampling422_title = 4:2:2
+subsampling422_desc1 = For each 2 Y' pixel there is one Cb and one Cr pixel.
+subsampling422_desc2 = There are no Cb and Cr values for every second pixel on the horizontal Y' line.
+subsampling422_desc3 = With this ratio we will save approximately 30% space.
+
+subsampling420_title = 4:2:0
+subsampling420_desc1 = For every 4 Y' pixel, there is one Cb and Cr pixel.
+subsampling420_desc2 = There are no Cb or Cr pixel for every second pixel on the horizontal and vertical Y' line.
+subsampling420_desc3 = With this ratio we will save approximately 50% space.
+subsampling_example = For example with our Y'CbCr pixels and (4:2:0) ratio:
+
+dct_title = 3. Discrete cosine transform
+dct1 = After we transformed our matrix to the Y'CbCr color space and subsampled these,
+dct2 = we will execute the discrete cosine transform on each of the 3 color matrices which will further we seperated in 8x8 blocks.
+dct3 = That means, we will describe each matrix as their weighted cosine wave.
+dct4 = The advantage is that to top left corner will contain most of our wavelength.
+dct5 = The low frequency part on the bottom right can be neglected,
+dct6 = because humans can't see them that good.
+dct7 = The weighting will follow in the quantization section
+
+quant_title = 4. Quantization
+quant1 = With quantization we will divide our transformed
+quant2 = with an quantization matrix Q.
+quant3 = The qunatization matrix can be scaled for further compression.
+quant4 = We will round the result to the next integer.
+quant_matrix_title = Quantization matrix Q
+
+encode_title = 5. Entropy coding
+encode1 = A sequential block will be created from the 8x8 blocks.
+encode2 = For that, the coefficients will be arranged in a zigzag order.
+encode3 = Following zeros will be cut.
+
+summary_title = Summary
+summary_ycrcb = Through downsampling we could save up to 50% space.
+summary_dct = The discrete cosine transformation allowed us to even more space for each 8x8 block.
+summary_decode = The decode function is just the invert function. But there will be losses when reconstructing.
+
+question_right = Correct answer!
+question_wrong = Wrong, the correct answer is: 
+
+question_color = What is Y' in the Y'CbCr color space?
+question_color1 = Luminance
+question_color2 = Red
+question_color3 = Blue
+question_color4 = Green
+
+question_sub = How many Cr and Cb pixels are there per 4 Y' pixels in 4:2:0
+question_sub1 = 1 Cr and 1 Cb
+question_sub2 = 2 Cr and 2 Cb
+question_sub3 = 3 Cr and 3 Cb
+question_sub4 = 4 Cr and 4 Cb
+
+question_dct = What do we get after the discrete cosine transform?
+question_dct1 = The cosine frequencies of the matrix.
+question_dct2 = The sinus frequencies of the matrix.
+question_dct3 = The sum of the matrix.
+question_dct4 = The taylor series of the matrix.
+
+question_quant = What happens in the quantization step?
+question_quant1 = We divide each element of our block with the corresponding element in the quantization table.
+question_quant2 = We multiply each element of our block with the corresponding element in the quantization table.
+question_quant3 = We add each element of our block with the corresponding element in the quantization table.
+question_quant4 = We subtract each element of our block with the corresponding element in the quantization table.

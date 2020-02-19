@@ -1,0 +1,69 @@
+noSuchKeyException=There is  no ressource for the key {0}
+iconNotFound=Icon "{0}" not found
+
+## intro ##
+intro = Intro
+intro_l0 = Unirected Graphical Moldes spielen beispielsweise in Computer Vision eine wichtige Rolle. Sie sind eine Zusammenkunft
+intro_l1 = der Wahrscheinlichkeitstheorie und der Graphentheorie, dessen Aufgabe es ist, mit komplexen Problemen umzugehen.
+intro_l2 = Dazu wird die Struktur eines Wahrscheinlichkeitsmodells durch einen Graphen visualisiert. Durch 
+intro_l3 = den Graphen erh\u00c3\u00a4lt man also eine Einsicht in die Struktur des Modells. So treten Undirected Graphical Models 
+intro_l4 = zum Beispiel als sogenannte Markov Random Fields in Computer Vision auf, welcher den Prior in der Wahrscheinlichkeitsrechnung 
+intro_l5 = darstellt. So kann damit berechnet werden, wie kompatibel zwei benachbarte Pixel in Bezug auf die Disparity beispielsweise sind.
+intro_l6 = Dabei korrespondieren die Knoten des Graphen zu den zuf\u00c3\u00a4lligen Variablen. Die gerichteten Kanten zwischen den 
+intro_l7 = Knoten korrespondieren zu den Abh\u00c3\u00a4ngigkeiten der Variablen.
+
+
+## basic models ##
+basics = Basis Modelle
+basic_models_header = Basis Modelle
+basic_models_l0 = Bei den ungerichteten Graphen werden Cliquen gebildet und anhand dieser das Wahrscheinlichkeitsmodell aufgestellt. Anders 
+basic_models_l1 = als bei Directed Graphical Models muss hier eine Normailisierung mit dem Normalisierungsfaktor Z durchgef\u00c3\u00bchrt werden, da 
+basic_models_l2 = die Faktoren im Allgemeinen nichts mit der (bedingten) Wahrscheinlichkeitsverteilung zu tun haben.
+
+#basic model: chain
+bm_chain_l0 = Bei Ketten von Knoten sind die Knoten nacheinander miteinander verbunden. Nun werden nacheinander die Cliquen der Ketten gebildet.
+bm_chain_l1 = Dabei bildet jedes Knotenpaar, das mit einer Kante verbunden ist, eine Clique, sodass wir folgendes Ergebnis erhalten: (A,B) , (B,C).  
+bm_chain_l2 = Die erhaltenen Cliquen, werden nun in unsere Wahrscheinlichkeitsmodell mit der nicht negativen Funktion f gepackt, sodass wir mit 
+bm_chain_l3 = unserem Normalisierungsfaktor folgendes Modell erhalten: p(A,B,C) =  1/Z * f(A,B) * f(B,C).
+bm_chain_l4 = Was ist, wenn ein Knoten mehrere Verbindungen hat, wie in unserem n\u00c3\u00a4chsten Beispiel?
+
+
+#basic model: full
+bm_full_l0 = Wenn wir hier nun die Cliquen wie oben bilden, erhalten wir folgende Cliquen: (A,B), (B,C), (C.D). Dabei kann hier eine gr\u00c3\u00b6\u00c3\u0178ere Clique als
+bm_full_l1 = zwei gebildet werden. Um die richtige Anzahl k zu erhalten, wird das das Cliquenproblem genannt. Eine gr\u00c3\u00b6\u00c3\u0178ere Clique kann gebildet werden, 
+bm_full_l2 = wenn alle Knoten, die sich in der Clique miteinander verbunden sind. In unserem Beispiel ist dies der Fall, weshalb wir die Clique (A,B,C)
+bm_full_l3 = erhalten. Wenn eine Verbindung zwischen den Knoten nicht mehr vorhanden w\u00c3\u00a4re, w\u00c3\u00bcrde dies nicht mehr gehen und wir h\u00c3\u00a4tten nur noch ein
+bm_full_l4 = Kettenmodell. Das Beispiel l\u00c3\u00a4sst sich also durch folgendes Wahrscheinlichkeitsmodell beschreiben: p(A,B,C) = 1/Z * f(A,B,C)
+
+## outro ##
+outro = Outro
+outro_l0 = Der Algorithmus hat also das passende Wahrscheinlichkeitsmodell f\u00c3\u00bcr den gegebenen Graphen zur\u00c3\u00bcckgegeben.
+outro_l1 = So k\u00c3\u00b6nnte nun das gefundene Modell zur Berechnung des Makrov Random Field verwendet werden, um die korrespondenz der benachbarten
+outro_l2 = Pixel zu berechnen.
+
+## algo ## 
+algo = Algorithmus
+algo_l0 = 1. W\u00c3\u00a4hle einen Knoten aus dem Graphen aus.
+algo_l1 = 2. Markiere alle mit dem Knoten verbundenen Knoten, um daraus Cliquen zu bilden.
+algo_l2 = 3. Sind die markierten Knoten vollst\u00c3\u00a4ndig miteinander verbunden?
+algo_l3 = 3.1 Ja
+algo_l4 = 3.1.1 Trage die maximale Clique in das Modell ein.
+algo_l5 = 3.2 Nein
+algo_l6 = 3.2.1. Trage die einzelnen Cliquen in das Modell ein.
+algo_l7 = 4. Sobald alle Cliquen gefunden wurden, ist das Modell fertig
+
+## info text ##
+info1.1 = Die Clique 
+info1.2 = f\u00c3\u00bcr Knoten  
+info1.3 = wurde bereits hinzugef\u00c3\u00bcgt.
+
+## question ##
+q1f = Wie lautet das Modell vom aktuell betrachteten Knoten?
+q1a = Richtig! Da alle Knoten vollständig miteinander verbunden sind
+q2f = Wie lautet das Modell vom aktuell betrachteten Knoten?
+q2a = Richtig, die Knoten sind nicht vollständig miteinander verbunden.
+q34f = Kann eine Clique zu dem aktuellen Knoten aus mehr als zwei Knoten bestehen?
+at = Richtige Antwort!
+af = Falsche Antwort!
+
+

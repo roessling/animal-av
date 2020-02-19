@@ -1,0 +1,45 @@
+noSuchKeyException = There is no ressource for the key {0}
+iconNotFound = Icon "{0}" not found
+Ä -> \u00c4
+ä -> \u00e4
+Ö -> \u00d6
+ö -> \u00f6
+Ü -> \u00dc
+ü -> \u00fc
+ß -> \u00df
+
+NAME = Theorem of Pythagoras
+Pythagoras = Theorem of Pythagoras
+beschreibungsText = The Theorem of Pythagoras is used to calculate the length of the hypotenuse in right-angled triangles.
+RETURN = In order to use this theorem, two sides of a right-angled triangle need to be given.
+Beispiel = Example
+Beschreibung  = Description of the algorithm
+DREIECK = Triangle
+SourceCode = Quellcode
+question1 = The Pythagorean Theorem can be used on any triangle.
+answer1.0 = Right
+answer1.1 = Wrong
+question1FeedbackW = That is not right.
+question1FeedbackR = That is right. 
+question2 = Which one is the longest side of a right-angled triangle?
+answer2.0 = Hypotenuse
+answer2.1 = Cathetes
+answer2.2 = They have all the same length
+question2FeedbackW = That is not right.
+question2FeedbackR = That is correct.
+question3 = The Pythagorean Theorem is used to calculate an unknown side of a right-angled triangle.
+answer3.0 = Right
+answer3.1 = Wrong
+question3FeedbackW = That is not right.
+question3FeedbackR = That is correct.
+
+Thesolutionis = The length of the searched side is:  
+Solution = Result
+Formel = Formula
+eingesetzt = Entered
+zusammenfassung = The result of the Pythagorean Theorem can be used for many different mathematical purposes or even in your daily life.
+emptycase = One or both inputs are empty.
+emptyCASE= Empty-Fall
+nullException = One or both inputs are incorrect.
+nullEXCEPTION = NullException
+algorithmenbeschreibung = The Theorem of Pythagoras is used to calculate the length of the hypotenuse in right-angled triangles. \nThe hypotenuse c is the longest side of the triangle and subtends the right angle. \nIn order to use the theorem a^2 + b^2 = c^2, two sides of the triangle must be given. If the Hypotenuse is given, the formula can be rearranged, so that you can compute one of the kathetes a or b. \nFinally, to get the length of the hypotenuse you must calculate the square root of the result (c^2).\nThe Theorem of Pythagoras is mainly used in euclidean geometry.

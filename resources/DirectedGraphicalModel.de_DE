@@ -1,0 +1,60 @@
+noSuchKeyException=There is  no ressource for the key {0}
+iconNotFound=Icon "{0}" not found
+
+## intro ##
+intro = Intro
+intro_l0 = Directed Graphical Moldes spielen beispielsweise in Computer Vision eine wichtige Rolle. Sie sind eine Zusammenkunft
+intro_l1 = der Wahrscheinlichkeitstheorie und der Graphentheorie, dessen Aufgabe es ist, mit komplexen Problemen umzugehen.
+intro_l2 = Dazu wird die Struktur eines Wahrscheinlichkeitsmodells durch einen Graphen visualisiert. Durch 
+intro_l3 = den Graphen erh\u00c3\u00a4lt man also eine Einsicht in die Struktur des Modells. Die Directed Graphical Models basieren 
+intro_l4 = auf den gerichteten Graphen und beschreiben Abh\u00c3\u00a4ngigkeiten der zuf\u00c3\u00a4lligen Variablen. Dabei korrespondieren die 
+intro_l5 = Knoten des Graphen zu den zuf\u00c3\u00a4lligen Variablen. Die gerichteten Kanten zwischen den Knoten korrespondieren
+intro_l6 = zu den Abh\u00c3\u00a4ngigkeiten der Variablen.
+
+## basic models ##
+basics = Basis Modelle
+basic_models_header = Basis Modelle
+basic_models_l0 = Bei den gerichteten Graphen werden folgende zwei Verbindungen zur Berechnung der Wahrscheinlichkeit bertrachtet:
+basic_models_l1 = Ketten von Knoten und konvergente Verbindungen.
+
+#basic model: chain
+bm_chain_l0 = Bei Ketten von Knoten sind die Knoten nacheinander miteinander verbunden. Beim Betrachten dieses Graphen stellen wir
+bm_chain_l1 = fest, dass die Variablen C von B und B von A abh\u00c3\u00a4ngt und A unabh\u00c3\u00a4ngig ist. Die Wahrscheinlichekeit von A l\u00c3\u00a4sst sich also durch die Prior
+bm_chain_l2 = Wahrscheinlichkeit bestimmen: p(A). Die Abh\u00c3\u00a4ngigkeit von B zur Variable A l\u00c3\u00a4sst sich durch die bedingte Wahrscheinlichkeit
+bm_chain_l3 = darstellen: p(B|A). Analog zu B wird die bedingte Wahrscheinlichkeit von c besimmt:p(C|A). Die Struktur des graphischen Modells 
+bm_chain_l4 = l\u00c3\u00a4sst sich also durch folgendes Wahrscheinlichkeitsmodell beschreiben: p(A,B,C) = p(C|B) * p(B|A) * p(A).
+
+#basic model: convergent
+bm_convergent_l0 = Im Graphen der konvergenten Verbindungen zeigen ein oder mehrere Kanten auf einen Knoten. Hier zeigen die Kanten von Knoten A und B auf C.
+bm_convergent_l1 = Die Variablen A und B sind hier also unabh\u00c3\u00a4ngig und C von A und B abh\u00c3\u00a4ngig. Die Variablen A und B werden also durch die Prior
+bm_convergent_l2 = Wahrscheinlichkeit beschrieben, da beide keine Abh\u00c3\u00a4ngigkeiten besitzen: p(A) * p(B). Um C zu modellieren wird die bedingte Wahrscheinlichkeit
+bm_convergent_l3 = verwendet: p(C|A,B). Das Wahrscheinlichkeitsmodell des konvergenten Graphen sieht dann wie folgt aus:  p(A,B,C) = p(C|A,B) * p(B) * p(A).
+
+## outro ##
+outro = Outro
+outro_l0 = Der Algorithmus hat also das passende Wahrscheinlichkeitsmodell f\u00c3\u00bcr den gegebenen Graphen zur\u00c3\u00bcckgegeben.
+outro_l1 = Wenn die einzelnen Variablen beispielsweise f\u00c3\u00bcr bestimmte Situationen stehen, k\u00c3\u00b6nnen die Wahrhscheinlichkeiten 
+outro_l2 = f\u00c3\u00bcr das eintreten der einzelnen Situationen nun mit Hilfe des Modells berechnet werden.
+
+## algo ## 
+algo = Algorithmus
+algo_l0 = 1. W\u00c3\u00a4hle einen Knoten aus dem Graphen aus.
+algo_l1 = 2. Hat der Knoten, andere Knoten, die auf diesen Zeigen?
+algo_l2 = 2.1. Ja
+algo_l3 = 2.1.1. F\u00c3\u00bcge den Knoten als bedingte Wahrscheinlichkeit in das formale Modell ein.
+algo_l4 = 2.1.2. F\u00c3\u00bcge alle Knoten, die auf den Knoten zeigen als Bedingung ein.
+algo_l5 = 2.2. Nein
+algo_l6 = 2.2.1. Trage den Knoten als A-Priori-Wahrscheinlichkeit in das formale Modell ein.
+algo_l7 = 3. Wenn alle Knoten einmal angeschaut wurden, ist das formale Modell fertig.
+
+
+## question ##
+q1 = Wie lautet das Modell vom aktuell betrachteten Knoten?
+a1 = Ketten Verbindung
+a2 = Konvergente Verbindung 
+at = Richtige Antwort
+af = Falsche Antwort
+
+q2 = Wie lautet das Modell für den aktuellen Knoten?
+
+

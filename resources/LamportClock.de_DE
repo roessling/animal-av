@@ -1,0 +1,46 @@
+noSuchKeyException=Es gibt keine Ressource f\u00fcr Eintrag {0}
+iconNotFound=Icon ”{0}” not found
+algorithmName=Lamport Uhr
+generatorName=Lamport's Clock [DE]
+description[0]=Lamport Uhr is ein Algorithmus zum Zuweisen von einem eindeutigen Zeitstemple an Nachrichten in einem verteilten System.
+description[1]=Der Algorithmus erfüllt die schwache Konsistenzbedingung für Uhren, er garantiert falls die Nachricht n1 einen Einfluss auf die Nachricht n2 hatte, der Zeitstempel von n1 kleiner ist als der Zeitstempel von n2.
+description[2]=Da die starke Konsistenzbedingung nicht erfüllt ist, gibt es keine Garantie für die Rückrichtung.
+instruction[0]=Die Form der Einträge ist eine Buchstabe pro Ereignis (Knoten). Die alphabetische Position der Buchstaben bestimmt die Reihenfolge der Ereignisse, z.B. a passiert bevor b.
+instruction[1]=Alle Ereignisse werden als ein Wort geschrieben: ';' zeigt einen neuen Prozess an, z.B ab;cd sind zwei Prozesse, P1 mit Ereignissen a und b und P2 mit Ereignissen c und d.
+instruction[2]=Bitte beachten Sie, dass Ereignis-IDs nicht länger als ein Buchstabe sein können und jedes Ereignis nur Teil eines Prozesses sein kann.
+instruction[3]=Nachrichten sind zwei Ereignisse, die zusammen in der Form SenderEmpfänger geschrieben und durch ',' getrennt werden z.B. ac,bd sind zwei Nachrichten M1 von a nach c und M2 von b nach d.
+instruction[4]=Bitte beachten Sie, dass Nachrichten nur von niedriger nach höher und nur zwischen verschiedenen Prozessen gesendet werden können.
+error[0]=Erwarteter Radius> = 15, erhalten
+error[1]=Falsche Prozesseingabe, keine Duplikate oder leer!
+error[2]=Nachricht nur zwischen zwei vorhandenen Ereignissen möglich, Sender muss vor Empfänger erfolgen, kann nicht Teil von dem selben Prozess sein!
+intro[0]=Die Lamport-Uhren sind ein einfacher Algorithmus, mit dem sich in einem verteilten System eine Vorzeitigkeit(schwache Konsistzenbedingung) herstellen lässt.
+intro[1]=Verteilte Algorithmen wie die Ressourcensynchronisierung hängen häufig von einer Methode ab, mit der Ereignisse in eine funktionierende Reihenfolge gebracht werden.
+intro[2]=Lamport erfand einen einfachen Mechanismus um Vorzeitigkeit numerisch abzubilden
+intro[3]=Eine logische Uhr von Lamport ist ein inkrementierender Softwarezähler, welcher von jedem Prozess einzeln verwaltet wird. Wenn ein Prozess eine Nachricht empfängt, synchronisiert er seine logische Uhr mit dem Absender.
+intro[4]=Der Algorithmus kann verwendet werden, um eine Teilordnung zu erstellen. e -> e 'bedeutet L (e) <L (e'), aber das Gegenteil ist nicht immer der Fall(keine starke Konsistenzbedingung).
+solution[0]=Der Algorithmus wurde erfolgreich beendet, es sind keine Fehler aufgetreten.
+solution[1]=Fälle, in denen L (e) <L (e ') nicht für e -> e' galt, werden jetzt gezeigt:
+solution[2]=The given construction has no case of L(e) < L(e') not holding for e -> e'
+solution[3]=Obwohl Event(
+solution[4]=) vor Event(
+solution[5]=passiert ist, ist seine Uhr(
+solution[6]=größer als die andere
+step[0]=Einleitung
+step[1]=Ereigniss:
+step[2]=Abschluss
+questionClock[0]=Welchen Wert hat die Prozessuhr am Ende dieses Ereignisses?
+questionClock[1]=Uhr :
+questionClock[2]=Richtig!
+questionClock[3]=Falsch, Update fehlt
+questionClock[4]=Falsch, Inkrementierung fehlt
+questionClock[5]=Falsch, Inkrementierung und Update fehlen
+questionClock[6]=Falsch, 2 Inkrementierungen
+questionClock[7]=Falsches Update, Wert der Uhr vom aktuellen Prozess is höher
+questionHB[0]=Galt L(e) < L(e') in jedem Fall für e -> e'?
+questionHB[1]=Es gab Fälle wo die Aussage nicht hielt.
+questionHB[2]=L(e) < L(e') galt in jedem Fall für e -> e'
+questionHB[3]=Richtig!
+questionHB[4]=Falsch!
+
+
+

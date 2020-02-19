@@ -1,0 +1,106 @@
+noSuchKeyException=There i s no ressource the key {0}
+iconNotFound=Ic on "{0}" not found
+
+title = JPEG Komprimierung
+
+intro1 = JPEG (Joint Photographic Experts Group) ist eine Familie von Algorithmen zur Kompression
+intro2 = digitalisierter Standbilder in Echtfarbqualität die unter der Bezeichnung
+intro3 = ISO 10918 standardisiert wurden.
+intro4 = Sie beinhalten sowohl verlustbehaftete und verlustfreie Kompressionen.
+intro5 = Die Kompression besteht dabei aus folgenden Schritten:
+intro6 = 1. Umwandlung in den YCrCb-Farbraum
+intro7 = 2. Farb-Subsampling
+intro8 = 3. Diskrete Kosinustransformation
+intro9 = 4. Quantisierung
+intro10 = 5. Kodierung der Koeffizienten
+
+description1 = JPEG ist ein Standard für das Speichern digitaler Bilder.
+description2 = Der Vorteil des JPEG-Format ist sein geringer Speicherplatz-Bedarf aufgrund von Komprimierung.
+
+conversion_title =  1. Umwandlung in den YCrCb-Farbraum
+conversion1 = Die RGB-Farbwerte werden in den Y'CbCr Farbraum umgewandelt.
+conversion2 = Kodierung der Farben als:
+conversion3 = - Y     Helligkeitswert
+conversion4 = - Cb    Abweichung von Grau in Richtung blau
+conversion5 = - Cr    Abweichung von Grau in Richtung rot
+conversion6 = So erhalten wir z.B
+conversion_rgb_matrix_title = RGB-Matrix
+conversion_seperate = Diese werden nun in ihre Farbbestandteile aufgeteilt
+conversion_convert = Und anschließend umgewandelt
+
+
+subsampling_title = 2. Farb-Subsampling
+subsampling1 = Da Menschen im Helligkeitsbereich eine höhere Auflösung haben,
+subsampling2 = als im Farbbereich, können wir den Farbbereich in reduzierter Auflösung speichern,
+subsampling3 = ohne dass es Menschen auffält.
+subsampling4 = Je nach Ratio haben wir unterschiedliche Verluste und Komprimierungen.
+subsampling5 = Üblich bei JPEG ist die Ratio (Y:Cb:Cr = 4:2:0). Das heißt, 8Y, 2 Cb, 2 Cr Wert pro 4x2 Pixel.
+subsampling6 = Oft werden auch 4:4:4 und 4:2:2  benutzt.
+
+subsampling444_title = 4:4:4
+subsampling444_desc1 = Für jeden Y' Pixel gibt es hier einen Cb und einen Cr Pixel.
+subsampling444_desc2 = Hier gibt es noch keinen Unterschied zum Speicher Bedarf und keinen Qualitätsverlust.
+
+subsampling422_title = 4:2:2
+subsampling422_desc1 = Für je 2 Y' Pixel gibt es einen Cb und einen Cr Pixel.
+subsampling422_desc2 = Hier wird für jede horizontalen Y' Linie, für jeden zweiten Pixel keine Cb und Cr Werte angegeben.
+subsampling422_desc3 = Damit wird ungefähr 30% Speicherplatz gespart.
+
+subsampling420_title = 4:2:0
+subsampling420_desc1 = Für je 4 Y' Pixel gibt es einen Cb und einen Cr Pixel.
+subsampling420_desc2 = Hier fehlen für die horizintale und vertikale Y' Linie für jeden zweiten Pxiel Cb und Cr Werte.
+subsampling420_desc3 = Damit spart man um die 50% Speicherplatz.
+subsampling_example = Beispiel mit unseren Y'CbCr Pixeln und (4:2:0):
+
+dct_title = 3. Diskrete Kosinustransformation
+dct1 = Nachdem unsere Matrix in Y'CbCr Form gebracht wurde und das Subsampling durchgeführt wurde,
+dct2 = führen wir nun die Diskrete Kosinustransformation auf jede der 3 Farbmatrizen durch welche nochmals in 8x8 Blöcke geteilt werden.
+dct3 = Dadurch beschreiben wir jede Matrix durch ihre die Summe der gewichteten Kosinus Frequenzen.
+dct4 = Der Vorteil besteht darin, dass der Großteil der Ergebnisse der Transformation sich in der oberen linken Ecke befinden.
+dct5 = Der niedrig-frequentige Anteil Anteil der unten rechts folgt, kann vernachlässigt werden,
+dct6 = da er von Menschen nicht gut gesehen werden kann.
+dct7 = Die Gewichtung der Frequenzen folgt in dem Quantisierungsabschnitt.
+
+quant_title = 4. Quantisierung
+quant1 = In der Quantisierung teilen wir unsere Transformierte Matrix mit
+quant2 = einer Quantisierungsmatrix Q.
+quant3 = Diese kann je nach Qualitätseinstellung weiter skaliert werden.
+quant4 = Das Ergebnis runden wir dann auf die nächst liegende Integerzahl.
+quant_matrix_title = Quantisierungsmatrix Q
+
+encode_title = 5. Kodierung der Koeffizienten
+encode1 = Aus den 8x8 Blöcken wir ein sequentieller Bitstrom erzeugt.
+encode2 = Dazu werden die Koeffizienten anhand einer Zick-Zack-Kurve kodiert.
+encode3 = Anschließend werden die Nullen am Ende abgeschnitten.
+
+summary_title = Zusammenfassung
+summary_ycrcb = Durch das Farb-Subsampling konnten wir bis zu 50% Speicherplatz sparen.
+summary_dct = Durch die Diskrete Kosinus Transformation konnten wir den Speicherplatz für jeden 8x8 Block stark reduzieren.
+summary_decode = Die Dekodierung verläuft invers zur kodierung. Bei der Rekonstruktion treten aber Verluste auf.
+
+question_right = Die Antwort war richtig!
+question_wrong = Falsch, die Antwort lautet: 
+
+question_color = Für was steht Y' im Y'CbCr Farbraum?
+question_color1 = Helligkeit
+question_color2 = Rot
+question_color3 = Blau
+question_color4 = Grün
+
+question_sub = Wie viele Cr und Cb Pixel gibt es pro 4 Y' Pixel bei (4:2:0)?
+question_sub1 = 1 Cr und 1 Cb
+question_sub2 = 2 Cr und 2 Cb
+question_sub3 = 3 Cr und 3 Cb
+question_sub4 = 4 Cr und 4 Cb
+
+question_dct = Was erhalten wir nach der diskreten Kosinus Transformation?
+question_dct1 = Die Kosinus Frequenzen der Matrix.
+question_dct2 = Die Sinus Frequenzen der Matrix.
+question_dct3 = Die Summe der Matrix.
+question_dct4 = Die Taylor Reihe.
+
+question_quant = Was passiert beim Quantisieren?
+question_quant1 = Wir dividieren jedes Element unserer Matrix mit dem, der Quantisierungsmatrix.
+question_quant2 = Wir multiplizieren jedes Element unserer Matrix mit dem, der Quantisierungsmatrix.
+question_quant3 = Wir addieren jedes Element unserer Matrix mit dem, der Quantisierungsmatrix.
+question_quant4 = Wir subtrahieren jedes Element unserer Matrix mit dem, der Quantisierungsmatrix.

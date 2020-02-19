@@ -1,0 +1,18 @@
+title=Julia-Menge
+description=Die Julia-Menge wird mit Hilfe der rekursiven Funktion: "z = z² + c" definiert.\nDabei startet z immer an der aktuellen Koordinatenposition und c ist eine konstante komplexe Zahl.\nWenn für einen bestimmten Startwert die Funktion konvergiert, dann gehört er zur Julia-Menge.\nDer Algorithmus verknüpft ein zwei dimensionales Array mit der komplexen Zahlenebenen wobei 0 + 0i in der Mitte liegt.\nNun wird über das 2d Array iteriert und für jeden Startwert z geprüft ob er konvergiert.
+descriptionHead=Erklärung:
+descr1=Die Julia-Menge wird mit Hilfe der rekursiven Funktion: \\"z = z² + c\\" definiert.
+descr2=Dabei startet z immer an der aktuellen Koordinatenposition und c ist eine konstante komplexe Zahl.
+descr3=Wenn für einen bestimmten Startwert z die Funktion konvergiert, dann gehört er zur Julia-Menge.
+descr4=Der Algorithmus verknüpft ein zwei dimensionales Array mit der komplexen Zahlenebenen wobei 0 + 0i in der Mitte liegt.
+descr5=Nun wird über das 2d Array iteriert und für jeden Startwert z geprüft ob er konvergiert.
+vars=Variablen
+zIterations=Insgesamten Anzahl der z-Iterationen:
+outro1=Somit ist das Array befüllt und kann nachträglich in ein Bild umgewandelt werden.
+outro2a=Alle Felder mit dem Wert kleiner als
+outro2b= sind divergiert und damit nicht Teil der Julia-Menge.
+outro3=Anzahl der konvergierten Felder:
+outro4=Anzahl der divergierten Felder:
+maxIterations=Maximale Rekursionstiefe:
+numOfZIterations=Anzahl der z-Iterations:
+mC=Konstante c:

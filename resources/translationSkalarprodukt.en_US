@@ -1,0 +1,49 @@
+noSuchKeyException = There is no ressource for the key {0}
+iconNotFound = Icon "{0}" not found
+Ä -> \u00c4
+ä -> \u00e4
+Ö -> \u00d6
+ö -> \u00f6
+Ü -> \u00dc
+ü -> \u00fc
+ß -> \u00df
+
+NAME = Dot Product
+TITLE = Dot Product
+Skalarprodukt = Dot Product
+Description = The Dot Product of two vectors is the sum of all multiplications of those Elements on the same position in each vector.
+returnGeneral = The Dot Product of two Vectors can only be computed if the vectors are of the same length. 
+RETURN = The Dot Product of two vectors is returned.
+Beispiel = Example
+Beschreibung = Description 
+SourceCode = Sourcecode
+question1 = With the Dot Product two vectors can be subtracted.
+answer1.0 = Yes
+answer1.1 = No
+question1FeedbackW = That is not right.
+question1FeedbackR = That is right. 
+question2 = What can you say about the position of the two vectors, if the Dot Product is 0?
+answer2.0 = They are parallel to eachother.
+answer2.1 = They are orthogonal to eachother.
+answer2.2 = No statement possible.
+question2FeedbackW = That is not right. Answer two is correct.
+question2FeedbackR = That is correct.
+question3 = The Dot Product is mainly used in statistics. 
+answer3.0 = Right
+answer3.1 = Wrong
+question3FeedbackW = That is not right.
+question3FeedbackR = That is correct.
+Thesolutionis = The computed Dot Product is:   
+Zusammenfassung = After using the Dot Product of the two given vectors, you can interpret the calculated scalar size in terms of its angle. 
+Solution = Result
+FORMEL = Formula
+eingesetzt = entered
+VEKTOR = Vector
+zusammenfassung = A result of the type int has been computed.
+emptycase = One or both of the entered vectors are empty 
+emptyCASE= Empty-Case
+nullException = One or both vectors were entered incorrectly.
+nullEXCEPTION = NullException
+ algorithmenbeschreibung= The Dot Product of two vectors is the sum of all multiplications of those Elements on the same position in each vector. \nMeaning the first element of the first vector is multiplied with the first element of the second vector, then the second elements of both vectors, then the third elements and so on. \nThe entered vectors have to be equally long. \nThe Dot Product is mainly used in linear algebra. Using the Dot Product you can compute the angle between the two vectors. For instance, if the result is 0, the vectors are orthogonal to one another.
+
+

@@ -1,0 +1,50 @@
+noSuchKeyException=Es gibt keine Ressource f\u00fcr Eintrag {0}
+iconNotFound=Icon ”{0}” not found
+algorithmName=Lamport's Clock
+generatorName=Lamport's Clock [EN_US]
+description[0]=Lamport's Clock is an algorithm for establishing a happend-before relationship on a given distributed system.
+description[1]=This algorithm captures the happened-before relationship numerically using logical clocks for each process.
+description[2]=It can be used to create a partial ordering, e -> e' means L(e) < L(e') but the reverse does not always hold.
+instruction[0]=The form of entries is one letter identifier per event(node). The letters alphabetical postion determines the order of events, e.g. a happens before b.
+instruction[1]=Events are written as one word, ';' indicates a new process, f.e. ab;cd are two processes, P1 with events a and b, and P2 with events c and d.
+instruction[2]=Please note that events identifiers can not be longer then one letter and each event can only be part of one process.
+instruction[3]=Messages are two Events written together in the form SenderReceiver and separated by ',', f.e. ac,bd are two Messages M1 from a to c and M2 from b to d.
+instruction[4]=Please note that messages can be only send from lower to higher and only between different processes.
+error[0]=Error=Expected Radius >= 15, got 
+error[1]=Error=Wrong Process Input, cant have duplicates or be empty!
+error[2]=Error=Message only possible between two existing Events, Sender must happen before receiver, cant be part of the same process!
+intro[0]=Lamport's Clocks are a simple algorithm to establish a happend-before relationship in a distributed system.
+intro[1]=Distributed algorithms like resource synchronization often depend on some method of ordering events to function.
+intro[2]=Lamport invented an a simple mechanism to define happend-before numerically.
+intro[3]=A Lamport logical clock is an incrementing software counter maintained in each process. When a process receives a message, it resynchronizes its logical clock with that sender.
+intro[4]=The algorithm can be used to create a partial ordering, e -> e' means L(e) < L(e') but the reverse does not always hold.
+solution[0]=Algorithm terminated successfully, no errors encountered.
+solution[1]=Cases where L(e) < L(e') did not hold for e -> e' are shown now:
+solution[2]=The given construction has no case of L(e) < L(e') not holding for e -> e'
+solution[3]=Despite Event(
+solution[4]=) happening before Event(
+solution[5]=its clock (
+solution[6]=is greater
+step[0]=Introduction
+step[1]=Event:
+step[2]=Conclusion
+questionClock[0]=What is the process clock value at the end of this event?
+questionClock[1]=Clock Value :
+questionClock[2]=Correct!
+questionClock[3]=Wrong, update missing
+questionClock[4]= Wrong, increment missing
+questionClock[5]=Wrong, update and increment missing
+questionClock[6]=Wrong, two increments
+questionClock[7]=Wrong update, current clock is higher
+
+questionHB[0]=Did L(e) < L(e') hold for e -> e' in every case?
+questionHB[1]=There are case where L(e)<L(e') did not hold for e->e'
+questionHB[2]=L(e)<L(e') always held for e->e
+questionHB[3]=Correct!
+questionHB[4]=Wrong!
+
+
+
+
+
+

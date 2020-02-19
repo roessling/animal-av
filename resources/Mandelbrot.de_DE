@@ -1,0 +1,23 @@
+title=Mandelbrotmenge
+description=Die Mandelbrotmenge wird mit Hilfe der rekursiven Funktion: "z = z² + c" definiert.\nDabei startet z immer bei 0 und c ist eine konstante komplexe Zahl.\nWenn für ein bestimmtes c die Funktion konvergiert, dann gehört es zur Mandelbrotmenge.\nDer Algorithmus verknüpft ein zwei dimensionales Array mit der komplexen Zahlenebenen wobei 0 + 0i in der Mitte liegt.\nNun wird über das 2d Array iteriert und für jedes c geprüft ob es konvergiert.
+descriptionHead=Erklärung:
+descr1=Die Mandelbrotmenge wird mit Hilfe der rekursiven Funktion: \\"z = z² + c\\" definiert.
+descr2=Dabei startet z immer bei 0 und c ist eine konstante komplexe Zahl.
+descr3=Wenn für ein bestimmtes c die Funktion konvergiert, dann gehört es zur Mandelbrotmenge.
+descr4=Der Algorithmus verknüpft ein zwei dimensionales Array mit der komplexen Zahlenebenen wobei 0 + 0i in der Mitte liegt.
+descr5=Nun wird über das 2d Array iteriert und für jedes c geprüft ob es konvergiert.
+vars=Variablen
+zIterations=Insgesamten Anzahl der z-Iterationen:
+outro1=Somit ist das Array befüllt und kann nachträglich in ein Bild umgewandelt werden.
+outro2a=Alle Felder mit dem Wert kleiner als
+outro2b= sind divergiert und damit nicht Teil der Mandelbrotmenge.
+outro3=Anzahl der konvergierten Felder:
+outro4=Anzahl der divergierten Felder:
+xMin=Der Startwert in x-Richtung und damit der minimale Realteil
+xMax=Der Endwert in x-Richtung und damit der maximale Realteil
+yMin=Der Startwert in y-Richtung und damit der minimale Imaginrteil
+yMax=Der Endwert in y-Richtung und damit der maximale Imaginrteil
+pixelxCount=Die Anzahl der Pixel in x-Richtung
+pixelyCount=Die Anzahl der Pixel in y-Richtung
+maxIterations=Die maximale Rekursionstiefe der Formel
+numOfZIterations=Anzahl der z-Iterations

@@ -1,0 +1,39 @@
+noSuchKeyException=There i s no ressource the key {0}
+iconNotFound=Ic on "{0}" not found
+
+title = Exponentiation by squaring - recursive
+intro1 = Exponentiation by squaring is a method for fast computation of large positive integer powers of a number.
+intro2 = This method is based on the observation that:
+intro6 = if n is odd
+intro11 = if n is even
+intro16 = With these equations we can minimize the multiplications.
+intro17 = This is critical, because each multiplication in hardware is costly.
+intro18 = Example: 10^10
+intro19 = Instead of 10^10 = 10 * 10 * 10 * 10 * 10 * 10 * 10 * 10 * 10 * 10
+intro20 = We can calculate 10^10 = (10*10)^5 = 10(100*100)^2 = (100.000*100.000)^1 = 10.000.000.000
+
+recursive_calls = Recursive calls:
+multi = Multiplications:
+div = Divisions:
+result = Result:
+
+end_multi_rec = multiplications
+end_mutli_norm = multiplications/divisions
+end_multi_rec_desc = with exponentiation by squaring
+end_multi_norm_desc = with normal exponentiation
+
+section1 = Introduction
+funccall = Function call
+reccall = Recursive call
+return = Return
+summary = "Summary"
+
+question1 = Which call will follow?
+wrongAnswer = Wrong - the correct answer is: 
+correctAnswer = Right
+
+description1 = Exponentiation by squaring is a general method for fast computation of large positive integer powers of a number.
+description2 = With the observation that (integer) divisions by 2 are trivial bit shifts for computers,
+description3 = we can say that x<sup>n</sup> = (x<sup>2</sup>)<sup>n/2</sup> for positive n.
+description4 = With this in mind we can design our recursive exponentiation by squaring algorithm,
+description5 = which will take less multiplications because instead of subtracting 1 from n, we divide n by 2. 

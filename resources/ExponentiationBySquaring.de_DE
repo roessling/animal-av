@@ -1,0 +1,39 @@
+noSuchKeyException=There i s no ressource the key {0}
+iconNotFound=Ic on "{0}" not found
+
+title = Exponentiation durch Quadrieren - Rekursiv 
+intro1 = Exponentiation durch Quadrieren ist eine Methode f\u00fcr schnelle Berrechnung gro\u00dfe positive Integer Exponenten einer Zahl.
+intro2 = Diese Methode basiert auf der Beobachtung dass:
+intro6 = wenn n ungerade
+intro11 = wenn n gerade
+intro16 = Mit dieser Formel k\u00f6nnen wir die Anzahl der Multiplikationen minimieren.
+intro17 = Dies ist wichtig, da jede Multiplikation in Hardware sehr aufwendig ist.
+intro18 = Beispiel: 10^10
+intro19 = Statt 10^10 = 10 * 10 * 10 * 10 * 10 * 10 * 10 * 10 * 10 * 10
+intro20 = K\u00f6nnen wir schreiben: 10^10 = (10*10)^5 = 10(100*100)^2 = (100.000*100.000)^1 = 10.000.000.000
+
+recursive_calls = Rekursive Aufrufe:
+multi = Multiplikationen:
+div = Divisionen:
+result = Ergebnis: 
+
+end_multi_rec = Multiplikationen
+end_mutli_norm = Multiplikationen/Divisionen
+end_multi_rec_desc = mit Exponentiation durch Quadrieren
+end_multi_norm_desc = mit normaler Exponentiation
+
+section1 = Einf\u00fcrung
+funccall = Funktionsaufruf
+reccall = Rekursiver Aufruf
+return = R\u00fckgabe
+summary = "Zusammenfassung"
+
+question1 = Welcher Aufruf wird folgen?
+wrongAnswer = Falsch - die richtige Antwort ist: 
+correctAnswer = Richtig
+
+description1 = Exponentiation durch Quadrieren ist eine generell effiziente Methode um gro\u00dfe Potenzen nat\u00fcrlicher Zahlen zu berechnen.
+description2 = Mit der Beobachtung dass Divisionen (nat\u00fcrlicher Zahlen) durch 2, triviale Bitshifts f\u00fcr Rechner sind,
+description3 = k\u00f6nnen wir sagen, dass x<sup>n</sup> = (x<sup>2</sup>)<sup>n/2</sup> f\u00fcr gerade n ist.
+description4 = Mit dieser \u00dcberlegung k\u00f6nnen wir nun unserern rekursiven Exponentiation durch Quadrieren Algorithmus erstellen,
+description5 = welcher weniger Multiplikationen ben\u00f6tigt, da wir anstatt 1 von n zu subtrahieren, n durch 2 dividieren.

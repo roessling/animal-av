@@ -1,0 +1,23 @@
+title=Mandelbrot set
+description=The mandelbrot set is defined through the recursive function: "z = z² + c".\nz starts at 0 and c is a constant complex number.\nIf this function converges for a c it is an element of the mandelbrot set.\nThe algorithm uses a two dimensional array which is visualized on the complex plane.\nThe algorithm will iterate over each c and check if it will converge.
+descriptionHead=Description:
+descr1=The mandelbrot set is defined through the recursive function: \\"z = z² + c\\".
+descr2=z starts at 0 and c is a constant complex number.
+descr3=If this function converges for a c it is an element of the mandelbrot set.
+descr4=The algorithm uses a two dimensional array which is visualized on the complex plane.
+descr5=The algorithm will iterate over each c and check if it will converge.
+vars=Variables
+zIterations=Number of z iterations:
+outro1=Finally the array is filled and can now be converted in an image.
+outro2a=All elements with a value less than
+outro2b= are diverged and not a part of the mandelbrot set.
+outro3=Count of converged elements:
+outro4=Count of diverged elements:
+xMin=The starting value in x direction representing the minimal real value
+xMax=The ending value in x direction representing the maximum real value
+yMin=The starting value in y direction representing the minimal imaginary value
+yMax=The ending value in y direction representing the maximum imaginary value
+pixelxCount=The pixel amount in x direction used to split the real number range
+pixelyCount=The pixel amount in y direction used to split the imaginary number range
+maxIterations=The maximum depth check for convergence
+numOfZIterations=Count of z iterations

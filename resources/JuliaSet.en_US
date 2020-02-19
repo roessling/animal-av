@@ -1,0 +1,18 @@
+title=Julia set
+description=The Julia set is defined through the recursive function: "z = z² + c".\nz starts at the current graph position and c is a constant complex number.\nIf this function converges for a given z it is an element of the Julia set.\nThe algorithm uses a two dimensional array which is visualized on the complex plane.\nThe algorithm will iterate over each z and check if it will converge.
+descriptionHead=Description:
+descr1=The Julia set is defined through the recursive function: \\"z = z² + c\\".
+descr2=z starts at the current graph position and c is a constant complex number.
+descr3=If this function converges for a given z it is an element of the Julia set.
+descr4=The algorithm uses a two dimensional array which is visualized on the complex plane.
+descr5=The algorithm will iterate over each z and check if it will converge.
+vars=Variables
+zIterations=Number of z iterations:
+outro1=Finally the array is filled and can now be converted in an image.
+outro2a=All elements with a value less than
+outro2b= are diverged and not a part of the Julia set.
+outro3=Count of converged elements:
+outro4=Count of diverged elements:
+maxIterations=Maximum depth check:
+numOfZIterations=Count of z iterations:
+mC=Constant c:
