@@ -1,29 +1,42 @@
 package generators.misc;
 
+import java.awt.Color;
+import java.awt.Font;
+import java.util.ArrayList;
+import java.util.Hashtable;
+import java.util.Locale;
+import java.util.Random;
+
+import javax.swing.JOptionPane;
+
+import algoanim.animalscript.AnimalScript;
+
 /*
  * Joins.java
  * Adrian Wagener, Ivelin Ivanov, 2018 for the Animal project at TU Darmstadt.
  * Copying this file for educational purposes is permitted without further authorization.
  */
-
-import algoanim.primitives.*;
-import algoanim.properties.*;
-import algoanim.util.*;
+import algoanim.primitives.Polyline;
+import algoanim.primitives.Rect;
+import algoanim.primitives.SourceCode;
+import algoanim.primitives.StringMatrix;
+import algoanim.primitives.Text;
+import algoanim.primitives.generators.Language;
+import algoanim.properties.AnimationPropertiesKeys;
+import algoanim.properties.MatrixProperties;
+import algoanim.properties.PolylineProperties;
+import algoanim.properties.RectProperties;
+import algoanim.properties.SourceCodeProperties;
+import algoanim.properties.TextProperties;
+import algoanim.util.Coordinates;
+import algoanim.util.Node;
+import algoanim.util.Offset;
 import generators.framework.Generator;
 import generators.framework.GeneratorType;
-
-import java.awt.*;
-import java.util.*;
-
-import algoanim.primitives.generators.Language;
-
 import generators.framework.ValidatingGenerator;
 import generators.framework.properties.AnimationPropertiesContainer;
-import algoanim.animalscript.AnimalScript;
 import interactionsupport.models.MultipleChoiceQuestionModel;
 import translator.Translator;
-
-import javax.swing.*;
 
 public class Joins implements ValidatingGenerator {
     private Language lang;

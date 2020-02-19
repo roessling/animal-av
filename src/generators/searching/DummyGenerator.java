@@ -30,6 +30,7 @@ import generators.searching.straightselection.GenericIterativeStraightIntSelecti
 import generators.searching.straightselection.GenericIterativeStraightStringSelection;
 import generators.searching.straightselection.GenericRecursiveStraightIntSelection;
 import generators.searching.straightselection.GenericRecursiveStraightStringSelection;
+import generators.searching.tabusearch.TabuSearchGenerator;
 import generators.searching.topk.FaginsAlgorithm;
 import generators.searching.topk.ThresholdAlgorithm;
 
@@ -254,10 +255,18 @@ public class DummyGenerator implements GeneratorBundle {
     generators.add(new QuickselectGenerator());
     generators.add(new SimpleStringMatching());
 
-    // Generators from the AlgoAnim course in summer term 2016.
+    // Generators from the AlgoAnim course in summer term 2017.
     generators.add(new FibonacciSearch());
     generators.add(new NegaMax("resources/NegaMax", Locale.US));
     generators.add(new NegaMax("resources/NegaMax", Locale.GERMANY));
+
+    
+    // Generators from the AlgoAnim course in summer term 2019.
+    generators.add(new Beweiszahlsuche());
+	generators.add(new Generator_ExponentialSearch());
+    generators.add(new TabuSearchGenerator());
+    
+    
     return generators;
   }
 }

@@ -143,6 +143,12 @@ public class DummyGenerator implements GeneratorBundle {
     generators.add(new AhujaOrlin());
     generators.add(new Dinic());
     generators.add(new ForceDirectedGraphDrawingAPI());
+
+    
+    // Generators from the AlgoAnim course in summer term 2019
+    generators.add(new SuccessiveShortestPaths());
+    generators.add(new DirectedGraphicalModel());
+    generators.add(new UndirectedGraphicalModel());
     
     return generators;
   }

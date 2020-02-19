@@ -59,6 +59,11 @@ public class DummyGenerator implements GeneratorBundle {
     // Generators from the AlgoAnim course in summer semester 2018.    
     generators.add(new Dxt1Generator());
     generators.add(new Dxt4Generator());
+
+
+    // Generators from the AlgoAnim course in summer semester 2019.    
+    generators.add(new JPEGCompression("resources/JPEGCompression", Locale.GERMANY));
+    generators.add(new JPEGCompression("resources/JPEGCompression", Locale.US));
     
     return generators;
   }

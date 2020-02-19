@@ -147,7 +147,22 @@ public class DummyGenerator implements GeneratorBundle {
     generators.add(new LineareRegressionDE(Locale.GERMANY));
     generators.add(new LineareRegressionEN(Locale.US));
     
-    
+    // Generators from the AlgoAnim course in summer term 2019.
+    generators.add(new BinaereExponentationWiz());
+    generators.add(new BSpline());
+    generators.add(new CatmullRomSplines());
+    generators.add(new ExponentiationBySquaring("resources/ExponentiationBySquaring", Locale.GERMANY));
+    generators.add(new ExponentiationBySquaring("resources/ExponentiationBySquaring", Locale.US));
+    generators.add(new HanoiVisualisierung());
+    generators.add(new KnightsTourGenerator());
+    generators.add(new LongestIncreasingSubsequenceNaive());
+    generators.add(new PairwiseSummationGenerator());
+    generators.add(new Pythagoras("resources/translationPythagoras", Locale.GERMANY));
+    generators.add(new Pythagoras("resources/translationPythagoras", Locale.US));
+    generators.add(new Skalarprodukt("resources/translationSkalarprodukt", Locale.GERMANY));
+    generators.add(new Skalarprodukt("resources/translationSkalarprodukt", Locale.US));
+    generators.add(new ZassenhausAPI());
+
     return generators;
   }
 }

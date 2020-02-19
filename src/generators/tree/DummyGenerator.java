@@ -60,6 +60,10 @@ public class DummyGenerator implements GeneratorBundle {
     generators.add(new BTreeSearchGenerator(Locale.US));
     generators.add(new BTreeSearchGenerator(Locale.GERMANY));
     
+
+    // Generators from the AlgoAnim course in summer semester 2019
+    generators.add(new Fitch());
+    
     return generators;
   }
 }

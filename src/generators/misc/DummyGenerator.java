@@ -28,6 +28,7 @@ import generators.misc.machineLearning.RelieF;
 import generators.misc.machineLearning.SeparateAndConquer;
 import generators.misc.nonuniformTM.SpaceComplexity;
 import generators.misc.schulzemethod.SchulzeMethod;
+import generators.misc.sealedbid.SealedBidGenerator;
 import generators.misc.spaltenminimumMethode.SpaltenminimumMethode;
 import generators.misc.sweepandpruneaabb2d.SweepAndPruneAABB2D;
 import generators.tree.ID3de;
@@ -242,6 +243,16 @@ public class DummyGenerator implements GeneratorBundle {
     generators.add(new Cobweb());
     generators.add(new Hirschberg());
  
+    
+    // Generators from the AlgoAnim course in summer term 2019.
+    generators.add(new chiMergeGenerator());
+    generators.add(new FloydsCycleDetection());
+    generators.add(new HusAlgorithm());
+    generators.add(new MersenneTwisterGenerator());
+    generators.add(new PumpingLemma());
+    generators.add(new SealedBidGenerator());
+    generators.add(new SJF());
+    
     return generators;
   }
 }

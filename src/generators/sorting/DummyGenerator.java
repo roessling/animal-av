@@ -320,6 +320,11 @@ public class DummyGenerator implements GeneratorBundle {
     generators.add(new SLPGenerator(Locale.US));
     generators.add(new SampleSort());
     generators.add(new LibGenerator());
+
+    
+    // Generators from the AlgoAnim course in summer term 2018.
+    generators.add(new Generator_ThreeWaySort());
+    generators.add(new MultiKeyQuicksortGenerator());
     
     return generators;
   }
