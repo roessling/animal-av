@@ -19,6 +19,7 @@ import generators.graph.depthfirstsearch.DFStraverse;
 import generators.graph.dijkstra.Dijkstra3;
 import generators.graph.dijkstra.DijkstraDE;
 import generators.graph.euleriancyclecode.EulerianCycleCodeGenerator;
+import generators.graph.kahn.KahnsAlgo;
 import generators.graph.kruskal.Kruskal;
 import generators.graph.kruskal.Kruskal2;
 import generators.graph.kruskal.KruskalAlgoAPIGenerator;
@@ -146,8 +147,14 @@ public class DummyGenerator implements GeneratorBundle {
 
     
     // Generators from the AlgoAnim course in summer term 2019
-    generators.add(new SuccessiveShortestPaths());
+    generators.add(new Beamsearch(Locale.GERMANY));
+    generators.add(new Beamsearch(Locale.US));
+    generators.add(new DivisiveClustering());
     generators.add(new DirectedGraphicalModel());
+    generators.add(new ForwardpropGenerator("resources/ForwardpropGenerator", Locale.GERMANY));
+    generators.add(new ForwardpropGenerator("resources/ForwardpropGenerator", Locale.US));
+    generators.add(new KahnsAlgo());
+    generators.add(new SuccessiveShortestPaths());
     generators.add(new UndirectedGraphicalModel());
     
     return generators;

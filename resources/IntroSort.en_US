@@ -1,0 +1,18 @@
+# Explanations
+description=Introsort is a hybrid sorting algorithm. It starts with using Quicksort and switches to Heapsort when recursion reaches a maximum depth, here set to log(n)*2, with n being the size of the array.\nThus, Introsort combines the worst-case performance O(n log n) of Heapsort and average performance O(n log n) of Quicksort.\nIn this animation, the partitioning of Quicksort (method partition) and the building of the heap from Heapsort (method heapify) are not visualized fully, to improve understanding of this hybrid algorithm. Heapsort and Quicksort can be found as separate respective animations.
+introduction=Introsort is a hybrid sorting algorithm.\nIt starts with using Quicksort and switches to Heapsort when recursion reaches a maximum depth,\nhere set to log(n)*2, with n being the size of the array.\nThus, Introsort combines the worst-case performance O(n log n) of Heapsort and\naverage performance O(n log n) of Quicksort.\nIn this animation, the partitioning of Quicksort (method partition) and the building of the heap\nfrom Heapsort (method heapify) are not visualized fully, to improve understanding of this hybrid algorithm.\nHeapsort and Quicksort can be found as separate respective animations.\nThis implementation uses an in-place Quicksort, but Heapsort operates on copies of the original array.\nAs Quicksort is implemented recursively, additionally we visualize the recursion tree\nto display function calls of introsort().
+
+# Summary
+summary1=As stated in the introduction, Introsort has a complexity of O(n log n).\nThere were a total of 
+summary2= calls to introsort() and a total of 
+summary3= iterations done in heapsort().\nThus, 
+summary4=The GNU Standard C++ library uses a variant of Introsort.
+
+# Other
+recursionTitle=Recursion Tree
+
+# Steps
+introductionStep=Introduction
+summaryStep=Summary
+heapsortCall1=heapsort from 
+heapsortCall2= to 

@@ -1,0 +1,35 @@
+noSuchKeyException=Es gibt keine Ressource für Eintrag {0}
+iconNotFound=Icon "{0}" not found
+
+queue=Queue
+modifyAccess=Modifizierender Zugriff
+readingAccess=Lesender Zugriff
+result=Ergebnis:
+
+question1=Welches ist die erste Segmentnummer, die bearbeitet wird?
+correct=Korrekt!
+incorrect=Leider Falsch!
+headpos=Kopfposition: {0}
+nextheadposCurrent=Die naechste Kopfposition (nach dieser Iteration) ist {0}
+nextheadposSegment=Die naechste Kopfposition (nach dieser Iteration) ist {0}
+question2=Was ist der Unterschied zum SCAN Algorithmus (ohne C-)?
+answer21=Wenn der Lesekopf am Rand ankommt faehrt dieser nicht rückwaerts, sondern vom anderen Ende fort.
+answer22=Der Algorithmus schaut zuerst, welche die größte und kleinste angefragte Segmentnummer ist und hört an diesen Stellen auf anstelle bis ganz zum Rand zu fahren.
+
+description=C-SCAN ist ein Schedulingalgorithmus und dient zum möglichst fairen bearbeiten von Anfragen auf Daten von der Festplatte (Segmente). Das C in C-SCAN steht für Circular und im Vergleich zum SCAN Algorithmus bewegt sich der Schreib- und Lesekopf beim Erreichen eines Endes einer Spur der Festplatte an das andere Ende der Spur und faehrt von dort in gleiche Richtung fort anstelle der Richtung zu wechseln. Der Unterschied zum LOOK bzw. C-LOOK Algorithmus ist, dass der C-SCAN Algorithmus immer bis zum Ende einer Spur faehrt. LOOK dreht dagegen bei den aktuellen Extremwerten der Warteschlange um.
+
+algoSteps=Der Algorithmus in Worten:
+algoStep1=1. Schaue, ob das aktuelle Segment, auf dem der Lesekopf steht, in der Queue ist
+algoStep2=2. Wenn ja, lese das Segment aus dem Speicher, gib es zurueck und entferne die Anfrage dazu aus der Queue.
+algoStep3=3. Bewege den Schreib/Lesekopf um eine Stelle in die eingestellte Bewegrichtung.
+algoStep4=4. Wiederhole solange, bis die Queue leer ist.
+
+algoMeta1=Die erste Tabelle zeigt im folgenden den Zustand der Warteschlange an.
+algoMeta2=Die zweite Tabelle, die im Verlauf des Algorithmus sichtbar wird, zeigt die Reihenfolge der Zugriffe an.
+	
+algoSummary=Zusammenfassung
+algoSumm1=Der Worst-Case ist, dass ein Prozess eine Segmentnummer anfragt, welches der Lesekopf gerade passiert hat.
+algoSumm2=Wenns sehr schlecht laeuft muss dieser Prozess dann AnzahlSegmente * Lesezeit lang warten. Das passiert aber nur, wenn wirklich alle
+algoSumm3=Segmentnummern in der Queue sind, was nicht sehr wahrscheinlich ist.
+algoSumm4=Starvation eines Prozesses wird durch diese Methode verhindert, weil jede Segmentnummer innerhalb von ''AnzahlSegmente'' Lesevorgaengen vom Kopf passiert wird.
+	

@@ -1,0 +1,72 @@
+﻿noSuchKeyException=There is no ressource for the key {0}
+iconNotFound=Icon "{0}" not found
+
+###Beschreibung_Start###
+ds1=Beschreibung:
+ds2=
+ds3=Rapdidly-Exploring Random Trees (RRT) sind eine Datenstruktur, mit der es möglich ist einen
+ds4=Konfigurationsraum schnell unter Verwendung eines Baums zu erkunden. Dies ist insbesondere nützlich
+ds5=um eine Bewegungsplanung für Roboterarme durchzuführen, etwa um einen validen Pfad von einem
+ds6=Start- zu einem Zielpunkt zu finden.
+ds7=Beginnend mit einem existierenden Baum (mindestens ein Knoten), wird in jedem Iterationsschritt
+ds8=eine zufällige Konfiguration aus dem Konfigurationsraum gezogen und der der nächstliegende Knoten
+ds9=zu dieser Konfiguration wird berechnet. Von dem nächstliegende Knoten wird dann eine Distanz edgeLength
+ds10=in Richtung der zufälligen Konfiguration gegangen und dort ein neuer Knoten konstruiert. Dieser neue
+ds11=Knoten wird dann mit einer Kante mit dem nächstliegenden Knoten verbunden. Sollte der neue Knoten bzw.
+ds12=seine verbindende Kante nicht gültig sein, etwa weil sie ein Hindernis kreuzen, werden sie wieder
+ds13=entfernt.
+ds14=Der Algorithmus terminiert, wenn die maximale Anzahl an Iterationen erreicht ist oder das Ziel
+ds15=bzw. eine Delta-Region um das Ziel herum von einem Knoten berührt wird.
+
+
+###Beschreibung_End###
+de1=Fazit:
+de2=
+de3=Wie man sehen konnte, sind Rapidly-Exploring Random Trees (RRT) hilfreich um einen Pfad zu einem Ziel-
+de4=punkt zu finden, selbst wenn ein Hindernis den direkten Weg blockiert. RRTs werden meistens in
+de5=multidimenionalen Konfigurationsräumen eines Roboterarms verwendet, in dem die jeweilige Dimensionen
+de6=je eine Gelenkposition des Arms entspricht. Gelenkwinkelbeschränkungen oder echte Hindernisse im
+de7=Aufgabenraum werden dann als Hindernisse in den Konfigurationsraum übersetzt, um festzulegen, welche
+de8=Gelenkwinkelkombination unmöglich einzunehmen sind.
+de9=RRTs können weiter optimiert werden, indem beispielsweise die zufällige Konfiguration nicht komplett
+de10=zufällig ist, sondern etwa eine Minimaldistanz von bestehenden Knoten entfernt sein muss. Außerdem kann
+de11=der Baum optimiert werden, indem eine Kostenfunktion eingeführt wird und Knoten des Baumes immer dann
+de12=neu verbunden wird, wenn sich die Kostenfunktion durch neu hinzugefügte Knoten verringert.
+de13=
+de14=Weitere Informationen zu RRTs können im originalen Artikel gefunden werden: Steven M. LaValle:
+de15=Rapidly-Exploring Random Trees: A new Tool for Path Planning, 1998, Report No. TR 98-11
+de16=Computer Science Department, Iowa State University (http://msl.cs.uiuc.edu/~lavalle/papers/Lav98c.pdf).
+de17=Eine Liste mit Erweiterungsmöglichkeiten zu RRTs kann auf Wikipedia gefunden werden:
+de18=https://en.wikipedia.org/wiki/Rapidly-exploring_random_tree#Variants_and_improvements_for_motion_planning
+de19
+de20=RRTs sind nur eine Möglichkeit Pfade in einem Konfigurationsraum zu finden. Andere Methoden sind etwas
+de21=(probabilistic) roadmaps, Sichtbarkeitsgraphen, Voronoi-Diagramme oder Potentialfeldmethoden. Ein
+de22=Überblick über weitere Methoden kann in J.-C. Latombe: Robot Motion Planning, Springer, 1991 oder
+de23=Steven M. LaValle: Planning Algorithms, Cambridge, 2006 (http://msl.cs.uiuc.edu/planning/) gefunden werden.
+
+
+###PseudoCode###
+sc1=für i = 1 bis k =
+sc2=qRand = ZufälligeKonfiguration()
+sc3=qNear = NächsterKnoten(qRand)
+sc4=qNew = NeuerKnoten(qNear, qRand, edgeLength)
+sc5=neueKante(qNew, qNear)
+sc6=Falls qNew oder Kante Hindernis kreuzen:
+sc7=rückgängig
+sc8=sonst:
+sc9=Falls Entfernung(qNew, goal) < gDelta:
+sc10=findePfad()
+sc11=break
+	
+###Steps###
+start = Algorithmusstart
+iteration = Iteration i =
+rand = Zufällige Konfiguration
+near = Nächster Knoten
+construct = Konstruiere neuen Knoten
+addEdge = Füge neue Kante hinzu
+valid = Prüfe ob gültig
+measure = Messe Entfernung	
+revert = Rückgängig
+	
+		

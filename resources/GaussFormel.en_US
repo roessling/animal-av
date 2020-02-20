@@ -1,0 +1,32 @@
+noSuchKeyException=Es gibt keine Ressource f\u00fcr Eintrag {0} 
+iconNotFound=Icon ”{0}” not found
+
+##Misc##
+algorithmName=Gaussian weekday formula
+generatorName=Gaussian weekday formula
+mo=Monday
+di=Tuesday
+mi=Wednesday
+do=Thursday
+fr=Friday
+sa=Saturday
+so=Sunday
+step1=What will be done
+step2=Display array
+step3=Display formula
+step4=Display pseudocode 
+step5=Comment pseudocode
+step6=Display Result
+step7=Finish
+description=The Gaussian weekday formula calculates the weekday of any year on 1 January. This formula was invented by Carl Friedrich Gauss, but was not published until 1927. Berndt Schwerdtfeger has proved the correctness of the formula, that it applies from the introduction of the Gregorian calendar on 15 October 1582 until the next calendar reform. Furthermore there are formulas, as extension of this method, e.g. the weekday calculation. The days of the week are numbered from 0 to 6 with Sunday as the beginning of the week, see the following array The result number is calculated by the following formula: w = (1+5*((year-1) mod4) + 4*((year-1)mod100) + 6*((year-1)mod400)) mod7  
+descriptionzu1= The Gaussian weekday formula calculates the weekday of any year on 1 January. This formula was invented by Carl Friedrich Gauss, but was not published until 1927.
+descriptionzu11= Berndt Schwerdtfeger has proved the correctness of the formula, that it applies from the introduction of the Gregorian calendar on 15 October 1582 until the next calendar reform.
+descriptionzu12= Furthermore there are formulas, as extension of this method, e.g. the weekday calculation. The days of the week are numbered from 0 to 6 with Sunday as the beginning of the week, see the following array.
+descriptionzu13= The result number is calculated by the following formula:
+descriptionzu14= w = (1+5*((year-1) mod4) + 4*((year-1)mod100) + 6*((year-1)mod400)) mod7
+descriptionzu2=Now the weekday of the 1st of January is calculated for the year
+year1= year
+codeexample=int newYear = Integer.parseInt(year); n 	nint indexW; ndouble ersterTeil = (1 + 5 *( (newYear - 1) % 4)); ndouble zweiterTeil = 4 * ((newYear -1) % 100); ndouble dritterTeil = 6 * ((newYear-1) % 400); nindexW = (int) (ersterTeil+zweiterTeil+dritterTeil) % 7; nString result = weekday[indexW];
+ergebnis= result =
+schlusstext= The result weekday of 01 January 
+ist =    is

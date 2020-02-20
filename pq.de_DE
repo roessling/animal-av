@@ -1,0 +1,30 @@
+noSuchKeyException = There is no ressource for the key {0}
+iconNotFound = Icon "{0}" not found
+Ä -> \u00c4
+ä -> \u00e4
+Ö -> \u00d6
+ö -> \u00f6
+Ü -> \u00dc
+ü -> \u00fc
+ß -> \u00df
+Beispiel = Beispiel
+Beschreibung = Beschreibung 
+PQ-Formel = PQ-Formel
+SourceCode = Quellcode
+Thesolutionis = Die Lösung ist 
+Solution = Lösung
+beschreibungsText= Die PQ-Formel berechnet die Nullstellen für eine reele Funktion zweiten Grades. Dabei hat die Funktion folgende Darstellung: ax²+ bx + c = d. 
+returnGeneral = Die Funktion gibt null, eine oder zwei Lösungen zurück, die auf vier Nachkommastellen gerundet wird. 
+RETURN =Gibt es keine Lösung wird null zurückgegeben. Bei einer Lösung wird ein Array der Länge eins, mit der Lösung, zurückgegeben. 
+RETURN2 =Bei zwei Lösungen wird ein Array der Länge zwei, mit den beiden Lösungen, zurückgegben. 
+
+description_algo= Der Algorithmus geht wie folgt vor: Es wird überprüft ob d = 0 ist. Sollte dies nicht so sein, wird c und d um d vermindert, sodass die Funktion gleich 0 ist.
+Als nächstes wird überprüft, ob a ungleich 1 und ungleich 0 ist. Wenn dem nicht so ist, werden alle Koeffizienten durch a geteilt und um die 4. Stelle gerundet. 
+Nun kann die PQ Formel angewendet werden: (-b/2)± √((b/2)²-q). Anschließend wird auch diese Lösung[en] um die 4. Stelle gerundet.
+
+EsexistiertkeineLosungimreelenBereich = Es existiert keine Lösung im reelen Bereich-p/2 √((p/2)2-q)
+Phalbeausrechnen = p halbe ausrechnen
+
+NAME=Nullstellenberechnung quadratischer Funktionen
+
+algorithmenbeschreibung = Der Algorithmus geht wie folgt vor: \n Es wird überprüft ob d = 0 ist. Sollte dem nicht so sein wird c um d vermindert und d um sich selbst, sodass die Funktion gleich 0 ist. \n Als nächstes wird überprüft ob a != 1 und a!= 0 ist. wenn dem nicht so ist,  werden alle Koeffizienten durch a geteilt und um die 4 Stelle gerundet. \n

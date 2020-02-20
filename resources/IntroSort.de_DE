@@ -1,0 +1,18 @@
+# Explanations
+description=Introsort ist ein hybrider Sortieralgorithmus. Gestartet wird mit Quicksort und es wird zu Heapsort gewechselt, wenn die Rekursion eine maximale Tiefe überschreitet, hier berechnet mit log(n)*2, wobei n die größe des Arrays ist.\nDadurch kombiniert Introsort die worst-case Performance O(n log n) von Heapsort mit der durchschnittlichen Performance O(n log n) von Quicksort.\nIn dieser Animation wird die Partitionierung durch den Quicksort Algorithmus (Methode partition) und das Bauen des Heaps des Heapsort Algorithmus (Methode heapify) nicht vollständing visualisiert, um das Verständnis dieses hybriden Algorithmus zu verbessern. Heapsort und Quicksort können jeweils als eigenständige Animation gefunden werden.
+introduction=Introsort ist ein hybrider Sortieralgorithmus.\nGestartet wird mit Quicksort und es wird zu Heapsort gewechselt, wenn die Rekursion eine maximale Tiefe überschreitet,\nhier berechnet mit log(n)*2, wobei n die größe des Arrays ist.\nDadurch kombiniert Introsort die worst-case Performance O(n log n) von Heapsort mit der durchschnittlichen Performance O(n log n) von Quicksort.\nIn dieser Animation wird die Partitionierung durch den Quicksort Algorithmus (Methode partition) und das Bauen des Heaps\ndes Heapsort Algorithmus (Methode heapify) nicht vollständing visualisiert, um das Verständnis dieses hybriden Algorithmus zu verbessern.\nHeapsort und Quicksort können jeweils als eigenständige Animation gefunden werden.\nDiese Implementation benutzt einen In-Place Quicksort Algorithmus, aber Heapsort arbeitet auf Kopien des Arrays.\nDa Quicksort rekursiv implementiert ist visualisieren wir zusätzlich die Rekursionsaufrufe als Baumstruktur.
+
+# Summary
+summary1=Wie in der Einleitung erwähnt hat Introsort eine Komplexität von O(n log n).\nInsgesamt wurden
+summary2=Aufrufe von introsort() gemacht und in der Summe
+summary3=Iterationen in heapsort() gemacht.\nEs gilt also, 
+summary4=Die GNU Standard C++ Bibliothek nutzt beispielsweise eine Variante von Introsort.
+
+# Other
+recursionTitle=Rekursionsbaum
+
+# Steps
+introductionStep=Einleitung
+summaryStep=Zusammenfassung
+heapsortCall1=heapsort von  
+heapsortCall2= bis 

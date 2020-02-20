@@ -192,7 +192,7 @@ public class Fitch implements Generator {
 		// build all variables for the graph
 		String[] labels = buildLabels(inputLabel);
 		int[][] graphAdjacencyMatrix = buildAdjacencyMatrix(labels.length);
-		TreeNode tree = constructTree(graphAdjacencyMatrix, labels, 0);
+		TreeNodeFitch tree = constructTree(graphAdjacencyMatrix, labels, 0);
 		graphNodes = new Node[labels.length];
 		buildNodes(tree, 600, 350, 250);
 
@@ -288,7 +288,7 @@ public class Fitch implements Generator {
 		conclusion();
 	}
 
-	private void fitchStepOne(TreeNode treeNode) {
+	private void fitchStepOne(TreeNodeFitch treeNode) {
 
 		if (treeNode == null)
 			return;
@@ -356,7 +356,7 @@ public class Fitch implements Generator {
 		}
 	}
 
-	private void fitchStepTwo(TreeNode treeNode, Set<String> parentLabel) {
+	private void fitchStepTwo(TreeNodeFitch treeNode, Set<String> parentLabel) {
 
 		if (treeNode == null || treeNode.getLeft() == null || treeNode.getRight() == null)
 			return;
@@ -510,7 +510,7 @@ public class Fitch implements Generator {
 	 * @param labels  the labels for each node
 	 * @param labelID the nodeID
 	 */
-	private TreeNode constructTree(int[][] matrix, String[] labels, int labelID) {
+	private TreeNodeFitch constructTree(int[][] matrix, String[] labels, int labelID) {
 
 		if (matrix == null)
 			return null;
@@ -519,12 +519,12 @@ public class Fitch implements Generator {
 
 			// found edge
 			if (matrix[labelID][column] != 0) {
-				return new TreeNode(labelID, labels[labelID], constructTree(matrix, labels, column),
+				return new TreeNodeFitch(labelID, labels[labelID], constructTree(matrix, labels, column),
 						constructTree(matrix, labels, column + 1));
 			}
 		}
 		// it is a leaf
-		return new TreeNode(labelID, labels[labelID]);
+		return new TreeNodeFitch(labelID, labels[labelID]);
 	}
 
 	/**
@@ -535,7 +535,7 @@ public class Fitch implements Generator {
 	 * @param coordinateX the x coordinate of the root
 	 * @param coordinateY the y coordinate of the root
 	 */
-	public void buildNodes(TreeNode treeNode, int treeWidth, int coordinateX, int coordinateY) {
+	public void buildNodes(TreeNodeFitch treeNode, int treeWidth, int coordinateX, int coordinateY) {
 
 		if (treeNode == null)
 			return;

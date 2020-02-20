@@ -1,0 +1,31 @@
+noSuchKeyException=There is no resource for the key {0}
+iconNotFound=Icon "{0}" not icon not found
+
+description0=This algorithm calculates the outputs of the neurons that are not in the input layer based on initial inputs and weights.
+description1=The output y of a neuron is defined as the result of an activation function act() which is used over the sum of all inputs x
+description2=multiplied by the corresponding weight w. This leads to y = act (∑ ( x * w ) ) .
+description3=In this animation you can choose between two activation functions: ReLU and Sigmoid. The corresponding formulas will be
+description4=visible beneath the neural network structure as a quick reference. There are several more functions but the two that are used here
+description5=are also the most common. All shown values are rounded to two decimal places but the calculation is done with the real values.
+description6=
+description7=
+intro=Introduction
+NN=The neural network
+comp10=Computation of h\u2080
+comp11=Computation of h\u2081
+comp12=Computation of h\u2082
+comp13=Computation of h\u2083
+comp20=Computation of y\u2080
+comp21=Computation of y\u2081
+comp22=Computation of y\u2082
+comp23=Computation of y\u2083
+outro=Closing note
+endnote0=This is a basic version of Forwardpropagation. More advanced methods include a bias into their
+endnote1=calculations which is added to the product of an input and its weight at the respective neuron.
+endnote2=Concluding you can see that every combination of an input neuron and its weight to an output neuron
+endnote3=has to be used exactly once (unless the input is 0 where you wouldn't need to do the multiplication).
+endnote4=For an idea of how neural networks are trained, have a look at Neural Network Backpropagation.
+endnote5=
+endnote6=
+endnote7=
+guiDescription=This algorithm shows a step-by-step calculation of the output nodes of a neural network. The network consists of an input layer, one hidden layer and an output layer. You can choose between two activation functions, ReLU and Sigmoid, and the scope of the three layers is also partially adjustable.

@@ -1,0 +1,13 @@
+noSuchKeyException=There is no resource for entry {0}
+iconNotFound=Icon "{0}" not  found
+
+titleText=MapReduce W\u00f6rter z\u00e4hlen
+introduction=Einleitung
+finalResult=Endresultat
+descriptionGenerator=Mit MapReduce lassen sich gro\u00dfe Datenmengen schnell verarbeiten. Dabei nutzt MapReduce Parallelisierung und Verteilung der Aufgaben auf mehrere Systeme. Beim W\u00f6rter Z\u00e4hlen werden die eingegebenen W\u00f6rter zuerst auf die gegebenen Systeme verteilt (splitting). Danach wird f\u00fcr jedes einzelne Wort ein Paar gebildet, n\u00e4mlich (Wort, 1) (mapping). Anschlie\u00dfend werden neue Paare gebildet, dazu werden alle Zahlen von den Paaren mit dem selben Wort in eine Liste geschrieben, wodurch folgende Paare entstehen: (Wort, (1, 1, 1)) (shuffling). Im letzten Schritt werden die Vorkommnisse jedes Wortes zusammengez\u00e4hlt, indem alle Zahlen in der Liste der Paare addiert werden (reducing).
+nameGenerator=MapReduce W\u00f6rter Z\u00e4hlen [de]
+questionMap=Welche L\u00e4nge wird die Liste von dem Tupel mit dem Wort {0} im {1}. System von oben haben?
+questionShuffle=Welche L\u00e4nge wird die Liste von dem Tupel mit dem Wort {0} haben?
+questionReduce=Welche Zahl wird für das Wort {0} ausgegeben werden?
+summary=Zusammenfassung
+questionFeedback=Das ist die richtige Antwort.

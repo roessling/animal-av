@@ -205,53 +205,63 @@ public class DummyGenerator implements GeneratorBundle {
 
     
     // Generators from the AlgoAnim course in summer term 2018.
-    generators.add(new SimpleElevator(Locale.ENGLISH));
-    generators.add(new SimpleElevator(Locale.GERMANY));
-    generators.add(new RISE("generators/misc/machineLearning/helperRISE/PseudoRISE", Locale.US));
-    generators.add(new RISE("generators/misc/machineLearning/helperRISE/PseudoRISE", Locale.GERMANY));
-    generators.add(new RelieF("generators/misc/machineLearning/helperRelief/Relief", Locale.US));
-    generators.add(new RelieF("generators/misc/machineLearning/helperRelief/Relief", Locale.GERMANY));
+    generators.add(new Bagging_Generator());
+    generators.add(new BoothProp());
+    generators.add(new Cobweb());
+    generators.add(new DiskSchedulingCSCAN("resources/DiskSchedulingCSCAN",Locale.GERMANY));
+    generators.add(new DiskSchedulingCSCAN("resources/DiskSchedulingCSCAN",Locale.US));
     generators.add(new DiskschedulingFCFS("resources/DiskschedulingFCFS", Locale.GERMANY));
     generators.add(new DiskschedulingFCFS("resources/DiskschedulingFCFS",Locale.US));
     generators.add(new DiskschedulingLOOK("resources/DiskschedulingLOOK", Locale.GERMANY));
     generators.add(new DiskschedulingLOOK("resources/DiskschedulingLOOK",Locale.US));
-    generators.add(new DiskSchedulingCSCAN("resources/DiskSchedulingCSCAN",Locale.GERMANY));
-    generators.add(new DiskSchedulingCSCAN("resources/DiskSchedulingCSCAN",Locale.US));
     generators.add(new DiskSchedulingSSTF("resources/DiskSchedulingSSTF",Locale.GERMANY));
     generators.add(new DiskSchedulingSSTF("resources/DiskSchedulingSSTF",Locale.US));
-    generators.add(new BoothProp());
-    generators.add(new Bagging_Generator());
-    generators.add(new SATGenerator());
-    generators.add(new ZellersKongruenz("resources/ZellersKongruenz",Locale.GERMANY));
-    generators.add(new ZellersKongruenz("resources/ZellersKongruenz",Locale.US));
-    generators.add(new LamportBakeryAlgo(Locale.US));
-    generators.add(new LamportBakeryAlgo(Locale.GERMANY));
-    generators.add(new Windowing_Generator());
-    generators.add(new PetersonAlgo(Locale.US));
-    generators.add(new PetersonAlgo(Locale.GERMANY));
-    generators.add(new HoshenKopelman());
     generators.add(new Glicko2Generator(Locale.US));
     generators.add(new Glicko2Generator(Locale.GERMANY));
-    generators.add(new Normalization());
     generators.add(new ID3ChiSquared(Locale.US));
     generators.add(new ID3ChiSquared(Locale.GERMANY));
+    generators.add(new Hirschberg());
+    generators.add(new HoshenKopelman());
     generators.add(new Joins("resources/Joins", Locale.US));
     generators.add(new Joins("resources/Joins", Locale.GERMANY));
-    generators.add(new NaiveBayesClasifier());
+    generators.add(new LamportBakeryAlgo(Locale.US));
+    generators.add(new LamportBakeryAlgo(Locale.GERMANY));
     generators.add(new ModelCheckerAPI());
+    generators.add(new NaiveBayesClasifier());
+    generators.add(new Normalization());
+    generators.add(new PetersonAlgo(Locale.US));
+    generators.add(new PetersonAlgo(Locale.GERMANY));
+    generators.add(new RelieF("generators/misc/machineLearning/helperRelief/Relief", Locale.US));
+    generators.add(new RelieF("generators/misc/machineLearning/helperRelief/Relief", Locale.GERMANY));
+    generators.add(new RISE("generators/misc/machineLearning/helperRISE/PseudoRISE", Locale.US));
+    generators.add(new RISE("generators/misc/machineLearning/helperRISE/PseudoRISE", Locale.GERMANY));
+    generators.add(new SATGenerator());
+    generators.add(new SimpleElevator(Locale.ENGLISH));
+    generators.add(new SimpleElevator(Locale.GERMANY));
     generators.add(new Smith_waterman());
-    generators.add(new Cobweb());
-    generators.add(new Hirschberg());
+    generators.add(new Windowing_Generator());
+    generators.add(new ZellersKongruenz("resources/ZellersKongruenz",Locale.GERMANY));
+    generators.add(new ZellersKongruenz("resources/ZellersKongruenz",Locale.US));
  
-    
     // Generators from the AlgoAnim course in summer term 2019.
-    generators.add(new chiMergeGenerator());
+    generators.add(new ChiMergeGenerator());
+    generators.add(new ErshovNumbersGenerator("resources/ErshovNumbers", Locale.GERMANY));
+    generators.add(new ErshovNumbersGenerator("resources/ErshovNumbers", Locale.US));
     generators.add(new FloydsCycleDetection());
+    generators.add(new GaussFormel("resources/GaussFormel", Locale.GERMANY));
+    generators.add(new GaussFormel("resources/GaussFormel", Locale.US));
     generators.add(new HusAlgorithm());
+    generators.add(new MapReduce("resources/MapReduce", Locale.GERMANY));
+    generators.add(new MapReduce("resources/MapReduce", Locale.US));
     generators.add(new MersenneTwisterGenerator());
+    generators.add(new MontyHallProblem());
     generators.add(new PumpingLemma());
     generators.add(new SealedBidGenerator());
+    generators.add(new SecretaryProblem(Locale.GERMANY));
+    generators.add(new SecretaryProblem(Locale.US));
     generators.add(new SJF());
+    generators.add(new Szymanski("resources/Szymanski", Locale.GERMANY));
+    generators.add(new Szymanski("resources/Szymanski", Locale.US));
     
     return generators;
   }

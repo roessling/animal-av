@@ -1,0 +1,18 @@
+desc01=The Aho-Corasick-Algorithm is a string matching algorithm by Alfred V. Aho and Margaret J. Corasick.
+desc02=The algorithm is able to search multiple strings in a text very efficiently.
+desc03=The algorithm is split into two parts:
+desc04=Generation of a Trie
+desc05= A trie is a tree-like data structure which stores the strings which are searched.
+desc06= Each node in the tree symbolises a character and shared prefixes are stored once.
+desc07=Inserting a string in the trie is simply following the trie as far as possible and adding new nodes for each new character in the string.
+desc08=Generating failure transitions
+desc09=In addition to having the normal trie structure the algorithm generates failure transitions for traversing the trie so that already found prefixes don't have to be followed multiple times.
+
+subheading_insert = Generation of a Trie
+subheading_connect = Generation of Failure transitions
+subheading_traverse = Parsing a string with the improved trie
+subheading_summary= Summary
+sum01=Aho-Corasick is an Improvement to the general trie by adding failure transitions.
+sum02=The complexity of the algorithm is linear to the length of the string and the length of the keywords and the number of keywords.
+
+hint_insert = More information for the trie can be read in the Generator for the Trie

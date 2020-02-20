@@ -1,0 +1,73 @@
+﻿noSuchKeyException=There is no ressource for the key {0}
+iconNotFound=Icon "{0}" not found
+
+###Beschreibung_Start###
+ds1=Description:
+ds2=
+ds3=Rapidly-Exploring Random Trees (RRT) are a data structure that allows rapid exploration
+ds4=of a configuration space by building a space-filling tree, which can be useful for e.g. motion
+ds5=planning in robotics, where RRTs are often used to find a valid path from a starting point
+ds6=to a goal point.
+ds7=Given an existing graph (with at least one starting node), a random configuration is drawn in
+ds8=every iteration and the nearest node of that configuration is calculated.
+ds9=A new node is then constructed by going a distance edgeLength in direction of the random
+ds10=configuration from the nearest node. This new node is then connected by an edge to the
+ds11=nearest node. If the new Node or its connecting edge are not valid, e.g. they cross the obstacle,
+ds12=both get erased.
+ds13=The algorithm terminates once the maximum number of iterations is reached or when the tree
+ds14=reached the goal point (i.e. a delta-region around the goal point).
+ds15=
+
+
+###Beschreibung_End###
+de1=Summary:
+de2=
+de3=As seen, Rapidly-Exploring Random Trees (RRT) are useful to find a path to a goal, even if
+de4=there is a obstacle blocking a direct path. RRTs are most often used in a multi-dimensional
+de5=configuration space of a robot arm, where the individual dimensions describe the joint
+de6=positions of the arm. Joint angle limitations or real obstacles in the task space are
+de7=translated as obstacles in the configuration space, specifiying which joint positions are
+de8=impossible to take for the robot arm.
+de9=RRTs can be optimized by picking the random configuration not entirely random, but e.g. with
+de10=a minimum distance from existing nodes to prevent clustering. Additionally the built tree
+de11=can be optimized by introducing a cost function and rewiring nodes if the cost is lowered
+de12=by a newly constructed node.
+de13
+de14=Further information on RRTs can be found in the original paper: Steven M. LaValle:
+de15=Rapidly-Exploring Random Trees: A new Tool for Path Planning, 1998, Report No. TR 98-11
+de16=Computer Science Department, Iowa State University (http://msl.cs.uiuc.edu/~lavalle/papers/Lav98c.pdf).
+de17=A summary of extensions of RRTs can be found on wikipedia:
+de18=https://en.wikipedia.org/wiki/Rapidly-exploring_random_tree#Variants_and_improvements_for_motion_planning
+de19
+de20=RRTs are only one variant of pathfinding in a configuration space. Other methods include
+de21=(probabilistic) roadmaps, visibility graphs, Voronoi diagrams or potential field methods.
+de22=An overview over other methods can be found in J.-C. Latombe: Robot Motion Planning, Springer, 1991
+de23=or Steven M. LaValle: Planning Algorithms, Cambridge, 2006 (http://msl.cs.uiuc.edu/planning/).
+
+
+###PseudoCode###
+sc1=for i = 1 bis k =
+sc2=qRand = RandomConfig()
+sc3=qNear = NextNode(qRand)
+sc4=qNew = NewNode(qNear, qRand, edgeLength)
+sc5=addEdge(qNew, qNear)
+sc6=if qNew or edge crossing the obstacle:
+sc7=revert
+sc8=else:
+sc9=if distance(qNew, goal) < gDelta:
+sc10=findPath()
+sc11=break
+	
+	
+###Steps###
+start = algorithm start
+iteration = iteration i =
+rand = RandomConfiguration
+near = nearest node
+construct = construct new node
+addEdge = add new edge
+valid = check if valid
+measure = measure distance	
+revert = revert
+	
+		

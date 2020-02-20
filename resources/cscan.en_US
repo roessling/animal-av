@@ -1,0 +1,34 @@
+noSuchKeyException=There is no Key for {0}
+iconNotFound=Icon "{0}" not found
+
+queue=Queue
+modifyAccess=Modifying Access
+readingAccess=Reading Access
+result=Result:
+
+question1=What is the first segment number being processed?
+correct=Correct!
+incorrect=Wrong!
+headpos=Head Position: {0}
+nextheadposCurrent=The next Head position (after this Iteration) is {0}
+nextheadposSegment=The next Head position (after this Iteration) is {0}
+question2=What is the difference to the SCAN algorithm (without C-)?
+answer21=When the reading head arrives at the edge, it does not travel backwards but continues from the other end.
+answer22=The algorithm looks first, which is the largest and smallest requested segment number, and stops at these locations instead of driving to the very edge.
+
+description=C-SCAN is a scheduling algorithm and is used to process requests for data from the hard disk (segments) as fairly as possible. The C in C-SCAN stands for Circular and in comparison to the SCAN algorithm the read and write head moves to the other end of the track when reaching one end of a hard disk and continues from there in the same direction instead of changing direction. The difference to the LOOK or C-LOOK algorithm is that the C-SCAN algorithm always goes to the end of a track. LOOK, on the other hand, reverses the current extreme values of the queue.
+
+algoSteps=The algorithm in words:
+algoStep1=1. See if the current segment on which the read head is in the queue
+algoStep2=2. If so, read the segment from memory, return it, and remove the request from the queue.
+algoStep3=3. Move the read / write head one place in the set direction of movement.
+algoStep4=4. Repeat until the queue is empty.
+
+algoMeta1=The first array shows the state of the queue.
+algoMeta2=The second array, which becomes visible in the course of the algorithm, indicates the order of the accesses.
+	
+algoSummary=Summary
+algoSumm1=The worst case is that a process requests a segment number that the read head has just passed.
+algoSumm2=If it runs very bad this process then has to wait for 'count(segments) * readtime'. But this only happens if all segments are really requested
+algoSumm3=Segment numbers in the queue are, which is not very likely.
+algoSumm4=Starvation of a process is prevented by this method because each segment number is passed by the head within ''number of segments'' reads.

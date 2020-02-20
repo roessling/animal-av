@@ -1,0 +1,84 @@
+noSuchKeyException=<Translation missing>
+header.main1=Simulated Annealing
+header.mainDescription=Simulated Annealing - Damenproblem
+
+header.sub1=Damenproblem
+header.sub.description1=Problemstellung
+header.sub.description2=L\u00f6sungsansatz
+header.sub.description3=Heuristik
+header.sub.description4=Algorithmus
+header.sub.description5=Fazit
+
+
+description.1.line1=Beim Damenproblem geht es darum auf einem n x n gro\u00dfen Schachbrett n Damen so zu positionieren,
+description.1.line2=dass diese sich nicht gegenseitig schlagen k\u00f6nnen.
+description.1.line3=Die Farbe der Damen wird hierbei vernachl\u00e4ssigt, sodass alle Damen sich potentiell schlagen k\u00f6nnten.
+description.1.line4=Die Problemstellung l\u00e4sst sich auf beliebige Schachbrettgr\u00f6\u00dfen \u00fcbertragen und ist \u00fcber die Primitive
+description.1.line5='Number of Queens' anpassbar.
+
+description.2.line1=Um eine L\u00f6sung zu finden, werden zun\u00e4chst alle Damen (fast) zuf\u00e4llig auf dem Schachbrett positioniert.
+description.2.line2=Allerdings betrachten wir das Problem etwas 'intelligenter', indem wir schon zu Beginn in jeder Spalte
+description.2.line3=jeweils nur eine Dame positionieren.
+description.2.line4=In jeder Iteration wird dann potentiell eine Dame innerhalb ihrer Spalte bewegt, um somit dem Ziel n\u00e4her zu kommen.
+
+description.3.line1=Um Zust\u00e4nde auswerten und gegeneinander abw\u00e4gen zu k\u00f6nnen, wird eine entsprechende Heuristik f\u00fcr das Problem ben\u00f6tigt.
+description.3.line2=Die 'Energie' eines Zustands errechnet sich daher aus der Anzahl an Paaren von Damen,
+description.3.line3=die sich gegenseitig schlagen k\u00f6nnen.
+description.3.line4=Die Energie des momentanen Zustands ist unter dem Schachbrett vermerkt.
+description.3.line5=In den einzelnen Feldern des Brettes steht die Energie des Folgezustandes, den man erhalten w\u00fcrde,
+description.3.line6=wenn die Dame in der selbigen Spalte auf dieses Feld bewegt w\u00fcrde.
+
+description.4.line1=Der Algorithmus der simulierten Abk\u00fchlung ist ein lokales Suchverfahren,
+description.4.line2=das die Methoden des Hillclimbing und des Random Walks kombiniert. 
+description.4.line3=Um lokale Optima zu vermeiden, erlaubt der Algorithmus auch Schritte in einen vermeintlich schlechteren Folgezustand,
+description.4.line4=wobei die Wahrscheinlichkeit hierf\u00fcr kontinuierlich abnimmt.
+description.4.line5=Da das Verfahren aus der Metallurgie abgeleitet wurde, spricht man in diesem Zusammenhang auch von der Temperatur,
+description.4.line6=die mithilfe einer monoton gegen Null fallenden Funktion mit jedem Iterationsschritt angepasst wird.
+description.4.line7=In diesem Fall erzielt man mit einer exponentiellen Abk\u00fchlungsfunktion die besten Ergebnisse. 
+description.4.line8=Im Iterationsschritt 't' errechnet sich die Temperatur 'T' als T = coolingRate^t.
+description.4.line9=Die Wahrscheinlichkeit, einen schlechteren Folgezustand zu w\u00e4hlen, ist dann: 
+description.4.line10=e^( - HEURISTIK(aktueller Zustand) - HEURISTIK(n\u00e4chster Zustand) / T )
+
+
+stepDescription.Description=Einleitung
+stepDescription.init=Initialisierung
+stepDescription.iteration=Iteration %d
+stepDescription.finalIteration=Finale Iteration
+stepDescription.conclusion=Conclustion
+
+sourceCode.line0=function SIMULATED-ANNEALING(NumberOfQueens, Temperature, CoolingRate)
+sourceCode.line1=init ChessBoard
+sourceCode.line2=currentState = INITIAL-STATE
+sourceCode.line3=for(t = 1 to inf)
+sourceCode.line4=if Temperature = 0 OR VALUE(currentState) = 0 then
+sourceCode.line5=return currentState
+sourceCode.line6=nextState = RANDOM-STATE
+sourceCode.line7=\u0394E = VALUE(currentState) - VALUE(nextState)
+sourceCode.line8=if -\u0394E > 0 then
+sourceCode.line9=currentState = nextState
+sourceCode.line10=else if exp(\u0394E/Temperature) > RANDOM-NUMBER then
+sourceCode.line11=currentState = nextState
+sourceCode.line12=Temperature = COOLDOWN-TEMP(Temperature, t, CoolingRate)
+
+thermometer.currentTemp=Aktuelle Temperatur: %2.5f
+chessboard.currentEnergy=Aktuelle Energie: %d
+
+solution.line1.1=Es wurde eine L\u00f6sung des Problems gefunden. 
+solution.line1.2=Allerdings hat dies l\u00e4nger als durchschnittlich gedauert.
+solution.line1.3=Diese entspricht auch dem zu erwartenden Ergebnis.
+solution.line1.4=Allerdings war dies auch durch den Zufall beg\u00fcnstigt.
+solution.line1.5=In diesem Fall ist der Algorithmus in ein lokales Minimum gelaufen und hat keine L\u00f6sung des Problems gefunden.
+
+solution.line2=Die gew\u00e4hlten Einstellungen resultieren in %2.2f Prozent der F\u00e4lle in einer L\u00f6sung bei durchschnittlich %2.2f Iterationen.
+solution.line3=Generell gilt bei diesem Algorithmus stets zu beachten, dass die Warhscheinlichkeit eine L\u00f6sung zu finden und
+solution.line4=wie schnell diese gefunden wird stark von der gew\u00e4hlten Abk\u00fchlungsrate ah\u00e4ngig ist.
+solution.line5=W\u00e4hrend es bei geringer Abk\u00fchlungsrate stark vom Zufall abh\u00e4ngt, ob eine L\u00f6sung gefunden wird, so kann man doch generell zeigen,
+solution.line6=dass die Wahrscheinlichkeit ein globales Optimum zu finden bei langsam genug fallender Temperatur gegen 1 geht.
+
+solution.line7.1=Generieren Sie doch einfach erneut diese Animation. Die Chancen stehen gut doch noch eine L\u00f6sung zu finden.
+solution.line7.2=Sie sollten \u00fcberlegen die Konfiguration der Animation anzupassen, um die Wahrscheinlichkeit eine L\u00f6sung zu finden zu verbessern.
+solution.line7.3=Generieren Sie doch einfach erneut diese Animation. Die Chancen stehen gut schneller zu einer L\u00f6sung zu kommen.
+
+shortdescription.line1=Der Algorithmus der simulierten Abk&uuml;hlung ist ein lokales Suchverfahren, dass die Methoden des Hillclimbing und des Random Walks kombiniert.
+shortdescription.line2=Um lokale Optima zu vermeiden erlaubt der Algorithmus auch Schritte in einen vermeintlich schlechteren Folgezustand, wobei die Wahrscheinlichkeit hierf&uuml;r kontinuierlich abnimmt.
+shortdescription.line3=Da das Verfahren aus der Metallurgie abgeleitet wurde spricht man in diesem Zusammenhang auch von der Temperatur, die mithilfe einer monoton gegen Null fallenden Funktion mit jedem Iterationsschritt angepasst wird.

@@ -1,0 +1,30 @@
+noSuchKeyException = There is no ressource for the key {0}
+iconNotFound = Icon "{0}" not found
+Ä -> \u00c4
+ä -> \u00e4
+Ö -> \u00d6
+ö -> \u00f6
+Ü -> \u00dc
+ü -> \u00fc
+ß -> \u00df
+Beispiel = Example
+Beschreibung = Description
+PQ-Formel = PQ-Formula
+SourceCode = Source Code
+Thesolutionis = The solution is
+Solution = Solution
+beschreibungsText= The PQ-Formula calculates the zeros for a second-order real function. The function has the following representation: ax²+ bx + c = d. 
+returnGeneral = The function returns zero, one, or two solutions, rounded to four decimal places. 
+RETURN = If there is no solution, null is returned. If there is one solution, return an array of length one, with the solution. 
+RETURN2 =If there are two solutions, an array of length two, with the two solutions, is returned. 
+
+description_algo= The algorithm proceeds as follows: It is checked whether d = 0. If this is not the case, c and d are reduced by d so that the function is equal to 0.
+Next, it is checked whether a is not equal to 1 and not equal to 0. If not, all coefficients are divided by a and rounded by the 4th digit.
+Now the PQ formula can be used: (-b / 2) ± √((b / 2) ²-q). Subsequently, this solution is also rounded by the 4th digit.
+
+EsexistiertkeineLosungimreelenBereich = There is no available solution in the real area
+Phalbeausrechnen = calculate p half
+
+NAME = Find zeros for quadratic functions
+
+algorithmenbeschreibung= The algorithm works as follows: \nIt is checked if d = 0. If this is not the case, c is reduced by d and d by itself, so that the function is equal to 0.\nNext, it is checked whether a! = 1 and a! = 0. if not, all coefficients are divided by a and rounded by the 4 digit.\nNow the PQ formula (-b / 2) ± √ ((b / 2) ²-q) can be used.

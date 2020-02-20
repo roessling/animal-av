@@ -1,0 +1,13 @@
+noSuchKeyException=There is no resource for entry {0}
+iconNotFound=Icon "{0}" not  found
+
+titleText=MapReduce Word Count
+introduction=introduction
+finalResult=final result
+descriptionGenerator=With MapReduce, large amounts of data can be processed quickly. MapReduce uses parallelization and distribution of tasks across multiple systems. When counting words, the entered words are first distributed to the given systems (splitting). Then a pair is formed for each individual word, namely (word, 1) (mapping). Then new pairs are formed, all numbers of the pairs with the same word are written into a list, resulting in the following pairs: (word, (1, 1, 1)) (shuffling). In the last step, the occurrences of each word are added together by adding all the numbers in the list of pairs (reducing).
+nameGenerator=MapReduce Word Count [en]
+questionMap=How long will the list of the tuple with the word {0} in the {1}. system from the top be?
+questionShuffle=How long will the list of the tuple with the word {0} be?
+questionReduce=Which number will be emitted for the word {0}?
+summary=summary
+questionFeedback=This is the correct answer.

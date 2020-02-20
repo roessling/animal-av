@@ -1,0 +1,22 @@
+noSuchKeyException=There is no resource for {0}
+iconNotFound=Icon "{0}" not found
+
+## General ##
+title=Spencer's Easter formula
+year=Year
+desc=Similar to the Gaussian Easter formula, Spencer's Easter formula determines the exact day on which Easter takes place in the given year.\nOther than the Gaussian algorithm, it additionally calculates the month.\nThe algorithm was described in 1922 by the astronomer Harold Spencer Jones, although it was already published by unknown sources in 1876.
+
+## Explanation ##
+expl_1=Similar to the Gaussian Easter formula, Spencer's Easter formula
+expl_2=determines the exact day on which Easter takes place in the given year.
+expl_3=Other than the Gaussian algorithm, it additionally calculates the month.
+expl_4=The algorithm was described in 1922 by the astronomer Harold Spencer Jones,
+expl_5=although it was already published by unknown sources in 1876.
+
+## Step labels ##
+expl=Explanation
+exec=Execution
+
+## Summary ##
+summ_1=The day is determined by p + 1 (= {0}) and the month by n (= {1}).
+summ_2=Easter Sunday in the year {2} thus takes place on {2}/{1}/{0}.

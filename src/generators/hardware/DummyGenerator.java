@@ -1,5 +1,8 @@
 package generators.hardware;
 
+import java.util.Locale;
+import java.util.Vector;
+
 import generators.framework.Generator;
 import generators.framework.GeneratorBundle;
 import generators.hardware.flipflop.DFlipflop;
@@ -13,8 +16,6 @@ import generators.hardware.gates.NotGatter;
 import generators.hardware.gates.OrGatter;
 import generators.hardware.gates.XNorGatter;
 import generators.hardware.gates.XOrGatter;
-
-import java.util.Vector;
 
 public class DummyGenerator implements GeneratorBundle {
 
@@ -51,6 +52,10 @@ public class DummyGenerator implements GeneratorBundle {
     // Generators from the AlgoAnim course in summer semester 2018
     generators.add(new MFUGenerator());
     generators.add(new NRUGenerator());
+
+    // Generators from the AlgoAnim course in summer semester 2019
+    generators.add(new CScan("resources/cscan", Locale.GERMANY));
+    generators.add(new CScan("resources/cscan", Locale.US));
     
     return generators;
   }

@@ -1,0 +1,130 @@
+noSuchKeyException=There is no ressource for the key {0} 
+iconNotFound=Icon ”{0}” not found
+
+title=Szyma\u0144ski\u2019s Algorithm [EN]
+algoName=Szyma\u0144ski\u2019s Algorithm
+name=Szymański's Algorithm
+procTable=Process Table
+waitingRoom=Waiting Room
+
+descrTitle=Description
+descr0=Szymański's Algorithm is an algorithm that ensures mutual exclusion.
+descr1=
+descr2=The algorithm is modeled on a waiting room with an entry and exit doorway.
+descr3=Initially the entry door is open and the exit door is closed.
+descr4=All processes which request entry into the critical section at roughly the same time enter the waiting room; 
+descr5=the last of them closes the entry door and opens the exit door.
+descr6=The processes then enter the critical section one by one. 
+descr7=The last process to leave the critical section closes the exit door and reopens the entry door, so the
+descr8=next batch of processes may enter.
+descr9=
+descr10=Szymański's Algorithm has many favorable properties like linear wait and a constant number of communication bits.
+descrU0=Szyma\u0144ski\u2019s Algorithm is an algorithm that ensures mutual exclusion.
+descrU1=
+descrU2=The algorithm is modeled on a waiting room with an entry and exit doorway. Initially the entry door is open and the exit door is closed. All processes which request entry into the critical section at roughly the same time enter the waiting room; the last of them closes the entry door and opens the exit door. The processes then enter the critical section one by one.  The last process to leave the critical section closes the exit door and reopens the entry door, so the next batch of processes may enter.
+descrU3=
+descrU4=Szyma\u0144ski\u2019s Algorithm has many favorable properties like linear wait and a constant number of communication bits.
+
+N=number of processes
+flag0=initial state
+flag1=process is standing outside the waiting room (wants to enter)
+flag2=process is waiting for other processes to enter
+flag3=process stands in the doorway
+flag4=entry door is closed; process waits for his turn to enter critical section
+flagU0=initial state
+flagU1=process is standing outside the waiting room (wants to enter)
+flagU2=process is waiting for other processes to enter
+flagU3=process stands in the doorway
+flagU4=entry door is closed; process waits for his turn to enter critical section
+
+descrCode1=Process enters the waiting room if the entry door is open.
+descrCode1=Process enters the waiting room if the entry door is open.
+descrCode2=Wait for the processes (in 1) to enter the room.
+descrCode3=Wait until all processes with smaller ID have visited the CS.
+descrCode4=Ensure that all processes in the waiting room know that the entry door is closed.
+titleCode1=Entry
+titleCode2=Waiting Room
+titleCode3=Waiting for Turn
+titleCode4=Everyone Ready
+
+descrTable0=On the left you can see the process table where each row shows the current variables of a process.
+descrTable1=line: 	The code line that was last executed by the process.
+descrTable2=flag: 	The current state of the process (see above).
+descrTable3=j: 	The loop variable for outer loops.
+descrTable4=i	The loop variable for inner loops.
+
+conclTitle=Conclusion
+concl0=Now all processes that wanted to access the Critical Section 
+concl1=have entered and left it one after the other according to 
+concl2=their process number (from small to big).
+concl3=This could go on infinitely if the code is enclosed 
+concl4=by an endless loop.
+concl5=
+concl6=To simulate undeterministic scheduling of the processes 
+concl7=the choice of the next process was randomized. 
+concl8=The probability that the process is changed can be altered 
+concl9=in the primitives settings. 
+concl10=Therefor you can see another run by generating the algorithm again 
+concl11=and can further change the course of the sequence by setting 
+concl12=the primitives to different values. 
+
+intro=Introduction
+start=Start run
+reachedCS=has reached the critical section.
+entryClosed=Entry door is closed and exit door is opened.
+
+question0=When does the entry door close?
+answer0_1=As soon as the flag of a process is set to 4 for the first time.
+feedback0_1=Correct answer!
+answer0_2=Once all processes are in the waiting room.
+feedback0_2=Incorrect. It opens as soon as the flag of a process is set to 4 for the first time.
+answer0_3=When the first process enters the CS.
+feedback0_3=Incorrect. It opens as soon as the flag of a process is set to 4 for the first time.
+answer0_4=When the first process leaves the CS.
+feedback0_4=Incorrect. It opens as soon as the flag of a process is set to 4 for the first time.
+
+question1=When does the entry door reopen?
+answer1_1=When the first process enters the CS.
+feedback1_1=Incorrect! It reopens when the last process leaves the CS.
+answer1_2=When the first process leaves the CS.
+feedback1_2=Incorrect. It reopens when the last process leaves the CS.
+answer1_3=When the last process leaves the CS.
+feedback1_3=Correct answer!
+answer1_4=Once all processes are back to state 1 or 2.
+feedback1_4=Incorrect. It reopens when the last process leaves the CS.
+
+question2=What is the difference between state 2 and 3?
+answer2_1=In state 2 the process waits for all other processes to enter the waiting room.
+feedback2_1=Incorrect. The process only has to wait for the processes that requested entry.
+answer2_2=In state 2 the process waits for all other processes who wants access to the CS to enter the waiting room.
+feedback2_2=Correct answer!
+answer2_3=In state 2 the process waits for all other processes with smaller ID to enter the CS.
+feedback2_3=Incorrect. The process waits for all other processes who wants access to the CS to enter the waiting room.
+
+question3_1=Why can not p
+question3_2= currently enter the CS ?
+answer3_1=Because there is another process in the CS.
+answer3_2=Because a process with a smaller ID is still in the waiting room.
+answer3_3=Since not all processes that want to enter the CS are in the waiting room.
+posFeedback3=This statement is correct.
+negFeedback3=This statement is wrong.
+
+question4=What is the meaning of the state change from 0 to 1?
+answer4_1=Access to the CS is requested.
+feedback4_1=It is (i.a.) correct that access to the CS is requested.
+answer4_2=The waiting room is entered.
+feedback4_2=It is incorrect that the waiting room is entered. This does not happen until state 3 is reached.
+answer4_3=Entry to the waiting room is requested.
+feedback4_3=It is (i.a.) correct that entry to the waiting room is requested.
+
+question5=Which process can enter the CS next? 
+posFeedback5= is correct.
+negFeedback5= is incorrect.
+
+posFeedbackTF=Correct!
+negFeedbackTF=That is not correct.
+
+question6_1=Can p
+question6_2= enter the CS in this run?
+
+question7=Can processes leave the waiting room without entering the CS?

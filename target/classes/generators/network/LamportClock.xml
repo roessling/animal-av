@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<PropertiesTreeModel xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="PropertiesTreeModel.xsd">
+	<Folder name="Root">
+		<Primitive type="String">
+			<name>parseProc</name>
+			<value><String>adei;cfhj;bgk</String></value>
+			<description>Process of the distributed system, each letter is an event, &apos;;&apos; means next process, alphabetical position of the letter is relevant for happend-before relationship</description>
+		</Primitive>
+		<Primitive type="String">
+			<name>parseMessage</name>
+			<value><String>ac,cd,bf,ef,fk</String></value>
+			<description>Message between two events, form eventName1eventName2, use &apos;,&apos; as separator for messages, messages can only be send from earlier to later</description>
+		</Primitive>
+		<Primitive type="int">
+			<name>radius</name>
+			<value><int>20</int></value>
+			<description>Radius of shown circles, governs size of the animation</description>
+		</Primitive>
+		<Primitive type="Color">
+			<name>highlightColor</name>
+			<value><Color>(255, 0, 0)</Color></value>
+			<description>highlight color for current event and messages</description>
+		</Primitive>
+		<Primitive type="Color">
+			<name>standardColorCircle</name>
+			<value><Color>(0, 0, 0)</Color></value>
+			<description>color for finished events</description>
+		</Primitive>
+		<Primitive type="Color">
+			<name>standardColorLines</name>
+			<value><Color>(0, 0, 0)</Color></value>
+			<description>color for lines </description>
+		</Primitive>
+		<Primitive type="Color">
+			<name>highlightCode</name>
+			<value><Color>(255, 0, 0)</Color></value>
+			<description>color for code highlighting</description>
+		</Primitive>
+		<Primitive type="Color">
+			<name>highlightContext</name>
+			<value><Color>(255, 200, 0)</Color></value>
+			<description>color for highlighting the context in the source code</description>
+		</Primitive>
+	</Folder>
+</PropertiesTreeModel>

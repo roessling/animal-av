@@ -1,0 +1,98 @@
+descriptionPart1=Der Vector Clock-Algorithmus weist jedem Prozess in einem verteilten System einen Vektor logischer Uhren mit so vielen Eintr&auml;gen wie beteiligten Prozessen zu, um die Reihenfolge der in den Prozessen stattfindenden Ereignisse zu bestimmen.\n\n- Zu Beginn werden alle Eintr&auml;ge in allen Vektoren auf null gesetzt.\n\n- Immer, wenn ein Ereignis in einem Prozess stattfindet - entweder ein internes Ereignis, das Senden einer Nachricht oder das Empfangen einer Nachricht - vergr&ouml;&szlig;ert der Prozess zun&auml;chst seine eigene logische Uhr in seinem Uhrenvektor um eins.\n\n- Immer, wenn ein Prozess eine Nachricht an einen anderen Prozess sendet, sendet er zus&auml;tzlich seinen aktuellen Uhrenvektor mit.\n\n- Immer, wenn ein Prozess eine Nachricht erh&auml;lt, vergleicht er jede logische Uhr in seinem Uhrenvektor mit der entsprechenden logischen Uhr des erhaltenen Uhrenvektors und aktualisiert jeden Eintrag in seinem Uhrenvektor mit dem Maximum beider Werte.\n\nSchlie&szlig;lich wird ein Zeitstempel, der den aktuellen Uhrenvektor des Prozesses enth&auml;lt, in dem das Ereignis stattfindet, dem Ereignis hinzugef&uuml;gt.\n\n\n\n
+
+descriptionPart2=Nachdem die Ereignisse Zeitstempel erhalten haben, kann durch deren Vergleich die partielle und kausale Ordnung der Ereignisse bestimmt werden.\n\nWenn ein Ereignis vor einem anderen passiert ist, m&uuml;ssen die Zeitstempel der Ereignisse folgende Bedingungen erf&uuml;llen:\n\n    - Alle Zeitstempeleintr&auml;ge des Ereignisses, das zuerst geschehen ist, sind kleiner gleich den entsprechenden Zeitstempeleintr&auml;gen des anderen Ereignisses.\n\n    - Mindestens ein Zeitstempeleintrag des Ereignisses, das zuerst geschehen ist, ist strikt kleiner als der entsprechende Zeitstempeleintrag des anderen Ereignisses.\n\n-> Falls diese Bedingungen f&uuml;r zwei Ereignisse A und B erf&uuml;llt sind, kann festgehalten werden, dass Ereignis A vor Ereignis B geschehen ist.\n\n\n\nDie partielle Ordnung der Ereignisse hat die Eigenschaften von Antisymmetrie und Transitivit&auml;t:\n\n    - Antisymmetrie: Falls Ereignis A vor Ereignis B geschehen ist, kann Ereignis B nicht vor Ereignis A geschehen sein.\n\n    - Transitivit&auml;t: Falls Ereignis A vor Ereignis B geschehen ist und Ereignis B vor Ereignis C geschehen ist, dann hat Ereignis A ebenfalls vor Ereignis C stattgefunden.\n\nFalls zwischen zwei Ereignissen keine Ordnung besteht, impliziert dies, dass diese Ereignisse gleichzeitig stattgefunden haben (k&ouml;nnten) und dass kein kausaler Zusammenhang zwischen diesen Ereignissen besteht.\n\n\n\n
+
+descriptionPart3=Events Primitive:\n Jede Zeile repr&auml;sentiert entweder ein internes Ereignis oder das Senden UND Empfangen einer Nachricht.\n Spalten:\n 0: Zeitpunkt, an dem das Ereignis stattfindet (als Ganzzahl)\n 1: Name des Prozesses, in dem das Event stattfindet\n 2: Ereignistyp: I f&uuml;r internes Ereignis oder M f&uuml;r Nachricht (in diesem Fall steht Spalte 1 f&uuml;r den sendenden Prozess)\n 3: falls M: name des Prozesses, der die Nachricht empf&auml;ngt, falls I: -\n 4: falls M: Zeitpunkt, zu dem die nachricht empfangen wird (muss gr&ouml;&szlig;er als Spalte 0 sein), falls I: -\n 5: &uuml;berpr&uuml;fe Schritt f&uuml;r Schritt, welche Ereignisse vor diesem Ereignis stattgefunden haben: y f&uuml;r ja, n f&uuml;r nein
+
+descriptionPart4=Die Ereigniszeitstempel, die vom Vector Clock-Algorithmus generiert wurden, haben es erm&ouml;glicht, die partielle und kausale Ordnung der Ereignisse zu bestimmen.\nDa der Algorithmus Vektoruhren mit den Informationen aller Prozesse anstelle von einfachen loischen Uhren verwendet, ist garantiert, dass die Ereignisse tats&auml;chlich in der Reihenfolge geschehen sind, die durch die Ordnung gegeben ist.\nDies ist eine Verbesserung gegen&uuml;ber Lamport's Timestamps, wobei nur Zeitstempel mit einfachen logischen Uhren verwendet werden und kleinere Zeitstempel nicht garantieren, dass ein Ereignis auch tats&auml;chlich vor einem anderen Ereignis geschehen ist.\nJedoch hat der Vector Clock-Algorithmus im Vergleich zu Lamport's Timestamps eine h&ouml;here Komplexit&auml;t hinsichtlich des Kommunikationsaufwands, die mit der Anzahl der involvierten Prozesse steigt.
+
+codeExampleInitialization=f&uuml;r jeden Prozess von N Prozessen:\n erstelle Uhrenvektor mit N Elementen\n setze jeden Eintrag auf 0
+
+codeExampleTimestamps=f&uuml;r jedes Ereignis:\n falls internes Ereignis:\n  inkrementiere die logische Uhr im Uhrenvektor des Prozesses um eins\n falls Nachricht gesendet:\n  inkrementiere die logische Uhr im Uhrenvektor des Prozesses um eins\n  f&uuml;ge die Vektoruhr des Prozesses der Nachricht hinzu\n falls Nachricht empfangen:\n  inkrementiere die logische Uhr im Uhrenvektor des Prozesses um eins\n  f&uuml;r jedes Element im Uhrenvektor des Prozesses:\n   aktualisiere Element mit Maximum des eigenen Uhrenvektors und des erhaltenen Uhrenvektors
+
+codeExampleComparison=f&uuml;r jeden Eintrag:\n falls anderer Eintrag kleiner gleich eigener Eintrag:\n  vergleiche weiter\n sonst:\n  stoppe Vergleich, kein Erfolg\nfalls Vergleich erfolgreich:\n falls ein anderer Eintrag strikt kleiner als eigener Eintrag:\n  anderes Ereignis geschah zuvor
+
+slideIntroduction=slideDescriptionDE.txt
+slideConclusion=slideConclusionDE.txt
+
+codeInitLine1=für jeden Prozess von N Prozessen:
+codeInitLine2=erstelle Uhrenvektor mit N Elementen
+codeInitLine3=setze jeden Eintrag auf 0
+
+code1Line1=falls internes Ereignis:
+code1Line2=vergrößere eigene Uhr im Vektor um 1
+code1Line3=falls Nachricht gesendet:
+code1Line4=vergrößere eigene Uhr im Vektor um 1
+code1Line5=sende Kopie von eigenem Vektor
+code1Line6=falls Nachricht erhalten:
+code1Line7=vergrößere eigene Uhr im Vektor um 1
+code1Line8=für jeden Eintrag im Vektor:
+code1Line9=aktualisiere mit Maximum von eigenem Vektor und empfangenem Vektor
+code1Line10=füge Uhrenvektor dem Ereignis als Zeitstempel hinzu
+
+code2Line1=für jeden Eintrag:
+code2Line2=falls anderer Eintrag kleiner gleich eigener Eintrag:
+code2Line3=vergleiche weiter
+code2Line4=sonst:
+code2Line5=stoppe Vergleich, kein Erfolg
+code2Line6=falls Vergleich erfolgreich:
+code2Line7=falls ein anderer Eintrag strikt kleiner als eigener Eintrag:
+code2Line8=anderes Ereignis geschah zuvor
+
+### chapter strings ###
+introduction=Einleitung
+initialization=Initialisierung
+initializationComplete=Initialisierung abgeschlossen
+oneProcessed=bearbeitet
+allProcessed=Alle Ereignisse bearbeitet
+compareEvents=Vergleiche Ereignisse
+compareWith=verglichen mit
+happenedBefore=Ereignisse vor
+eventOrder=Ordnung der Ereignisse
+conclusion=Schluss
+
+### labels ###
+currentActivityInit=Initialisiere Uhrenvektoren
+currentActivity1=Berechne Zeitstempel der Ereignisse
+currentActivity2=Vergleiche Zeitstempel der Ereignisse
+currentActivity3=Kausale Beziehungen der Ereignisse
+currentProcessLabel=Aktueller Prozess
+currentEventLabel=Aktuelles Ereignis
+otherEventLabel=Anderes Ereignis
+foundEventsLabel=Zuvor geschehene Ereignisse
+noElement=-
+
+comparisonSuccessful=Vergleich erfolgreich
+strictlySmaller=Ein Eintrag strikt kleiner
+true=wahr
+false=falsch
+
+### exception messages ###
+processException=Prozesse m&uuml;ssen verschiedene Namen haben (&uuml;berpr&uuml;fe Processes)
+eventElementsException=Zeilen der Events Primitive m&uuml;ssen 6 Spalten haben
+eventTypeException=Ereignis muss vom Typ I oder M sein (&uuml;berpr&uuml;fe Events Spalte 2)
+eventTimeBelowZeroException=Ereigniszeitpunkt muss gr&ouml;&szlig;er als 0 sein (&uuml;berpr&uuml;fe Events Spalte 0)
+eventMaxTimeNotAboveZeroException=Mindestens ein Ereignis muss nach Zeitpunkt 0 geschehen (&uuml;berpr&uuml;fe Events Spalten 0 and 4)
+eventProcessException=Ereignis-Prozessname muss in der Processes Primitive vorhanden sein (&uuml;berpr&uuml;fe Events Spalte 1 und Processes)
+eventMessageException=Ereigniszeitpunkt des Erhalts der Nachricht muss gr&ouml;&szlig;er sein als der Zeitpunkt des Sendens (&uuml;berpr&uuml;fe Events Spalte 4 > Spalte 0)
+eventReceiverException=Der Name des Ereignis-Prozesses, der die Nachricht erh&auml;lt, muss in der Processes Primitive vorhanden sein (&uuml;berpr&uuml;fe Events Spalte 3 und Processes)
+
+### questions and answers (needs UTF8 encoding) ###
+fibWarning=(Es gibt nur eine richtige Antwort. Falls [Congratulations, your answer is correct.] angezeigt wird, ist die Antwort nicht richtig.)
+evIN=internes Ereignis
+evMS=Nachricht gesendet-Ereignis
+evMR=Nachricht erhalten-Ereignis
+actionIncrement=Inkrementiere eigenen Eintrag im Uhrenvektor
+actionSend=Sende Kopie von eigenem Uhrenvektor
+actionMax=Nimm pro Eintrag das Maximum von eigenem und erhaltenem Uhrenvektor
+correctAnswer=Korrekt.
+wrongAnswer=Falsch.
+qInitRows=Wie viele Eintr\u00e4ge hat jeder Uhrenvektor nach der Initialisierung?
+aInitRows={0} ist korrekt.
+qInitValue=Welchen Wert hat jeder Eintrag der Uhrenvektoren nach der Initialisierung? 
+aInitValue=0 ist korrekt.
+qEvType1=Welche Art von Ereignis ist Ereignis {0}?
+qEvType2=Welche Schritte werden f\u00fcr Ereignis {0} ausgef\u00fchrt?
+qEvActionSeq1=Welcher Schritt wird zuerst ausgef\u00fchrt?
+qEvTimestamp1=Welche Werte wird der Zeitstempel von Ereignis {0} haben? (Geben Sie die Werte getrennt durch Komma an, z.B. 1,2,3)
+qEvHappenedBefore1=Ist Ereignis {0} gem\u00e4\u00df den Bedingungen vor Ereignis {1} geschehen?

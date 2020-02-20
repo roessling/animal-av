@@ -1,0 +1,31 @@
+noSuchKeyException=There is no resource for the key {0}
+iconNotFound=Icon "{0}" not icon not found
+
+description0=Dieser Algorithmus berechnet die Ausgaben der Neuronen, die sich nicht in der Eingabe-Schicht befinden, basierend auf
+description1=Ausgangswerten und Gewichtungen. Die Ausgabe y eines Neurons ist definiert als das Ergebnis einer Aktivierungsfunktion act(),
+description2=welche auf die Summe der Produkte aus den Eingaben x und deren entsprechender Gewichtung w angewendet wird.
+description3=Das f\u00fchrt demnach zu y = act ( \u2211 ( x * w ) ) .
+description4=In dieser Animation kann zwischen zwei Aktivierungsfunktionen gew\u00e4hlt werden, ReLU und Sigmoid. Die passende Formel
+description5=wird unterst\u00fctzend unter dem neuronalen Netz angezeigt werden. Es gibt weitaus mehr Funktionen, allerdings sind die
+description6=beiden hier verwendeten auch gleichzeitig die \u00fcblichsten. Alle sichtbaren Werte sind auf zwei Nachkommastellen gerundet,
+description7=w\u00e4hrend die Berechnung mit den exakten Werten durchgef\u00fchrt wird.
+intro=Einleitung
+NN=Das neuronale Netzwerk
+comp10=Berechnung von h\u2080
+comp11=Berechnung von h\u2081
+comp12=Berechnung von h\u2082
+comp13=Berechnung von h\u2083
+comp20=Berechnung von y\u2080
+comp21=Berechnung von y\u2081
+comp22=Berechnung von y\u2082
+comp23=Berechnung von y\u2083
+outro=Schlusswort
+endnote0=Dies ist eine grundlegende Version von Forwardpropagation. Fortgeschrittenere Methoden f\u00fcgen ihrer
+endnote1=Berechnung eine Verzerrrung hinzu, die zu dem Produkt aus einer Eingabe und ihrer Gewichtung am
+endnote2=jeweiligen Neuron addiert wird.
+endnote3=Abschlie\u00dfend ist festzustellen, dass jede Kombination eines Eingabe-Neurons und seiner Gewichtung zu
+endnote4=einem Ausgabe-Neuron genau einmal verwendet werden muss (au\u00dfer f\u00fcr den Fall, in dem die Eingabe 0
+endnote5=betr\u00e4gt, da man sich hier die Multiplikation sparen k\u00f6nnte).
+endnote6=Um eine Idee zu bekommen, wie das Trainieren von neuronalen Netzwerken abl\u00e4uft, bietet es sich an, einen
+endnote7=Blick auf den Neural Network Backpropagation Algorithmus zu werfen.
+guiDescription=Dieser Algorithmus zeigt eine Schritt-für-Schritt Berechnung der Ausgabe-Knoten eines neuronalen Netzes. Das Netzwerk besteht aus einer Eingabe-Schicht, einer versteckten Ebene und einer Ausgabe-Schicht. Es kann zwischen zwei Aktivierungsfunktionen, ReLU und Sigmoid, gewählt und der Umfang der drei Ebenen größtenteils angepasst werden.

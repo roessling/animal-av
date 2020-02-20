@@ -1,0 +1,95 @@
+noSuchKeyException=There is no resource for the key {0}
+iconNotFound=Icon "{0}" not found
+
+##### Generator Fenster ######
+### Beschreibung ###
+pd1=Divisive Clustering ist ein Verfahren zum Clustern von Daten. Das Ziel dabei ist es, 
+pd2=Daten in Gruppen mit jeweils ähnlichen Eigenschaften einzuteilen. Bei diesem 
+pd3=Verfahren wird zuerst davon ausgegangen, dass alle Daten zu einem einzigen Cluster
+pd4=gehöhren und anschließend Schritt für Schritt aufgeteilt. Dadurch entsteht eine
+pd5=Hierarchie von Clustern, aus der am Ende die passenden Cluster ausgewählt
+pd6=werden können.
+
+### Pseudocode ###
+pc1=1.: Überprüfe ob es noch mehr Knoten als Cluster gibt.
+pc2=2.: Wähle den Cluster mit dem höchsten Durchmesser.
+pc3=3.: Bestimme den Knoten, welcher am weitesten von allen anderen Knoten des Clusters entfernt ist.
+pc4=      Dieser Knoten wird Kern des neuen Clusters.
+pc5=4.: Überprüfe für alle anderen Knoten des Clusters, ob sie näher am Kern des neuen Clusters liegen,
+pc6=      als sie durchschnittlich von den anderen Knoten des Clusters entfernt sind. Wenn ja, füge sie zum neuen Cluster hinzu.
+pc7=5.: Teile den bisherigen Cluster entsprechend in zwei neue Cluster auf.
+
+##### Animation #####
+### Titel ###
+title=Divisive Clustering [DE]
+
+### Beschreibung ###
+desc1=Das Divisive Clustering Verfahren ist ein Verfahren zum Clustern von mehrdimensionalen Daten. Es wird zuerst 
+desc2=davon ausgegangen, dass alle Knoten zusammen in einen Cluster gehören und dieser wird dann nach und nach aufgeteilt.
+desc3=Dadurch entsteht eine Cluster-Hierarchie. Je nachdem, wie viele Cluster man sucht, kann man das Verfahren an 
+desc4=der passenden Stelle unterbrechen oder am Ende die passende Menge an Clustern aus der Hierarchie entnehmen.
+desc5=Hier wird das Verfahren beispielhaft so lange ausgeführt, bis die Cluster jeweils nur noch aus einem einzelnen
+desc6=Knoten bestehen.
+algo1=Das prinzipielle Vorgehen folgendermaßen:
+algo2=1. Überprüfe, ob es noch mehr Knoten als Cluster gibt
+algo3=2. Bestimme den Cluster mit dem größten Durchmesser
+algo4=3. Bestimme den Knoten, welcher am weitesten von allen anderen Knoten des Clusters entfernt ist
+algo5=Dieser Knoten wird Kern des neuen Clusters.
+algo6=4. Überprüfe für alle anderen Knoten des Clusters, ob sie näher am Kern des neuen Clusters sind, 
+algo7=als sie durchschnittlich von den anderen Punkten des Clusters entfernt sind. Wenn ja, füge sie zum neuen Cluster hinzu.
+algo8=5. Teile den bisherigen Cluster in zwei neue Cluster auf.
+
+### QuellCode ###
+code1=Solange die Anzahl der Cluster kleiner als die Anzahl der Knoten ist:
+code2=1.: Wähle Cluster mit dem höchsten Durchmesser
+code3=2.: Wähle den Knoten, der am weitesten von allen anderen entfernt ist
+code4=3.: Überprüfe alle anderen Knoten des Clusters:
+code5=Bestimme Knoten, welche den Cluster wechseln
+code6=4.: Teile den alten Cluster in zwei neue Cluster auf
+
+### Legende ###
+leg1=Legende
+leg2=Aktueller Knoten: 
+leg3=Knoten des neuen Clusters: 
+leg4=Existierende Cluster:
+
+### Abschluss ###
+end1=Dies war ein Beispiel für die Divisive Clustering Procedure (DIANA) von Kaufmann und Rousseeuw (1990).
+end2=Dieses Verfahren bietet eine alternative zu den vielen agglomorativen Verfahren zum Clustering, welche die
+end3=Cluster nach und nach aus den einzelnen Punkten aufbauen. Es gibt viele Möglichkeiten, den genauen Ablauf 
+end4=des Algorithmus anzupassen. So kann man zum Beispiel die Abbruchbedingung des Verfahrens anpassen, indem man
+end5=entweder nur nach einer gewissen Anzahl von Clustern sucht (sofern die Zahl der gesuchten Clustern bekannt ist)
+end6=oder indem man eine minimale Größe für Cluster festlegt.
+end7=Weiterer Spielraum existiert bei der Berechnungen von Distanzen mehreren Datenpunkten. In diesem Beispiel
+end8=wurde der Durchmesser eines Clusters als maximale Distanz zwischen zwei Punkten des Clusters berechnet,
+end9=es sind aber auch andere Berechnungen möglich. Mit einer passenden Distanzfunktion lässt sich dieser Ansatz
+end10=auch auf mehrdimensionale Daten übertragen.
+end11=Weitere Informationen gibt es zum Beispiel unter: https://de.wikipedia.org/wiki/Hierarchische_Clusteranalyse
+
+
+
+### Inhaltsverzeichnis ###
+cont1=Einleitung
+cont2=Initialisierung
+cont3=Iteration: 
+cont4=Schluss
+
+
+### Fragen ###
+q1=Welcher Cluster wird als nächstes ausgewählt?
+q2=Welcher Knoten wird Mittelpunkt des neuen Clusters?
+q3=Bleibt der ausgewählte Knoten im aktuellen Cluster?
+q4=Wieviele Iterationen(Schritt 1 bis 4) wird es noch geben?
+
+a1t=Richtig, als Nächstes wird der Cluster mit dem größten Durchmesser ausgewählt.
+a1f=Falsch, es wird der Cluster mit dem größten Durchmesser ausgewählt.
+a2t=Richtig, dieser Knoten ist durchschnittlich am weitesten von allen anderen Knoten des Clusters entfernt, deswegen wird er als Zentrum des neuen Clusters ausgewählt.
+a2f=Falsch, dieser Knoten ist durchschnittlich nicht am weitesten von allen anderen Knoten des Clusters entfernt.
+a3t1=Richtig, dieser Knoten wechselt in den neuen Cluster.
+a3f1=Falsch, diser Knoten wechselt in den neuen Cluster.
+a3t2=Richtig, dieser Knoten verbleibt im alten Cluster.
+a3f2=Falsch, dieser Knoten verbleibt im alten Cluster.
+a4t=Richtig.
+
+true=Wahr
+false=Falsch

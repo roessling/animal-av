@@ -70,23 +70,27 @@ public class DummyGenerator implements GeneratorBundle {
     generators.add(new MedianFilter());
 
     // Generators from the AlgoAnim course in summer term 2018.
-    generators.add(new RGBImageInverter());
-    generators.add(new Histogrammausgleich());
-    generators.add(new RittersBoundingSphereGenerator(Locale.GERMANY));
-    generators.add(new RittersBoundingSphereGenerator(Locale.US));
-    generators.add(new RayCastingGenerator(Locale.GERMANY));
-    generators.add(new RayCastingGenerator(Locale.US));
-    generators.add(new ImageGradient(Locale.US));
-    generators.add(new ImageGradient(Locale.GERMANY));
-    generators.add(new ScharrOperator(Locale.US));
-    generators.add(new ScharrOperator(Locale.GERMANY));
-    generators.add(new RgbCmykConverter("resources/RgbCmykConverter", Locale.GERMANY));
-    generators.add(new RgbCmykConverter("resources/RgbCmykConverter", Locale.US));
+    generators.add(new BowyerWatson());
     generators.add(new FloydSteinbergGenerator(Locale.US));
     generators.add(new FloydSteinbergGenerator(Locale.GERMANY));
-    generators.add(new BowyerWatson());
+    generators.add(new Histogrammausgleich());
+    generators.add(new ImageGradient(Locale.US));
+    generators.add(new ImageGradient(Locale.GERMANY));
+    generators.add(new RayCastingGenerator(Locale.GERMANY));
+    generators.add(new RayCastingGenerator(Locale.US));
+    generators.add(new RgbCmykConverter("resources/RgbCmykConverter", Locale.GERMANY));
+    generators.add(new RgbCmykConverter("resources/RgbCmykConverter", Locale.US));
     generators.add(new MarchingSquares());
+    generators.add(new RGBImageInverter());
+    generators.add(new RittersBoundingSphereGenerator(Locale.GERMANY));
+    generators.add(new RittersBoundingSphereGenerator(Locale.US));
+    generators.add(new ScharrOperator(Locale.US));
+    generators.add(new ScharrOperator(Locale.GERMANY));
     
+
+    // Generators from the AlgoAnim course in summer term 2019
+    generators.add(new BoundingSphereGenerator());
+    generators.add(new FloodfillEight());
     
     return generators;
   }

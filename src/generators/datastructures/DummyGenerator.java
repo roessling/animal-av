@@ -36,6 +36,10 @@ public class DummyGenerator implements GeneratorBundle {
     generators.add(new dial_implementation_generator());
     generators.add(new Wavelet(Locale.US));
     generators.add(new Wavelet(Locale.GERMANY));
+
+    // Generators from the AlgoAnim course in summer semester 2019
+    generators.add(new SkipListInsertion(Locale.GERMANY));
+    generators.add(new SkipListInsertion(Locale.US));
     
     return generators;
   }

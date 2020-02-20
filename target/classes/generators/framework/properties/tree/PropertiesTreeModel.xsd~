@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+	<xs:element name="PropertiesTreeModel">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="Folder" type="folder"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	
+	<xs:complexType name="animationProperties">
+		<xs:sequence>
+			<xs:element name="AnimationPropertyItem" minOccurs="2" maxOccurs="unbounded">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="name" type="xs:string"/>
+						<xs:element name="isEditable">
+							<xs:complexType>
+								<xs:attribute name="value" type="xs:boolean" use="required"/>
+							</xs:complexType>
+						</xs:element>
+						<xs:element name="label" type="xs:string"/>
+						<xs:element name="value">
+							<xs:complexType>
+								<xs:choice>
+									<xs:element name="String" type="xs:string"/>
+									<xs:element name="int" type="xs:integer"/>
+									<xs:element name="boolean">
+										<xs:complexType>
+											<xs:attribute name="value" type="xs:boolean" use="required"/>
+										</xs:complexType>
+									</xs:element>
+									<xs:element name="double" type="xs:decimal"/>
+									<xs:element name="Color" type="xs:string"/>
+									<xs:element name="Font" type="xs:string"/>
+									<xs:element name="Matrix" type="xs:string" />
+									<xs:element name="Enumeration" type="xs:string" />
+								</xs:choice>
+							</xs:complexType>
+						</xs:element>
+					</xs:sequence>
+					<xs:attribute name="type" type="xs:string" use="required"/>
+				</xs:complexType>
+			</xs:element>
+		</xs:sequence>
+		<xs:attribute name="type" type="xs:string" use="required"/>
+	</xs:complexType>
+	
+	<xs:complexType name="Primitive">
+		<xs:sequence>
+			<xs:element name="name" type="xs:string"/>
+			<xs:element name="value">
+				<xs:complexType>
+					<xs:choice>
+						<xs:element name="String" type="xs:string" />
+						<xs:element name="int" type="xs:integer" />
+						<xs:element name="boolean">
+							<xs:complexType>
+								<xs:attribute name="value"
+									type="xs:boolean" use="required" />
+							</xs:complexType>
+						</xs:element>
+						<xs:element name="double" type="xs:decimal" />
+						<xs:element name="doubleMatrix" type="xs:string" />
+						<xs:element name="intArray" type="xs:string" />
+						<xs:element name="intMatrix" type="xs:string" />
+						<xs:element name="StringArray" type="xs:string" />
+						<xs:element name="Color" type="xs:string" />
+						<xs:element name="Font" type="xs:string" />
+						<xs:element name="DoubleMatrix" type="xs:string" />
+						<xs:element name="Enumeration" type="xs:string" />
+						<xs:element name="IntMatrix" type="xs:string" />
+						<xs:element name="StringMatrix" type="xs:string" />
+				        <xs:element name="Graph" type="xs:string"/>
+					</xs:choice>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="description" type="xs:string" minOccurs="0" maxOccurs="1" />
+		</xs:sequence>
+		<xs:attribute name="type" type="xs:string" use="required"/>
+	</xs:complexType>
+	
+	<xs:complexType name="folder">
+		<xs:sequence>
+			<xs:choice minOccurs="0" maxOccurs="unbounded">
+				<xs:element name="AnimationProperties" type="animationProperties"/>
+				<xs:element name="Primitive" type="Primitive"/>
+				<xs:element name="Folder" type="folder"/>
+			</xs:choice>
+		</xs:sequence>
+		<xs:attribute name="name" type="xs:string" use="required"/>
+	</xs:complexType>
+	
+</xs:schema>

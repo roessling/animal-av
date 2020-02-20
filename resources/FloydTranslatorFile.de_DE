@@ -1,0 +1,80 @@
+noSuchKeyException=Es gibt keine Ressource f\u00fcr Eintrag {0}
+iconNotFound=Icon "{0}" nicht gefunden
+
+
+### Basic Information ###
+title=Floyd's Schildkroete und Hase
+algorithmName=Floyd's Zyklusfindungsalgorithmus
+
+
+### Description / Intro ###
+introLine1='Floyd's Zyklusfindungsalgorithmus' ist ein Zeigeralgorithmus, der zwei Zeiger verwendet,
+introLine2=die sich mit unterschiedlicher Geschwindigkeit durch eine Sequenz bewegen und bestimmen, ob eine Sequenz einen Zyklus enthaelt oder nicht.
+introLine3=Er wird auch als 'Schildkroeten und Hasen-Algorithmus' bezeichnet und bezieht sich auf Aesops Fabel 'Die Schildkroete und der Hase'.
+introLine4=Der Algorithmus haelt zwei Zeiger in einer bestimmten Sequenz.
+introLine5=Der'Hasenzeiger' bewegt sich innerhalb der Sequenz doppelt so schnell wie der 'Schildkroetenzeiger'.
+introLine6=Bei jedem Schritt des Algorithmus werden die Sequenzwerte die beiden Zeiger verglichen.
+introLine7=Wenn die Werte identisch sind, weiss man, dass die Sequenz einen Zyklus enthaelt.
+
+
+### Source Code ###
+codeLine1=ListPosition floyd (List l) '{'
+codeLine2=listWalker tortoise
+codeLine3=tortoise.listPosition = l[0]
+codeLine4=listWalker hare
+codeLine5=hare.listPosition = l[0]
+codeLine6=do while tortoise.listPosition != hare.listPosition
+codeLine7=tortoise.listPosition += 1
+codeLine8=hare.listPosition += 2
+codeLine9=integer circleStartPosition = 0
+codeLine10=tortoise.listPosition = l[0]
+codeLine11=while tortoise.listPosition != hare.listPosition
+codeLine12=tortoise.listPosition += 1
+codeLine13=hare.listPosition += 1
+codeLine14=circleStartPosition +=1
+codeLine15=ListPosition listPos
+codeLine16=listPos.position = circleStartPosition
+codeLine17=return listPos
+codeLine18='}'
+
+clIndentation1=0
+clIndentation2=1
+clIndentation3=1
+clIndentation4=1
+clIndentation5=1
+clIndentation6=1
+clIndentation7=2
+clIndentation8=2
+clIndentation9=1
+clIndentation10=1
+clIndentation11=1
+clIndentation12=2
+clIndentation13=2
+clIndentation14=2
+clIndentation15=1
+clIndentation16=1
+clIndentation17=1
+clIndentation18=0
+
+
+### Summary / Outro ###
+outroLine1=Danke, dass Du dir 'Floyd's Zyklusfindungsalgorithmus' angesehen hast.
+outroLine2=Wir hoffen, es hat Dir gefallen!
+outroLine3=Christian and Jonas
+
+
+### Interactivity ###
+interTrue=Diese Aussage ist richtig.
+interFalse=Diese Aussage ist falsch.
+swapTortoiseAndHare=Wenn man die Geschwindigkeiten von Schildkroete und Hase vertauscht, funktioniert der Algorithmus nicht mehr...
+swapTortoiseAndHareTrue=Deine Antwort stimmt leider nicht. Es ist voellig egal, welcher der beiden Pointer sich schneller Geschwindigkeit bewegt.
+swapTortoiseAndHareFalse=Deine Antwort ist vollkommen korrekt!
+errorProne=Ist es moeglich, dass sich die beiden Pointer nicht treffen?
+errorProneTrue=Deine Antwort stimmt leider nicht. Die Schildkroete legt einen Knoten und der Hase zwei Knoten pro Schritt im Algorithmus zurueck. In der Praxis laesst sich das vereinfachen: Die Schildkroete bleibt im Prinzip stehen und der Hase bewegt sich um einen Schritt. Ihr Abstand wird bei jedem Schritt des Algorithmus um eine Einheit verkuerzt, bis sie sich treffen.
+errorProneFalse=Deine Antwort ist vollkommen korrekt!
+
+
+### Variables ###
+varCycleAlreadyDetected=ZyklusBereitsEntdeckt
+varTortoisePosition=SchildkroetenPosition
+varHarePosition=HasenPosition

@@ -264,8 +264,10 @@ public class DummyGenerator implements GeneratorBundle {
     // Generators from the AlgoAnim course in summer term 2019.
     generators.add(new Beweiszahlsuche());
 	generators.add(new Generator_ExponentialSearch());
+	generators.add(new QueensAnnealingGenerator(Locale.GERMANY));
+	generators.add(new QueensAnnealingGenerator(Locale.US));
     generators.add(new TabuSearchGenerator());
-    
+    generators.add(new ZAlgorithmGenerator());
     
     return generators;
   }

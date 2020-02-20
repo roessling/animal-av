@@ -1,0 +1,83 @@
+noSuchKeyException=<Translation missing>
+header.main1=Simulated Annealing
+header.mainDescription=Simulated Annealing - Queens Puzzle
+
+header.sub1=Queens Puzzle
+header.sub.description1=Problem
+header.sub.description2=Solution Approach
+header.sub.description3=Heuristic
+header.sub.description4=Algorithm
+header.sub.description5=Conclusion
+
+description.1.line1=The eight queens puzzle is the problem of placing n queens on an n x n size Chessboard
+description.1.line2=so that no two queens can attack each other.
+description.1.line3=The color of each Queen is negligible and therefore all queens can potentially attack one another.
+description.1.line4=This problem can be considered for a chessboard of any size
+description.1.line5=and can be configured using the Primitive 'Number of Queens'.
+
+description.2.line1=To find a solution all queens are placed on the board (almost) randomly.
+description.2.line2=Using the fact that a valid solution will never have two queens in the same column
+description.2.line3=we position exactly one queen per column on the board.
+description.2.line4=In each iteration one queen is then potentially moved within her assigned column.
+
+description.3.line1=In order to be able to evaluate and compare states against each other a heuristic is required.
+description.3.line2=The 'energy' of one state is calculated by counting all pairs of queens that could attack each other.
+description.3.line3=The energy of the current state is displayed below the chessboard.
+description.3.line4=The value in each square corresponds to the energy of the successor state that is reached
+description.3.line5=when moving the queen in that column to the specific square.
+description.3.line6=
+
+description.4.line1=The algorithm of simulated annealing is a local search method
+description.4.line2=that combines the methods of random walk and hillclimbing.
+description.4.line3=In order to avoid local minima the algorithm is allowed to make transition in seemingly worse states
+description.4.line4=whereas the probability of that event is decreased steadily.
+description.4.line5=Since this method is based on the metallurgic process of annealing this value is often referred to as temperature.
+description.4.line6=This temperature is calculated using a function mmonotonic decreasing to zero.
+description.4.line7=In this case the best results are achieved using a exponential function.
+description.4.line8=In the iteration 't' the temperature 'T' is calculated as T = coolingRate^t.
+description.4.line9=The Probability of choosing a worse successor state is:
+description.4.line10=e^( - HEURISTIC(current state) - HEURISTIC(next state) / T )
+
+
+stepDescription.Description=Introduction
+stepDescription.init=Initialization
+stepDescription.iteration=Iteration %d
+stepDescription.finalIteration=Final Iteration
+stepDescription.conclusion=Conclusion
+
+sourceCode.line0=function SIMULATED-ANNEALING(NumberOfQueens, Temperature, CoolingRate)
+sourceCode.line1=init ChessBoard
+sourceCode.line2=currentState = INITIAL-STATE
+sourceCode.line3=for(t = 1 to inf)
+sourceCode.line4=if Temperature = 0 OR VALUE(currentState) = 0 then
+sourceCode.line5=return currentState
+sourceCode.line6=nextState = RANDOM-STATE
+sourceCode.line7=\u0394E = VALUE(currentState) - VALUE(nextState)
+sourceCode.line8=if -\u0394E > 0 then
+sourceCode.line9=currentState = nextState
+sourceCode.line10=else if exp(\u0394E/Temperature) > RANDOM-NUMBER then
+sourceCode.line11=currentState = nextState
+sourceCode.line12=Temperature = COOLDOWN-TEMP(Temperature, t, CoolingRate)
+
+thermometer.currentTemp=Current Temperature: %2.5f
+chessboard.currentEnergy=Current Energy: %d
+
+solution.line1.1=A solution to the problem has been found
+solution.line1.2=although more iterations then usual were required.
+solution.line1.3=which is quite similar to the expected outcome.
+solution.line1.4=but it relied on probability to kick in.
+solution.line1.5=In this case the algorithm got trapped in a local minimum and found no solution to the problem.
+
+solution.line2=The current configuration produces a solution in %2.2f percent of cases and takes %2.2f iterations on average to do so.
+solution.line3=With this algorithm you should always keep in mind that the probability of finding a solution and
+solution.line4=how fast it is found is highly dependent on the chosen cooling rate.
+solution.line5=Therefore configurations with a low cooling rate are highly dependend on probability in order find a solution.
+solution.line6=But in general it can be proven that the probability of finding a global optimum approach 1 if the temperature is falling slowly enough.
+
+solution.line7.1=Go ahead and generate this animation anew. The chances of finding a solution are quite high.
+solution.line7.2=You shold consider changing the configuration of this animation in order to increases your chances of finding a solution.
+solution.line7.3=Go ahead and generate this animation anew.  The chances of finding a solution faster are quite high.
+
+shortdescription.line1=The algorithm of simulated annealing is a local search method that combines the methods of random walk and hillclimbing.
+shortdescription.line2=In order to avoid local minima the algorithm is allowed to make transition in seemingly worse states whereas the probability of that event is decreased steadily.
+shortdescription.line3=Since this method is based on the metallurgic process of annealing this value is often referred to as temperature that is reevaluated in each iteration using a function mmonotonic decreasing to zero..

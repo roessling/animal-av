@@ -1,60 +1,37 @@
 package generators.tree;
-import java.util.HashSet;
-import java.util.Set;
+
+import java.util.List;
+
+import algoanim.primitives.Circle;
+import algoanim.primitives.Polyline;
 
 public class TreeNode {
 
-	private int nodeID;
-	private Set<String> label;
-	private TreeNode left;
-	private TreeNode right;
-
-	// constructor for a leaf
-	public TreeNode(int nodeID, String label) {
-		this(nodeID, label, null, null);
-	}
-
-	// constructor for a tree
-	public TreeNode(int nodeID, String label, TreeNode left, TreeNode right) {
-		this.nodeID = nodeID;
-		this.label = new HashSet<String>();
-
-		if (!label.equals("")) {
-			this.label.add(label);
-		}
-		this.left = left;
-		this.right = right;
-	}
-
-	public TreeNode getLeft() {
-		return this.left;
-	}
-
-	public TreeNode getRight() {
-		return this.right;
-	}
-
-	public Set<String> getLabel() {
-		return this.label;
+	public TreeNode parent;
+	public double x;
+	public double y;
+	public Circle circle;
+	public Polyline edgeToParent;
+	
+	public TreeNode(double x, double y, TreeNode parent, Circle v) {
+		this.x = x;
+		this.y = y;
+		this.parent = parent;
+		circle = v;
 	}
 	
-	public int getNodeID() {
-		return this.nodeID;
+	public TreeNode(double x, double y, TreeNode parent) {
+		this.x = x;
+		this.y = y;
+		this.parent = parent;
 	}
 	
-	public void setNewLabel(String label) {
-		this.getLabel().clear();
-		this.getLabel().add(label);
+	public void setCircle(Circle v) {
+		circle = v;
 	}
-
-	// choose randomly a label and set it
-	public void chooseOneLabelRandomly() {
-		String tmp = null;
-		for (String label : this.getLabel()) {
-			tmp = label;
-			break;
-		}
-		this.getLabel().clear();
-		this.getLabel().add(tmp);
+	
+	public void setEdge(Polyline p) {
+		edgeToParent = p;
 	}
+	
 }

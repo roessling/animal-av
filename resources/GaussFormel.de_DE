@@ -1,0 +1,32 @@
+noSuchKeyException=Es gibt keine Ressource f\u00fcr Eintrag {0} 
+iconNotFound=Icon ”{0}” not found
+
+##Misc##
+algorithmName=Gau\u00dfsche Wochentagsformel
+generatorName=Gau\u00dfsche Wochentagsformel
+mo=Montag
+di=Dienstag
+mi=Mittwoch
+do=Donnerstag
+fr=Freitag
+sa=Samstag
+so=Sonntag
+step1=Was wird getan
+step2=Array anzeigen
+step3=Formel anzeigen
+step4=Pseudocode anzeigen
+step5=Pseudocode kommentieren
+step6=Ergebnis anzeigen
+step7=Ende
+description=Die Gaußsche Wochentagsformel berechnet den Wochentag eines beliebigen Jahres des 1. Januars. Diese Formel erfand Carl Friedrich Gauß, publiziert wurde sie jedoch erst im Jahr 1927. Berndt Schwerdtfeger hat die Korrektheit bewiesen, dass die Formel von der Einführung des gregorianischen Kalenders am 15. Oktober 1582 bis nächste Kalenderreform gilt. Des Weiteren gibt es Formeln, als Erweiterung dieser Methode, z.B. die Wochentagsberechnung. Die Wochentage werden von 0 bis 6 durchnummeriert mit Sonntag als Wochenanfang, siehe folgendes Array.Die Ergebniszahl wird durch folgende Formel berechnet: w = (1+5*((year-1) mod4) + 4*((year-1)mod100) + 6*((year-1)mod400)) mod7  
+descriptionzu1= Die Gaußsche Wochentagsformel berechnet den Wochentag eines beliebigen Jahres des 1. Januars. Diese Formel erfand Carl Friedrich Gauß, publiziert wurde sie jedoch erst im Jahr 1927.
+descriptionzu11= Berndt Schwerdtfeger hat die Korrektheit bewiesen, dass die Formel von der Einführung des gregorianischen Kalenders am 15. Oktober 1582 bis nächste Kalenderreform gilt. 
+descriptionzu12= Des Weiteren gibt es Formeln, als Erweiterung dieser Methode, z.B. die Wochentagsberechnung. Die Wochentage werden von 0 bis 6 durchnummeriert mit Sonntag als Wochenanfang, siehe folgendes Array.
+descriptionzu13= Die Ergebniszahl wird durch folgende Formel berechnet:
+descriptionzu14= w = (1+5*((jahr-1) mod4) + 4*((jahr-1)mod100) + 6*((jahr-1)mod400)) mod7
+descriptionzu2=Berechnet wird nun der Wochentag des 1.Januars für das Jahr 
+year1= Jahr
+codeexample=int newYear = Integer.parseInt(year); n 	nint indexW; ndouble ersterTeil = (1 + 5 *( (newYear - 1) % 4)); ndouble zweiterTeil = 4 * ((newYear -1) % 100); ndouble dritterTeil = 6 * ((newYear-1) % 400); nindexW = (int) (ersterTeil+zweiterTeil+dritterTeil) % 7; nString result = weekday[indexW];
+ergebnis= ergebnis =
+schlusstext= Der Ergebniswochentag des 01. Januars 
+ist =    ist

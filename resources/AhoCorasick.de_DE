@@ -1,0 +1,19 @@
+desc01=Der Aho-Corasick-Algorithmus ist ein String-Matching-Algorithmis von Alfred V. Aho und Margaret J. Corasick.
+desc02=Durch diesen Algorithmus können mehrere Strings in einem Text sehr effizient gesucht werden.
+desc03=Der Algortihmus wird in zwei Teile eingeteilt :
+desc04=Generierung eines Trie-Baumes
+desc05=Ein Trie ist ein Baumdatenstruktur, mit der die Strings effizient eingespeichert werden
+desc06=Jeder Knoten symbolisiert ein Buchstaben des Strings und gleiche Pr\u00e4fixe werden nur einmal gespeichert.
+desc07=Beim Einsetzen eines Strings wird der Trie mit dem String bis zum Ende gefolgt und es werden neue Knoten für jeden neuen Buchstaben hinzugefügt.
+desc08=Einbauen von Fehler\u00fcberg\u00e4nge
+desc09=Damit die Strings effizient gesucht werden k\u00f6nnen, wird beim Traversieren des Baumes durch eines Strings nicht sofort auf dem Rootknoten gesprungen sondern, wenn es m\u00f6glich ist auf einen besseren Knoten.
+
+subheading_insert = Generierung des Trie-Baumes
+subheading_connect = Generierung der Fehler\u00fcberg\u00e4nge
+subheading_traverse = Parsen eines Textes mit dem verbersserten Trie
+subheading_summary = Zusammenfassung
+
+sum01=Aho-Corasick ist eine Erweiterung des Tries zu einen Zustandsautomaten mit Fehler\u00fcberg\u00e4ngen.
+sum02=Die Komplexit\u00e4t des Algorithmus ist linear zur L\u00e4nge der Strings und der L\u00e4nge der Keywords und der Anzahl der Keywords.
+
+hint_insert = Weitere Informationen gibts beim Generator für Trie-Bäume

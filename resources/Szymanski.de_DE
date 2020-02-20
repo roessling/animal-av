@@ -1,0 +1,129 @@
+noSuchKeyException=Es gibt keine Ressource f\u00fcr Eintrag {0}
+iconNotFound=Icon "{0}" wurde nicht gefunden
+
+title=Szyma\u0144skis Algorithmus [DE]
+algoName=Szyma\u0144skis Algorithmus
+name=Szymańskis Algorithmus
+procTable=Prozesstabelle
+waitingRoom=Wartezimmer
+
+descrTitle=Beschreibung
+descr0=Szymańskis Algorithmus ist ein Algorithmus, welcher Mutual Exclusion sicherstellt.
+descr1=
+descr2=Der Algorithmus basiert auf einem Wartezimmermodell mit einer Eingangs- und Ausgangstür.
+descr3=Zu Beginn ist die Eingangstür geöffnet und die Ausgangstür geschlossen.
+descr4=Alle Prozesse, welche etwa zum selben Zeitpunkt in die Critical Section wollen, betreten erst einmal das Wartezimmer.
+descr5=Der letzte Prozess schließt die Eingangstür und öffnet die Ausgangstür.
+descr6=Nun durchlaufen die Prozesse die Critical Section nacheinander.
+descr7=Der letzte Prozess, welcher die Critical Section verlässt, schließt die Ausgangstür und öffnet die Eingangstür, damit die 
+descr8=nächste Prozessgruppe eintreten kann.
+descr9=
+descr10=Szymańskis Algorithmus hat viele vorteilhafte Eigenschaften wie lineares Warten und eine konstante Anzahl von Kommunikationsbits.
+descrU0=Szyma\u0144skis Algorithmus ist ein Algorithmus, welcher Mutual Exclusion sicherstellt.
+descrU1=
+descrU2=Der Algorithmus basiert auf einem Wartezimmermodell mit einer Eingangs- und Ausgangst\u00fcr. Zu Beginn ist die Eingangst\u00fcr ge\u00f6ffnet und die Ausgangst\u00fcr geschlossen. Alle Prozesse, welche etwa zum selben Zeitpunkt in die Critical Section wollen, betreten erst einmal das Wartezimmer. Der letzte Prozess schlie\u00dft die Eingangst\u00fcr und \u00f6ffnet die Ausgangst\u00fcr. Nun durchlaufen die Prozesse die Critical Section nacheinander. Der letzte Prozess, welcher die Critical Section verl\u00e4sst, schlie\u00dft die Ausgangst\u00fcr und \u00f6ffnet die Eingangst\u00fcr, damit die n\u00e4chste Prozessgruppe eintreten kann.
+descrU3=
+descrU4=Szyma\u0144skis Algorithmus hat viele vorteilhafte Eigenschaften wie lineares Warten und eine konstante Anzahl von Kommunikationsbits.
+
+N=Anzahl der Prozesse
+flag0=Anfangszustand
+flag1=Prozess ist vor dem Wartezimmer (will eintreten)
+flag2=Prozess warte darauf, dass die anderen Prozesse eintreten
+flag3=Prozess steht auf der Türschwelle
+flag4=Eingangstür ist geschlossen; Prozess wartet darauf, dass er an der Reihe ist, die Critical Section zu betreten
+flagU0=Anfangszustand
+flagU1=Prozess ist vor dem Wartezimmer (will eintreten)
+flagU2=Prozess warte darauf, dass die anderen Prozesse eintreten
+flagU3=Prozess steht auf der T\u00fcrschwelle
+flagU4=Eingangst\u00fcr ist geschlossen; Prozess wartet darauf, dass er an der Reihe ist, die Critical Section zu betreten
+
+descrCode1=Prozess betritt das Wartezimmer solange die Eintrittstür geöffnet ist.
+descrCode2=Warte darauf, dass die anderen Prozesse (auf 1) das Zimmer betreten.
+descrCode3=Warte darauf, dass alle Prozesse mit kleinerer ID die CS durchlaufen haben.
+descrCode4=Stelle sicher, dass alle Prozesse im Wartezimmer wissen, dass die Eingangstür geschlossen ist.
+titleCode1=Eintritt
+titleCode2=Wartezimmer
+titleCode3=Reihenfolge beibehalten
+titleCode4=Alle sind bereit
+
+descrTable0=Links befindet sich die Prozesstabelle in der in jeder Zeile die Variablen für einen Prozess gezeigt werden.
+descrTable1=line: 	Die Codezeile, die zuletzt von dem Prozess ausgeführt wurde.
+descrTable2=flag: 	Der aktuelle Zustand des Prozesses (siehe oben).
+descrTable3=j: 	Die Schleifenvariable für die äußeren Schleifen.
+descrTable4=i	Die Schleifenvariable für die innerer Schleifen.
+
+conclTitle=Fazit
+concl0=Nun haben alle Prozesse, die Zugriff auf die Critical Section wollten, 
+concl1=sie nach der Reihenfolge der Prozessnummer betreten und wieder verlassen. 
+concl2=Dies könnte unbegrenzt fortgesetzt werden, 
+concl3=wenn eine Endlosschleife um den Code gesetzt wird.
+concl4=
+concl5=Um ein nicht deterministischen Ablauf zu simulieren 
+concl6=wurde die Wahl des nächsten Prozesses randomisiert. 
+concl7=Die Wahrscheinlichkeit, dass der Prozess gewechselt wird, 
+concl8=kann in den Einstellungen der Primitiven geändert werden.
+concl9=Somit kann ein anderer Ablauf entstehen, 
+concl10=wenn der Algorithmus erneut generiert wird.
+concl11=Weitere Veränderungen können durch das Setzten der Primitiven 
+concl12=herbeigeführt werden.
+
+intro=Einführung
+start=Starte Run
+reachedCS=hat die Critical Section erreicht.
+entryClosed=Die Eingangstür wurde geöffnet und die Ausgangstür geschlossen.
+
+question0=Wann schlie\u00dft sich die Eingangst\u00fcr?
+answer0_1=Sobald das erste Mal die flag eines Prozesses auf 4 gesetzt wird.
+feedback0_1=Richtige Antwort!
+answer0_2=Sobald alle Prozesse im Wartezimmer sind.
+feedback0_2=Leider falsch. Sie schlie\u00dft sich, wenn das erste Mal die flag eines Prozesses auf 4 gesetzt wird.
+answer0_3=Sobald das erste Mal ein Prozess die CS betritt.
+feedback0_3=Leider falsch. Sie schlie\u00dft sich, wenn das erste Mal die flag eines Prozesses auf 4 gesetzt wird.
+answer0_4=Sobald der erste Prozess die CS verl\u00e4sst.
+feedback0_4=Leider falsch. Sie schlie\u00dft sich, wenn das erste Mal die flag eines Prozesses auf 4 gesetzt wird.
+
+question1=Wann \u00f6ffnet sich die Eingangst\u00fcr wieder?
+answer1_1=Sobald der erste Prozess die CS betritt.
+feedback1_1=Leider falsch. Sie \u00f6ffnet sich wieder, sobald der letzte Prozess die CS verl\u00e4sst.
+answer1_2=Sobald der erste Prozess die CS verl\u00e4sst.
+feedback1_2=Leider falsch. Sie \u00f6ffnet sich wieder, sobald der letzte Prozess die CS verl\u00e4sst.
+answer1_3=Sobald der letzte Prozess die CS verl\u00e4sst.
+feedback1_3=Richtige Antwort!
+answer1_4=Sobald alle Prozesse wieder im Zustand 1 oder 2 sind.
+feedback1_4=Leider falsch. Sie \u00f6ffnet sich wieder, sobald der letzte Prozess die CS verl\u00e4sst.
+
+question2=Was ist der Unterschied zwischen Zustand 2 und 3?
+answer2_1=In Zustand 2 wartet man darauf, dass alle Prozesse das Wartezimmer betreten.
+feedback2_1=Leider falsch. Man wartet nur auf die Prozesse, die Zugriff auf die CS angefragt hatten.
+answer2_2=In Zustand 2 wartet man darauf, dass alle Prozesse, die Zugriff auf die CS angefragt haben, das Wartezimmer betreten.
+feedback2_2=Richtige Antwort!
+answer2_3=In Zustand 2 wartet man darauf, dass alle Prozesse mit kleinerer ID die CS betreten haben.
+feedback2_3=Leider falsch. Man wartet darauf, dass alle Prozesse, die Zugriff auf die CS angefragt haben, das Wartezimmer betreten.
+
+question3_1=Warum kann p
+question3_2= momentan nicht die CS betreten?
+answer3_1=Da sich ein anderer Prozess in der CS befindet.
+answer3_2=Da ein Prozess mit kleinerer ID noch im Wartezimmer ist.
+answer3_3=Da noch nicht alle Prozesse, die die CS betreten wollen im Wartezimmer sind/waren.
+posFeedback3=Diese Aussage ist richtig.
+negFeedback3=Diese Aussage ist falsch.
+
+question4=Was ist die Bedeutung des Zustandswechsels von 0 auf 1?
+answer4_1=Es wird Zugriff auf die CS angefragt.
+feedback4_1=Es ist (u.A.) richtig, dass Zugriff auf die CS angefragt wird.
+answer4_2=Es wird das Wartezimmer betreten.
+feedback4_2=Es stimmt nicht, dass das Wartezimmer betreten wird. Dies passiert erst bei Wechsel auf Zustand 3.
+answer4_3=Es wird Eintritt in das Wartezimmer verlangt.
+feedback4_3=Es ist (u.A.) richtig, dass Eintritt in das Wartezimmer verlangt wird.
+
+question5=Welche(r) Prozess(e) k\u00f6nnten als n\u00e4chstes die CS betreten? 
+posFeedback5= ist richtig.
+negFeedback5= ist falsch.
+
+posFeedbackTF=Richtige Antwort!
+negFeedbackTF=Leider falsch.
+
+question6_1=Kann p
+question6_2= in diesem Durchlauf die CS betreten?
+
+question7=K\u00f6nnen Prozesse den Warteraum verlassen ohne die CS zu betreten?

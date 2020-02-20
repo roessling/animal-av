@@ -1,0 +1,65 @@
+noSuchKeyException=There is no resource for the key {0}
+iconNotFound=Icon "{0}" not found
+beam_title = Beamsearch
+beam_description1 = Die Beamsearch oder Strahlensuche ist eine Graphensuche welche als
+beam_description2 = eine Optimierung der Breitensuche enstanden ist.
+beam_description3 = Demnach ist der grundlegende Ablauf \u00e4hnlich wie bei dieser.
+beam_description4 = Jedoch verwendet die Beamsearch eine Heuristik um die Knoten des Graphen zu ordnen
+beam_description5 = und diese Ihrer Attraktivit\u00e4t nach zu besuchen.
+beam_description6 = Eine solche Heuristik stellt Wissen \u00fcber die zu durchsuchende Umgebung zur Verf\u00fcgung.
+beam_description7 = Konkret k\u00f6nnte dies bedeuten: die Heuristik sch\u00e4tzt f\u00fcr jeden Knoten seine Distanz zum Zielknoten.
+beam_description8 = Es sind jedoch zahlreiche unterschiedliche Heuristiken denkbar, sofern Sie die Suche beschleunigen.
+beam_description9 = Zudem muss eine Heuristik nicht perfekt sein, Sie sollte allerdings eine m\u00f6glichst realit\u00e4tsnahe Vermutung darstellen,
+beam_description10 = welche anhand des existierenden Wissens \u00fcber die Umgebung entworfen wurde.
+beam_description11 = Ist die Heuristik zuf\u00e4llig oder widerspricht den vorhandenen Daten wird die Suche durch diese Heuristik nicht mehr beschleunigt
+beam_description12 = ,sie k\u00f6nnte sogar eine L\u00f6sungsfindung verhindern. Eine ungeeignete Heuristik kann dazu f\u00fchren das der Algorithmus nicht mehr
+beam_description13 = schneller zu einer L\u00f6sung gelangt als die Breitensuche oder
+beam_description14 = dass die Beamsearch in einer Sackgasse landet und fehlschl\u00e4gt, vorallem bei geringen Strahlenbreiten ist dies ein Problem.
+beam_description15 = Der wohl grundlegendste Bestandteil der Beamsearch ist die Beamwidth oder Strahlenbreite
+beam_description16 = dieser Parameter bestimmt wieviele Nachfolger in jeder Iteration besucht werden. Desto h\u00f6her die Strahlenbreite, desto robuster der Algorithmus, jedoch auch weniger performant.
+beam_description17 = Die Beamsearch besucht also stets die #Strahlenbreite besten Nachfolger (Strahlenbreite = MAX => Breitensuche)
+beam_description18 = des aktuellen Zustandes, dies wird wiederholt bis der gesuchte Zustand gefunden wurde.
+beam_visitedHeading = Bereits besuchte Knoten (Hashmap[Node,Parent]):
+beam_candidatesHeading = Kandidaten:
+beam_heuristicHeading = Strahlenbreite:
+beam_beamHeading = Knoten aktuell im Strahl:
+beam_legend = Legende
+beam_legend_text1 = Hinweise: Farben und Markierungen des Graphen:
+beam_legend_text2 = Bereits besuchte Knoten: Grau
+beam_legend_text3 = aktuelle Kandidaten: Magenta
+beam_legend_text4 = aktuelle Knoten des Strahls: Orange
+beam_legend_text5 = Zielknoten, gefundener Pfad: Gr\u00fcn
+beam_question1 = Warum ist eine minimale Strahlenbreite nicht unbedingt die ideale Wahl?
+beam_question1_answer1 = Der Algorithmus k\u00f6nnte terminieren ohne eine L\u00f6sung zu finden
+beam_question1_answer1_feedback = Korrekt, eine minimale Strahlenbreite ist anf\u00e4llig f\u00fcr Sackgassen im Graphen
+beam_question1_answer2 = Der Algorithmus muss h\u00e4ufig backtracken um eine L\u00f6sung zu finden
+beam_question1_answer2_feedback = Die Strahlensuche verwendet in der Grundform kein Backtracking zur L\u00f6sungsfindung
+beam_question1_answer3 = Der Algorithmus kann keine L\u00f6sung finden da er immer nur einen Knoten betrachtet
+beam_question1_answer3_feedback = Die Strahlensuche kann auch mit einer Breite von 1 erfolgreich sein.
+beam_infobox1 = Wir k\u00f6nnen sehen, dass die Strahlensuche eine sinnvolle Optimierung der Breitensuche ist, denn die Strahlensuche filtert
+beam_infobox2 = die zu besuchenden Knoten bereits bevor diese tats\u00e4chlich besucht werden. Hierdurch kann der Algorithmus seinen Speicher-
+beam_infobox3 = bedarf im Vergleich zur traditionellen Implementation einer Breitensuche enorm reduzieren, weiterhin findet die Strahlen-
+beam_infobox4 = suche deutlich schneller eine L\u00f6sung, da weniger Vergleiche get\u00e4tigt werden durch die Begrenzung der betrachteten
+beam_infobox5 = Kandidaten. Allerdings haben diese Vorteile in Geschwindigkeit und Speicherbedarf auch Ihre Nachteile, denn wie schnell
+beam_infobox6 = ersichtlicht ist kann die Strahlensuche weder die Optimalit\u00e4t noch die Vollst\u00e4ndigkeit gew\u00e4hrleisten. Denn durch eine
+beam_infobox7 = zu geringe Strahlenbreite k\u00f6nnte das Finden der L\u00f6sung verhindert werden oder nur eine suboptimale L\u00f6sung gefunden werden.
+beam_question2 = Ist die gefundene L\u00f6sung immer die beste existierende L\u00f6sung?
+beam_question2_answer1 = Nein, die gefundene L\u00f6sung ist lediglich die erste gefundene
+beam_question2_answer1_feedback = Korrekt, da es sich um eine gierige Suche handelt welche nur von der Heuristik gesteuert wird ist die erste gefundene nicht zwangsl\u00e4ufig die beste.
+beam_question2_answer2 = Ja, denn sonst w\u00fcrde der Algorithmus nicht terminieren
+beam_question2_answer2_feedback = Falsch, der Algorithmus ist nicht in der Lage die Qualit\u00e4t der L\u00f6sung zu bewerten und ber\u00fccksichtigt diese auch nicht.
+beam_question2_answer3 = Ist die Heuristik ideal so ist auch die gefundene L\u00f6sung die beste.
+beam_question2_answer3_feedback = Korrekt, zwar kann es trotzdem \u00e4quivalente L\u00f6sungen geben, aber bei der Suche mit einer idealen Heuristik kann es keine bessere L\u00f6sung geben.
+beam_errFinished = Fehler: kein Pfad wurde gefunden:
+beam_finished = Ein Pfad wurde gefunden:
+beam_description = Der Beamsearch oder Strahlensuche Algorithmus ist ein Suchalgorithmus f\u00fcr Graphen, \n das grunds\u00e4tzliche Vorgehen ist eine Abwandlung/Spezialisierung der Breadth-First Search. \n Es wird jedoch auch eine Suchheuristik verwendet um entsprechend \"effektiver\" zu suchen \n und nicht alles zu besuchen womit enorm Speicherplatz gespart werden kann. \n Hierbei dient der Parameter der Beamwidth oder Stahlenbreite als Obergrenze der besuchten \n Nachfolger jeder Iteration des Algorithmus. Der Algorithmus speichert die besuchten Knoten \n ueblicherweise in einer Hashmap im Schema \" Knoten(vorherigerKnoten)\" somit kann der \n Algorithmus den gefundenen Pfad rekonstruieren. BeamSearch wird vorallem dann benutzt, \n wenn der zu durchsuchende Suchbaum enorm groß ist und eine BreadthFirstSearch somit \n nicht realistisch zu einem Ergebnis fuehren wuerde wegen dem enormen Speicherbedarf \n und Laufzeit. Im Gegensatz zur BreadthFirst Search ist jedoch keine optimale L\u00f6sung \n garantiert.
+
+
+
+
+
+
+
+
+
+

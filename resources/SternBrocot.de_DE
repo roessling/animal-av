@@ -1,0 +1,60 @@
+noSuchKeyException=Es gibt keine Ressource f\u00fcr Eintrag {0}
+iconNotFound=Icon ”{0}” nicht gefunden
+bookmark1=Einleitung
+bookmark2=Pseudocode
+bookmark3=Initialisierung
+bookmark4=Algorithmus
+bookmark5=Fazit
+bookmark6=Ende
+header=Stern-Brocot-Folge
+description1=Die Stern-Brocot-Folge ist eine Folge ganzer Zahlen.
+description2=Sie ist unter anderem Grundlage des Stern-Brocot-Baumes
+description3=zur Abzählung rationaler Zahlen
+description4=Die festgelegten Zahlen sind F(0) = 0 und F(1) = 1.
+description5=Die nächsten Funktionswerte bilden sich wie folgt:
+description6=F(2n) = F(n) und F(2n+1) = F(n)+F(n+1).
+pivotQ1_1=wieviele Zuweisungen geschehen in einem Durchlauf der for Schleife?
+pivotQ1_2=richtig, in einem Schleifendurchlauf werden 2 Zuweisungen durchgeführt
+pivotQ1_3=falsch, schaue dir nochmal die for-Schleife an
+pivotQ2_1=wieviele Lesezugriffe geschehen in einem Durchlauf der for Schleife?
+pivotQ2_2=richtig, in einem Schleifendurchlauf wird 8 mal aus dem Array ausgelesen
+pivotQ2_3=falsch, schaue dir nochmal die for-Schleife an
+pivotQ3_1=Auf welches Array Element zeigt i in dieser Iteration?
+pivotQ3_2=richtig, i zeigt auf das Element
+pivotQ3_3=falsch, schaue dir nochmal die for-Schleife an
+resultQ1_1=Wie viele Elemente der Reihe wurden berechnet?
+resultQ1_2=richtig, da immer Länge des Arrays * 2 berechnet wird
+resultQ1_3=falsch, schaue dir nochmal die Zuweisungen an
+initQ1_1=Wie wird das erste Feld des Arrays initialisiert
+initQ1_2=richtig, das erste Feld des Arrays wird mit 0 initialisiert
+initQ2_1=Wie wird das erste Feld des Arrays initialisiert?
+initQ2_2=richtig, das zweite Feld des Arrays wird mit 1 initialisiert
+authorQ1_1=Von wem wurde der Algorithmus entwicklet?
+authorQ1_2=richtig, von Stern. Die Antwort Brocot wäre ebenso richtig gewesen, da beide diesen zur gleichen Zeit fanden
+authorQ1_3=richtig, von Brocot. Die Antwort Stern wäre ebenso richtig gewesen, da beide diesen zur gleichen Zeit fanden
+algoYear1_1=In welchem Jahr wurde der Algorithmus entwickelt?
+algoYear1_2=richtig, der Algorithmus wurde im Jahr 1952 entwickelt.
+result1=Das Ergebnis für n=
+result2=beträgt somit folgende Reihe:
+result3=Die Berechnung ließe sich beliebig weit fortführen
+end1=Wie in der so eben gesehenen Animation bildet sich die Stern-Brocot Sequenz aus der Summe 2er Wertepaare
+end2=und dem Anhängen des 2. Wertes an das neue Wertepaar.
+end3=Mit Hilfe dieser Folge lässt sich ein Binärbaum aufstellen, sodass sich anhand diesem die beste rationale Näherung
+end4=für reelle Zahlen finden lässt.
+end5=Eine weitere Eigenschaft der Stern-Brocot-Folge ist: Die Anzahl der ungeraden Zahlen einer Stufentabelle des Pascalschen Dreiecks
+end6=bildet ebenfalls die Stern-Brocot-Folge
+generatorDescription1=Die Stern-Brocot-Folge auch als „diatomische Folge von Stern und Brocot“ oder „Stern-Sequenz“
+generatorDescription2=bekannt, ist eine Folge ganzer Zahlen, die unabhängig von dem Mathematiker Moritz Stern
+generatorDescription3=und dem Uhrmacher Achille Brocot (bekannt auch durch die Brocot-Hemmung) entdeckt wurde.
+generatorDescription4=Sie ist unter anderem Grundlage des Stern-Brocot-Baumes zur Abz\u00e4hlung rationaler Zahlen.
+generatorDescription5=Brocot stieß als Uhrmacher auf die Folge, als er zu einem gewünschten Übersetzungsverhältnis
+generatorDescription6=(dezimal) die am besten passenden Zahnradpaarung (genauer: die beste Approximation durch
+generatorDescription7=ein Verhältnis der ganzzahligen Zähnezahlen) suchte.
+generatorDescription8=Das Bildungsgesetz der Folge lautet:
+generatorDescription9=s0 = 0;	s1 = 1
+generatorDescription10=s2n= sn;	s(2n+1)=sn+s(n+1)
+generatorDescription11=Die Summe der 2n Zahlen in der n-ten Zeile ist 3n und wenn n eine Zweierpotenz ist, wird sn = 1.
+generatorDescription12=Jede der Spalten ist eine arithmetische Folge, d. h. die Differenz zwischen zwei untereinander
+generatorDescription13=stehenden Zahlen ist konstant.
+generatorDescription14=Quelle: https://de.wikipedia.org/wiki/Stern-Brocot-Folge
+generatorNewLine=\n

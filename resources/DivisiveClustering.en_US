@@ -1,0 +1,94 @@
+noSuchKeyException=There is no resource for the key {0}
+iconNotFound=Icon "{0}" not found
+
+##### Generator window #####
+### Description ###
+pd1=Divisive Clustering is a method to cluster data points. The target is the 
+pd2=division of the data according to different properties. This method
+pd3=assumes at the beginning, that there is only one cluster. This one is 
+pd4=divided more and more during the process. This creates a hierarchy of 
+pd5=clusters. At the end, it is possible to select the desired clusters of
+pd6=the hierarchy.
+
+### Pseudocode ###
+pc1=1.: Check if there are still more clusters than nodes.
+pc2=2.: Choose the cluster with the highest diameter.
+pc3=3.: Select the node with the largest distance to all other nodes.
+pc4=      This node becomes the center of the new cluster.
+pc5=4.: Check for all other nodes of the cluster, if they are closer to the center of the new cluster
+pc6=      than to all other nodes. If so, add them to the new cluster.
+pc7=5.: Divide the old cluster in to new ones.
+
+
+##### During Animation: #####
+### Title ###
+title=Divisive Clustering [EN]
+
+### Description ###
+desc1=Divisive Clustering is a procedure to cluster multidimensional data. The algorithm assumes
+desc2=that initially all nodes belong to the same cluster. Then the cluster is continuously split up into 
+desc3=smaller clusters. This way, the algorithm produces a hierarchy of clusters. Depending on how 
+desc4=many clusters are searched, the procedure can be stopped at the right depth or the desired 
+desc5=amount of clusters can be picked at the end. In this animation, the procedure is continued 
+desc6=until all remaining clusters consist only of a single node.
+algo1=The algorithm consists of the following steps:
+algo2=1. Check if there are still more nodes than clusters
+algo3=2. Determine the cluster with the highest diameter
+algo4=3. Determine the node with the highest distance to all other nodes of the cluster
+algo5=This node becomes the center of the new cluster
+algo6=4. Check for all other nodes of the cluster, whether they are closer to the center of the new cluster
+algo7=than on average to all other points of the old cluster. If yes, add the nodes to the new cluster
+algo8=Divide the old cluster in two new ones.
+
+### Source Code ###
+code1=As long as the amount of clusters is smaller than the number of nodes:
+code2=1.: Choose the cluster with the highest diameter
+code3=2.: Choose the node which has the highest distance to all other nodes
+code4=3.: Check all nodes of the chosen cluster:
+code5=Determine the nodes which belong to the new cluster
+code6=4.: Divide the old cluster in two new ones
+
+### Explanation ###
+leg1=Explanation
+leg2=Current node:
+leg3=Nodes of the new cluster
+leg4=existing clusters
+
+### End ###
+end1=This was an example for the Divisive Clustering Procedure (DIANA) of Kaufmann and Rousseeuw (1990).
+end2=This method is an alternative to many agglomerative clustering procedures, which combine points to
+end3=create the clusters. There are many possibilities to adjust this algorithm. For example, it is
+end4=possible to add an explicit stopping criteria, such as a maxmimum number of created clusters or a
+end5=minimal size for all clusters.
+end6=Further variations are possible at the way distances between data points are measured. In this
+end7=example, the diameter of a cluster is the maximum distance between any two points in the cluster,
+end8=but there are also other methods possible. With a suitable distance function, it is easily possible
+end9=to adapt this algorithm for multidimensional data.
+end10=More information is available for example at:
+end11=https://en.wikipedia.org/wiki/Hierarchical_clustering
+
+### Table of contents ###
+cont1=Start
+cont2=Initialization
+cont3=Iteration: 
+cont4=End
+
+
+### Questions ###
+q1=Which cluster is chosen next?
+q2=Which nodes becomes the center of the new cluster?
+q3=Does the current node remain in the cluster?
+q4=How many iterations (Step 1 to 4) are remaining?
+
+a1t=Correct, the cluster with the highest diameter is chosen.
+a1f=Wrong, the cluster with the highest diameter is chosen.
+a2t=Correct, the average distance between this node and all other nodes of the cluster is the largest.
+a2f=Wrong, there is another node with a larger average distance to all other nodes of the cluster.
+a3t1=Correct, this node switches to the new cluster.
+a3f1=Wrong, this node switches to the new cluster.
+a3t2=Correct, this node remains in the old cluster.
+a3f2=Wrong, this node remains in the old cluster.
+a4t=Correct.
+
+true=true
+false=false

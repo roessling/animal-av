@@ -1,0 +1,33 @@
+### Steps in animation ###
+introduction = Einleitung
+tree = Baum
+pseudocode = Pseudocode
+algorithm = Algorithmus
+conclusion = Fazit
+
+### Text in the Animation ###
+header = Ershov-Zahlen
+description = Die Ershov-Zahlen geben die benötigte Anzahl an Registern zum Auswerten eines beliebigen arithmetischen oder booleschen Ausdrucks an.
+task = Die Aufgabe:
+taskDescription1 = Was ist die maximal benötigte Registeranzahl
+taskDescription2 = zum berechnen von:
+taskDescription3 = Wir benötigen die Baumdarstellung des Terms!
+
+graph = Der Baum:
+taskDescription4 = Nun können wir die Ershov-Zahl
+taskDescription5 = vom Term berechnen:
+
+pseudocodeTitle = Pseudocode:
+amountCall = Anzahl Aufrufe von Ershov:
+
+end1 = Bei optimaler Zuteilung werden
+end2 = für den gegebenen Term
+end3 = maximal
+end4 =  Register benötigt.
+
+question = Wie lautet die Erschov-Zahl des Knotens
+feedback = Super! Das ist richtig!
+
+### Generator ###
+title = Erschov-Zahlen von arithmetrischen Termen
+fullDescription = Die Ershov-Zahlen geben die benötigte Anzahl an Registern zum Auswerten eines beliebigen arithmetischen oder booleschen Ausdrucks an. \nDafür wird der arithmetische oder boolesche Ausdruck in einen Baum umgewandelt. \n\nJedes Blatt hat nun die Erschov Zahl 1. \nJeder Knoten mit nur einem Unterknoten hat dieselbe Erschov-Zahl wie der Unterknoten. \nFür jeden anderen Knoten gilt, dass wenn die Erschov Zahl des rechten Unterknotens mit der des linken Unterknotens übereinstimmt, wird die Erschov-Zahl von einem Unterknoten + 1 genommen. \nWenn die beiden Erschov-Zahlen der Unterknoten unterschiedlich sind, wird das Maximum genommen.

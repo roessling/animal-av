@@ -1,0 +1,207 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<PropertiesTreeModel xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="PropertiesTreeModel.xsd">
+	<Folder name="Root">
+		<Primitive type="StringArray">
+			<name>Processes</name>
+			<value><StringArray>C, A, B</StringArray></value>
+			<description>The names of all processes</description>
+		</Primitive>
+		<Primitive type="StringMatrix">
+			<name>Events</name>
+			<value><StringMatrix>20, B, I, -, -, n; 10, A, M, B, 30, n; 10, B, M, A, 30, n; 40, A, M, C, 50, n; 0, B, I, -, -, n; 60, C, M, B, 70, y; 60, B, I, -, -, n; 70, A, M, B, 80, n</StringMatrix></value>
+			<description>Rows: Events. See the algorithm description for expected values.</description>
+		</Primitive>
+		<Primitive type="Color">
+			<name>HighlightColor</name>
+			<value><Color>(255, 0, 0)</Color></value>
+			<description>Color for highlighting animation elements and source code</description>
+		</Primitive>
+		<Primitive type="boolean">
+			<name>SkipDescription</name>
+			<value><boolean value="false" /></value>
+			<description>Skip the algorithm description</description>
+		</Primitive>
+		<AnimationProperties type="MatrixProperties">
+			<AnimationPropertyItem type="ColorPropertyItem">
+				<name>cellHighlight</name>
+				<isEditable value="false" />
+				<label></label>
+				<value><Color>(255, 255, 255)</Color></value>
+			</AnimationPropertyItem>
+			<AnimationPropertyItem type="ColorPropertyItem">
+				<name>borderColor</name>
+				<isEditable value="true" />
+				<label></label>
+				<value><Color>(0, 0, 0)</Color></value>
+			</AnimationPropertyItem>
+			<AnimationPropertyItem type="ColorPropertyItem">
+				<name>color</name>
+				<isEditable value="true" />
+				<label></label>
+				<value><Color>(255, 255, 255)</Color></value>
+			</AnimationPropertyItem>
+			<AnimationPropertyItem type="BooleanPropertyItem">
+				<name>hidden</name>
+				<isEditable value="false" />
+				<label></label>
+				<value><boolean value="false" /></value>
+			</AnimationPropertyItem>
+			<AnimationPropertyItem type="BooleanPropertyItem">
+				<name>filled</name>
+				<isEditable value="true" />
+				<label></label>
+				<value><boolean value="false" /></value>
+			</AnimationPropertyItem>
+			<AnimationPropertyItem type="EnumerationPropertyItem">
+				<name>align</name>
+				<isEditable value="false" />
+				<label></label>
+				<value><Enumeration>left, left, center, right</Enumeration></value>
+			</AnimationPropertyItem>
+			<AnimationPropertyItem type="ColorPropertyItem">
+				<name>elementColor</name>
+				<isEditable value="true" />
+				<label></label>
+				<value><Color>(0, 0, 0)</Color></value>
+			</AnimationPropertyItem>
+			<AnimationPropertyItem type="ColorPropertyItem">
+				<name>fillColor</name>
+				<isEditable value="true" />
+				<label></label>
+				<value><Color>(255, 255, 255)</Color></value>
+			</AnimationPropertyItem>
+			<AnimationPropertyItem type="ColorPropertyItem">
+				<name>highlightBorderColor</name>
+				<isEditable value="false" />
+				<label></label>
+				<value><Color>(255, 0, 0)</Color></value>
+			</AnimationPropertyItem>
+			<AnimationPropertyItem type="IntegerPropertyItem">
+				<name>depth</name>
+				<isEditable value="false" />
+				<label></label>
+				<value><int>1</int></value>
+			</AnimationPropertyItem>
+			<AnimationPropertyItem type="IntegerPropertyItem">
+				<name>cellheight</name>
+				<isEditable value="false" />
+				<label></label>
+				<value><int>-1</int></value>
+			</AnimationPropertyItem>
+			<AnimationPropertyItem type="StringPropertyItem">
+				<name>name</name>
+				<isEditable value="true" />
+				<label></label>
+				<value><String>ClockVectorProperties</String></value>
+			</AnimationPropertyItem>
+			<AnimationPropertyItem type="EnumerationPropertyItem">
+				<name>style</name>
+				<isEditable value="false" />
+				<label></label>
+				<value><Enumeration>table, plain, matrix, table</Enumeration></value>
+			</AnimationPropertyItem>
+			<AnimationPropertyItem type="IntegerPropertyItem">
+				<name>cellwidth</name>
+				<isEditable value="false" />
+				<label></label>
+				<value><int>-1</int></value>
+			</AnimationPropertyItem>
+			<AnimationPropertyItem type="FontPropertyItem">
+				<name>font</name>
+				<isEditable value="false" />
+				<label></label>
+				<value><Font>Monospaced</Font></value>
+			</AnimationPropertyItem>
+			<AnimationPropertyItem type="ColorPropertyItem">
+				<name>elemHighlight</name>
+				<isEditable value="false" />
+				<label></label>
+				<value><Color>(255, 0, 0)</Color></value>
+			</AnimationPropertyItem>
+		</AnimationProperties>
+		<AnimationProperties type="SourceCodeProperties">
+			<AnimationPropertyItem type="ColorPropertyItem">
+				<name>highlightColor</name>
+				<isEditable value="false" />
+				<label></label>
+				<value><Color>(255, 0, 0)</Color></value>
+			</AnimationPropertyItem>
+			<AnimationPropertyItem type="ColorPropertyItem">
+				<name>contextColor</name>
+				<isEditable value="true" />
+				<label></label>
+				<value><Color>(128, 128, 128)</Color></value>
+			</AnimationPropertyItem>
+			<AnimationPropertyItem type="IntegerPropertyItem">
+				<name>depth</name>
+				<isEditable value="false" />
+				<label></label>
+				<value><int>1</int></value>
+			</AnimationPropertyItem>
+			<AnimationPropertyItem type="IntegerPropertyItem">
+				<name>indentation</name>
+				<isEditable value="true" />
+				<label></label>
+				<value><int>1</int></value>
+			</AnimationPropertyItem>
+			<AnimationPropertyItem type="ColorPropertyItem">
+				<name>color</name>
+				<isEditable value="true" />
+				<label></label>
+				<value><Color>(0, 0, 0)</Color></value>
+			</AnimationPropertyItem>
+			<AnimationPropertyItem type="BooleanPropertyItem">
+				<name>hidden</name>
+				<isEditable value="true" />
+				<label></label>
+				<value><boolean value="false" /></value>
+			</AnimationPropertyItem>
+			<AnimationPropertyItem type="IntegerPropertyItem">
+				<name>size</name>
+				<isEditable value="true" />
+				<label></label>
+				<value><int>12</int></value>
+			</AnimationPropertyItem>
+			<AnimationPropertyItem type="StringPropertyItem">
+				<name>name</name>
+				<isEditable value="true" />
+				<label></label>
+				<value><String>SourceCodeProperties</String></value>
+			</AnimationPropertyItem>
+			<AnimationPropertyItem type="BooleanPropertyItem">
+				<name>bold</name>
+				<isEditable value="false" />
+				<label></label>
+				<value><boolean value="false" /></value>
+			</AnimationPropertyItem>
+			<AnimationPropertyItem type="IntegerPropertyItem">
+				<name>row</name>
+				<isEditable value="false" />
+				<label></label>
+				<value><int>1</int></value>
+			</AnimationPropertyItem>
+			<AnimationPropertyItem type="BooleanPropertyItem">
+				<name>italic</name>
+				<isEditable value="false" />
+				<label></label>
+				<value><boolean value="false" /></value>
+			</AnimationPropertyItem>
+			<AnimationPropertyItem type="FontPropertyItem">
+				<name>font</name>
+				<isEditable value="false" />
+				<label></label>
+				<value><Font>Monospaced</Font></value>
+			</AnimationPropertyItem>
+		</AnimationProperties>
+		<Primitive type="int">
+			<name>QuestionLikelihood</name>
+			<value><int>100</int></value>
+			<description>Likelihood that a question is asked in percent (0 - 100), applied to all possible questions</description>
+		</Primitive>
+		<Primitive type="int">
+			<name>TimelineLength</name>
+			<value><int>500</int></value>
+			<description>Length of the timeline of each process where the events are drawn on</description>
+		</Primitive>
+	</Folder>
+</PropertiesTreeModel>

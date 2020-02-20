@@ -1,0 +1,33 @@
+### Steps in animation ###
+introduction = Introduction
+tree = Tree
+pseudocode = Pseudocode
+algorithm = Algorithm
+conclusion = Conclusion
+
+### Text in the Animation ###
+header = Ershov-Numbers
+description = The ershov numbers are specifying the needed registers plotting any arithmetic or boolean expression.
+task = The task:
+taskDescription1 = What is the maximum number of registers required
+taskDescription2 = for evaluation of:
+taskDescription3 = We need the tree representation of the term!
+
+graph = The tree:
+taskDescription4 = We can now calculate the ershov
+taskDescription5 = number of the term:
+
+pseudocodeTitle = Pseudocode:
+amountCall = Amount of calls of ershov:
+
+end1 =
+end2 = The given term requires
+end3 = at most
+end4 = registers.
+
+question = How big is the ershov number of node
+feedback = Good! That's right!
+
+### Generator ###
+title = Ershov numbers of arithmetic terms
+fullDescription = Ershov numbers are used to determine the count of registers needed to evaluate an arbitrary arithmetic or boolean expression. \nTo do that the expression has to be converted into a tree. \n\nThe ershov number of each leaf is defined as one. \nThe ershov number of a node with only one child is the same as the ershov number of the child itself. \nAll nodes that are left now must have two children. If the ershov number of the right and the left child are equal, the ershov number of the node is the one of the left child plus one. \nIf the ershov numbers differ the number of the node is the maximum of both children.

@@ -1,0 +1,80 @@
+noSuchKeyException=there is no ressource for the key {0}
+iconNotFound=Icon "{0}" not found
+
+
+### Basic Information ###
+title=Floyd's Tortoise and Hare
+algorithmName=Floyd's cycle-finding algorithm
+
+
+### Description / Intro ###
+introLine1='Floyd's cycle-finding algorithm' is a pointer algorithm that uses only two pointers,
+introLine2=which move through the sequence at different speeds, determining whether a sequence contains a cycle or not.
+introLine3=It is also called the 'tortoise and the hare algorithm', alluding to Aesop's fable of The Tortoise and the Hare.
+introLine4=The algorithm maintains two pointers into a given sequence.
+introLine5=The 'hare-pointer' moves within the sequence twice as fast as the  'tortoise-pointer.
+introLine6=At each step of the algorithm the sequence values  of the two pointers are compared.
+introLine7=If the values are identical, one knows that the sequence contains a cycle.
+
+
+### Source Code ###
+codeLine1=ListPosition floyd (List l) '{'
+codeLine2=listWalker tortoise
+codeLine3=tortoise.listPosition = l[0]
+codeLine4=listWalker hare
+codeLine5=hare.listPosition = l[0]
+codeLine6=do while tortoise.listPosition != hare.listPosition
+codeLine7=tortoise.listPosition += 1
+codeLine8=hare.listPosition += 2
+codeLine9=integer circleStartPosition = 0
+codeLine10=tortoise.listPosition = l[0]
+codeLine11=while tortoise.listPosition != hare.listPosition
+codeLine12=tortoise.listPosition += 1
+codeLine13=hare.listPosition += 1
+codeLine14=circleStartPosition +=1
+codeLine15=ListPosition listPos
+codeLine16=listPos.position = circleStartPosition
+codeLine17=return listPos
+codeLine18='}'
+
+clIndentation1=0
+clIndentation2=1
+clIndentation3=1
+clIndentation4=1
+clIndentation5=1
+clIndentation6=1
+clIndentation7=2
+clIndentation8=2
+clIndentation9=1
+clIndentation10=1
+clIndentation11=1
+clIndentation12=2
+clIndentation13=2
+clIndentation14=2
+clIndentation15=1
+clIndentation16=1
+clIndentation17=1
+clIndentation18=0
+
+
+### Summary / Outro ###
+outroLine1=Thanks for watching 'Floyd's cycle-finding algorithm'!
+outroLine2=We hope you enjoyed it!
+outroLine3=Christian and Jonas
+
+
+### Interactivity ###
+interTrue=This statement is correct.
+interFalse=This statement is false.
+swapTortoiseAndHare=If you swap the speeds of turtle and hare, the algorithm doesn't work anymore...
+swapTortoiseAndHareTrue=I'm afraid your answer is not true. It doesn't matter which of the two pointers travels at which speed.
+swapTortoiseAndHareFalse=Your answer is perfectly correct!
+errorProne=Is it possible the two pointers do not meet?
+errorProneTrue=I'm afraid your answer is not true. In each step of the algorithm, the tortoise walks 1 node and the hare walks 2 nodes. In practice, the tortoise gets away by 1 distance unit, and then the hare gets near by 2 distance units. In practice, it's just like in each step, the tortoise stays stationary and the hare moves by 1 step. Their distance is shortened by one on each step of the algorithm till they meet.
+errorProneFalse=Your answer is perfectly correct!
+
+
+### Variables ###
+varCycleAlreadyDetected=CycleAlreadyDetected
+varTortoisePosition=TortoisePosition
+varHarePosition=HarePosition

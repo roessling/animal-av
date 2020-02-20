@@ -1,0 +1,61 @@
+noSuchKeyException=No Resource for Entry {0}
+iconNotFound=Icon ”{0}” not found
+bookmark1=Introduction
+bookmark2=Pseudocode
+bookmark3=Initialization
+bookmark4=Algorithm
+bookmark5=Conclusion
+bookmark6=End
+header=Stern-Brocot-Sequenze
+description1=The Stern-Brocot-sequence is a sequence of whole numbers.
+description2=Among others it is the foundation of the Stern-Brocot-Tree
+description3=To count off rational numbers
+description4=The designated numbers are F(0) = 0 and F(1) = 1.
+description5=The next function values are formed as follows:
+description6=F(2n) = F(n) and F(2n+1) = F(n)+F(n+1).
+pivotQ1_1=How many assignments occur in one continuous for-loop?
+pivotQ1_2=correct, in one loop 2 assignments will be done
+pivotQ1_3=wrong, have another look at the loop
+pivotQ2_1=How many read access occur in one continuous for-loop?
+pivotQ2_2=correct, in one continuous loop the Array will be read 8 times
+pivotQ2_3=wrong, take another look at the for-loop
+pivotQ3_1=On which Array element does the i show in this iteration?
+pivotQ3_2=correct, i shows on element
+pivotQ3_3=wrong, take another look at the loop
+resultQ1_1=How many elements of the row were calculated?
+resultQ1_2=correct, since the length of the array is calculated * 2
+resultQ1_3=wrong, take another look at the assignment
+initQ1_1=How is the first field of the array initialized?
+initQ1_2=correct, the first field of the array is initialized with 0
+initQ2_1=How is the second field of the array initialized?
+initQ2_2=correct, the second field of the array is initialized with 1
+authorQ1_1=Who developed the algorithm?
+authorQ1_2=correct, Stern developed it. The answer Brocot would have been correct as well, because both found the algorithm at the same time
+authorQ1_3=correct, Brocot developed it. The answer Stern would have been correct as well, because both found the algorithm at the same time
+algoYear1_1=In what year was the algorithm developed?
+algoYear1_2=correct, the algorithm was developed in the year 1952
+result1=The result for n=
+result2=thus adds up to the following row:
+result3=the calculation could be continued indefinitely
+end1=As seen in the animation just now, the Stern -Brocot sequence is formed out of the sum of 2 pairs of variates
+end2=and the adherence of the 2nd value of the new pair of variates
+end3=With the help of this sequence, a binary tree can be established so that based on that the best rational approximation
+end4=for real numbers can be found
+end5=Another characteristic of the Stern-Brocot-sequence is: The amount of odd numbers of one table from the Pascal's triangle
+end6=also forms the Stern-Brocot-sequence
+generatorDescription1=The Stern Brocot Sequence also known as the „diatomic Sequence of Stern and Brocot“ or just „Stern-Sequence“
+generatorDescription2=is a Sequence of integer numbers that got discovered independently by the mathematician
+generatorDescription3=Moritz Stern and the watchmaker Achille Brocot (known for the Brocot-inhibition)-
+generatorDescription4=Its the foundation of the Stern-Brocot-Tree for counting rational numbers.
+generatorDescription5=Brocot found the Sequence while he was searching for a translationratio 
+Brocot stieß als Uhrmacher auf die Folge, als er zu einem gewünschten Übersetzungsverhältnis
+generatorDescription6=for the best fitting gear pairing.
+generatorDescription7= 
+generatorDescription8=the Definition is:
+generatorDescription9=s0 = 0;	s1 = 1
+generatorDescription10=s2n= sn;	s(2n+1)=sn+s(n+1)
+generatorDescription11=The sum of 2^n numbers in the nth Row is 3^n and when n is a two potency, sn = 1.
+generatorDescription12=Every column is a arithmetic Sequence. That means the difference between two
+generatorDescription13=numbers standing below each other is constant.
+generatorDescription14=Quelle: https://de.wikipedia.org/wiki/Stern-Brocot-Folge
+generatorNewLine=\n

@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<PropertiesTreeModel xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="PropertiesTreeModel.xsd">
+	<Folder name="Root">
+		<Primitive type="int">
+			<name>Width</name>
+			<value><int>15</int></value>
+			<description>Width of the pixel array. [3, 50]</description>
+		</Primitive>
+		<Primitive type="int">
+			<name>Height</name>
+			<value><int>20</int></value>
+			<description>Height of the pixel array. [3, 50]</description>
+		</Primitive>
+		<Primitive type="Color">
+			<name>Square Highlight Color</name>
+			<value><Color>(208, 0, 0)</Color></value>
+			<description>The color with which the starting square will be highlighted at the beginning.</description>
+		</Primitive>
+		<Primitive type="int">
+			<name>Start Position X</name>
+			<value><int>5</int></value>
+			<description>X coordinate of where to start coloring. [1, width-1]</description>
+		</Primitive>
+		<Primitive type="int">
+			<name>Start Position Y</name>
+			<value><int>5</int></value>
+			<description>Y coordinate of where to start coloring. [1, height-1]</description>
+		</Primitive>
+		<Primitive type="Color">
+			<name>Source Code Highlight Color</name>
+			<value><Color>(208, 0, 0)</Color></value>
+			<description>The color with which to highlight the current position in the source code.</description>
+		</Primitive>
+		<Primitive type="Color">
+			<name>New Color</name>
+			<value><Color>(255, 165, 0)</Color></value>
+			<description>The color with which to fill the pixels array.</description>
+		</Primitive>
+		<Primitive type="Color">
+			<name>Old Color</name>
+			<value><Color>(204, 204, 204)</Color></value>
+			<description>The color that gets overidden.</description>
+		</Primitive>
+		<Primitive type="Color">
+			<name>Wall Color</name>
+			<value><Color>(0, 0, 0)</Color></value>
+			<description>Color of the walls.</description>
+		</Primitive>
+		<Primitive type="int">
+			<name>Square Size</name>
+			<value><int>20</int></value>
+			<description>Size of the pixels. Not too small, not too big. [10, 50]</description>
+		</Primitive>
+		<Primitive type="double">
+			<name>Wall Chance</name>
+			<value><double>0.4</double></value>
+			<description>Chance in percent to generate a wall when randomly generating the pixel array. [0.0, 1.0]</description>
+		</Primitive>
+		<Primitive type="int">
+			<name>Record After Depth</name>
+			<value><int>80</int></value>
+			<description>Records max recursion depth in Table of Contents after x depth has been reached. [0, 1000]</description>
+		</Primitive>
+		<Primitive type="int">
+			<name>Record After Steps</name>
+			<value><int>20</int></value>
+			<description>Records max recursion depth in Table of Contents after x steps have been taken. [0, 1000]</description>
+		</Primitive>
+		<Primitive type="double">
+			<name>Chance for easy questions</name>
+			<value><double>0.05</double></value>
+			<description>Chance in percent to get an easy question while watching the algorithm run. [0.0, 1.0]</description>
+		</Primitive>
+		<Primitive type="double">
+			<name>Chance for medium questions</name>
+			<value><double>0.1</double></value>
+			<description>Chance in percent to get a medium question while watching the algorithm run. [0.0, 1.0]</description>
+		</Primitive>
+		<Primitive type="double">
+			<name>Chance for hard questions</name>
+			<value><double>0.3</double></value>
+			<description>Chance in percent to get a hard question while watching the algorithm run. [0.0, 1.0]</description>
+		</Primitive>
+		<Primitive type="boolean">
+			<name>Disable questions</name>
+			<value><boolean value="false" /></value>
+			<description>Disables all questions so you can watch in peace.</description>
+		</Primitive>
+	</Folder>
+</PropertiesTreeModel>
