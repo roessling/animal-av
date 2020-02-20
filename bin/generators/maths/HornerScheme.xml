@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<PropertiesTreeModel xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="PropertiesTreeModel.xsd">
+	<Folder name="Root">
+		<Primitive type="double">
+			<name>x0</name>
+			<value><double>2.0</double></value>
+			<description>The x value at which the polynomial will be evaluated.</description>
+		</Primitive>
+		<Primitive type="StringMatrix">
+			<name>Coefficients</name>
+			<value><StringMatrix>1.2, 1.4, 5.3, 1.2, -3.5</StringMatrix></value>
+			<description>The coefficients of the polynomial in one row. The column indices correspond to the exponent (i.e. C:0 -> x^0, C:1 -> x^1 ...). Please use a dot as decimal separator.</description>
+		</Primitive>
+	</Folder>
+</PropertiesTreeModel>

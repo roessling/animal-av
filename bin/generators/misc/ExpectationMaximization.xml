@@ -1,0 +1,193 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<PropertiesTreeModel xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="PropertiesTreeModel.xsd">
+	<Folder name="Root">
+		<Primitive type="intMatrix">
+			<name>Datenpunkte</name>
+			<value><intMatrix>30, 31, 31, 25, 35, 35, 30, 30, 20, 20, 10, 10, 40, 40, 70, 71, 69, 68, 80, 70, 90, 75, 65; 40, 39, 41, 35, 43, 35, 30, 50, 40, 30, 30, 23, 40, 25, 60, 63, 58, 73, 40, 45, 50, 55, 55</intMatrix></value>
+			<description>Datenpunkte auf denen Cluster gefunden werden sollen  (Zeile 1: x Werte, Zeile 2: y-Werte).</description>
+		</Primitive>
+		<Primitive type="int">
+			<name>NumOfClusters</name>
+			<value><int>2</int></value>
+			<description>Anzahl der Cluster die gefunden werden sollen</description>
+		</Primitive>
+		<Primitive type="intArray">
+			<name>Priors</name>
+			<value><intArray>50, 50</intArray></value>
+			<description>Prior Wahrscheinlichkeiten für jedes Cluster in %. (Müssen aufaddiert 100 ergeben)</description>
+		</Primitive>
+		<Primitive type="int">
+			<name>Iterationen</name>
+			<value><int>4</int></value>
+			<description>Anzahl der Iterationen die Durchgeführt werden sollen</description>
+		</Primitive>
+		<Primitive type="intArray">
+			<name>Sigma00</name>
+			<value><intArray>10, 10</intArray></value>
+			<description>Eintrag 00 der initialen Kovarianzmatrix für jedes Cluster (*10^1)</description>
+		</Primitive>
+		<Primitive type="intArray">
+			<name>Sigma01</name>
+			<value><intArray>0, 0</intArray></value>
+			<description>Eintrag 01 der initialen Kovarianzmatrix für jedes Cluster(*10^1)</description>
+		</Primitive>
+		<Primitive type="intArray">
+			<name>Sigma10</name>
+			<value><intArray>0, 0</intArray></value>
+			<description>Eintrag 10 der initialen Kovarianzmatrix für jedes Cluster (*10^1)</description>
+		</Primitive>
+		<Primitive type="intArray">
+			<name>Sigma11</name>
+			<value><intArray>10, 10</intArray></value>
+			<description>Eintrag 11 der initialen Kovarianzmatrix für jedes Cluster(*10^1)</description>
+		</Primitive>
+		<Primitive type="intMatrix">
+			<name>My</name>
+			<value><intMatrix>10, 80; 80, 20 </intMatrix></value>
+			<description>Initiale Mittelwerte für jedes Cluster (Zeile 1: x Werte, Zeile 2: y Werte (*10^1))</description>
+		</Primitive>
+		<AnimationProperties type="TextProperties">
+			<AnimationPropertyItem type="IntegerPropertyItem">
+				<name>depth</name>
+				<isEditable value="false" />
+				<label></label>
+				<value><int>1</int></value>
+			</AnimationPropertyItem>
+			<AnimationPropertyItem type="ColorPropertyItem">
+				<name>color</name>
+				<isEditable value="true" />
+				<label></label>
+				<value><Color>(0, 0, 0)</Color></value>
+			</AnimationPropertyItem>
+			<AnimationPropertyItem type="BooleanPropertyItem">
+				<name>hidden</name>
+				<isEditable value="true" />
+				<label></label>
+				<value><boolean value="false" /></value>
+			</AnimationPropertyItem>
+			<AnimationPropertyItem type="BooleanPropertyItem">
+				<name>centered</name>
+				<isEditable value="true" />
+				<label></label>
+				<value><boolean value="false" /></value>
+			</AnimationPropertyItem>
+			<AnimationPropertyItem type="StringPropertyItem">
+				<name>name</name>
+				<isEditable value="true" />
+				<label></label>
+				<value><String>DescriptionText</String></value>
+			</AnimationPropertyItem>
+			<AnimationPropertyItem type="BooleanPropertyItem">
+				<name>right</name>
+				<isEditable value="true" />
+				<label></label>
+				<value><boolean value="false" /></value>
+			</AnimationPropertyItem>
+			<AnimationPropertyItem type="FontPropertyItem">
+				<name>font</name>
+				<isEditable value="true" />
+				<label></label>
+				<value><Font>SansSerif</Font></value>
+			</AnimationPropertyItem>
+		</AnimationProperties>
+		<AnimationProperties type="SourceCodeProperties">
+			<AnimationPropertyItem type="ColorPropertyItem">
+				<name>highlightColor</name>
+				<isEditable value="true" />
+				<label></label>
+				<value><Color>(208, 0, 0)</Color></value>
+			</AnimationPropertyItem>
+			<AnimationPropertyItem type="ColorPropertyItem">
+				<name>contextColor</name>
+				<isEditable value="true" />
+				<label></label>
+				<value><Color>(0, 0, 255)</Color></value>
+			</AnimationPropertyItem>
+			<AnimationPropertyItem type="IntegerPropertyItem">
+				<name>depth</name>
+				<isEditable value="false" />
+				<label></label>
+				<value><int>1</int></value>
+			</AnimationPropertyItem>
+			<AnimationPropertyItem type="IntegerPropertyItem">
+				<name>indentation</name>
+				<isEditable value="true" />
+				<label></label>
+				<value><int>1</int></value>
+			</AnimationPropertyItem>
+			<AnimationPropertyItem type="ColorPropertyItem">
+				<name>color</name>
+				<isEditable value="true" />
+				<label></label>
+				<value><Color>(0, 0, 0)</Color></value>
+			</AnimationPropertyItem>
+			<AnimationPropertyItem type="BooleanPropertyItem">
+				<name>hidden</name>
+				<isEditable value="true" />
+				<label></label>
+				<value><boolean value="false" /></value>
+			</AnimationPropertyItem>
+			<AnimationPropertyItem type="IntegerPropertyItem">
+				<name>size</name>
+				<isEditable value="true" />
+				<label></label>
+				<value><int>18</int></value>
+			</AnimationPropertyItem>
+			<AnimationPropertyItem type="StringPropertyItem">
+				<name>name</name>
+				<isEditable value="true" />
+				<label></label>
+				<value><String>CodeText2</String></value>
+			</AnimationPropertyItem>
+			<AnimationPropertyItem type="BooleanPropertyItem">
+				<name>bold</name>
+				<isEditable value="true" />
+				<label></label>
+				<value><boolean value="false" /></value>
+			</AnimationPropertyItem>
+			<AnimationPropertyItem type="IntegerPropertyItem">
+				<name>row</name>
+				<isEditable value="true" />
+				<label></label>
+				<value><int>1</int></value>
+			</AnimationPropertyItem>
+			<AnimationPropertyItem type="BooleanPropertyItem">
+				<name>italic</name>
+				<isEditable value="true" />
+				<label></label>
+				<value><boolean value="false" /></value>
+			</AnimationPropertyItem>
+			<AnimationPropertyItem type="FontPropertyItem">
+				<name>font</name>
+				<isEditable value="true" />
+				<label></label>
+				<value><Font>Monospaced</Font></value>
+			</AnimationPropertyItem>
+		</AnimationProperties>
+		<Primitive type="Color">
+			<name>ClusterColor1</name>
+			<value><Color>(255, 0, 0)</Color></value>
+			<description>Farbe in der Cluster 1 dargestellt wird</description>
+		</Primitive>
+		<Primitive type="Color">
+			<name>ClusterColor2</name>
+			<value><Color>(0, 0, 255)</Color></value>
+			<description>Farbe in der Cluster 2 dargestellt wird, wenn mindestens 2 Cluster bestimmt werden</description>
+		</Primitive>
+		<Primitive type="Color">
+			<name>ClusterColor3</name>
+			<value><Color>(0, 176, 0)</Color></value>
+			<description>Farbe in der Cluster 3 dargestellt wird, wenn mindestens 3 Cluster bestimmt werden</description>
+		</Primitive>
+		<Primitive type="Color">
+			<name>ClusterColor4</name>
+			<value><Color>(255, 215, 0)</Color></value>
+			<description>Farbe in der Cluster 4 dargestellt wird, wenn mindestens 4 Cluster bestimmt werden</description>
+		</Primitive>
+		<Primitive type="Color">
+			<name>ClusterColor5</name>
+			<value><Color>(0, 208, 208)</Color></value>
+			<description>Farbe in der Cluster 5 dargestellt wird, wenn 5 Cluster bestimmt werden</description>
+		</Primitive>
+	</Folder>
+</PropertiesTreeModel>

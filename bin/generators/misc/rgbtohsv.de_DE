@@ -1,0 +1,172 @@
+noSuchKeyException=there is no ressource for the key {0}
+iconNotFound=Icon "{0}" not found
+
+name=RGB nach HSV Konverter
+
+
+title=RGB nach HSV Konverter
+
+
+######################
+description0=Der Algorithmus konvertiert einen gegeben RGB Farbwert in einen HSV Farbwert.
+
+
+description1=Der RGB-Farbraum beschreibt eine Farbe nach den Betraegen von rotem (R), gruenem (G) und blauem (B) Licht auf einer Skala von 0 bis 255.
+
+
+description2=Der HSV-Farbraum hingegen beschreibt eine Farbe nach Farbwert (H), Saettigung (S) and Dunkelstufe (V).
+
+
+description3=Der Farbwert ist ein Wert zwischen 0 und 360 und beschreibt den Farbwinkel, wobei 0 Rot, 120 Gruen und 240 Blau entspricht.
+
+
+description4=Die Saettigung liegt zwischen 0% und 100%, wobei 0% einen neutralen Grauwert und 100% volle Saettigung bedeutet.
+
+
+description5=Die Dunkelstufe liegt auch zwischen 0% und 100%, wobei 0% absolut keine Helligkeit und 100% volle Helligkeit bedeutet.
+
+
+description6=HSV in Java erwartet normalisierte Werte (0-1) bei Saettigung und Dunkelstufe.
+
+
+description7=Waehrend der Algorithmus den HSV Farbwert berechnet, kann man in dieser Visualisierung sehen wie sich die HSV Farbe nach bestimmten Schritten aendert.
+
+
+######################
+info_after0=Der RGB-Farbraum ist ein additiver Farbraum, der Farbwahrnehmungen durch das additive Mischen dreier Grundfarben (Rot, Gruen und Blau) nachbildet.
+
+
+info_after1=Der Farbraum basiert im Prinzip auf der Dreifarbentheorie, welche besagt, dass man fast alle Farbreize durch das Mischen dreier Primaerfarben simulieren kann.
+
+
+info_after2=Da es sich um einen linearen Raum handelt, laesst er sich anschaulich als Farbwuerfel, darstellen.
+
+
+info_after3=Verwendung findet der RGB-Farbraum vorallem in selbstleuchtenden (farbdarstellenden) Systemen, die dem Prinzip der Additiven Farbmischung unterliegen.
+
+
+info_after4=Der durch eine Kooperation von Hewlett-Packard und Microsoft geschaffene sRGB (Standard-RGB) Farbraum wurde beispielsweise extra für Monitore entwickelt, deren farbgebende Basis drei Phosphore (Leuchtstoffe) sind.
+
+
+info_after5=Wenn es um die Farbnachstellung geht, wird das HSV-Paradigma gegenueber RGB bevorzugt, weil es der menschlichen (kuenstlerischen) Farbwahrnehmung aehnelt.
+
+
+info_after6=So ist es mit HSV leichter, eine gewuenschte Farbe zu finden: Man kann für eine Farbmischung unmittelbar den Farbton waehlen und dann entscheiden, wie gesaettigt und wie hell (oder dunkel) dieser sein soll.
+
+
+info_after7=RGB hingegen ist an die vorhandenen (geraeteabhaengigen) Grundfarben gebunden, sodass weniger die freie Wahl, sondern das Farbergebnis im Vordergrund steht.
+
+
+info_after8=Der HSV-Farbraum kommt vor allem bei Farbwaehlern in der Informatik zum Einsatz.
+
+
+######################
+step0=Einleitung
+
+
+step1=Initialisierung der Variablen
+
+
+step2=Berechnung des Minimums
+
+
+step3=Berechnung des Maximums
+
+
+step4=Berechnung von v
+
+
+step5=Berechnung von delta
+
+
+step6=Berechnung von s
+
+
+step7=s auf null setzen
+
+
+step8=h auf -1 setzen
+
+
+step9=Berechnung von h
+
+
+step10=Rueckgabe
+
+
+######################
+explain0=Initialisierung der h,s,v Variablen, welche am Ende das Resultat enthalten werden.
+
+
+explain1=Initialisierung der Hilfsvariablen max, min und delta.
+
+
+explain2=Finde das Minimum der RGB Werte.
+
+
+explain3=Finde das Maximum der RGB Werte.
+
+
+explain4=Setze v auf den Maximums-Wert und normalisiere (teilen durch 255).
+
+
+explain5=Berechne delta als Differenz von Maximums-Wert und Minimums-Wert.
+
+
+explain6=Ueberpruefe dass der Maximums-Wert nicht null ist.
+
+
+explain7=Der Maximums-Wert ist nicht null; Berechne s.
+
+
+explain8=Der Maximums-Wert ist null.
+
+
+explain9=Setze s auf null.
+
+
+explain10=Setze h auf -1.
+
+
+explain11=Alles wurde berechnet; Gib die HSV Werte zurueck.
+
+
+explain12=Ueberpruefe ob r das Maximum ist.
+
+
+explain13=r ist das Maximum; Berechne h.
+
+
+explain14=r ist nicht das Maximum; Ueberpruefe ob g das Maximum ist.
+
+
+explain15=g ist das Maximum; Berechne h.
+
+
+explain16=b ist das Maximum; Berechne h.
+
+
+explain17=Multipliziere h mit 60.
+
+
+explain18=Ueberpruefe ob h kleiner als null ist.
+
+
+explain19=h ist kleiner als null; Addiere 360 auf h.
+
+
+explain20=Alles wurde berechnet; Gib die HSV Werte zurueck.
+
+
+######################
+rgbValues=RGB Werte:
+
+
+hsvValues=HSV Werte:
+
+
+rgbColor=aktuelle RGB Farbe:
+
+
+hsvColor=aktuelle HSV Farbe:
+

@@ -1,0 +1,172 @@
+noSuchKeyException=there is no ressource for the key {0}
+iconNotFound=Icon "{0}" not found
+
+name=RGB to HSV Converter
+
+
+title=RGB to HSV Converter
+
+
+######################
+description0=The algorithm converts a given RGB value into a HSV value.
+
+
+description1=The RGB color space describes the color with the amounts of red (R), green (G) und blue (B) light in the range 0-255.
+
+
+description2=The HSV color space on the other hand describes the color by using hue (H), saturation (S) and value (V).
+
+
+description3=Hue is a value between 0 and 360 and describes the color angle, where 0 is red, 120 is green and 240 is blue.
+
+
+description4=Saturation is between 0% and 100%, where 0% is a neutral grey value and 100% means full saturation.
+
+
+description5=Value is also between 0% and 100%, where 0% means no brightness and 100% means full brightness.
+
+
+description6=Java HSV color requires that the values of Saturation and Value are normalized (0-1).
+
+
+description7=While the algorithm computes the HSV values for the given RGB color, you can see how the HSV color changes after certain computation steps.
+
+
+######################
+info_after0=The RGB color space is an additive color space, which reproduces color perception through the additive mixing of three primary colors (red, green and blue).
+
+
+info_after1=The color space is based on the Young–Helmholtz theory, which says that you can simulate almost any color stimuli by mixing three primary colors.
+
+
+info_after2=Since this is a linear space, one can vividly imagine it as a color cube.
+
+
+info_after3=The RGB color space is mainly used in self-luminous (color imaging) systems that are subject to the principle of additive color mixing.
+
+
+info_after4=The sRGB (standard RGB) color space by Hewlett-Packard and Microsoft for example, has been specially developed for monitors, whose coloring base are three phosphors.
+
+
+info_after5=When it comes to color matching, the HSV-paradigm is preferred to RGB, because it resembles the human (artistic) color perception.
+
+
+info_after6=With HSV it is easier to find a desired color: You can directly select the hue for a color mixing and then decide how saturated and how bright (or dark) it should be.
+
+
+info_after7=RGB, however, is bound to the existing (device dependent) basic colors. The color result in RGB has a higher priority than free choice of color.
+
+
+info_after8=The HSV color space is mainly used for color pickers in computer science.
+
+
+######################
+step0=Introduction / Remark
+
+
+step1=Initialization of variables
+
+
+step2=Finding minimum
+
+
+step3=Finding maximum
+
+
+step4=Calculating v
+
+
+step5=Calculating delta
+
+
+step6=Calculating s
+
+
+step7=Setting s to zero
+
+
+step8=Setting h to -1
+
+
+step9=Calculating h
+
+
+step10=Return
+
+
+######################
+explain0=Initialization of the h,s,v variables, which will hold the result in the end.
+
+
+explain1=Initialization of supporting variables max, min and delta, which are needed for the algorithm.
+
+
+explain2=Finding the minimum of the RGB values.
+
+
+explain3=Finding the maximum of the RGB values.
+
+
+explain4=Set v to the maximum value and normalize it (dividing by 255).
+
+
+explain5=Calculate delta as the difference between maximum and minimum.
+
+
+explain6=Check if the maximum is not zero.
+
+
+explain7=The maximum is not zero; calculate s.
+
+
+explain8=The maximum is zero.
+
+
+explain9=Set s to zero.
+
+
+explain10=Set h to -1.
+
+
+explain11=All values calculated; return the HSV values.
+
+
+explain12=Check if r is the maximum value.
+
+
+explain13=r is the maximum value; calculate h.
+
+
+explain14=r is not the maximum value; check if g is the maximum value.
+
+
+explain15=g is the maximum value; calculate h.
+
+
+explain16=b is actually the maximum value; calculate h.
+
+
+explain17=Multiply h with 60.
+
+
+explain18=Check if h is smaller than zero.
+
+
+explain19=h is smaller than zero; Add 360 to h.
+
+
+explain20=All values calculated; return the HSV values.
+
+
+######################
+rgbValues=RGB values:
+
+
+hsvValues=HSV values:
+
+
+rgbColor=current RGB color:
+
+
+hsvColor=current HSV color:
+

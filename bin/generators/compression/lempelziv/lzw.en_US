@@ -1,0 +1,15 @@
+﻿description=The Lempel-Ziv-Welch (LZW) algorithm is a lossless compression algorithm. It uses a dictionary to replace character sequences that occur multiple times in the text by a key. For the textual input demonstrated here, each character is represented by its ASCII value.\nOne strength of the LZW algorithm is that no dictionary has to be transmitted, as the dictionary can be created at run-time both during the compression and the decompression phase. A given input sequence will be added to the dictionary if it is not contained in the dictionary, but its prefix already is in the dictionary.
+code=The algorithm is demonstrated in an animation. In order to be able to display the complete algorithm, the input size is limited to a length of 24 characters.\npublic static void lzw(String[] text) {\nString w, k, result;\n int cnt = 256;\n Hashtable<String, Integer> dict = new Hashtable<String, Integer>();\n  for (int i = 0; i < 256;i++) {\n   dict.put("" + ((char)i), i);\n  }\n  for (int i=0; i < text.length; i++) {\n   k = text[i];\n   if (dict.containsKey(w + k)) w = w + k;\n   else {\n    result += dict.get(w) + " ";\n    dict.put(w + k, cnt);\n    cnt++;\n    w = k;\n   }\n  }\n }
+inWords=Verbal description
+step00=0) At runtime, the algorithm will construct a dictionary.
+step01=   Single character are encoded according to the ASCII standard,
+step02=   occupying the positions 0 to 255. Element 256+ will be created later
+step1=1) Iterate over the input character by character
+step2=2) Examine for each position the preceding character or a prefix built in step 3)
+step3=3) If the combination of prefix and current char is contained in the dictionary,
+step31=   add the current character to the prefix and continue with the next char in 2)
+step4=4) Otherwise, encode the prefix of the current char based on the dictionary;
+step41=   then concatenate prefix and current char and add this to the dictionary; go to 2)
+output=Output:
+noDict=The dictionary does not have to be included, as it can
+finish=be generated on the fly during decompression.

@@ -1,0 +1,270 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<PropertiesTreeModel xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="PropertiesTreeModel.xsd">
+	<Folder name="Root">
+		<Folder name="graph">
+			<Primitive type="intMatrix">
+				<name>adjacencyMatrix</name>
+				<value><intMatrix>0,1,1,1,0;0,0,0,0,1;0,0,0,1,1;0,0,0,0,0;0,0,0,0,0</intMatrix></value>
+				<description>undirected and unweighted graph</description>
+			</Primitive>
+			<Primitive type="int">
+				<name>graphSize</name>
+				<value><int>5</int></value>
+				<description>only relevant for random graph</description>
+			</Primitive>
+			<Primitive type="intMatrix">
+				<name>initialCoordinates</name>
+				<value><intMatrix>68, 102; 383, 437; 405, 398; 160, 385; 369, 63;</intMatrix></value>
+				<description></description>
+			</Primitive>
+			<AnimationProperties type="PolylineProperties">
+				<AnimationPropertyItem type="IntegerPropertyItem">
+					<name>depth</name>
+					<isEditable value="false" />
+					<label></label>
+					<value><int>1</int></value>
+				</AnimationPropertyItem>
+				<AnimationPropertyItem type="ColorPropertyItem">
+					<name>color</name>
+					<isEditable value="true" />
+					<label></label>
+					<value><Color>(0, 144, 0)</Color></value>
+				</AnimationPropertyItem>
+				<AnimationPropertyItem type="BooleanPropertyItem">
+					<name>hidden</name>
+					<isEditable value="false" />
+					<label></label>
+					<value><boolean value="false" /></value>
+				</AnimationPropertyItem>
+				<AnimationPropertyItem type="StringPropertyItem">
+					<name>name</name>
+					<isEditable value="true" />
+					<label></label>
+					<value><String>attrVector</String></value>
+				</AnimationPropertyItem>
+				<AnimationPropertyItem type="BooleanPropertyItem">
+					<name>bwArrow</name>
+					<isEditable value="true" />
+					<label></label>
+					<value><boolean value="false" /></value>
+				</AnimationPropertyItem>
+				<AnimationPropertyItem type="BooleanPropertyItem">
+					<name>fwArrow</name>
+					<isEditable value="true" />
+					<label></label>
+					<value><boolean value="true" /></value>
+				</AnimationPropertyItem>
+			</AnimationProperties>
+			<AnimationProperties type="PolylineProperties">
+				<AnimationPropertyItem type="IntegerPropertyItem">
+					<name>depth</name>
+					<isEditable value="false" />
+					<label></label>
+					<value><int>1</int></value>
+				</AnimationPropertyItem>
+				<AnimationPropertyItem type="ColorPropertyItem">
+					<name>color</name>
+					<isEditable value="true" />
+					<label></label>
+					<value><Color>(255, 0, 0)</Color></value>
+				</AnimationPropertyItem>
+				<AnimationPropertyItem type="BooleanPropertyItem">
+					<name>hidden</name>
+					<isEditable value="false" />
+					<label></label>
+					<value><boolean value="false" /></value>
+				</AnimationPropertyItem>
+				<AnimationPropertyItem type="StringPropertyItem">
+					<name>name</name>
+					<isEditable value="true" />
+					<label></label>
+					<value><String>repVector</String></value>
+				</AnimationPropertyItem>
+				<AnimationPropertyItem type="BooleanPropertyItem">
+					<name>bwArrow</name>
+					<isEditable value="true" />
+					<label></label>
+					<value><boolean value="false" /></value>
+				</AnimationPropertyItem>
+				<AnimationPropertyItem type="BooleanPropertyItem">
+					<name>fwArrow</name>
+					<isEditable value="true" />
+					<label></label>
+					<value><boolean value="true" /></value>
+				</AnimationPropertyItem>
+			</AnimationProperties>
+			<AnimationProperties type="PolylineProperties">
+				<AnimationPropertyItem type="IntegerPropertyItem">
+					<name>depth</name>
+					<isEditable value="false" />
+					<label></label>
+					<value><int>1</int></value>
+				</AnimationPropertyItem>
+				<AnimationPropertyItem type="ColorPropertyItem">
+					<name>color</name>
+					<isEditable value="true" />
+					<label></label>
+					<value><Color>(0, 208, 208)</Color></value>
+				</AnimationPropertyItem>
+				<AnimationPropertyItem type="BooleanPropertyItem">
+					<name>hidden</name>
+					<isEditable value="false" />
+					<label></label>
+					<value><boolean value="false" /></value>
+				</AnimationPropertyItem>
+				<AnimationPropertyItem type="StringPropertyItem">
+					<name>name</name>
+					<isEditable value="true" />
+					<label></label>
+					<value><String>displacementVector</String></value>
+				</AnimationPropertyItem>
+				<AnimationPropertyItem type="BooleanPropertyItem">
+					<name>bwArrow</name>
+					<isEditable value="true" />
+					<label></label>
+					<value><boolean value="false" /></value>
+				</AnimationPropertyItem>
+				<AnimationPropertyItem type="BooleanPropertyItem">
+					<name>fwArrow</name>
+					<isEditable value="true" />
+					<label></label>
+					<value><boolean value="true" /></value>
+				</AnimationPropertyItem>
+			</AnimationProperties>
+			<Primitive type="boolean">
+				<name>randomAdjacencyMatrix</name>
+				<value><boolean value="false" /></value>
+				<description>true -&gt; depends on graphSize</description>
+			</Primitive>
+			<Primitive type="boolean">
+				<name>randomInitCoordinates</name>
+				<value><boolean value="false" /></value>
+				<description>true -&gt; depends on graphSize</description>
+			</Primitive>
+		</Folder>
+		<Folder name="algo">
+			<Primitive type="boolean">
+				<name>decreasingDelta</name>
+				<value><boolean value="true" /></value>
+				<description>if true, delta has a cooling temperature</description>
+			</Primitive>
+			<Primitive type="double">
+				<name>c_attr</name>
+				<value><double>2.0</double></value>
+			</Primitive>
+			<Primitive type="double">
+				<name>c_rep</name>
+				<value><double>1.0</double></value>
+			</Primitive>
+			<Primitive type="double">
+				<name>initialDelta</name>
+				<value><double>0.1</double></value>
+			</Primitive>
+			<Primitive type="double">
+				<name>threshold</name>
+				<value><double>10.0</double></value>
+				<description>e.g. 10.0 for a 4-node graph</description>
+			</Primitive>
+			<Primitive type="int">
+				<name>maxIterations</name>
+				<value><int>100</int></value>
+			</Primitive>
+			<Primitive type="int">
+				<name>frameWidth</name>
+				<value><int>500</int></value>
+			</Primitive>
+			<Primitive type="int">
+				<name>frameHeight</name>
+				<value><int>500</int></value>
+			</Primitive>
+			<Primitive type="int">
+				<name>numberOfExplainedNodes</name>
+				<value><int>2</int></value>
+				<description>depends also on numberOfExplainedIterations</description>
+			</Primitive>
+			<Primitive type="int">
+				<name>numberOfExplainedIterations</name>
+				<value><int value="2" /></value>
+				<description>how many iterations should be described in detail</description>
+			</Primitive>
+			<Primitive type="double">
+				<name>optimalDistance</name>
+				<value><double>150.0</double></value>
+			</Primitive>
+		</Folder>
+		<AnimationProperties type="SourceCodeProperties">
+			<AnimationPropertyItem type="ColorPropertyItem">
+				<name>highlightColor</name>
+				<isEditable value="true" />
+				<label></label>
+				<value><Color>(255, 0, 0)</Color></value>
+			</AnimationPropertyItem>
+			<AnimationPropertyItem type="ColorPropertyItem">
+				<name>contextColor</name>
+				<isEditable value="false" />
+				<label></label>
+				<value><Color>(0, 0, 0)</Color></value>
+			</AnimationPropertyItem>
+			<AnimationPropertyItem type="IntegerPropertyItem">
+				<name>depth</name>
+				<isEditable value="false" />
+				<label></label>
+				<value><int>1</int></value>
+			</AnimationPropertyItem>
+			<AnimationPropertyItem type="IntegerPropertyItem">
+				<name>indentation</name>
+				<isEditable value="false" />
+				<label></label>
+				<value><int>1</int></value>
+			</AnimationPropertyItem>
+			<AnimationPropertyItem type="ColorPropertyItem">
+				<name>color</name>
+				<isEditable value="true" />
+				<label></label>
+				<value><Color>(0, 0, 0)</Color></value>
+			</AnimationPropertyItem>
+			<AnimationPropertyItem type="BooleanPropertyItem">
+				<name>hidden</name>
+				<isEditable value="false" />
+				<label></label>
+				<value><boolean value="false" /></value>
+			</AnimationPropertyItem>
+			<AnimationPropertyItem type="IntegerPropertyItem">
+				<name>size</name>
+				<isEditable value="false" />
+				<label></label>
+				<value><int>10</int></value>
+			</AnimationPropertyItem>
+			<AnimationPropertyItem type="StringPropertyItem">
+				<name>name</name>
+				<isEditable value="true" />
+				<label></label>
+				<value><String>text</String></value>
+			</AnimationPropertyItem>
+			<AnimationPropertyItem type="BooleanPropertyItem">
+				<name>bold</name>
+				<isEditable value="false" />
+				<label></label>
+				<value><boolean value="false" /></value>
+			</AnimationPropertyItem>
+			<AnimationPropertyItem type="IntegerPropertyItem">
+				<name>row</name>
+				<isEditable value="false" />
+				<label></label>
+				<value><int>1</int></value>
+			</AnimationPropertyItem>
+			<AnimationPropertyItem type="BooleanPropertyItem">
+				<name>italic</name>
+				<isEditable value="true" />
+				<label></label>
+				<value><boolean value="false" /></value>
+			</AnimationPropertyItem>
+			<AnimationPropertyItem type="FontPropertyItem">
+				<name>font</name>
+				<isEditable value="true" />
+				<label></label>
+				<value><Font>SansSerif</Font></value>
+			</AnimationPropertyItem>
+		</AnimationProperties>
+	</Folder>
+</PropertiesTreeModel>

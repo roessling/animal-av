@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<PropertiesTreeModel xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="PropertiesTreeModel.xsd">
+	<Folder name="Root">
+		<Primitive type="int">
+			<name>Anzahl_der_Damen</name>
+			<value><int>4</int></value>
+		</Primitive>
+		<Folder name="Spielfeld">
+			<Primitive type="Color">
+				<name>Farbe_Damen</name>
+				<value><Color>(0, 0, 0)</Color></value>
+			</Primitive>
+			<Primitive type="Color">
+				<name>Farbe_geschlagene_Dame</name>
+				<value><Color>(255, 0, 0)</Color></value>
+			</Primitive>
+			<Primitive type="Color">
+				<name>Farbe_schlagende_Dame</name>
+				<value><Color>(176, 0, 0)</Color></value>
+			</Primitive>
+			<Primitive type="Color">
+				<name>Kastenfarbe_1</name>
+				<value><Color>(255, 255, 255)</Color></value>
+			</Primitive>
+			<Primitive type="Color">
+				<name>Kastenfarbe_2</name>
+				<value><Color>(192, 192, 192)</Color></value>
+			</Primitive>
+		</Folder>
+		<Folder name="PseudoCode">
+			<Primitive type="Color">
+				<name>Pseudocode_Textfarbe</name>
+				<value><Color>(0, 0, 0)</Color></value>
+			</Primitive>
+			<Primitive type="Color">
+				<name>Pseudocode_Hintergrundfarbe</name>
+				<value><Color>(192, 192, 192)</Color></value>
+			</Primitive>
+			<Primitive type="Color">
+				<name>Pseudocode_Hervorhebungsfarbe</name>
+				<value><Color>(255, 0, 0)</Color></value>
+			</Primitive>
+		</Folder>
+		<Folder name="Überschrift">
+			<Primitive type="Color">
+				<name>Head_Textfarbe</name>
+				<value><Color>(0, 0, 0)</Color></value>
+			</Primitive>
+		</Folder>
+	</Folder>
+</PropertiesTreeModel>

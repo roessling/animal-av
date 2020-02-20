@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<PropertiesTreeModel xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="PropertiesTreeModel.xsd">
+	<Folder name="Root">
+		<Primitive type="intMatrix">
+			<name>Adjazenzmatrix</name>
+			<value><intMatrix>0, 1, 0, 1, 0, 0, 0; 0, 0, 1, 0, 0, 0, 0; 1, 0, 0, 1, 1, 0, 0; 0, 0, 0, 0, 1, 1, 0; 0, 1, 0, 0, 0, 0, 1; 0, 0, 0, 0, 0, 0, 1; 0, 0, 0, 0, 0, 0, 0</intMatrix></value>
+			<description>In dieser Matrix werden die existierenden Kanten gesetzt. Dabei stellt jede Zeile einen Knoten dar. Die Spalten repräsentieren die Zielknoten. Existiert beispielsweise eine Kante von Knoten 2 zu Knoten 3, so muss in der Zelle der dritten Zeile und vierten Spalte eine 1 stehen.</description>
+		</Primitive>
+		<Primitive type="intMatrix">
+			<name>Kapazitaetsmatrix</name>
+			<value><intMatrix>0, 3, 0, 3, 0, 0, 0; 0, 0, 4, 0, 0, 0, 0; 3, 0, 0, 1, 2, 0, 0; 0, 0, 0, 0, 2, 6, 0; 0, 1, 0, 0, 0, 0, 1; 0, 0, 0, 0, 0, 0, 9; 0, 0, 0, 0, 0, 0, 0</intMatrix></value>
+			<description>Diese Matrix gibt die Kapazitäten jeder Kante an. Diese Matrix muss konsistenterweise angegeben werden, da eine existierende Kante auch eine Kaüazität von 0 aufweisen kann.</description>
+		</Primitive>
+		<Primitive type="int">
+			<name>Startknoten</name>
+			<value><int>0</int></value>
+			<description>Dies ist die ID des Startknotens. Ist beispielsweise der Knoten, der in Zeile 1 der Adjazenzmatrix der Startknoten, so muss hier eine 1 stehen.</description>
+		</Primitive>
+		<Primitive type="int">
+			<name>Zielknoten</name>
+			<value><int>6</int></value>
+			<description>Dies ist die ID des Zielknotens. Ist beispielsweise der Knoten, der in Zeile 3 der Adjazenzmatrix der Startknoten, so muss hier eine 3 stehen.</description>
+		</Primitive>
+		<Primitive type="intMatrix">
+			<name>Knotenpositionen</name>
+			<value><intMatrix>0, 100; 0, 400; 100, 250; 200, 100; 200, 400; 350, 100; 350, 400</intMatrix></value>
+			<description>Diese Matrix gibt die grafischen Positionen der Knoten in der Reihenfolge der Zeilen der Adjazenzmatrix an. Die erste Spalte gibt die x- und die zweite Spalte die y-Position an</description>
+		</Primitive>
+	</Folder>
+</PropertiesTreeModel>

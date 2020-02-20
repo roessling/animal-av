@@ -1,0 +1,34 @@
+options {
+	MULTI=true;
+	NODE_DEFAULT_VOID=true;
+	STATIC=false;
+	NODE_PREFIX="";
+	NODE_USES_PARSER=true;
+}
+
+PARSER_BEGIN( FormulaParser )
+package algoanim.executors.formulaparser;
+public class FormulaParser {}
+PARSER_END( FormulaParser )
+
+SKIP : { " " | "\t" | "\n" | "\r" }
+
+
+TOKEN : { <MULT  : "*" > }
+TOKEN : { <DIV  : "/" > }
+TOKEN : { <PLUS  : "+" > }
+TOKEN : { <MINUS : "-" > }
+
+TOKEN : { <IDENTIFIER: ["a"-"z","A"-"Z"](["0"-"9","a"-"z","A"-"Z"])* > }
+TOKEN : { <NUMBER: (["0"-"9"])+ ( "." (["0"-"9"])+ )? > }
+
+SimpleNode query()	#Root	: {} { ( plusExpr() )? <EOF> { return jjtThis; } }
+void plusExpr()				: {} { minusExpr() ( <PLUS> minusExpr() #Plus(2) )* }
+void minusExpr()			: {} { multExpr() ( <MINUS> multExpr() #Minus(2) )* }
+void multExpr()				: {} { divExpr() ( <MULT> divExpr() #Mult(2) )* }
+void divExpr()				: {} { terminal() ( <DIV> terminal() #Div(2) )* }
+void klammer()				: {} { "(" plusExpr() ")" }
+
+void terminal()					: {} { number() | identifier() | klammer() }
+void number()		#Number		: { Token t; } { t=<NUMBER> { jjtThis.setToken(t.kind,t.image); } }
+void identifier()	#Identifier	: { Token t; } { t=<IDENTIFIER> { jjtThis.setToken(t.kind,t.image); } }

@@ -1,0 +1,78 @@
+algoName=Simplex Algorithm
+createGraph.drawAxis=First of all, we draw the axises
+createGraph.drawConstraints1=Every constraint can be transformed in the general form y=mx+b
+createGraph.drawConstraints2=And can be drawn as a line in the graph
+drawLines.label=constraint
+title=The Simplex Algorithm
+subtitle=The algorithm in words
+exampleLine0=max. -> TF
+exampleLine2=with the constraints
+createTableau=Create the simplex table
+exampleLabel=example
+writeLabels=Label the rows and columns with variables
+fillCoefficients=Fill in the constraints’ coefficients
+fillFRow=Fill in the coefficients of the target functions as negatives in the F-Row
+identMatrix=Fill in a identity matrix for the slack variables
+tableFinished=Simplex table finished
+graphPossible=The optimization problem can be shown as a graph
+firstSolution=The start solution is the trivial solution with
+resultTable=Result
+smallestFValue=Find the element with the smallest negative value in the f-row
+pivotColumn=Found Pivot-Column
+calcBA=Calculate b/a for all elements > 0 in the Pivot-Column
+unlimited=All coefficients are negative -> The model is unlimited
+noSolution=There’s no finite optimal solution. The algorithm aborts
+smallestBA=Find the element with the smallest, positive value for all b/a
+pivotRow=Found Pivot-Row!
+pivotElem=Found Pivot-Element!
+bvSwap=Take the variable in the basis
+transformPivotRow=Transform the Pivot-Row such that Pivot-Element = 1
+transformOthers=Transform the matrix such that all other elements in the Pivot-Column = 0
+iterFinish=Iteration finished. New Solution is: 
+noNegF=No negative values in the f-row anymore
+done=Simplex Algorithm finished,
+opt=The found optimal solution is: 
+row=row 
+explLine0=A Simplex-Method (or Simplex-Algorithm) is an optimization method 
+explLine1=of the numerics to solve linear optimization problems. It solves such a problem 
+explLine2=after a finite number of steps or proves that it's not solvable or unlimited. 
+explLine3=The basic idea behind the Simplex-Method was presented by Groge Dantzig in 1947; 
+explLine4=since then, they became one of the most important methods to solve 
+explLine5=linear optimization problems in reality. Simplex-Methods are pivot methods. 
+explLine6=//////
+explLine7=CAUTION: Do not change number of rows in the input parameters, since it will lead to errors
+explLine8=The Generator works exclusively for a optimization problem with 2 variables and 3 constraints
+explLine8=//////
+explLine9=INPUT DESCRIPTION
+explLine10=targetFunction: Please fill in the target functions parameters in the first two fields
+explLine11=constraints: Every row of the matrix represents the constraints such that a * x1 + b * x2 <= c
+explLine12=             Please fill in a,b and c in every line
+codeLine0=1. Create the simplex table
+codeLine1=As long as there are no negative values in the f-row
+codeLine2=   2. Choose the column t with the smallest (negative) value in the f-row (Pivot-Column)
+codeLine3=   3. Choose a row s, such that: b's / a'st = min b... (Pivot-Row)
+codeLine4=   4. Take the slack variable of the Pivot-Column into the basis (in the Pivot-Row)
+codeLine5=   5. Create a new unit vector with a'st = 1 through linear transformation of 
+codeLine6=      the constraint system under the new base variable (Gauß-Jordan-Method)
+finishLine0=The complexity of the Simplex-Method is still controverse.
+finishLine1=1972, it was shown against the state of research,
+finishLine2=that up to 2^n iterations are possible (with n = number of variables)
+finishLine3=Nevertheless, empirical observations and later proven through Meggido show
+finishLine4=that the expected runtime is O(min(m^2,n^2)). With n = number of variables and m = number of constraints.
+finishLine5.1=In our example we needed 
+finishLine5.2= iterations, with 2 variables and 3 constraints.	
+GraphQuestion=Can the optimization problem be shown in a graph?
+GraphQuestion.rightAnswer=Yes
+GraphQuestion.rightAnswerExplanation= Very good! Since the problem has two variables, it can be shown as a graph. Every constraint can be drawn as a line in a x1/x2 graph.
+GraphQuestion.wrongAnswer1=No
+GraphQuestion.wrongAnswer1Explanation=The answer is wrong. Since the problem has two variables, it can be shown as a graph. Every constraint can be drawn as a line in a x1/x2 graph.
+GraphQuestion.wrongAnswer2=It's not possible to answer that question yet
+GraphQuestion.wrongAnswer2Explanation=The answer is wrong. Since the problem has two variables, it can be shown as a graph. Every constraint can be drawn as a line in a x1/x2 graph.
+UnlimitedQuestion=What if all elements in the Pivot-Row are negative?
+UnlimitedQuestion.rightAnswer=There is a unmited number of solutions.
+UnlimitedQuestion.rightAnswerExplanation=Very good. It means, that the model is unlimited and that there is an unlimited number of solutions.
+UnlimitedQuestion.wrongAnswer1=The final solution is negative.
+UnlimitedQuestion.wrongAnswer1Explanation=The answer is wrong. It means, that the model is unlimited and that there is an unlimited number of solutions.
+UnlimitedQuestion.wrongAnswer2=There is no solution.
+UnlimitedQuestion.wrongAnswer2Explanation=The answer is wrong. It means, that the model is unlimited and that there is an unlimited number of solutions.
+

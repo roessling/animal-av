@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<PropertiesTreeModel xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="PropertiesTreeModel.xsd">
+	<Folder name="Root">
+		<Primitive type="StringMatrix">
+			<name>stuetzstellen</name>
+			<value><StringMatrix>0,1.8;1.7,3.4;3,2.1</StringMatrix></value>
+			<description>Hier die zu interpolierenden Stuetzstellen eintragen. Pro Zeile ein (x,y)-Tupel. X-Werte müssen paarweise verschieden sein.</description>
+		</Primitive>
+	</Folder>
+</PropertiesTreeModel>

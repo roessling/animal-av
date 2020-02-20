@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<PropertiesTreeModel xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="PropertiesTreeModel.xsd">
+	<Folder name="Root">
+		<Primitive type="intMatrix">
+			<name>speicherSequenz</name>
+			<value><intMatrix>1, 2, 1, 2, 3, 4, 5; 1, 0, 0, 1, 0, 1, 0; 0, 1, 1, 0, 1, 0, 1</intMatrix></value>
+			<description>Speicherzugriffe auf Seiten und Art der Zugriffs </description>
+		</Primitive>
+		<Primitive type="Color">
+			<name>highlight</name>
+			<value><Color>(208, 0, 0)</Color></value>
+			<description>Farbe für Highlights</description>
+		</Primitive>
+		<Primitive type="int">
+			<name>anzahlSeiten</name>
+			<value><int>4</int></value>
+			<description>Anzahl der freien Seiten im Cache</description>
+		</Primitive>
+	</Folder>
+</PropertiesTreeModel>

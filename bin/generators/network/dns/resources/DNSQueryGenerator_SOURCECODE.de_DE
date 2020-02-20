@@ -1,0 +1,17 @@
+1. Ein Client sendet seine Anfrage an den lokalen Nameserver
+
+2a. Falls der lokale Nameserver die Antwort bereits im Cache gespeichert hat, gibt er die Antwort zurück
+	Die Anfrage wurde erfolgreich beantwortet und das Verfahren ist beendet
+2b. Der lokale Server sendet eine Anfrage nach dem Hostnamen an einen Root Nameserver
+
+3a. Dieser antwortet mit der IP Adresse, falls der Hostname bekannt ist
+3b. Der Root Nameserver antwortet mit der Adresse des zuständigen Nameservers für den ihm bekannten Teil des Hostnamen
+
+4a. Falls der lokale Server eine IP Adresse als Antwort erhält, liefert er diese an den Client
+	Die Anfrage wurde erfolgreich beantwortet und das Verfahren ist beendet
+4b. Wenn die Antwort die Adresse eines Nameservers ist, wird eine neue Anfrage an diesen gestellt
+
+5a. Der Nameserver antwortet mit der IP Adresse, falls der Hostname bekannt ist
+5b. Der Server antwortet mit der Adresse des nächsten Nameservers
+
+6. Gehe zu 4.

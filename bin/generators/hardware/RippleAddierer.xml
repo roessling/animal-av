@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<PropertiesTreeModel xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="PropertiesTreeModel.xsd">
+	<Folder name="Root">
+		<Folder name="Eingabe">
+			<Primitive type="intArray">
+				<name>A</name>
+				<value><intArray>1, 0, 1, 0</intArray></value>
+			</Primitive>
+			<Primitive type="intArray">
+				<name>B</name>
+				<value><intArray>1, 1, 0, 0</intArray></value>
+			</Primitive>
+			<Primitive type="int">
+				<name>Verzögerung And Gatter</name>
+				<value><int>30</int></value>
+			</Primitive>
+			<Primitive type="int">
+				<name>Verzögerung Or Gatter</name>
+				<value><int>40</int></value>
+			</Primitive>
+		</Folder>
+		<Folder name="Formatierung">
+			<Primitive type="Color">
+				<name>Textfarbe</name>
+				<value><Color>(0, 0, 0)</Color></value>
+			</Primitive>
+			<Primitive type="Color">
+				<name>Highlight Farbe</name>
+				<value><Color>(255, 0, 0)</Color></value>
+			</Primitive>
+			<Primitive type="Color">
+				<name>Farbe der Addierer</name>
+				<value><Color>(128, 128, 128)</Color></value>
+			</Primitive>
+		</Folder>
+	</Folder>
+</PropertiesTreeModel>

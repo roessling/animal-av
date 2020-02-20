@@ -1,0 +1,57 @@
+pathDescriptionSlide=slides/Beschreibung_komplett.txt
+pathConclusion=slides/Abschluss.txt
+
+title=Binärer Suchbaum: Einfügen und Löschen
+toInsert=Einzufügender Schlüssel:
+toDelete=Zu löschender Schlüssel:
+insert=Einfügen: {0}
+delete=Löschen: {0}
+question=Durch welchen Knoten wird {0} ersetzt?
+answerNotReplaced={0} wird nicht durch einen anderen Knoten ersetzt.
+correctAnswerLeaf=Korrekt, {0} ist ein Blatt, weshalb er nicht durch einen anderen Knoten ersetzt wird.
+correctAnswerOther=Korrekt, {0} wird durch {1} ersetzt.
+wrongAnswerLeaf=Diese Antwort ist nicht korrekt! {0} ist ein Blatt, weshalb er nicht durch einen anderen Knoten ersetzt wird.
+wrongAnswerOther=Diese Antwort ist nicht korrekt! Die korrekte Antwort wäre {0} gewesen.
+
+rootNoChildren=Der Rootknoten hat keine Kinder,
+rootNoChildrenCont=daher kann er einfach gelöscht werden.
+rootLeftEmpty=Der linke Teilbaum ist leer, der Rootknoten kann also
+rootLeftEmptyCont=einfach durch den rechten Kindknoten ersetzt werden.
+rootRightEmpty=Der rechte Teilbaum ist leer, der Rootknoten kann also
+rootRightEmptyCont=einfach durch den linken Kindknoten ersetzt werden.
+rootBothChildrenCont=Um mit diesem arbeiten zu können, wird sein Elternknoten gesucht.
+rootLeftRightmost=Das linke Kind des Root-Knotens ist der größte Knoten im linken Teilbaum und hat daher kein rechtes Kind.
+rootLeftRightmostCont=Daher ist es ausreichend, den Root-Knoten durch sein linkes Kind zu ersetzen und sein rechtes Kind als rechtes Kind des neuen Root-Knotens zu setzen.
+
+deleteCheck=Zunächst wird geprüft, ob einer der (eventuell vorhandenen) Kindknoten der gesuchte Knoten ist.
+deleteNode=Ist dies der Fall, wird der Knoten gelöscht.
+deleteContinue=Ist dies nicht der Fall, wird geprüft, bei welchem Knoten die Suche fortgesetzt werden soll.
+deleteNoNode=Ist kein Knoten in der korrekten Richtung vorhanden, ist der zu löschende Knoten nicht enthalten.
+deleteNoChild=Ist kein Kind vorhanden, kann der Knoten gelöscht werden.
+deleteAtLeastOne=Ist mindestens ein Kind vorhanden, wird geprüft, ob ein Kind nicht vorhanden ist.
+deleteNoLeft=Ist das linke Kind nicht vorhanden, kann das rechte Kind des zu löschenden Knoten als neues Kind des Elternknotens festgelegt werden.
+deleteNoRight=Ist das rechte Kind nicht vorhanden, kann das linke Kind des zu löschenden Knoten als neues Kind des Elternknotens festgelegt werden.
+deleteBothChildren=Beide Kinder existieren. Daher muss nun der größte Knoten im linken Teilbaum gesucht werden.
+
+searchRightmostCheckLeft=Nun wird geprüft, ob der größte Knoten im linken Teilbaum das linke Kind des zu löschenden Knotens ist.
+searchRightmostCheckLeftTrue=Da dies der Fall ist, ist es ausreichend, den  zu löschenden Knoten durch sein linkes Kind zu ersetzen und sein rechtes Kind als rechtes Kind des neuen Knotens zu setzen.
+searchRightmostCheckLeftFalse=Ist dies nicht der Fall, muss der gefundene Knoten zunächst aus dem Baum gelöst werden.
+searchRightmostLeaf=Ist der gefundene Knoten ein Blatt, kann er einfach verschoben werden.
+searchRightmostNoLeaf=Hat dieser Knoten einen linken Teilbaum, wird dieser dem zuvor gesuchten Elternknoten als rechter Teilbaum angehängt.
+searchRightmostNoLeafCont=Anschließend kann der Knoten verschoben werden.
+
+readAcc=Lesende Zugriffe:
+writeAcc=Schreibende Zugriffe:
+
+readAccLast=Anzahl lesende Zugriffe während der letzten Operation: {0}
+readAccSum=Gesamtzahl lesender Zugriffe: {0}
+writeAccLast=Anzahl schreibende Zugriffe während der letzten Operation: {0}
+writeAccSum=Gesamtzahl schreibender Zugriffe: {0}
+depth=Tiefe des Baums: {0}
+numNodes=Anzahl der Knoten im Baum: {0}
+accRelHeight=Anzahl Zugriffe pro Ebene des Baums:{0}
+accRelNodes=Anzahl Zugriffe in Relation zur Anzahl der Knoten im Baum: {0}
+
+legend1=Aktueller Vergleich
+legend2=Basisknoten
+legend3=Zweiter Vergleich

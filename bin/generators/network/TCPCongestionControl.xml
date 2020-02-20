@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<PropertiesTreeModel xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="PropertiesTreeModel.xsd">
+	<Folder name="Root">
+		<Primitive type="int">
+			<name>ssTresh</name>
+			<value><int>5000</int></value>
+			<description>Der ss_treshold wird verwendet, um aus der SlowStart-Phase in die CongestionAvoidance-Phase zu wechseln. Der ss_tresh darf nicht negativ sein und auch nicht grÃ¶Ãer als der Wert von Data.</description>
+		</Primitive>
+		<Primitive type="int">
+			<name>modus</name>
+			<value><int>0</int></value>
+			<description> User entscheidet selbst wie der Algorithmus ablaufen soll. Wert 0 zeigt ein Hardcoded-Beispiel. Wert 1 generiert ein zufÃ¤lliges Beispiel. Mit Wert 2 wird der String in der Primtiven congestionOrder abgearbeitet. </description>
+		</Primitive>
+		<Primitive type="String">
+			<name>congestionOrder</name>
+			<value><String>aaaaaaaaa3aaaaaaaaat</String></value>
+			<description>Mittels des Strings kann der Ablauf des Algorithmus selbst gewÃ¤hlt werden. Ein a wird als ACK, ein t als TIMEOUT und eine 3 als TRIPLE ACK ausgewertet. Alle anderen Eingaben (inklusive Leertaste) fÃ¼hren zu einem Fehler. Der String darf nicht lÃ¤nger als 100 Zeichen lang sein</description>
+		</Primitive>
+		<AnimationProperties type="PolylineProperties">
+			<AnimationPropertyItem type="IntegerPropertyItem">
+				<name>depth</name>
+				<isEditable value="false" />
+				<label></label>
+				<value><int>1</int></value>
+			</AnimationPropertyItem>
+			<AnimationPropertyItem type="ColorPropertyItem">
+				<name>color</name>
+				<isEditable value="true" />
+				<label>Colour </label>
+				<value><Color>(255, 0, 0)</Color></value>
+			</AnimationPropertyItem>
+			<AnimationPropertyItem type="BooleanPropertyItem">
+				<name>hidden</name>
+				<isEditable value="false" />
+				<label></label>
+				<value><boolean value="false" /></value>
+			</AnimationPropertyItem>
+			<AnimationPropertyItem type="StringPropertyItem">
+				<name>name</name>
+				<isEditable value="true" />
+				<label></label>
+				<value><String>threshholdColour</String></value>
+			</AnimationPropertyItem>
+			<AnimationPropertyItem type="BooleanPropertyItem">
+				<name>bwArrow</name>
+				<isEditable value="false" />
+				<label></label>
+				<value><boolean value="false" /></value>
+			</AnimationPropertyItem>
+			<AnimationPropertyItem type="BooleanPropertyItem">
+				<name>fwArrow</name>
+				<isEditable value="false" />
+				<label></label>
+				<value><boolean value="false" /></value>
+			</AnimationPropertyItem>
+		</AnimationProperties>
+		<AnimationProperties type="PolylineProperties">
+			<AnimationPropertyItem type="IntegerPropertyItem">
+				<name>depth</name>
+				<isEditable value="false" />
+				<label></label>
+				<value><int>1</int></value>
+			</AnimationPropertyItem>
+			<AnimationPropertyItem type="ColorPropertyItem">
+				<name>color</name>
+				<isEditable value="true" />
+				<label>Colour</label>
+				<value><Color>(0, 144, 0)</Color></value>
+			</AnimationPropertyItem>
+			<AnimationPropertyItem type="BooleanPropertyItem">
+				<name>hidden</name>
+				<isEditable value="false" />
+				<label></label>
+				<value><boolean value="false" /></value>
+			</AnimationPropertyItem>
+			<AnimationPropertyItem type="StringPropertyItem">
+				<name>name</name>
+				<isEditable value="true" />
+				<label></label>
+				<value><String>graphColour</String></value>
+			</AnimationPropertyItem>
+			<AnimationPropertyItem type="BooleanPropertyItem">
+				<name>bwArrow</name>
+				<isEditable value="false" />
+				<label></label>
+				<value><boolean value="false" /></value>
+			</AnimationPropertyItem>
+			<AnimationPropertyItem type="BooleanPropertyItem">
+				<name>fwArrow</name>
+				<isEditable value="false" />
+				<label></label>
+				<value><boolean value="false" /></value>
+			</AnimationPropertyItem>
+		</AnimationProperties>
+	</Folder>
+</PropertiesTreeModel>

@@ -1,0 +1,19 @@
+noSuchKeyException=There is no resource for entry {0}
+iconNotFound=Icon "{0}" not found
+header=Alghorithmus von Neville
+description1=Bei einem Satz von n+1 Punkte (x_i,y_i),wo keine zwei x_i gleich sind das Interpolationspolynom
+description2=p mit der Eigenschaft:
+description3=p(x_i)=y_i für alle i=0,...,n
+description4= Ein solches Polynom existiert stets und ist eindeutig bestimmt. Der Algorithmus wertet das Polynom an einer stelle x.
+conclusion1=Dieser Algorithmus benötigt O (n^2) Gleitkomma-Operationen . Lyness und Moler 1966 zeigten,
+conclusion2=dass wenn man unbestimmten  Koeffizienten der Polynome in Neville -Algorithmus verwendet, kann man die Maclaurin Expansion des endgültigen Interpolationspolynoms berechnen,
+conclusion3=die am Ursprung numerischen Approximation für die Ableitungen der Funktion ergibt
+conclusion4= Während dieser Prozess mehr arithmetische Operationen erfordert als im Finite-Differenzen-Verfahren erforderlich ist,
+conclusion5=die Auswahl der Punkte für die Funktionsauswertung ist in keiner Weise beschränkt.
+conclusion6=Sie zeigen auch, dass ihre Verfahren direkt zur Lösung linearer Gleichungssysteme der Vandermonde-Typ angewendet werden kann.
+calculations=Anzahl der Operationen
+feedback11=richtig
+feedback12=falsch
+question1= Wie viele Punkte braucht man um ein Polynome vom Grad  
+question12=an einer stelle x mit Nevilles Algorithmus zu werten ?
+question2=Verringert die hinzunahme von punkten den fehler zwischen den exacten wert der Ursprung funktion und den mit Nevilles Algorithmus errechneten wert ?

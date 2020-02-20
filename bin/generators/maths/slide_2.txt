@@ -1,0 +1,18 @@
+[block]
+[br]
+[br]
+[br]
+To be able to find the value of the variables and b that emerge from the integrations we need
+[br]
+to use “boundary conditions” that use information we can assume about the spline function in the knots. 
+[br]
+We can choose between different boundary conditions which yield different error margins.
+[/block]
+
+[block] 
+The most common boundary conditions use the following information about the spline:
+[br]
+1) First derivatives at the endpoints are known
+[br]
+2) Second derivatives at the endpoints are known
+[/block]

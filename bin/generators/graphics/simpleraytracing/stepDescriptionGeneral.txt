@@ -1,0 +1,21 @@
+{cameradescription
+The camera is aligned in direction of the circle.
+}
+{lightsource
+The sun represents a light source.
+}
+{pixels
+The (screen) pixels are represented as several circles.
+}
+{objects
+These are the objects in the scene.
+}
+{boundingbox
+The colored rectangle will represent
+the bounding box of the whole scene, in which the objects are. 
+If a ray does not hit an object, it will hit the bounding box
+and the pixel will be colored with its color, like the sky for example.
+}
+{pseudo
+Here is some pseudo code for the ray tracing algorithm which will be highlighted during the animation.
+}

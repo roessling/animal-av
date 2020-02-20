@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<PropertiesTreeModel xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="PropertiesTreeModel.xsd">
+	<Folder name="Root">
+		<Primitive type="int">
+			<name>width</name>
+			<value><int>20</int></value>
+		</Primitive>
+		<Primitive type="int">
+			<name>height</name>
+			<value><int>20</int></value>
+		</Primitive>
+		<Primitive type="int">
+			<name>iterations</name>
+			<value><int>10</int></value>
+		</Primitive>
+		<Primitive type="int">
+			<name>delta</name>
+			<value><int>1</int></value>
+		</Primitive>
+		<Folder name="Colors">
+			<Primitive type="Color">
+				<name>highColor</name>
+				<value><Color>(255, 255, 255)</Color></value>
+			</Primitive>
+			<Primitive type="Color">
+				<name>lowColor</name>
+				<value><Color>(0, 0, 0)</Color></value>
+			</Primitive>
+			<AnimationProperties type="SquareProperties">
+				<AnimationPropertyItem type="ColorPropertyItem">
+					<name>fillColor</name>
+					<isEditable value="true" />
+					<label>fill color</label>
+					<value><Color>(208, 0, 0)</Color></value>
+				</AnimationPropertyItem>
+				<AnimationPropertyItem type="ColorPropertyItem">
+					<name>color</name>
+					<isEditable value="true" />
+					<label>border color</label>
+					<value><Color>(0, 0, 0)</Color></value>
+				</AnimationPropertyItem>
+				<AnimationPropertyItem type="BooleanPropertyItem">
+					<name>hidden</name>
+					<isEditable value="false" />
+					<label></label>
+					<value><boolean value="true" /></value>
+				</AnimationPropertyItem>
+				<AnimationPropertyItem type="StringPropertyItem">
+					<name>name</name>
+					<isEditable value="false" />
+					<label></label>
+					<value><String>highlights</String></value>
+				</AnimationPropertyItem>
+				<AnimationPropertyItem type="IntegerPropertyItem">
+					<name>depth</name>
+					<isEditable value="false" />
+					<label></label>
+					<value><int>1</int></value>
+				</AnimationPropertyItem>
+				<AnimationPropertyItem type="BooleanPropertyItem">
+					<name>filled</name>
+					<isEditable value="false" />
+					<label></label>
+					<value><boolean value="true" /></value>
+				</AnimationPropertyItem>
+			</AnimationProperties>
+		</Folder>
+	</Folder>
+</PropertiesTreeModel>

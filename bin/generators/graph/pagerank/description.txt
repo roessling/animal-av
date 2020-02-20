@@ -1,0 +1,10 @@
+Der PageRank-Algorithmus wurde von Larry Page und Sergej Brin entwickelt, um eine Menge verlinkter Dokumente anhand ihrer Struktur zu bewerten beziehungsweise zu gewichten.
+Eine Beispielanwendung des PageRank-Algorithmus ist die Bestimmung der Wichtigkeit von Webseiten.
+Dabei können die Webseiten als Knoten in einem Graphen betrachtet werden, während die Verlinkungen zwischen den Webseiten gerichtete Kanten darstellen.
+Mit dem PageRank-Algorithmus kann aufgrund eines solchen Graphen anschließend die Wichtigkeit der Webseiten anhand der Links bestimmt werden.
+
+Der hier beschriebene Ansatz zur Berechnung des PageRanks eines Graphen ist die sogenannte Power Iteration Methode.
+Diese Methode versucht iterativ, über mehrere Berechnungsrunden den PageRank solange zu verfeinern, bis er sich nicht mehr verändert.
+Diese Methode lässt sich zudem mit einigen Erweiterungen versehen, um Sonderfälle zu behandeln:
+- Dangling Nodes: Dangling Nodes sind Knoten die keine ausgehenden Kanten besitzen und damit ihren PageRank nicht weitergeben können.
+- Random Surfer Modell: Das Random Surfer Modell führt ein zufälliges Verhalten des Benutzers ein, nach dem der Benutzer nicht zu 100% den möglichen Kanten folgt, sondern sich zu einem anderen Knoten zufällig bewegt.

@@ -1,0 +1,9 @@
+Pseudocode
+		
+fagin(Array A, k) {
+	L := Listen von Objekten aus dem Array A. Jede Liste ist nach einem Attribut sortiert.
+	Nehme einen parallelen Zugriff auf die sortiern Listen in L vor.
+			Stoppe, wenn k Objekte aus allen Listen gesehen wurden.
+	Fehlende Attributwerte werden mit Random Access ermittelt.
+	Berechne die Punktzahl für alle Objekte.
+}

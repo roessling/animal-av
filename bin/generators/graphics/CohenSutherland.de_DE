@@ -1,0 +1,125 @@
+### exception handling ###
+
+	noSuchKeyException = Es gibt keinen Wert zu dem Schlüssel {0}
+	iconNotFound = Schlüssel "{0}" wurde nicht gefunden
+
+
+### introduction ###
+
+	TITLE = Cohen-Sutherland-Algorithmus
+	
+	INTRODUCTION_HTML = Der Algorithmus von Cohen-Sutherland (CSA) dient zum Abschneiden (Clipping) von Linien an einem Rechteck. Er eignet sich besonders f&uuml;r Situationen, bei denen die meisten der zu clippenden Linien innerhalb oder au&szlig;erhalb des Rechtsecks liegen. \n\nF&uuml;r jeden Endpunkt einer Linie wird zun&auml;chst ermittelt, ob dieser sich oberhalb, unterhalb, rechts oder links des Rechtecks befindet. Dazu wird f&uuml;r jeden Punkt eine 4-Bit Codierung erstellt, die angibt, in welchem Halbraum der Punkt jeweils liegt. Liegt der Punkt im entsprechenden Halbraum, erh&auml;lt die Codierung an der entsprechenden Stelle eine 1. \n\nStelle 0: oberer Halbraum\nStelle 1: unterer Halbraum\nStelle 2: rechter Halbraum\nStelle 3: linker Halbraum\n\nLiegt ein Punkt in zwei Halbr&auml;umen gleichzeitig, erh&auml;lt er f&uuml;r beide Halbr&auml;ume eine 1 als Codierung.\n\nDanach werden die Liniensegmente untersucht. Dabei k&ouml;nnen drei unterschiedliche F&auml;lle eintreten.\n\nWenn die beiden Endpunkte durch ein logisches ODER verkn&uuml;pft die Codierung 0000 ergeben, liegt dieses Liniensegment vollst&auml;ndig INNERHALB des Rechtecks und muss nicht geclippt und somit nicht weiter betrachtet werden. \nWenn die beiden Endpunkte durch ein logisches UND verkn&uuml;pft die Codierung 0000 NICHT ergeben, liegt dieses Liniensegment vollst&auml;ndig AU&szlig;ERHALB des Rechtecks und muss nicht geclippt und somit nicht weiter betrachtet werden. \n\nAnsonsten muss das Liniensegment am Rechteck geclippt werden. In diesem Fall ergibt die Verkn&uuml;pfung durch ein logisches ODER die jeweiligen Schnittgeraden, an denen das Liniensegment geclippt werden muss. F&uuml;r jeden Schnitt muss nun der Schnittpunkt mit der entsprechenden Schnittgerade berechnet werden. Dies wird f&uuml;r alle schneidenen Halbr&auml;ume wiederholt. Das Berechnen der Schnittpunkte geschieht mit dem Liang-Barsky-Algorithmus, auf den in der Animation nicht n&auml;her eingegangen wird. \n\nDa der Algorithmus bei einer eingegeben Linie lediglich mehrmals durchlaufen wird, wenn die Linie mehr als einen Halbraum schneidet, werden in unserer Animation mehrere Linien hintereinander verarbeitet, um die Arbeitsweise des CSA besser zu verdeutlichen. \n\nEng im Zusammenhang mit dem CSA steht der Sutherland-Hodgman-Algorithmus (SHA). Die hier vorgestellte einfache Variante des CSA funktioniert generell nicht, wenn geschlossene Polygone geclippt werden sollen, da es nicht m&ouml;glich ist, mit dem CSA wieder geschlossene Polygone nach dem Clipping zu erstellen. Der SHA clippt dagegen das gesamte Polygon sukzessive an den Fenstergrenzen. \n\nHinweis zum &Auml;ndern der Clipping Plane:\nDie Wertetabelle ist wie folgt angeordnet:\n    oben links    unten rechts\nx\ny\n 			
+	
+	INTRODUCTION_1_LENGTH = 18
+	INTRODUCTION_1_0  = Der Algorithmus von Cohen-Sutherland (CSA) dient zum Abschneiden (Clipping) von Linien an einem 
+	INTRODUCTION_1_1  = Rechteck. Er eignet sich besonders für Situationen, bei denen die meisten der zu 
+	INTRODUCTION_1_2  = clippenden Linien innerhalb oder außerhalb des Rechtsecks liegen. 
+	INTRODUCTION_1_3  =  
+	INTRODUCTION_1_4  = Für jeden Endpunkt einer Linie wird zunächst ermittelt, ob dieser sich oberhalb, unterhalb, 
+	INTRODUCTION_1_5  = rechts oder links des Rechtecks befindet. Dazu wird für jeden Punkt eine 4-Bit Codierung 
+	INTRODUCTION_1_6  = erstellt, die angibt, in welchem Halbraum der Punkt jeweils liegt. Liegt der Punkt im 
+	INTRODUCTION_1_7  = entsprechenden Halbraum, erhält die Codierung an der entsprechenden Stelle eine 1. 
+	INTRODUCTION_1_8  =  
+	INTRODUCTION_1_9  = \u0020\u0020\u0020\u0020\u0020Stelle 0: oberer Halbraum
+	INTRODUCTION_1_10 = \u0020\u0020\u0020\u0020\u0020Stelle 1: unterer Halbraum
+	INTRODUCTION_1_11 = \u0020\u0020\u0020\u0020\u0020Stelle 2: rechter Halbraum
+	INTRODUCTION_1_12 = \u0020\u0020\u0020\u0020\u0020Stelle 3: linker Halbraum
+	INTRODUCTION_1_13 =  
+	INTRODUCTION_1_14 = Liegt ein Punkt in zwei Halbräumen gleichzeitig, erhält er für beide Halbräume eine 1  
+	INTRODUCTION_1_15 = als Codierung.  
+	INTRODUCTION_1_16 =  
+	INTRODUCTION_1_17 = Folgende Grafik repräsentiert die einzelnen Halbraumbereiche:
+	
+	INTRODUCTION_2_LENGTH = 17
+	INTRODUCTION_2_0  = Danach werden die Liniensegmente untersucht. Dabei können drei unterschiedliche Fälle 
+	INTRODUCTION_2_1  = eintreten.
+	INTRODUCTION_2_2  =  
+	INTRODUCTION_2_3  = Wenn die beiden Endpunkte durch ein logisches ODER verknüpft die Codierung 0000 ergeben, 
+	INTRODUCTION_2_4  = liegt dieses Liniensegment vollständig INNERHALB des Rechtecks und muss nicht geclippt und 
+	INTRODUCTION_2_5  = somit nicht weiter betrachtet werden. 
+	INTRODUCTION_2_6  =  
+	INTRODUCTION_2_7  = Wenn die beiden Endpunkte durch ein logisches UND verknüpft die Codierung 0000 NICHT 
+	INTRODUCTION_2_8  = ergeben, liegt dieses Liniensegment vollständig AUßERHALB des Rechtecks und muss nicht 
+	INTRODUCTION_2_9  = geclippt und somit nicht weiter betrachtet werden. 
+	INTRODUCTION_2_10 =  
+	INTRODUCTION_2_11 = Ansonsten muss das Liniensegment am Rechteck geclippt werden. In diesem Fall ergibt die 
+	INTRODUCTION_2_12 = Verknüpfung durch ein logisches ODER die jeweiligen Schnittgeraden, an denen das 
+	INTRODUCTION_2_13 = Liniensegment geclippt werden muss. Für jeden Schnitt muss nun der Schnittpunkt mit der 
+	INTRODUCTION_2_14 = entsprechenden Schnittgerade berechnet werden. Dies wird für alle schneidenen Halbräume 
+	INTRODUCTION_2_15 = wiederholt. Das Berechnen der Schnittpunkte geschieht mit dem Liang-Barsky-Algorithmus, auf 
+	INTRODUCTION_2_16 = den in der Animation nicht näher eingegangen wird. 
+
+	INTRODUCTION_3_LENGTH = 5
+	INTRODUCTION_3_0 = Wichtiger Hinweis!
+	INTRODUCTION_3_1 = 
+	INTRODUCTION_3_2 = Da der Algorithmus bei einer eingegeben Linie lediglich mehrmals durchlaufen wird, wenn die 
+	INTRODUCTION_3_3 = Linie mehr als einen Halbraum schneidet, werden in unserer Animation mehrere Linien 
+	INTRODUCTION_3_4 = hintereinander verarbeitet, um die Arbeitsweise des CSA besser zu verdeutlichen. 
+	
+	
+### conclusion ###
+
+	CONCLUSION_1_LENGTH = 3
+	CONCLUSION_1_0 = Der Algorihtmus von Cohen-Sutherland berechnete mit Hilfe
+	CONCLUSION_1_1 = des Algorithmus von Liang-Barsky alle Schnittpunkte 
+	CONCLUSION_1_2 = der einzelnen Linien mit dem Rechteck.
+	CONCLUSION_1_X = (geclippte Linien:\u0020
+	
+	CONCLUSION_2_LENGTH = 3
+	CONCLUSION_2_0 = Liegt die Linie vollständig außerhalb oder vollständig 
+	CONCLUSION_2_1 = innerhalb des Rechtsecks, wurde kein Schnittpunkt 
+	CONCLUSION_2_2 = berechnet. 
+	CONCLUSION_2_X = (ungeänderte Linien:\u0020
+	
+	
+
+### source code ###
+
+	SOURCE_CODE_INTRO = FOR Endpunkte A und B\n     IF Endpunkt im oberen Halbraum\n           setze Codierung an Stelle 0 auf 1\n     IF Endpunkt im unteren Halbraum\n           setze Codierung an Stelle 1 auf 1\n     IF Endpunkt im rechten Halbraum\n          setze Codierung an Stelle 2 auf 1\n     IF Endpunkt im linken Halbraum\n          setze Codierung an Stelle 3 auf 1\n\nIF A | B == 0000\n     terminiere (Liniensegment liegt innerhalb)\nIF A & B != 0000\n     terminiere (Liniensegment liegt außerhalb)\nELSE\n     S = A | B\n     IF S[0] == 1\n          Berechne Schnittpunkt SP0 mit oberer Schnittgerade\n     IF S[1] == 1\n          Berechne Schnittpunkt SP1 mit unterer Schnittgerade\n     IF S[2] == 1\n          Berechne Schnittpunkt SP2 mit rechter Schnittgerade\n     IF S[3] == 1\n          Berechne Schnittpunkt SP3 mit linker Schnittgerade\n
+	
+	SOURCE_CODE_LENGTH = 24
+	SOURCE_CODE_0  = FOR Endpunkte A und B
+	SOURCE_CODE_1  = \u0020\u0020\u0020\u0020\u0020IF Endpunkt im oberen Halbraum
+	SOURCE_CODE_2  = \u0020\u0020\u0020\u0020\u0020\u0020\u0020\u0020\u0020\u0020setze Codierung an Stelle 0 auf 1
+	SOURCE_CODE_3  = \u0020\u0020\u0020\u0020\u0020IF Endpunkt im unteren Halbraum
+	SOURCE_CODE_4  = \u0020\u0020\u0020\u0020\u0020\u0020\u0020\u0020\u0020\u0020setze Codierung an Stelle 1 auf 1
+	SOURCE_CODE_5  = \u0020\u0020\u0020\u0020\u0020IF Endpunkt im rechten Halbraum
+	SOURCE_CODE_6  = \u0020\u0020\u0020\u0020\u0020\u0020\u0020\u0020\u0020\u0020setze Codierung an Stelle 2 auf 1
+	SOURCE_CODE_7  = \u0020\u0020\u0020\u0020\u0020IF Endpunkt im linken Halbraum
+	SOURCE_CODE_8  = \u0020\u0020\u0020\u0020\u0020\u0020\u0020\u0020\u0020\u0020setze Codierung an Stelle 3 auf 1
+	SOURCE_CODE_9  = 
+	SOURCE_CODE_10 = IF A | B == 0000
+	SOURCE_CODE_11 = \u0020\u0020\u0020\u0020\u0020terminiere (Liniensegment liegt innerhalb)
+	SOURCE_CODE_12 = IF A & B != 0000
+	SOURCE_CODE_13 = \u0020\u0020\u0020\u0020\u0020terminiere (Liniensegment liegt außerhalb)
+	SOURCE_CODE_14 = ELSE
+	SOURCE_CODE_15 = \u0020\u0020\u0020\u0020\u0020S = A | B
+	SOURCE_CODE_16 = \u0020\u0020\u0020\u0020\u0020IF S[0] == 1
+	SOURCE_CODE_17 = \u0020\u0020\u0020\u0020\u0020\u0020\u0020\u0020\u0020\u0020Berechne Schnittpunkt SP0 mit oberer Schnittgerade
+	SOURCE_CODE_18 = \u0020\u0020\u0020\u0020\u0020IF S[1] == 1
+	SOURCE_CODE_19 = \u0020\u0020\u0020\u0020\u0020\u0020\u0020\u0020\u0020\u0020Berechne Schnittpunkt SP1 mit unterer Schnittgerade
+	SOURCE_CODE_20 = \u0020\u0020\u0020\u0020\u0020IF S[2] == 1
+	SOURCE_CODE_21 = \u0020\u0020\u0020\u0020\u0020\u0020\u0020\u0020\u0020\u0020Berechne Schnittpunkt SP2 mit rechter Schnittgerade
+	SOURCE_CODE_22 = \u0020\u0020\u0020\u0020\u0020IF S[3] == 1
+	SOURCE_CODE_23 = \u0020\u0020\u0020\u0020\u0020\u0020\u0020\u0020\u0020\u0020Berechne Schnittpunkt SP3 mit linker Schnittgerade
+	
+	
+### labels ###
+
+	LABEL_INTRO = Einleitung
+    LABEL_INIT_ALGO = Start des CSA mit Linie\u0020
+    LABEL_TERMINATED = Der Algorithmus hat terminiert.
+    LABEL_CONCLUSION = Zusammenfassung 
+    
+    
+### infos ###
+
+	INFO_OUTOFRANGE = \u0020Linie(n) wurden aus der Liste gelöscht, da sie ungültig waren oder außerhalb des Anzeigebereichs lagen.
+	INFO_NO_VALID_LINE1 = Da keine der Linien im Anzeigebereich\u0020 
+	INFO_NO_VALID_LINE2 = \u0020lagen bzw. ungültig waren, wird eine zufällige Linie benutzt.
+	INFO_CLIP_PLANE = Die Clipping Plane wurde geändert, weil sie außerhalb des Anzeigebereichs lag oder ungültig war.
+	
+	
+### other ###
+
+	INTERSECTION_POINT = SP

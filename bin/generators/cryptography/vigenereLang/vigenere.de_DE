@@ -1,0 +1,41 @@
+noSuchKeyException=Es gibt keine Ressource f\u00fcr Eintrag {0}
+iconNotFound=Icon "{0}" not found
+
+algorithm_name=Vigen\u00E8re-Chiffre
+description=Die Vigen\u00E8re-Verschl\u00FCsselung geht auf den franz\u00F6sischer Diplomat und Kryptograf Blaise de Vigen\u00E8re zur\u00FCck. Sie beruht auf dem Prinzip der polyalphabetische Substitution. Dabei werden im Gegensatz zur monoalphabetischen Substitution nicht ein Geheimtextalphabet verwendet, sondern mehrere. Wie viele und welche Alphabete genutzt werden wird durch ein Schl\u00FCsselwort bestimmt. Entstanden ist die Vigen\u00E8re-Verschl\u00FCsselung im 16. Jahrhundert und galt lange als sicher. Erst im Jahr 1854 gelang es Charles Babbage erstmals die Entzifferung einer Vigen\u00E8re-Chiffre. Da dies aber nicht \u00F6ffentlich gemacht wurde, ging der preu\u00DFische Offizier Friedrich Kasiski mit seiner L\u00F6sung im Jahr 1863 in die Geschichte ein.
+
+introduction=Einleitung
+translation=Verschl\u00FCsselung
+result=Ergebnis
+conclusion=Fazit
+
+matrix=Vigenere-Quadrat
+keyword=Schl\u00FCsselwort
+cleartext=Klartext
+ciphertext=Geheimtext
+right=Richtig
+
+line1=Bis in das 16. Jahrhundert hinein wurden im wesentlichen mono-alphabetische Verschl\u00FCsselungsmethoden verwendet.
+line2=Bei der mono-alphabetischen Verschl\u00FCsselung wird jedes Zeichen des Klartextes immer genau durch dasselbe Code-Zeichen ersetzt.
+line3=Ein besonders einfaches, historisch bedeutsames Beispiel stellt die Caesar-Chiffrierung dar.
+line4=Alle mono-alphabetischen Verfahren weisen die ihnen innewohnende Schw\u00E4che auf, dass verschl\u00FCsselte Texte relativ leicht durch
+line5=eine H\u00E4ufigkeitsanalyse zu entschl\u00FCsseln sind.
+line6=Der franz\u00F6sische Diplomat Blaise de Vigen\u00E8re (1523 - 1596) entwickelte die nach ihm benannte Verschl\u00FCsselungsmethode, um die Schw\u00E4chen
+line7=des C\u00E4sar-Codes und anderer mono-alphabetischer Verfahren zu \u00FCberwinden. Statt nur eines Alphabetes werden bei der Vigen\u00E8re-Chiffrierung
+line8=mehrere (meist 26) Alphabete verwendet, die dadurch entstehen, dass man das Ausgangsalphabet jeweils zyklisch um eine Stelle rotiert und
+line9=die so entstandenen Alphabete im sogenannten Vigen\u00E8re-Quadrat untereinander schreibt. Durch ein Schl\u00FCsselwort wird bestimmt, mit Hilfe welches 
+line10=Alphabets jeweils ein Zeichen substituiert wird. Tritt ein Buchstabe im Klartext mehrfach auf, so wird er im verschl\u00FCsselten Text in der Regel in 
+line11=unterschiedliche Buchstaben \u00FCbersetzt. Verschl\u00FCsselungsmethoden mit dieser Eigenschaft bezeichnet man als poly-alphabetisch 
+line12=(bzw. als poly-alphabetische Substitution). Die Vigen\u00E8re-Chiffrierung stellt, historisch gesehen, die erste poly-alphabetische Substitution dar.
+
+line13=Vigen\u00E8re-Chiffre hat eine lineare Komplexität O(n), wobei n die Länge von Nachricht ist.
+line14=Ein Angriff mittels H\u00E4ufigkeitsanalyse ist bei der Vignere-Verschl\u00FCsselung nicht sinnvoll, da die H\u00E4ufigkeit der Buchstaben gleichm\u00E4ssiger verteilt ist.
+line15=Aber auch diese Verschl\u00FCsselung ist mit heutigen Methoden leicht zu knacken.
+line16=Bei der Analyse einer Vigen\u00E8re-Chiffre ist das wichtigste Ziel die Bestimmung der Schl\u00FCssell\u00E4nge k, denn wenn man diese bestimmt hat,
+line17=so funktioniert der Rest der Entschl\u00FCsselung wie bei einer gew\u00F6hnlichen monoalphabetischen Verschl\u00FCsselung.
+line18=Es gibt zwei gro\u00DFe Verfahren um die Schl\u00FCssell\u00E4nge k zu bestimmen:
+line19=Der Kasisiki-Test sucht im Geheimtext nach Wiederholungen von Zeichenfolgen und misst deren Abstand. Das Verfahren st\u00FCtzt sich darauf, dass sich ein im
+line20=Verh\u00E4ltnis zur Textl\u00E4nge relativ kurzes Schl\u00FCsselwort st\u00E4ndig wiederholt.
+line21=Der Friedman-Test ist ein statistisches Verfahren, dass auf der Wahrscheinlichkeit basiert, dass zwei zuf\u00E4llig aus einem Text gew\u00E4hlte Zeichen gleich sind.
+
+question=Verschl\u00FCsseln Sie die Nachricht HALLO mit Schl\u00FCssel KEY.

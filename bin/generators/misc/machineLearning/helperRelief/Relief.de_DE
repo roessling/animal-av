@@ -1,0 +1,41 @@
+dataset = Datensatz:
+
+interSteps = Zwischenschritte:
+
+sc = Source Code:
+
+explanation = Erklärung:
+
+intro = Die Relief-Algorithmen, eine Familie von Algorithmen zur Attributsgewichtung, gehören zu den überwachten Lernmethoden des maschinellen Lernens.\nZunächst einmal bezieht sich der Relief-Algorithmus nicht auf künftige Entscheidungsprozesse, sondern ist ein Werkzeug zur nachträglichen\nUntersuchung der Frage, welches Attribut den größten bzw. geringsten Einfluss auf die Entscheidung hatte. Die Differenz der Attributwerte zweier\nInstanzen ist auch für nominale Werte definiert, nämlich (ursprünglich) als 0, falls die Instanzen in diesem Attribut übereinstimmen, und sonst als 1.\nAls Entfernung zwischen den Instanzen braucht man in der Regel nur die sogenannte Manhattan-Distanz zu verwenden, das heißt die Summe aller Differenzbeträge.\n \nDie Relief-Algorithmen verändern die Gewichte jedes Attributes A in Abhängigkeit davon, wie groß die Differenzen benachbarter Instanzen sowohl\ngleicher als auch unterschiedlicher Klasse in A ist. Schließlich kann man an den Gewichten, die Relief einer Größe verliehen hat, deren Einfluss auf\ndas Ergebnis eines Entscheidungsprozesses ablesen, den sogenannten Klassenwert einer Instanz. Im Falle des einfachsten Algorithmus, Relief, funktioniert\ndas nur für zwei Klassen, das heißt die Zielgröße kann zwei Werte annehmen, und die Daten müssen vollständig sein. Zunächst pickt sich Relief eine\nInstanz I heraus und ermittelt dann deren nächste Nachbarn, einen aus der eigenen (nearest hit, also nächster Treffer genannt und mit H bezeichnet)\nund einen aus der anderen Klasse (nearest miss, also nächster Verfehler, mit M bezeichnet). Die Gewichte aller Attribute, in denen die I mit H\nübereinstimmt oder mit M nicht übereinstimmt, werden erhöht, die Gewichte derer, in denen I sich von H unterscheidet oder mit M übereinstimmt, werden\nverringert.\n \n[Quelle: https://de.wikipedia.org/wiki/Relief-Algorithmus]
+
+initWeights = Initialisiere jede Attribut-Gewichtung mit 0.0.
+
+randomValue = Zufälliger Wert:
+
+highlightSameClass = Zufälliger Wert: {0}\nAlle hits (gleiche Klasse wie das zufällig ausgewählte Beispiel) werden grün markiert.\nAlle misses (andere Klasse) werden rot markiert.
+
+outro = Alle {0} Iteration wurden ausgeführt. Der Algorithmus terminiert.\nDie endgültigen Gewichte der Attribute lauten:\n \n
+
+updateWeight = Update die Gewichtung von jedem Attribut:\n
+
+chooseNearestHit = Wähle das Beispiel mit der selben Klasse und der geringsten Distanz zur Beispiel-ID {0} aus.
+
+chooseNearestMiss = Wähle das Beispiel aus der anderen Klasse und der geringsten Distanz zur Beispiel-ID {0} aus.
+
+distance = Distanz
+
+calcDistBetween =  Berechne die Distanz zwischen ID{0} und jedem anderen Beispiel.\nDie Distanz zwischen zwei Attributen beträgt 1, wenn die Attribute unterschiedlich sind.\nDie Distanz beträgt 0, wenn die Attribute gleich sind.\n \n
+
+q1 = Was ist die Grundidee vom Algorithmus 'Relief'?
+q1a1 = Gewichtung von Attributen berechnen.
+q1a2 = Gewichtung von Beispielen berechnen.
+q1a3 = Eine Regelmenge für die positive Klasse berechnen.
+
+
+q2 = Welche Aussage ist korrekt?
+q2a1 = Ein Attribut mit einer negativen Gewichtung wird trotzdem weiterhin berücksichtigt.
+q2a2 = Bei negativen Gewichtungen macht es keinen Unterschied, da sie generell nicht berücksichtigt werden.
+q2a3 = Das Vorzeichen macht keinen Unterschied, da nur der absolute Wert berücksichtigt wird.
+
+qFeedbackC = Korrekt.
+qFeedbackW = Falsch.

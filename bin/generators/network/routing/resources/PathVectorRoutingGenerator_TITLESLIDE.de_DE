@@ -1,0 +1,37 @@
+[block]
+	Path Vector Routing ist ein erweitertes Vector Routing Protokoll, das zum 
+	Austausch von Informationen zwischen mehreren geschlossenen Netzwerken,[br] 
+	sogenannten Autonomen Systemen, genutzt wird.
+[/block]
+[block]
+	[h2]Das Verfahren[/h2]
+	Die verbreitetste Implementierung ist im Border Gateway Protokoll zu finden, 
+	das im Internet zum Austausch von Routen eingesetzt wird. Im Border[br]
+	Gateway Protokoll wird dabei lediglich die Erreichbarkeit von Netzwerken 
+	und der Pfad entlang der Autonomen Systeme angekündigt. Es wird jedoch[br]
+	nicht die komplette Route innerhalb des eigenen Netzes veröffent- licht, da 
+	für das interne Routing auch andere Protokolle zum Einsatz kommen können[br]
+	und nur Pfade zwischen den Autonomen Systemen, nicht jedoch der Pfad innerhalb 
+	dieser Netze, für die Erstellung einer Route relevant ist.[br]
+	Im Gegensatz zum Distance Vector Routing wird beim Path Vector Routing nicht 
+	nur das nächste (Zwischen-) Ziel auf einer Route, sondern der komplette[br]
+	Pfad gespeichert. Somit lassen sich Schleifen in einer Route leicht erkennen
+	 und das ''Count to Infinity'' Problem, bei dem die Länge der Route aufgrund[br]
+	 einer Schleife in den Einträgen der beteiligten Router immer weiter wächst, 
+	 vermeiden.
+[/block]
+[block]
+	[h2]Die Animation[/h2]
+	Während der Animation werden die Routingtabellen der Knoten dynamisch 
+	erzeugt und es sind nicht unbedingt alle Knoten im Netzwerk vorher[br]
+	bekannt. Durch dieses Verhalten kann sich die Sortierung der Ziele
+	in den Tabellen unterscheiden und muss nicht zwangsweise alphabetisch[br]
+	sein. Dieses Verhalten entspricht eher der Realität, in der weiter entfernte
+	Teilnehmer im Netzwerk nicht zwangsweise von Anfang an bekannt sind[br]
+	sondern dynamisch mit einer Aktualisierung der Routingtabellen hinzugefügt
+	werden.[br]
+	Die Animation arbeitet weiterhin rundenbasiert. Das bedeutet, dass zuerst 
+	alle Routingtabellen berechnet und danach erst die Aktualisierungen[br]
+	versendet werden. Die Updates werden dann erst in der nächsten Runde
+	berücksichtigt, auch wenn diese eventuell schon früher vorliegen.
+[/block]

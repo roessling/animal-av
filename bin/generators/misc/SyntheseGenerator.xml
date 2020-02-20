@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<PropertiesTreeModel xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="PropertiesTreeModel.xsd">
+	<Folder name="Root">
+		<Primitive type="StringArray">
+			<name>functionalDependencies</name>
+			<value><StringArray>A->B;E, A;E->B;D, B;D;E;F->C, F->C;D, C;D->B;E;F, C;F->B, G;H->L</StringArray></value>
+			<description>Functional dependencies to be used as a basis for the algorithm</description>
+		</Primitive>
+	</Folder>
+</PropertiesTreeModel>

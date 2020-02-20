@@ -1,0 +1,191 @@
+noSuchKeyException=there is no ressource for the key {0}
+iconNotFound=Icon "{0}" not found
+
+name=Gauss-Legendre [DE]
+
+
+title=Gauss-Legendre (Approximation von Pi)
+
+
+######################
+description0=Der Gauss-Legendre Algorithmus ist ein Algorithmus zur Berechnung von Pi.
+
+
+description1=Der Algorithmus hat eine Konvergenz der Ordnung 2, was bedeutet, dass sich die Anzahl der korrekten Stellen von Pi mit jeder Iteration verdoppelt.
+
+
+description2=Es werden nur 25 Iterationen benoetigt um ca. 45 Millionen korrekte Stellen von Pi zu erhalten.
+
+
+description3=Da der Algorithmus jedoch sehr speicherintensiv ist, werden zur effizienten Berechnung von Pi haeufig Machin-like Formeln verwendet.
+
+
+description4=Der Algorithmus ersetzt immer wieder 2 Zahlen nach ihrer Arithmetischen und Geometrischen Bedeutung, um ihre Arithmetisch-Geometrische Bedeutung zu approximieren.
+
+
+description5=Die Methode basiert auf der individuellen Arbeit von Carl Friedrich Gauss (1777-1855) und Adrien-Marie Legendre (1752-1833) in Kombination mit modernen Algorithmen fuer Multiplikation und Wurzelberechnung.
+
+
+description6=Die hier gezeigte Version ist auch bekannt als der Gauss-Euler, Brent-Salamin (oder Salamin-Brent) Algorithmus. Er wurde 1975 von Richard Brent und Eugene Salamin (voneinandner unabhaengig) entdeckt.
+
+
+######################
+note_before0=Anmerkung:
+
+
+note_before1=Um die korrekten Stellen von jeder Approximation von Pi hervorheben zu können werden die Approximationen mit einer statischen Darstellung von Pi mit 85 korrekten Nachkommastellen verglichen.
+
+
+note_before2=Deshalb ist die Anzahl der Nachkommastellen in dieser Visualisierung auch auf 85 begrenzt.
+
+
+note_after0=Anmerkung:
+
+
+note_after1=Es gibt keine Formel, mit der man die exakte Anzahl von korrekten Stellen in der naechsten Iteration voraussagen koennte.
+
+
+note_after2=Die Konvergenz der Ordnung 2 garantiert nur, dass sich die Anzahl der korrekten Stellen von Pi mit jeder Iteration mindestens verdoppelt.
+
+
+note_after3=Die Anzahl der korrekten Stellen von Pi hat sich in der letzten Iteration nur aufgrund der Begrenzung der Nachkommastellen nicht verdoppelt.
+
+
+######################
+step0=Einleitung / Anmerkung
+
+
+step1=Initialisierung der Variablen
+
+
+step2=Berechnung der Approximation
+
+
+step3=Rueckgabe
+
+
+step4=Schlussfolgerung / Anmerkung
+
+
+######################
+inter_values0=Zwischenwerte (
+
+
+inter_values1=Nachkommastellen):
+
+
+loop_cond0=Schleifenbedingung:
+
+
+is=ist
+
+
+inter_values_cmp0=Berechnung der Zwischenwerte:
+
+
+apx_pi_cmp0=Berechnung der Approximation(
+
+
+######################
+apx=Approximation(
+
+
+pi=) von Pi
+
+
+######################
+tmp_value0=(Arithmetische Bedeutung von
+
+
+a_value0=(Arithmetische Bedeutung von
+
+
+a_value1=(Arithm.Geom. Bedeutung von
+
+
+b_value0=(Geometrische Bedeutung von
+
+
+b_value1=(Arithm.Geom. Bedeutung von
+
+
+######################
+explain0=Initialisiere die a Variable.
+
+
+explain1=Initialisiere die b Variable.
+
+
+explain2=Initialisiere die t Variable.
+
+
+explain3=Initialisiere die p Variable.
+
+
+explain4=Initialisiere die tmp Variable.
+
+
+explain5=Initialisiere die apxPi Variable (Das ist die Approximation von Pi).
+
+
+explain6=Die Arithm.Geom. Bedeutung der initialen a und b Werte ist noch nicht erreicht; Starte Iteration
+
+
+explain7=) von Pi wurde berechnet.
+
+
+explain8=Berechne die Arithmetische Bedeutung der aktuellen a und b Werte und speichere sie in tmp.
+
+
+explain9=Berechne die Geometrische Bedeutung der aktuellen a und b Werte und speichere sie in b.
+
+
+explain10=Berechne den neuen Wert von t.
+
+
+explain11=Berechne den neuen Wert von p.
+
+
+explain12=Weise die Arithmetische Bedeutung der aktuellen a und b Werte (gespeichert in tmp) a zu.
+
+
+explain13=Berechne Approximation(
+
+
+explain14=wurde berechnet. Die Arithm.Geom. Bedeutung der initialen a und b Werte ist erreicht; Springe aus der Schleife.
+
+
+explain15=Gib die letzte (und beste) Approximation von Pi zurueck.
+
+
+######################
+last0=hatte
+
+
+last1=korrekte Stellen
+
+
+curr0=hat
+
+
+curr1=korrekte Stellen
+
+
+pred0=Mindestens
+
+
+pred1=waren gefordert.
+
+
+pred2=sollte mindestens
+
+
+pred3=korrekte Stellen haben
+
+
+pred4=(Unmoeglich wegen der Beschraenkung der Nachkommastellen!)
+
+
+######################
+corr_digits=Korrekte Stellen von Approximation(
+

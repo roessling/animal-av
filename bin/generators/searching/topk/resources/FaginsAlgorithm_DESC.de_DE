@@ -1,0 +1,11 @@
+Gegeben sei eine Tabellen-Relation mit n Zeilen und m Attributen. 
+Ziel des Fagin's Algorithmus ist es, die besten k Objekte auf Basis eines Scores zu ermitteln.
+
+Das Vorgehen des Algorithmus lässt sich anhand eines Beispiels verdeutlichen: 
+Es liegt eine Liste mit Objekten vor. Jedes Objekt hat die Attribute Rot-Färbung, Rundlichkeit und Fläche. 
+Für jedes Attribut liegt eine nach Attributwert absteigend sortiertes, assoziatives Datenfeld von Objekten vor. 
+Die Aufgabe ist nun, die besten k Objekte, mit dem höchsten Score, zu ermitteln. 
+Der Score errechnet sich aus einer vorher gebenen Funktion über die Attributwerte. 
+Beispielsweise könnte der Score die Summe aller Attributwerte sein. 
+Ein einfacher Algorithmus müsste auf jedes Objekt für jedes Attribut zuzugreifen. 
+Der hier vorgestellte Algorithmus löst das Problem auf eine effizientere Art und benötigt nur n' &lt; n Zugriffe. 

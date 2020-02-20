@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PropertiesTreeModel xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="PropertiesTreeModel.xsd">
+	<Folder name="Root">
+		<Primitive type="int">
+			<name>num1</name>
+			<value><int>8953</int></value>
+		</Primitive>
+		<Primitive type="int">
+			<name>num2</name>
+			<value><int>9347</int></value>
+		</Primitive>
+		<Primitive type="Color">
+			<name>labelFontColor</name>
+			<value><Color>(0, 0, 0)</Color></value>
+		</Primitive>
+		<Folder name="title">
+			<Primitive type="Color">
+				<name>titleBackgroundColor</name>
+				<value><Color>(255, 255, 255)</Color></value>
+			</Primitive>
+			<Primitive type="Color">
+				<name>titleFontColor</name>
+				<value><Color>(0, 0, 0)</Color></value>
+			</Primitive>
+			<Primitive type="Color">
+				<name>titleBorderColor</name>
+				<value><Color>(0, 0, 0)</Color></value>
+			</Primitive>
+		</Folder>
+		<Folder name="sourcecode">
+			<Primitive type="Color">
+				<name>srcFontColor</name>
+				<value><Color>(0, 0, 0)</Color></value>
+			</Primitive>
+			<Primitive type="Color">
+				<name>srcHighlightColor</name>
+				<value><Color>(255, 0, 0)</Color></value>
+			</Primitive>
+		</Folder>
+		<Folder name="numberArrays">
+			<Primitive type="Color">
+				<name>arrayCellHighlightColor</name>
+				<value><Color>(255, 215, 0)</Color></value>
+			</Primitive>
+			<Primitive type="Color">
+				<name>arrayFontColor</name>
+				<value><Color>(0, 0, 0)</Color></value>
+			</Primitive>
+			<Primitive type="Color">
+				<name>arrayBorderColor</name>
+				<value><Color>(0, 0, 0)</Color></value>
+			</Primitive>
+		</Folder>
+		<Folder name="ifChecks">
+			<Primitive type="Color">
+				<name>trueColor</name>
+				<value><Color>(0, 255, 0)</Color></value>
+			</Primitive>
+			<Primitive type="Color">
+				<name>falseColor</name>
+				<value><Color>(255, 0, 0)</Color></value>
+			</Primitive>
+		</Folder>
+	</Folder>
+</PropertiesTreeModel>

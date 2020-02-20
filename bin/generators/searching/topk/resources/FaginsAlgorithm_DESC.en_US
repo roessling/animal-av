@@ -1,0 +1,11 @@
+Given a database table consisting of n rows and m attributes.
+The task is to find the top k objects based on a score value. Can this be accomplished without analyzing all n rows?
+
+To explain the algorithm, we will start with an example: 
+We have a list of objects, which have attributes redness, roundness and area. For every attribute we 
+have an associative array in decreasing order of the values of these objects.
+The challenge is to find the top k objects with the highest score. 
+The score is computed by a previously chosen function over all the attribute values. 
+For example, the score can be the sum of all attribute values.
+A simple algorithm would have to access every object and each attribute. The presented algorithm shows 
+a way to solve this challenge in a more efficient way and only needs n' < n accesses. 

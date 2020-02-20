@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<PropertiesTreeModel xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="PropertiesTreeModel.xsd">
+	<Folder name="Root">
+		<Primitive type="Graph">
+			<name>graph</name>
+			<value><Graph>%graphscript
+
+graph 6 directed
+graphcoordinates at 50 50
+
+startknoten A
+node A at 60 60
+node B at 180 60
+node C at 300 60
+node D at 60 180
+node E at 180 180
+node F at 300 180
+
+edge A B
+edge A D
+edge B E
+edge C E
+edge C F
+edge D B
+edge E D
+
+</Graph></value>
+		</Primitive>
+	</Folder>
+</PropertiesTreeModel>

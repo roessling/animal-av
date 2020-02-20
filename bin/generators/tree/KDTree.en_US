@@ -1,0 +1,77 @@
+### exception handling ###
+
+	noSuchKeyException= There is no resource for the key {0}
+	iconNotFound = Icon "{0}" not found
+
+
+### introduction ###
+
+	TITLE = 2D-Tree
+	
+	INTRODUCTION_HTML = A KD-tree is a search tree for organizing points of the R^k-space.\n\nThere are two different versions of KD-trees:\n     - Homogeneous KD-trees hold a data set in each node.\n     - Inhomogeneous KD-trees only hold data sets in their leaves.\n\nIn this visualization, an inhomogeneous 2D-tree will be created.\n\nIn each recursive step the point set is sorted according to one axis and after that it is separated in two subsets with the nearly same size. This sets are separated by a hyperplane, which is oriented orthogonally to this axis, the points were sorted. The coordinate's value of the hyperplane is computed by the average of the two nearby points between the hyperplane should be placed. The value is stored as key in the new build node. \n\nIn our case, we start with the x-axis. All points stored in the left subtree have a x-value smaller than the hyperplane's, all points stored in the right subtree have a greater x-value.\n\nFor these newly created subareas, the algorithm is called recursively. In this case, the axis from which the hyperplane is chosen, will be cyclic permutated, so that the points will now be sorted by their y-value.\n\nFor the stop criterion, there are two possible variants: In this visualization, the algorithm terminates if there is just a single point located in the current chosen area. Alternatively, a maximal recursion depth can be chosen. At that depth, all remaining points are then stored in the corresponding leaf.\n
+	
+	INTRODUCTION_LENGTH = 26
+	INTRODUCTION_0  = A KD-tree is a search tree for organizing points of the R^k-space.
+	INTRODUCTION_1  = 
+	INTRODUCTION_2  = There are two different versions of KD-trees:
+	INTRODUCTION_3  = \u0020\u0020\u0020\u0020\u0020- Homogeneous KD-trees hold a data set in each node.
+	INTRODUCTION_4  = \u0020\u0020\u0020\u0020\u0020- Inhomogeneous KD-trees only hold data sets in their leaves.
+	INTRODUCTION_5  = 
+	INTRODUCTION_6  = In this visualization, an inhomogeneous 2D-tree will be created.
+	INTRODUCTION_7  = 
+	INTRODUCTION_8  = In each recursive step the point set is sorted according to one axis and after that it 
+	INTRODUCTION_9  = is separated in two subsets with the nearly same size. This sets are separated by a 
+	INTRODUCTION_10 = hyperplane, which is oriented orthogonally to this axis, the points were sorted. The 
+	INTRODUCTION_11 = coordinate's value of the hyperplane is computed by the average of the two nearby points
+	INTRODUCTION_12 = between the hyperplane should be placed. The value is stored as key in the new build node.
+	INTRODUCTION_13 = 
+	INTRODUCTION_14 = In our case, we start with the x-axis. All points stored in the left subtree
+	INTRODUCTION_15 = have a x-value smaller than the hyperplane's, all points
+	INTRODUCTION_16 = stored in the right subtree have a greater x-value. 
+	INTRODUCTION_17 = 
+	INTRODUCTION_18 = For these newly created subareas, the algorithm is called recursively.
+	INTRODUCTION_19 = In this case, the axis from which the hyperplane is chosen, will be cyclic permutated, 
+	INTRODUCTION_20 = so that the points will now be sorted by their y-value. 
+	INTRODUCTION_21 = 
+	INTRODUCTION_22 = For the stop criterion, there are two possible variants: In this visualization, 
+	INTRODUCTION_23 = the algorithm terminates if there is just a single point located in the current 
+	INTRODUCTION_24 = chosen area. Alternatively, a maximal recursion depth can be chosen. At that depth,
+	INTRODUCTION_25 = all remaining points are then stored in the corresponding leaf.
+	
+	
+### conclusion ###
+
+	CONCLUSION_LENGTH = 5
+	CONCLUSION_0 = The algorithm has terminated.
+	CONCLUSION_1 = The pointset is completely separated.
+	CONCLUSION_2 = Each point is now alone in an area separated by hyperplanes.
+	CONCLUSION_3 = Each node of the tree contains the position of the respective hyperplane.
+	CONCLUSION_4 = Each leaf of the tree contains exactly one point.
+
+
+### source code ###
+
+	SOURCE_CODE_INTRO = IF points-array only contains one element\n     create a leaf with the corresponding point\nELSE\n     sort the points-array by the current chosen axis\n     divide the points-array in the middle\n     create a new node with the median\n     create subsets by making a cut orthogonal to the chosen axis at the median\n     recursive KD-tree call on the subsets\n
+	
+	SOURCE_CODE_LENGTH = 8
+	SOURCE_CODE_0 = IF points-array only contains one element
+	SOURCE_CODE_1 = \u0020\u0020\u0020\u0020\u0020create a leaf with the corresponding point
+	SOURCE_CODE_2 = ELSE
+	SOURCE_CODE_3 = \u0020\u0020\u0020\u0020\u0020sort the points-array by the current chosen axis
+	SOURCE_CODE_4 = \u0020\u0020\u0020\u0020\u0020divide the points-array in the middle
+	SOURCE_CODE_5 = \u0020\u0020\u0020\u0020\u0020create a new node with the median
+	SOURCE_CODE_6 = \u0020\u0020\u0020\u0020\u0020create subsets by making a cut orthogonal to the chosen axis at the median
+	SOURCE_CODE_7 = \u0020\u0020\u0020\u0020\u0020recursive KD-tree call on the subsets
+	
+	
+### labels ###    
+
+	LABEL_INTRO = introduction
+	LABEL_INIT = start of the kd-tree-algorithm
+	LABEL_CUT = divide the current space in two subareas
+	LABEL_CONCLUSION = conclusion
+
+### various ###
+
+	INFO_DOUBLES = \u0020point(s) were removed because they were identical
+	INFO_OUTOFRANGE = points out of window range were set to the maximum of window range

@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<PropertiesTreeModel xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:noNamespaceSchemaLocation="PropertiesTreeModel.xsd">
+	<Folder name="Root">
+		<Folder name="StartWerte">
+			<Primitive type="intMatrix">
+				<name>Koeffizienten</name>
+				<value><intMatrix>1, 1; 6, 9; 0, 1</intMatrix></value>
+			</Primitive>
+			<Primitive type="intArray">
+				<name>Beschraenkungen</name>
+				<value><intArray>100, 720, 60</intArray></value>
+			</Primitive>
+			<Primitive type="intArray">
+				<name>Zielfunktion</name>
+				<value><intArray>10, 20</intArray></value>
+			</Primitive>
+		</Folder>
+		<Folder name="Optik">
+			<Primitive type="Color">
+				<name>Informationszeile</name>
+				<value><Color>(0, 0, 0)</Color></value>
+			</Primitive>
+			<Primitive type="Color">
+				<name>HervorhebungSpalte</name>
+				<value><Color>(255, 0, 0)</Color></value>
+			</Primitive>
+			<Primitive type="Color">
+				<name>HervorhebungZeile</name>
+				<value><Color>(255, 0, 0)</Color></value>
+			</Primitive>
+			<Primitive type="Color">
+				<name>PivotElement</name>
+				<value><Color>(0, 255, 0)</Color></value>
+			</Primitive>
+		</Folder>
+	</Folder>
+</PropertiesTreeModel>

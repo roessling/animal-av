@@ -1,0 +1,14 @@
+function Kruskal(Graph)
+	E = edges in spanning tree ;
+	for each edge e in Graph:
+		Q ← e ;
+	end for ;
+	sort Q by edge weight ;
+	n := count_vertices(Graph) ;
+	while count_edges(E) < n -1:
+		(v, u) ← remove_first_element(Q) ;
+		if NOT path_exists(E, v, u):
+			E ← (v, u) ;
+		end if ;
+	end while ;
+end function ;

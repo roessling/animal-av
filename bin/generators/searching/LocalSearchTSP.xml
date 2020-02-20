@@ -1,0 +1,707 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<PropertiesTreeModel xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:noNamespaceSchemaLocation="PropertiesTreeModel.xsd">
+	<Folder name="Root">
+		<Primitive type="Graph">
+			<name>graph</name>
+			<value>
+				<Graph>%graphscript
+
+					graph 4 directed weighted
+
+
+					graphcoordinates at 0 50
+
+
+					startknoten C
+					node A at 100 300
+					node B at 400 120
+					node C at 200 150
+					node D at 120 100
+
+					edge A B weight 10
+					edge A C weight 1
+					edge A D weight 7
+					edge B C weight 5
+					edge B D weight 6
+					edge C D weight 4
+
+
+				</Graph>
+			</value>
+		</Primitive>
+
+		<!-- Graph Current-Best -->
+		<AnimationProperties type="GraphProperties">
+			<AnimationPropertyItem type="ColorPropertyItem">
+				<name>elementColor</name>
+				<isEditable value="true" />
+				<label></label>
+				<value>
+					<Color>(0, 0, 0)</Color>
+				</value>
+			</AnimationPropertyItem>
+			<AnimationPropertyItem type="BooleanPropertyItem">
+				<name>weighted</name>
+				<isEditable value="false" />
+				<label></label>
+				<value>
+					<boolean value="true" />
+				</value>
+			</AnimationPropertyItem>
+			<AnimationPropertyItem type="ColorPropertyItem">
+				<name>fillColor</name>
+				<isEditable value="true" />
+				<label></label>
+				<value>
+					<Color>(255, 255, 255)</Color>
+				</value>
+			</AnimationPropertyItem>
+			<AnimationPropertyItem type="BooleanPropertyItem">
+				<name>filled</name>
+				<isEditable value="false" />
+				<label></label>
+				<value>
+					<boolean value="true" />
+				</value>
+			</AnimationPropertyItem>
+			<AnimationPropertyItem type="ColorPropertyItem">
+				<name>highlightColor</name>
+				<isEditable value="true" />
+				<label></label>
+				<value>
+					<Color>(51, 153, 0)</Color>
+				</value>
+			</AnimationPropertyItem>
+			<AnimationPropertyItem type="ColorPropertyItem">
+				<name>color</name>
+				<isEditable value="true" />
+				<label></label>
+				<value>
+					<Color>(0, 0, 0)</Color>
+				</value>
+			</AnimationPropertyItem>
+			<AnimationPropertyItem type="BooleanPropertyItem">
+				<name>hidden</name>
+				<isEditable value="false" />
+				<label></label>
+				<value>
+					<boolean value="false" />
+				</value>
+			</AnimationPropertyItem>
+			<AnimationPropertyItem type="BooleanPropertyItem">
+				<name>directed</name>
+				<isEditable value="false" />
+				<label></label>
+				<value>
+					<boolean value="false" />
+				</value>
+			</AnimationPropertyItem>
+			<AnimationPropertyItem type="ColorPropertyItem">
+				<name>nodeColor</name>
+				<isEditable value="true" />
+				<label></label>
+				<value>
+					<Color>(0, 0, 0)</Color>
+				</value>
+			</AnimationPropertyItem>
+			<AnimationPropertyItem type="ColorPropertyItem">
+				<name>edgeColor</name>
+				<isEditable value="true" />
+				<label></label>
+				<value>
+					<Color>(255, 0, 0)</Color>
+				</value>
+			</AnimationPropertyItem>
+			<AnimationPropertyItem type="StringPropertyItem">
+				<name>name</name>
+				<isEditable value="false" />
+				<label></label>
+				<value>
+					<String>Current-Best Graph Properties</String>
+				</value>
+			</AnimationPropertyItem>
+			<AnimationPropertyItem type="ColorPropertyItem">
+				<name>elemHighlight</name>
+				<isEditable value="true" />
+				<label></label>
+				<value>
+					<Color>(255, 0, 0)</Color>
+				</value>
+			</AnimationPropertyItem>
+			<AnimationPropertyItem type="IntegerPropertyItem">
+				<name>depth</name>
+				<isEditable value="false" />
+				<label></label>
+				<value>
+					<int>1</int>
+				</value>
+			</AnimationPropertyItem>
+		</AnimationProperties>
+		<!-- /Graph Current-Best -->
+		<!-- Graph Computation -->
+		<AnimationProperties type="GraphProperties">
+			<AnimationPropertyItem type="ColorPropertyItem">
+				<name>elementColor</name>
+				<isEditable value="true" />
+				<label></label>
+				<value>
+					<Color>(0, 0, 0)</Color>
+				</value>
+			</AnimationPropertyItem>
+			<AnimationPropertyItem type="BooleanPropertyItem">
+				<name>weighted</name>
+				<isEditable value="false" />
+				<label></label>
+				<value>
+					<boolean value="true" />
+				</value>
+			</AnimationPropertyItem>
+			<AnimationPropertyItem type="ColorPropertyItem">
+				<name>fillColor</name>
+				<isEditable value="true" />
+				<label></label>
+				<value>
+					<Color>(255, 255, 255)</Color>
+				</value>
+			</AnimationPropertyItem>
+			<AnimationPropertyItem type="BooleanPropertyItem">
+				<name>filled</name>
+				<isEditable value="false" />
+				<label></label>
+				<value>
+					<boolean value="true" />
+				</value>
+			</AnimationPropertyItem>
+			<AnimationPropertyItem type="ColorPropertyItem">
+				<name>highlightColor</name>
+				<isEditable value="true" />
+				<label></label>
+				<value>
+					<Color>(204, 102, 0)</Color>
+				</value>
+			</AnimationPropertyItem>
+			<AnimationPropertyItem type="ColorPropertyItem">
+				<name>color</name>
+				<isEditable value="true" />
+				<label></label>
+				<value>
+					<Color>(0, 0, 0)</Color>
+				</value>
+			</AnimationPropertyItem>
+			<AnimationPropertyItem type="BooleanPropertyItem">
+				<name>hidden</name>
+				<isEditable value="false" />
+				<label></label>
+				<value>
+					<boolean value="false" />
+				</value>
+			</AnimationPropertyItem>
+			<AnimationPropertyItem type="BooleanPropertyItem">
+				<name>directed</name>
+				<isEditable value="false" />
+				<label></label>
+				<value>
+					<boolean value="false" />
+				</value>
+			</AnimationPropertyItem>
+			<AnimationPropertyItem type="ColorPropertyItem">
+				<name>nodeColor</name>
+				<isEditable value="true" />
+				<label></label>
+				<value>
+					<Color>(0, 0, 0)</Color>
+				</value>
+			</AnimationPropertyItem>
+			<AnimationPropertyItem type="ColorPropertyItem">
+				<name>edgeColor</name>
+				<isEditable value="true" />
+				<label></label>
+				<value>
+					<Color>(255, 0, 0)</Color>
+				</value>
+			</AnimationPropertyItem>
+			<AnimationPropertyItem type="StringPropertyItem">
+				<name>name</name>
+				<isEditable value="false" />
+				<label></label>
+				<value>
+					<String>Computation Graph Properties</String>
+				</value>
+			</AnimationPropertyItem>
+			<AnimationPropertyItem type="ColorPropertyItem">
+				<name>elemHighlight</name>
+				<isEditable value="true" />
+				<label></label>
+				<value>
+					<Color>(255, 0, 0)</Color>
+				</value>
+			</AnimationPropertyItem>
+			<AnimationPropertyItem type="IntegerPropertyItem">
+				<name>depth</name>
+				<isEditable value="false" />
+				<label></label>
+				<value>
+					<int>1</int>
+				</value>
+			</AnimationPropertyItem>
+		</AnimationProperties>
+		<!-- /Graph Computation -->
+		<!-- Text H1 -->
+		<AnimationProperties type="TextProperties">
+			<AnimationPropertyItem type="BooleanPropertyItem">
+				<name>centered</name>
+				<isEditable value="true" />
+				<label></label>
+				<value>
+					<boolean value="false" />
+				</value>
+			</AnimationPropertyItem>
+			<AnimationPropertyItem type="ColorPropertyItem">
+				<name>color</name>
+				<isEditable value="true" />
+				<label></label>
+				<value>
+					<Color>(0, 0, 0)</Color>
+				</value>
+			</AnimationPropertyItem>
+			<AnimationPropertyItem type="BooleanPropertyItem">
+				<name>hidden</name>
+				<isEditable value="false" />
+				<label></label>
+				<value>
+					<boolean value="false" />
+				</value>
+			</AnimationPropertyItem>
+			<AnimationPropertyItem type="FontPropertyItem">
+				<name>font</name>
+				<isEditable value="true" />
+				<label></label>
+				<value>
+					<Font>SansSerif</Font>
+				</value>
+			</AnimationPropertyItem>
+			<AnimationPropertyItem type="StringPropertyItem">
+				<name>name</name>
+				<isEditable value="false" />
+				<label></label>
+				<value>
+					<String>Überschrift 1 Property</String>
+				</value>
+			</AnimationPropertyItem>
+			<AnimationPropertyItem type="IntegerPropertyItem">
+				<name>depth</name>
+				<isEditable value="false" />
+				<label></label>
+				<value>
+					<int>1</int>
+				</value>
+			</AnimationPropertyItem>
+		</AnimationProperties>
+		<!-- /Text H1 -->
+		<!-- Text H2 -->
+		<AnimationProperties type="TextProperties">
+			<AnimationPropertyItem type="BooleanPropertyItem">
+				<name>centered</name>
+				<isEditable value="true" />
+				<label></label>
+				<value>
+					<boolean value="false" />
+				</value>
+			</AnimationPropertyItem>
+			<AnimationPropertyItem type="ColorPropertyItem">
+				<name>color</name>
+				<isEditable value="true" />
+				<label></label>
+				<value>
+					<Color>(0, 0, 0)</Color>
+				</value>
+			</AnimationPropertyItem>
+			<AnimationPropertyItem type="BooleanPropertyItem">
+				<name>hidden</name>
+				<isEditable value="false" />
+				<label></label>
+				<value>
+					<boolean value="false" />
+				</value>
+			</AnimationPropertyItem>
+			<AnimationPropertyItem type="FontPropertyItem">
+				<name>font</name>
+				<isEditable value="true" />
+				<label></label>
+				<value>
+					<Font>SansSerif</Font>
+				</value>
+			</AnimationPropertyItem>
+			<AnimationPropertyItem type="StringPropertyItem">
+				<name>name</name>
+				<isEditable value="false" />
+				<label></label>
+				<value>
+					<String>Überschrift 2 Property</String>
+				</value>
+			</AnimationPropertyItem>
+			<AnimationPropertyItem type="IntegerPropertyItem">
+				<name>depth</name>
+				<isEditable value="false" />
+				<label></label>
+				<value>
+					<int>1</int>
+				</value>
+			</AnimationPropertyItem>
+		</AnimationProperties>
+		<!-- /Text H2 -->
+		<!-- Text -->
+		<AnimationProperties type="TextProperties">
+			<AnimationPropertyItem type="BooleanPropertyItem">
+				<name>centered</name>
+				<isEditable value="true" />
+				<label></label>
+				<value>
+					<boolean value="false" />
+				</value>
+			</AnimationPropertyItem>
+			<AnimationPropertyItem type="ColorPropertyItem">
+				<name>color</name>
+				<isEditable value="true" />
+				<label></label>
+				<value>
+					<Color>(0, 0, 0)</Color>
+				</value>
+			</AnimationPropertyItem>
+			<AnimationPropertyItem type="BooleanPropertyItem">
+				<name>hidden</name>
+				<isEditable value="false" />
+				<label></label>
+				<value>
+					<boolean value="false" />
+				</value>
+			</AnimationPropertyItem>
+			<AnimationPropertyItem type="FontPropertyItem">
+				<name>font</name>
+				<isEditable value="true" />
+				<label></label>
+				<value>
+					<Font>SansSerif</Font>
+				</value>
+			</AnimationPropertyItem>
+			<AnimationPropertyItem type="StringPropertyItem">
+				<name>name</name>
+				<isEditable value="false" />
+				<label></label>
+				<value>
+					<String>Text Property</String>
+				</value>
+			</AnimationPropertyItem>
+			<AnimationPropertyItem type="IntegerPropertyItem">
+				<name>depth</name>
+				<isEditable value="false" />
+				<label></label>
+				<value>
+					<int>1</int>
+				</value>
+			</AnimationPropertyItem>
+		</AnimationProperties>
+		<!-- /Text -->
+		<!-- SourceCode Fließtext -->
+		<AnimationProperties type="SourceCodeProperties">
+			<AnimationPropertyItem type="BooleanPropertyItem">
+				<name>bold</name>
+				<isEditable value="false" />
+				<label></label>
+				<value>
+					<boolean value="true" />
+				</value>
+			</AnimationPropertyItem>
+			<AnimationPropertyItem type="ColorPropertyItem">
+				<name>color</name>
+				<isEditable value="true" />
+				<label></label>
+				<value>
+					<Color>(0, 0, 0)</Color>
+				</value>
+			</AnimationPropertyItem>
+			<AnimationPropertyItem type="ColorPropertyItem">
+				<name>highlightColor</name>
+				<isEditable value="false" />
+				<label></label>
+				<value>
+					<Color>(0, 176, 0)</Color>
+				</value>
+			</AnimationPropertyItem>
+			<AnimationPropertyItem type="BooleanPropertyItem">
+				<name>hidden</name>
+				<isEditable value="false" />
+				<label></label>
+				<value>
+					<boolean value="false" />
+				</value>
+			</AnimationPropertyItem>
+			<AnimationPropertyItem type="FontPropertyItem">
+				<name>font</name>
+				<isEditable value="true" />
+				<label></label>
+				<value>
+					<Font>SansSerif</Font>
+				</value>
+			</AnimationPropertyItem>
+			<AnimationPropertyItem type="StringPropertyItem">
+				<name>name</name>
+				<isEditable value="true" />
+				<label></label>
+				<value>
+					<String>Fließtext Property</String>
+				</value>
+			</AnimationPropertyItem>
+			<AnimationPropertyItem type="ColorPropertyItem">
+				<name>contextColor</name>
+				<isEditable value="false" />
+				<label></label>
+				<value>
+					<Color>(0, 0, 255)</Color>
+				</value>
+			</AnimationPropertyItem>
+			<AnimationPropertyItem type="BooleanPropertyItem">
+				<name>italic</name>
+				<isEditable value="true" />
+				<label></label>
+				<value>
+					<boolean value="false" />
+				</value>
+			</AnimationPropertyItem>
+			<AnimationPropertyItem type="IntegerPropertyItem">
+				<name>depth</name>
+				<isEditable value="false" />
+				<label></label>
+				<value>
+					<int>1</int>
+				</value>
+			</AnimationPropertyItem>
+			<AnimationPropertyItem type="IntegerPropertyItem">
+				<name>row</name>
+				<isEditable value="false" />
+				<label></label>
+				<value>
+					<int>1</int>
+				</value>
+			</AnimationPropertyItem>
+			<AnimationPropertyItem type="IntegerPropertyItem">
+				<name>size</name>
+				<isEditable value="true" />
+				<label></label>
+				<value>
+					<int>13</int>
+				</value>
+			</AnimationPropertyItem>
+			<AnimationPropertyItem type="IntegerPropertyItem">
+				<name>indentation</name>
+				<isEditable value="false" />
+				<label></label>
+				<value>
+					<int>1</int>
+				</value>
+			</AnimationPropertyItem>
+		</AnimationProperties>
+		<!-- /SourceCode Fließtext -->
+		<!-- SourceCode Lokale Suche -->
+		<AnimationProperties type="SourceCodeProperties">
+			<AnimationPropertyItem type="BooleanPropertyItem">
+				<name>bold</name>
+				<isEditable value="false" />
+				<label></label>
+				<value>
+					<boolean value="true" />
+				</value>
+			</AnimationPropertyItem>
+			<AnimationPropertyItem type="ColorPropertyItem">
+				<name>color</name>
+				<isEditable value="true" />
+				<label></label>
+				<value>
+					<Color>(0, 0, 0)</Color>
+				</value>
+			</AnimationPropertyItem>
+			<AnimationPropertyItem type="ColorPropertyItem">
+				<name>highlightColor</name>
+				<isEditable value="false" />
+				<label></label>
+				<value>
+					<Color>(51, 153, 0)</Color>
+				</value>
+			</AnimationPropertyItem>
+			<AnimationPropertyItem type="BooleanPropertyItem">
+				<name>hidden</name>
+				<isEditable value="false" />
+				<label></label>
+				<value>
+					<boolean value="false" />
+				</value>
+			</AnimationPropertyItem>
+			<AnimationPropertyItem type="FontPropertyItem">
+				<name>font</name>
+				<isEditable value="true" />
+				<label></label>
+				<value>
+					<Font>SansSerif</Font>
+				</value>
+			</AnimationPropertyItem>
+			<AnimationPropertyItem type="StringPropertyItem">
+				<name>name</name>
+				<isEditable value="true" />
+				<label></label>
+				<value>
+					<String>Code Lokale Suche Property</String>
+				</value>
+			</AnimationPropertyItem>
+			<AnimationPropertyItem type="ColorPropertyItem">
+				<name>contextColor</name>
+				<isEditable value="false" />
+				<label></label>
+				<value>
+					<Color>(0, 0, 255)</Color>
+				</value>
+			</AnimationPropertyItem>
+			<AnimationPropertyItem type="BooleanPropertyItem">
+				<name>italic</name>
+				<isEditable value="true" />
+				<label></label>
+				<value>
+					<boolean value="false" />
+				</value>
+			</AnimationPropertyItem>
+			<AnimationPropertyItem type="IntegerPropertyItem">
+				<name>depth</name>
+				<isEditable value="false" />
+				<label></label>
+				<value>
+					<int>1</int>
+				</value>
+			</AnimationPropertyItem>
+			<AnimationPropertyItem type="IntegerPropertyItem">
+				<name>row</name>
+				<isEditable value="false" />
+				<label></label>
+				<value>
+					<int>1</int>
+				</value>
+			</AnimationPropertyItem>
+			<AnimationPropertyItem type="IntegerPropertyItem">
+				<name>size</name>
+				<isEditable value="true" />
+				<label></label>
+				<value>
+					<int>13</int>
+				</value>
+			</AnimationPropertyItem>
+			<AnimationPropertyItem type="IntegerPropertyItem">
+				<name>indentation</name>
+				<isEditable value="false" />
+				<label></label>
+				<value>
+					<int>1</int>
+				</value>
+			</AnimationPropertyItem>
+		</AnimationProperties>
+		<!-- /SourceCode Lokale Suche -->
+		<!-- SourceCode Nachbarschaft -->
+		<AnimationProperties type="SourceCodeProperties">
+			<AnimationPropertyItem type="BooleanPropertyItem">
+				<name>bold</name>
+				<isEditable value="false" />
+				<label></label>
+				<value>
+					<boolean value="true" />
+				</value>
+			</AnimationPropertyItem>
+			<AnimationPropertyItem type="ColorPropertyItem">
+				<name>color</name>
+				<isEditable value="true" />
+				<label></label>
+				<value>
+					<Color>(0, 0, 0)</Color>
+				</value>
+			</AnimationPropertyItem>
+			<AnimationPropertyItem type="ColorPropertyItem">
+				<name>highlightColor</name>
+				<isEditable value="false" />
+				<label></label>
+				<value>
+					<Color>(204, 102, 0)</Color>
+				</value>
+			</AnimationPropertyItem>
+			<AnimationPropertyItem type="BooleanPropertyItem">
+				<name>hidden</name>
+				<isEditable value="false" />
+				<label></label>
+				<value>
+					<boolean value="false" />
+				</value>
+			</AnimationPropertyItem>
+			<AnimationPropertyItem type="FontPropertyItem">
+				<name>font</name>
+				<isEditable value="true" />
+				<label></label>
+				<value>
+					<Font>SansSerif</Font>
+				</value>
+			</AnimationPropertyItem>
+			<AnimationPropertyItem type="StringPropertyItem">
+				<name>name</name>
+				<isEditable value="true" />
+				<label></label>
+				<value>
+					<String>Code Nachbarschaft Property</String>
+				</value>
+			</AnimationPropertyItem>
+			<AnimationPropertyItem type="ColorPropertyItem">
+				<name>contextColor</name>
+				<isEditable value="false" />
+				<label></label>
+				<value>
+					<Color>(0, 0, 255)</Color>
+				</value>
+			</AnimationPropertyItem>
+			<AnimationPropertyItem type="BooleanPropertyItem">
+				<name>italic</name>
+				<isEditable value="true" />
+				<label></label>
+				<value>
+					<boolean value="false" />
+				</value>
+			</AnimationPropertyItem>
+			<AnimationPropertyItem type="IntegerPropertyItem">
+				<name>depth</name>
+				<isEditable value="false" />
+				<label></label>
+				<value>
+					<int>1</int>
+				</value>
+			</AnimationPropertyItem>
+			<AnimationPropertyItem type="IntegerPropertyItem">
+				<name>row</name>
+				<isEditable value="false" />
+				<label></label>
+				<value>
+					<int>1</int>
+				</value>
+			</AnimationPropertyItem>
+			<AnimationPropertyItem type="IntegerPropertyItem">
+				<name>size</name>
+				<isEditable value="true" />
+				<label></label>
+				<value>
+					<int>13</int>
+				</value>
+			</AnimationPropertyItem>
+			<AnimationPropertyItem type="IntegerPropertyItem">
+				<name>indentation</name>
+				<isEditable value="false" />
+				<label></label>
+				<value>
+					<int>1</int>
+				</value>
+			</AnimationPropertyItem>
+		</AnimationProperties>
+		<!-- /SourceCode Nachbarschaft -->
+	</Folder>
+</PropertiesTreeModel>

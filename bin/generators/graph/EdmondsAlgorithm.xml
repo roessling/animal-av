@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<PropertiesTreeModel xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="PropertiesTreeModel.xsd">
+	<Folder name="Root">
+		<AnimationProperties type="SourceCodeProperties">
+			<AnimationPropertyItem type="BooleanPropertyItem">
+				<name>bold</name>
+				<isEditable value="true" />
+				<label></label>
+				<value><boolean value="false" /></value>
+			</AnimationPropertyItem>
+			<AnimationPropertyItem type="ColorPropertyItem">
+				<name>color</name>
+				<isEditable value="true" />
+				<label></label>
+				<value><Color>(128, 128, 128)</Color></value>
+			</AnimationPropertyItem>
+			<AnimationPropertyItem type="ColorPropertyItem">
+				<name>highlightColor</name>
+				<isEditable value="true" />
+				<label></label>
+				<value><Color>(0, 0, 0)</Color></value>
+			</AnimationPropertyItem>
+			<AnimationPropertyItem type="BooleanPropertyItem">
+				<name>hidden</name>
+				<isEditable value="false" />
+				<label></label>
+				<value><boolean value="false" /></value>
+			</AnimationPropertyItem>
+			<AnimationPropertyItem type="FontPropertyItem">
+				<name>font</name>
+				<isEditable value="true" />
+				<label></label>
+				<value><Font>Monospaced</Font></value>
+			</AnimationPropertyItem>
+			<AnimationPropertyItem type="StringPropertyItem">
+				<name>name</name>
+				<isEditable value="true" />
+				<label></label>
+				<value><String>sourceCode</String></value>
+			</AnimationPropertyItem>
+			<AnimationPropertyItem type="ColorPropertyItem">
+				<name>contextColor</name>
+				<isEditable value="false" />
+				<label></label>
+				<value><Color>(0, 0, 255)</Color></value>
+			</AnimationPropertyItem>
+			<AnimationPropertyItem type="BooleanPropertyItem">
+				<name>italic</name>
+				<isEditable value="true" />
+				<label></label>
+				<value><boolean value="false" /></value>
+			</AnimationPropertyItem>
+			<AnimationPropertyItem type="IntegerPropertyItem">
+				<name>depth</name>
+				<isEditable value="false" />
+				<label></label>
+				<value><int>1</int></value>
+			</AnimationPropertyItem>
+			<AnimationPropertyItem type="IntegerPropertyItem">
+				<name>row</name>
+				<isEditable value="false" />
+				<label></label>
+				<value><int>1</int></value>
+			</AnimationPropertyItem>
+			<AnimationPropertyItem type="IntegerPropertyItem">
+				<name>size</name>
+				<isEditable value="true" />
+				<label></label>
+				<value><int>16</int></value>
+			</AnimationPropertyItem>
+			<AnimationPropertyItem type="IntegerPropertyItem">
+				<name>indentation</name>
+				<isEditable value="false" />
+				<label></label>
+				<value><int>2</int></value>
+			</AnimationPropertyItem>
+		</AnimationProperties>
+		<Folder name="graphProps">
+			<Primitive type="Graph">
+				<name>graph</name>
+				<value><Graph>%graphscript
+
+graph 7 directed weighted
+
+
+graphcoordinates at 0 0
+
+startknoten A
+zielknoten G
+
+node A at 140 0
+node B at 140 110
+node C at 300 110
+node D at 400 200
+node E at 300 290
+node F at 140 290
+node G at 40 200
+
+edge A B weight 5
+edge B F weight 1
+edge B C weight 3
+edge C D weight 1
+edge C A weight 3
+edge D E weight 1
+edge E C weight 1
+edge E D weight 1
+edge E F weight 3
+edge F G weight 1
+edge G B weight 1
+
+</Graph></value>
+			</Primitive>
+			<Primitive type="int">
+				<name>rootNodeId</name>
+				<value><int>0</int></value>
+			</Primitive>
+			<Primitive type="Color">
+				<name>highlightColor</name>
+				<value><Color>(255, 0, 0)</Color></value>
+			</Primitive>
+			<Primitive type="Color">
+				<name>highlightColor2</name>
+				<value><Color>(255, 200, 0)</Color></value>
+			</Primitive>
+		</Folder>
+		<Folder name="TextProps">
+			<Folder name="IntroOutroText">
+				<Primitive type="Color">
+					<name>textColor</name>
+					<value><Color>(0, 0, 0)</Color></value>
+				</Primitive>
+				<Primitive type="Font">
+					<name>textFont</name>
+					<value><Font>SansSerif</Font></value>
+				</Primitive>
+				<Primitive type="int">
+					<name>textSize</name>
+					<value><int>12</int></value>
+				</Primitive>
+				<Primitive type="boolean">
+					<name>textBold</name>
+					<value><boolean value="false" /></value>
+				</Primitive>
+				<Primitive type="boolean">
+					<name>textItalic</name>
+					<value><boolean value="false" /></value>
+				</Primitive>
+			</Folder>
+			<Folder name="TitleText">
+				<Primitive type="Color">
+					<name>titleColor</name>
+					<value><Color>(0, 0, 0)</Color></value>
+				</Primitive>
+				<Primitive type="Color">
+					<name>titleBoxColor</name>
+					<value><Color>(255, 255, 153)</Color></value>
+				</Primitive>
+				<Primitive type="Font">
+					<name>titleFont</name>
+					<value><Font>SansSerif</Font></value>
+				</Primitive>
+				<Primitive type="int">
+					<name>titleSize</name>
+					<value><int>24</int></value>
+				</Primitive>
+				<Primitive type="boolean">
+					<name>titleBold</name>
+					<value><boolean value="true" /></value>
+				</Primitive>
+				<Primitive type="boolean">
+					<name>titleItalic</name>
+					<value><boolean value="false" /></value>
+				</Primitive>
+			</Folder>
+		</Folder>		
+		<Primitive type="boolean">
+			<name>quiz</name>
+			<value><boolean value="true" /></value>
+		</Primitive>
+	</Folder>
+</PropertiesTreeModel>

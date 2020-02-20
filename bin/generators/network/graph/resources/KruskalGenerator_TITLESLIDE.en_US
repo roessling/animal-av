@@ -1,0 +1,34 @@
+[block]
+	Kruskal's Algorithm solves the minimum spanning tree problem in a[br]
+	weighted graph. The graph must also be connected and finite. If the
+	algorithm is applied on a not fully connected graph it calculates[br]
+	the minimum spanning tree of each component and creates the minimum
+	spanning forest.
+[/block]
+[block]
+	[h2]The Algorithm[/h2]
+	The algorithm was first published by Joseph Kruskal in 1956 and works
+	non deterministic. This means that multiple executions of the[br]
+	procedure can lead to different results.[br]
+	The algorithm uses a sorted list of edges. On each loop the first edge
+	(the edge with the lowest weight) is removed and added to the[br]
+	spanning tree unless it creates a cycle within the spanning tree.
+	Otherwise the edge is discarded.[br]
+	The algorithm's running time is composed from the sorting of the 
+	list and the calculation of possible cycles. As the detection[br]
+	of loops can be implemented more efficient the complexity of
+	O(|E| * log(|V|)) is defined by the sorting. Therefore[br]
+	prim's algorithm completes faster when applied on a graph 
+	with a large amount of edges.[br]
+	Using a priority queue to manage the edges can result in a 
+	linear runtime.
+[/block]
+[block]
+	[h2]The Animation[/h2]
+	The visualization only works correctly on an undirected graph.
+	If applied on a directed graph the correct sorting can not be[br]
+	guaranteed as the priority queue does not evaluate the start and 
+	end node of an edge. It is therefore possible that forward and[br]
+	backward edges between two nodes are chosen and the creation of
+	a spanning tree fails.
+[/block]

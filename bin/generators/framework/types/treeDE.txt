@@ -1,0 +1,24 @@
+Entnommen aus Wikipedia, der freien Enzyclopädie:
+
+Bäume sind eine der häufigsten Datenstrukturen in der
+Informatik. Ein Baum ist ein dabei ein spezieller Graph,
+der aber anders repräsentiert wird als allgemeine Graphen.
+Durch Entfernen einer Kante zerfällt ein Baum in zwei
+Teilbäume und bildet damit einen Wald.
+
+Bäume bestehen aus einer Reihe von miteinander verknüpften
+Knoten. Jeder Knoten kann null oder mehr Nachfolger
+haben, die im Baum unter dem Vorgänger dargestellt werden.
+Dabei hat jeder Knoten außer dem obersten Element, der
+Wurzel, genau einen Vorgänger. Die Wurzel hat keinen
+Vorgänger. Knoten ohne Nachfolger werden auch als
+Blätter bezeichnet.
+
+Die Bäume zerfallen in ungeordnete Bäume, bei
+denen es keine feste Reihenfolge zwischen den Nachfolgern eines
+Knotens gibt. In geordneten Bäumen wird zwischen
+dem "1. Nachfolger", dem "2. Nachfolger" etc. unterschieden.
+
+In der Sonderform eines Binärbaums hat jeder 
+Knoten maximal zwei Nachfolger, die als "linker" und 
+"rechter Sohn" bezeichnet werden.

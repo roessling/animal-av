@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<PropertiesTreeModel xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="PropertiesTreeModel.xsd">
+	<Folder name="Root">
+		<Primitive type="Color">
+			<name>basicColor</name>
+			<value><Color>(0, 0, 0)</Color></value>
+		</Primitive>
+		<Primitive type="Color">
+			<name>textHighlightColor</name>
+			<value><Color>(255, 0, 0)</Color></value>
+		</Primitive>
+		<Primitive type="Color">
+			<name>pointHighlightColor</name>
+			<value><Color>(255, 0, 0)</Color></value>
+		</Primitive>
+		<Primitive type="Color">
+			<name>lineHighlightColor</name>
+			<value><Color>(0, 144, 0)</Color></value>
+		</Primitive>
+		<Primitive type="int">
+			<name>q</name>
+			<value><int>3</int></value>
+		</Primitive>
+		<Primitive type="double">
+			<name>t</name>
+			<value><double>2.5</double></value>
+		</Primitive>
+		<Primitive type="intMatrix">
+			<name>pointArray</name>
+			<value><intMatrix>1,1;4,1;2,4;9,5;5,1;9,1</intMatrix></value>
+		</Primitive>
+	</Folder>
+</PropertiesTreeModel>

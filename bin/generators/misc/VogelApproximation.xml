@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<PropertiesTreeModel xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="PropertiesTreeModel.xsd">
+	<Folder name="Root">
+		<Primitive type="intMatrix">
+			<name>kosten</name>
+			<value><intMatrix>1, 2; 5, 6</intMatrix></value>
+		</Primitive>
+		<Primitive type="intArray">
+			<name>anbieter</name>
+			<value><intArray>3, 7</intArray></value>
+		</Primitive>
+		<Primitive type="intArray">
+			<name>nachfrager</name>
+			<value><intArray>6, 4</intArray></value>
+		</Primitive>
+	</Folder>
+</PropertiesTreeModel>

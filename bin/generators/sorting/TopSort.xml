@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<PropertiesTreeModel xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="PropertiesTreeModel.xsd">
+	<Folder name="Root">
+		<Primitive type="Color">
+			<name>HighlightColorCode</name>
+			<value><Color>(208, 0, 0)</Color></value>
+		</Primitive>
+		<Primitive type="Color">
+			<name>HighlightColorArrays</name>
+			<value><Color>(0, 255, 0)</Color></value>
+		</Primitive>
+		<Primitive type="Color">
+			<name>HighlightColorGraph</name>
+			<value><Color>(255, 0, 255)</Color></value>
+		</Primitive>
+		<Primitive type="Graph">
+			<name>graph</name>
+			<value><Graph>%graphscript
+graph 6 directed
+graphcoordinates at 0 0
+
+startknoten A
+node A at 100 65
+node B at 294 66
+node C at 214 187
+node D at 101 308
+node E at 299 306
+node F at 298 408
+
+edge A C
+edge B C
+edge C D
+edge C E
+edge E F
+
+</Graph></value>
+		</Primitive>
+	</Folder>
+</PropertiesTreeModel>

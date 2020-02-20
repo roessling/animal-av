@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<PropertiesTreeModel xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="PropertiesTreeModel.xsd">
+	<Folder name="Root">
+		<Primitive type="StringMatrix">
+			<name>data</name>
+			<value><StringMatrix>Diligent, #lectures, Luck, Class; Yes, 100%, Much, passed; No, 0%, None, failed; Yes, 60%, Few, passed; No, 100%, Much, passed</StringMatrix></value>
+			<description>The first row specifies the names of the attributes except of the last element that shows to which class each example belongs. All data examples must contain the same amount of attributes. The name of the attributes or the class of each data example must contain 9 chars or less, the values of the attributes must contain 4 chars or less. Also the data set must contain 8 examples or less and there must be no two data examples that contain exactly the same values for each attribute (otherwise the data set is not consistent).</description>
+		</Primitive>
+		<Primitive type="double">
+			<name>threshold</name>
+			<value><double>0.0</double></value>
+			<description>Threshold used for chi_squared test. Few Examples: Level of significance: 0.999 -&gt; Threshold: 16.27; Level of significance: 0.99 -&gt; Threshold: 11.34; Level of significance: 0 -&gt; Threshold: 0</description>
+		</Primitive>
+		<Primitive type="Color">
+			<name>node_color</name>
+			<value><Color>(114, 140, 56)</Color></value>
+			<description>Highlight Color of the node. We recommend a light color.</description>
+		</Primitive>
+	</Folder>
+</PropertiesTreeModel>

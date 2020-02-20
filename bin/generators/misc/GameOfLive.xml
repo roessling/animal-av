@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<PropertiesTreeModel xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="PropertiesTreeModel.xsd">
+	<Folder name="Root">
+		<Primitive type="Font">
+			<name>Schriftart</name>
+			<value><Font>Monospaced</Font></value>
+		</Primitive>
+		<Primitive type="intMatrix">
+			<name>Muster</name>
+			<value><intMatrix>0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0; 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0; 1, 0, 1, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0; 0, 1, 1, 0, 1, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0; 0, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0; 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0; 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0; 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0; 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0; 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0; 0, 0, 0, 0, 0, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0; 0, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0; 0, 0, 0, 0, 0, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0; 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0; 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0; 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0; 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0</intMatrix></value>
+		</Primitive>
+		<Primitive type="int">
+			<name>Spielfeld Dim. x</name>
+			<value><int>17</int></value>
+		</Primitive>
+		<Primitive type="int">
+			<name>Spielfeld Dim. y</name>
+			<value><int>17</int></value>
+		</Primitive>
+		<Primitive type="int">
+			<name>Iterationen</name>
+			<value><int>6</int></value>
+		</Primitive>
+		<Primitive type="Color">
+			<name>Farbe: lebendig</name>
+			<value><Color>(0, 0, 0)</Color></value>
+		</Primitive>
+		<Primitive type="Color">
+			<name>Farbe: tot</name>
+			<value><Color>(255, 255, 255)</Color></value>
+		</Primitive>
+		<Primitive type="Color">
+			<name>Farbe: nicht berechnet</name>
+			<value><Color>(255, 255, 0)</Color></value>
+		</Primitive>
+		<Primitive type="Color">
+			<name>Farbe: Code (hervorgehoben)</name>
+			<value><Color>(255, 0, 0)</Color></value>
+		</Primitive>
+	</Folder>
+</PropertiesTreeModel>

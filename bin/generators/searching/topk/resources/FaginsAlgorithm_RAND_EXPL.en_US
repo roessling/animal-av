@@ -1,0 +1,8 @@
+The lower right matrix shows all attributes values seen so far.
+For every missing attribute value in the upper right matrix we 
+will perform a random access using the associative array. The 
+random access differs from the parallel access because the 
+parallel access reads all the attribute values from table row
+at once whereas the random access reads single attribute values 
+directly (e.g. via a hashtable). In the end, every attribute of the 
+objects already seen has a value assigned to it.

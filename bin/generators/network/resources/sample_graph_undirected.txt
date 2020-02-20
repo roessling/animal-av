@@ -1,0 +1,25 @@
+%graphscript
+
+graph 6 weighted
+
+
+graphcoordinates at 0 0
+
+startknoten A
+zielknoten E
+node A at 83 321
+node B at 255 353
+node C at 220 193
+node D at 379 181
+node E at 250 66
+node F at 101 132
+
+edge A B weight 7
+edge A C weight 9
+edge A F weight 14
+edge B C weight 10
+edge B D weight 15
+edge C D weight 11
+edge C F weight 2
+edge D E weight 6
+edge E F weight 9

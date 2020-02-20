@@ -1,0 +1,25 @@
+function BellmanFord(Graph, source):
+	for each vertex v in Graph:
+		dist[v] := infinity ;
+		previous[v] := undefined ;
+	end for ;
+	dist[source] := 0 ;
+	for k := 1 to count_vertices(Graph) - 1:
+		for each edge e in Graph:
+			u := get_source(e) ;
+			v := get_destination(e) ;
+			if dist[u] + weight(e) < dist[v]:
+				dist[v] := dist[u] + weight(e) ;
+				pred[v] := u
+			end if ;
+		end for ;
+	end for ;
+			
+	for each edge e Graph:
+		u := get_source(e) ;
+		v := get_destination(e) ;
+		if dist[u] + weight(e) < dist[v]:
+			error 'Graph contains a negative-weight cycle' ;
+		end if ;
+	end for ;
+end function ;

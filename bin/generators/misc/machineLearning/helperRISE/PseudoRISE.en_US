@@ -1,0 +1,85 @@
+description = RISE belongs to the so-called instance-based learning procedures and concentrates on generating rule set during the execution. At the beginning,\nthe entire data set is converted into a rule set. The algorithm is then executed on this rule set. The accuracy is calculated first in each\niteration. The nearest rule is determined for each example and checked which class this rule would classify the example. The percentage of the\ncorrect classified example corresponds to accuracy.\nAccuracy = number of correct classified examples / number of examples.\nNext, the nearest example of the same class that is not yet covered by this rule is determined for each rule. The rule is minimally generalized so\nthat it now covers the example. For the new rule, the system checks whether the accuracy on the data set would improve. If so, the original\nrule is replaced by the new rule. If not, the new rule is discarded. If a generalization from a rule and example has already been created,\nthe rule from the rule set is discarded to prevent duplicates.\n \nThe distance function 'Value Difference Metric' (VDM) is used to determine the nearest neighbor. The idea behind VDM is that two values are similar\n(small distance) if they occur equally often in the different classes in percentage terms.\nThe formula for this is: d(v1, v2) = SUM_c | (n1_c / n1) - (n2,c / n2) |.\nv1 and v2 represent the two attribute values. n1_c is the number of attribute value v1 with class c. Analogous to this, n2_c with the Attribute\nvalue v2. n1 and n2 represent the frequency of the values v1 and v2.\n \nFor the total distance of an example, all attribute distances are then added up.
+
+titleRuleset = Rule set
+
+titleExamples = Example set
+
+titleExp = Explanation
+
+titleInterSteps = Intermediate steps
+
+convertAllRules = All examples are converted to rules (table: rule set).
+
+calcVDM = In the following steps the VDM-distance between the attribute values is calculated for each attribute.
+
+calcDistanceForEachExample1 = Calculate the distance between each example (left column) and each rule (upper row)\nby adding up all distances for the attribute values. 
+
+calcDistanceForEachExample2 =  Calculate the distance between each example (left column) and each rule (upper row)\nby adding up all distances for the attribute values.\nDeterminate the nearest neighbor (NN) with the shortest distance.
+
+calcAcc = Now calculate the accuracy. Each example is checked whether the nearest neighbor\nclassifies the example correct or wrong.
+
+wrongClassifiedEx = Now calculate the accuracy.\nFor each example we check whether it is correctly or incorrectly classified by the next rule.\n{0} Examples are misclassified (marked grey).\nThus we get an Accurcay of {1}/{2} = {3} (old accuracy = {4}).
+
+iterate = We go through all the examples and look for the example with the smallest distance that\nis not covered.
+
+createNewRule = Create a new rule that represents the minimum generalization of both rules.
+
+newMinimalDistance = Calculate the distance to the rule {0} for each example. The examples marked in grey\nhave been given a new minimum distance by {0}.
+
+addNewRule = With {0} examples are now correctly classified {1}.\nThe current accuracy is {2}/{3} = {4}. Add the new rule to the rule set,\nsince the current accuracy is greater than or equal to the total accuracy ({5}).
+
+dontAddNewRule = With {0} only {1} examples are correctly classified. The current accuracy is {2}.\nThe generalization is therefore not added, since it is smaller than the total accuracy ({3}). 
+
+removeRule = A generalization of these two rules has already been created. {0} is therefore removed from\nthe rule set.
+
+updateRuleset = The new rule set is updated.
+
+terminate = {0} Examples are misclassified (marked grey). This gives us an Accurcay of {1}/{2} = {3}.\nThe accuracy has worsened (old accuracy = {4}). The change of the last iteration is thus\ndiscarded and the algorithm terminated. 
+
+result = Result
+
+finalRuleset = If the RISE algorithm is applied to the example set (left table), it returns the rule set (right table) with the accuracy {0}.
+
+distance = Distance
+
+toClassifyingExample = Example to Classify
+
+rule = Rule
+
+prediction = Prediction
+
+calcVDM2 = We calculate the distances for all attribute values of an attribute
+
+attribute = Attribute
+
+calcDist = Calculate the class distribution 
+
+and = and
+
+examplesArePositive = Examples are positive\n
+
+examplesAreNegative = Examples are negative\n
+
+calcDifference = Now calculate the difference between the individual class distributions and add them up:\n
+
+task = In the next steps, the RISE algorithm is executed on the left example set.
+
+exampleCalc = Example of calculation: 
+
+q1 = When do two attributes have a small VDM distance?
+q1a1 = When they occur equally often in the same classes.
+q1a2 = When they occur relatively often in the same classes.
+q1a3 = When the occur equally often in different classes.
+
+
+q2 = Is this new rule added to the rule set?
+q2a1 = No because the accuracy is decreases.
+q2a2 = Yes, because the accuracy is decreases.
+q2a3 = No, because a generalization of both rules already exists.
+
+qFeedbackC = Correct! 
+qFeedbackW = Wrong!
+
+
+
+

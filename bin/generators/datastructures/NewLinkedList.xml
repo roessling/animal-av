@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<PropertiesTreeModel xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="PropertiesTreeModel.xsd">
+	<Folder name="Root">
+		<Primitive type="StringArray">
+			<name>Liste</name>
+			<value><StringArray>A, B, C, D</StringArray></value>
+			<description>Anzahl der Listenenelemente &amp; Beschriftung der Elemente</description>
+		</Primitive>
+		<Primitive type="Color">
+			<name>FarbeFirst</name>
+			<value><Color>(0, 255, 0)</Color></value>
+			<description>Farbe des First-Pointers</description>
+		</Primitive>
+		<Primitive type="Color">
+			<name>FarbeTmp</name>
+			<value><Color>(255, 0, 0)</Color></value>
+			<description>Farbe des temporären Pointers</description>
+		</Primitive>
+       <Primitive type="int">
+			<name>Loeschen</name>
+			<value><int>3</int></value>
+			<description>Löscht das Element an der Position</description>
+		</Primitive>
+	<Primitive type="int">
+			<name>Hinzufuegen</name>
+			<value><int>2</int></value>
+			<description>Fuegt das Element an der Position ein</description>
+		</Primitive>
+		<Primitive type="String">
+			<name>Name</name>
+			<value><String>E</String></value>
+			<description>Name des hinzugefuegten Elements</description>
+		</Primitive>
+			</Folder>
+</PropertiesTreeModel>

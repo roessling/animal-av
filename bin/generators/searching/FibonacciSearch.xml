@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<PropertiesTreeModel xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="PropertiesTreeModel.xsd">
+	<Folder name="Root">
+		<Primitive type="intArray">
+			<name>array</name>
+			<value><intArray>10, 22, 35, 40, 0</intArray></value>
+			<description>Das zu druchsuchende Array</description>
+		</Primitive>
+		<Primitive type="int">
+			<name>searchedElement</name>
+			<value><int>40</int></value>
+			<description>Das zu suchende Element</description>
+		</Primitive>
+	</Folder>
+</PropertiesTreeModel>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<PropertiesTreeModel xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="PropertiesTreeModel.xsd">
+	<Folder name="Root">
+		<Primitive type="int">
+			<name>outputLength</name>
+			<value><int>16</int></value>
+			<description>Determines the length of the output. The output array will contain x 8-bit elements.</description>
+		</Primitive>
+		<Primitive type="intArray">
+			<name>key</name>
+			<value><intArray>150, 97, 65, 10, 183, 151, 216, 169, 235, 118, 124, 33, 23, 45, 246, 199</intArray></value>
+			<description>The encryption key array, containing 16 positive integer elements, maximum size per entry is 1 byte.</description>
+		</Primitive>
+		<Primitive type="intArray">
+			<name>initVector</name>
+			<value><intArray>75, 92, 47, 0, 62, 103, 243, 149, 87, 168, 210, 111, 61, 162, 177, 85</intArray></value>
+			<description>The initialization vector array, containing 16 positive integer elements, maximum size per entry is 1 byte.</description>
+		</Primitive>
+	</Folder>
+</PropertiesTreeModel>

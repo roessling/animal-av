@@ -1,0 +1,18 @@
+noSuchKeyException=There is no resource for entry {0}
+iconNotFound=Icon "{0}" not found
+header=Neville's Algorithm
+description1=Given a set of n+1 data points (x_i,y_i) where no two x_i are the same, the interpolating
+description2=polynomial p of degree at most n with the property:
+description3=p(x_i)=y_i for all i=0,...,n
+description4=exists and it is unique.The algorithm evaluates the polynomial at some point x
+conclusion1=This algorithm needs O(n^2) floating point operations. Lyness and Moler showed in 1966
+conclusion2=that using undetermined coefficients for the polynomials in Neville's algorithm, one can compute the Maclaurin expansion of the final interpolating polynomial,
+conclusion3=which yields numerical approximations for the derivatives of the function at the origin.
+conclusion4=While this process requires more arithmetic operations than is required in finite difference methods,
+conclusion5=the choice of points for function evaluation is not restricted in any way.
+conclusion6=They also show that their method can be applied directly to the solution of linear systems of the Vandermonde type
+calculations=Number of operations
+feedback11=Correct
+feedback12=Incorrect
+question1=How many points are needed to evaluate a polynomial of degree 
+question12=?

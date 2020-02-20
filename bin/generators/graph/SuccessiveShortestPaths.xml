@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<PropertiesTreeModel xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="PropertiesTreeModel.xsd">
+	<Folder name="Root">
+		<Primitive type="intArray">
+			<name>initial_balances</name>
+			<value><intArray>2, 0, 3, -2, -3</intArray></value>
+			<description>the initial balance of each node in the graph (should have size m)</description>
+		</Primitive>
+		<Primitive type="intMatrix">
+			<name>arc_capacities</name>
+			<value><intMatrix>0, 0, 0, 4, 0; 2, 0, 0, 0, 2; 2, 2, 0, 0, 0; 0, 3, 4, 0, 1; 0, 0, 5, 0, 0</intMatrix></value>
+			<description>the maximal capacity (&gt;=0) of each arc in the graph (should have size m x m)
+			keeping the graph sparse enhances the presentation</description>
+		</Primitive>
+		<Primitive type="intMatrix">
+			<name>arc_costs</name>
+			<value><intMatrix>0, 2, 1, 5, 2; 1, 0, 3, 2, 1; 1, 1, 0, 1, 1; 1, 2, 3, 0, 1; 3, 1, 4, 2, 0</intMatrix></value>
+			<description>the cost factor (&gt;=0) of each arc in the graph (should have size m x m)</description>
+		</Primitive>
+		<Primitive type="int">
+			<name>number_nodes</name>
+			<value><int>5</int></value>
+			<description>in the following m. for display reasons, this number needs to be between 5 and 7</description>
+		</Primitive>
+	</Folder>
+</PropertiesTreeModel>

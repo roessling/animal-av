@@ -1,0 +1,26 @@
+We are using two lists.[br]L will be our result list. At the beginning we initialize it to be empty.[br]In S we store all nodes of tasks which are executable at the moment. These are all nodes[br]
+without predecessors.[br][br]
+
+In the main loop we let execute an task n of S[br]
+So we remove n from S and put it into L.
+This is valid because in S there are all nodes[br]
+whithout dependencies, so n is executable.
+Afterwards we have to update the dependencies.[br]
+n is already executed, so we can delete all arcs
+(dependencies) between n and its successors.[br]
+If a successor has no other predecessors, that means
+it became executable, so we add it to S.[br][br]
+
+Now we can again execute a task which is in S and put[br]
+it into L. We do this as long as there are elements in S.[br][br][br]
+
+
+In the end there are two possibilities:[br][br]
+
+1) There are arcs left: We couldn't execute all tasks
+but we don't have any tasks without dependencies.[br]
+Formally this means, that the graph contained cycles, so
+there exists no solution.[br][br]
+
+2) There are no arcs left: We have found an order to
+execute all tasks. L is our solution.

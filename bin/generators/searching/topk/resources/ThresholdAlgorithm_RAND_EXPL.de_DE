@@ -1,0 +1,8 @@
+Die untere rechte Matrix zeigt alle breits gesehenen Attributwerte an.
+Für jeden fehlenden Wert in der oberen rechten Matrix erfolgt ein 
+Random Access Zugriff mithilfe des assoziativen Arrays. Der Random 
+Access unterscheidet sich vom Parallel Access dahingehend, dass der 
+Parallel Access alle Objekte einer Tabellenzeile gleichzeitig ausliest,
+der Random Access aber (z.B. über eine Hashtable) direkt auf einzelne
+Attributwerte zugreift. Am Ende liegen für jedes gesehene Objekt alle 
+Attributwerte vor.

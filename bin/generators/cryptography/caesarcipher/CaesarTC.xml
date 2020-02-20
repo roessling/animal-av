@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<PropertiesTreeModel xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="PropertiesTreeModel.xsd">
+	<Folder name="Root">
+		<Primitive type="String">
+			<name>Eingabewort</name>
+			<value><String></String></value>
+		</Primitive>
+		<Primitive type="String">
+			<name>Eingabeschluessel</name>
+			<value><String>m</String></value>
+		</Primitive>
+		<Primitive type="Font">
+			<name>Schriftart</name>
+			<value><Font>Monospaced</Font></value>
+		</Primitive>
+		<Primitive type="Color">
+			<name>Schriftfarbe</name>
+			<value><Color>(0, 0, 0)</Color></value>
+		</Primitive>
+		<Folder name="ElementHighlightColor">
+			<Primitive type="Color">
+				<name>EingabewortHC</name>
+				<value><Color>(255, 255, 255)</Color></value>
+			</Primitive>
+			<Primitive type="Color">
+				<name>AusgabewortHC</name>
+				<value><Color>(255, 0, 0)</Color></value>
+			</Primitive>
+			<Primitive type="Color">
+				<name>AlphabetHC</name>
+				<value><Color>(255, 0, 0)</Color></value>
+			</Primitive>
+		</Folder>
+		<Folder name="ElementColor">
+			<Primitive type="Color">
+				<name>EingabewortFarbe</name>
+				<value><Color>(0, 0, 0)</Color></value>
+			</Primitive>
+			<Primitive type="Color">
+				<name>AusgabewortFarbe</name>
+				<value><Color>(0, 0, 0)</Color></value>
+			</Primitive>
+			<Primitive type="Color">
+				<name>AlphabetFarbe</name>
+				<value><Color>(0, 0, 0)</Color></value>
+			</Primitive>
+		</Folder>
+		<Folder name="ColorHighlight">
+			<Primitive type="Color">
+				<name>EingabewortFarbeCH</name>
+				<value><Color>(255, 255, 0)</Color></value>
+			</Primitive>
+			<Primitive type="Color">
+				<name>AusgabewortFarbeCH</name>
+				<value><Color>(0, 255, 255)</Color></value>
+			</Primitive>
+			<Primitive type="Color">
+				<name>AlphabetFarbeCH</name>
+				<value><Color>(255, 255, 0)</Color></value>
+			</Primitive>
+		</Folder>
+		<Folder name="MarkerColor">
+			<Primitive type="Color">
+				<name>EingabewortMC</name>
+				<value><Color>(255, 0, 0)</Color></value>
+			</Primitive>
+			<Primitive type="Color">
+				<name>AusgabewortMC</name>
+				<value><Color>(0, 255, 0)</Color></value>
+			</Primitive>
+			<Primitive type="Color">
+				<name>AlphabetAktBuchstabe</name>
+				<value><Color>(0, 255, 0)</Color></value>
+			</Primitive>
+			<Primitive type="Color">
+				<name>AlphabetEncrptBuchstabe</name>
+				<value><Color>(255, 0, 0)</Color></value>
+			</Primitive>
+		</Folder>
+	</Folder>
+</PropertiesTreeModel>

@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<PropertiesTreeModel xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="PropertiesTreeModel.xsd">
+	<Folder name="Root">
+        <Primitive type="StringArray">
+			<name>word</name>
+			<value><StringArray>a, b, b, a</StringArray></value>
+		</Primitive>
+		<Primitive type="String">
+			<name>S-left</name>
+			<value><String>A</String></value>
+		</Primitive>
+		<Primitive type="String">
+			<name>S-right</name>
+			<value><String>B</String></value>
+		</Primitive>
+		<Primitive type="String">
+			<name>S-terminal</name>
+			<value><String>a</String></value>
+		</Primitive>
+		<Primitive type="String">
+			<name>A-left</name>
+			<value><String>A</String></value>
+		</Primitive>
+		<Primitive type="String">
+			<name>A-right</name>
+			<value><String>B</String></value>
+		</Primitive>
+		<Primitive type="String">
+			<name>A-terminal</name>
+			<value><String>a</String></value>
+		</Primitive>
+		<Primitive type="String">
+			<name>B-left</name>
+			<value><String>B</String></value>
+		</Primitive>
+		<Primitive type="String">
+			<name>B-right</name>
+			<value><String>A</String></value>
+		</Primitive>
+		<Primitive type="String">
+			<name>B-terminal</name>
+			<value><String>b</String></value>
+		</Primitive>
+	</Folder>
+</PropertiesTreeModel>

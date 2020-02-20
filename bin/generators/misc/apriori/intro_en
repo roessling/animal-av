@@ -1,0 +1,9 @@
+Apriori is an algorithm for frequent item set mining and association rule learning [br]
+over transactional databases. [br][br]
+
+It proceeds by identifying the frequent individual items in the database and extending them to [br]
+larger and larger item sets as long as those item sets appear sufficiently often in the database. [br]
+The frequent item sets determined by Apriori can be used to determine association rules which [br]
+highlight general trends in the database. The latter part is not included in this visualization. [br][br]
+
+Apriori has applications in domains such as market basket analysis.

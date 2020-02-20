@@ -1,0 +1,14 @@
+﻿[block]
+[br]
+[br]
+  Hilfsfunktionen:
+[br]
+[br] Die Distanz wird mit der Hilfsfunktion double calcDistance(Point P1, Point P2)
+[br] entsprechend der gewählten Metrik berechnet.
+[br]
+[br] Ausserdem dient die Hilfsfunktion int minIndex(double[] arr) dazu die nächsten Nachbarn schnell zu finden.
+[br]
+[br] Zum schnellen suchen der nächsten Nachbarn wird die Distanz der bereits gefundenen nächsten Nachbarn
+[br] auf MAX_VALUE gesetzt in diesem Beispiel kann eine Distanz von 999.9 nicht erreicht werden und wird
+[br] deshalb als MAX_VALUE verwendet.
+[/block]

@@ -1,0 +1,26 @@
+[block]
+	Der Algorithmus von Floyd und Warschall nutzt das Konzept der ''dynamischen 
+	Programmierung'' zur Bestimmung aller kürzesten Pfade zwischen Paaren von[br]
+	Knoten in einem gewichteten Graphen.
+[/block]
+[block]
+	[h2]Der Algorithmus[/h2]
+	Der Graph kann dabei auch negative Kantengewichte enthalten, es wird jedoch 
+	vorausgesetzt, dass kein Zyklus mit negativem Gesamtgewicht im Graphen[br]
+	existiert. Das Verfahren berechnet in der ursprünglichen Form lediglich die 
+	Distanzen aller Knoten in einem Graphen. Der Algorithmus nutzt hierzu drei[br]
+	verschachtelte Schleifen, die für jede Kombination aus Start– und Zielknoten 
+	die Entfernung über jeden Zwischenknoten berechnen und prüfen, ob die[br]
+	Entfernung über diesen Zwischenknoten kürzer als die günstigste aktuell 
+	bekannte Distanz ist. Da bei der Berechnung auch eine Matrix von[br]
+	Vorgängerknoten mitgeführt wird, kann durch eine Rückwärtssuche ebenso der 
+	Pfad zwischen zwei Knoten bestimmt werden.[br]
+	Die Laufzeit des Floyd–Warshall Algorithmus wird durch die drei 
+	verschachtelten Schleifen bestimmt, die jeweils mit der Anzahl der Knoten[br]
+	im Graph initialisiert werden. Damit beträgt die Komplexität O(|V|^3). Da 
+	jedoch keine komplexen Datenstrukturen mitgeführt werden, ist die Laufzeit[br]
+	des Algorithmus selbst für Graphen mittlerer Größen akzeptabel.[br]
+	Der Algorithmus kann in Netzwerken zur Bestimmung der verfügbaren Bandbreite 
+	zwischen zwei Knoten und zum Finden von Engpässen bei der[br]
+	Datenübertragung genutzt werden.
+[/block]

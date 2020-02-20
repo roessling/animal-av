@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<PropertiesTreeModel xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="PropertiesTreeModel.xsd">
+	<Folder name="Root">
+		<Primitive type="Color">
+			<name>ElementColorAB</name>
+			<value><Color>(0, 0, 0)</Color></value>
+		</Primitive>
+		<Primitive type="Color">
+			<name>HighlightElementAB</name>
+			<value><Color>(0, 255, 0)</Color></value>
+		</Primitive>
+		<Primitive type="Color">
+			<name>ElementColorC</name>
+			<value><Color>(0, 144, 0)</Color></value>
+		</Primitive>
+		<Primitive type="Color">
+			<name>HighlightElementC</name>
+			<value><Color>(144, 0, 0)</Color></value>
+		</Primitive>
+		<Primitive type="Color">
+			<name>LinesColor</name>
+			<value><Color>(0, 0, 144)</Color></value>
+		</Primitive>
+		<Primitive type="Color">
+			<name>TextsColor</name>
+			<value><Color>(0, 0, 0)</Color></value>
+		</Primitive>
+		<Primitive type="int">
+			<name>row_number_Of _MatrixA</name>
+			<value><int>2</int></value>
+		</Primitive>
+		<Primitive type="int">
+			<name>col_number_Of _MatrixA</name>
+			<value><int>3</int></value>
+		</Primitive>
+		<Primitive type="int">
+			<name>row_number_Of _MatrixB</name>
+			<value><int>3</int></value>
+		</Primitive>
+		<Primitive type="int">
+			<name>col_number_Of _MatrixB</name>
+			<value><int>2</int></value>
+		</Primitive>
+		<Primitive type="String">
+			<name>MatrixA</name>
+			<value><String>{1,2,3};{4,5,6}</String></value>
+		</Primitive>
+		<Primitive type="String">
+			<name>MatrixB</name>
+			<value><String>{1,2};{3,4};{5,6}</String></value>
+		</Primitive>
+	</Folder>
+</PropertiesTreeModel>

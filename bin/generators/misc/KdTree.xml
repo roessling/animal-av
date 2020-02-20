@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<PropertiesTreeModel xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="PropertiesTreeModel.xsd">
+	<Folder name="Root">
+		<Primitive type="boolean">
+			<name>flag for random generation of points</name>
+			<value><boolean value="false" /></value>
+		</Primitive>
+		<Primitive type="intMatrix">
+			<name>list of 2d-points</name>
+			<value><intMatrix>2, 1; 1, 1; 8, 4; 8, 9; 5, 7; 6, 3; 4, 8; 3, 3; 5, 4</intMatrix></value>
+		</Primitive>
+		<Primitive type="intArray">
+			<name>2d-point for NN-search</name>
+			<value><intArray>7, 4</intArray></value>
+		</Primitive>
+	</Folder>
+</PropertiesTreeModel>

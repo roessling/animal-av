@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<PropertiesTreeModel xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="PropertiesTreeModel.xsd">
+	<Folder name="Root">
+		<Primitive type="int">
+			<name>deltaTokens</name>
+			<value><int>5</int></value>
+			<description>How many tokens are put into the bucket every timeperiod</description>
+		</Primitive>
+		<Primitive type="int">
+			<name>beta</name>
+			<value><int>20</int></value>
+			<description>Size of the bucket (max number of tokens)</description>
+		</Primitive>
+		<Primitive type="int">
+			<name>inputLength</name>
+			<value><int>20</int></value>
+			<description>How long the input should be</description>
+		</Primitive>
+		<Primitive type="int">
+			<name>chanceForZeros</name>
+			<value><int>45</int></value>
+			<description>Percentage of how many zeros we should have in the input list</description>
+		</Primitive>
+		<Primitive type="int">
+			<name>maxPacketLength</name>
+			<value><int>15</int></value>
+			<description>The packet size will be between 0 and maxPacketLength</description>
+		</Primitive>
+	</Folder>
+</PropertiesTreeModel>

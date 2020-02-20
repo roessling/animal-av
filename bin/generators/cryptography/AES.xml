@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PropertiesTreeModel xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="PropertiesTreeModel.xsd">
+	<Folder name="Root">
+		<Folder name="Source Code Style Properties">
+			<Primitive type="Font">
+				<name>Source Code Font</name>
+				<value><Font>Monospaced</Font></value>
+			</Primitive>
+			<Primitive type="int">
+				<name>Source Code Font Size</name>
+				<value><int>14</int></value>
+			</Primitive>
+			<Primitive type="boolean">
+				<name>Source Code Bold</name>
+				<value><boolean value="true" /></value>
+			</Primitive>
+			<Primitive type="Color">
+				<name>Source Code Color</name>
+				<value><Color>(0, 0, 0)</Color></value>
+			</Primitive>
+			<Primitive type="Color">
+				<name>Source Code Context Color</name>
+				<value><Color>(0, 0, 255)</Color></value>
+			</Primitive>
+			<Primitive type="Color">
+				<name>Source Code Highlight Color</name>
+				<value><Color>(255, 0, 0)</Color></value>
+			</Primitive>
+		</Folder>
+		<Folder name="Text Style Properties">
+			<Primitive type="Font">
+				<name>Text Font</name>
+				<value><Font>SansSerif</Font></value>
+			</Primitive>
+			<Primitive type="int">
+				<name>Text Font Size</name>
+				<value><int>14</int></value>
+			</Primitive>
+			<Primitive type="boolean">
+				<name>Text Bold</name>
+				<value><boolean value="false" /></value>
+			</Primitive>
+			<Primitive type="Color">
+				<name>Text Color</name>
+				<value><Color>(0, 0, 0)</Color></value>
+			</Primitive>
+		</Folder>
+	</Folder>
+</PropertiesTreeModel>
