@@ -102,7 +102,7 @@ public class LongestIncreasingSubsequenceNaive implements ValidatingGenerator {
 		// Create algorithm title
 		//SourceCodeProperties titleProps = new SourceCodeProperties();
 		
-		//TODO: vorrübergehende loesung
+		//TODO: vorruebergehende loesung
 		titleProps.set(AnimationPropertiesKeys.FONT_PROPERTY, new Font("Monospaced", Font.BOLD, 20));
 
 		

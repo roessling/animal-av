@@ -168,7 +168,7 @@ public class Helper {
 					"Wie viel Wert misst Teilnehmer " + id + " der gesamten Itemmenge bei (Integerwert angeben)?");
 			qTotalSum.addAnswer(String.valueOf(sumOfBids), 1,
 					"Korrekt! Die Summe aller Gebote von Teilnehmer " + id
-							+ " und damit seine Gesamtwertschätzung der Itemmenge beträgt " + sumOfBids
+							+ " und damit seine GesamtwertschÃ¤tzung der Itemmenge betrÃ¤gt " + sumOfBids
 							+ " Geldeinheiten (z.B. Euro)");
 			sb.lang.addFIBQuestion(qTotalSum);
 			probTotalSum *= 0.7;
@@ -194,7 +194,7 @@ public class Helper {
 					+ " als subjektiv fairen Anteil (fair share) der gesamten Itemmenge empfindet (Integerwert angeben)?");
 			qFairShare.addAnswer(String.valueOf(fairShare), 1, "Richtig! Teilnehmer " + id
 					+ " misst der Itemmenge einen Wert von " + sumOfBids
-					+ " Geldeinheiten bei. Geteilt durch die Anzahl der Teilnehmer müsste aus Sicht dieses Teilnehmers ein fairer Anteil "
+					+ " Geldeinheiten bei. Geteilt durch die Anzahl der Teilnehmer mÃ¼sste aus Sicht dieses Teilnehmers ein fairer Anteil "
 					+ fairShare + " Geldeinheiten entsprechen");
 			sb.lang.addFIBQuestion(qFairShare);
 			probFairShare *= 0.7;
@@ -218,10 +218,10 @@ public class Helper {
 			for (int i = 1; i <= sb.numPlayers; i++) {
 				if (i == highestBidderID) {
 					qItemWinner.addAnswer("Teilnehmer " + i, 1,
-							"Richtig! Teilnehmer " + i + " hat das höchste Gebot abgegeben und erhält das Item");
+							"Richtig! Teilnehmer " + i + " hat das hÃ¶chste Gebot abgegeben und erhÃ¤lt das Item");
 				} else {
 					qItemWinner.addAnswer("Teilnehmer " + i, 0,
-							"Leider falsch. Teilnehmer " + highestBidderID + " erhält als Höchstbietender das Item");
+							"Leider falsch. Teilnehmer " + highestBidderID + " erhÃ¤lt als HÃ¶chstbietender das Item");
 				}
 			}
 			sb.lang.addMCQuestion(qItemWinner);
@@ -244,11 +244,11 @@ public class Helper {
 			MultipleChoiceQuestionModel qPayOrReceive = new MultipleChoiceQuestionModel("payOrReceive" + playerID);
 			qPayOrReceive.setPrompt("Welche Antwort ist richtig? Teilnehmer " + playerID);
 			String opt1 = "muss einen Betrag in die Gemeinschaftskasse einzahlen";
-			String opt2 = "erhält einen Betrag aus der Gemeinschaftskasse";
-			String opt3 = "muss weder einzahlen noch erhält er Geld aus der Gemeinschaftskasse";
-			String reason1 = "Da der Teilnehmer einen Wert in Form von Items erhalten hat, der höher ist als sein fairer Anteil, muss er die Differenz in die Gemeinschaftskasse einzahlen";
-			String reason2 = "Da der Teilnehmer nicht genug Gegenstandswert erhalten hat, um seinen fairen Anteil zu decken, erhält er die Differenz aus der Gemeinschaftskasse";
-			String reason3 = "Der erhaltene Wert des Teilnehmers deckt exakt seinen als fair empfundenen Anteil, sodass er weder einzahlen muss noch Geld erhält";
+			String opt2 = "erhÃ¤lt einen Betrag aus der Gemeinschaftskasse";
+			String opt3 = "muss weder einzahlen noch erhÃ¤lt er Geld aus der Gemeinschaftskasse";
+			String reason1 = "Da der Teilnehmer einen Wert in Form von Items erhalten hat, der hÃ¶her ist als sein fairer Anteil, muss er die Differenz in die Gemeinschaftskasse einzahlen";
+			String reason2 = "Da der Teilnehmer nicht genug Gegenstandswert erhalten hat, um seinen fairen Anteil zu decken, erhÃ¤lt er die Differenz aus der Gemeinschaftskasse";
+			String reason3 = "Der erhaltene Wert des Teilnehmers deckt exakt seinen als fair empfundenen Anteil, sodass er weder einzahlen muss noch Geld erhÃ¤lt";
 			if (diff > 0.0) {
 				qPayOrReceive.addAnswer(opt1, 1, "Stimmt! " + reason1);
 				qPayOrReceive.addAnswer(opt2, 0, "Leider falsch; " + reason1);
@@ -274,14 +274,14 @@ public class Helper {
 		if (!sb.useQuestions)
 			return;
 		MultipleChoiceQuestionModel qRemainingMoney = new MultipleChoiceQuestionModel("remainingMoney");
-		qRemainingMoney.setPrompt("Was geschieht mit dem übrigen Geld in der Gemeinschaftskasse?");
+		qRemainingMoney.setPrompt("Was geschieht mit dem Ã¼brigen Geld in der Gemeinschaftskasse?");
 		qRemainingMoney.addAnswer(
-				"Der Teilnehmer, der den geringsten Gesamtwert erhalten hat, erhält den übrigen Geldbetrag", 0,
+				"Der Teilnehmer, der den geringsten Gesamtwert erhalten hat, erhÃ¤lt den Ã¼brigen Geldbetrag", 0,
 				"Falsch; der Restbetrag wird fair zwischen allen Teilnehmern aufgeteilt");
-		qRemainingMoney.addAnswer("Das übrige Geld wird zwischen allen Teilnehmern gleichermaßen aufgeteilt", 1,
+		qRemainingMoney.addAnswer("Das Ã¼brige Geld wird zwischen allen Teilnehmern gleichermaÃŸen aufgeteilt", 1,
 				"Richtig!");
 		qRemainingMoney.addAnswer(
-				"Das geld wird übrig gelassen, da jeder Teilnehmer bereits seinen subjektiv wahrgenommenen fairen anteil erhalten hat",
+				"Das geld wird Ã¼brig gelassen, da jeder Teilnehmer bereits seinen subjektiv wahrgenommenen fairen anteil erhalten hat",
 				0, "Falsch; der Restbetrag wird fair zwischen allen Teilnehmern aufgeteilt");
 		sb.lang.addMCQuestion(qRemainingMoney);
 	}

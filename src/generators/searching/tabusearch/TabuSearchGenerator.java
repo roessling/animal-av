@@ -132,13 +132,13 @@ public class TabuSearchGenerator implements ValidatingGenerator {
 	}
 
 	public String getDescription() {
-		return "Für die meisten Instanzen NP-schwerer Probleme können exakte Algorithmen keine Lösung in" + "\n"
+		return "FÃ¼r die meisten Instanzen NP-schwerer Probleme kÃ¶nnen exakte Algorithmen keine LÃ¶sung in" + "\n"
 				+ "annehmbarer Zeit berechnen. Daher existieren verschiedene Alternativen, die nicht versuchen, die"
 				+ "\n"
-				+ "beste Lösung einer gegebenen Probleminstanz zu finden, sondern nur eine, die ausreichend gut ist"
-				+ "\n" + "(dafür aber in annehmbarer Zeit)." + "\n"
+				+ "beste LÃ¶sung einer gegebenen Probleminstanz zu finden, sondern nur eine, die ausreichend gut ist"
+				+ "\n" + "(dafÃ¼r aber in annehmbarer Zeit)." + "\n"
 				+ "Eine solche Alternative ist die Tabusuche. Sie stellt eine Art Erweiterung der lokalen Suche dar und"
-				+ "\n" + "ist dadurch in der Lage, lokale Optima zu überwinden.";
+				+ "\n" + "ist dadurch in der Lage, lokale Optima zu Ã¼berwinden.";
 	}
 
 	public void tabuSearch(int[][] adjacencyMatrix) {

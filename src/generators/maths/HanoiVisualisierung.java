@@ -125,24 +125,24 @@ public class HanoiVisualisierung implements ValidatingGenerator {
         return Generator.PSEUDO_CODE_OUTPUT;
     }
     
-    static String[] INTRO_TEXT = {"Die ìTuerme von Hanoiì ist ein Knobelspiel, welches in seiner Urform mit 3 Staeben",
-			"und beliebig vielen unterschiedlich groﬂen Scheiben gespielt wird.",
-			"Dabei sind zun‰chst alle Scheiben der Groeﬂe nach sortiert auf einen der Staebe aufgesteckt.",
+    static String[] INTRO_TEXT = {"Die 'Tuerme von Hanoi' ist ein Knobelspiel, welches in seiner Urform mit 3 Staeben",
+			"und beliebig vielen unterschiedlich groen Scheiben gespielt wird.",
+			"Dabei sind zun√§chst alle Scheiben der Gr√∂√üe nach sortiert auf einen der Staebe aufgesteckt.",
 			"Bei jedem Spielzug darf eine Scheibe auf einen anderen Stab verschoben werden,",
-			"jedoch immer nur auf eine grˆﬂere Scheibe, nicht auf eine kleinere.",
+			"jedoch immer nur auf eine gr√∂√üere Scheibe, nicht auf eine kleinere.",
 			"",
 			"Ziel des Spiels ist es alle Scheiben auf einen anderen Stab zu verschieben.",
-			"In dieser Visualisierung werden die St‰be von drei Arrays dargestellt",
-			"und die Scheiben durch Zahlen, die auch gleichzeitig die jeweilige Groeﬂe der Scheibe angeben.",
+			"In dieser Visualisierung werden die St√§be von drei Arrays dargestellt",
+			"und die Scheiben durch Zahlen, die auch gleichzeitig die jeweilige Gr√∂√üe der Scheibe angeben.",
 			"",
-			"Der vorgestellte Algorithmus berechnet die optimalen Z¸ge, um das Spiel zu loesen, mithilfe einer rekursiven Methode.",
+			"Der vorgestellte Algorithmus berechnet die optimalen Z√ºge, um das Spiel zu loesen, mithilfe einer rekursiven Methode.",
 			"Dazu wird in der Mitte der Visualisierung ein Stapel mit allen aktuell existenten Instanzen der Methode angezeigt.",
 			"Die aktiven werden rot eingefaerbt."};
 	
 	static String[] OUTRO_TEXT = {"Der Algorithmus hat nun alle Scheiben erfolgreich auf Stab C verschoben.",
 			"Dazu wurden alle Instanzen der 'bewegen'-Methode, die der Algorithmus erzeugt,",
 			"auf den Stapel gelegt und abgearbeitet.",
-			"Zu keinem Zeitpunkt lag eine groeﬂere auf einer kleineren Scheibe",
+			"Zu keinem Zeitpunkt lag eine gr√∂√üere auf einer kleineren Scheibe",
 			"und der Algorithmus verschob immer einzelne Scheiben.",
 			"Der Algorithmus hat also das Spiel 'Tuerme von Hanoi' erfolgreich abgeschlossen."};
 	

@@ -71,38 +71,38 @@ public class MontyHallProblem implements Generator {
     public String getDescription(){
         return "Angenommen sie sind in einer Spielshow und haben die Wahl"
  +"\n"
- +"sich zwischen 3 Tueren zu entscheiden. Hinter einer Tuer"
+ +"sich zwischen 3 Tuüen zu entscheiden. Hinter einer Tür"
  +"\n"
  +"befindet sich ein Auto, hinter den anderen beiden Ziegen."
  +"\n"
- +"Nachdem sie sich f�r eine Tuer, z.B. Nummer 3 entschieden haben"
+ +"Nachdem sie sich für eine Tür, z.B. Nummer 3 entschieden haben"
  +"\n"
- +"oeffnet der Showmaster, der weiss hinter welchen Tueren Ziegen"
+ +"öffnet der Showmaster, der weiß hinter welchen Türen Ziegen"
  +"\n"
- +"sind, eine Tuer, z.B. Nummer 1, hinter der eine Ziege ist."
+ +"sind, eine Tür, z.B. Nummer 1, hinter der eine Ziege ist."
  +"\n"
- +"Dann gibt er ihnen die Option sich statt fuer Tuer Nummer 3"
+ +"Dann gibt er ihnen die Option, sich statt für Tür Nummer 3"
  +"\n"
- +"fuer Tuer Nummer 2 zu entscheiden."
+ +"für Tür Nummer 2 zu entscheiden."
  +"\n"
  +"\n"
- +"Ist es fuer sie von Vorteil die Tuer zu wechseln?";
+ +"Ist es für Sie von Vorteil, die Tür zu wechseln?";
     }
 
     public String getCodeExample(){
-        return "1. Zwei Ziegen und ein Auto werden zufaellig hinter den Tueren platziert. "
+        return "1. Zwei Ziegen und ein Auto werden zufällig hinter den Türen platziert. "
  +"\n"
  +"2. Der Spieler entscheidet sich ohne Kenntnis was hinter welcher                                                                                                    "
  +"\n"
- +"Tuer ist fuer eine der Tueren."
+ +"Tür ist für eine der Türen."
  +"\n"
- +"3. Der Showmaster oeffnet eine vom Spieler nicht gewaehlte Tuer hinter "
+ +"3. Der Showmaster öffnet eine vom Spieler nicht gewählte Tür hinter "
  +"\n"
  +"der sich eine Ziege befindet."
  +"\n"
  +"4a. Fall A: Der Spieler bleibt bei seiner Entscheidung."
  +"\n"
- +"4b. Fall B: Der Spieler wechselt die gewaehlte Tuer.";
+ +"4b. Fall B: Der Spieler wechselt die gewählte Tür.";
     }
 
     public String getFileExtension(){
@@ -160,7 +160,7 @@ public class MontyHallProblem implements Generator {
           numberWonWithSwitch = 0;
             
     	// create string array for the three doors
-    	  String[] a = {"Tuer 1", "Tuer 2", "Tuer 3"};
+    	  String[] a = {"Tür 1", "Tür 2", "Tür 3"};
     	
     	// Create header
     	
@@ -178,15 +178,15 @@ public class MontyHallProblem implements Generator {
     	  SourceCode descr = lang.newSourceCode(new Offset(20,20, header, AnimalScript.DIRECTION_SW), "descr",
     		        null, textProps);
     	  descr.addCodeLine("Angenommen sie sind in einer Spielshow und haben die Wahl", null, 0,null);
-    	  descr.addCodeLine("sich zwischen 3 Tueren zu entscheiden. Hinter einer Tuer", null, 0,null);
+    	  descr.addCodeLine("sich zwischen 3 Türen zu entscheiden. Hinter einer Tür", null, 0,null);
     	  descr.addCodeLine("befindet sich ein Auto, hinter den anderen beiden Ziegen.", null, 0,null);
-    	  descr.addCodeLine("Nachdem sie sich f�r eine Tuer, z.B. Nummer 3 entschieden haben", null, 0,null);
-    	  descr.addCodeLine("oeffnet der Showmaster, der weiss hinter welchen Tueren Ziegen", null, 0,null);
-    	  descr.addCodeLine("sind, eine Tuer, z.B. Nummer 1, hinter der eine Ziege ist.", null, 0,null);
-    	  descr.addCodeLine("Dann gibt er ihnen die Option sich statt fuer Tuer Nummer 3", null, 0,null);
-    	  descr.addCodeLine("fuer Tuer Nummer 2 zu entscheiden.", null, 0,null);
+    	  descr.addCodeLine("Nachdem sie sich für eine Tür, z.B. Nummer 3 entschieden haben", null, 0,null);
+    	  descr.addCodeLine("öffnet der Showmaster, der weiss hinter welchen Türen Ziegen", null, 0,null);
+    	  descr.addCodeLine("sind, eine Tür, z.B. Nummer 1, hinter der eine Ziege ist.", null, 0,null);
+    	  descr.addCodeLine("Dann gibt er ihnen die Option sich statt für Tür Nummer 3", null, 0,null);
+    	  descr.addCodeLine("für Tür Nummer 2 zu entscheiden.", null, 0,null);
     	  descr.addCodeLine("", null, 0,null);
-    	  descr.addCodeLine("Ist es fuer sie von Vorteil die Tuer zu wechseln?", null, 0,null);
+    	  descr.addCodeLine("Ist es für sie von Vorteil die Tür zu wechseln?", null, 0,null);
     	  
     	  
         // create array
@@ -221,13 +221,13 @@ public class MontyHallProblem implements Generator {
         SourceCode sc = lang.newSourceCode(new Offset(0,40, ia, AnimalScript.DIRECTION_SW), "sourceCode",
             null, textProps);
         
-        sc.addCodeLine("1. Zwei Ziegen(rot) und ein Auto(gruen) werden zufaellig hinter den Tueren platziert.", null, 0,
+        sc.addCodeLine("1. Zwei Ziegen(rot) und ein Auto(grün) werden zufällig hinter den Türen platziert.", null, 0,
             null); // 0
         sc.addCodeLine("2. Der Spieler entscheidet sich ohne Kenntnis was hinter welcher", null, 1, null); //1
-        sc.addCodeLine("   Tuer ist fuer eine der Tueren.", null, 1, null); // 2
-        sc.addCodeLine("3. Der Showmaster oeffnet eine vom Spieler nicht gewaehlte Tuer hinter der sich eine Ziege befindet.", null, 2, null); // 3
+        sc.addCodeLine("   Tür ist für eine der Türen.", null, 1, null); // 2
+        sc.addCodeLine("3. Der Showmaster öffnet eine vom Spieler nicht gewählte Tür hinter der sich eine Ziege befindet.", null, 2, null); // 3
         sc.addCodeLine("4a. Fall A: Der Spieler bleibt bei seiner Entscheidung.", null, 3, null); // 4
-        sc.addCodeLine("4b. Fall B: Der Spieler wechselt die gewaehlte Tuer.", null, 3, null); // 5
+        sc.addCodeLine("4b. Fall B: Der Spieler wechselt die gewählte Tür.", null, 3, null); // 5
         
         
         
@@ -289,17 +289,17 @@ public class MontyHallProblem implements Generator {
     	  //SourceCodeProperties endProps = new SourceCodeProperties();
     	  SourceCode endDescr = lang.newSourceCode(new Offset(20,20, header, AnimalScript.DIRECTION_SW), "endDescr",
     		        null, textProps);
-    	  endDescr.addCodeLine("Fuer das Standard Monty Hall Problem besteht beim Wechsel", null, 0,null);
+    	  endDescr.addCodeLine("Für das Standard Monty Hall Problem besteht beim Wechsel", null, 0,null);
     	  endDescr.addCodeLine("eine zweidrittel Chance auf einen Gewinn.", null, 0,null);
-    	  endDescr.addCodeLine("Das sollte spaetestens durch die schnellen Iterationen", null, 0,null);
+    	  endDescr.addCodeLine("Das sollte spätestens durch die schnellen Iterationen", null, 0,null);
     	  endDescr.addCodeLine("deutlich geworden sein.", null, 0,null);
     	  endDescr.addCodeLine("", null, 0,null);
     	  endDescr.addCodeLine("Dies ist bei weitem nicht direkt ersichtlich. Wichtig zu beachten ist, dass", null, 0,null);
-    	  endDescr.addCodeLine("die vom Showmaster geoeffnete Tuer nicht willkuerlich ist. Er muss eine", null, 0,null);
-    	  endDescr.addCodeLine("Tuer oeffnen die nicht vom Spieler gewaehlt wurde und hinter der kein Gewinn ist.", null, 0,null);
-    	  endDescr.addCodeLine("Um das Problem inuitiver zu machen stelle man sich vor es gaebe eine Million Tueren", null, 0,null);
-    	  endDescr.addCodeLine("der Spieler waehlt eine davon und der Showmaster oeffnet alle verbleibenden", null, 0,null);
-    	  endDescr.addCodeLine("Tueren bis auf eine. Wuerden sie unter diesen Umstaenden wechseln oder", null, 0,null);
+    	  endDescr.addCodeLine("die vom Showmaster geöffnete Tür nicht willkürlich ist. Er muss eine", null, 0,null);
+    	  endDescr.addCodeLine("Tür öffnen die nicht vom Spieler gewählt wurde und hinter der kein Gewinn ist.", null, 0,null);
+    	  endDescr.addCodeLine("Um das Problem inuitiver zu machen stelle man sich vor es gäbe eine Million Türen", null, 0,null);
+    	  endDescr.addCodeLine("der Spieler wählt eine davon und der Showmaster öffnet alle verbleibenden", null, 0,null);
+    	  endDescr.addCodeLine("Türen bis auf eine. Würden sie unter diesen Umständen wechseln oder", null, 0,null);
     	  endDescr.addCodeLine("bei ihrer ersten Wahl bleiben?", null, 0,null);
     	  
 

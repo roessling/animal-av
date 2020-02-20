@@ -452,8 +452,8 @@ public class Beweiszahlsuche implements ValidatingGenerator {
 			scPNS.toggleHighlight(9, 11);
 
 			FillInBlanksQuestionModel bestNode = new FillInBlanksQuestionModel("node"+Integer.toString(counter));
-			bestNode.setPrompt("welchen Knoten wird der Algorithmus als den nächsten besten Knoten auswählen? Bitte gebe nur die Nummer des Knotens an.");
-			bestNode.addAnswer("ans", selectMostProvingNodeQuestion(current, g, scPNSProps, numbers, graph, primitiveList), 1, "Richtig, der nächste Knoten der nun expandiert wird ist der Knoten " + selectMostProvingNodeQuestion(current, g, scPNSProps, numbers, graph, primitiveList));
+			bestNode.setPrompt("welchen Knoten wird der Algorithmus als den nÃ¤chsten besten Knoten auswÃ¤hlen? Bitte gebe nur die Nummer des Knotens an.");
+			bestNode.addAnswer("ans", selectMostProvingNodeQuestion(current, g, scPNSProps, numbers, graph, primitiveList), 1, "Richtig, der nÃ¤chste Knoten der nun expandiert wird ist der Knoten " + selectMostProvingNodeQuestion(current, g, scPNSProps, numbers, graph, primitiveList));
 			lang.addFIBQuestion(bestNode);
 			
 			lang.nextStep();
@@ -522,7 +522,7 @@ public class Beweiszahlsuche implements ValidatingGenerator {
 		}else if(graph[0].dpn == 0) {
 			lang.newText(new Coordinates(40, 85), "Da der Knoten nun die Disproofnumber 0 hat bedeutet das,", "Ergebnis loss", null,tp);
 			lang.newText(new Coordinates(40, 105), "es handelt sich um einen sogennanten 'forced loss'", "Ergebnis loss", null,tp);
-			lang.newText(new Coordinates(40, 125), "Das heißt egal wie sich Spieler 1 entscheidet verliert er.", "Ergebnis loss", null,tp);
+			lang.newText(new Coordinates(40, 125), "Das heiÃŸt, egal wie sich Spieler 1 entscheidet, verliert er.", "Ergebnis loss", null,tp);
 		}
 		
 		lang.finalizeGeneration();
@@ -939,7 +939,7 @@ public class Beweiszahlsuche implements ValidatingGenerator {
 
 				scSetProofAndDisproofNumber.toggleHighlight(3, 4);
 				
-				node.dpn = 1000; //Ersatz für INF aus comparison Gründen
+				node.dpn = 1000; //Ersatz fuer INF aus comparison Gruenden
 				numbers[(node.index * 2) + 1].setText(displayPN(node.dpn), null, null);
 				numbers[(node.index * 2) + 1].show();
 
@@ -983,7 +983,7 @@ public class Beweiszahlsuche implements ValidatingGenerator {
 				lang.nextStep();
 
 				scSetProofAndDisproofNumber.toggleHighlight(11, 12);
-				node.pn = 1000; //Ersatz für INF aus comparison Gründen
+				node.pn = 1000; //Ersatz fuer INF aus comparison Gruenden
 				numbers[node.index * 2].setText(displayPN(node.pn), null, null);
 
 				lang.nextStep();

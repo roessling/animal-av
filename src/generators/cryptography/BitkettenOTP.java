@@ -127,16 +127,16 @@ public class BitkettenOTP implements ValidatingGenerator {
         Rect r1 = lang.newRect(new Offset(-10,-5,"header",
                 AnimalScript.DIRECTION_NW),new Offset(10,5,"header", "SE"), "r1", null, recProps);
         
-        //Arraymarker für Message
+        //Arraymarker fuer Message
         ArrayMarkerProperties M= new ArrayMarkerProperties();
         M.set(AnimationPropertiesKeys.LABEL_PROPERTY, "m");
         
-      //Arraymarker für Key
+      //Arraymarker fuer Key
         ArrayMarkerProperties K= new ArrayMarkerProperties();
         K.set(AnimationPropertiesKeys.LABEL_PROPERTY, "k");
         
         
-      //Arraymarker für Chiffre
+      //Arraymarker fuer Chiffre
         ArrayMarkerProperties C= new ArrayMarkerProperties();
         C.set(AnimationPropertiesKeys.LABEL_PROPERTY, "c");
         
@@ -240,17 +240,17 @@ public class BitkettenOTP implements ValidatingGenerator {
 	
 	
 	//#########################Einleitungstext######################################
-	Einleitung.addCodeLine("Das Bitketten One-Time Pad (OTP) ist ein symmetrisches Verschlüsselungsverfahren. Das bedeutet,", "", 0, null);
-	Einleitung.addCodeLine("das beide Kommunizierenden den gleichen Schlüssel zur Ver- und Entschlüsselung einer", "", 0, null);
-	Einleitung.addCodeLine("Nachricht benutzen. Dabei gilt ein OTP genau dann al pefekt sicher, wenn die Länge des", "", 0, null);
-	Einleitung.addCodeLine("Keys genau so oder mindestens so lang ist (sofern der Key zufällig gewählt worden ist),", "", 0, null);
-	Einleitung.addCodeLine("wie die zu verschlüsselnde Nachricht.", "", 0, null);
-	Einleitung.addCodeLine("Bei einem Bitketten OTP wird die Nachricht als auch der Key Binär dargestellt. Dabei werden", "", 0, null);
-	Einleitung.addCodeLine("alle 'gleichrangigen' Bits von Key und Nachricht mittels einer XOR-Verknüpfung chiffriert.", "", 0, null);
-	Einleitung.addCodeLine("Wendet man auf dem erhaltenen Chiffrat den verwendeten Key an,so erhält man daraus ", "", 0, null);
+	Einleitung.addCodeLine("Das Bitketten One-Time Pad (OTP) ist ein symmetrisches VerschlÃ¼sselungsverfahren. Das bedeutet,", "", 0, null);
+	Einleitung.addCodeLine("das beide Kommunizierenden den gleichen SchlÃ¼ssel zur Ver- und EntschlÃ¼sselung einer", "", 0, null);
+	Einleitung.addCodeLine("Nachricht benutzen. Dabei gilt ein OTP genau dann al pefekt sicher, wenn die LÃ¤nge des", "", 0, null);
+	Einleitung.addCodeLine("Keys genau so oder mindestens so lang ist (sofern der Key zufÃ¤llig gewÃ¤hlt worden ist),", "", 0, null);
+	Einleitung.addCodeLine("wie die zu verschlÃ¼sselnde Nachricht.", "", 0, null);
+	Einleitung.addCodeLine("Bei einem Bitketten OTP wird die Nachricht als auch der Key binÃ¤r dargestellt. Dabei werden", "", 0, null);
+	Einleitung.addCodeLine("alle 'gleichrangigen' Bits von Key und Nachricht mittels einer XOR-VerknÃ¼pfung chiffriert.", "", 0, null);
+	Einleitung.addCodeLine("Wendet man auf dem erhaltenen Chiffrat den verwendeten Key an,so erhÃ¤lt man daraus ", "", 0, null);
 	Einleitung.addCodeLine("wieder den Klartext.", "", 0, null);
 	Einleitung.addCodeLine("Jedoch sollte man nach jeder Anwendung einen neuen Key verwenden (die beide", "", 0, null);
-	Einleitung.addCodeLine("Kommunikationspartner wissen müssen), da sonst die Sicherheit des OTP nachlässt.", "", 0, null);
+	Einleitung.addCodeLine("Kommunikationspartner wissen mÃ¼ssen), da sonst die Sicherheit des OTP nachlÃ¤sst.", "", 0, null);
 	
 	
 	lang.nextStep("Einleitungstext");
@@ -259,7 +259,7 @@ public class BitkettenOTP implements ValidatingGenerator {
 	//#########################Quelltext############################################
 	Einleitung.hide();
 	
-	sc.addCodeLine("//Bedingung: Key und Message sind 8 Bit groß", "", 0, null);
+	sc.addCodeLine("//Bedingung: Key und Message sind 8 Bit groÃŸ", "", 0, null);
 	sc.addCodeLine("", "", 0, null);
 	sc.addCodeLine("public void BitkettenOTP(int[] message, int[] key){", "", 0, null);
 	sc.addCodeLine("int[] Chiffrat= new int [8];", "", 1, null);
@@ -386,31 +386,31 @@ public class BitkettenOTP implements ValidatingGenerator {
     }
 
     public String getDescription(){
-        return "Das Bitketten One-Time Pad (OTP) ist ein symmetrisches Verschlüsselungsverfahren. Das bedeutet,"
+        return "Das Bitketten One-Time Pad (OTP) ist ein symmetrisches VerschlÃ¼sselungsverfahren. Das bedeutet,"
  +"\n"
- +"das beide Kommunizierenden den gleichen Schlüssel zur Ver- und Entschlüsselung einer"
+ +"dass beide Kommunizierenden den gleichen SchlÃ¼ssel zur Ver- und EntschlÃ¼sselung einer"
  +"\n"
- +"Nachricht benutzen. Dabei gilt ein OTP genau dann al pefekt sicher, wenn die Länge des"
+ +"Nachricht benutzen. Dabei gilt ein OTP genau dann al pefekt sicher, wenn die LÃ¤nge des"
  +"\n"
- +"Keys genau so oder mindestens so lang ist (sofern der Key zufällig gewählt worden ist), "
+ +"Keys genau so oder mindestens so lang ist (sofern der Key zufÃ¤llig gewÃ¤hlt worden ist), "
  +"\n"
- +"wie die zu verschlüsselnde Nachricht."
+ +"wie die zu verschlÃ¼sselnde Nachricht."
  +"\n"
- +"Bei einem Bitketten OTP wird die Nachricht als auch der Key Binär dargestellt. Dabei werden"
+ +"Bei einem Bitketten OTP wird die Nachricht als auch der Key binÃ¤r dargestellt. Dabei werden"
  +"\n"
- +"alle \"gleichrangigen\" Bits von Key und Nachricht mittels einer XOR-Verknüpfung chiffriert."
+ +"alle \"gleichrangigen\" Bits von Key und Nachricht mittels einer XOR-VerknÃ¼pfung chiffriert."
  +"\n"
- +"Wendet man auf dem erhaltenen Chiffrat den verwendeten Key an,so erhält man daraus "
+ +"Wendet man auf dem erhaltenen Chiffrat den verwendeten Key an,so erhÃ¤lt man daraus "
  +"\n"
  +"wieder den Klartext."
  +"\n"
  +"Jedoch sollte man nach jeder Anwendung einen neuen Key verwenden (die beide"
  +"\n"
- +"Kommunikationspartner wissen müssen), da sonst die Sicherheit des OTP nachlässt.";
+ +"Kommunikationspartner wissen mÃ¼ssen), da sonst die Sicherheit des OTP nachlÃ¤sst.";
     }
 
     public String getCodeExample(){
-        return "//Bedingung: Key und Message sind 8 Bit groß"
+        return "//Bedingung: Key und Message sind 8 Bit groÃŸ"
  +"\n"
  +"\n"
  +"public void BitkettenOTP(int[] message, int[] key){"

@@ -452,7 +452,7 @@ public class JPEGCompression implements ValidatingGenerator {
     		 changeDirFlag = false;
 
     		 
-    		//Wenn es oben an die Decke stoﬂt
+    		//Wenn es oben an die Decke stoesst
     		if(x < 0) {
     			x = 0;
     			changeDirFlag = true;

@@ -429,31 +429,31 @@ public class Helper {
 		MultipleSelectionQuestionModel multQuest = new MultipleSelectionQuestionModel("g_termination");
 		multQuest.setPrompt("Wann ist es denkbar, dass die Tabusuche terminiert?");
 		multQuest.addAnswer("Nach einer festgelegten Anzahl von Iterationen", 1, "Richtig!");
-		multQuest.addAnswer("Nach Ffinden einer besseren Lösung", 0,
-				"Leider falsch! Nachdem eine bessere Lösung gefunden wurde, kann man im Allgemeinen nicht davon ausgehen, sich der global besten Lösung genähert zu haben.");
+		multQuest.addAnswer("Nach Finden einer besseren LÃ¶sung", 0,
+				"Leider falsch! Nachdem eine bessere LÃ¶sung gefunden wurde, kann man im Allgemeinen nicht davon ausgehen, sich der global besten LÃ¶sung genÃ¤hert zu haben.");
 		multQuest.addAnswer("Nach einem festgeleten Zeitlimit", 1, "Korrekt!");
-		multQuest.addAnswer("Nach einer bestimmten Anzahl an Iterationen ohne Finden einer besseren Lösung", 1,
+		multQuest.addAnswer("Nach einer bestimmten Anzahl an Iterationen ohne Finden einer besseren LÃ¶sung", 1,
 				"Stimmt!");
 		multQuest.setGroupID("general");
 		multQuest.setNumberOfTries(2);
 		tabu.generalQuestions.add(multQuest);
 
 		MultipleChoiceQuestionModel choiceQuest = new MultipleChoiceQuestionModel("g_nxtNeighbor");
-		choiceQuest.setPrompt("Von welcher Lösung aus wird in einem Iterationsschritt die Nachbarschaft erzeugt?");
-		choiceQuest.addAnswer("Von der aktuellen Lösung ausgehend", 1, "Richtig!");
-		choiceQuest.addAnswer("Von der vorherigen Lösung ausgehend", 0,
-				"Leider falsch! Die aktuelle Lösung stellt einen Nachbar der vorherigen Lösung dar.");
-		choiceQuest.addAnswer("Von der bisher besten gefunden Lösung ausgehend", 0,
-				"Das stimmt leider nicht! Die bisher beste Lösung wird lediglich gespeichert, da während der Ausführung der Tabusuche auch schlechtere Lösungen gefunden werden können.");
+		choiceQuest.setPrompt("Von welcher LÃ¶sung aus wird in einem Iterationsschritt die Nachbarschaft erzeugt?");
+		choiceQuest.addAnswer("Von der aktuellen LÃ¶sung ausgehend", 1, "Richtig!");
+		choiceQuest.addAnswer("Von der vorherigen LÃ¶sung ausgehend", 0,
+				"Leider falsch! Die aktuelle LÃ¶sung stellt einen Nachbar der vorherigen LÃ¶sung dar.");
+		choiceQuest.addAnswer("Von der bisher besten gefunden LÃ¶sung ausgehend", 0,
+				"Das stimmt leider nicht! Die bisher beste LÃ¶sung wird lediglich gespeichert, da wÃ¤hrend der AusfÃ¼hrung der Tabusuche auch schlechtere LÃ¶sungen gefunden werden kÃ¶nnen.");
 		choiceQuest.setGroupID("general");
 		choiceQuest.setNumberOfTries(2);
 		tabu.generalQuestions.add(choiceQuest);
 
 		choiceQuest = new MultipleChoiceQuestionModel("g_terminationSolution");
 		choiceQuest.setPrompt(
-				"Ist es möglich, dass der Algorithmus mit einer schlechteren Lösung terminiert als der Startlösung?");
+				"Ist es mÃ¶glich, dass der Algorithmus mit einer schlechteren LÃ¶sung terminiert als der StartlÃ¶sung?");
 		choiceQuest.addAnswer("Das ist richtig", 0,
-				"Das ist nicht möglich, da die beste gefundene Lösung immer separat abgespeichert wird.");
+				"Das ist nicht mÃ¶glich, da die beste gefundene LÃ¶sung immer separat abgespeichert wird.");
 		choiceQuest.addAnswer("Das ist nicht richtig", 1, "Korrekte Antwort!");
 		choiceQuest.setGroupID("general");
 		choiceQuest.setNumberOfTries(2);
@@ -461,10 +461,10 @@ public class Helper {
 
 		choiceQuest = new MultipleChoiceQuestionModel("g_solLocalSearch");
 		choiceQuest.setPrompt(
-				"Kann die Tabusuche Lösungen finden, die die lokale Suche nicht finden kann (unabhängig vom Beispiel)?");
+				"Kann die Tabusuche LÃ¶sungen finden, die die lokale Suche nicht finden kann (unabhÃ¤ngig vom Beispiel)?");
 		choiceQuest.addAnswer("Das ist richtig", 1, "Die Antwort ist richtig!");
 		choiceQuest.addAnswer("Das ist nicht richtig", 0,
-				"Falsch; die Tabusuche kann durch den Einsatz der Tabuliste lokale Optima überwinden, was die lokale Suche nicht kann.");
+				"Falsch; die Tabusuche kann durch den Einsatz der Tabuliste lokale Optima Ã¼berwinden, was die lokale Suche nicht kann.");
 		choiceQuest.setGroupID("general");
 		choiceQuest.setNumberOfTries(2);
 		tabu.generalQuestions.add(choiceQuest);
@@ -472,31 +472,31 @@ public class Helper {
 		choiceQuest = new MultipleChoiceQuestionModel("g_fullTabuList");
 		choiceQuest.setPrompt("Was passiert, wenn die Tabuliste voll ist?");
 		choiceQuest.addAnswer("Die Tabuliste wird geleert und eine neue Liste wird angelegt", 0,
-				"Leider falsch! Dadurch wäre die Wahrscheinlichkeit größer, in lokale Optima zu verfallen.");
+				"Leider falsch! Dadurch wÃ¤re die Wahrscheinlichkeit grÃ¶ÃŸer, in lokale Optima zu verfallen.");
 		choiceQuest.addAnswer(
-				"Das am längsten in der Liste stehende Element wird gelöscht und der aktuelle Tausch wird eingefügt", 1,
+				"Das am lÃ¤ngsten in der Liste stehende Element wird gelÃ¶scht und der aktuelle Tausch wird eingefÃ¼gt", 1,
 				"Korrekt!");
-		choiceQuest.addAnswer("Es werden keine neuen Elemente mehr eingefügt und auch keine gelöscht", 0,
-				"Das stimmt leider nicht! Dadurch würde sich die Wahrscheinlichkeit erhöhen in lokale Optima zu verfallen.");
+		choiceQuest.addAnswer("Es werden keine neuen Elemente mehr eingefÃ¼gt und auch keine gelÃ¶scht", 0,
+				"Das stimmt leider nicht! Dadurch wÃ¼rde sich die Wahrscheinlichkeit erhÃ¶hen in lokale Optima zu verfallen.");
 		choiceQuest.setGroupID("general");
 		choiceQuest.setNumberOfTries(2);
 		tabu.generalQuestions.add(choiceQuest);
 
 		choiceQuest = new MultipleChoiceQuestionModel("g_AimOfTabuList");
-		choiceQuest.setPrompt("Was ist das hauptsächliche Ziel der Tabuliste?");
-		choiceQuest.addAnswer("Das Vermeiden bzw. Überwinden von lokalen Optima", 1, "Das ist richtig!");
+		choiceQuest.setPrompt("Was ist das hauptsÃ¤chliche Ziel der Tabuliste?");
+		choiceQuest.addAnswer("Das Vermeiden bzw. Ãœberwinden von lokalen Optima", 1, "Das ist richtig!");
 		choiceQuest.addAnswer("Steigerung der Effizienz des Algorithmus", 0,
-				"Das ist falsch! Durch die Tabuliste wird verhindert, dass kürzliche Änderungen gleich wieder rückgängig gemacht werden, um lokale Optima zu überwinden.");
+				"Das ist falsch! Durch die Tabuliste wird verhindert, dass kÃ¼rzliche Ã„nderungen gleich wieder rÃ¼ckgÃ¤ngig gemacht werden, um lokale Optima zu Ã¼berwinden.");
 		choiceQuest.setGroupID("general");
 		choiceQuest.setNumberOfTries(2);
 		tabu.generalQuestions.add(choiceQuest);
 
 		choiceQuest = new MultipleChoiceQuestionModel("g_tabuListIterationSolutions");
 		choiceQuest.setPrompt(
-				"Kann die Tabuliste dafür sorgen, dass während eines Iterationsschritts eine schlechtere als die aktuelle Lösung gewählt wird?");
+				"Kann die Tabuliste dafÃ¼r sorgen, dass wÃ¤hrend eines Iterationsschritts eine schlechtere als die aktuelle LÃ¶sung gewÃ¤hlt wird?");
 		choiceQuest.addAnswer("Das ist richtig", 1, "Richtige Antwort!");
 		choiceQuest.addAnswer("Das ist nicht richtig", 0,
-				"Falsch; die Tabuliste vermeidet das 'Zurückfallen' in lokale Optima. Dafür ist es nötig, in einigen Iterationsschritten schlechtere Lösungen zu akzeptieren.");
+				"Falsch; die Tabuliste vermeidet das 'ZurÃ¼ckfallen' in lokale Optima. DafÃ¼r ist es nÃ¶tig, in einigen Iterationsschritten schlechtere LÃ¶sungen zu akzeptieren.");
 		choiceQuest.setGroupID("general");
 		choiceQuest.setNumberOfTries(2);
 		tabu.generalQuestions.add(choiceQuest);
@@ -527,7 +527,7 @@ public class Helper {
 		choiceQuest.setPrompt("Wird der Nachbar " + neighborString + " Teil der Nachbarschaft sein?");
 		choiceQuest.addAnswer("Das ist richtig", 1, "Die Antwort stimmt!");
 		choiceQuest.addAnswer("Das ist nicht richtig", 0,
-				"Falsch; der Nachbar unterscheidet sich nur durch einen einzigen Tausch von der aktuellen Lösung und ist deshalb ein gültiger Nachbar.");
+				"Falsch; der Nachbar unterscheidet sich nur durch einen einzigen Tausch von der aktuellen LÃ¶sung und ist deshalb ein gÃ¼ltiger Nachbar.");
 		choiceQuest.setGroupID("neighbor");
 		choiceQuest.setNumberOfTries(2);
 		tabu.beforeNeighborQuestions.add(choiceQuest);
@@ -564,7 +564,7 @@ public class Helper {
 		choiceQuest.setPrompt("Wird der Nachbar " + neighborString + " Teil der Nachbarschaft sein?");
 		choiceQuest.addAnswer("Das ist nicht richtig", 1, "Das ist korrekt!");
 		choiceQuest.addAnswer("Das ist richtig", 0,
-				"Falsch; im Gegensatz zur aktuellen Lösung besitzt der Nachbar mehr als einen Tausch und ist deswegen kein gültiger Nachbar.");
+				"Falsch; im Gegensatz zur aktuellen LÃ¶sung besitzt der Nachbar mehr als einen Tausch und ist deswegen kein gÃ¼ltiger Nachbar.");
 		choiceQuest.setGroupID("neighbor");
 		choiceQuest.setNumberOfTries(2);
 		tabu.beforeNeighborQuestions.add(choiceQuest);

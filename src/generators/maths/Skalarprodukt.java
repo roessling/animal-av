@@ -227,7 +227,7 @@ public class Skalarprodukt implements ValidatingGenerator {
 		textProp.set("color", Color.RED);
 		textProp.set("font", new Font("Bold", 0, 18));
 		this.lang.newText(new Coordinates(50, 200),
-				"Das Skalarprodukt kann nicht berechnet werden, da die Vektoren nicht die gleiche Länge haben.", "text",
+				"Das Skalarprodukt kann nicht berechnet werden, da die Vektoren nicht die gleiche LÃ¤nge haben.", "text",
 				(DisplayOptions) null, textProp);
 
 	}

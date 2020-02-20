@@ -74,14 +74,14 @@ public class SealedBidGenerator implements ValidatingGenerator {
 	public String getDescription() {
 		return "Die Sealed Bid Methode von Knaster ist ein Algorithmus zum fairen Aufteilen einer diskreten Menge"
 				+ "\n"
-				+ "unter beliebig vielen Teilnehmern. Bei diesem Verfahren geben die Teilnehmer zunächst verdeckte "
+				+ "unter beliebig vielen Teilnehmern. Bei diesem Verfahren geben die Teilnehmer zunÃ¤chst verdeckte "
 				+ "\n"
-				+ "Gebote auf alle Elemente der zu teilenden Menge ab. Anhand dieser Gebote lässt sich für jeden "
+				+ "Gebote auf alle Elemente der zu teilenden Menge ab. Anhand dieser Gebote lÃ¤sst sich fÃ¼r jeden "
 				+ "\n"
-				+ "Teilnehmer ein Wert errechnen, der dessen subjektiv wahrgenommene faire Aufteilung repräsentiert."
-				+ "\n" + "Anschließend können die Gegenstände der Menge den jeweils Höchstbietenden zugeteilt werden; "
+				+ "Teilnehmer ein Wert errechnen, der dessen subjektiv wahrgenommene faire Aufteilung reprÃ¤sentiert."
+				+ "\n" + "AnschlieÃŸend kÃ¶nnen die GegenstÃ¤nde der Menge den jeweils HÃ¶chstbietenden zugeteilt werden; "
 				+ "\n"
-				+ "Teilnehmer, die aus ihrer Sicht zu viel oder zu wenig Wert in Form von Gegenständen erhalten haben, "
+				+ "Teilnehmer, die aus ihrer Sicht zu viel oder zu wenig Wert in Form von GegenstÃ¤nden erhalten haben, "
 				+ "\n" + "kompensieren dies durch die Einzahlung in (bzw. Auszahlung aus) einer gemeinsamen Kasse.";
 	}
 

@@ -68,7 +68,7 @@ public class CScan implements ValidatingGenerator {
 	private RectProperties rectProperties;
 
 	/*
-	 * Strings zum übersetzten:
+	 * Strings zum Uebersetzten:
 	 */
 	private String str_queueHeader;
 	private String str_modifyingAccess;
@@ -127,7 +127,7 @@ public class CScan implements ValidatingGenerator {
 		this.lang = new AnimalScript("C-Scan", "Steffen Lott, Ozan Agtas", 800, 600);
 		this.lang.setInteractionType(Language.INTERACTION_TYPE_AVINTERACTION);
 		
-		// Wird unter anderem beim Refresh drücken aufgerufen:
+		// Wird unter anderem beim Refresh druecken aufgerufen:
 		this.refreshStrings();
 		
 		// ### STRINGS INITIALISIEREN ###
@@ -277,7 +277,7 @@ public class CScan implements ValidatingGenerator {
 		queueDisplay = lang.newIntArray(new Offset(-10, 30, "txt3", AnimalScript.DIRECTION_SW), 
 				queList.stream().mapToInt(x -> x).toArray(), "intArray", null, queueProperties);
 
-		// Counter für modifizierender und lesender Zugriff
+		// Counter fuer modifizierender und lesender Zugriff
 		counterQueue = lang.newCounter(queueDisplay);
 		CounterProperties cp = new CounterProperties(); // Zaehler-Properties anlegen
 		cp.set(AnimationPropertiesKeys.FONT_PROPERTY, new Font(Font.SANS_SERIF, Font.PLAIN, 14));
