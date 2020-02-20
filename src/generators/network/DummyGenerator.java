@@ -107,7 +107,7 @@ public class DummyGenerator implements GeneratorBundle {
     generators.add(new TCPCongestionControl());
     generators.add(new VectorClock("resources/VectorClock", Locale.GERMANY));
     generators.add(new VectorClock("resources/VectorClock", Locale.US));
-System.err.println("VECTOR CLOCK");
+
     return generators;
   }
 
