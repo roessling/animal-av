@@ -34,9 +34,6 @@ public class Sender {
         currentCwnd = 1;
     }
 
-    public void Sender() {
-    }
-
     /*
         Return the data which the sender currently received
      */

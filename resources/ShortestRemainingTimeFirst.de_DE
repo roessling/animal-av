@@ -1,0 +1,16 @@
+description=Shortest Remaining Time First ist ein präemptiver Prozess-Scheduling Algorithmus, der immer den Prozess ausführt der im aktuellen Zeitschritt die kürzeste Restzeit hat.\nDer aktuell laufende Prozess wird dann pausiert, wenn er nicht ausgewählt wurde.
+introduction=Shortest Remaining Time First ist ein präemptiver Prozess-Scheduling Algorithmus, der immer den Prozess ausführt der im aktuellen Zeitschritt die kürzeste Restzeit hat.\nDer aktuell laufende Prozess wird dann pausiert, wenn er nicht ausgewählt wurde.
+introductionStep=Einführung
+matrix1Title=Verbleibende Jobs
+matrix2Title=Ausführungsdiagram
+summary=Prozesse wurde %s mal ausgetauscht. \nDurchscnittlich wurden %s Prozesse pro Zeitschritt fertig ausgeführt. \nDie durchschnittliche Zeit, die ein Prozess zur vollständigen Ausführung benötigte, betrug %s Zeitschritte. \nDie Durchschnittliche Wartezeit der Prozesse in der Warteschlange betrug %s Zeitschitte. \nDie durschnittliche Zeit die ein Prozess braucht von Submission bis zur ersten Antwort war %s Zeitschritte.
+summaryStep=Zusammenfassung
+noPreempts=Anzahl von Unterbrechungen: %s
+noFinishedJobs=Anzahl fertiger Jobs: %s
+infoJob=Infos über Job %s
+turnaroundTime=Zeit im System: %s
+waitTime=Wartezeit: %s
+sc1=1. Bestimme aktuell kürzesten Job (welcher bereits angekommen ist)
+sc2=2. Solange der kürzeste Job noch Laufzeit übrig hat:
+sc2a=a. Führe diesen Job einen Zeitschritt aus
+sc2b=b. Bestimme neuen kürzesten Job

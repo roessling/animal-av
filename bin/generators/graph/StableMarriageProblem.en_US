@@ -1,0 +1,123 @@
+noSuchKeyException=There is no resource for the key {0}
+iconNotFound=Icon "{0}" not found
+
+##### Generator window #####
+### Beschreibung ###
+gd1=The task specified by this problem is to pair up two equal sized groups in a complete bipartite graph,
+gd2=based on the individual preferences. The resulting matching has to be stable, meaning that no two
+gd3=individuals should prefer each other over their assigned partner.
+
+gc1=while there are single people
+gc2=for every single person of group 1
+gc3=propose to next person in preference list
+gc4=for every person of group 2 who got any offers
+gc5=if no engagement exists
+gc6=accept best offer
+gc7=else 
+gc8=if a new offer is better than existing
+gc9=reject old offer
+gc10=accept best new offer
+gc11=reject all other offers	
+
+locale=ENGLISH
+
+##### Animation #####
+### Titel ###
+title=Stable Marriage Problem [EN]
+
+### Beschreibung ###
+desc1= The task specified by this problem is to pair up two equal sized groups in a complete bipartite graph,
+desc2=based on the individual preferences. Technically, any person of group one can be matched to any person 
+desc3=of group two. But the resulting matching has to be stable, meaning that no two individuals should prefer
+desc4=each other over their assigned partner. Otherwise this would lead to the breaking of assingned pairs,
+desc5=which would be considered unstable. 
+
+desc6=The general procedure:
+desc7=Single members of group one send offers to their most prefered person of group two, who has not yet 
+desc8=rejected them. Then, every person of group two accepts the best, most prefered offer. An engagement is
+desc9=established. An engagement will be broken, if a better offer is recieved. The former partner then 
+desc10=becomes single again. This process is repeated until every person is matched.
+
+desc11=Prerequisites:
+desc12=two group of the same sized
+desc13=complete preferences of the other group for each individual
+desc14=For sake of overview, only relevant edges of the complete bipartite graph are drawn at any given time.
+
+### QuellCode ###
+code1=while there are single people
+code2=for every single person of group 1
+code3=propose to next person in preference list
+code4=for every person of group 2 who got any offers
+code5=if no engagement exists
+code6=accept best offer
+code7=else 
+code8=if a new offer is better than existing
+code9=reject old offer
+code10=accept best new offer
+code11=reject all other offers	
+
+
+### Legende ###
+leg1=Explanation:
+leg2=pending offer:
+leg3=engagement:
+leg4=active person
+
+### Abschluss ###
+end1=This was an example for solving the stable marriage problem. This approach always provides a stable
+end2=matching. Often, there is more than one possible solution. This algorithm provides the answer which is
+end3=most beneficial to the group which is sending the offers. Therefor by switching the groups a different
+end4=solution might be obtained.
+
+end5=The best known application of the stable marriage problem is the assignment of medical student to 
+end6=hospitals in the USA. This uses a many-to-one variantion, where several members of the first group can 
+end7=be matched to the same member of the second group. This is called the hospitals/residents problem.
+
+end8=Some other variantions of the problem are:
+end9=Stable matching with indifference: the preference lists have to be only partially ordered.
+end10=Stable roommates problem: There is just one group, anyone can be matched with anyone.
+end11=hospitals/residents with couples: Some members of group one can only be assigned as couples.
+
+
+
+### Inhaltsverzeichnis ###
+cont1=Start
+cont2=Initialization
+cont3=Iteration
+cont4=Solution
+cont5=End
+
+trans.translateMessage("incorrect")
+
+### Fragen ###
+q1=Is the maximal possible number of iterations the number of people in one group?
+q2=Whom will the active person propose to?
+q3=Will the active person accept an offer, and if yes which one?
+q4=Are there any single people?
+
+a1t=Correct
+a1f=False, it is possible to have more iterations. A person of group one will, in worst case, send offers to everyone. And there can be iterations, where a person is temporarily engaged, thus pausing sending offers.
+
+a3=no new offer is accepted
+a31=True, this is the best offer
+a32=False, there is a better offer
+a33=False, this person is not engaged, therefor the best offer is accepted
+a34=True, this is the best offer, and it is better than the engagement
+a35=False, there is a better offer
+a36=False, there is a better offer than the current engagement
+a37=False, the existing engagement is best
+a38=True, the existing engagement is better than any new offer
+
+a4t=Correct, there are still people without a partner
+a4f=Incorrect, there are still people without a partner
+a4ft=Correct, the algorithm is now finished
+a4ff=Incorrect, there are no more single people and the algorithm is now finished
+
+yes=Yes
+no=No
+
+true=True
+false=False
+
+
+

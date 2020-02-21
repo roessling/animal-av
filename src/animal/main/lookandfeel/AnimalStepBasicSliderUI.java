@@ -38,7 +38,7 @@ import javax.swing.plaf.basic.BasicSliderUI;
 
 import animal.gui.AnimalMainWindow;
 import animal.main.AnimationWindow;
-import sun.swing.DefaultLookup;
+//import sun.swing.DefaultLookup;
 
 
 /**
@@ -219,7 +219,7 @@ public class AnimalStepBasicSliderUI extends BasicSliderUI{
     public void paintTicks(Graphics g)  {
         Rectangle tickBounds = tickRect;
 
-        g.setColor(DefaultLookup.getColor(slider, this, "Slider.tickColor", Color.black));
+        g.setColor(Color.BLACK); //DefaultLookup.getColor(slider, this, "Slider.tickColor", Color.black));
 
         if ( slider.getOrientation() == JSlider.HORIZONTAL ) {
             g.translate(0, tickBounds.y);

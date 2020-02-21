@@ -1,0 +1,16 @@
+description=Shortest Remaining Time First is a preemptive scheduling algorithm, that will execute a job, that has the shortest remaining time in each timestep.\nThe Job currently running, will be paused if it isn't chosen to be executed next.
+introduction=Shortest Remaining Time First is a preemptive scheduling algorithm, that will execute a job, that has the shortest remaining time in each timestep.\nThe Job currently running, will be paused if it isn't chosen to be executed next.
+introductionStep=Introduction
+matrix1Title=Remaining Jobs Diagram
+matrix2Title=Execution Diagram
+summary=Processes were preempted %s times. \nOn average %s jobs were completed per time unit. \nThe average time for a process to execute was %s time steps. \nThe average waiting time of a process in the ready queue was %s time steps. \nThe average time of a process from submission until first response was %s time steps.
+summaryStep=Summary
+noPreempts=Number of preempts: %s
+noFinishedJobs=Number of finished jobs: %s
+infoJob=Info about job %s
+turnaroundTime=Time in system: %s
+waitTime=Waiting time: %s
+sc1=1. Determine current shortest job (that has already arrived)
+sc2=2. While shortest job has remaining runtime:
+sc2a=a. Execute it for one time step
+sc2b=b. Determine new shortest job

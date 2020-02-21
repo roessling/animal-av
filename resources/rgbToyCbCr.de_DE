@@ -1,0 +1,33 @@
+noSuchKeyException=Es gibt keine Ressource f\u00fcr Eintrag {0} 
+iconNotFound=Icon ”{0}” not found
+
+##Misc##
+algorithmName=RGB zu YCbCr
+generatorName=RGB zu YCbCr
+code= double matrix [][] = ((0.299, 0.587, 0.114),(-0.168736, -0.331264, 0.5),(0.5, -0.418688, -0.081312)); int arrayToConvert[] = (62,235,149); int arrayInFormel[] = (0, 128, 128); //array für die YCbCr-Farbmodell  int resultArray[] = new int[3];  resultArray[0] = (int) (0 + (matrix[0][0] * arrayToConvert[0] + matrix[0][1] * arrayToConvert[1] + matrix[0][2] * arrayToConvert[2]));  resultArray[1] = (int) (128 + (matrix[1][0] * arrayToConvert[0] + matrix[1][1] * arrayToConvert[1] + matrix[1][2] * arrayToConvert[2])); resultArray[2] = (int) (128 + (matrix[2][0] * arrayToConvert[0] + matrix[2][1] * arrayToConvert[1] + matrix[2][2] * arrayToConvert[2])); ;
+description= Der RGB-Farbraum ist ein additiver Farbraum, wobei die Farben durch Rot, Blau und Grün gemischt werden. Die Werte für die Farbe liegen im Bereich von 0 bis 255. Der RGB-Farbraum wird für farbdarstellende Systeme benutzt. Das YCbCr-Farbmodell wird für die digitale Bild- und Videoaufzeichnung, bei JPEG-Bildern, MPEG-Videos und damit auch bei DVDs usw. verwendet. Im Vergleich zu RGB in den YCbCr werden die Farben wie folgt kodiert: Y - Helligkeit, Cr (Red-Green Chrominance) - Abweichung vom Grau in Richtung rot, Cb (Blue-Yellow Chrominance) - Abweichung vom Grau in Richtung blau. Wir betrachten die Wertebereich zwischen 0 und 255 von YCbCr für JPEG.
+descr1=RGB-Farbraum:
+descr2=Der RGB-Farbraum ist ein additiver Farbraum, wobei die Farben werden durch Rot, Blau und Grün gemischt.
+descr3=Die Werte für die Farbe liegen im Bereich von 0 bis 255. Der RGB-Farbraum wird für farbdarstellende Systeme benutzt.
+descr4=YCbCr-Farbmodell:
+descr5=Das YCbCr-Farbmodell wird für digitale Bild- und Videoaufzeichnung, bei JPEG-Bildern, MPEG-Videos verwendet.
+descr6=Im Vergleich zu RGB in den YCbCr die Farben werden folgend kodiert: 
+descr7=Y - Helligkeit, Cr - Abweichung vom Grau in Richtung rot, Cb - Abweichung vom Grau in Richtung blau.
+descr8=Hier verwenden wir die Wertebereich zwischen 0 und 255 von YCbCr für JPEG-Bilder.
+descr9=Ausgesuchte RGB-Werte: 
+descr99= RGB-Werte:
+descry=YCbCr-Werte
+descr11=YCbCr-Farbraum:
+step1=Beschreibung des Algorithmus
+step2=Gesetzte RGB Werte anzeigen
+step3=Pseudocode einblenden
+step4=RGB Array einblenden, Pseudocode dementsprechend markieren und kommentieren
+step5=YCbCr Array einblenden, Pseudocode dementsprechend markieren und kommentieren
+step6=Stelle 0 des YCbCr Array berechnen, Zeiger anpassen
+step7=Stelle 1 des YCbCr Array berechnen, Zeiger anpassen
+step8=Stelle 2 des YCbCr Array berechnen, Zeiger anpassen
+step9=Endergebnis
+ergebnistext= Haben wir folgende Werte für YcbCr berechnet:
+ergebnistext1= Mit unseren am Anfang gesetzten RGB Werten:
+ergebnistext2=Mit unseren Werten können wir das YCbCr-Farbmodell betrachten.
+ergebnistext3=Dieses wird für digitale Bild- und Videoaufzeichnung, bei JPEG-Bildern, MPEG-Videos verwendet.

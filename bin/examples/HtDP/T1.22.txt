@@ -1,0 +1,10 @@
+<html><body><h1>Visualizing <em>How to Design Programs Teaching Languages</h1><p>Visualized expression(s) and definition(s):</p><p><pre>
+;; lohn: num -> num
+;; determines the wages for a worker who
+;; has worked 'stundenanzahl' hours for 12$ per hour
+;; example: (lohn 10)
+(define (lohn stundenanzahl)
+  (* 12 stundenanzahl))
+
+;; Test
+(check-expect (lohn 40) 480)</pre></body></html>

@@ -1,0 +1,123 @@
+noSuchKeyException=There is no resource for the key {0}
+iconNotFound=Icon "{0}" not found
+
+##### Generator window #####
+### Beschreibung ###
+gd1=Stable Marriage Problem beschreibt das Problem zwei gleich gro\u00dfe Gruppen eines bipartiten Graphen
+gd2=anhand individueller Pr\u00e4ferenzen in Paare zu teilen. Die Zuweisungen m\u00fcssen stabil sein. 
+gd3=Das bedeutet, dass keine zwei Personen einander ihren zugewiesenen Partnern vorziehen d\u00fcrfen.
+
+### Code ###
+gc1=while es gibt Personen, die single sind	
+gc2=for jede single Person aus Gruppe 1
+gc3=stelle Antrag an n\u00e4chste Person aus Pr\u00e4ferenzenliste
+gc4=for jede Person aus Gruppe 2, die Antr\u00e4ge erhalten hat
+gc5=if es existiert keine Verlobung
+gc6=akzeptiere bestes Angebot	
+gc7=else
+gc8=if ein Antrag ist besser als Verlobung	
+gc9=l\u00f6se alte Verlobung	
+gc10=akzeptiere bestes Angebot
+gc11=weise alle anderen Angebote zur\u00fcck
+
+
+
+##### Animation #####
+### Titel ###
+title=Stable Marriage Problem [DE]
+
+### Beschreibung ###
+desc1= Stable Marriage Problem beschreibt das Problem zwei gleich große Gruppen eines bipartiten Graphen anhand 
+desc2=individueller Präferenzen in Paare zu teilen. An sich kann jede beliebige Person der ersten Gruppe mit jeder 
+desc3=beliebigen Person der zweiten Gruppe ein Paar bilden. Allerdings müssen die Zuweisungen stabil sein. Das
+desc4=bedeutet, dass keine zwei Personen einander ihren zugewiesenen Partnern vorziehen dürfen. Dies würde nämlich zur
+desc5=Trennung von Paaren führen, was als instabil angesehen wird.
+
+desc6=Das generelle Vorgehen:
+desc7=Alle single Mitglieder der ersten Gruppe schicken Anträge an die Person der zweiten Gruppe mit höchster
+desc8=Präferenz, von der sie noch nicht zurückgewiesen wurden. Dann nimmt jedes Mitglied der zweiten Gruppe das beste 
+desc9=Angebot an. Dies führt zu einer Verlobung. Verlobungen werden wieder aufgelöst, wenn ein besser Antrag eintrifft.
+desc10=Der vorherige Partner wird dadurch wieder single. Dieses Vorgehen wird wiederholt, bis alle Personen verlobt sind.
+
+desc11=Voraussetzungen:
+desc12=zwei gleich große Gruppen
+desc13=vollständige Präferenzenlisten über die andere Gruppe aller Teilnehmer
+desc14=Zur übersichtlichkeit werden im bipartiten Graphen zu jedem Zeitpunkt nur die relevanten Kanten eingezeichnet.
+
+### QuellCode ###
+code1=while es gibt Personen, die single sind	
+code2=for jede single Person aus Gruppe 1
+code3=stelle Antrag an nächste Person aus Präferenzenliste
+code4=for jede Person aus Gruppe 2, die Anträge erhalten hat
+code5=if es existiert keine Verlobung
+code6=akzeptiere bestes Angebot	
+code7=else
+code8=if ein Antrag ist besser als Verlobung	
+code9=löse alte Verlobung	
+code10=akzeptiere bestes Angebot
+code11=weise alle anderen Angebote zurück
+
+
+### Legende ###
+leg1=Legende:
+leg2=Antrag:
+leg3=Verlobung:
+leg4=aktive Person:
+
+### Abschluss ###
+end1=Dies war ein Beispiel zum Lösen des Stable Marriage Problems. Dieses Vorgehen liefert immer eine stabile 
+end2=Zuweisung. Oftmals gibt es mehr als eine mögliche Lösung. Dieser Algorithmus liefert das beste Ergebnis für die
+end3=Anträge sendende Gruppe. Daher kann das Verstauschen der Gruppen zu einer anderen Lösung führen.
+end4=
+
+end5=Die bekannteste Anwendung für das Stable Marriage Problem ist die Zuweisung von Medizinstudenten an 
+end6=Krankenhäuser in den USA. Dabei handelt es sich um eine many-to-one Variation, wo mehrere Mitglieder der ersten
+end7=Gruppe zu dem selben Mitglied der zweiten Gruppe zugeteilt werden können. Genannt das hospitals/residents Problem.
+
+end8=Einige andere Variationen:
+end9=Stable Matching mit Indifferenz: die Präferenzenlisten brauchen nur partiell geordnet zu sein.
+end10=Stable roommates problem: Es gibt nur eine Gruppe, in der jeder mit jedem ein Paar bilden kann.
+end11=hospitals/residents with couples: Manche Mitglieder der ersten Gruppe müssen zu zweit zugewiesenen werden.
+
+
+
+### Inhaltsverzeichnis ###
+cont1=Start
+cont2=Initialisierung
+cont3=Iteration
+cont4=Ergebnis
+cont5=Ende
+
+
+### Fragen ###
+q1=Ist die maximal m�gliche Anzahl an Iterationen gleich der Anzahl an Personen in einer Gruppe?
+q2=An wen wird die aktive Person einen Antrag stellen?
+q3=Wird die aktive Person ein Angebot annehmen, und wenn ja, welches?
+q4=Gibt es noch Leute ohne Partner?
+
+a1t=Richtig
+a1f=Falsch, es ist m�glich mehr Iterationen zu haben. Eine Person aus der ersten Gruppe sendet im schlimmsten Fall an alle Antr�ge. Und w�hrend eine Person vor�bergehend verlobt ist, wird des Versenden von Antr�gen pausiert.
+
+a3=kein Antrag wird angenommen
+a31=Richtig, das ist der beste Antrag
+a32=Falsch, es gibt ein besseres Angebot
+a33=Falsch, diese Person ist noch nicht verlobt, daher wird der beste Antrag akzeptiert
+a34=Richtig, das ist der beste Antrag und der ist besser als die bisherige Verlobung
+a35=Falsch, es gibt ein besseres Angebot  
+a36=Falsch, es gibt ein besseres Angebot als die bisherige Verlobung
+a37=Falsch, die bisherige Verlobung ist besser
+a38=Richtig, die bisherige Verlobung ist besser
+
+a4t=Richtig, es gibt noch Leute ohne Partner
+a4f=Falsch, es gibt noch Leute ohne Partner
+a4ft=Richtig, der Algorithmus ist jetzt fertig
+a4ff=Falsch, es gibt keine Leute mehr ohne Partner und der Algorithmus ist jetzt fertig.
+
+yes=Ja
+no=Nein
+
+true=Wahr
+false=Falsch
+
+
+

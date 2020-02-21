@@ -1,0 +1,47 @@
+noSuchKeyException=Es gibt keine Ressource f\u00fcr Eintrag {0}
+iconNotFound=Icon "{0}" not found
+
+name = Hill-Chiffre
+
+### Intro ###
+description1 = Die Hill-Chiffre wurde von Lester S. Hill 1929 erfunden und basiert auf linearer Algebra.
+description2 = Zur Verschl\u00fcsselung wird der Schl\u00fcssel in eine n*n-Matrix geschrieben, mit der jeweils wiederholt n Zeichen des Klartextes
+description3 = verschl\u00fcsselt werden. Klartexte, deren L\u00e4nge nicht durch n teilbar sind, werden mit X aufgef\u00fcllt.
+description4 = Die Schl\u00fcssell\u00e4ngen m\u00fcssen den Quadraten der Matrix entsprechen, wodurch Schl\u00fcssell\u00e4ngen von 4 (2x2), 9 (3x3), 16 (4*4)
+description5 = und 25 (5*5) ideal sind. Evtl. werden Schl\u00fcssel entsprechend gek\u00fcrzt. Die Schl\u00fcsselmatrix muss invertierbar sein.
+
+### Initial ###
+Schluessel = Schl\u00fcssel: 
+Klartext = Klartext: 
+Chiffre = Chiffre: 
+
+### code ###
+code0 = 1. Bestimmung der Schl\u00fcsssel-Matrix
+code1 = k <- L\u00e4nge des Schl\u00fcssels, n <- floor(sqrt(k))
+code5 = 2. Bestimmung der Klartext-Matrix
+code6 = p <- L\u00e4nge des Schl\u00fcssels, m <- ceil(p/n))
+code13 = 3. Multiplikation der Schl\u00fcsselmatrix mit der Klartextmatrix
+
+### Question ###
+q1p = W\u00e4hlen Sie die Matrix-Gr\u00f6\u00dfe f\u00fcr die Schl\u00fcssel-Matrix
+q2p = W\u00e4hlen Sie die Matrix-Gr\u00f6\u00dfe f\u00fcr die Klartext-Matrix
+a1 = Richtig
+a2 = Falsch, die richtige Antowort ist 
+a3 = Falsch, die richtige Antowort ist 
+
+### End ###
+end1 = Der Schl\u00fcsselraum ist f\u00fcr Schl\u00fcssel einer Gr\u00f6\u00dfenordnung am gr\u00f6\u00dften, wenn man die Anzahl der Buchstaben
+end2 = als Primzahlpotenz w\u00e4hlt. F\u00fcr 26 Buchstaben ist die Hill-Chiffre sp\u00e4testens bei der Blockgr\u00f6\u00dfe 5 vor vollst\u00e4ndiger
+end3 = Schl\u00fcsselsuche sicher ist.
+end4 = Die Hill-Chiffre ist wesentlich st\u00e4rker als die Blocktransposition. Die Geheimtexte sind sehr gut gleichverteilt,
+end5 = Angriff mit nichts als Geheimtexte findet keine Anhaltspunkte. Aber sie ist sehr anf\u00e4llig f\u00fcr einen Angriff mit
+end6 = bekanntem Klartext.
+
+### getDescription ###
+D1 = Die Hill-Chiffre wurde von Lester S. Hill 1929 erfunden und basiert auf linearer Algebra.
+D2 = Zur Verschl&uuml;sselung wird der Schl&uuml;ssel in eine n*n-Matrix geschrieben, mit der jeweils wiederholt
+D3 = n Zeichen des Klartextes verschl&uuml;sselt werden. Klartexte, deren L&auml;nge nicht durch n teilbar sind, 
+D4 = werden mit X aufgef&uuml;llt.
+D5 = Die Schl&uuml;ssell&auml;ngen m&uuml;ssen den Quadraten der Matrix entsprechen, wodurch Schl&uuml;ssell&auml;ngen
+D6 = von 4 (2x2), 9 (3x3), 16 (4*4) und 25 (5*5) ideal sind. Evtl. werden Schl&uuml;ssel entsprechend gek&uuml;rzt.
+D7 = Die Schl&uuml;sselmatrix muss invertierbar sein.

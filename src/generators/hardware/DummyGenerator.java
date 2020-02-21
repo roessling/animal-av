@@ -54,6 +54,8 @@ public class DummyGenerator implements GeneratorBundle {
     generators.add(new NRUGenerator());
 
     // Generators from the AlgoAnim course in summer semester 2019
+    generators.add(new Belady("resources/belady", Locale.GERMANY));
+    generators.add(new Belady("resources/belady", Locale.US));
     generators.add(new CScan("resources/cscan", Locale.GERMANY));
     generators.add(new CScan("resources/cscan", Locale.US));
     

@@ -147,6 +147,8 @@ public class DummyGenerator implements GeneratorBundle {
 
     
     // Generators from the AlgoAnim course in summer term 2019
+    generators.add(new BackpropGenerator("resources/BackpropGenerator", Locale.GERMANY));
+    generators.add(new BackpropGenerator("resources/BackpropGenerator", Locale.US));
     generators.add(new Beamsearch(Locale.GERMANY));
     generators.add(new Beamsearch(Locale.US));
     generators.add(new DivisiveClustering());
@@ -154,6 +156,8 @@ public class DummyGenerator implements GeneratorBundle {
     generators.add(new ForwardpropGenerator("resources/ForwardpropGenerator", Locale.GERMANY));
     generators.add(new ForwardpropGenerator("resources/ForwardpropGenerator", Locale.US));
     generators.add(new KahnsAlgo());
+    generators.add(new StableMarriageProblem(Locale.GERMANY));
+    generators.add(new StableMarriageProblem(Locale.US));
     generators.add(new SuccessiveShortestPaths());
     generators.add(new UndirectedGraphicalModel());
     

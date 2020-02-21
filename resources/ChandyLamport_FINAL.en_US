@@ -1,0 +1,8 @@
+[block]
+	The Chandy-Lamport-Algorithm is used to retrieve the global state of a distributed system.
+[/block]
+[block]
+	[h2]Conclusion[/h2]
+	When a process has received markers from all processes it sends back its recorded state and all recorded messages to the initiating process. [br][br]
+	That way a consistent global state inside a certain time-window can be recorded.
+[/block]

@@ -1,0 +1,63 @@
+noSuchKeyException=Es gibt keine Ressource f\u00fcr Eintrag {0}
+iconNotFound=Icon "{0}" wurde nicht gefunden
+
+title=SSS* [DE]
+algoName=SSS*
+
+descrTitle=Beschreibung
+descr0=SSS* ist ein von George C. Stockman in 1977 entwickelter Algorithmus, welcher Spielbäume fixer Tiefe durchsucht um den minimax Wert zu bestimmen.
+descr1=
+descr2=Der Algorithmus basiert auf der Idee, die Anzahl der Branches an jedem MAX-Knoten auf eins zu reduzieren.
+descr3=Ähnlich zu A* wird ein best-first Ansatz genommen, wobei Alpha-Beta stattdessen auf depth-first setzt.
+descr4=Stockman hat bewiesen, dass SSS* den Alpha-Beta Algorithmus dominiert, d.h. er evaluiert nie mehr Blattknoten als Alpha-Beta.
+descr5=Das Problem von SSS* ist jedoch, dass er eine Prioritätsschlange OPEN benötigt, in welcher die Elemente sortiert vorliegen müssen. Dies ist sehr zeit- und raumsensitiv.
+descr6=Die Größe der Liste wächst exponentiell mit der Baumtiefe. Die Einfügen und Löschen/Purge Operationen können die Ausführungszeit von jedem Programm, dass SSS* benutzt, dominieren.
+descr7=Deshalb überwiegen in der Praxis die Nachteile von SSS* trotz der Zusicherung, dass weniger Knoten expandiert werden.
+descrU0=SSS* ist ein von George C. Stockman in 1977 entwickelter Algorithmus, welcher Spielb\u00e4ume fixer Tiefe durchsucht um den minimax Wert zu bestimmen.
+descrU1=
+descrU2=Der Algorithmus basiert auf der Idee, die Anzahl der Branches an jedem MAX-Knoten auf eins zu reduzieren. \u00c4hnlich zu A* wird ein best-first Ansatz genommen, wobei Alpha-Beta stattdessen auf depth-first setzt. Stockman hat bewiesen, dass SSS* den Alpha-Beta Algorithmus dominiert, d.h. er evaluiert nie mehr Blattknoten als Alpha-Beta. Das Problem von SSS* ist jedoch, dass er eine Priorit\u00e4tsschlange OPEN ben\u00f6tigt, in welcher die Elemente sortiert vorliegen m\u00fcssen. Dies ist sehr zeit- und raumsensitiv. Die Gr\u00f6\u00dfe der Liste w\u00e4chst exponentiell mit der Baumtiefe. Die Einf\u00fcgen und L\u00f6schen/Purge Operationen k\u00f6nnen die Ausf\u00fchrungszeit von jedem Programm, dass SSS* benutzt, dominieren. Deshalb \u00fcberwiegen in der Praxis die Nachteile von SSS* trotz der Zusicherung, dass weniger Knoten expandiert werden.
+
+descrCode1_1=Die OPEN Liste beinhaltet Descriptors (J, s, h) mit 
+descrCode1_2= 	J: Knoten
+descrCode1_3= 	s: Status (LIVE/SOLVED)
+descrCode1_4= 	h: Merit
+descrCode1_5=und ist absteigend nach Merit sortiert.
+descrCode2_1=Der Algorithmus terminiert sobald der Merit des Wurzelknotens bestimmt wurde.
+descrCode3_1=Falls der Status des aktuellen Knotens LIVE ist, wird der Knoten weiter erkundet,
+descrCode3_2=indem das erste Kind (MIN-Knoten) oder alle Kinder (MAX-Knoten) zu OPEN hinzugefügt wird.
+descrCode3_3=Wenn es sich um einen Endknoten handelt, wird der Knotenstatus auf SOLVED gesetzt 
+descrCode3_4=und als Merit wird der Wert des Knotens übernommen, falls dieser kleiner als der aktuelle Merit ist.
+descrCode4_1=Dieser Fall tritt ein, wenn der aktuelle Knotenstatus SOLVED ist. 
+descrCode4_2=Wenn es sich um einen MIN-Knoten oder das letzte Kind handelt, wird der Elternknoten als SOLVED hinzugefügt (und gepurged).
+descrCode4_3=Ansonsten wird der nächste Geschwisterknoten der OPEN Liste hinzugefügt.
+descrCode5_1=Purgen bedeutet, dass alle Einträge von OPEN gelöscht werden, welche mit Nachfahren des gegebenen Knotens assoziiert sind.
+titleCode1=OPEN Liste
+titleCode2=Abbruchbedingung
+titleCode3=LIVE
+titleCode4=SOLVED
+titleCode5=Purge
+
+conclTitle=Fazit
+concl1=Das Ergebnis lautet 
+concl2=Dies ist das Gesamtergebnis des Spiels, wenn beide Spieler perfekt agieren.
+concl3=Um den Algorithmus mit einem komplexeren Beispiel auszuprobieren, 
+concl4=kannst du das folgende Beispiel nutzen
+concl5= (Tipp: kopiere es von dem AnimalScript Code):
+concl6='A1 {B1 {C1 {D1 {E1(9) F1(6)} G1 {H1(5) I1(7)}} J1 {K1{L1(2) M1(8)} N1 {O1(6) P1(1)}}' 
+concl7='Q1 {R1 {S1(7) T1(2)} U1 {V1(98) W1(20)}}} X1 {Y1 {Z1 {A2(5) B2(7)} C2 {D2(5)} E2 {F2(8)}}' 
+concl8='G2 {H2 {I2(10) J2(78)} K2 {L2(54) M2(12)}} N2 {O2 {P2(3) Q2(7)} R2 {S2(51) T2(5)}}}'
+concl9='U2 {V2(14) W2(5) X2(2)}}'
+
+intro=Einführung
+start=Starte Run
+
+question1=Welcher Descriptor wird als n\u00e4chstes der OPEN Liste hinzugef\u00fcgt?
+feedback1=Die richtige Antwort w\u00e4re 
+question2=Welcher Knoten wird als n\u00e4chstes besucht?
+feedback2=Der n\u00e4chste Knoten ist  
+question3=Welche Descriptoren werden beim Purge aus OPEN entfernt?
+posFeedback3= wird entfernt.
+negFeedback3= wird nicht entfernt.
+
+posFeedback=Richtig!
+negFeedback=Falsch.

@@ -1,0 +1,63 @@
+noSuchKeyException=There is no ressource for the key {0} 
+iconNotFound=Icon ”{0}” not found
+
+title=SSS* [EN]
+algoName=SSS*
+
+descrTitle=Description
+descr0=SSS* is an algorithm, developed by George C. Stockman in 1977, that searches fixed-depth game trees to determine its minimax value. 
+descr1=
+descr2=The algorithm is based on the idea to prune the number of branches at each MAX node to one 
+descr3=It has a best-first approach similar to A* instead of depth-first, which Alpha-Beta uses.
+descr4=Stockman proved that SSS* dominates Alpha-Beta, i.e., it would never evaluate more leaf nodes than Alpha-Beta.
+descr5=But the problem with the algorithm is that it needs a priority queue OPEN, in which the elements have to be sorted. This is space and time sensitive. 
+descr6= The size of the list grows exponentially with the depth of the search tree. The insert and delete/purge operations on OPEN can dominate the execution time of any program using SSS*.
+descr7=Therefor, despite the promise of expanding fewer nodes, the disadvantages of SSS* have proven a significant deterrent in practice.
+descrU0=SSS* is an algorithm, developed by George C. Stockman in 1977, that searches fixed-depth game trees to determine its minimax value. 
+descrU1=
+descrU2=The algorithm is based on the idea to prune the number of branches at each MAX node to one. It has a best-first approach similar to A* instead of depth-first, which Alpha-Beta uses. Stockman proved that SSS* dominates Alpha-Beta, i.e., it would never evaluate more leaf nodes than Alpha-Beta. But the problem with the algorithm is that it needs a priority queue OPEN, in which the elements have to be sorted. This is space and time sensitive.  The size of the list grows exponentially with the depth of the search tree. The insert and delete/purge operations on OPEN can dominate the execution time of any program using SSS*. Therefor, despite the promise of expanding fewer nodes, the disadvantages of SSS* have proven a significant deterrent in practice.
+
+descrCode1_1=The OPEN list contains descriptors (J, s, h) with 
+descrCode1_2= 	J: node
+descrCode1_3= 	s: status (LIVE/SOLVED)
+descrCode1_4= 	h: merit
+descrCode1_5=and is sorted from biggest to smallest merit.
+descrCode2_1=The algorithm is finished when the root node is solved.
+descrCode3_1=If the current node  status is live (i.e., unsolved) the tree is further explored 
+descrCode3_2=by adding the first child (case MIN node) or all childs (case MAX node). 
+descrCode3_3=If it is a terminal node, the node is solved with merit as its value 
+descrCode3_4=if it is smaller than the old merit.
+descrCode4_1=If the current node is solved, the parent is solved (and purged)  
+descrCode4_2=if it is a min node or the last child of its parent.
+descrCode4_3=Otherwise, the next sibling is added to be visited.
+descrCode5_1=Purging means that all entries in the OPEN list that are associated with the descendants of the given node are removed.
+titleCode1=OPEN List
+titleCode2=Stop Condition
+titleCode3=LIVE
+titleCode4=SOLVED
+titleCode5=Purge
+
+conclTitle=Conclusion
+concl1=The result is 
+concl2= This is the overall outcome of the game if both players act perfectly.
+concl3=To try the algorithm with a more complex tree, 
+concl4=you can use the following example
+concl5= (Tip: copy it from the AnimalScript code):
+concl6='A1 {B1 {C1 {D1 {E1(9) F1(6)} G1 {H1(5) I1(7)}} J1 {K1{L1(2) M1(8)} N1 {O1(6) P1(1)}}' 
+concl7='Q1 {R1 {S1(7) T1(2)} U1 {V1(98) W1(20)}}} X1 {Y1 {Z1 {A2(5) B2(7)} C2 {D2(5)} E2 {F2(8)}}' 
+concl8='G2 {H2 {I2(10) J2(78)} K2 {L2(54) M2(12)}} N2 {O2 {P2(3) Q2(7)} R2 {S2(51) T2(5)}}}'
+concl9='U2 {V2(14) W2(5) X2(2)}}'
+
+intro=Introduction
+start=Start run
+
+question1=Which descriptor will be added to OPEN next?
+feedback1=The correct answer would be
+question2=Which node will be visited next?
+feedback2=The next node will be 
+question3=Which descriptors from OPEN will be removed in this purge?
+posFeedback3= will be purged.
+negFeedback3= will not be purged.
+
+posFeedback=Correct!
+negFeedback=Wrong.

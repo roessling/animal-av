@@ -1,0 +1,110 @@
+algoDesc=The synthesis algorithm is used to transform a relational database schema into the third normal form. The dependencies are guaranteed to be preserved. The algorithm takes a relational database schema as input and first reduces the functional dependencies. Each dependency is then converted into a relation and unnecessary relations are removed. In the last step a relation with the original key is added if the key is not yet completely contained in any of the relations.
+
+questionFeedback=Correct answer!
+questionGroup=How many dependencies will be left after grouping?
+questionLeft=The functional dependency {0} can be reduced.
+questionElim=Which of the following relations can be eliminated?
+questionElimCorrect=Correct! {0} can be eliminated.\n
+questionElimWrong=Wrong! {0} cannot be eliminated.\n
+questionTF=A relation with the original key {0} has to be added.
+
+questionNone=None of the relations.
+questionNoneCorrect=Correct!
+questionNoneFalse=Wrong!
+
+algoName=Synthesis algorithm
+
+name=Synthesis algorithm [en]
+
+header=Synthesis algorithm
+subHeader1=Reduction of the functional dependencies: Left reduction
+subHeader2=Reduction of the functional dependencies: Right reduction
+subHeader3=Reduction of the functional dependencies: Group
+subHeader4=Building relations
+subHeader5=Elimination of unnecessary relations
+subHeader6=Adding relation with the original key 
+subHeader7=The relational schema is now in the 3rd normal form 
+
+introLine1=The synthesis algorithm transforms a relational database schema into the third normal form.
+introLine2=This is done in 4 steps:
+introLine3=1. Reduction of the functional dependencies FD
+introLine4=2. Building relations
+introLine5=3. Elimination of unnecessary relations
+introLine6=4. If necessary add a relation with the original key
+
+stepLabel1=1. Reduction of the functional dependencies FD
+stepLabel2=1.1 Left reduction
+stepLabel3=1.2 Right reduction
+stepLabel4=1.3 Group
+stepLabel5=2. Building relations
+stepLabel6=3. Elimination of unnecessary relations
+stepLabel7=4. Adding relation with the original key
+
+step1Desc1=Reduction of the functional dependencies
+step1Desc2=The reduction of the functional dependencies consists of 3 steps:
+step1Desc3=1. Left reduction
+step1Desc4=    The left reduction looks at all the left sides of the dependencies
+step1Desc5=    If the algorithm can find a subset of attributes of the left side that already contains the right side in its closure
+step1Desc6=    the left side will be replaced by the found subset.
+step1Desc7=2. Right reduction
+step1Desc8=    The right reduction then looks at all the right sides of the functional dependencies.
+step1Desc9=    For every attribute on the right side it will be checked if the attributes dependency on the left side is already given
+step1Desc10=    by the other functional dependencies.
+step1Desc11=3. Group
+step1Desc12=    In this step the dependencies with equal left sides will be grouped.
+
+step1infoNotMinimal=The left side of the functional dependency is not minimal
+step1infoMinimal=The left side of the functional dependency is already minimal
+step1infoCheckSubsets=Check if subsets of the left side already contain the right side in their closure
+step1infoHulls=Check the closure of
+step1infoContains1=The closure of
+step1infoContains2=covers
+step1infoContains3=the left side can be reduced.
+step1infoContainsNot1=No subset covers
+step1infoContainsNot2=the left side cannot be reduced.
+
+step1infoDone=All left sides have been reduced.
+
+step2infoMinimal=The right side is minimal.
+step2infoNotMinimal=The right side is not minimal.
+step2infoCheckTransitive=Check if the dependency is already given by the other dependencies.
+step2infoGiven=The dependency is already given and can be removed.
+step2infoNotGiven=The dependency is not given and can must be kept.
+step2infoCheckIf=Check if the dependency 
+step2infoAlreadyGiven=is already given by FD with 
+step2infoByFD=.
+step2infoDepAlready=The dependency is already given, 
+step2infoDepNotAlready=The dependency is not given, 
+step2infoDepRemove=will be removed.
+step2infoDepKeep=cannot be removed.
+
+step2infoDone=All right sides have been reduced.
+
+step3info=The dependencies with equal left sides will be combined.
+
+step3infoDone=The set of functional dependencies has been reduced.
+
+step4Desc1=The dependencies will be transformed into relations with the left side being the key of the relation.
+
+step4infoDone=All dependencies have been transformed into relations.
+
+step5Desc1=Relations that are already completely contained in another relation can be removed,
+step5Desc2=because the preservation of the dependencies is guaranteed.
+
+step5infoCompare1=Compare R
+step5infoCompare2=to all other relations.
+step5infoContains=contains
+step5infoCompletely=completely.
+step5infoRemoved=will be removed.
+
+step5infoDone=All unnecessary relations have been removed.
+
+step6Desc1=The original key of the relational database schema has to be contained in at least one of the relations.
+step6Desc2=If this is not the case a new relation containing only the original key has to be added.
+
+step6Added=is not contained in any of the relations. A new relation has to be added.
+step6NotAdded=is already part of a relation. No new relation is needed.
+
+summary1=First all dependencies were reduced and transformed into relations.
+summary2=Afterwards unnecessary relations were removed and a relation with the original key was added.
+summary3=Afterwards unnecessary relations were removed.

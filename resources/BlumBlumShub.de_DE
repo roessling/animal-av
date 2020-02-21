@@ -1,0 +1,30 @@
+header = Blum-Blum-Shub Zufallszahlengenerator
+
+subHeaderOverview = Übersicht
+subHeaderAlgo = Generierung der Pseudozufallszahlen
+subHeaderGraph = Verteilung der generierten Werte:
+subHeaderSummary = Zusammenfassung
+
+description00 = Der Blum-Blum-Shub-Generator berechnet eine pseudozufällige Zahlenfolge.
+description01 = Dafür sind Folgende Gegebenheiten notwenig:
+
+description10 = 1. Gegeben seien zwei Primzahlen p und q der Form 4k + 3.
+description11 = Der Modul n = pq ist das Produkt dieser beiden Primzahlen.
+description12 = Eine Zahl n mit diesen Eigenschaften wird auch Blum-Zahl genannt.
+
+description20 = 2. Gegeben ist ein Startwert s (meist ebenfalls zufällig bestimmt).
+description21 = Dieser Startwert s ist zu n teilerfremd:  ggT(s,n) = 1.
+description22 = Von s augehend wird eine Folge definiert als
+description23 = s_n = s (Startwert)
+description24 = s_n+1 = s_n^2 mod n
+
+description30 = 3. Diese pseudozufällige Zahlenfolge fängt nach einer bestimmten Anzahl Iterationen an, sich zu wiederholen.
+description31 = Die Folge hat dementsprechend eine bestimmte Periodenlänge, die sich mittels der Carmichael-Funktion berechnen lässt.
+
+labelIteration = Aktuelle Iteration:
+labelCurrentS = Aktuelles s:
+labelGeneratedNumbers = Generierte Zufallszahlen
+labelTotalIterations = Iterationen gesamt
+
+summary00 = Die folgenden Werte wurden generiert:
+summary10 = Die Werte verteilen sich wie folgt auf einen Graphen:

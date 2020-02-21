@@ -1,0 +1,23 @@
+noSuchKeyException=There is no resource for the key {0}
+iconNotFound=Icon "{0}" not icon not found
+
+description0=The algorithm begins with a completed forward propagation through the network, with each neuron having an been
+description1=assigned a value. Starting at the output layer, it visits the neurons of each layer from top to bottom and from right to left.
+description2=For each step, the output neuron and its corresponding input neurons (all neurons of the previous layer) are
+description3=highlighted in blue, and the intermediate computations are shown in the computation graph in the bottom left,
+description4=where the values of the forward propagation are displayed above each edge. Then, the computation graph is passed
+description5=from right to left, propagating the gradient values from each node output to its inputs and filling them in below the edges.
+description6=The actual computation performed at each node makes use of the chain rule and is shown in the bottom right of the screen.
+description7=While traversing the network, the two gradient matrices ∂L/∂W₀ and ∂L/∂W₁, shown in the top right, are slowly
+description8=being filled with the computed partial derivatives, until each is complete when the algorithm terminates.
+endnote0=The computed gradient matrices can further be used with gradient descent to optimize the loss function and update
+endnote1=the weights accordingly, allowing the network to learn. As gradient information of later layers is reused to compute
+endnote2=gradients of previous layers, it is especially efficient in training deep neural networks with many hidden layers,
+endnote3=which have grown in popularity in recent years. This makes variations of the Backpropagation algorithm the de facto standard
+endnote4=for training neural networks.
+endnote5=
+label_introduction=Introduction
+label_nn=The neural network
+label_neuron_ij=Propagate gradient through neuron
+closingNote=Closing note
+guiDescription=Demonstrates the Backpropagation algorithm, commonly used to train neural networks. The network consists of 3 fully connected layers (arranged vertically in the animation): an input layer x, one hidden layer h and an output layer y. To limit the number of similar animation steps, each layer may only have up to 4 neurons. Each neuron is connected to every neuron of the next layer, resulting in two weight matrices W0 and W1 in between the 3 layers. For layer sizes |x|, |h| and |y|, respectively, W0 must therefore be of size |h|x|x|, while W1 must be of size |y|x|h|. The goal of the algorithm is to compute the partial derivatives of a loss function L w.r.t. each weight w (dL/dw_i), which can then be used in a gradient descent algorithm to optimize the weights and allows the network to learn.

@@ -1,0 +1,30 @@
+header = Blum Blum Shub pseudorandom number generator
+
+subHeaderOverview = Overview
+subHeaderAlgo = Pseudorandom number generation
+subHeaderGraph = Distribution of generated values:
+subHeaderSummary = Summary
+
+description00 = Blum Blum Shub-Generator is a pseudorandom number generator.
+description01 = The following conditions have to be fulfilled:
+
+description10 = 1. Two prime numbers p and q are given, both be congruent to 3 (mod 4).
+description11 = The modul n = pq is the product of these primes.
+description12 = Such a number n is often referred to as a blum number.
+
+description20 = 2. A seed value s is given (often also randomly generated).
+description21 = This seed s is coprime to n:  gcd(s,n) = 1.
+description22 = Based on s a sequence is defined as follows
+description23 = s_n = s (start value)
+description24 = s_n+1 = s_n^2 mod n
+
+description30 = 3. This pseudorandom number sequence starts repeating after a certain amount of iterations.
+description31 = It has a period length which can be calculated by the carmichael function.
+
+labelIteration = Current iteration:
+labelCurrentS = Current s:
+labelGeneratedNumbers = Generated numbers
+labelTotalIterations = Total iterations
+
+summary00 = The following values have been generated:
+summary10 = The following graph shows the distribution of the generated values:

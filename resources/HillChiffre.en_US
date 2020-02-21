@@ -1,0 +1,47 @@
+noSuchKeyException=Es gibt keine Ressource f\u00fcr Eintrag {0}
+iconNotFound=Icon "{0}" not found
+
+name = Hill cipher
+
+### Intro ###
+description1 = The Hill cipher was invented by Lester S. Hill in 1929 and is based on linear algebra.
+description2 = For encryption, the key is written to an n * n matrix, with which n characters of the plaintext are repeatedly encrypted.
+description3 = Plain texts whose length can not be divided by n are padded with X.
+description4 = The key lengths must correspond to the squares of the matrix, making key lengths of 4 (2x2), 9 (3x3), 16 (4 * 4) and
+description5 = 25 (5*5). Possibly keys are shortened accordingly. The key matrix must be invertible.
+
+### Initial ###
+Schluessel = Key: 
+Klartext = Plain text: 
+Chiffre = Cipher: 
+
+### code ###
+code0 = 1. Determination of the key-matrix
+code1 = k <- length of the key, n <- floor(sqrt(k))
+code5 = 2. Determination of the plaintext matrix
+code6 = p <- length of the plaintext, m <- ceil(p/n))
+code13 = 3. Multiplication of the key matrix with the plaintext matrix
+
+### Question ###
+q1p = Please select the matrix size for the key matrix
+q2p = Please select the matrix size for the plaintext matrix
+a1 = Right
+a2 = Wrong, the correct answer is 
+a3 = Wrong, the correct answer is 
+
+### End ###
+end1 = The basic Hill cipher is vulnerable to a known-plaintext attack because it is completely linear.
+end2 = For 26 letters the Hill cipher is safe at the latest at the block size 5 before complete key search.
+end3 = 
+end4 = The Hill cipher is much stronger than the block transposition.
+end5 = While matrix multiplication alone does not result in a secure cipher it is still a useful step when
+end6 = combined with other non-linear operations, because matrix multiplication can provide diffusion.
+
+### getDescription ###
+D1 = The Hill cipher was invented by Lester S. Hill in 1929 and is based on linear algebra.
+D2 = For encryption, the key is written to an n * n matrix, with which n characters of the plaintext are repeatedly
+D3 = encrypted.
+D4 = Plain texts whose length can not be divided by n are padded with X.
+D5 = The key lengths must correspond to the squares of the matrix, making key lengths of 4 (2x2), 9 (3x3),
+D6 = 16 (4 * 4) and 25 (5*5). Possibly keys are shortened accordingly. The key matrix must be invertible.
+D7 = 

@@ -1,0 +1,76 @@
+@import=generators/network/resources/Generic.de_DE
+ALGOCLASS=Basic Network Services
+ALGONAME=Chandy-Lamport
+records=Aufzeichnungen fÃ¼r
+start_snapshot=Snapshot starten
+receive_message=Nachricht empfangen
+receive_marker=Marker empfangen
+case=Fall:
+this_marker_received=Dieser Marker vorhanden
+this_marker_not_received=Dieser Marker nicht vorhanden
+no_marker_received=Kein Marker vorhanden
+reaction=Reaktion:
+record_message=Nachricht aufzeichnen
+dont_record_message=Nachricht nicht aufzeichnen
+record_state=Zustand aufzeichnen
+send_marker=Marker senden
+stop_this_recording=Diese Aufzeichnung stoppen
+start_snapshot=Snapshot starten
+snapshot_process_exception=Der Snapshot-Prozess muss entweder als '1', '2' oder '3' angegeben werden
+delay_exception=Die Verz&ouml;gerung zwischen Prozess {0} und Prozess {1} darf nicht kleiner als Null sein.
+negative_message_sent_time_exception=Die Sendezeit einer Nachricht darf nicht negativ sein.
+description=Der Chandy-Lamport-Algorithmus dient zur Ermittlung des globalen Zustands eines verteilten Systems.
+
+#Frage1
+firstQuestion=Erste Frage
+
+firstQuestionPrompt=Was passiert, wenn ein Prozess das erste Mal einen Marker empfängt?
+
+firstQuestionAnswerOption1=Der eigene Zustand wird aufgezeichnet, der Marker wird nicht weitergeleitet.
+firstQuestionAnswerOptionResult1=Falsch! Der Marker wird an alle anderen Prozesse weitergeleitet.
+
+firstQuestionAnswerOption2=Der eigene Zustand wird aufgezeichnet, der Marker wird an alle anderen Prozesse weitergeleitet.
+firstQuestionAnswerOptionResult2=Richtig!
+
+firstQuestionAnswerOption3=Der eigene Zustand wird aufgezeichnet, der Marker wird nur an den sendenden Prozess zurückgeschickt.
+firstQuestionAnswerOptionResult3=Falsch! Der Marker wird an alle anderen Prozesse weitergeleitet.
+
+firstQuestionAnswerOption4=Der eigene Zustand wird nicht aufgezeichnet. Der Marker wird an alle anderen Prozesse weitergeleitet.
+firstQuestionAnswerOptionResult4=Falsch! Der eigene Zustand wird aufgezeichnet.
+
+#Frage2
+secondQuestion=Zweite Frage
+
+secondQuestionPrompt=Was passiert, wenn ein Prozess eine Nachricht von einem Prozess empfängt, von dem noch kein Marker empfangen wurde? (Voraussetzung: es wurde mindestens von einem Prozess ein Marker empfangen)
+
+secondQuestionAnswerOption1=Die Nachricht wird verworfen.
+secondQuestionAnswerOptionResult1=Falsch! Die Nachricht wird aufgezeichnet.
+
+secondQuestionAnswerOption2=Die Nachricht wird aufgezeichnet.
+secondQuestionAnswerOptionResult2=Richtig!
+
+#Frage3
+thirdQuestion=Dritte Frage
+
+thirdQuestionPrompt=Was passiert, wenn ein Prozess eine Nachricht von einem Prozess empfängt, von dem schon ein Marker empfangen wurde? (Voraussetzung: es wurde mindestens von einem Prozess ein Marker empfangen)
+thirdQuestionAnswerOption1=Die Nachricht wird aufgezeichnet.
+thirdQuestionAnswerOptionResult1=Falsch! Die Nachricht wird verworfen.
+
+thirdQuestionAnswerOption2=Die Nachricht wird verworfen.
+thirdQuestionAnswerOptionResult2=Richtig!
+
+#Frage4
+forthQuestion=Vierte Frage
+
+forthQuestionPrompt=Was passiert, wenn ein Prozess einen Marker von einem Prozess empfängt (und vorher schon mindestens ein Marker von einem anderen Prozess empfangen wurde)?
+
+forthQuestionAnswerOption1=Die Nachrichtenaufzeichnung wird für alle Prozesse gestoppt.
+forthQuestionAnswerOptionResult1=Falsch! Es werden nur keine Nachrichten mehr von dem Prozess aufgezeichnet, der den Marker gesendet hat.
+
+forthQuestionAnswerOption2=Es werden keine Nachrichten mehr von dem Prozess aufgezeichnet, der den Marker gesendet hat.
+forthQuestionAnswerOptionResult2=Richtig!
+
+forthQuestionAnswerOption3=Die Nachrichtenaufzeichnung wird für keinen Prozess gestoppt.
+forthQuestionAnswerOptionResult3=Falsch! Es werden keine Nachrichten mehr von dem Prozess aufgezeichnet, der den Marker gesendet hat.
+
+conclusion=Zusammenfassung

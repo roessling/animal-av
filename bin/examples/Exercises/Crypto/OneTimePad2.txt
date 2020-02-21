@@ -1,0 +1,23 @@
+One-Time-Pad (oder abgekürzt OTP) ist ein symmetrisches
+Verschlüsselungsverfahren (beide Teilnehmer verwenden den gleichen Schlüssel).
+
+Das Verfahren ist theoretisch informationssicher und konnte bis dato nicht
+gebrochen werden.
+Es gibt eine Nachricht N und einen dazugehörigen Schlüssel S. Dabei muss der
+Schlüssel genau so lang sein wie die Nachricht.
+
+In diesem Beispiel wird dies anhand der buchstabenweise Addition von dem
+Klartext und dem Schl&uuml;ssel sichergestellt.
+In dem Fall werden die Buchstaben in Zahlen umgewandelt, um die Addition 
+bzw. Substitution zu erleichtern.
+In diesem Verfahren ist method eine boolean-Variable, die mit dem Wert true
+den String verschlüsselt und mit dem Wert false den String entschlüsselt.
+
+Beispiel 1) (A(1) + T(20)) mod 26 = U(21)
+Beispiel 2) (X(24) + X(24)) mod 26 = 48 mod 26 = V(22)
+
+Es gibt 3 Eingabeparameter: 
+  MessageArray - ASCII Zeichen A,B,...,Z die als Nachricht dienen. 
+  SchluesselArray - ASCII Zeichen A,B,...,Z die als Schlüssel dienn. 
+  method - Boolescher Wert, mit dem welchem man den ASCII Code
+      verschlüsset (true) oder entschlüsselt (false).

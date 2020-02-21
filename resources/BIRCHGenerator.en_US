@@ -1,0 +1,31 @@
+### Generator ###
+title=BIRCH
+title_long=BIRCH (create a CF-tree)
+short_description=The `Balanced iterative reducing and clustering using hierarchies`-algorithm is an efficient clustering algorithm for numeric data.\nEfficient operations are possible because of the minimal data representation.
+
+### Index ###
+introduction=Introduction
+pseudocode=Pseudocode
+begin_of_algorithm=Begin of the algorithm
+inserting_node=Inserting node
+end=The end
+
+### Animation ###
+introduction1=The `Balanced iterative reducing and clustering using hierarchies`-algorithm is an efficient clustering algorithm for numeric data.\n\n\nTo represent a cluster we don't need every single point of data but only the following three values\nthat are called cluster feature (CF):\n\n\tN: the amount of points of data in this cluster\n\tLS: the coordinates of every single point of data summed up\n\tSS: the squared coordinates of every single point of data summed up.\n\nWith this representation two clusters may be joined pretty efficient by using the additive theorem and simply summing up the single values.\n\n\nThe centroid can be calculated with N and LS. Using all three values, the radius can be calculated.\nFor calculating the distances we can use different metrics. In our case we decided on the euclidic distance.
+introduction2=When inserting new data a so called CF-tree is created that is similar to a B-tree. It has the following attributes:\n\n\tB: the maximum amount of entries in an inner node\n\tL: the maximum amount of entries in a leaf node\n\tT: the maximum radius a cluster feature in a leaf node may have.\n\nWe use a combined constant BL instead of B and L.
+introduction3=In our animation only the pseudocode for the current method is shown.
+conclusion1=All cluster features were inserted successfully.\nYou can see the resulting CF-tree on the right.\n\nBut eventually this is not the optimal tree.\nThere are further steps in this algortihm\nfor shrinking the tree or removing anomalies from it.
+
+cf_tree=CF-tree
+coordinate_system=Coordinate system
+cf_values=Cluster feature values
+name=Name
+calculation=calculation
+conclusion=Conclusion
+centroid=Centroid
+radius=Radius
+distance=Distance
+euclidic_distance_description=euclidic distance between the centroids of the clusters
+
+### Questions ###
+split_node_question=Must the node get splitted?

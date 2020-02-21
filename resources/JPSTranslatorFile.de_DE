@@ -1,0 +1,111 @@
+noSuchKeyException=there is no ressource for the key {0}
+iconNotFound=Icon "{0}" not found
+
+
+### Basic Information ###
+title=Jump Point Search
+algorithmName=Jump Point Search
+
+
+### Description / Intro ###
+introLine1=Jump Point Search (JPS) ist eine Optimierung des A*-Suchalgorithmus fuer
+introLine2=Uniform-Kosten-Netze. Der Algorithmus reduziert Symmetrien im Suchverfahren durch
+introLine3=Graphenbeschneidung, eliminiert bestimmte Knoten im Raster basierend auf Annahmen,
+introLine4=die ueber die Nachbarn des aktuellen Knotens getroffen werden koennen, solange bestimmte
+introLine5=Bedingungen in Bezug auf das Raster erfuellt sind.
+introLine6=Dadurch kann der Algorithmus lange 'Spruenge' entlang gerader (horizontaler, vertikaler
+introLine7=und diagonaler) Linien im Raster beruecksichtigen, anstatt die kleinen Schritte von einer
+introLine8=Gitterposition zur naechsten, welche gewoehnlich von A* beruecksichtigt werden.
+introLine9=Die Optimalitaet von A* wird bewahrt und  gleichzeitig die Laufzeit um eine Groessenordnung
+introLine10=reduziert.
+introLine11= 
+introLine12=Quelle: Wikipedia (26.08.2019): https://en.wikipedia.org/wiki/Jump_point_search
+
+
+### Source Code ###
+codeLine1=ArrayList JPS (startPos, endPos, maze) '{'
+codeLine2=maze.heapAdd(startPos);
+codeLine3=JPSnode cur;
+codeLine4=while (true) '{'
+codeLine5=cur = maze.heapPopNode(); //remove current node from heap
+codeLine6=if (cur.Pos == endPos) '{'
+codeLine7=Arraylist trail = CreatePathToCur(cur); //create shortes path from start to end position
+codeLine8=return trail
+codeLine9='}'
+codeLine10=if (cur != startPos) '{'
+codeLine11=jump(cur);
+codeLine12='}'
+codeLine13=possibleSuccessors[] = identifySuccessors (cur); //return list of all possible successors, already pruned
+codeLine14=foreach (successor in possibleSuccessors[]) '{'
+codeLine15=heapAdd(successor);
+codeLine16='}'
+codeLine17=if (maze.heapSize == 0) '{'
+codeLine18=return null; // end not reachable
+codeLine19='}'
+codeLine20='}'
+codeLine21='}'
+codeLine22=JPSnode[] identifySuccessors (cur) '{'
+codeLine23=successors = new JPSNode;
+codeLine24=neighbours = getNeighborsPrune(cur); //returns all walkable neighbours
+codeLine25=foreach (neighbour in neighbours) '{'
+codeLine26=jumppoint = jump(neighbour, cur); //jumps to the last possible Point in the travelline
+codeLine27=int distance = distanceToStart(jumppoint)
+codeLine28=if (node != exist && !shortDistanceExistForCur) '{'
+codeLine29=successors.add(node)
+codeLine30='}'
+codeLine31='}'
+codeLine32=return successors
+codeLine33='}'
+
+clIndentation1=0
+clIndentation2=1
+clIndentation3=1
+clIndentation4=1
+clIndentation5=2
+clIndentation6=2
+clIndentation7=3
+clIndentation8=3
+clIndentation9=2
+clIndentation10=2
+clIndentation11=3
+clIndentation12=2
+clIndentation13=2
+clIndentation14=2
+clIndentation15=3
+clIndentation16=2
+clIndentation17=2
+clIndentation18=3
+clIndentation19=2
+clIndentation20=1
+clIndentation21=0
+clIndentation22=0
+clIndentation23=1
+clIndentation24=1
+clIndentation25=1
+clIndentation26=2
+clIndentation27=2
+clIndentation28=2
+clIndentation29=3
+clIndentation30=2
+clIndentation31=1
+clIndentation32=1
+clIndentation33=0
+
+
+### Summary / Outro ###
+outroLine1=Danke, dass Du dir 'Jump Point Search' angesehen hast.
+outroLine2=Wir hoffen, es hat Dir gefallen!
+outroLine3=Christian and Jonas
+
+
+### Interactivity ###
+interCorrect=korrekt
+interWrong=falsch
+possibleSuccessorsQuestion=Was sind moegliche Nachfolger des aktuellen Knotens?
+shortestPathQuestion=Wie viele JumpPoints hat der kuerzeste Pfad?
+
+
+### Variables ###
+varCurrent=AktuellerKnoten
+varJumpPointCounter=JumpPointZaehler
+varNeccesaryJumpPoints=BenoetigteJumpPoints

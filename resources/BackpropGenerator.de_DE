@@ -1,0 +1,23 @@
+noSuchKeyException=There is no resource for the key {0}
+iconNotFound=Icon "{0}" not icon not found
+
+description0=Der Algorithmus startet nach vollendeter Forward Propagation, so dass jedes Neuron einen zugewiesenen Wert hat.
+description1=Beginnend mit der Output-Schicht werden die Neuronen jeder Schicht von oben nach unten und von rechts nach links besucht.
+description2=In jedem Schritt werden das Output-Neuron und alle entsprechenden Input-Neuronen (alle Neuronen der vorherigen Schicht)
+description3=blau markiert, und die Zwischenberechnungen werden im Computation Graph unten links angezeigt, mit den Werten der
+description4=Forward Propagation über den Kanten. Dann wird der Computation Graph von rechts nach links durchlaufen, und
+description5=für jedes Neuron werden die Gradientenwerte vom Output zu allen Inputs propagiert und unter den Kanten eingetragen.
+description6=Die eigentliche Berechnung, die an den Kanten durchgeführt wird, nutzt die Kettenregel und wird unten rechts angezeigt.
+description7=Während das Netzwerk durchlaufen wird, werden die beiden Gradientenmatrizen ∂L/∂W₀ und ∂L/∂W₁ (oben rechts) nach
+description8=und nach mit den berechneten partiellen Ableitungen gefüllt, bis sie bei der Terminierung des Algorithmus vollständig sind.
+endnote0=Die berechneten Gradientenmatrizen können im Anschluss in einem Gradientenverfahren verwendet werden, um die
+endnote1=Fehlerfunktion zu optimieren und die Gewichte entsprechend zu aktualisieren, was dem Netzwerk erlaubt zu lernen.
+endnote2=Da Gradienteninformationen der hinteren Schichten bei der Berechnung der Gradienten vorderer Schichten wiederverwendet werden,
+endnote3=ist der Algorithmus besonders effizient beim Trainieren tiefer neuronaler Netze mit vielen versteckten Schichten, die in den letzten
+endnote4=Jahren stark an Bedeutung gewonnen haben. Das macht den Backpropagation Algorithmus zum de facto Standard für das Trainieren
+endnote5=neuronaler Netzwerke.
+label_introduction=Einführung
+label_nn=Das neuronale Netzwerk
+label_neuron_ij=Propagiere Gradient durch Neuron
+closingNote=Schlusswort
+guiDescription=Demonstriert den Backpropagation-Algorithmus, der häufig zum Trainieren von neuronalen Netzwerken verwendet wird. Das Netzwerk besteht aus 3 vollständig verbundenen Schichten (die in der Animation vertikal angeordnet sind): einer Input-Schicht x, einer versteckten Schicht h und einer Output-Schicht y. Um die Anzahl ähnlicher Animationsschritte zu begrenzen, kann jede Schicht aus maximal 4 Neuronen bestehen.\nJedes Neuron ist mit allen Neuronen der nächsten Schicht verbunden, was in 2 Gewicht-Matrizen W0 und W1 zwischen den 3 Schichten resultiert. Mit den Schichtgrößen von jeweils |x|, |h| und |y| muss W0 also eine |h|x|x|-Matrix sein, während W1 eine |y|x|h|-Matrix sein muss.\nDas Ziel des Algorithmus ist es, die partiellen Ableitungen einer Fehlerfunktion L nach den einzelnen Gewichten w_i zu berechnen (dL/dw_i), die dann in einem Gradientenverfahren verwendet werden können, um die Gewichte zu optimieren und dem Netzwerk erlauben zu lernen.

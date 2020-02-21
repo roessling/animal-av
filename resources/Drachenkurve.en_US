@@ -1,0 +1,32 @@
+noSuchKeyException=Es gibt keine Ressourcen für Eintrag {0}
+iconNotFound=Icon "{0}" wurde nicht gefunden
+
+## General ##
+title=Dragon curve
+
+desc=The dragon curve is a fractal, which is generated similar to the Koch curve by so-called substitution.\nThis process copies and slightly changes a sequence of left and right curves.\nThe algorithm is implemented recursively and builds on the smallest dragon curve - a line, which represents a right curve.\n\n The generator can generate a dragon curve up to order 12.
+
+## Explanation ##
+expl_1=The Dragon curve is a fractal, which is generated similar to the Koch curve by so-called substitution.
+expl_2=This process copies and slightly changes a sequence of left and right curves.
+expl_3=The algorithm is implemented recursively and builds on the smallest dragon curve - a line, which represents a right curve.
+expl_4=The animation leads through the creation of this sequence of left and right curves. An R is an abbreviation of a right curve and an L of a left curve.
+expl_5=Meanwhile the returned Dragon curve is displayed step by step.
+
+## Step labels ##
+exec=Execution (n = {0})
+end=Calculation (n = {0})
+expl=Explanation
+summ=Summary
+
+## Titles ##
+codeTitle=Code
+varTitle=Variables
+curveTitle=Dragon Curve
+summary=Zusammenfassung
+
+## Summary ##
+summ_1=The dragon curve started with a simple vertical line and was then calculated using the
+summ_2=Strings {0} is gradually evolving.
+summ_3=The lower picture shows how the kite curve developed after each recursion step. 
+summ_4=Until finally the picture of order {0} was obtained.

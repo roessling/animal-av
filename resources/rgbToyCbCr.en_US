@@ -1,0 +1,33 @@
+noSuchKeyException=Es gibt keine Ressource f\u00fcr Eintrag {0} 
+iconNotFound=Icon ”{0}” not found
+
+##Misc##
+algorithmName=RGB to YCbCr
+generatorName=RGB to YCbCr 
+code= double matrix [][] = ((0.299, 0.587, 0.114),(-0.168736, -0.331264, 0.5),(0.5, -0.418688, -0.081312)); int arrayToConvert[] = (62,235,149); int arrayInFormel[] = (0, 128, 128); //array für die YCbCr-Farbmodell  int resultArray[] = new int[3];  resultArray[0] = (int) (0 + (matrix[0][0] * arrayToConvert[0] + matrix[0][1] * arrayToConvert[1] + matrix[0][2] * arrayToConvert[2]));  resultArray[1] = (int) (128 + (matrix[1][0] * arrayToConvert[0] + matrix[1][1] * arrayToConvert[1] + matrix[1][2] * arrayToConvert[2])); resultArray[2] = (int) (128 + (matrix[2][0] * arrayToConvert[0] + matrix[2][1] * arrayToConvert[1] + matrix[2][2] * arrayToConvert[2])); ;
+description=The RGB color space is an additive color space where the colors are mixed by red, blue and green. The values for the color range is from 0 to 255. The RGB color space is used for color representation systems. The YCbCr color model is used for digital image and video recording, JPEG images, MPEG videos and thus also for DVDs, etc. The YCbCr color model is used for digital image and video recording. Compared to RGB to YCbCr, the colors are encoded as follows: Y - Brightness, Cr (Red-Green Chrominance) - Deviation from grey to red, Cb (Blue-Yellow Chrominance) - Deviation from grey to blue. We consider the value range between 0 and 255 of YCbCr for JPEG.
+descr1=RGB color space:
+descr2=The RGB color space is an additive color space in which the colors are mixed by red, blue and green.
+descr3=The values for the color range is from 0 to 255. The RGB color space is used for color representing systems.
+descr4=YCbCr color model:
+descr5=The YCbCr color model is used for digital image and video recording, JPEG images, MPEG videos.
+descr6=Compared to RGB in the YCbCr the colors are coded following: 
+descr7=Y - Brightness, Cr - Deviation from grey to red, Cb - Deviation from grey to blue.
+descr8=Here we use the value range between 0 and 255 of YCbCr for JPEG images.
+descr99= RGB values:
+descr9=Selected RGB values: 
+descry=YCbCr values
+descr11=YCbCr color space
+step1=Description of the algorithm
+step2=Display set RGB values
+step3= Display pseudocode 
+step4=Display RGB array, mark and comment pseudocode accordingly
+step5=Display YCbCr Array, mark and comment pseudocode accordingly
+step6=Calculate position 0 of the YCbCr array, adjust pointer
+step7=Calculate position 1 of the YCbCr array, adjust pointer
+step8=Calculate position 2 of the YCbCr array, adjust pointer
+step9=final result
+ergebnistext=We have calculated new values for YcbCr:
+ergebnistext1=With our RGB values:
+ergebnistext2=With our values we can now see our YCbCr color model.
+ergebnistext3=The YCbCr color model is used for digital image and video recording, JPEG images, MPEG videos.

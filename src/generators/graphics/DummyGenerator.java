@@ -1,15 +1,16 @@
 package generators.graphics;
 
+import java.util.Locale;
+import java.util.Vector;
+
 import generators.framework.Generator;
 import generators.framework.GeneratorBundle;
 import generators.graphics.antialias.DDAGenerator;
 import generators.graphics.antialias.XiaolinGenerator;
+import generators.graphics.raymarching.RayMarchingGenerator;
 import generators.graphics.regiongrowing.RegionGrowing;
 import generators.graphics.simpleraytracing.SimpleRayTracingGenerator;
 import generators.graphics.watershed.Watershed;
-
-import java.util.Vector;
-import java.util.Locale;
 
 public class DummyGenerator implements GeneratorBundle {
 
@@ -89,8 +90,11 @@ public class DummyGenerator implements GeneratorBundle {
     
 
     // Generators from the AlgoAnim course in summer term 2019
+    generators.add(new BinaryTreeBinPacking());
     generators.add(new BoundingSphereGenerator());
     generators.add(new FloodfillEight());
+    generators.add(new RayMarchingGenerator());
+    generators.add(new RGBImageBlender());
     
     return generators;
   }

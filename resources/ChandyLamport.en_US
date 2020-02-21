@@ -1,0 +1,75 @@
+@import=generators/network/resources/Generic.en_US
+ALGOCLASS=Basic Network Services
+ALGONAME=Chandy-Lamport
+records=Records for 
+start_snapshot=Start snapshot
+receive_message=Receive message
+receive_marker=Receive marker
+case=Case:
+this_marker_received=This marker received
+this_marker_not_received=This marker not received
+no_marker_received=No marker received
+reaction=Reaction:
+record_message=Record message
+dont_record_message=Dont record message
+record_state=Record state
+send_marker=Send marker
+stop_this_recording=Stop recording from this channel
+start_snapshot=Start snapshot
+snapshot_process_exception=The snapshot-process must be given as '1', '2' oder '3'
+delay_exception=The process between process {0} and process {1} must not be lower than zero.
+negative_message_sent_time_exception=The time a message is sent must not be negative.
+description=The Chandy-Lamport-Algorithm is used to retrieve the global state of a distributed system.
+
+#Frage1
+firstQuestion=First question
+
+firstQuestionPrompt=What happens when a process receives a marker for the first time?
+
+firstQuestionAnswerOption1=The own state is recorded, the marker will not be forwarded.
+firstQuestionAnswerOptionResult1=Wrong! The marker will be forwarded to all other processes.
+
+firstQuestionAnswerOption2=The own state is recorded, the marker will be forwarded to all other processes.
+firstQuestionAnswerOptionResult2=Right!
+
+firstQuestionAnswerOption3=The own state is recorded, the marker will only be forwarded to the process it was received from.
+firstQuestionAnswerOptionResult3=Wrong! The marker will be forwarded to all other processes.
+
+firstQuestionAnswerOption4=The own state is not recorded, the marker will be forwarded to all other processes.
+firstQuestionAnswerOptionResult4=Wrong! The own state will be recorded.
+
+#Frage2
+secondQuestion=Second question
+
+secondQuestionPrompt= What happens, if a process receives a message from a process, it never received a marker from yet? (Given a marker was received from at least one process)
+
+secondQuestionAnswerOption1=The message will be discarded.
+secondQuestionAnswerOptionResult1=Wrong! The message will be recorded.
+
+secondQuestionAnswerOption2=The message will be recorded.
+secondQuestionAnswerOptionResult2=Right!
+
+#Frage3
+thirdQuestion=Third question
+
+thirdQuestionPrompt=What happens, if a process receives a message from a process, it has already received a marker from? (Given a marker was received from at least one process)
+thirdQuestionAnswerOption1=The message will be recorded.
+thirdQuestionAnswerOptionResult1=Wrong! The message will be discarded.
+
+thirdQuestionAnswerOption2=The message will be discarded.
+thirdQuestionAnswerOptionResult2=Right!
+
+#Frage4
+forthQuestion=Fourth question
+
+forthQuestionPrompt=What happens, if a process receives a marker from a process? (Given a marker was received from at least one process)
+forthQuestionAnswerOption1=The message-recording will be stopped for all processes.
+forthQuestionAnswerOptionResult1=Wrong! Only messages received from the process which sent the marker will be discarded.
+
+forthQuestionAnswerOption2=Messages received from the process which sent the marker will be discarded.
+forthQuestionAnswerOptionResult2=Right!
+
+forthQuestionAnswerOption3=The message-recording will be stopped for no processes.
+forthQuestionAnswerOptionResult3=Wrong! Messages received from the process which sent the marker will be discarded.
+
+conclusion=Conclusion

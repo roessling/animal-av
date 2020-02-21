@@ -5,37 +5,21 @@
  */
 package generators.sorting;
 
-import generators.framework.Generator;
-import generators.framework.GeneratorType;
-import generators.framework.ValidatingGenerator;
-
+import java.awt.Color;
+import java.awt.Font;
+import java.util.Hashtable;
 import java.util.Locale;
 import java.util.Random;
 
+import algoanim.animalscript.AnimalScript;
+import algoanim.counter.model.TwoValueCounter;
+import algoanim.counter.view.TwoValueView;
 import algoanim.primitives.ArrayMarker;
-import algoanim.primitives.ArrayPrimitive;
 import algoanim.primitives.IntArray;
 import algoanim.primitives.Rect;
 import algoanim.primitives.SourceCode;
 import algoanim.primitives.Text;
 import algoanim.primitives.generators.Language;
-import algoanim.primitives.generators.TextGenerator;
-
-import java.awt.Color;
-import java.awt.Font;
-import java.awt.List;
-import java.util.Hashtable;
-import java.util.LinkedList;
-
-import generators.framework.properties.AnimationPropertiesContainer;
-import interactionsupport.models.FillInBlanksQuestionModel;
-import interactionsupport.models.MultipleChoiceQuestionModel;
-import interactionsupport.models.TrueFalseQuestionModel;
-import algoanim.animalscript.AnimalScript;
-import algoanim.animalscript.AnimalTextGenerator;
-import algoanim.animalscript.addons.Slide;
-import algoanim.counter.model.TwoValueCounter;
-import algoanim.counter.view.TwoValueView;
 import algoanim.properties.AnimationPropertiesKeys;
 import algoanim.properties.ArrayMarkerProperties;
 import algoanim.properties.ArrayProperties;
@@ -43,15 +27,14 @@ import algoanim.properties.CounterProperties;
 import algoanim.properties.RectProperties;
 import algoanim.properties.SourceCodeProperties;
 import algoanim.properties.TextProperties;
-import algoanim.properties.items.IntegerPropertyItem;
-import algoanim.util.ArrayDisplayOptions;
 import algoanim.util.Coordinates;
 import algoanim.util.Node;
 import algoanim.util.Offset;
-import algoanim.util.TicksTiming;
-import algoanim.util.Timing;
-import algoanim.variables.IntegerVariable;
-import de.ahrgr.animal.kohnert.asugen.Rectangle;
+import generators.framework.Generator;
+import generators.framework.GeneratorType;
+import generators.framework.ValidatingGenerator;
+import generators.framework.properties.AnimationPropertiesContainer;
+import interactionsupport.models.MultipleChoiceQuestionModel;
 
 public class FlashSortWiz implements ValidatingGenerator {
 	private Language lang;

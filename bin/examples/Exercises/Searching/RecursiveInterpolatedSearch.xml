@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<ns2:exercise xmlns:ns2="http://www.algoanim.info/Animal2/">
+    <chainPath>/Searching/Interpolated Search/Java/en/Recursive_Interpolated_Search_(int;_EN)</chainPath>
+    <description>Preview</description>
+    <generatorName>generators.searching.interpolatedsearching.GenericRecursiveInterpolatedIntSearching</generatorName>
+    <initialVariables>
+        <name>array</name>
+        <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">3,5,6,7,8,12,13,15,16,17,20,30</value>
+    </initialVariables>
+    <questionsList>
+        <decisionBox xsi:type="scriptBox" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+            <inputVariables>
+                <name>a</name>
+                <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema"></value>
+            </inputVariables>
+            <next xsi:type="functionBox">
+                <function xsi:type="ok"/>
+            </next>
+            <FunctionBox>
+                <function xsi:type="ok"/>
+            </FunctionBox>
+        </decisionBox>
+        <inputVariables>
+            <name>a</name>
+            <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"></value>
+        </inputVariables>
+        <questionId>Question-3454406021291538236341</questionId>
+        <questionText>New Question</questionText>
+        <script>// No script
+Ok();</script>
+    </questionsList>
+    <subTitle></subTitle>
+    <title>Exercise</title>
+</ns2:exercise>

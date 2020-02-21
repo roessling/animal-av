@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<PropertiesTreeModel xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="PropertiesTreeModel.xsd">
+	<Folder name="Root">
+		<AnimationProperties type="SourceCodeProperties">
+			<AnimationPropertyItem type="ColorPropertyItem">
+				<name>highlightColor</name>
+				<isEditable value="true" />
+				<label></label>
+				<value><Color>(0, 0, 0)</Color></value>
+			</AnimationPropertyItem>
+			<AnimationPropertyItem type="ColorPropertyItem">
+				<name>contextColor</name>
+				<isEditable value="true" />
+				<label></label>
+				<value><Color>(0, 0, 0)</Color></value>
+			</AnimationPropertyItem>
+			<AnimationPropertyItem type="IntegerPropertyItem">
+				<name>depth</name>
+				<isEditable value="false" />
+				<label></label>
+				<value><int>1</int></value>
+			</AnimationPropertyItem>
+			<AnimationPropertyItem type="IntegerPropertyItem">
+				<name>indentation</name>
+				<isEditable value="false" />
+				<label></label>
+				<value><int>1</int></value>
+			</AnimationPropertyItem>
+			<AnimationPropertyItem type="ColorPropertyItem">
+				<name>color</name>
+				<isEditable value="true" />
+				<label></label>
+				<value><Color>(0, 0, 0)</Color></value>
+			</AnimationPropertyItem>
+			<AnimationPropertyItem type="BooleanPropertyItem">
+				<name>hidden</name>
+				<isEditable value="false" />
+				<label></label>
+				<value><boolean value="false" /></value>
+			</AnimationPropertyItem>
+			<AnimationPropertyItem type="IntegerPropertyItem">
+				<name>size</name>
+				<isEditable value="false" />
+				<label></label>
+				<value><int>10</int></value>
+			</AnimationPropertyItem>
+			<AnimationPropertyItem type="StringPropertyItem">
+				<name>name</name>
+				<isEditable value="true" />
+				<label></label>
+				<value><String>sourceCode</String></value>
+			</AnimationPropertyItem>
+			<AnimationPropertyItem type="BooleanPropertyItem">
+				<name>bold</name>
+				<isEditable value="false" />
+				<label></label>
+				<value><boolean value="false" /></value>
+			</AnimationPropertyItem>
+			<AnimationPropertyItem type="IntegerPropertyItem">
+				<name>row</name>
+				<isEditable value="false" />
+				<label></label>
+				<value><int>1</int></value>
+			</AnimationPropertyItem>
+			<AnimationPropertyItem type="BooleanPropertyItem">
+				<name>italic</name>
+				<isEditable value="false" />
+				<label></label>
+				<value><boolean value="false" /></value>
+			</AnimationPropertyItem>
+			<AnimationPropertyItem type="FontPropertyItem">
+				<name>font</name>
+				<isEditable value="true" />
+				<label></label>
+				<value><Font>Monospaced</Font></value>
+			</AnimationPropertyItem>
+		</AnimationProperties>
+		<AnimationProperties type="PolylineProperties">
+			<AnimationPropertyItem type="IntegerPropertyItem">
+				<name>depth</name>
+				<isEditable value="false" />
+				<label></label>
+				<value><int>1</int></value>
+			</AnimationPropertyItem>
+			<AnimationPropertyItem type="ColorPropertyItem">
+				<name>color</name>
+				<isEditable value="true" />
+				<label>linecolor</label>
+				<value><Color>(255, 0, 0)</Color></value>
+			</AnimationPropertyItem>
+			<AnimationPropertyItem type="BooleanPropertyItem">
+				<name>hidden</name>
+				<isEditable value="false" />
+				<label></label>
+				<value><boolean value="false" /></value>
+			</AnimationPropertyItem>
+			<AnimationPropertyItem type="StringPropertyItem">
+				<name>name</name>
+				<isEditable value="true" />
+				<label></label>
+				<value><String>polyline</String></value>
+			</AnimationPropertyItem>
+			<AnimationPropertyItem type="BooleanPropertyItem">
+				<name>bwArrow</name>
+				<isEditable value="false" />
+				<label></label>
+				<value><boolean value="false" /></value>
+			</AnimationPropertyItem>
+			<AnimationPropertyItem type="BooleanPropertyItem">
+				<name>fwArrow</name>
+				<isEditable value="false" />
+				<label></label>
+				<value><boolean value="false" /></value>
+			</AnimationPropertyItem>
+		</AnimationProperties>
+		<Primitive type="String">
+			<name>bottomImage</name>
+			<value><String>https://cdn0.iconfinder.com/data/icons/flat-round-system/512/apple-64.png</String></value>
+			<description>URL/Path for the bottom Image</description>
+		</Primitive>
+		<Primitive type="String">
+			<name>topImage</name>
+			<value><String>https://cdn2.iconfinder.com/data/icons/logos-brands-4/24/logo_brand_brands_logos_linux-64.png</String></value>
+			<description>URL/Path for the top Image</description>
+		</Primitive>
+		<Primitive type="int">
+			<name>height</name>
+			<value><int>20</int></value>
+			<description>
+				Anzahl der Pixel in der H&#246;he, muss gr&#246;ßer 4 sein und die Gesamtzahl der Pixel darf nicht 2500 &#252;berschreiten.&#xD;&#xA;
+				Wir empfehlen ihnen aber nicht mehr als 1000 Pixel insgesamt zu verwenden. &#xD;&#xA;
+				Die Gesamtzahl aller Pixel = width * height.
+			</description>
+		</Primitive>
+		<Primitive type="int">
+			<name>width</name>
+			<value><int>20</int></value>
+			<description>
+				Anzahl der Pixel in der Breite, muss gr&#246;ßer 4 sein und die Gesamtzahl der Pixel darf nicht 2500 &#252;berschreiten.&#xD;&#xA;
+				Wir empfehlen ihnen aber nicht mehr als 1000 Pixel insgesamt zu verwenden. &#xD;&#xA;
+				Die Gesamtzahl aller Pixel = width * height.
+			</description>
+		</Primitive>
+		<Primitive type="int">
+			<name>pixelWidth</name>
+			<value><int>15</int></value>
+			<description>
+				Breite der Pixel/Quadrate
+			</description>
+		</Primitive>
+		<Primitive type="int">
+			<name>blendmode</name>
+			<value><int>7</int></value>
+			<description>
+				ADD = 1;
+				SUBTRACT = 2;
+				MULTIPLY = 3;
+				DIFFERENCE = 4;
+				LIGHTEN = 5;
+				DARKEN = 6;
+				OVERLAY = 7;
+			</description>
+		</Primitive>
+	</Folder>
+</PropertiesTreeModel>

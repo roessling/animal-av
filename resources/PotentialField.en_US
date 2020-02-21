@@ -1,0 +1,80 @@
+﻿noSuchKeyException=There is no ressource for the key {0}
+iconNotFound=Icon "{0}" not found
+
+###Beschreibung_Start###
+ds1=Description:
+ds2=
+ds3=A Potential Field is a datastructure that divides a planar map into cells, where each
+ds4=cell has a so called potential, meaning how much this cell attracts/repels an entitiy
+ds5=(e.g. a robot) that navigates on that map. Each cell can either be accessible or be
+ds6=blocked by an obstacle. The goal of the player is then to navigate from its current position
+ds7=to a goal point, while avoiding the obstacles and ideally keeping some distance to them
+ds8=on their route.
+ds9=For that each obstacle and the goal influence the potential of each cell. The closer a cell is
+ds10=to an obstacle, the higher its potential, and the more distant a cell is from the goal point,
+ds11=the higher its potential.
+ds12=The exact calculation of the potential may differ from implementation to implementation,
+ds13=here however the potential consists of two parts:
+ds14=UGoal, which is the distance from a cell to a goal, multiplied by a constant alpha,
+ds15=and UObstacle, which is the inverse distance from a cell to an obstacle, multiplied by a constant beta.
+ds16=This simulates attraction of the goal and repulsion of the obstacles.
+
+###Beschreibung_End###
+de1=Summary:
+de2=
+de3=As seen, Potential Fields can be useful to navigate to a goal, even if
+de4=there is a obstacle blocking the direct path. Also with the right choice of parameters
+de5=a, b and b0 the found path will keep some distance to all obstacles.
+de6=Potential Fields have a variety of application scenarios, but are most commonly used
+de7=in path finding for mobile autonomous robots. The robot creates a planar map of its 
+de8=surroundings and can then find a path based on the potential field method.
+de9=
+de10=Variations of Potential Fields may use only the closest or every obstacle for
+de11=calculating the potential. Also the distances can be squared for a different 
+de12=behavior, for cells that are way more away from the goal/obstacle than others.
+de13=Instead of the negative gradient, the neigboring cell with the lowest potential   
+de14=may be chosen each path finding iteration, to overcome little local minima.
+de15=
+de16=Advantages of Potential Fields for navigating are that the calculations are simple
+de17=and can be done in real-time, however the big disadvantage is that it is not 
+de18=guaranteed to find a path, because of local minima.
+de19=Those local minima can be avoided by us a flow model (which is computationally
+de20=expensive) or declaring each found local minimum as an obstacle.
+de21=
+de22=
+de23=
+de24=
+
+
+###PseudoCode###
+sc1=for every cell that is no obstacle:
+sc2=distance = distance to the closest obstacle
+sc3=UObstacle = b  / (b0 + distance)
+sc4=distance = distance to the goal
+sc5=UGoal = a * distance
+sc6=U = UObstacle + UGoal
+sc7=Set U as the potential of this cell
+sc8=while not at goal:
+sc9=nextPoint = neighboring cell with lowest potential
+sc10=If nextPoint does not exist:
+sc11=break
+
+###Steps###
+positiveEnd = Found a path to the goal
+negativeEnd = Found no path to the goal
+calculation = Potential for
+pathFinding = Path calculation
+description=Description
+summary=Summary
+
+###Params###
+distance = distance
+ugoal = UGoal
+uobstacle = UObstacle
+obstacleDescription = Non-crossable Obstacle
+pathDescription = Path
+goalDescription = Goal point
+startDescription = Starting point
+normalDescription = Crossable cell
+
+		

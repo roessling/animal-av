@@ -1,0 +1,77 @@
+noSuchKeyException=There is no ressource for the key {0}
+iconNotFound=Icon "{0}" not found
+
+###Beschreibung_Start###
+ds1=Beschreibung:
+ds2=
+ds3=Ein Potentialfeld ist eine Datenstruktur, die eine ebene Karte in Zellen unterteilt.
+ds4=Jede Zelle hat dabei ein so genanntes Potential, das bestimmt, wie stark diese Zelle 
+ds5=anziehend/abstoßend auf eine Enität (etwa ein Roboter) wirkt, die auf der Karte
+ds6=navigiert. Jede Zelle kann entweder bafahrbar oder durch ein Hindernis blockiert sein.
+ds7=Das Ziel ist es zu einem Zielpunkt zu navigieren, während Hindernisse vermieden werden,
+ds8=sowie ein möglichst großer Abstand zu ihnen eingehalten wird.
+ds9=Um das zu erreichen, beeinflusst jedes Hindernis und der Zielpunkt das Potential einer Zelle.
+ds10=Je näher eine Zelle an einem Hindernis liegt, desto höher das Potential und je weiter entfernt
+ds11=vom Ziel eine Zelle liegt, desto höher das Potential. 
+ds12=Die genaue Berechnung unterscheidet sich von Implementation zu Implementation, hier besteht 
+ds13=das Potential aus zwei Teilen: UZiel, der Abstand von der Zelle zum Zielpunkt multipliziert 
+ds14=mit einer Konstanten alpha, und UHindernis, der inverse Abstand von einer Zelle zu jedem Hindernis,
+ds15= mulitpliziert mit einer Konstanten beta.
+ds16=Dies simuliert eine Anziehung des Ziels und einer Abstoßung von Hindernissen.
+
+###Beschreibung_End###
+de1=Fazit:
+de2=
+de3=Wie man sehen konnte sind Potentialfelder nützlich, um zu einem Hindernis zu
+de4=navigieren, selbst wenn ein Hindernis den direkten Weg blockiert. Mit der Wahl der
+de5=richtigen Parameter a, b und b0 behält der Pfad außerdem einen möglichst großen
+de6=Abstand zu den Hindernissen. 
+de7=
+de8=Potentialfelder haben eine Vielzahl an Anwendungsgebieten, werden aber zumeist zur
+de9=Navigation für mobile, autonome Roboter verwendet. Der Roboter erstellt dabei eine 
+de10=planare Karte seiner Umgebung und kann damit dann unter Verwendung der Potentialfeldmethode 
+de11=einen Weg zum Ziel finden. Andere Varianten von Potentialfeldern benutzen nur das 
+de12=nächste Hindernis oder aber jedes Hindernis um das Potential zu berechnen. Außerdem 
+de13=können die Entfernungen noch quadriert werden, um ein anderes Verhalten zu erzielen,
+de14=etwa um sehr weit vom Ziel entfernte Zellen mit größerem Potential zu belegen. 
+de15=Statt dem negativen Gradienten zu folgen, kann auch lediglich die benachabarte Zelle
+de16=mit dem geringsten Potential als nächster Wegpunkt gewählt werden, womit kleinere 
+de17=lokale Minima überwunden werden können.
+de18=
+de19=Ein großer Vorteil von Potentialfeldern ist die sehr einfache Berechnung des Potentials, 
+de20=weshalb die Methode auch in Echtzeit verwendet werden kann. Ein großer Nachteil ist
+de21=allerdings, dass es nicht garantiert ist einen Pfad zu finden, da der Algorithmus in 
+de22=lokalen Minima hängen bleiben kann. Lokale Minima können vermieden werden, indem beispielsweise
+de23=ein Strömungsmodell (das jedoch viel Rechenzeit benötigt) verwendet wird oder lokale 
+de24=Minima selbst als Hindernis deklariert werden.
+
+###PseudoCode###
+sc1=Für jede Zelle, die kein Hindernis ist:
+sc2=Entfernung = Entfernung zum nächsten Hindernis
+sc3=UHindernis = b  / (b0 + Entfernung)
+sc4=Entfernung = Entfernung zum Ziel
+sc5=UZiel = a * Entfernung
+sc6=U = UHindernis + UZiel
+sc7=Setze U als das Potential der Zelle
+sc8=Solange nicht am Ziel:
+sc9=nächsterWegpunkt = benachbarte Zelle mit niedrigstem U
+sc10=Falls nächsterWegpunkt nicht existiert:
+sc11=break
+
+###Steps###
+positiveEnd = Pfad zum Ziel gefunden
+negativeEnd = Kein Pfad zum Ziel gefunden
+calculation = Berechnung für 
+pathFinding = Berechnung des Pfades
+description = Beschreibung
+summary = Fazit
+
+###Params###
+distance = Entfernung
+ugoal = UZiel
+uobstacle = UHindernis
+obstacleDescription = Hindernis
+pathDescription = Pfad
+goalDescription = Zielpunkt
+startDescription = Startpunkt
+normalDescription = Normale Zelle

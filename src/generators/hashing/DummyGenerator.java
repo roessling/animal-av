@@ -54,6 +54,10 @@ public class DummyGenerator implements GeneratorBundle {
     generators.add(new SHA3(Locale.GERMAN));
     generators.add(new SHA3(Locale.ENGLISH));
     
+    // Generators from the AlgoAnim course in summer semester 2018.
+    generators.add(new CuckooHashing(Locale.GERMANY));
+    generators.add(new CuckooHashing(Locale.US));
+
     return generators;
 	}
 }

@@ -149,8 +149,12 @@ public class DummyGenerator implements GeneratorBundle {
     
     // Generators from the AlgoAnim course in summer term 2019.
     generators.add(new BinaereExponentationWiz());
+    generators.add(new BlumBlumShub("resources/BlumBlumShub", Locale.GERMANY));
+    generators.add(new BlumBlumShub("resources/BlumBlumShub", Locale.US));
     generators.add(new BSpline());
     generators.add(new CatmullRomSplines());
+    generators.add(new Drachenkurve(Locale.GERMANY));
+    generators.add(new Drachenkurve(Locale.US));
     generators.add(new ExponentiationBySquaring("resources/ExponentiationBySquaring", Locale.GERMANY));
     generators.add(new ExponentiationBySquaring("resources/ExponentiationBySquaring", Locale.US));
     generators.add(new GAGenerator());
@@ -160,6 +164,8 @@ public class DummyGenerator implements GeneratorBundle {
     generators.add(new PairwiseSummationGenerator());
     generators.add(new PQFormel("resources/pq", Locale.GERMANY));
     generators.add(new PQFormel("resources/pq", Locale.US));
+    generators.add(new ProductRule("resources/translationProductRule", Locale.GERMANY));
+    generators.add(new ProductRule("resources/translationProductRule", Locale.US));
     generators.add(new PsoGenerator());
     generators.add(new Pythagoras("resources/translationPythagoras", Locale.GERMANY));
     generators.add(new Pythagoras("resources/translationPythagoras", Locale.US));

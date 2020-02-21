@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<PropertiesTreeModel xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="PropertiesTreeModel.xsd">
+	<Folder name="Root">
+		<Primitive type="intArray">
+			<name>P1_P2</name>
+			<value><intArray>10</intArray></value>
+			<description>Nachrichten, die von Prozess P1 zu Prozess P2 gesendet werden. Jede Spalte steht für eine Nachricht und der Eintrag für den Sendezeitpunkt.</description>
+		</Primitive>
+		<Primitive type="intArray">
+			<name>P1_P3</name>
+			<value><intArray>5</intArray></value>
+			<description>Nachrichten, die von Prozess P1 zu Prozess P3 gesendet werden. Jede Spalte steht für eine Nachricht und der Eintrag für den Sendezeitpunkt.</description>
+		</Primitive>
+		<Primitive type="intArray">
+			<name>P2_P1</name>
+			<value><intArray>6,9</intArray></value>
+			<description>Nachrichten, die von Prozess P2 zu Prozess P1 gesendet werden. Jede Spalte steht für eine Nachricht und der Eintrag für den Sendezeitpunkt.</description>
+		</Primitive>
+		<Primitive type="intArray">
+			<name>P2_P3</name>
+			<value><intArray>5</intArray></value>
+			<description>Nachrichten, die von Prozess P2 zu Prozess P3 gesendet werden. Jede Spalte steht für eine Nachricht und der Eintrag für den Sendezeitpunkt.</description>
+		</Primitive>
+		<Primitive type="intArray">
+			<name>P3_P1</name>
+			<value><intArray>30</intArray></value>
+			<description>Nachrichten, die von Prozess P3 zu Prozess P1 gesendet werden. Jede Spalte steht für eine Nachricht und der Eintrag für den Sendezeitpunkt.</description>
+		</Primitive>
+		<Primitive type="intArray">
+			<name>P3_P2</name>
+			<value><intArray>30</intArray></value>
+			<description>Nachrichten, die von Prozess P3 zu Prozess P2 gesendet werden. Jede Spalte steht für eine Nachricht und der Eintrag für den Sendezeitpunkt.</description>
+		</Primitive>
+		<Primitive type="int">
+			<name>delay P1_P2</name>
+			<value><int>20</int></value>
+			<description>Die Netzwerkverzögerung zwischen P1 und P2.</description>
+		</Primitive>
+		<Primitive type="int">
+			<name>delay P1_P3</name>
+			<value><int>15</int></value>
+			<description>Die Netzwerkverzögerung zwischen P1 und P3.</description>
+		</Primitive>
+		<Primitive type="int">
+			<name>delay P2_P3</name>
+			<value><int>8</int></value>
+			<description>Die Netzwerkverzögerung zwischen P2 und P3.</description>
+		</Primitive>
+		<Primitive type="int">
+			<name>snapshot_process</name>
+			<value><int>1</int></value>
+			<description>Der Prozess, der den Snapshot-Prozess startet. (1 = P1 , 2 = P2 , 3 = P3)</description>
+		</Primitive>
+		<Primitive type="int">
+			<name>snapshot_starttime</name>
+			<value><int>0</int></value>
+			<description>Zeitpunkt, an dem der Snapshot-Prozess gestartet wird.</description>
+		</Primitive>
+	</Folder>
+</PropertiesTreeModel>

@@ -243,23 +243,36 @@ public class DummyGenerator implements GeneratorBundle {
     generators.add(new ZellersKongruenz("resources/ZellersKongruenz",Locale.GERMANY));
     generators.add(new ZellersKongruenz("resources/ZellersKongruenz",Locale.US));
  
-    // Generators from the AlgoAnim course in summer term 2019.
+    // Generators from the AlgoAnim course in summer term 2019
+    generators.add(new BIRCHGenerator("resources/BIRCHGenerator", Locale.GERMANY));
+    generators.add(new BIRCHGenerator("resources/BIRCHGenerator", Locale.US));
     generators.add(new ChiMergeGenerator());
+    generators.add(new CompleteLinkage());
+    generators.add(new DivideAndConquer());
     generators.add(new ErshovNumbersGenerator("resources/ErshovNumbers", Locale.GERMANY));
     generators.add(new ErshovNumbersGenerator("resources/ErshovNumbers", Locale.US));
     generators.add(new FloydsCycleDetection());
+    generators.add(new FriendsOfFriends());
     generators.add(new GaussFormel("resources/GaussFormel", Locale.GERMANY));
     generators.add(new GaussFormel("resources/GaussFormel", Locale.US));
     generators.add(new HusAlgorithm());
+    generators.add(new KochKurve());
     generators.add(new MapReduce("resources/MapReduce", Locale.GERMANY));
     generators.add(new MapReduce("resources/MapReduce", Locale.US));
     generators.add(new MersenneTwisterGenerator());
     generators.add(new MontyHallProblem());
+    generators.add(new MooresAlgorithm());
     generators.add(new PumpingLemma());
+    generators.add(new RGBToyCbCr("resources/rgbToyCbCr",Locale.GERMANY));
+    generators.add(new RGBToyCbCr("resources/rgbToyCbCr",Locale.US));
     generators.add(new SealedBidGenerator());
     generators.add(new SecretaryProblem(Locale.GERMANY));
     generators.add(new SecretaryProblem(Locale.US));
+    generators.add(new ShortestRemainingTimeFirst("resources/ShortestRemainingTimeFirst", Locale.GERMANY));
+    generators.add(new ShortestRemainingTimeFirst("resources/ShortestRemainingTimeFirst", Locale.US));
     generators.add(new SJF());
+    generators.add(new Synthesis("resources/Synthesis", Locale.GERMANY));
+    generators.add(new Synthesis("resources/Synthesis", Locale.US));
     generators.add(new Szymanski("resources/Szymanski", Locale.GERMANY));
     generators.add(new Szymanski("resources/Szymanski", Locale.US));
     

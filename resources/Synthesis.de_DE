@@ -1,0 +1,115 @@
+algoDesc=Der Synthesealgorithmus wird verwendet, um ein relationales Datenbankschema in die dritte Normalform zu überführen. Dabei bleiben die Abhängigkeiten garantiert erhalten. Der Algorithmus nimmt ein relationales Datenbankschema als Eingabe und reduziert zunächst die funktionalen Abhängigkeiten. Anschließend wird jede Abhängigkeit in eine Relation überführt und überflüssige Relationen werden entfernt. Im letzen Schritt wird eine Relation mit dem Ursprungsschlüssel hinzugefügt, falls dieser noch in keiner der Relationen komplett enthalten ist 
+
+questionFeedback=Diese Antwort war richtig
+questionGroup=Wie viele Abhängigkeiten sind nach dem gruppieren noch übrig?
+questionLeft=Die funktionale Abhängigkeit {0} kann reduziert werden.
+questionElim=Welche der folgenden Relationen können elminiert werden?
+questionElimCorrect=Richtig! {0} kann entfernt werden.\n
+questionElimWrong=Falsch! {0} kann nicht entfernt werden.\n
+questionTF=Es muss eine Relation mit dem Ursprungschlüssel {0} hinzugefügt werden.
+
+questionNone=Keine der Relationen.
+questionNoneCorrect=Richtig! Keine der Relationen kann entfernt werden.
+questionNoneFalse=Falsch!
+
+algoName=Synthesealgorithmus
+
+name=Synthesealgorithmus [de]
+
+header=Synthesealgorithmus
+subHeader1=Reduktion der funktionalen Abhängigkeiten: Linksreduktion
+subHeader2=Reduktion der funktionalen Abhängigkeiten: Rechtsreduktion
+subHeader3=Reduktion der funktionalen Abhängigkeiten: Gruppieren
+subHeader4=Erzeugen der Relationen
+subHeader5=Elimination von überflüssigen Relationen
+subHeader6=Hinzufügen einer Relation mit dem Ursprungsschlüssel 
+subHeader7=Das Relationenschema ist nun in der 3. Normalform
+
+introLine1=Der Synthesealgorithmus überführt ein relationales Datenbankschema in die dritte Normalform.
+introLine2=Dies geschieht in 4 Schritten:
+introLine3=1. Reduktion der funktionalen Abhängigkeiten FD
+introLine4=2. Erzeugen der Relationen
+introLine5=3. Elimination von überflüssigen Relationen
+introLine6=4. Falls nötig hinzufügen einer Relation mit dem Ursprungschlüssel
+
+stepLabel1=1. Reduktion der funktionalen Abhängigkeiten FD
+stepLabel2=1.1 Linksreduktion
+stepLabel3=1.2 Rechtsreduktion
+stepLabel4=1.3 Gruppieren
+stepLabel5=2. Erzeugen der Relationen
+stepLabel6=3. Elimination von überflüssigen Relationen
+stepLabel7=4. Hinzufügen einer Relation mit dem Ursprungsschlüssel
+
+step1Desc1=Reduktion der funktionalen Abhängigkeiten
+step1Desc2=Die Reduktion der funktionalen Abhängigkeiten besteht aus 3 Schritten:
+step1Desc3=1. Linksreduktion
+step1Desc4=    Bei der Linksreduktion werden jeweils die linken Seiten der funktionalen Abhängigkeiten betrachtet
+step1Desc5=    Kann eine Untermenge der Attribute der linken Seite gefunden werden, die die Rechte Seite bereits in ihrer Hülle enthält,
+step1Desc6=    wird die linke Seite durch diese Untermenge ersetzt.
+step1Desc7=2. Rechtsreduktion
+step1Desc8=    Bei der Rechtsreduktion werden anschließend die rechten Seiten der funktionalen Abhängigkeiten betrachtet.
+step1Desc9=    Es wird bei jedem Attribut auf der rechten Seite geprüft, ob die Abhängigkeit von der linken Seite, bereits vom Rest der
+step1Desc10=    funktionalen Abhängigkeiten gegeben ist.
+step1Desc11=3. Gruppieren
+step1Desc12=    Beim Gruppieren werden alle funktionalen Abhängigkeiten mit gleicher linker Seite zusammengefasst.
+
+step1infoNotMinimal=Die linke Seite der funktionalen Abhängigkeit ist nicht minimal
+step1infoMinimal=Die linke Seite der funktionalen Abhängigkeit ist bereits minimal
+step1infoCheckSubsets=Überprüfe, ob Teilmengen der linken Seite bereits die rechte Seite bestimmen
+step1infoHulls=Betrachte die Hülle von
+step1infoContains1=Die Hülle von
+step1infoContains2=enthält
+step1infoContains3=die linke Seite kann also reduziert werden.
+step1infoContainsNot1=Keine der Teilmengen bestimmt
+step1infoContainsNot2=die linke Seite kann nicht reduziert werden.
+
+step1infoDone=Alle linken Seiten wurden reduziert.
+
+step2infoMinimal=Die rechte Seite ist minimal.
+step2infoNotMinimal=Die rechte Seite ist nicht minimal.
+step2infoCheckTransitive=Überprüfe, ob die Abhängigkeit bereits durch die anderen Abhängigkeiten gegeben ist.
+step2infoGiven=Die Abhängigkeit ist bereits gegeben und wird entfernt.
+step2infoNotGiven=Die Abhängigkeit ist nicht gegeben und muss behalten werden.
+step2infoCheckIf=Prüfe, ob die Abhängigkeit 
+step2infoAlreadyGiven=bereits transitiv durch FD mit 
+step2infoByFD=bestimmt ist.
+step2infoDepAlready=Die Abhängigkeit ist bereits gegeben, 
+step2infoDepNotAlready=Die Abhängigkeit ist nicht gegeben, 
+step2infoDepRemove=wird entfernt.
+step2infoDepKeep=kann nicht entfernt werden.
+
+step2infoDone=Alle rechten Seiten wurden reduziert.
+
+step3info=Die Abhängigkeiten mit gleicher linker Seite werden zusammengefasst.
+
+step3infoDone=Die Menge der funktionalen Abhängigkeiten ist nun reduziert.
+
+step4Desc1=Die Abhängigkeiten werden in Relationen überführt. Die linke Seite stellt dabei jeweils den Schlüssel dar.
+
+step4infoDone=Alle Abhängigkeiten wurden in Relationen überführt.
+
+step5Desc1=Relationen, die bereits vollständig in einer anderen Relation enthalten sind können entfernt werden,
+step5Desc2=da der Erhalt der Abhängikeiten gewährleistet ist.
+
+step5infoCompare1=Vergleiche R
+step5infoCompare2=mit allen anderen Relationen
+step5infoContains=enthält
+step5infoCompletely=vollständig.
+step5infoRemoved=wird entfernt.
+
+step5infoDone=Alle überflüssigen Relationen wurden entfernt.
+
+step6Desc1=Der Ursprungsschlüssel der Relation muss in mindestens einer der Relationen vollständig enthalten sein.
+step6Desc2=Ist dies nicht der Fall muss im letzten Schritt noch eine Relation hinzugefügt werden.
+
+step6Added=ist in keiner der Relationen vollständig enthalten, es muss eine Relation hinzugefügt werden.
+step6NotAdded=ist in einer Relation enthalten, es muss keine weitere Relation hinzugefügt werden.
+
+summary1=Es wurden dafür zunächst alle Abhängigkeiten reduziert und in Relationen überführt.
+summary2=Anschließend wurden überflüssige Relationen entfernt und eine Relation mit dem Ursprungsschlüssel hinzugefügt.
+summary3=Anschließend wurden überflüssige Relationen entfernt.
+
+
+
+
+

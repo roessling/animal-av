@@ -1,0 +1,31 @@
+### Generator ###
+title=BIRCH
+title_long=BIRCH (CF-Baum erzeugen)
+short_description=Der `Balanced iterative reducing and clustering using hierarchies`-Algorithmus ist ein effizienter Clusteralgorithmus für numerische Daten.\nDurch die minimale Darstellung der Datenpunkte sind effiziente Operationen möglich.
+
+### Index ###
+introduction=Einführung
+pseudocode=Pseudocode
+begin_of_algorithm=Beginn des Algorithmus
+inserting_node=Einfügen von
+end=Abschluss
+
+### Animation ###
+introduction1=Der `Balanced iterative reducing and clustering using hierarchies`-Algorithmus ist ein effizienter Clusteralgorithmus für numerische Daten.\n\n\nFür einen Cluster werden hierbei nicht alle einzelnen Datenpunkte benötigt, sondern lediglich drei Werte,\nwelche zusammen Cluster-Feature (CF) genannt werden:\n\n\tN: die Anzahl der Datenpunkte in diesem Cluster\n\tLS: die summierten Koordinaten aller sich im Cluster befindlichen Daten\n\tSS: die Summe der quadrierten Koordinaten aller sich im Cluster befindlichen Daten.\n\nDiese Darstellung erlaubt eine effiziente Vereinigung zweier Cluster. Dazu nutzt man das Additive Theroem aus und addiert einfach alle Werte.\n\n\nMit N und LS lässt sich der Centroid berechnen. Mit allen dreien zusammen kann der Radius berechnet werden.\nFür den Abstand können verschiedene Metriken genutzt werden, in diesem Fall die Euklidische-Distanz.
+introduction2=Beim Einfügen neuer Daten wird ein sogennater CF-Baum aufgebaut, welcher ähnlich zu einem B-Baum ist. Es gibt folgende Parameter:\n\n\tB: die maximale Anzahl an Einträgen in einem inneren Knoten\n\tL: die maximale Anzahl an Einträgen in einem Blattknoten\n\tT: der maximale Radius, welcher ein Cluster-Feature in einem Blattknoten haben darf.\n\nB und L werden hier zur Vereinfachung zu einer Konstanten BL zusammengefasst.
+introduction3=Im folgenden wird immer nur der Pseudocode zur aktuellen Methode angezeigt.
+conclusion1=Es wurden alle Cluster Feature erfolgreich eingefügt.\nRechts sieht man den resultierenden Cluster-Feature-Baum.\n\nAllerdings handelt es sich hierbei nicht unbedingt\num den optimalen CF-Baum.\nEs gibt Fortsetzungen des Algorithmus, um zum Beispiel\nden Baum zu verkleinern oder Ausreißer zu entfernen.
+
+cf_tree=CF-Baum
+coordinate_system=Koordinatensystem
+cf_values=Cluster-Feature Werte
+name=Name
+calculation=Berechnung
+conclusion=Fazit
+centroid=Centroid
+radius=Radius
+distance=Distanz
+euclidic_distance_description=Euklidische Distanz zwischen den Cluster-Zentren
+
+### Questions ###
+split_node_question=Muss der Knoten gesplittet werden?

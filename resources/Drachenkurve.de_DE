@@ -1,0 +1,31 @@
+noSuchKeyException=Es gibt keine Ressourcen f�r Eintrag {0}
+iconNotFound=Icon "{0}" wurde nicht gefunden
+
+## General ##
+title=Drachenkurve
+desc=Die Drachenkurve ist ein Fraktal, welches �hnlich der Koch-Kurve durch so genannte Ersetzung erzeugt wird.\nDabei wird eine Abfolge an Links- und Rechtskurven immer wieder kopiert und leicht ge�ndert.\n\nDer Algorithmus ist rekursiv implementiert und baut dabei auf der kleinsten Drachen\"kurve\" auf - einem Strich, welcher eine Rechtskurve darstellt.\n\nDer Generator kann eine Drachenkurve bis zur Ordnung 12 erstellen.
+
+## Explanation ##
+expl_1=Die Drachenkurve ist ein Fraktal, welches ähnlich der Koch-Kurve durch so genannte Ersetzung erzeugt wird.
+expl_2=Dabei wird eine Abfolge an Links- und Rechtskurven immer wieder kopiert und leicht geändert.
+expl_3=Der Algorithmus ist rekursiv implementiert und baut dabei auf der kleinsten Drachenkurve auf - einem Strich, welcher eine Rechtskurve darstellt.
+expl_4=Die Animation führt durch die Erstellung dieser Abfolge von Links- und Rechtskurven. Dabei wird ein R als Rechtskurve und ein L als Linkskurve abgekürzt.
+expl_5=Währenddessen wird nach und nach die zurückgegebene Drachenkurve angezeigt.
+
+## Step labels ##
+exec=Ausführung (n = {0})
+end=Berechnung (n = {0})
+expl=Erklärung
+summ=Zusammenfassung
+
+## Titles ##
+codeTitle=Code
+varTitle=Variablen
+curveTitle=Drachenkurve
+summary=Zusammenfassung
+
+## Summary ##
+summ_1=Die Drachenkurve hat mit einem einfachen senkrechten Strich gestartet und wurde dann anhand des
+summ_2=Strings {0} nach und nach fortentwickelt.
+summ_3=Im unteren Bild wurde jeweils mitverfolgt wie die Drachenkurve sich nach Abschluss einer Rekursionsstufe entwickelt hat. 
+summ_4=Bis sich schließlich das Bild der Ordnung {0} ergeben hat.

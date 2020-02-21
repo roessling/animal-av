@@ -1,0 +1,26 @@
+
+description=Belady's Optimal Page Replacement-Algorithmus (OPT) ist ein Algorithmus zum austauschen von Pages zwischen Arbeitsspeicher und Hauptspeicher (Festplatte, SSD, etc.). Das Betriebssystem speichert im Arbeitsspeicher Pages des Adressbereiches. Häufig befinden sich die benötigten Pages aber nicht in Frames, dann kommt es zu einem Page-Miss. Die benötigten Pages muss dann in dem Speicher geladen werden. Ist der Arbeitsspeicher aber voll dann muss eine andere Pages aus dem Arbeitsspeicher überschrieben werden. Ein Page-Replacement-Algorithmus versucht hier nun algorithmisch zu entscheden welche Pages überschrieben, werden soll.  Der OPT-Algorithmus ist dabei ein in den meisten Fällen nur theoretisch realisierbarer Algorithmus, da die Zugriffsreihenfolge auf die Pages bekannt sein muss und das normalerweise nie der Fall ist.
+
+nextUseSteps=Nächster Gebrauch von Page {0} ist nach {1} Schritten
+nextUseNever=Page {0} wird in Zukunft nicht mehr gebraucht; Wird sofort ersetzt
+
+commentPTExist=Check, obs in den pageTable bereits vorhanden ist:
+pageHit=Es muss nichts weiter gemacht werden
+ptEmpty=Noch Platz in der pageTable vorhanden:
+ptNotEmpty=Sonst: eine Page im Speicher muss ersetzt werden:
+pageNotUsedInFuture=Die erste Page, die nie in der Zukunft verwendet wird, wird ersetzt.
+replacePage=Page ersetzten
+
+algoStep0=Der Algorithmus in Worten:
+algoStep1=1. Schaue, ob sich die Page bereits in der PageTable (= PT) befindet. Wenn ja, Page HIT und fertig für diese Page.
+algoStep2=2. Falls die Page nicht in PT ist (Page MISS), wird sie in die PT reingeladen.
+algoStep3=3. Dafür wird erst geschaut, ob in der PT noch leere Pageframes vorhanden sind (= PT nicht voll ist). Falls Platz vorhanden ist, wird die Page da reingeladen
+algoStep4=4. Falls kein Platz in der PT vorhanden ist, muss eine Page ersetzt werden. Dabei wird die Page ersetzt, die in Zukunft als letztes gebraucht wird.
+algoStep5=5. Wiederhole dies bis die Anfragesequenz durchgearbeitet ist.
+
+algoMeta1=Erklärung zur Visualisierung: Die Visualisierung besteht aus 2 Arrays, wobei die obere die Sequenz darstellt.
+algoMeta2=Das untere Array ist die PageTable. Wenn ein Feld in der PT grün markiert wird, heißt das, dass diese Page ausgetauscht wird. Wenn -1 als Wert steht, bedeutet dass, das dieses Frame leer ist (= null).
+
+algoSumm0=Zusammenfassung
+algoSumm1=Dieser Algorithmus ist den anderen Pagereplacement Algorithmen in der Treffsicherheit in der Regel weit voraus. 
+algoSumm2=Da er aber nur funktioniert, wenn man die Zugriffsreihenfolge kennt, hat der OPT-Algorithmus in der Praxis wenig bedeutung.

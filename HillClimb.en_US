@@ -1,0 +1,50 @@
+pos=position
+bestnextpos=best next position
+possiblepos= possible next positions
+
+line1=Hillclimbing search is a local searchalgorithm.
+line2=Only the immediate environment can be evaluated.
+line3=A heuristic is used to order the possible by utility.
+line4=Hillclimbing changes one value at each iteration to obtain a better utility score.
+line5=In this case the heuristic is implemented as a grid and in every iteration it can move to the left, right, up or down.
+line6=Problem: Local maxima terminate the algorithm without reaching the best Solution.
+line7=There are modifications that solves this problem:
+line8=-random Walks: if a plane is reached walk randomly until you leave the plane
+line9=-random Restarts: use a random start point when the algorithm terminates. Choose maxima of  all runs
+line10=-probabilistic Hillclimbing:In each step , there is a propability to choose not the best value but another one. This propability decreases with the amount of iterations
+
+
+questiontitle1=1.Question
+question1=Which Problem can appear when using HillClimbsearch ?
+answer1q1=Global maxima of utility function not found.
+feedback1q1=Correct, Hillclimb only detects local  maxima.
+answer2q1=Buffer many states during iteration.
+feedback2q1=False, the algorithm only knows his current state. Previous states are not saved.
+answer3q1=No Termination caused by cycles(loops).
+feedback3q1=False, HillClimb always terminates but the solution is the local maxima.
+
+
+
+questiontitle2=2. Question
+question2=What assumptions Welche Annahmen are made ?
+answer1q2=States have linear order and continous tarnsitions.
+feedback1q2=Correct.
+answer2q2=The whole state space must be known in each iteration.
+feedback2q2=False, only all possible next states must be known.
+answer3q2= There is only one maxima in the whole state space.
+feedback3q2=False, there is no limit for maximas but more maximas worsen the solution.
+
+questiontitle3=3.Question
+question3=How can the problem of local maximas been solved ?
+answer1q3=Use of propabilities for non optimal steps.
+feedback1q3=Correct
+answer2q3=Using more iterations.
+feedback2q3=False, the algorithm terminates in the local maxima. In every further iteration the algorithm won't move.
+answer3q3=There is no solution.
+feedback3q3=False, Possibilities are random restarts and probability based methods.
+
+datainit=data initialized
+outline1=Hillclimbsearch is a uninformed searchalgorithm
+outline2=Only evaluates adjacent states.
+outline3=Problem: Solution can be local maxima(often global maxima wanted)
+outline4=Solution random restarts, probability based Hillclimb(local suboptimal steps allowed)

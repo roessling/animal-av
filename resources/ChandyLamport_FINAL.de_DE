@@ -1,0 +1,9 @@
+[block]
+	Der Chandy-Lamport-Algorithmus dient zur Ermittlung des globalen Zustands eines verteilten Systems.
+[/block]
+[block]
+	[h2]Zusammenfassung[/h2]
+	Wenn ein Prozess die Marker von jedem anderen Prozess empfangen hat, sendet er seinen gespeicherten Zustand und alle bis dahin
+	empfangenen Nachrichten an den Prozess zurück, der den Snapshot-Prozess begonnen hat. [br][br]
+	Auf diese Weise kann ein konsistenter globaler Zustand innerhalb eines gewissen Zeitfensters gewonnen werden.
+[/block]

@@ -329,6 +329,7 @@ public class DummyGenerator implements GeneratorBundle {
     // Generators from the AlgoAnim course in summer term 2018.
     generators.add(new IntroSort("resources/IntroSort", Locale.GERMANY));
     generators.add(new IntroSort("resources/IntroSort", Locale.US));
+    generators.add(new PostmanSort());
     
     return generators;
   }

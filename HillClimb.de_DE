@@ -1,0 +1,51 @@
+pos=Position
+bestnextpos=beste n\u00e4chstm\u00f6gliche Position
+possiblepos=n\u00e4chstm\u00f6gliche Positionen
+
+line1=Bei der Hillclimbing Search handelt es sich um einen lokalen Suchalgorithmus
+line2=nur die unmittelbare Umgebung kann bewertet werden.
+line3=Es wird eine Heuristik verwendet, um die benachbarten Zust\u00e4nde ihrer Attraktivit\u00e4t nach zu ordnen.
+line4=Hillclimbing ver\u00e4ndert in jeder Iteration einen Wert um eine bessere Bewertung zu erzielen.
+line5=In der hier implementierten Gitterapproximation der Zust\u00e4nde bedeutet dies, dass in jeder Iteration nur eine Bewegung nach oben, links, unten oder rechts m\u00f6glich ist.
+line6=Ein Problem sind lokale Maxima welche den Algorithmus zum terminieren bringen ohne die gew\u00fcnschte L\u00f6sung zu finden.
+line7=Es gibt Modifikationen des grundlegenden Algorithmus, die dieses Problem l\u00f6sen:
+line8=-random Walks (wenn eine Ebene erreicht wurde (alle Zustandswechsel = aktueller Zustand) -> laufe zuf\u00e4llig in eine Richtung
+line9=-random Restarts: ein neuer zuf\u00e4lliger Startpunkt wird gew\u00e4hlt wenn der Algorithmus terminiert. Es wird das Maximum aller Durchl\u00e4ufe als Ergebnis gew\u00e4hlt
+line10=-probabilistic Hillclimbing:In jedem Schritt gibt es eine Wahrscheinlichkeit, dass nicht der beste Wert ausgew\u00e4hlt wird, der mit der Anzahl an Iterationen sinkt
+
+
+questiontitle1=1.Frage
+question1=Welche Problematik  kann bei einer HillClimb-Suche entstehen ?
+answer1q1=Globales Maxima der Utility nicht gefunden.
+feedback1q1=Richtig, Hillclimb findet ein lokales Maximum aber nicht zwangsläufig das globale Maximum der Utilityfunktion
+answer2q1=Zwischenspeicherung vieler Zust\u00e4nde(states) w\u00e4hrend der Algorithmus iteriert.
+feedback2q1=Falsch, Der Algorithmus kennt immer nur seinen aktuellen Zustand. vorherige Zust\u00e4nde werden nicht gespeichert.
+answer3q1=Keine Terminierung durch Zyklen(Schleifen).
+feedback3q1=Falsch, HillClimb in der grundlegenden Implementation terminiert immer, jedoch womöglich in einem lokalen Maximum.
+
+
+
+questiontitle2=2.Frage
+question2=Welche Annahmen werden getroffen ?
+answer1q2=Zustände haben lineare Reihenfolge und kontinuierliche Übergänge
+feedback1q2=Richtig.
+answer2q2=Es ist in jeder Iteration der gesamte Zustandsraum bekannt.
+feedback2q2=Falsch, es müssen nur alle nächstmöglichen Zustände bekannt sein.
+answer3q2=Es gibt nur ein Maximum im Zustandsraum.
+feedback3q2=Falsch, es gibt keine Begrenzung für die Anzahl an Maxima, jedoch können sie das Ergebnis verschlechtern.
+
+questiontitle3=3.Frage
+question3=Wie kann man das Problem des lokalen Maxima bei der HillclimbSuche lösen/verringern
+answer1q3=Verwendung von Wahrscheinlichkeiten, die zu einem nicht optimalen Schritt in einem Zustand führen können aber das Endergebnis statistisch gesehen verbessern.
+feedback1q3=Richtig.
+answer2q3=Mehr Iterationen durchführen.
+feedback2q3=Falsch, Der Algorithmus terminiert im lokalen Maxima. Bei jeder weiteren Iteration bewegt sich die HillclimbSuche nicht.
+answer3q3=Dies ist nicht möglich.
+feedback3q3=Falsch, Möglichkeiten zur Lösung der Problematik sind random restarts und Wahrscheinlichkeits-basierte Methoden.
+
+
+datainit=Daten initialisiert
+outline1=Hillclimb-Suche ist ein lokaler Suchalgorithmus
+outline2=betrachtet nur direkt angrenzende Zustände
+outline3=Problematik: Ergebnis kann lokales Maxima sein(meist ist globales Gesucht)
+outline4=Lösung random restarts, Wahrscheinlichkeits-basiertes Hillclimb(lokal suboptimale Züge erlauben)

@@ -1,0 +1,32 @@
+noSuchKeyException = There is no ressource for the key {0}
+iconNotFound = Icon "{0}" not found
+Ä -> \u00c4
+ä -> \u00e4
+Ö -> \u00d6
+ö -> \u00f6
+Ü -> \u00dc
+ü -> \u00fc
+ß -> \u00df
+
+NAME = Derivation with the productrule
+Produktregel = Productrule
+beschreibungsText = This algorithm modulus calculates the derivative of a function that must be solved using the product rule.
+returnIN= This algorithm can only derive the functions that have the following form: f (x) = [a * 0x ^ n + b * x ^ (n-1) ... + c * x + d] * [a * x ^ n + b * x (n-1) ... + c * x + d].
+returnGeneral = This algorithm returns the derivation of the given function.
+Beispiel = Example
+Beschreibung = Description
+SourceCode = Source Code
+Thesolutionis = The solution is
+Solution = Solution
+ersteAbleitung = The Derivation from the first factor
+zweiteAbleitung = The Derivation from the second factor
+Formel = Formula
+eingesetzt = Set-in
+ersterSummand = Calculated first summand
+komplett = Calculated the sum completly
+zusammenfassung = An array ergebnis from typ double  was created
+emptycase = One or both Strings are empty
+emptyCASE = Empty-Case
+nullException One or both Strings are not correct
+nullEXCEPTION = NullException
+algorithmenbeschreibung = This algorithm modulus calculates the derivative of a function that must be solved using the product rule.\nThis algorithm can only derive the functions that have the following form: f (x) = [a * 0x ^ n + b * x ^ (n-1) ... + c * x + d] * [a * x ^ n + b * x (n-1) ... + c * x + d].\nBefore you can call the function, the two input strings are parsed into two lists.\nA string is specified as follows:\nString func = "12; -3; 1; 100.5";\nThis gives the function f (x) = 100.5x³ + 1x² + (- 3) x + 12\nThat is, the coefficients are separated with a semicolon (;) and the decimal numbers are given with a period (.)\nThe function reads two lists of type Double. The first list depicts the first factor of the function and the second the second.\nThe derivative is calculated according to the rule, as follows: f '(x) = function1' (x) * function2 (x) + function1 (x) * function2 '(x)

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<PropertiesTreeModel xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="PropertiesTreeModel.xsd">
+	<Folder name="Root">
+		<Primitive type="intMatrix">
+			<name>Bin Size</name>
+			<value><intMatrix>96, 32; 32, 32; 80, 80; 32, 32; 96, 80; 96, 80; 80, 112; 80, 64; 64, 80; 16, 48; 32, 112; 48, 48</intMatrix></value>
+			<description>Gibt die Größe der einzusortierenden Rechtecke an</description>
+		</Primitive>
+		<Primitive type="int">
+			<name>Area Width</name>
+			<value><int>256</int></value>
+			<description>Breite des Feldes</description>
+		</Primitive>
+		<Primitive type="int">
+			<name>Area Height</name>
+			<value><int>256</int></value>
+			<description>Höhe des Feldes</description>
+		</Primitive>
+		<Primitive type="boolean">
+			<name>Sort</name>
+			<value><boolean value="true" /></value>
+			<description>Sortiere die Rechtecke nach der Höhe</description>
+		</Primitive>
+	</Folder>
+</PropertiesTreeModel>

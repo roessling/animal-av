@@ -1,33 +1,41 @@
-### Start trying to add an element ###
-tryInsert=The algorithm tries to insert an element.\nIt starts with the first hashtable.
-
-### Max attempts exceeded ###
-maxAttempsExc=After an unsuccessful try to insert the element, the algorithm stops.\nAt this point, I need to mention that if it fails to insert. The algorithm will build the two hashtables from scratch with\nnew hashfunctions. This will work like the normal insertion mentioned before.\nThis won't be inside this animation. 
-
-### Epiloque ###
-endInformation=The good point of Cuckoo-Hashing is that an element can only be in two positions.\nOnly at the calculated position in the first or the second hashtable.\nThis makes lookups and deletions always constant.\nThe most important part is the election of hashfunction, this should better than\nin this example. The function was taken from https://de.wikipedia.org/wiki/Kuckucks-Hashing.
-
-
-### Explain termination ###
-ifTerminate=If there isn't an element on the calculated position, like in this example.\nThen the next element will be inserted,\nor if there aren't anymore elements the algorithm stops.
-
-### Changes table ###
-tableSwitch=If there was an element on the calculated position, the algorithm tries to insert it on the other hashtable.
-
-### Swap element with position ###
-elemSwitch=The elements will be swapped.
-
-### Calculate first hash ###
-calcHashOne=Calculate the position with the first hashfunction,\nwhere the element should be inserted.
-
-### Calculate second hash ###
-calcHashTwo=Calculate the position with the second hashfunction,\nwhere the element should be inserted.
-
-### Prologue ###
-startInformation=Cuckoo-Hashing is an algorithm to save elements into two hashtables.\nThere are two different hashfunctions to calculate positions.\nTo insert elements the first hash function will calculate the position for the first hashtable.\nIf there is no element, the element will be inserted and the algorithm terminates.\nBut if there is an element they will swapped and the algorithm tries to insert it into the second\nhashtable with the second hashfunction.\nThis will rotate until the algorithm finds an empty spot for the element, but this will only be tried\nfor a number of attempts. If they algorithm can't find a spot, it will insert all elements again from\nscratch with different hashfunctions. This will work like described as above.\nIn this animation the algorithm will terminate if it fails to insert elements. Because\nit would just be the same as mentioned before. In the worst case scenario the algorithm will take\nconstant time to find an element, because it can only exist in two places.
-
-### Requirements Information ###
-reqInformation=Requirements are:\n1. Two hashtables of the same size.\n2. Two different hashfunction, which calculate to [0, hashtable length -1].\n2.1 Those need to calculate different results.\n2.2 In this animation, the algorithm will use an interface with lambda to implement the two functions.\n3. Maximum attempts to try insert an element. 
-
-### Description ###
-description=Cuckoo-Hashing is an algorithm to save elements into two hashtables.\nThere are two different hashfunctions to calculate positions.\nTo insert elements the first hash function will calculate the position for the first hashtable.\nIf there is no element, the element will be inserted and the algorithm terminates.\nBut if there is an element they will swapped and the algorithm tries to insert it into the second\nhashtable with the second hashfunction.\nThis will rotate until the algorithm finds an empty spot for the element, but this will only be tried\nfor a number of attempts. If they algorithm can't find a spot, it will insert all elements again from\nscratch with different hashfunctions. This will work like described as above.\n In the worst case scenario the algorithm will take\nconstant time to find an element, because it can only exist in two places.
+algoName=CuckooHashing
+name=Cuckoo Hashing
+headerText=Cuckoo Hashing
+elementToInsert=Element to insert: {0}
+insert=Insert: {0}
+assureFillLevel=Make sure neither table exceeds fill level.
+fillLevelExceededIncrease=Failed. At least one table exceeded the desired fill level. Increase table size to {0} and reinsert all elements.
+increaseTableSizeTo=Increase table size to {0}
+reinsertedAll=Reinserted all elements!
+reinsertionDone=Reinsertion done.
+calculated=Calculated {0}({1}) = {2}
+tableEmpty={0}[{1}] is empty. Insert {2} here.
+tableContains={0}[{1}] already contains {2}. Overwrite.
+insertionComplete=Insertion complete!
+tryTable2=Could not insert in table1. Try table2
+neitherTableHasSpace=Neither table has space on first try. Buffer both tables.
+spaceInFirst=There was space in the first table.
+spaceInSecond=There was space in the second table.
+noSpaceInFirst=There was no space in the first table!
+noSpaceInSecond=There was no space in the second table!
+checkIfChanged=Check if tables have changed.
+changed=Yes, tables have changed. Continue in loop.
+notChanged=No, tables have not changed. Stop loop.
+needRehash=Need to rehash tables.
+rehashing=Rehashing
+rehashingDone=Rehashing done.
+nowInsertRemaining=Now insert remaining element {0}.
+rehashingAndInsertionDone=Rehashing and insertion of remaining element done!
+swap=Swap {0} with {1}
+storeAll=Store all already inserted elements.
+defineNewHashfunctions=Define new hashfunctions and clear tables.
+insertStored=Insert stored Elements in new empty tables.
+algoDescription=Cuckoo hashing is an algorithm for resolving collisions in hash tables.\nTwo separate hash tables and two hash functions are used. If the position calculated\nwith the first hash function is already occupied when an element is inserted\ninto the first table, the hash value is calculated using the second hash function\nand the element is inserted if this position is still free in table two.\nIf this position is also occupied in the second table, elements push each other out of the tables.\nThereby, one element always pushes another element out of the table in which it was not in before.\nThis happens until all elements could be inserted or until\nthe table constellations are the same as at the beginning of the swap.\nIn this case, the hash functions are replaced by two new ones and all elements\nare re-inserted into the two empty tables.\n\nThe name derives from cuckoo chicks, which push foreign eggs from a nest.\n\nAs with the use of all hash tables, it may be necessary to increase the size\nof the tables if a specified fill level is exceeded.
+introduction=Introduction
+algoConclusion=The complexity of insertion in cuckoo hashing is O(n).\nThe complexity for searching and deleting is O(1), since elements are found by a maximum of two operations.\n\nOne feature of the hashing algorithm is that the first table\nis much more crowded than the second in a normal, not artificially created case.
+conclusion=Conclusion
+sizeAllowedValues=Only values greater than 0 are allowed for the initial table size.
+recursionDepth=Only values greater than 0 or equal to 0 are allowed for the recursion depth.
+fillLevel=Only values greater than 0 and smaller than 1 or equal to 1 are allowed for the fill level.
+factorIncreasing=Only values greater than 1 are allowed for the factor during increasing the table size.
+invalidInput=Invalid input

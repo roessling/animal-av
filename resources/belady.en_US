@@ -1,0 +1,27 @@
+
+description=Belady's Optimal Page Replacement Algorithm (OPT) is an algorithm for exchanging pages between RAM and main memory (harddisk SSD etc.). The operating system stores pages of the address range in the RAM. Frequently however the required pages are not located in the frames of the Pagetable which leads to a page miss. The required pages must then be loaded into the memory. If the RAM is full another page from the RAM must be overwritten. A Page Replacement Algorithm tries now algorithmically to determine which pages should be overwritten.  In most cases the OPT algorithm is an algorithm that can only be implemented theoretically since the access sequence to the pages must be known and this is normally never the case.
+
+nextUseSteps=Next use of Page {0} is in {1} Steps
+nextUseNever=Page {0} is not used in future anymore; replacing immediately
+
+commentPTExist=Check if it already is in the pagetable
+pageHit=Nothing has do be done
+ptEmpty=Empty frame in the pagetable exists:
+ptNotEmpty=Else: A page in memory has to be replaced:
+pageNotUsedInFuture=The first Page which is not used in future anymore is replaced immediately.
+replacePage=Replace page
+
+
+algoStep0=The algorithm in words:
+algoStep1=1. See if the page is already in the PageTable (= PT). If yes Page HIT and nothing else has to be done for this page.
+algoStep2=2. If the page is not in the PT (Page MISS), it is loaded into the PT.
+algoStep3=3. For this the system first checks whether there are still empty pageframes in the PT (= PT is not full). If space is available the page is loaded there
+algoStep4=4. If there is no space in the PT a page must be replaced. This replaces the page that will be used last in the future.
+algoStep5=5. Repeat this until the query sequence has been worked through.
+
+algoMeta1=Visualization explanation: The visualization consists of 2 arrays the upper one representing the sequence.
+algoMeta2=The lower array is the PageTable. If a field in the PT is marked green it means that this page is exchanged. -1 as a value means that the Frame is empty
+
+algoSumm0=Summary
+algoSumm1=This algorithm is generally far ahead of the other pagereplacement algorithms in terms of Page HIT accuracy. 
+algoSumm2=Since it only works if you know the access sequence the OPT algorithm has little meaning in reality.

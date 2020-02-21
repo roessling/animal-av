@@ -1,0 +1,32 @@
+noSuchKeyException = There is no ressource for the key {0}
+iconNotFound = Icon "{0}" not found
+Ä -> \u00c4
+ä -> \u00e4
+Ö -> \u00d6
+ö -> \u00f6
+Ü -> \u00dc
+ü -> \u00fc
+ß -> \u00df
+
+NAME = Ableitung mittels der Produktregel
+Produktregel = Produktregel
+beschreibungsText = Dieser Algortihmus berechnet die Ableitung einer Funktion, die mittels der Produktregel gelöst werden muss.
+returnIN =Dieser Algorithmus kann nur die Funktionen ableiten, die folgende Form haben: f(x)=[a*0x^n+b*x^(n-1)...+c*x+d]*[a*x^n+b*x^(n-1)...+c*x+d]. 
+returnGeneral = Es wird die Ableitung einer Funktion zurückgegeben.
+Beispiel = Beispiel
+Beschreibung = Beschreibung 
+SourceCode = Quellcode
+Thesolutionis = Die Lösung ist 
+Solution = Lösung
+ersteAbleitung = Die Ableitung des ersten Faktors
+zweiteAbleitung = Die Ableitung des zweiten Faktors
+Formel = Formel
+eingesetzt = Eingesetzt
+ersterSummand = Erste Summand zusammengefasst 
+komplett = Komplette Summe gebildet
+zusammenfassung = Ein Array ergebnis des Types Double wurde erstellt
+emptycase = Einer oder beide  eingegebenen Strings sind leer 
+emptyCASE= Empty-Fall
+nullException = Einer oder beide Strings wurden nicht korrekt angegeben
+nullEXCEPTION = NullException
+algorithmenbeschreibung = Dieser Algortihmus berechnet die Ableitung einer Funktion, die mittels der Produktregel gelöst werden muss.\nDieser Algorithmus kann nur die Funktionen ableiten, die folgende Form haben: f(x)=[a*0x^n+b*x^(n-1)...+c*x+d]*[a*x^n+b*x^(n-1)...+c*x+d].\nBevor man die Funktion aufrufen kann, werden davor die zwei eingegebenen Strings zu zwei Listen geparst.\nDabei wird ein String folgendermaßen angegeben: \nString func = "12; -3;1;100.5";\nDies ergibt die Funktion f(x) = 100.5x³+1x²+(-3)x+12\nDas heißt die Koeffizienten werden mit einem Semikolon (;) getrennt und die Dezimalzahlen werden mit einem Punkt (.) angegeben.\nDie Funktion liest zwei Listen des Types Double ein. Dabei bildet die erste Liste den ersten Faktor der Funktion ab und die zweite den Zweiten.\nDie Ableitung wird der Regel entsprechend, folgendermasen berechnet: f'(x) = function1'(x) *function2(x) + function1(x)*function2'(x)

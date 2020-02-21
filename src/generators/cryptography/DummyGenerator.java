@@ -153,8 +153,10 @@ public class DummyGenerator implements GeneratorBundle {
     generators.add(new TEA());
    
 
-    // Generators from the AlgoAnim course in summer term 2018.
+    // Generators from the AlgoAnim course in summer term 20189.
     generators.add(new BitkettenOTP());
+    generators.add(new HillChiffre("resources/HillChiffre", Locale.GERMANY));
+    generators.add(new HillChiffre("resources/HillChiffre", Locale.US));
     generators.add(new VMPCGenerator());
     
     return generators;
