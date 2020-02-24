@@ -1,0 +1,901 @@
+Backtracking;256;CSP - Backtracking & Forward Check;de_DE;Pseudo-Code;Martin Distler, Simon Werner;generators.backtracking.CSP
+Backtracking;256;Cocke-Younger-Kasami-Algorithmus;en_US;Pseudo-Code;Ahmet Erguen, Niklas Bunzel;generators.backtracking.CYKGenerator
+Backtracking;256;Davis-Putnam-Verfahren;de_DE;Java;Magnus Brand, Bastian de Groot;generators.backtracking.DavisPutnam
+Backtracking;256;Damenproblem;de_DE;Pseudo-Code;Roman Uhlig, Michael Rau;generators.backtracking.QueenPuzzleGenerator
+Backtracking;256;Springerproblem;de_DE;Java;Eric Brüggemann, Mohit Mahkija;generators.backtracking.springerproblem.SpringerProblemGeneratorDE
+Backtracking;256;Recursive Backtracking Maze Generation;en;Java;David Berman;generators.backtracking.RecursiveBacktrackingMazeGeneration
+Compression;64;Burrows-Wheeler Transformation;de_DE;Java;Florian Lindner;generators.compression.BurrowsWheelerReTransformation
+Compression;64;Burrows-Wheeler Transformation;de_DE;Java;Florian Lindner;generators.compression.BurrowsWheelerTransform
+Compression;64;LZW (Lempel, Ziv, Welch 1984);en_US;Java;Florian Lindner;generators.compression.lempelziv.LZW2
+Compression;64;LZW (Lempel, Ziv, Welch 1984);de_DE;Java;Florian Lindner;generators.compression.lempelziv.LZW2
+Compression;64;LZW (Lempel, Ziv, Welch 1984);de_DE;Java;Florian Lindner;generators.compression.lempelziv.LZWDecoding
+Compression;64;Move to Front;de_DE;Java;Florian Lindner;generators.compression.MTF
+Compression;64;Move to Front;de_DE;Java;Florian Lindner;generators.compression.MTFDecoding
+Compression;64;RLE (Lauflängencodierung);de_DE;Java;Florian Lindner;generators.compression.runlength.RLE
+Compression;64;Sequitur Komprimierung (Nevill-Manning, Witten 1997);de_DE;Java;Florian Lindner;generators.compression.Sequitur
+Compression;64;Shannon-Fano Coding;en_US;Pseudo-Code;Dieter Hofmann, Artem Vovk;generators.compression.ShannonGenerator
+Compression;64;Lempel Ziv 77;de_DE;Java;Maximilian Müller, Tobias Neidig;generators.compression.LZ77
+Compression;64;Lempel Ziv 77;en_US;Java;Maximilian Müller, Tobias Neidig;generators.compression.LZ77
+Compression;64;Shannon-Fano Coding;en;Pseudo-Code;Sebasian Fach, Peter Kl&ouml;ckner;generators.compression.shannon_fano.ShannonFanoCoding
+Compression;64;Huffman Coding;en;Pseudo-Code;Sebasian Fach, Peter Kl&ouml;ckner;generators.compression.huffman.HuffmanCoding
+Compression;64;Huffman Code;de;Pseudo-Code;Jonathan Roth, Till Vo�;generators.compression.huffman2.HuffmanCodeGenerator
+Compression;64;Tunstall Coding;de;Pseudo-Code;Jonathan Roth, Till Vo�;generators.compression.tunstall.TunstallCodingGenerator
+Compression;64;DXT1;de;Pseudo-Code;Jan Petto, Nikolas Asimyadis;generators.compression.Dxt1Generator
+Compression;64;DXT4;de;Pseudo-Code;Jan Petto, Nikolas Asimyadis;generators.compression.Dxt4Generator
+Compression;64;JPEGCompression;de_DE;Pseudo-Code;Aleksej Strassheim, Kosntantin Strassheim;generators.compression.JPEGCompression
+Compression;64;JPEGCompression;en_US;Pseudo-Code;Aleksej Strassheim, Kosntantin Strassheim;generators.compression.JPEGCompression
+Cryptography;128;Caesar Cipher;de_DE;Pseudo-Code;Jerome Möckel, Stefan Schmitz;generators.cryptography.caesarcipher.CaesarCipherJMSS
+Cryptography;128;Caesar Cipher;de_DE;Pseudo-Code;Dmytro Vronskyi;generators.cryptography.caesarcipher.Caesar
+Cryptography;128;Caesar Cipher;de_DE;Java;Iaad Zabar, Abdulghani Alshadadi;generators.cryptography.caesarcipher.CaesarChiffre3
+Cryptography;128;Caesar Cipher;en_US;Pseudo-Code;Gamze Canova, Stephan Moczygemba;generators.cryptography.caesarcipher.CaesarChiffre4b
+Cryptography;128;Caesar Cipher;en_US;Java;Annika Beissler, Martin Hess, Nando Fuchs;generators.cryptography.caesarcipher.CaesarChiffreGutAnnotated
+Cryptography;128;Caesar Cipher;de_DE;Java;Jan H. Post, Tim Grube;generators.cryptography.caesarcipher.CaesarCipher
+Cryptography;128;Caesar Cipher;en_US;Pseudo-Code;Leonid Khaylov;generators.cryptography.caesarcipher.CaesarCipherAlgorithm
+Cryptography;128;Caesar Cipher;en_US;Pseudo-Code;Thorsten Franzel;generators.cryptography.caesarcipher.CaesarCipherTF
+Cryptography;128;Caesar Cipher;de_DE;Java;Malek Boulakbech;generators.cryptography.caesarcipher.CaesarImp
+Cryptography;128;Caesar Cipher;de_DE;Java;Can Güler, Tayfun Atik;generators.cryptography.caesarcipher.CaesarTC
+Cryptography;128;Caesar Cipher;en_US;Java;Stephan Arneth;generators.cryptography.caesarcipher.MyCaesar
+Cryptography;128;One-Time Pad;en_US;Pseudo-Code;Malcolm Parsons;generators.cryptography.onetimepad.OneTimePad
+Cryptography;128;RSA;en_US;Pseudo-Code;Nico Gerwien, Martin Olschowski;generators.cryptography.rsa.RSAMO
+Cryptography;128;Exponentiation;de_DE;Java;Julian Metzler, Tino Fuhrmann;generators.cryptography.BinExp
+Cryptography;128;Cipher Feedback Mode (CFB);de_DE;Pseudo-Code;Kristijan Madunic;generators.cryptography.CFBModeEncrypt
+Cryptography;128;Diffie-Hellman;de_DE;Pseudo-Code;Kristijan Madunic;generators.cryptography.DiffieHellman
+Cryptography;128;ElGamal;de_DE;Pseudo-Code;Jan Dillmann,Fabian Letzkus;generators.cryptography.elgamal.ElGamal
+Cryptography;128;Lamport-Diffie OTS;de_DE;Pseudo-Code;Nikolaus Korfhage;generators.cryptography.LamportDiffie
+Cryptography;128;Merkle-Signatur;de_DE;Pseudo-Code;Nikolaus Korfhage;generators.cryptography.Merkle
+Cryptography;128;Output Feedback Mode (OFB);en_US;Pseudo-Code;Christian Feier, Yannick Drost;generators.cryptography.OFBGenerator
+Cryptography;128;One-Time Pad;de_DE;Pseudo-Code;Mateusz Umstädter, Aidin Dinkhah, Jakub Pilarski;generators.cryptography.onetimepad.OneTimePadString
+Cryptography;128;Playfair;de_DE;Pseudo-Code;Daniel Tanneberg, Nadine Tr&uuml;schler;generators.cryptography.Playfair
+Cryptography;128;Polybios;de_DE;Pseudo-Code;Rene Schubert, Andre Schubert;generators.cryptography.Polybios
+Cryptography;128;RSA;de_DE;Java;Nkepseu Tchassep Soule, Ibrahim Alyahya;generators.cryptography.rsa.RSA_XML
+Cryptography;128;ADFGX-Verschlüsselung;de_DE;Java;Taylan Özden, Jonas Dopf;generators.cryptography.ADFGXgenerator
+Cryptography;128;Cipher Block Chaining Mode (CBC);de_DE;Pseudo-Code;Stephan Cornelius Arndt, Felix Gündling;generators.cryptography.CBCDecrypt
+Cryptography;128;Cipher Block Chaining Mode (CBC);de_DE;Pseudo-Code;Stephan Cornelius Arndt, Felix Gündling;generators.cryptography.CBCEncrypt
+Cryptography;128;Counter Mode;en_US;Pseudo-Code;Andreas Pesak, Rolf Egert;generators.cryptography.CtrGenerator
+Cryptography;128;Electronic Codebook Mode (ECB);en_US;Pseudo-Code;Ahmet Erguen, Niklas Bunzel;generators.cryptography.ECBGenerator
+Maths;512;Erweiterter Euklidischer Algorithmus;de_DE;Java;Florian Schmidt, Katja Rabea Sonnenschein;generators.cryptography.ErweiterterEuklidischerAlgorithmus
+Cryptography;128;Needham-Schroeder;de_DE;Pseudo-Code;Florian Oswald;generators.cryptography.NeedhamSchroederAsym
+Cryptography;128;Needham-Schroeder;de_DE;Pseudo-Code;Florian Oswald;generators.cryptography.NeedhamSchroederSym
+Cryptography;128;Output Feedback Mode (OFB);en_US;Pseudo-Code;Fabian Möller, Matthias Mettel;generators.cryptography.OFBBlockChiffre
+Cryptography;128;Mono-alphabetic Substitution Cipher;en_US;Pseudo-Code;Dominik Bollmann, Sogol Mazaheri;generators.cryptography.SubstitutionGenerator
+Cryptography;128;Caesar Cipher;de_DE;Java;Galin Bobev, Mir-Misagh Zayyeni;generators.cryptography.caesarcipher.Caesar_Chiffre
+Cryptography;128;Advanced Encryption Standard (AES);en_US;Pseudo-Code;Lukas Strassel, Stefan Wegener;generators.cryptography.Adder
+Cryptography;128;AddRoundKey;en_US;Java;Stefan Kaesdorf, Marco Drebing;generators.cryptography.AddRoundKeyGenerator
+Cryptography;128;Advanced Encryption Standard (AES);de_DE;Pseudo-Code;Bernd Conrad, Sandra Amend;generators.cryptography.AES
+Cryptography;128;Atbasch;de_DE;Java;Nicolas Kolb, Marco Br&auml;uning;generators.cryptography.Atbasch
+Cryptography;128;Babystep-Giantstep;de_DE;Pseudo-Code;Daniel Lehmann, Ji-Ung Lee;generators.cryptography.BabystepGiantstepGenerator
+Cryptography;128;Data Encryption Standard (DES);de_DE;Pseudo-Code;Andre Daube, Kokilan Kanesalingam;generators.cryptography.des.DESGenDE
+Cryptography;128;Data Encryption Standard (DES);en_US;Pseudo-Code;Andre Daube, Kokilan Kanesalingam;generators.cryptography.des.DESGenEN
+Cryptography;128;ElGamal;de_DE;Java;Emre Cakmak, Franklin Labang;generators.cryptography.elgamal.ElGamalVerfahren
+Cryptography;128;Advanced Encryption Standard (AES);de_DE;Pseudo-Code;Bernd Conrad, Sandra Amend;generators.cryptography.KeyExpansion
+Cryptography;128;MixColumns;en_US;Pseudo-Code;Stefan Kaesdorf, Marco Drebing;generators.cryptography.MixColumnsGenerator
+Cryptography;128;Advanced Encryption Standard (AES);en_US;Pseudo-Code;Lukas Strassel, Stefan Wegener;generators.cryptography.Multpl
+Cryptography;128;Rabin Kryptosystem;de_DE;Pseudo-Code;Emre Cakmak, Franklin Labang;generators.cryptography.RabinKryptosystem
+Cryptography;128;ShiftRows;en_US;Java;Stefan Kaesdorf, Marco Drebing;generators.cryptography.ShiftRowsGenerator
+Cryptography;128;Advanced Encryption Standard (AES);de_DE;Pseudo-Code;Bernd Conrad, Sandra Amend;generators.cryptography.SubBytes
+Cryptography;128;Feistel-Chiffre;de;Pseudo-Code;Moritz Kulessa;generators.cryptography.feistel.FeistelChiffre
+Cryptography;128;CFB Decryption;de;Pseudo-Code;Tien Truong Nguyen;generators.cryptography.CFB_Generator
+Cryptography;128;OFB Decryption;de;Pseudo-Code;Tien Truong Nguyen;generators.cryptography.OFB_Generator
+Cryptography;128;Data Encryption Standard (DES);de_DE;Pseudo-Code;Andre Daube, Kokilan Kanesalingam;generators.cryptography.des.DESGenDE
+Cryptography;128;Data Encryption Standard (DES);en_US;Pseudo-Code;Andre Daube, Kokilan Kanesalingam;generators.cryptography.des.DESGenEN
+Maths;512;Vigenère Cipher;en_US;Pseudo-Code;Artur Seitz, Darjush Siahdohoni;generators.cryptography.Vigenere
+Maths;512;Vigenère-Chiffre;de_DE;Pseudo-Code;Artur Seitz, Darjush Siahdohoni;generators.cryptography.Vigenere
+Cryptography;128;Rot47;de;Java;Denis Türkpencesi;generators.cryptography.Rot47
+Cryptography;128;ARC4 (Alleged RC4);en;Pseudo-Code;David Becker;generators.cryptography.ARC4
+Cryptography;128;BB84;de;Pseudo-Code;Vincent Riesop und Nils Mäser;generators.cryptography.BB84
+Cryptography;128;Blowfish Decryption Generator ;de;Pseudo-Code;Dani El-Soufi , Deniz Can Franz Ertan;generators.cryptography.blowfish.BlowfishDecryptionGenerator
+Cryptography;128;Blowfish Encryption Generator ;de;Pseudo-Code;Dani El-Soufi, Deniz Can Franz Ertan;generators.cryptography.blowfish.BlowfishEncryptionGenerator
+Cryptography;128;HMAC;en;Java;Dominik Rieder, Nicolas Schickert;generators.cryptography.MACAlgo
+Cryptography;128;Morse Decode;de_DE;Java;Felix Heller & Hendrik Jöntgen;generators.cryptography.MorseCode
+Cryptography;128;Shamir's Secret Sharing;de;Pseudo-Code;Simon Schmidt;generators.cryptography.SecretSharingGenerator
+Cryptography;128;Treyfer;en;Java;Soundes Marzougui;generators.cryptography.Treyfer
+Cryptography;128;TEA;en;Java;Soundes Marzougui;generators.cryptography.TEA
+Cryptography;128;Bitketten One-Time Pad;de;Java;Daniel Friesen,Jens Abels;generators.cryptography.BitkettenOTP
+Cryptography;128;Hill-Chiffre;de_DE;Pseudo-Code;Phillip Schneider, Zi Wang;generators.cryptography.HillChiffre
+Cryptography;128;Hill cipher;en_US;Pseudo-Code;Phillip Schneider, Zi Wang;generators.cryptography.HillChiffre
+Cryptography;128;Variably Modified Permutation Composition Stream Cipher;en;Java;Philipp Geiger;generators.cryptography.VMPCGenerator
+DataStructures;16;Binary Space Partitioning;en_US;Pseudo-Code;Martin Tschirsich, Tjark Vandommele;generators.datastructures.BinarySpacePartitioning
+DataStructures;16;The Fault Algorithm;en_US;Java;Daniel Thul, René Röpke;generators.datastructures.TheFaultAlgorithmGenerator
+DataStructures;16;Linked List;de;Java;Ferdinand Pyttel, Michael Ries, Florian Platzer;generators.datastructures.LinkedListGenerator
+DataStructures;16;Doubly Linked List;de;Java;Ferdinand Pyttel, Michael Ries, Florian Platzer;generators.datastructures.DoublyLinkedListGenerator
+DataStructures;16;Ring Buffer;de;Java;Ferdinand Pyttel, Michael Ries, Florian Platzer;generators.datastructures.RingBufferGenerator
+More;1073741824;DoublyLinkedList;de_DE;Java;Uwe Breidenbach <hi01ebub@rbg.informatik.tu-darmstadt.de>;generators.datastructures.DoublyLinkedList2
+More;1073741824;DoublyLinkedList;en_US;Java;Uwe Breidenbach <hi01ebub@rbg.informatik.tu-darmstadt.de>;generators.datastructures.DoublyLinkedList2
+DataStructures;16;Traversieren, Element hinzuf�gen und l�schen;de;Java;Sascha Zenglein,Julian Schwind;generators.datastructures.NewLinkedList
+DataStructures;16;IEEE 754;en_US;Pseudo-Code;Lutz Langhorst;generators.datastructures.IEEE754
+DataStructures;16;IEEE 754;de_DE;Pseudo-Code;Lutz Langhorst;generators.datastructures.IEEE754
+DataStructures;16;Bloom-Filter;en_US;Java;Sandra Sch�fer, Jonas Schatz;generators.datastructures.BloomFilterGenerator
+DataStructures;16;Bloom-Filter;de_DE;Java;Sandra Sch�fer, Jonas Schatz;generators.datastructures.BloomFilterGenerator
+DataStructures;16;Dial-Implementierung;de;Pseudo-Code;Stefan Thaut, Benedikt Lins;generators.datastructures.dial_implementation_generator
+DataStructures;16;Wavlet Tree;en_US;Java;Ilhan Simsiki, Christof Bienkowski;generators.datastructures.Wavelet
+DataStructures;16;Wavlet Tree;de_DE;Java;Ilhan Simsiki, Christof Bienkowski;generators.datastructures.Wavelet
+DataStructures;16;Potential Field;de_DE;Pseudo-Code;Jasper Suess;generators.datastructures.PotentialField
+DataStructures;16;Potential Field;en_US;Pseudo-Code;Jasper Suess;generators.datastructures.PotentialField
+DataStructures;16;Skip List Insertion;de_DE;Pseudo-Code;Dorian Arnouts, Alexander Peerdeman;generators.datastructures.SkipListInsertion
+DataStructures;16;Skip List Insertion;en_US;Pseudo-Code;Dorian Arnouts, Alexander Peerdeman;generators.datastructures.SkipListInsertion
+Graph;8;Ring Leader Election;de_DE;Pseudo-Code;Dominik Fischer;generators.graph.AnnotatedRingGenerator
+Graph;8;Bellman-Ford Algorithm;en_US;Pseudo-Code;David Marx;generators.graph.bellmanford.BellmanFord
+Graph;8;Kruskal;en_US;Pseudo-Code;David Marx;generators.graph.kruskal.Kruskal
+Graph;8;Prim;en_US;Java;Stephan Arneth;generators.graph.prim.MyPrim
+Graph;8;Finding the Longest Path on a Tree;en_US;Java;Quoc Hien Dang, Thanh Tung Dang;generators.graph.FinalFLP
+Graph;8;Ford Fulkerson;en_US;Pseudo-Code;David Kaufmann, Holger Thies;generators.graph.FordFulkerson2
+Graph;8;MinMax;de_DE;Pseudo-Code;Barbara Zöller, Malte Paskuda;generators.graph.MinMax
+Graph;8;Path Search;en_US;Java;Sheip Darugtev;generators.graph.PathSearch
+Graph;8;Prim;de_DE;Pseudo-Code;Irina Smidt, Simon Sprankel;generators.graph.prim.PrimAPIGenerator
+Graph;8;Boruvka Algorithmus;de_DE;Pseudo-Code;Ahmed Charfi, Jihed Ouni;generators.graph.boruvka.Boruvka
+Graph;8;Breitensuche;de_DE;Java;Thu Huong Luu, Benedikt Hiemenz;generators.graph.breadthfirstsearch.BreadthFirstSearch
+Graph;8;DFS;de_DE;Pseudo-Code;Max Kolhagen, Patrick Lowin;generators.graph.depthfirstsearch.DFStraverse
+Graph;8;Dijkstra;en_US;Pseudo-Code;Tanya Harizanova, Dimitar Dimitrov;generators.graph.dijkstra.Dijkstra3
+Graph;8;Edmonds Algorithm;en_US;Pseudo-Code;Jan Wiesel;generators.graph.EdmondsAlgorithm
+Graphics;4096;Kantenlistenalgorithmus;de_DE;Pseudo-Code;Alvar Gamez Zerban, Axel Heimann, Nikos Kombouris;generators.graph.Kantenlistenalgorithmus
+Graph;8;Kosaraju's algorithm;en_US;Java;Kai Schwierczek;generators.graph.Kosaraju
+Graph;8;Kruskal;de_DE;Pseudo-Code;Simone Baier;generators.graph.kruskal.KruskalAlgoAPIGenerator
+Graph;8;Kruskal;de_DE;Java;Florian Schmidt, Katja Rabea Sonnenschein;generators.graph.kruskal.Kruskal2
+Graph;8;Nearest Neighbor Algorithm;en_US;Pseudo-Code;Ahmed Charfi, Jihed Ouni;generators.graph.nearestneighbor.NearestNeighborAlgorithm
+Graph;8;Tarjan's SCC algorithm;en_US;Java;Kai Schwierczek;generators.graph.Tarjan
+Graph;8;Chinese Whispers Graph Clustering;de_DE;Pseudo-Code;Konstantin Ramig;generators.graph.whispers.Whispers
+Graph;8;Betweenness Centrality;en_US;Pseudo-Code;Patrick Felka, Baran Denis Özdemir;generators.graph.betweenness.Betweenness
+Graph;8;Betweenness Centrality;en_US;Pseudo-Code;Patrick Felka, Baran Denis Özdemir;generators.graph.betweenness.Betweenness
+Graph;8;Checking for Bipartition;en_US;Pseudo-Code;Dominik Pfau;generators.graph.bipartite.BipartitionGenerator
+Graph;8;Bully Algorithmus;de_DE;Pseudo-Code;Nico Wombacher, Moritz Moxter;generators.graph.bully.BullyGenerator
+Graph;8;Dijkstra;de_DE;Pseudo-Code;Do Thanh Tung, Hoang Minh Duc;generators.graph.dijkstra.DijkstraDE
+Graph;8;Minimum edge coloring of an even complete graph;en_US;Pseudo-Code;Dominik Pfau;generators.graph.EdgeColoringGenerator
+Graph;8;Girvan-Newman;en_US;Pseudo-Code;Baran Denis Özdemir, Patrick Felka;generators.graph.sna.GirvanNewman
+Graph;8;Longest path in a DAG;en_US;Pseudo-Code;Christian Hollubetz;generators.graph.longestdagpath.LongestDagPathGenerator
+Graph;8;Markov Chain Clustering;en_US;Pseudo-Code;Johannes Simon;generators.graph.MCL
+Graph;8;TSP Brute Force;de_DE;Pseudo-Code;Moritz Moxter, Nico Wombacher;generators.graph.tsp.TSP
+Graph;8;Warshall;de_DE;Java;Jannik Schildknecht, Sergej Alexeev;generators.graph.warshall.Warshall
+Graph;8;Welsh-Powell Algorithm;de_DE;Pseudo-Code;Thomas Hartmann, Wail Shakir;generators.graph.WelshPowell
+Graph;8;Bron-Kerbosch;en;Pseudo-Code;Marco Casili, Igor Cherepanov;generators.graph.bronkerbosch.BronKerboschVertexOrdering
+Graph;8;Bron-Kerbosch;en;Pseudo-Code;Marco Casili, Igor Cherepanov;generators.graph.bronkerbosch.BronKerboschWithoutPivoting
+Graph;8;Bron-Kerbosch;en;Pseudo-Code;Marco Casili, Igor Cherepanov;generators.graph.bronkerbosch.BronKerboschWithPivoting
+Graph;8;De Bruijn;en;Java;Nikola Aleksandrov;generators.graph.debruijn.DeBruijn
+Graph;8;DeterminierungNDFA;de;Java;Nora Wester;generators.graph.DeterminierungNDFA.DeterminierungNDFADemo
+Graph;8;Diamond-Square;de;Pseudo-Code;Felix Mayer, Lulzim Murati;generators.graph.DiamondSquare
+Graph;8;Dynamic Source Routing;de;Java;Maurice Wendt, Dominik Gopp;generators.graph.DSR
+Graph;8;Lindenmayer;de;Pseudo-Code;Deniz Emre Mohr, Murat Batu;generators.graph.lindenmayer.LindenmayerAPIGenerator
+Graph;8;MinimierungDFA;de;Java;Nora Wester;generators.graph.MinimierungDFA.MinimierungDFADemo
+Graph;8;Reverse Delete;en;Pseudo-Code;El Fethi Bouabidi,Farouk Haouami;generators.graph.ReverseDelete
+Graph;8;Classical Bipartite Matching;de;Pseudo-Code;Markus Lehmann, Martin Müller;generators.graph.ClassicalBipartiteMatching
+Graph;8;Classical eulerian cycle algorithm;en;Java;Markus Lehmann, Martin Müller;generators.graph.euleriancyclecode.EulerianCycleCodeGenerator
+Graph;8;Perzeptron;de;Pseudo-Code;Oemer M. Ayar;generators.graph.Perzeptron
+Graph;8;Gozinto-Listen-Verfahren;de;Pseudo-Code;Timm Lampa,Najim Azizi;generators.graph.GozintoGenerator
+Graph;8;Fleury;de;Java;Denis Tuerkpencesi;generators.graph.Fleury
+Graph;8;Push-Relabel-Algorithmus;de;Pseudo-Code;Steffen Frank Schmidt;generators.graph.PushRelabelGenerator
+Graph;8;PageRank;de;Pseudo-Code;Jan Ulrich Schmitt, Dennis Juckwer;generators.graph.PageRank
+Graph;8;Hot Potato Routing;de;Java;Jessey Widhalm, Kevin Trometer;generators.graph.HotPotatoRouting
+Graph;8;Kruskal Maze Generation;en;Java;Philipp Malkmus;generators.graph.MazeKruskal
+Graph;8;Karger's algorithm for Minimum Cut, by David Karger, published in 1993;en_US;Pseudo-Code;Hannah Drews, Yves Geib;generators.graph.KargersAlgorithm
+Graph;8;Karger's algorithm for Minimum Cut, by David Karger, published in 1993;de;Pseudo-Code;Hannah Drews, Yves Geib;generators.graph.KargersAlgorithm
+Graph;8;Edmonds-Karp;de_DE;Pseudo-Code;Benedikt Lins, Stefan Thaut;generators.graph.EdmondsKarp_generator
+Graph;8;Edmonds-Karp;en_US;Pseudo-Code;Benedikt Lins, Stefan Thaut;generators.graph.EdmondsKarp_generator
+Graph;8;Farthest Insertion;de;Pseudo-Code;Patricia Heidt;generators.graph.FarthestInsertion
+Graph;8;Nearest Insertion;de;Pseudo-Code;Patricia Heidt;generators.graph.NearestInsertion
+Graph;8;Routing: Backward Learning;de;Pseudo-Code;Amon Ditzinger, Dirk Schumacher;generators.graph.RoutingBackwardLearning
+Graph;8;ACO for TSP;en;Pseudo-Code;Laura Hofmann;generators.graph.ACO
+Graph;8;Ahuja-Orlin;en;Pseudo-Code;Amer Shafa, Ahmed Zukic;generators.graph.AhujaOrlin
+Graph;8;Dinic;en;Pseudo-Code;Amer Shafa, Ahmed Zukic;generators.graph.Dinic
+Graph;8;Force Directed Graph Drawing;en;Pseudo-Code;Timm Welz;generators.graph.ForceDirectedGraphDrawingAPI
+Graph;8;Neural Network Backpropagation;de_DE;Pseudo-Code;Alexander Kreusser, Kevin Mayer;generators.graph.BackpropGenerator
+Graph;8;Neural Network Backpropagation;en_US;Pseudo-Code;Alexander Kreusser, Kevin Mayer;generators.graph.BackpropGenerator
+Graph;8;Beamsearch;de_DE;Java;Kevin Kampa, Marcel Langer;generators.graph.Beamsearch
+Graph;8;Beamsearch;en_US;Java;Kevin Kampa, Marcel Langer;generators.graph.Beamsearch
+Graph;8;Divisive Clustering (DIANA);de;Pseudo-Code;Aino Schwarte, David Steinmann;generators.graph.DivisiveClustering
+Graph;8;Directed Graphical Model;de;Pseudo-Code;Sebastian Jestädt;generators.graph.DirectedGraphicalModel
+Graph;8;Neural Network Forward Propagation;de_DE;Pseudo-Code;Alexander Kreusser, Kevin Mayer;generators.graph.ForwardpropGenerator
+Graph;8;Neural Network Forward Propagation;en_US;Pseudo-Code;Alexander Kreusser, Kevin Mayer;generators.graph.ForwardpropGenerator
+Graph;8;Kahn's Algorithm;en;Pseudo-Code;Niclas Dobbertin and Niklas Adam;generators.graph.kahn.KahnsAlgo
+Graph;8;Stable Marriage Problem;en;Pseudo-Code;Aino Schwarte, David Steinmann;generators.graph.StableMarriageProblem
+Graph;8;Stable Marriage Problem;en;Pseudo-Code;Aino Schwarte, David Steinmann;generators.graph.StableMarriageProblem
+Graph;8;Min-cost flow problem;en;Pseudo-Code;Balint Klement;generators.graph.SuccessiveShortestPaths
+Graph;8;Undirected Graphical Model;de;Pseudo-Code;Sebastian Jest�dt;generators.graph.UndirectedGraphicalModel
+Graphics;4096;Dilation;en_US;Java;Annika Beißler, Martin Hess, Nando Fuchs;generators.graphics.AnnotatedDilation
+Graphics;4096;Bresenham-Algorithmus;de_DE;Pseudo-Code;Dominik Fischer;generators.graphics.Bresenham
+Graphics;4096;Flood Fill;en_US;Java;Martin Tschirsich, Tjark Vandommele;generators.graphics.FloodFill
+Graphics;4096;Graham Scan;en_US;Pseudo-Code;Carsten Haubold;generators.graphics.GrahamScanGenerator
+Graphics;4096;Bilinear Interpolation in Image Processing;en_US;Pseudo-Code;Natalie Faber>, Sascha Weiß;generators.graphics.BilinearInterpolationGenerator
+Graphics;4096;Bresenham-Algorithmus;de_DE;Java;Michael Rodenberg;generators.graphics.Bresenham2
+Graphics;4096;Jarvis' March;en_US;Pseudo-Code;David Kaufmann, Holger Thies;generators.graphics.JarvisMarch
+Graphics;4096;Midpoint Circle Algorithm;en_US;Pseudo-Code;Viktor Kolokolov;generators.graphics.MidpointCircleAlgorithm
+Graphics;4096;Z-Buffer;en_US;Pseudo-Code;Dieter Hofmann, Artem Vovk;generators.graphics.ZBufferGenerator2
+Graphics;4096;Edge Fill Algorithmus;de_DE;Pseudo-Code;Alvar Gamez Zerban, Axel Heimann, Nikos Kombouris;generators.graphics.EdgeFillAlgo
+Graphics;4096;Graham Scan;en_US;Java;Ivaylo Petkov;generators.graphics.GrahamScan
+Graphics;4096;Quickhull;de_DE;Pseudo-Code;Philipp Dürr;generators.graphics.Quickhull
+Graphics;4096;RamerDouglasPeucker;en_US;Java;Ivaylo Petkov;generators.graphics.RamerDouglasPeucker
+Graphics;4096;Box Filter;de_DE;Java;Tobias Otterbein, Florian Reimold;generators.graphics.BoxFilter
+Graphics;4096;Gauss Filter;de_DE;Java;Tobias Otterbein, Florian Reimold;generators.graphics.GaussFilter
+Graphics;4096;Region Growing;en_US;Java;Lucas Rothamel, Manuel Weiel;generators.graphics.regiongrowing.RegionGrowing
+Graphics;4096;Summed Area Tables;de_DE;Pseudo-Code;Roman Uhlig, Michael Rau;generators.graphics.SummedAreaTableGenerator
+Graphics;4096;Watershed Algorithm;en_US;Pseudo-Code;Manuel Weiel, Lucas Rothamel;generators.graphics.watershed.Watershed
+Graphics;4096;Delaunay-Triangulation;de;Java;Ralf Rurainsky;generators.graphics.Delaunay
+Graphics;4096;Voronoi-Diagramm;de;Pseudo-Code;Ralf Rurainsky;generators.graphics.Voronoi
+Graphics;4096;Simple Ray Tracing;en;Pseudo-Code;Philipp von Bauer & Constantin Zinke;generators.graphics.simpleraytracing.SimpleRayTracingGenerator
+Graphics;4096;Non-maxima suppression;en;Pseudo-Code;Robert Hahn, Max Mehltretter;generators.graphics.NonMaximaSuppression
+Graphics;4096;Sobel filter;en;Java;Robert Hahn, Max Mehltretter;generators.graphics.SobelFilter
+Graphics;4096;Digital Diferential Analyzer;de;Java;Robert Cibulla, Peter Schauberger;generators.graphics.antialias.DDAGenerator
+Graphics;4096;Xiaolin Wu's Line Algorithm;de_DE;Java;Robert Cibulla, Peter Schauberger;generators.graphics.antialias.XiaolinGenerator
+Graphics;4096;RangordnungsFilter;de;Java;Gruppe 40: Faris und Khalid;generators.graphics.RangOrdnungsFilter
+Graphics;4096;Jittered Grid Sampling;de;Java;Simon Braunstein, Sascha Kunz;generators.graphics.JitteredGridSampling
+Graphics;4096;Poisson Disk Sampling;de;Java;Simon Braunstein, Sascha Kunz;generators.graphics.PoissonDiskSampling
+Graphics;4096;RGB zu HSL Konvertierung;de_DE;Java;Julien Clauter;generators.graphics.RgbToHsl
+Graphics;4096;RGB to HSL Conversion;en_US;Java;Julien Clauter;generators.graphics.RgbToHsl
+Graphics;4096;Cohen-Sutherland;en_US;Pseudo-Code;David Steiner,Jens Krüger;generators.graphics.CohenSutherland
+Graphics;4096;Cohen-Sutherland;de_DE;Pseudo-Code;David Steiner,Jens Krüger;generators.graphics.CohenSutherland
+Graphics;4096;Region Growing;de;Java;Kevin Kocon;generators.graphics.RegionGrowth
+Graphics;4096;Scanline;de;Pseudo-Code;Stefan Werner, Malte Limmeroth;generators.graphics.Scanline
+Graphics;4096;Sutherland-Hodgman algorithm;de;Pseudo-Code;Malte Limmeroth, Stefan Werner;generators.graphics.SutherlandHodgman
+Graphics;4096;Methode von Horn;de;Pseudo-Code;Victoria Stanilescu, Kristina Raysbikh;generators.graphics.Horn
+Graphics;4096;Laplace Filter [DE];de;Java;Kristina Raysbikh, Victoria Stanilescu;generators.graphics.LaplaceFilter
+Graphics;4096;Median Filter für Bildverarbeitung;de;Java;Igor Braun, Vladimir Bolgov;generators.graphics.MedianFilter
+Graphics;4096;Bowyer-Watson;en;Pseudo-Code;Arne-Tobias Rak;generators.graphics.BowyerWatson
+DataStructures;16;Floyd-Steinberg;en_US;Java;Sandra Schaefer, Jonas Schatz;generators.graphics.FloydSteinbergGenerator
+DataStructures;16;Floyd-Steinberg;de_DE;Java;Sandra Schaefer, Jonas Schatz;generators.graphics.FloydSteinbergGenerator
+Graphics;4096;Histogrammausgleich;de;Java;Niklas Grimm, Nicolai Minter;generators.graphics.Histogrammausgleich
+Graphics;4096;Image Gradient (Prewitt-Operator);en_US;Java;Marko Rücker;generators.graphics.ImageGradient
+Graphics;4096;Image Gradient (Prewitt-Operator);de_DE;Java;Marko Rücker;generators.graphics.ImageGradient
+Graphics;4096;Ray Casting (Point in Polygon);de_DE;Pseudo-Code;Lukas Dietrich <lukasalexander.dietrich@stud.tu-darmstadt.de>;generators.graphics.RayCastingGenerator
+Graphics;4096;Ray Casting (Point in Polygon);en_US;Pseudo-Code;Lukas Dietrich <lukasalexander.dietrich@stud.tu-darmstadt.de>;generators.graphics.RayCastingGenerator
+Graphics;4096;RGB / CMYK Konvertierung;de_DE;Java;Florian Sunnus, Elvir Sinancevic;generators.graphics.RgbCmykConverter
+Graphics;4096;RGB / CMYK Conversion;en_US;Java;Florian Sunnus, Elvir Sinancevic;generators.graphics.RgbCmykConverter
+Graphics;4096;Marching Squares;en;Pseudo-Code;Simon Heinrich, Philipp Nothvogel;generators.graphics.MarchingSquares
+Graphics;4096;Invertierung RGB Bild;de;Java;Niklas Grimm, Nicolai Minter;generators.graphics.RGBImageInverter
+Graphics;4096;Ritter's bounding sphere;de_DE;Pseudo-Code;Lukas Dietrich <lukasalexander.dietrich@stud.tu-darmstadt.de>;generators.graphics.RittersBoundingSphereGenerator
+Graphics;4096;Ritter's bounding sphere;en_US;Pseudo-Code;Lukas Dietrich <lukasalexander.dietrich@stud.tu-darmstadt.de>;generators.graphics.RittersBoundingSphereGenerator
+Graphics;4096;Image Gradient (Scharr-Operator);en_US;Java;Marko Rücker;generators.graphics.ScharrOperator
+Graphics;4096;Image Gradient (Scharr-Operator);de_DE;Java;Marko Rücker;generators.graphics.ScharrOperator
+Graphics;4096;Binary Tree Bin Packing;de;Java;Julian Fischer, Christian Seybert;generators.graphics.BinaryTreeBinPacking
+Graphics;4096;Minimal bounding sphere;de;Java;Julian Fischer, Christian Seybert;generators.graphics.BoundingSphereGenerator
+Graphics;4096;Floodfill (8-Neighbor);en;Java;Martin Ott;generators.graphics.FloodfillEight
+Graphics;4096;Ray Marching;en_US;Pseudo-Code;Jonathan Kohlhas, Manuel Brack;generators.graphics.raymarching.RayMarchingGenerator
+Graphics;4096;RGB Image Blending;de;Java;Joel Tschesche, Konstantinos Kadoglou;generators.graphics.RGBImageBlender
+Hardware;1024;AND-Gatter;de_DE;VHDL;Golsa Arashloozadeh;generators.hardware.gates.AndGatter
+Hardware;1024;Demultiplexer;de_DE;VHDL;Golsa Arashloozadeh;generators.hardware.Demux
+Hardware;1024;DFlipflop;de_DE;VHDL;Golsa Arashloozadeh;generators.hardware.flipflop.DFlipflop
+Hardware;1024;Halbaddierer;de_DE;VHDL;Golsa Arashloozadeh;generators.hardware.Halbaddierer
+Hardware;1024;JKFlipflop;de_DE;VHDL;Golsa Arashloozadeh;generators.hardware.flipflop.JKFlipflop
+Hardware;1024;Multiplexer;de_DE;VHDL;Golsa Arashloozadeh;generators.hardware.Mux
+Hardware;1024;NAND-Gatter;de_DE;VHDL;Golsa Arashloozadeh;generators.hardware.gates.NAndGatter
+Hardware;1024;NOR-Gatter;de_DE;VHDL;Golsa Arashloozadeh;generators.hardware.gates.NorGatter
+Hardware;1024;NOT-Gatter;de_DE;VHDL;Golsa Arashloozadeh;generators.hardware.gates.NotGatter
+Hardware;1024;OR-Gatter;de_DE;VHDL;Golsa Arashloozadeh;generators.hardware.gates.OrGatter
+Hardware;1024;RSFlipflop;de_DE;VHDL;Golsa Arashloozadeh;generators.hardware.flipflop.RSFlipflop
+Hardware;1024;TFlipflop;de_DE;VHDL;Golsa Arashloozadeh;generators.hardware.flipflop.TFlipflop
+Hardware;1024;Volladdierer;de_DE;VHDL;Golsa Arashloozadeh;generators.hardware.Volladdierer
+Hardware;1024;XOR-Gatter;de_DE;VHDL;Golsa Arashloozadeh;generators.hardware.gates.XOrGatter
+Hardware;1024;XNOR-Gatter;de_DE;VHDL;Golsa Arashloozadeh;generators.hardware.gates.XNorGatter
+Hardware;1024;Rippel Volladdierer;de_DE;Pseudo-Code;Marcel Gazsi, Mark Schneemann;generators.hardware.RippleAddierer
+More;1073741824;2-Way Cache (FIFO);de;Pseudo-Code;Christopher Ries;generators.hardware.NWayCacheFIFO
+More;1073741824;2-Way Cache (LRU);de;Pseudo-Code;Christopher Ries;generators.hardware.NWayCacheLRU
+Hardware;1024;Prefix Adder;en;Pseudo-Code;Philipp Becker;generators.hardware.PrefixAdderGenerator
+Hardware;1024;Konvertierung FAT zu i-Node Dateisystem;de;Java;Thomas Schmeiduch;generators.hardware.ConvertFatToInode
+More;1073741824;Most frequently Used Page Replacement Algorithm;de;Pseudo-Code;Paul Vincent Dawadi;generators.hardware.MFUGenerator
+Hardware;1024;The Not Recently Used Page Replacement Algorithm;de;Pseudo-Code;Paul Vincent Dawadi;generators.hardware.NRUGenerator
+Hardware;1024;Optimal Page Replacement;de_DE;Java;Ozan Agtas, Steffen Lott;generators.hardware.Belady
+Hardware;1024;Optimal Page Replacement;en_US;Java;Ozan Agtas, Steffen Lott;generators.hardware.Belady
+Hardware;1024;C-Scan;de_DE;Java;Steffen Lott, Ozan Agtas;generators.hardware.CScan
+Hardware;1024;C-Scan;en_US;Java;Steffen Lott, Ozan Agtas;generators.hardware.CScan
+Maths;512;Fast bitcount;de_DE;C;Steven Lambeth;generators.maths.FastBitcount
+Maths;512;Exponentiation;de_DE;Java;Anqi Wang;generators.maths.ModPow
+Maths;512;Cholesky Verfahren;de_DE;Pseudo-Code;Peter Baumann, Oren Avni;generators.maths.Cholesky
+Maths;512;Determinantenberechnung nach Laplace;de_DE;Java;Irina Smidt, Simon Sprankel;generators.maths.DeterminantGenerator
+Maths;512;Pollard-Rho-Methode;de_DE;Pseudo-Code;Pascal Weisenburger;generators.maths.DiscreteLogarithmPollardRho
+Maths;512;Schema der dividierten Differenzen;de_DE;Pseudo-Code;Jan Dillmann, Fabian Letzkus;generators.maths.DivDiff
+Maths;512;Exponentiation;de_DE;Pseudo-Code;Thomas Schulz, Benjamin Lück;generators.maths.EfficientExpModNGenerator
+Maths;512;Extended Euclidean Algorithm;en_US;Java;Christian Feier, Yannick Drost;generators.maths.ExtEuclidGenerator
+Maths;512;Gauss Eliminationsverfahren;de_DE;Pseudo-Code;Mateusz Umstädter, Aidin Dinkhah, Jakub Pilarski;generators.maths.GaussElim
+Maths;512;Pascalsches Dreieck;de_DE;Java;Jan Stolzenburg;generators.maths.PascalTriangle
+Maths;512;Exponentielle Glättung 2. Ordnung nach Brown;de_DE;Pseudo-Code;Rolf Egert, Andreas Pesak;generators.maths.Brown
+Maths;512;Sieb des Eratosthenes;de_DE;Pseudo-Code;Nicole Brunkhorst, Stefan Rado;generators.maths.eratosthenes.EratosthenesGenerator
+Maths;512;Erwartungswert;de_DE;Java;Fatima Isufaj, Jasmin Diehl;generators.maths.Erwartungswert
+Maths;512;Erweiterter Euklidischer Algorithmus;de_DE;Pseudo-Code;Julien Alexander Gedeon;generators.maths.ErweiterterEuklidGenerator
+Maths;512;Euklidischer Algorithmus;de_DE;Pseudo-Code;Julien Alexander Gedeon;generators.maths.EuklidGenerator
+Maths;512;Falksches Schema;de_DE;Java;Ulf Gebhardt, Michael Scholz;generators.maths.MatrixGenerator
+Maths;512;Miller-Rabin-Test;de_DE;Pseudo-Code;Julian Wulfheide, Tim Wimmer, Denis Caruso;generators.maths.MillerRabinTest
+Maths;512;Russische Bauernmultiplikation;de_DE;Java;Ulf Gebhardt, Michael Scholz;generators.maths.MultiGenerator
+Maths;512;Nordwest-Ecken-Regel;de_DE;Java;Daniel Appadurai, Benjamin Müller;generators.maths.NorthWestCornerRule
+Maths;512;QR [EN];en_US;Pseudo-Code;Dan Le;generators.maths.QR
+Maths;512;Römische Zahlendarstellung;de_DE;Java;Nicole Brunkhorst, Stefan Rado;generators.maths.romannumbers.RomanNumberGenerator
+Maths;512;Schriftliche Multiplikation;de_DE;Pseudo-Code;Fatima Isufaj, Jasmin Diehl;generators.maths.SchriftlicheMultiplikation
+Maths;512;Vogelsche Approximationsmethode;de_DE;Java;Daniel Appadurai, Benjamin Müller;generators.maths.VogelApproximation
+Maths;512;Adjunktenberechnung;de_DE;Pseudo-Code;Christian Weinert,Simon Reuß;generators.maths.adjoint.AdjointAnimGenerator
+Maths;512;Babylonian Method;en_US;Pseudo-Code;Benjamin Schiller, Philipp Dünnebeil;generators.maths.BabylonianMethod
+Maths;512;Monte Carlo Methods;de_DE;Pseudo-Code;Christian Ritter;generators.maths.buffon.Buffon
+Maths;512;Double Dabble;de_DE;Java;Patrick Lerch, Felix Hammacher;generators.maths.DoubleDabble
+Maths;512;Explicit Euler method;en_US;Pseudo-Code;Benjamin Schiller, Philipp Dünnebeil;generators.maths.ExplicitEulerMethod
+Maths;512;Faddejew-Leverrier Algorithmus;de_DE;Pseudo-Code;Moritz Zysk;generators.maths.faddejewleverrier.FaddejewLeverrier
+Maths;512;Fermat Faktorisierungsmethode;de_DE;Python;Bastian de Groot, Magnus Brand;generators.maths.FermatFact
+Maths;512;Fibonacci;de_DE;Pseudo-Code;Lars Schulte, Marius Diebel;generators.maths.FibIterative
+Maths;512;Fibonacci;de_DE;Pseudo-Code;Lars Schulte, Marius Diebel;generators.maths.FiboRecursiv
+Maths;512;Karatsuba;en_US;Java;Hoang Minh Duc, Do Thanh Tung;generators.maths.Karatsuba
+Maths;512;Karatsuba;en_US;Pseudo-Code;Sebastian Sztwiertnia;generators.maths.KaratsubaMultiplication
+Maths;512;Determinantenberechnung nach Laplace [DE];de_DE;Pseudo-Code;Karsten Will, Stephan Wezorke;generators.maths.LaplaceGenerator
+Maths;512;Newtonsche Interpolationsformel mit Schema der dividierten Differenzen;de_DE;Pseudo-Code;Christian Weinert, Simon Reuß;generators.maths.newtonpolynomial.NewtonPolynomialAnimGenerator
+Maths;512;Das Newton-Verfahren;de_DE;Pseudo-Code;Rene Röpke, Daniel Thul;generators.maths.NewtonVerfahren
+Maths;512;Potenzmenge;de_DE;Java;Admir Agia;generators.maths.PotenzMenge
+Maths;512;Runge-Kutta 4. Ordnung;de_DE;Pseudo-Code;Benedikt Wartusch, Daniel Dieth;generators.maths.RungeKutta4Ordnung
+Maths;512;Sieb des Atkin;de_DE;Pseudo-Code;Stephan Wezorke, Karsten Will;generators.maths.SiebDesAtkin
+Maths;512;Sieb des Sundaram;de_DE;Java;Marcel Andreas Gazsi, Mark Schneemann;generators.maths.Sundaram
+Maths;512;LR-Zerlegung (Spaltenpivotsuche) [DE];de;Pseudo-Code;Volkan Hacimüftüoglu;generators.maths.lrzerlegung.LRZerlegung
+Maths;512;Matrixmultiplication;en;Pseudo-Code;Annemarie Mattmann;generators.maths.Matrixmultiplication
+Maths;512;Any Base to Any Base Conversion;en;Java;Faris Abraha, Khalid Ibrahim S Alzamil;generators.maths.AnyBaseToAnyBase
+Maths;512;Fixpunktiteration;de;Pseudo-Code;Simon Bunten, Martin Oehler;generators.maths.fixpointinteration.FPIGenerator
+Maths;512;Affine Abbildung;de;Pseudo-Code;Brost, Reissig;generators.maths.affine.AA_Rotation
+Maths;512;Affine Abbildung;de;Pseudo-Code;Brost, Reissig;generators.maths.affine.AA_Scherung
+Maths;512;Affine Abbildung;de;Pseudo-Code;Brost, Reißig;generators.maths.affine.AA_Skalierung
+Maths;512;Affine Abbildung;de;Pseudo-Code;Brost, Reissig;generators.maths.affine.AA_Translation
+Maths;512;Chinesischer Restsatz;de_DE;Java;Alessandro Noli, Paul Youssef;generators.maths.ChineseRem
+Maths;512;Chinese Remainder Theorem;en_US;Java;Alessandro Noli, Paul Youssef;generators.maths.ChineseRem
+Maths;512;Diskrete Fourier Transformation;de;Pseudo-Code;Maximilian Scheid;generators.maths.DFTGenerator
+Maths;512;Gauß-Jordan-Algorithmus;de_DE;Java;Simon Breitfelder;generators.maths.GaussJordan
+Maths;512;Gauss-Legendre [DE];de_DE;Java;Heiko Reinemuth, Hendrik Pfeifer;generators.maths.GaussLegendre
+Maths;512;Gauss-Legendre [EN];en_US;Java;Heiko Reinemuth, Hendrik Pfeifer;generators.maths.GaussLegendre
+Maths;512;Kahan Summation;de;Java;Oemer M. Ayar;generators.maths.KahanSummationAlgorithm
+Maths;512;Lagrange Interpolation;de;Pseudo-Code;Lukas Becker, Simon Bohlender;generators.maths.Lagrange
+Maths;512;Alghorithmus von Neville;de_DE;Java;Imed Ben Ghozi <benghozi.imed@gmail.com>;generators.maths.Neville
+Maths;512;Nevilles Algorithm;en_US;Java;Imed Ben Ghozi <benghozi.imed@gmail.com>;generators.maths.Neville
+Maths;512;Optimized Matrix Chain Multiplication;en;Pseudo-Code;Kenten Fina;generators.maths.OptMatrixChain
+Maths;512;Simpsonregel;de;Java;Yasin Kaymak;generators.maths.Simpsonregel
+Maths;512;Transfer Entropy;en;C;Kenten Fina;generators.maths.TransferEntropy
+Maths;512;Trapezregel;de;Java;Christian Hack;generators.maths.TrapezoidRule
+Maths;512;Bayes Theorem;de;Java;Mohammad Braei;generators.maths.BayesTheorem
+Maths;512;Cubic Spline Interpolation;en;Java;Mavin Stiller, Marius Süßmilch;generators.maths.csi_wiz
+Maths;512;Cubic Spline Interpolation;de;Java;Marvin Stiller, Marius Süßmilch;generators.maths.csi_wizDE
+Maths;512;Ellipsoid method;en;Pseudo-Code;Melvin Laux;generators.maths.Ellipsoid
+Maths;512;Fourier-Motzkin Transformation;en;Pseudo-Code;Melvin Laux;generators.maths.FourierMotzkin
+Maths;512;Gerschgorin Kreise zur Eingrenzung von Eigenwerten quadratischer Matrizen;de;Pseudo-Code;Jannis Weil, Hendrik Wuerz;generators.maths.Gerschgorin
+Maths;512;Monte-Carlo-Simulation;de;Pseudo-Code;Sascha Zenglein,Julian Schwind;generators.maths.MonteCarloSimulation
+Maths;512;Polynomdivision;de;Java;Mai Ly Tran;generators.maths.Polynomdivision
+Maths;512;Primfaktorisierung;de;Java;Teh-Hai Julian Zheng & Edgardo Palza;generators.maths.Primfaktorzerlegung
+Maths;512;Riemann Integral;de;Pseudo-Code;Marvin Stiller, Marius Süßmilch;generators.maths.RiemannIntegralDE
+Maths;512;Riemann Integral;en;Pseudo-Code;Marvin Stiller, Marius Süßmilch;generators.maths.RiemannIntegralEN
+Maths;512;Totale Wahrscheinlichkeit;de;Java;Mohammad Braei;generators.maths.TotaleWahrscheinlichkeit
+Maths;512;Heun;de;Pseudo-Code;Felix Sternkopf, Emine Saracoglu;generators.maths.Heun
+Maths;512;Optimized Matrix Chain Multiplication;en;Pseudo-Code;Kenten Fina;generators.maths.OptMatrixChain
+Maths;512;Gausssche Osterformel (Gauss, 1816);de;Pseudo-Code;Tristan Gahler;generators.maths.GaussOsterformel
+Maths;512;Schonhage-Strassen-Algorithmus;de;Pseudo-Code;Alexander Ziesing;generators.maths.SSA
+Maths;512;Resolution-Calculus;en;Pseudo-Code;Fabian Bauer, Andreas Bauer;generators.maths.ResolutionGenerator
+Maths;512;Resolution-Calculus;de;Pseudo-Code;Fabian Bauer, Andreas Bauer;generators.maths.ResolutionGenerator
+Maths;512;Simplex algorithm;en_US;Pseudo-Code;Andreas Bauer, Fabian Bauer;generators.maths.SimplexGenerator
+Maths;512;Simplex-Algorithmus;de_DE;Pseudo-Code;Andreas Bauer, Fabian Bauer;generators.maths.SimplexGenerator
+Maths;512;Newtonsche Interpolationsformel mit Schema der dividierten Differenzen;de;Pseudo-Code;Lennard Ruedesheim, Tim Steinke;generators.maths.NewtonInterpolation
+Maths;512;Horner-Schema;en;Pseudo-Code;Lennard Rüdesheim, Tim Steinke;generators.maths.HornerScheme
+Maths;512;Hornformel Markierungsalgorithmus;de;Pseudo-Code;Tristan Gahler;generators.maths.HornformelMarkierung
+Maths;512;Trial Division ;en;Pseudo-Code;Sven Palberg, Timo Martin;generators.maths.TrialDivision
+Maths;512;Trial Division ;de;Pseudo-Code;Sven Palberg, Timo Martin;generators.maths.TrialDivision
+Maths;512;Fast Inverse Square Root;de_DE;Java;Max Kaiser & David Langsam;generators.maths.FastInverseSquareRoot
+Maths;512;Fast Inverse Square Root;en_US;Java;Max Kaiser & David Langsam;generators.maths.FastInverseSquareRoot
+Maths;512;Interpolation of 2D Scattered Data;en;Pseudo-Code;Arne-Tobias Rak;generators.maths.Interp2DScattered
+Maths;512;Value Difference Metric;de_DE;Pseudo-Code;Ilhan Simsiki, Christof Bienkowski;generators.maths.ValueDifferenceMetric
+Maths;512;Value Difference Metric;en_US;Pseudo-Code;Ilhan Simsiki, Christof Bienkowski;generators.maths.ValueDifferenceMetric
+Maths;512;Lineare Regression;de_DE;Pseudo-Code;Amon Ditzinger, Dirk Schumacher;generators.maths.LineareRegressionDE
+Maths;512;Linear Regression;en_US;Pseudo-Code;Amon Ditzinger, Dirk Schumacher;generators.maths.LineareRegressionEN
+Maths;512;Bin�re Exponentation (Russische Bauernmultiplikation);de;Java;Daniel Friesen,Jens Abels;generators.maths.BinaereExponentationWiz
+Maths;512;Blum-Blum-Shub;de;Java;Adrian Lumpe, Chi Viet Vu;generators.maths.BlumBlumShub
+Maths;512;Blum-Blum-Shub;de;Java;Adrian Lumpe, Chi Viet Vu;generators.maths.BlumBlumShub
+Maths;512;B-Spline Berechnung;de;Pseudo-Code;Falko Wittrin, Thilo Billerbeck;generators.maths.BSpline
+Maths;512;Catmull Rom Spline Interpolation;de;Pseudo-Code;Falko Wittrin, Thilo Billerbeck;generators.maths.CatmullRomSplines
+Maths;512;Drachenkurve;de_DE;Java;Frank Nelles;generators.maths.Drachenkurve
+Maths;512;Dragon curve;de_DE;Java;Frank Nelles;generators.maths.Drachenkurve
+Maths;512;Exponentiation by squaring;de_DE;Pseudo-Code;Aleksej Strassheim, Konstantin Strassheim;generators.maths.ExponentiationBySquaring
+Maths;512;Exponentiation by squaring;en_US;Pseudo-Code;Aleksej Strassheim, Konstantin Strassheim;generators.maths.ExponentiationBySquaring
+Searching;2;Genetic Algorithm;en;Pseudo-Code;Markus Semmler;generators.maths.GAGenerator
+Maths;512;RekursivHanoi;de;Pseudo-Code;Marius Faust;generators.maths.HanoiVisualisierung
+Maths;512;Springerproblem;en;Pseudo-Code;Dominik Bierwirth, Vladimir Romanenko;generators.maths.KnightsTourGenerator
+Maths;512;Longest Increasing Subsequence Naive;en;Java;Tuan Kiet Tran;generators.maths.LongestIncreasingSubsequenceNaive
+DataStructures;16;Pairwise Summation;en;Java;Nossair Ouladali, Zarina Catar;generators.maths.PairwiseSummationGenerator
+Maths;512;PQ-Formel;de_DE;Java;Ayman El Ouariachi;generators.maths.PQFormel
+Maths;512;PQ-Formula;en_US;Java;Ayman El Ouariachi;generators.maths.PQFormel
+Maths;512;Produktregel;de_DE;Java;Ayman El Ouariachi;generators.maths.ProductRule
+Maths;512;Productrule;en_US;Java;Ayman El Ouariachi;generators.maths.ProductRule
+More;1073741824;Particle Swarm Optimization;en;Pseudo-Code;Thomas Lautenschläger;generators.maths.PsoGenerator
+Maths;512;Satz des Pythagoras;de_DE;Java;Romal Bijan, Luisa Dyroff;generators.maths.Pythagoras
+Maths;512;Theorem of Pythagoras;en_US;Java;Romal Bijan, Luisa Dyroff;generators.maths.Pythagoras
+Maths;512;Skalarprodukt;de_DE;Java;Romal Bijan, Luisa Dyroff;generators.maths.Skalarprodukt
+Maths;512;Dot Product;en_US;Java;Romal Bijan, Luisa Dyroff;generators.maths.Skalarprodukt
+Maths;512;Spencers Osterformel;de_DE;Pseudo-Code;Frank Nelles, Patrick Wienhold;generators.maths.SpencersOsterformel
+Maths;512;Spencers Easter formula;de_DE;Pseudo-Code;Frank Nelles, Patrick Wienhold;generators.maths.SpencersOsterformel
+Maths;512;Stern-Brocot-Folge;de_DE;Java;Philipp Schneider, Zi Wang;generators.maths.SternBrocot
+Maths;512;Stern-Brocot-Folge;en_US;Java;Philipp Schneider, Zi Wang;generators.maths.SternBrocot
+Maths;512;Zassenhaus-Algorithmus;de;Pseudo-Code;Peter Reinhardt;generators.maths.ZassenhausAPI
+More;1073741824;Candidate Elimination;de_DE;Pseudo-Code;Christian Brinker, Mateusz Parzonka;generators.misc.CandidateElimination
+More;1073741824;Clock Page Replacement;en_US;Pseudo-Code;Thomas Pilot, Tobias Freudenreich;generators.misc.ClockPageReplacement
+More;1073741824;OPTICS - Ordering Points To Identify the Clustering Structure;en_US;Pseudo-Code;Max Zeller, Florian Brams;generators.misc.OPTICS
+More;1073741824;Towers of Hanoi;en_US;Java;Amir Naseri, Morteza Emamgholi;generators.misc.TowerOfHanoi
+More;1073741824;Vogelsche Approximationsmethode;de_DE;Pseudo-Code;Petra Dörsam, Kevin Tappe;generators.misc.VogelApproximation
+More;1073741824;Levenshtein;de_DE;Java;Arvid Lange, Marco Torsello;generators.misc.Levenshtein
+More;1073741824;MoodleConnect Presentation;en_US;Pseudo-Code;Simon Sprankel;generators.misc.MoodleConnectPresentation
+More;1073741824;Variable Demo;en_US;Java;Guido Rößling;generators.misc.VariableDemo
+More;1073741824;JaroWinkler;de_DE;Java;Chahine Abid, Najib Hfaiedh ;generators.misc.JaroWinkler
+More;1073741824;Ramer-Douglas-Peucker;en_US;Pseudo-Code;Viktor Kolokolov;generators.misc.RamerDouglasPeucker
+More;1073741824;Funktionsminimierung mittels KV-Diagramm;de_DE;Pseudo-Code;Michael Rodenberg;generators.misc.KVDiagramm
+More;1073741824;Maekawa;de_DE;Java;Marco Torsello, Arvid Lange;generators.misc.MaekawaAlgorithm
+More;1073741824;Cocke–Younger–Kasami;de_DE;Pseudo-Code;Barbara Zöller, Malte Paskuda;generators.misc.CYK
+More;1073741824;DFAMinimierung;de_DE;Pseudo-Code;Eliyas Tamrat, Peter Glöckner;generators.misc.DFAMinimierung
+More;1073741824;Dynamic Time Warping;en_US;Java;Daniel Tanneberg, Nadine Trüschler;generators.misc.DTW
+Maths;512;Hase und Igel Algorithmus;de_DE;Java;Martin Distler, Simon Werner;generators.misc.FloydCycle
+More;1073741824;Josephus Problem;de_DE;Java;Benjamin Lück, Thomas Schulz;generators.misc.Josephus
+More;1073741824;Longest common subsequence;de_DE;Java;Chahine Abid, Najib Hfaiedh;generators.misc.LongestCommonSubsequence
+More;1073741824;Needleman-Wunsch;de_DE;Java;Rene Schubert, Andre Schubert;generators.misc.NeedlemanWunsch
+More;1073741824;Scheduling;en_US;Pseudo-Code;Denis Neumann;generators.misc.HPFgenerator
+More;1073741824;Scheduling;en_US;Pseudo-Code;Denis Neumann;generators.misc.SRTFgenerator
+More;1073741824;Schleifenparallelisierung;de_DE;Pseudo-Code;Tobias Raffel;generators.misc.LoopParallelizationReduction
+More;1073741824;Game of Life;de_DE;Pseudo-Code;Tobias Raffel;generators.misc.GameOfLive
+More;1073741824;Fisher Yates Shuffle;en_US;Java;Jan Wiesel;generators.misc.FisherYatesShuffle
+More;1073741824;Base64;de_DE;Java;Sebastian Engel, Oliver Günther;generators.misc.Base64
+More;1073741824;De Casteljau;de_DE;Pseudo-Code;Philipp Dürr;generators.misc.Casteljau
+More;1073741824;Drop-Heuristik;de_DE;Pseudo-Code;Julian Bonrath, Benjamin Björngen-Schmidt;generators.misc.DropHeuristik
+More;1073741824;Brent's Algorithmus (Zyklen Findung);de_DE;Pseudo-Code;Julian Wulfheide, Denis Caruso, Tim Wimmer;generators.misc.BrentsAlgorithm
+More;1073741824;Value Iteration;de_DE;Pseudo-Code;Malte Viering;generators.misc.ValueIterationGenerator
+More;1073741824;Dynamic Time Warping;de_DE;Java;The An Binh Nguyen, Nam Truong Le;generators.misc.DTWAnimation
+More;1073741824;Policy Iteration;de_DE;Pseudo-Code;Malte Viering;generators.misc.PolicyIterationGenerator
+More;1073741824;Nearest Centroid Classifier;en_US;Pseudo-Code;Theo Kischka;generators.misc.NearestCentroidClassifier
+More;1073741824;de Boor Algorithmus;de_DE;Pseudo-Code;David Sessler;generators.misc.DeBoorAlgorithmus
+More;1073741824;De Casteljau;de_DE;Pseudo-Code;David Sessler;generators.misc.DeCasteljauAlgorithmus
+More;1073741824;Forward-Algorithmus;de_DE;Java;Ji-Ung Lee, Daniel Lehmann;generators.misc.ForwardAlgorithmGenerator
+More;1073741824;DEVS Algorithm;de_DE;Java;Andrej Felde, Thomas Hesse;generators.misc.devs.DEVS
+More;1073741824;MODI-Method;en_US;Pseudo-Code;Daniel Burgmann, Matthias Horn, Torben Stoffer;generators.misc.ModiMethod
+More;1073741824;The Decentral Standardization Problem;en_US;Pseudo-Code;Daniel Burgmann, Matthias Horn, Torben Stoffer;generators.misc.DecentralStandardization
+More;1073741824;Finding Palindromes;en_US;Java;Florian Spitz, Toni Plöchl;generators.misc.PalindromeGenerator
+More;1073741824;Der Greedy-Algorithmus fuer das Rucksackproblem;de_DE;Java;Marlene Utz, Martin Hameister, Lea Rausch;generators.misc.Greedy
+More;1073741824;Hamming-Gewicht;de_DE;Pseudo-Code;Marco Bräuning, Nicolas Kolb;generators.misc.HammingWeight
+More;1073741824;Rucksackproblem per Dynamischer Programmierung;de_DE;Java;Erich Wittenbeck;generators.misc.Knapsack
+More;1073741824;Shunting-yard algorithm;en_US;Pseudo-Code;Janine Hölscher, Johannes Wagener;generators.misc.ShuntingYard
+More;1073741824;Find-S;en_US;Pseudo-Code;Dominik Unzicker, Torben Unzicker;generators.misc.FindS
+More;1073741824;Find-G;en_US;Pseudo-Code;Dominik Unzicker, Torben Unzicker;generators.misc.FindG
+More;1073741824;3-Block Heuristik;de_DE;Java;Marlene Utz, Martin Hameister, Lea Rausch;generators.misc.DreiBlockHeuristik
+More;1073741824;Schulze Method;en_US;Pseudo-Code;David Kalnischkies;generators.misc.schulzemethod.SchulzeMethod
+More;1073741824;Drunken Bishop;en_US;Pseudo-Code;David Kalnischkies;generators.misc.drunkenbishop.DrunkenBishop
+More;1073741824;k-median++;en_US;Pseudo-Code;Nora und Gregor;generators.misc.KMedianPPGenerator2
+More;1073741824;Base64;de_DE;Pseudo-Code;Claudius Kleemann;generators.misc.Base64Encode
+More;1073741824;Lee [EN];en_US;Pseudo-Code;Christian Hollubetz;generators.misc.lee.LeeGenerator
+More;1073741824;Base64;de_DE;Pseudo-Code;Claudius Kleemann;generators.misc.Base64Decode
+More;1073741824;Longest Common Substring;de_DE;Java;Pablo Hoch;generators.misc.LongestCommonSubstringGenerator
+More;1073741824;Wochentagsberechnung;de_DE;Java;Marcel Dostal, Ilja Schwarz;generators.misc.Wochentagsberechnung
+More;1073741824;Evolutionary algorithm;en;Pseudo-Code;Andreas Altenkirch, Stefan Hoerndler;generators.misc.EvoAlgoGenerator
+More;1073741824;k-Nearest-Neighbor Classifier;de;Java;Jan Rehbein, Marius Rettberg-Päplow;generators.misc.kNN.KNNAllOrNothing
+More;1073741824;k-Nearest-Neighbor Classifier;de;Java;Jan Rehbein, Marius Rettberg-Päplow;generators.misc.kNN.KNNMajorityVote
+More;1073741824;Evolutionary algorithm;en;Pseudo-Code;Andreas Altenkirch, Stefan Hoerndler;generators.misc.EvoWordsGenerator
+More;1073741824;Game of Life;de_DE;Pseudo-Code;Timo Bähr, Alexander Jandousek;generators.misc.GameOfLife2
+More;1073741824;Game of Life;de;Pseudo-Code;Timo Baehr,Alexander Jandousek;generators.misc.gameoflife.GameOfLifeParallel
+More;1073741824;Double Auction;en;Java;Marco Ballhausen, Deborah Buth;generators.misc.doubleauction.DoubleAuction
+More;1073741824;Continouss Double Auction;en;Java;Marco Ballhausen, Deborah Buth;generators.misc.continousdoubleauction.ContinousDoubleAuction
+More;1073741824;CORDIC;en;Pseudo-Code;Annemarie Mattmann;generators.misc.CORDIC
+More;1073741824;Elo-Zahl;en;Pseudo-Code;Felix Mayer, Lulzim Murati;generators.misc.EloZahl
+More;1073741824;Elo-Zahl;de;Pseudo-Code;Felix Mayer, Lulzim Murati;generators.misc.EloZahl
+More;1073741824;Schnittmengenautomat zweier DFA;de;Pseudo-Code;Nadja Geisler,Jan Fischer;generators.misc.DFA
+More;1073741824;Kuhn-Munkres Algorithm;en;Pseudo-Code;Nicolas Morew, Melissa Mendoza;generators.misc.KuhnMunkres
+Graph;8;Maximum Matching in Bipartite Graph;en;Pseudo-Code;Nicolas Morew, Melissa Mendoza;generators.misc.HopcroftKarp
+More;1073741824;Earliest Deadline First (EDF) - preemptiv;en;Java;Christian Dreger;generators.misc.EDF_preemptive_Scheduling
+More;1073741824;Earliest Deadline First (EDF) - non-preemptiv;en;Java;Christian Dreger;generators.misc.EDF_nonpreemptive_Scheduling
+More;1073741824;FindG-Set;en;Pseudo-Code;Valentin Kuhn;generators.misc.FindGSetGenerator
+More;1073741824;OAuth 2.0;en;Pseudo-Code;Nils Mäser and Vincent Riesop;generators.misc.OAuth2
+More;1073741824;Roulette Wheel Selection;de;Java;Lukas Weber, Idris Nematpur;generators.misc.RouletteWheelSelection
+More;1073741824;Sorensen Dice;de_DE;Java;Imed Ben Ghozi;generators.misc.Sorensen
+More;1073741824;Sorensen Dice;en_US;Java;Imed Ben Ghozi;generators.misc.Sorensen
+More;1073741824;Sweep and Prune;de_DE;Pseudo-Code;Johannes Alef, Rebecca Schieren;generators.misc.sweepandpruneaabb2d.SweepAndPruneAABB2D
+More;1073741824;Sweep and Prune;en_US;Pseudo-Code;Johannes Alef, Rebecca Schieren;generators.misc.sweepandpruneaabb2d.SweepAndPruneAABB2D
+More;1073741824;Tournament Selection;de;Java;Lukas Weber, Idris Nematpur;generators.misc.TournamentSelection
+More;1073741824;Multi-Level Queue;de_DE;Pseudo-Code;Andre Challier <andre.challier@stud.tu-darmstadt.de>, Christian Richter <chrisrichter145@gmail.com>;generators.misc.MultilevelQueue
+More;1073741824;Multi-Level Queue;en_US;Pseudo-Code;Andre Challier <andre.challier@stud.tu-darmstadt.de>, Christian Richter <chrisrichter145@gmail.com>;generators.misc.MultilevelQueue
+More;1073741824;Banker's algorithm;de_DE;Pseudo-Code;Tomasz Gasiorowski;generators.misc.BankersAlgorithm
+More;1073741824;Banker's algorithm;en_US;Pseudo-Code;Tomasz Gasiorowski;generators.misc.BankersAlgorithm
+More;1073741824;Batch-FindG;en;Pseudo-Code;Hermann Berket;generators.misc.Batch_FindG
+More;1073741824;Chi-Square;de;Java;Karol Gotkowski;generators.misc.ChiSquareGen
+More;1073741824;Simulationen von Schaltkreisen durch nichtuniforme Turingmaschinen;de;Pseudo-Code;Giang Nam Nguyen;generators.misc.nonuniformTM.SpaceComplexity
+More;1073741824;Wagner-Within-Algorithmus;de_DE;Pseudo-Code;Najim Azizi, Timm Lampa;generators.misc.WagnerWithinGenerator
+More;1073741824;Wagner-Within-Algorithmus;en_US;Pseudo-Code;Najim Azizi, Timm Lampa;generators.misc.WagnerWithinGenerator
+More;1073741824;Konvertierung von Infixnotation zu LR-Postorder Darstellung;de;Pseudo-Code;Jannis Weil, Hendrik Wuerz;generators.misc.ArithConverterGenerator
+More;1073741824;C4.5 Data Mining-Algorithmus;de;Pseudo-Code;Felix Heller & Hendrik Jöntgen;generators.misc.C45
+More;1073741824;Chomsky Normalform;de;Java;Sarah Fischer, Anke Unger;generators.misc.ChomskyNormalform
+More;1073741824;Cross-Site-Request-Forgery;de;Pseudo-Code;Alexander Müller;generators.misc.CSRF_Generator
+More;1073741824;Zerlegung eines Schemas in BCNF;de_DE;Pseudo-Code;Lawrence Dean, Waldemar Graf;generators.misc.DecompositionGenerator
+More;1073741824;Decomposing a schema into BCNF;en_US;Pseudo-Code;Lawrence Dean, Waldemar Graf;generators.misc.DecompositionGenerator
+More;1073741824;Expectation Maximization;de;Pseudo-Code;Claudia Lölkes, Verena Sieburger;generators.misc.ExpectationMaximization
+More;1073741824;Gale-Shapley Matching Algoithm;en;Pseudo-Code;Alexander Appel, Zeinab Mohammadkia;generators.misc.GaleShapleyMatching
+More;1073741824;Gray Code;de;Java;Simon Schmidt;generators.misc.GrayCodeGenerator
+Tree;4;ID3;en;Pseudo-Code;Anja Kirchhöfer, Ben Kohr;generators.tree.ID3en
+Tree;4;ID3;en;Java;Anja Kirchhöfer, Ben Kohr;generators.tree.ID3en
+Tree;4;ID3;de;Pseudo-Code;Anja Kirchhöfer, Ben Kohr;generators.tree.ID3de
+Tree;4;ID3;de;Java;Anja Kirchhöfer, Ben Kohr;generators.tree.ID3de
+Sorting;1;JITTER;de;Pseudo-Code;Patrick Weber;generators.misc.Jitter
+More;1073741824;Knapsack Problem (recursive);en;Pseudo-Code;Alexander Appel, Seynab Mohammadkia;generators.misc.knapsackProblem.main.KnapsackProblem
+More;1073741824;KNearestNeighbor;en;Pseudo-Code;Hermann Berket;generators.misc.KNearestNeighbor
+More;1073741824;LRU Seitenersetzung im RAM;de;Pseudo-Code;Thomas Schmeiduch;generators.misc.LRUPageReplacement
+More;1073741824;Optimale Klammerung von Matrix-Kettenmultiplikation, gelöst durch dynamische Programmierung;de;Pseudo-Code;Igor Braun, Vladimir Bolgov;generators.misc.MatrixSequenzKlammerung
+More;1073741824;Round Robin Scheduling;en;Pseudo-Code;Anja Kirchhöfer, Ben Kohr;generators.misc.RoundRobinEn
+More;1073741824;Round Robin Scheduling;en;Java;Anja Kirchhöfer, Ben Kohr;generators.misc.RoundRobinEn
+More;1073741824;Round-Robin-Scheduling;de;Pseudo-Code;Anja Kirchhöfer, Ben Kohr;generators.misc.RoundRobinDe
+More;1073741824;Round-Robin-Scheduling;de;Java;Anja Kirchhöfer, Ben Kohr;generators.misc.RoundRobinDe
+More;1073741824;SaintLague;en;Java;Dominik Rieder, Nicolas Schickert;generators.misc.SaintLagueAlgo
+More;1073741824;SpaltenminimumMethode;de;Pseudo-Code;Yue Hu, Xinyu Liu;generators.misc.spaltenminimumMethode.SpaltenminimumMethode
+More;1073741824;Find-S (1D) [EN];en_US;Pseudo-Code;Stanislaw Kin;generators.misc.machineLearning.FindS1D
+More;1073741824;Find-S (1D) [DE] ;de_DE;Pseudo-Code;Stanislaw Kin;generators.misc.machineLearning.FindS1D
+More;1073741824;Find-S (2D) [EN];en_US;Pseudo-Code;Stanislaw Kin;generators.misc.machineLearning.FindS2D
+More;1073741824;Find-S (2D) [DE];de_DE;Pseudo-Code;Stanislaw Kin;generators.misc.machineLearning.FindS2D
+More;1073741824;Find-S (Symbolic) [EN];en_US;Pseudo-Code;Stanislaw Kin;generators.misc.machineLearning.FindSSymbolic
+More;1073741824;Find-S (Symbolic) [DE];de_DE;Pseudo-Code;Stanislaw Kin;generators.misc.machineLearning.FindSSymbolic
+More;1073741824;Find-G (Symbolic) [EN];en_US;Pseudo-Code;Stanislaw Kin;generators.misc.machineLearning.FindGSymbolic
+More;1073741824;Find-G (Symbolic) [DE];de_DE;Pseudo-Code;Stanislaw Kin;generators.misc.machineLearning.FindGSymbolic
+More;1073741824;Separate-and-Conquer [EN];en_US;Pseudo-Code;Stanislaw Kin;generators.misc.machineLearning.SeparateAndConquer
+More;1073741824;Separate-and-Conquer [DE];de_DE;Pseudo-Code;Stanislaw Kin;generators.misc.machineLearning.SeparateAndConquer
+More;1073741824;k-Nearest-Neighbors [EN];en_US;Pseudo-Code;Stanislaw Kin;generators.misc.machineLearning.KNNMachineLearning
+More;1073741824;k-Nearest Neighbors [DE];de_DE;Pseudo-Code;Stanislaw Kin;generators.misc.machineLearning.KNNMachineLearning
+More;1073741824;Filling Gaps [EN] ;en_US;Pseudo-Code;Stanislaw Kin;generators.misc.machineLearning.FillingGaps
+More;1073741824;Filling Gaps [DE];de_DE;Pseudo-Code;Stanislaw Kin;generators.misc.machineLearning.FillingGaps
+More;1073741824;AdaBoost [EN];en_US;Pseudo-Code;Stanislaw Kin;generators.misc.machineLearning.AdaBoost
+More;1073741824;AdaBoost [DE];de_DE;Pseudo-Code;Stanislaw Kin;generators.misc.machineLearning.AdaBoost
+More;1073741824;Apriori [EN];en_US;Pseudo-Code;Stanislaw Kin;generators.misc.machineLearning.AprioriML
+More;1073741824;Apriori [DE];de_DE;Pseudo-Code;Stanislaw Kin;generators.misc.machineLearning.AprioriML
+More;1073741824;Bagging;de;Pseudo-Code;Amir Mesbah;generators.misc.Bagging_Generator
+More;1073741824;Booth;de;Pseudo-Code;Pascal Fleckenstein, Alexander Ziesing;generators.misc.BoothProp
+More;1073741824;COBWEB;de;Java;J. H. Mieseler, T. G. Petry;generators.misc.Cobweb
+More;1073741824;Disk Schedling: (C-)SCAN;de_DE;Pseudo-Code;Johanna Heinz;generators.misc.DiskSchedulingCSCAN
+More;1073741824;Disk Schedling: (C-)SCAN;en_US;Pseudo-Code;Johanna Heinz;generators.misc.DiskSchedulingCSCAN
+More;1073741824;FCFS (First Come, First Serve);de_DE;Pseudo-Code;Jana Vatter, Rene Hammann;generators.misc.DiskschedulingFCFS
+More;1073741824;FCFS (First Come, First Serve);en;Pseudo-Code;Jana Vatter, Rene Hammann;generators.misc.DiskschedulingFCFS
+More;1073741824;LOOK;de_DE;Pseudo-Code;Jana Vatter, Rene Hammann;generators.misc.DiskschedulingLOOK
+More;1073741824;LOOK;en;Pseudo-Code;Jana Vatter, Rene Hammann;generators.misc.DiskschedulingLOOK
+More;1073741824;Disk Scheduling: Shortest Seek Time First;de_DE;Pseudo-Code;Johanna Heinz;generators.misc.DiskSchedulingSSTF
+More;1073741824;Disk Scheduling: Shortest Seek Time First;en_US;Pseudo-Code;Johanna Heinz;generators.misc.DiskSchedulingSSTF
+More;1073741824;Glicko-2;en_US;Pseudo-Code;Maxim Kuznetsov, Fritz Beutel;generators.misc.Glicko2Generator
+More;1073741824;Glicko-2;de_DE;Pseudo-Code;Maxim Kuznetsov, Fritz Beutel;generators.misc.Glicko2Generator
+More;1073741824;ID3;en_US;Pseudo-Code;Simon Heinrich, Philipp Nothvogel;generators.misc.ID3ChiSquared
+More;1073741824;ID3;de_DE;Pseudo-Code;Simon Heinrich, Philipp Nothvogel;generators.misc.ID3ChiSquared
+More;1073741824;Hirschberg: global string alignment;en;Pseudo-Code;Felix Mannl, Tim Hoffmann;generators.misc.hirschberg.Hirschberg
+More;1073741824;Hoshen-Kopelman Algorithm;de;Java;Christopher Benz, Dennis Kuhn;generators.misc.HoshenKopelman
+Searching;2;SQL Joins;en_US;Java;Adrian Wagener, Ivelin Ivanov;generators.misc.Joins
+Searching;2;SQL Joins;de_DE;Java;Adrian Wagener, Ivelin Ivanov;generators.misc.Joins
+More;1073741824;Lamport's Bakery Algorithm [EN];en_US;Pseudo-Code;Jonathan Speth;generators.misc.LamportBakeryAlgo
+More;1073741824;Lamport's Bakery Algorithm [DE];de_DE;Pseudo-Code;Jonathan Speth;generators.misc.LamportBakeryAlgo
+More;1073741824;Model Checking CTL;de;Pseudo-Code;Timm Welz;generators.misc.ModelCheckerAPI
+More;1073741824;Naive Bayes Classifier (for nominal attribute values) ;de;Java;J. H. Mieseler, T. G. Petry ;generators.misc.NaiveBayesClasifier
+More;1073741824;Min-Max Normalization;de;Java;Christopher Benz, Dennis Kuhn;generators.misc.Normalization
+More;1073741824;Peterson's Algorithm [EN];en_US;Pseudo-Code;Jonathan Speth;generators.misc.PetersonAlgo
+More;1073741824;Peterson's Algorithm [DE];de_DE;Pseudo-Code;Jonathan Speth;generators.misc.PetersonAlgo
+More;1073741824;RelieF;en_US;Pseudo-Code;Dominik Rödszus, Stanislaw Kin;generators.misc.machineLearning.RelieF
+More;1073741824;RelieF;de_DE;Pseudo-Code;Dominik Rödszus, Stanislaw Kin;generators.misc.machineLearning.RelieF
+More;1073741824;RISE - Rule Indiuction from a Set of Exemplars;en_US;Pseudo-Code;Dominik Rödszus, Stanislaw Kin;generators.misc.machineLearning.RISE
+More;1073741824;RISE - Rule Indiuction from a Set of Exemplars;de_DE;Pseudo-Code;Dominik Rödszus, Stanislaw Kin;generators.misc.machineLearning.RISE
+More;1073741824;Separating Axis Theorem;en;Java;Bekir �zkara;generators.misc.SATGenerator
+More;1073741824;Simple Elevator;en;Pseudo-Code;David Langsam und Max Kaiser;generators.misc.SimpleElevator
+More;1073741824;Simple Elevator;de_DE;Pseudo-Code;David Langsam und Max Kaiser;generators.misc.SimpleElevator
+More;1073741824;Smith-Waterman: local string alignment;en;Pseudo-Code;Felix Mannl, Tim Hoffman;generators.misc.Smith_waterman
+More;1073741824;Windowing;de;Pseudo-Code;Amir Mesbah;generators.misc.Windowing_Generator
+More;1073741824;Zellers Kongruenz;de_DE;Java;Florian Sunnus, Elvir Sinancevic;generators.misc.ZellersKongruenz
+More;1073741824;Zellers congruence;en_US;Java;Florian Sunnus, Elvir Sinancevic;generators.misc.ZellersKongruenz
+More;1073741824;BIRCH (CF-Baum erzeugen);de_DE;Pseudo-Code;Kyra Wittorf, Robin Körkemeier;generators.misc.BIRCHGenerator
+More;1073741824;BIRCH (create a CF-tree);en_US;Pseudo-Code;Kyra Wittorf, Robin Körkemeier;generators.misc.BIRCHGenerator
+More;1073741824;Discretization;en;Pseudo-Code;Moritz Lode;generators.misc.ChiMergeGenerator
+More;1073741824;Complete-linkage clustering;en;Pseudo-Code;Niclas Dobbertin, Niklas Adam;generators.misc.CompleteLinkage
+More;1073741824;Divide and Conquer;de;Java;Viola Hofmeister und Yvonne Meuleneers;generators.misc.DivideAndConquer
+More;1073741824;Ershov-Zahlen;de_DE;Pseudo-Code;Robin Koerkemeier, Kyra Wittorf;generators.misc.ErshovNumbersGenerator
+More;1073741824;Ershov-Numbers;en_US;Pseudo-Code;Robin Koerkemeier, Kyra Wittorf;generators.misc.ErshovNumbersGenerator
+More;1073741824;Floyds Cycle Detection Algorithm;en;Java;Tuan Kiet Tran;generators.misc.FloydsCycleDetection
+Graphics;4096;Friends of Friends;en;Java;Martin Ott;generators.misc.FriendsOfFriends
+More;1073741824;Gaußsche Wochentagsformel;de_DE;Java;Tetiana Rozenvasser, Olga Bayerle;generators.misc.GaussFormel
+More;1073741824;Gaussian weekday formula;en_US;Java;Tetiana Rozenvasser, Olga Bayerle;generators.misc.GaussFormel
+More;1073741824;Scheduling;en;Pseudo-Code;Balint Klement;generators.misc.HusAlgorithm
+More;1073741824;Koch Kurve;de;Pseudo-Code;Christian Staab;generators.misc.KochKurve
+More;1073741824;MapReduce;de_DE;Pseudo-Code;Philipp Grenz, Noémie Catherine Hélène Spiller;generators.misc.MapReduce
+More;1073741824;MapReduce;en_US;Pseudo-Code;Philipp Grenz, Noémie Catherine Hélène Spiller;generators.misc.MapReduce
+More;1073741824;Mersenne Twister;de;Java;Jan Philipp Wagner, Joelle Heun;generators.misc.MersenneTwisterGenerator
+More;1073741824;Monty Hall Problem;de;Pseudo-Code;Christian Staab;generators.misc.MontyHallProblem
+More;1073741824;mooresAlgorithm;de;Pseudo-Code;Niklas Stoehr;generators.misc.MooresAlgorithm
+More;1073741824;Pumping Lemma;de;Java;Frederik Röper;generators.misc.PumpingLemma
+More;1073741824;RGB zu YCbCr;de;Java;Tetiana Rozenvasser, Olga Bayerle;generators.misc.RGBToyCbCr
+More;1073741824;RGB to YCbCr;de;Java;Tetiana Rozenvasser, Olga Bayerle;generators.misc.RGBToyCbCr
+More;1073741824;Sealed Bid;en;Pseudo-Code;Sebastian Ritzenhofen, Felix Rauterberg;generators.misc.sealedbid.SealedBidGenerator
+More;1073741824;Secretary Problem, randomized;de_DE;Java;Viola Hofmeister, Yvonne Meuleneers;generators.misc.SecretaryProblem
+More;1073741824;Secretary Problem, randomized;de_DE;Java;Viola Hofmeister, Yvonne Meuleneers;generators.misc.SecretaryProblem
+More;1073741824;Shortest Remaining Time First Scheduling;de_DE;Pseudo-Code;Simon Althaus, Florian Giger;generators.misc.ShortestRemainingTimeFirst
+More;1073741824;Shortest Remaining Time First Scheduling;en_US;Pseudo-Code;Simon Althaus, Florian Giger;generators.misc.ShortestRemainingTimeFirst
+More;1073741824;Shortest Job First Scheduling;de;Java;Frederik Röper;generators.misc.SJF
+More;1073741824;Synthesealgorithmus;de_DE;Pseudo-Code;Noémie Catherine Hélène Spiller, Philipp Grenz;generators.misc.Synthesis
+More;1073741824;Synthesis algorithm;en_US;Pseudo-Code;Noémie Catherine Hélène Spiller, Philipp Grenz;generators.misc.Synthesis
+More;1073741824;Szymańskis Algorithmus;de_DE;Pseudo-Code;Hanna Holtdirk, Robin Satter;generators.misc.Szymanski
+More;1073741824;Szymański’s Algorithm;en_US;Pseudo-Code;Hanna Holtdirk, Robin Satter;generators.misc.Szymanski
+Network;2048;Graph Algorithms;de_DE;Pseudo-Code;Marc Werner;generators.network.graph.BellmanFordGenerator
+Network;2048;Graph Algorithms;en_US;Pseudo-Code;Marc Werner;generators.network.graph.BellmanFordGenerator
+Network;2048;Graph Algorithms;de_DE;Pseudo-Code;Marc Werner;generators.network.graph.DijkstraGenerator
+Network;2048;Graph Algorithms;en_US;Pseudo-Code;Marc Werner;generators.network.graph.DijkstraGenerator
+Network;2048;Graph Algorithms;de_DE;Pseudo-Code;Marc Werner;generators.network.graph.FloydWarshallGenerator
+Network;2048;Graph Algorithms;en_US;Pseudo-Code;Marc Werner;generators.network.graph.FloydWarshallGenerator
+Network;2048;Graph Algorithms;de_DE;Pseudo-Code;Marc Werner;generators.network.graph.KruskalGenerator
+Network;2048;Graph Algorithms;en_US;Pseudo-Code;Marc Werner;generators.network.graph.KruskalGenerator
+Network;2048;Graph Algorithms;de_DE;Pseudo-Code;Marc Werner;generators.network.graph.PrimGenerator
+Network;2048;Graph Algorithms;en_US;Pseudo-Code;Marc Werner;generators.network.graph.PrimGenerator
+Network;2048;Basic Network Services;de_DE;Pseudo-Code;Marc Werner;generators.network.dns.DNSQueryGenerator
+Network;2048;Basic Network Services;en_US;Pseudo-Code;Marc Werner;generators.network.dns.DNSQueryGenerator
+Network;2048;Routing;de_DE;Pseudo-Code;Marc Werner;generators.network.routing.VectorRoutingGenerator
+Network;2048;Routing;en_US;Pseudo-Code;Marc Werner;generators.network.routing.VectorRoutingGenerator
+Network;2048;Routing;de_DE;Pseudo-Code;Marc Werner;generators.network.routing.VectorRoutingGenerator
+Network;2048;Routing;en_US;Pseudo-Code;Marc Werner;generators.network.routing.VectorRoutingGenerator
+Graph;8;Distance Vector Routing;en_US;Java;Christian Rosskopf;generators.network.routing.DistanceVectorRouting
+Network;2048;Mutex;en;Pseudo-Code;Martin Möller;generators.network.CentralServerMutex
+Network;2048;Mutex;en;Pseudo-Code;Martin Möller;generators.network.RingBasedMutex
+Network;2048;Cristian's Algorithm;en;Pseudo-Code;Martin Müller;generators.network.CristiansAlgorithm
+Network;2048;Ad-hoc On-demand Distance Vector Routing;de_DE;Java;Sascha Bleidner, Jan David Nose;generators.network.aodv.AODVRoutingGenerator
+Network;2048;Ad-hoc On-demand Distance Vector Routing;en_US;Java;Sascha Bleidner, Jan David Nose;generators.network.aodv.AODVRoutingGenerator
+Network;2048;Petrinetze;de;Pseudo-Code;Nadja Geisler,Jan Fischer;generators.network.Petrinetze
+Network;2048;Berkeley;de;Java;Sascha Dutschka;generators.network.Berkeley
+Network;2048;Leaky Bucket;en;Pseudo-Code;Emil Angelov, Nikolay Dimitrov;generators.network.LeakyBucketGeneratorEN
+Network;2048;IEEE 802.11 RTS/CTS Mechanismus;de;Java;Alexander Müller;generators.network.IEEE_RTS_CTS_Generator
+Network;2048;Token Bucket;en;Pseudo-Code;Emil Angelov , Nikolay Dimitrov;generators.network.TokenBucketEN
+Network;2048;Marzullo�s Algorithmus;en_US;Java;Lutz Langhorst;generators.network.Marzullo_algorithm
+Network;2048;Marzullo�s Algorithmus;de_DE;Java;Lutz Langhorst;generators.network.Marzullo_algorithm
+Network;2048;Link State Routing;en_US;Pseudo-Code;Justin Hopp;generators.network.LinkStateRouting
+Network;2048;Link State Routing;de_DE;Pseudo-Code;Justin Hopp;generators.network.LinkStateRouting
+Network;2048;Sliding Window Protocol;en_US;Pseudo-Code;Florian Hopp;generators.network.SlidingWindow
+Network;2048;Sliding Window Protocol;de_DE;Pseudo-Code;Florian Hopp;generators.network.SlidingWindow
+Network;2048;Random Early Detection (RED);de_DE;Pseudo-Code;Felix Gail, Torben Carstens;generators.network.RED
+Network;2048;Random Early Detection (RED);en_US;Pseudo-Code;Felix Gail, Torben Carstens;generators.network.RED
+Network;2048;Tail Drop;de_DE;Pseudo-Code;Felix Gail, Torben Carstens;generators.network.TailDrop
+Network;2048;Tail Drop;en_US;Pseudo-Code;Felix Gail, Torben Carstens;generators.network.TailDrop
+Network;2048;Chandy Lamport;en_US;Java;Sven Dotzauer-Klier, Gregor Heß;generators.network.ChandyLamport
+Network;2048;Chandy Lamport;de_DE;Java;Sven Dotzauer-Klier, Gregor Heß;generators.network.ChandyLamport
+Network;2048;Network Time Protocol;de;Pseudo-Code;Leon Würsching, Antonia Wüst;generators.network.EasyNTP
+More;1073741824;Floyds Zyklusfindungsalgorithmus;de_DE;Pseudo-Code;Christian Kunz, Jonas Winter;generators.misc.FloydsTortoiseAndHare
+More;1073741824;Floyds cycle-finding algorithm;en_US;Pseudo-Code;Christian Kunz, Jonas Winter;generators.misc.FloydsTortoiseAndHare
+Network;2048;Lamports Clock [DE];de_DE;Pseudo-Code;Vladimir Romanenko, Dominik Bierwirth;generators.network.LamportClock
+Network;2048;Lamports Clock [EN_US];en_US;Pseudo-Code;Vladimir Romanenko, Dominik Bierwirth;generators.network.LamportClock
+Network;2048;TCPCongestionControl;de;Java;Joël Tschesche, Kadoglou Konstantinos;generators.network.TCPCongestionControl
+Network;2048;Vector Clock;de_DE;Pseudo-Code;Sven Dotzauer-Klier, Gregor Heß;generators.network.VectorClock
+Network;2048;Vector Clock;en_US;Pseudo-Code;Sven Dotzauer-Klier, Gregor Heß;generators.network.VectorClock
+Searching;2;A* Suche;de_DE;Pseudo-Code;Oksana Kolach, Michael Drescher;generators.searching.AStarGenerator
+Searching;2;Lineare Suche;de_DE;Java;Björn Dasbach;generators.searching.bruteforce.BruteForceStringSearching
+Searching;2;Binary Search;en_US;Java;Guido Rößling;generators.searching.binarysearching.GenericIterativeBinaryStringSearching
+Searching;2;Binary Search;de_DE;Java;Guido Rößling;generators.searching.binarysearching.GenericIterativeBinaryStringSearching
+Searching;2;Binary Search;en_US;Java;Guido Rößling;generators.searching.binarysearching.GenericRecursiveBinaryIntSearching
+Searching;2;Binäre Suche;de_DE;Java;Guido Rößling;generators.searching.binarysearching.GenericRecursiveBinaryIntSearching
+Searching;2;Binary Search;en_US;Java;Guido Rößling;generators.searching.binarysearching.GenericRecursiveBinaryStringSearching
+Searching;2;Binäre Suche;de_DE;Java;Guido Rößling;generators.searching.binarysearching.GenericRecursiveBinaryStringSearching
+Searching;2;Binary Search;en_US;Pseudo-Code;Guido Rößling;generators.searching.binarysearching.GenericIterativeBinaryStringSearching
+Searching;2;Binäre Suche;de_DE;Pseudo-Code;Guido Rößling;generators.searching.binarysearching.GenericIterativeBinaryStringSearching
+Searching;2;Binary Search;en_US;Pseudo-Code;Guido Rößling;generators.searching.binarysearching.GenericRecursiveBinaryIntSearching
+Searching;2;Binäre Suche;de_DE;Pseudo-Code;Guido Rößling;generators.searching.binarysearching.GenericRecursiveBinaryIntSearching
+Searching;2;Binary Search;en_US;Pseudo-Code;Guido Rößling;generators.searching.binarysearching.GenericRecursiveBinaryStringSearching
+Searching;2;Binäre Suche;de_DE;Pseudo-Code;Guido Rößling;generators.searching.binarysearching.GenericRecursiveBinaryStringSearching
+Searching;2;Straight Selection;en_US;Java;Guido Rößling;generators.searching.straightselection.GenericIterativeStraightIntSelection
+Searching;2;Straight Selection;de_DE;Java;Guido Rößling;generators.searching.straightselection.GenericIterativeStraightIntSelection
+Searching;2;Straight Selection;en_US;Java;Guido Rößling;generators.searching.straightselection.GenericIterativeStraightStringSelection
+Searching;2;Straight Selection;de_DE;Java;Guido Rößling;generators.searching.straightselection.GenericIterativeStraightStringSelection
+Searching;2;Straight Selection;en_US;Java;Guido Rößling;generators.searching.straightselection.GenericRecursiveStraightIntSelection
+Searching;2;Lineare Suche;de_DE;Java;Guido Rößling;generators.searching.straightselection.GenericRecursiveStraightIntSelection
+Searching;2;Straight Selection;en_US;Java;Guido Rößling;generators.searching.straightselection.GenericRecursiveStraightStringSelection
+Searching;2;Lineare Suche;de_DE;Java;Guido Rößling;generators.searching.straightselection.GenericRecursiveStraightStringSelection
+Searching;2;Straight Selection;en_US;Pseudo-Code;Guido Rößling;generators.searching.straightselection.GenericIterativeStraightIntSelection
+Searching;2;Lineare Suche;de_DE;Pseudo-Code;Guido Rößling;generators.searching.straightselection.GenericIterativeStraightIntSelection
+Searching;2;Straight Selection;en_US;Pseudo-Code;Guido Rößling;generators.searching.straightselection.GenericIterativeStraightStringSelection
+Searching;2;Lineare Suche;de_DE;Pseudo-Code;Guido Rößling;generators.searching.straightselection.GenericIterativeStraightStringSelection
+Searching;2;Straight Selection;en_US;Pseudo-Code;Guido Rößling;generators.searching.straightselection.GenericRecursiveStraightIntSelection
+Searching;2;Lineare Suche;de_DE;Pseudo-Code;Guido Rößling;generators.searching.straightselection.GenericRecursiveStraightIntSelection
+Searching;2;Straight Selection;en_US;Pseudo-Code;Guido Rößling;generators.searching.straightselection.GenericRecursiveStraightStringSelection
+Searching;2;Lineare Suche;de_DE;Pseudo-Code;Guido Rößling;generators.searching.straightselection.GenericRecursiveStraightStringSelection
+Searching;2;Interpolationssuche;de_DE;Java;Michael Maur;generators.searching.interpolatedsearching.InterpolationSearchWrapper
+Searching;2;Knuth, Morris, Pratt (1977);de_DE;Java;David Sharma, Björn Pantel;generators.searching.kmp.KMP
+Searching;2;Knuth, Morris, Pratt (1977);de_DE;Java;David Sharma, Björn Pantel;generators.searching.kmp.KMPAnnotated
+Searching;2;Knuth, Morris, Pratt (1977);de_DE;Java;Roger Ponka;generators.searching.kmp.KnuthMorrisPratt
+Searching;2;Knuth, Morris, Pratt (1977);de_DE;Java;Michael Maur;generators.searching.kmp.KnuthMorrisPrattStringSearchWrapper
+Searching;2;Levenshtein-Distanz;de_DE;Pseudo-Code;Martin Dingeldey, Thomas Pöpl, Ulf Karrock;generators.searching.Levenstein
+Searching;2;KMP String Matching Algorithm;en_US;Java;Leqiao Peng;generators.searching.kmp.KMPLPeng
+Searching;2;Levenshtein-Distanz;de_DE;Pseudo-Code;Peter Baumann, Oren Avni;generators.searching.Levenshtein2011
+Searching;2;KMP String Matching Algorithm;en_US;Java;Thanh Tung Dang, Quoc Hien Dang;generators.searching.kmp.KMPGenerator
+Searching;2;Alpha-Beta-Suche;de_DE;Pseudo-Code;Pascal Weisenburger;generators.searching.alphabeta.AlphaBetaSearch
+Searching;2;Rabin-Karp;de_DE;Pseudo-Code;Thomas Schlosser;generators.searching.RabinKarpAlgorithm
+Searching;2;KadanesAlgorithm;en_US;Java;Sheip Dargutev;generators.searching.Kadane
+Searching;2;Repetition-Matcher;de_DE;Pseudo-Code;Thomas Schlosser;generators.searching.RepetitionMatcher
+Searching;2;Straight Selection;en_US;Java;Guido Rößling;generators.searching.straightselection.GenericIterativeStraightIntSelectionWithCounter
+Searching;2;Straight Selection;de_DE;Java;Guido Rößling;generators.searching.straightselection.GenericIterativeStraightIntSelectionWithCounter
+Searching;2;Binary Search;en_US;Java;Guido Rößling;generators.searching.binarysearching.GenericRecursiveBinaryIntSearchingWithCounter
+Searching;2;Binäre Suche;de_DE;Java;Guido Rößling;generators.searching.binarysearching.GenericRecursiveBinaryIntSearchingWithCounter
+Searching;2;Bullyalgorithm;de_DE;Java;Bennet Jeutter, Max Mindt;generators.searching.Bullyalgorithmus
+Searching;2;Election on Rings;de_DE;Java;Bennet Jeutter, Max Mindt;generators.searching.ElectionOnRings
+Searching;2;Uniform-Cost Search (Cheapest-First Search);en_US;Pseudo-Code;Dominik Bollmann, Sogol Mazaheri;generators.searching.UCSGenerator
+Searching;2;Jump Search;de_DE;Java;The An Binh Nguyen, Nam Truong Le;generators.searching.JumpSearchAlgorithm
+Searching;2;Horspool;de_DE;Java;Thu Huong Luu, Benedikt Hiemenz;generators.searching.horspool.HorspoolGenerator
+Searching;2;String-Matching mit endlichen Zustandsautomaten;de_DE;Pseudo-Code;Jonas Dopf, Taylan Özden;generators.searching.StringMatchingFiniteStateMachine
+Searching;2;Boyer-Moore;de_DE;Java;Torsten Kohlhaas;generators.searching.boyermoore.BoyerMoore
+Searching;2;Boyer-Moore;en_US;Java;Torsten Kohlhaas;generators.searching.boyermoore.BoyerMoore
+Searching;2;Horspool;de_DE;Java;Torsten Kohlhaas;generators.searching.horspool.Horspool
+Searching;2;Horspool;en_US;Java;Torsten Kohlhaas;generators.searching.horspool.Horspool
+Searching;2;Horspool-Raita;de_DE;Java;Torsten Kohlhaas;generators.searching.horspool.HorspoolRaita
+Searching;2;Horspool-Raita;en_US;Java;Torsten Kohlhaas;generators.searching.horspool.HorspoolRaita
+Searching;2;Knuth, Morris, Pratt (1977);de_DE;Java;Torsten Kohlhaas;generators.searching.kmp.KnuthMorrisPrattSearch
+Searching;2;KMP String Matching Algorithm;en_US;Java;Torsten Kohlhaas;generators.searching.kmp.KnuthMorrisPrattSearch
+Searching;2;Lineare Suche;de_DE;Java;Torsten Kohlhaas;generators.searching.LinearStringSearch
+Searching;2;Linear search;en_US;Java;Torsten Kohlhaas;generators.searching.LinearStringSearch
+Searching;2;Rabin-Karp;de_DE;Java;Torsten Kohlhaas;generators.searching.RabinKarp
+Searching;2;Rabin-Karp;en_US;Java;Torsten Kohlhaas;generators.searching.RabinKarp
+Searching;2;Sunday;de_DE;Java;Torsten Kohlhaas;generators.searching.horspool.Sunday
+Searching;2;Sunday;en_US;Java;Torsten Kohlhaas;generators.searching.horspool.Sunday
+Searching;2;Mutex mit Logical Clocks [DE];de_DE;Pseudo-Code;Pascal Schardt;generators.searching.Logclockmutexgenerator
+Searching;2;Alpha-Beta-Suche;de_DE;Java;Andrej Felde, Thomas Hesse;generators.searching.alphabeta.AlphaBeta
+Searching;2;Iterative Tiefensuche;de_DE;Java;Jannik Schildknecht, Sergej Alexeev;generators.searching.IterativeTiefensuche
+Searching;2;Prune and Search;en_US;Java;Florian Spitz, Toni Plöchl;generators.searching.PUSGenerator
+Searching;2;Skip Search;de_DE;Java;Felix Hammacher, Patrick Lerch;generators.searching.SkipSearchGenerator
+Searching;2;Bitap;de_DE;Java;Moritz Zysk;generators.searching.Bitap2
+Searching;2;Negascout;de_DE;Pseudo-Code;Janine Höscher, Johannes Wagener;generators.searching.Negascout
+Searching;2;IDA*;en_US;Pseudo-Code;Johannes Simon;generators.searching.IDAStar
+Searching;2;MinMax;en;Pseudo-Code;Carina Oberle;generators.searching.minmax.MinMaxGenerator
+Searching;2;Traveling Salesman Problem per Greedy Best-First Search;en;Pseudo-Code;Carina Oberle;generators.searching.TSPviaGBFGenerator
+Searching;2;Expectiminimax;de;Pseudo-Code;Simon Bunten,Martin Oehler;generators.searching.expectimax.ExpectimaxGenerator
+Searching;2;Fagin's Algorithm;en_US;Pseudo-Code;Johannes Nachtwey, Dominik Glenz;generators.searching.topk.FaginsAlgorithm
+Searching;2;Fagin's Algorithm;de_DE;Pseudo-Code;Johannes Nachtwey, Dominik Glenz;generators.searching.topk.FaginsAlgorithm
+Searching;2;Threshold Algorithm;en_US;Pseudo-Code;Dominik Glenz, Johannes Nachtwey;generators.searching.topk.ThresholdAlgorithm
+Searching;2;Threshold Algorithm;de_DE;Pseudo-Code;Dominik Glenz, Johannes Nachtwey;generators.searching.topk.ThresholdAlgorithm
+Searching;2;Selection Search;de;Pseudo-Code;Erman Akca, Eugen Mesmer;generators.searching.SelectionSearch
+Searching;2;Local Search;en_US;Java;Maximilian Müller, Tobias Neidig;generators.searching.LocalSearchTSP
+Searching;2;Local Search;de_DE;Java;Maximilian Müller, Tobias Neidig;generators.searching.LocalSearchTSP
+Searching;2;Simulated Annealing;en;Java;Philipp Becker;generators.searching.SimulatedAnnealingGenerator
+Searching;2;Pledge-Algorithmus;de;Pseudo-Code;Oliver Käfer;generators.searching.Pledge
+Searching;2;Quickselect;en_US;Java;Yadullah Duman;generators.searching.QuickselectGenerator
+Searching;2;Simple String Matching;de;Java;Kevin Kocon;generators.searching.SimpleStringMatching
+Searching;2;Fibonacci Suche;de;Java;Mai Ly Tran;generators.searching.FibonacciSearch
+Searching;2;NegaMax Algorithm;en_US;Java;Adrian Wagener, Ivelin Ivanov;generators.searching.NegaMax
+Searching;2;NegaMax Algorithmus;de_DE;Java;Adrian Wagener, Ivelin Ivanov;generators.searching.NegaMax
+Searching;2;Beweiszahlsuche;de;Pseudo-Code;Joelle Heun, Jan Philipp Wagner;generators.searching.Beweiszahlsuche
+Searching;2;Exponential Search;de;Java;Donghyuck Son und Timur Levent Görgü;generators.searching.Generator_ExponentialSearch
+Searching;2;Hill-Climbing Search [DE];de_DE;Java;Marcel Langer. Kevin Kampa;generators.searching.HillClimb
+Searching;2;Hill-Climbing Search [EN];en_US;Java;Marcel Langer. Kevin Kampa;generators.searching.HillClimb
+Searching;2;Jump Point Search;de_DE;Pseudo-Code;Christian Kunz, Jonas Winter;generators.searching.JumpPointSearch
+Searching;2;Jump Point Search;en_US;Pseudo-Code;Christian Kunz, Jonas Winter;generators.searching.JumpPointSearch
+Searching;2;Simulated Annealing;de_DE;Pseudo-Code;Manuel Brack | Jonathan Kolhas;generators.searching.QueensAnnealingGenerator
+Searching;2;Simulated Annealing;en_US;Pseudo-Code;Manuel Brack | Jonathan Kolhas;generators.searching.QueensAnnealingGenerator
+More;1073741824;SSS*;de_DE;Pseudo-Code;Hanna Holtdirk, Robin Satter;generators.searching.sss.SSSStar
+More;1073741824;SSS*;en_US;Pseudo-Code;Hanna Holtdirk, Robin Satter;generators.searching.sss.SSSStar
+Searching;2;Sublist-Search;en;Java;Kai Tanaka, Tomoki Tokuyama;generators.searching.SublistSearchGenerator
+Searching;2;Tabusuche;de;Pseudo-Code;Felix Rauterberg, Sebastian Ritzenhofen;generators.searching.tabusearch.TabuSearchGenerator
+Searching;2;Z-Algorithm;en;Java;Kai Tanaka, Tomoki Tokuyama;generators.searching.ZAlgorithmGenerator
+Sorting;1;Adaptiertes 2-Phasen-2-Band Mischen;de_DE;Pseudo-Code;Andreas Franek;generators.sorting.Adapt2Phasen2BandMischen
+Sorting;1;Adaptiertes 2-Phasen-2-Band Mischen;de_DE;Pseudo-Code;Andreas Franek;generators.sorting.AnnotatedAdapt2Phasen2BandMischen
+Sorting;1;Shaker Sort;de_DE;Java;Paulin Nguimdoh;generators.sorting.shakersort.AnnotatedShakerSort
+Sorting;1;Stooge Sort;de_DE;Pseudo-Code;Clemens Bergmann;generators.sorting.AnnotatedStoogesort
+Sorting;1;Shaker Sort;de_DE;Java;David Kuhn, Florian Kryst;generators.sorting.APIShakerSort
+Sorting;1;Radix-Sort;de_DE;Java;Dmitrij Burlak, Christian Glaser;generators.sorting.RadixSortBurlakGlaser
+Sorting;1;Sortierung mit Binärbaum;de_DE;Java;Jan H. Post, Tim Grube;generators.sorting.BinaryTreeSortJava
+Sorting;1;Bucket Sort;de_DE;Java;Iaad Zabar, Abdulghani Alshadadi;generators.sorting.bucketsort.BucketSort
+Sorting;1;Comb Sort;de_DE;Java;David Kuhn, Florian Kryst;generators.sorting.combsort.CombSort
+Sorting;1;Comb Sort;en_US;Java;Daniel Trick, Jonathan Römer, Florian Jung;generators.sorting.combsort.CombSort2
+Sorting;1;Counting Sort;de_DE;Java;Jan Stolzenburg;generators.sorting.CountingSort
+Sorting;1;Counting Sort;de_DE;Java;Can Güler, Tayfun Atik;generators.sorting.CountingSort2
+Sorting;1;Counting Sort;de_DE;Java;Paulin Nguimdoh;generators.sorting.CountingSortAnimation
+Sorting;1;Quicksort;de_DE;DELPHI;Krasimir Markov;generators.sorting.quicksort.DelphiAnnotatedQuickSort
+Sorting;1;Bubble Sort;en_US;Matlab;Guido Rößling;generators.sorting.bubblesort.EnglishMatlabBubbleSort
+Sorting;1;Gnome Sort;en_US;Java;Tijani Ahmedou, Nikola Dyundev, Arif Sami;generators.sorting.gnomesort.GnomeSortADS
+Sorting;1;Gnome Sort;de_DE;Java;Anqi Wang;generators.sorting.gnomesort.GnomeSortAW
+Sorting;1;Heap Sort;de_DE;Pseudo-Code;Daniel Thies, Dominik Ulrich, Jörg Schmalfuß, Atilla Yalzin;generators.sorting.HeapSort
+Sorting;1;Heap Sort;en_US;Java;Henrik Schröder, Nedislav Nedyalkov, Latinka Pavlova;generators.sorting.Heapsort2
+Sorting;1;Odd-Even-Sort;de_DE;Java;Tsvetoslava Vateva;generators.sorting.OddEvenSortTV
+Sorting;1;Proxmap-Sort;de_DE;Java;Kamil Erhard, Dirk Kröhan;generators.sorting.ProxmapSort
+Sorting;1;Shaker Sort;de_DE;Pseudo-Code;Emal Rahman;generators.sorting.shakersort.ShakerSort1
+Sorting;1;Shaker Sort;en_US;Java;Daniel Trick, Jonathan Römer, Florian Jung;generators.sorting.shakersort.ShakerSort2
+Sorting;1;Shaker Sort;de_DE;Java;Tarik Tahiri, Philipp Sowinski;generators.sorting.shakersort.ShakerSort3
+Sorting;1;Shaker Sort;de_DE;Java;Paulin Nguimdoh;generators.sorting.shakersort.ShakerSortAnimation
+Sorting;1;Shaker Sort;en_US;Java;Amir Naseri, Morteza Emamgholi;generators.sorting.shakersort.ShakerSortAPI
+Sorting;1;Shaker Sort;de_DE;Java;Muhammed Arour, Katja Tenenbaum;generators.sorting.shakersort.ShakerSortDemo
+Sorting;1;Shaker Sort;de_DE;Java;Sami Graja, Hasan Tercan;generators.sorting.shakersort.ShakerSorter
+Sorting;1;Shaker Sort;en_US;Java;Florian Jakob;generators.sorting.shakersort.ShakerSortFJ
+Sorting;1;Shaker Sort;de_DE;Java;Oksana Kolach, Michael Drescher;generators.sorting.shakersort.ShakerSortGenerator
+Sorting;1;Shaker Sort;de_DE;Java;Tsvetoslava Vateva;generators.sorting.shakersort.ShakerSortTV
+Sorting;1;Simple Sort;de_DE;Java;Jerome Möckel, Stefan Schmitz;generators.sorting.SimpleSortJMSS
+Sorting;1;Slowsort;de_DE;Pseudo-Code;Philipp Sowinski, Tarik Tahiri;generators.sorting.SlowSortPS
+Sorting;1;Stooge Sort;de_DE;Java;Vyacheslav Polonskyy;generators.sorting.StoogeSort
+Sorting;1;Stooge Sort;de_DE;Java;Hlib Levitin;generators.sorting.StoogeSortHL
+Sorting;1;Swap Sort;de_DE;Java;Dmytro Vronskyi;generators.sorting.swapsort.SwapSort
+Sorting;1;Swap Sort;de_DE;Pseudo-Code;Enkh-Amgalan Ganbaatar, Martin Tjokrodiredjo;generators.sorting.swapsort.SwapSort3
+Sorting;1;Swap Sort;de_DE;Java;Galin Bobev, Misagh Zayyeni;generators.sorting.swapsort.SwapSortBZ
+Sorting;1;Merge Sort;en_US;Java;Krasimir Markov;generators.sorting.GenericAnnotatedMergeSort
+Sorting;1;Merge Sort;en_US;Pseudo-Code;Krasimir Markov;generators.sorting.GenericAnnotatedMergeSort
+Sorting;1;Merge Sort;de_DE;Java;Krasimir Markov;generators.sorting.GenericAnnotatedMergeSort
+Sorting;1;Merge Sort;de_DE;Java;Krasimir Markov;generators.sorting.GenericAnnotatedMergeSort
+Sorting;1;Quicksort;en_US;Java;Krasimir Markov;generators.sorting.quicksort.GenericAnnotatedQuickSort
+Sorting;1;Quicksort;en_US;Pseudo-Code;Krasimir Markov;generators.sorting.quicksort.GenericAnnotatedQuickSort
+Sorting;1;Quicksort;de_DE;Java;Krasimir Markov;generators.sorting.quicksort.GenericAnnotatedQuickSort
+Sorting;1;Quicksort;de_DE;Pseudo-Code;Krasimir Markov;generators.sorting.quicksort.GenericAnnotatedQuickSort
+Sorting;1;Selection Sort;en_US;Java;Krasimir Markov;generators.sorting.selectionsort.GenericAnnotatedSelectionSort
+Sorting;1;Selection Sort;en_US;Pseudo-Code;Krasimir Markov;generators.sorting.selectionsort.GenericAnnotatedSelectionSort
+Sorting;1;Selection Sort;de_DE;Java;Krasimir Markov;generators.sorting.selectionsort.GenericAnnotatedSelectionSort
+Sorting;1;Selection Sort;de_DE;Pseudo-Code;Krasimir Markov;generators.sorting.selectionsort.GenericAnnotatedSelectionSortWithCounter
+Sorting;1;Shell Sort;en_US;Java;Krasimir Markov;generators.sorting.GenericAnnotatedShellSort
+Sorting;1;Shell Sort;en_US;Pseudo-Code;Krasimir Markov;generators.sorting.GenericAnnotatedShellSort
+Sorting;1;Shell Sort;de_DE;Java;Krasimir Markov;generators.sorting.GenericAnnotatedShellSort
+Sorting;1;Shell Sort;de_DE;Pseudo-Code;Krasimir Markov;generators.sorting.GenericAnnotatedShellSort
+Sorting;1;Cocktail Sort;de_DE;Java;Wilhelm 'sOph' Retz;generators.sorting.CocktailSortOptimized
+Sorting;1;Bucket Sort;de_DE;Java;Andreas Franek;generators.sorting.bucketsort.BucketSortAF
+Sorting;1;Odd-Even-Sort;de_DE;Java;Hlib Levitin;generators.sorting.EvenOddSort
+Sorting;1;Bubble Sort;en_US;Java;Guido Rößling;generators.sorting.bubblesort.GenericAnnotatedBubbleSortICS2
+Sorting;1;Gnome Sort;en_US;Java;Georgi Hadshiyski;generators.sorting.gnomesort.GenericAnnotatedGnomeSortICS2
+Sorting;1;Insertion Sort;en_US;Java;Guido Rößling;generators.sorting.insertionsort.GenericAnnotatedInsertionSortICS2
+Sorting;1;Quicksort;en_US;Java;Georgi Hadshiyski;generators.sorting.quicksort.GenericAnnotatedQuickSortICS2
+Sorting;1;Gnome Sort;de_DE;Java;Tabea Born, Yasmin Krahofer;generators.sorting.gnomesort.GnomeSort2
+Sorting;1;Counting Sort;de_DE;Java;Marius Hornung, Jan Klostermann;generators.sorting.CountingSort3
+Sorting;1;Hierarchical Agglomerative Clustering;de_DE;Pseudo-Code;Dennis Werner, Hamed Samadzai;generators.sorting.BottomUpHierarchicalClustering
+Sorting;1;Pancake Sort;de_DE;Java;Marius Hornung, Jan Klostermann;generators.sorting.PancakeSort
+Sorting;1;Stooge Sort;en_US;Java;Dimitar Goshev;generators.sorting.StoogeSortEN
+Sorting;1;Insertion Sort;de_DE;Java;Guido Rößling;generators.sorting.insertionsort.GenericAnnotatedInsertionSort
+Sorting;1;Insertion Sort;en_US;Java;Guido Rößling;generators.sorting.insertionsort.GenericAnnotatedInsertionSort
+Sorting;1;Insertion Sort;de_DE;Java;Guido Rößling;generators.sorting.insertionsort.InsertionSortGdI2
+Sorting;1;Shaker Sort;de_DE;Java;Sami Graja, Hasan Tercan;generators.sorting.shakersort.AnnotatedShakerSorter
+Sorting;1;Simple Sort;de_DE;Java;Alper Özdemir, Bilal Balci, Gökhan Simsek;generators.sorting.SimpleSort2
+Sorting;1;Strand Sort;de_DE;Java;Michael Scharf;generators.sorting.StrandSort
+Sorting;1;Insertion Sort;en_US;Java;Guido Rößling;generators.sorting.insertionsort.GenericAnnotatedInsertionSortICS2WithCounter
+Sorting;1;Selection Sort;de_DE;Pseudo-Code;Krasimir Markov;generators.sorting.selectionsort.GenericAnnotatedSelectionSort
+Sorting;1;Selection Sort;en_US;Java;Krasimir Markov;generators.sorting.selectionsort.GenericAnnotatedSelectionSortWithCounter
+Sorting;1;Selection Sort;en_US;Pseudo-Code;Krasimir Markov;generators.sorting.selectionsort.GenericAnnotatedSelectionSortWithCounter
+Sorting;1;Selection Sort;de_DE;Java;Krasimir Markov;generators.sorting.selectionsort.GenericAnnotatedSelectionSortWithCounter
+Sorting;1;Shaker Sort;de_DE;Java;Fehmi Belhadj;generators.sorting.shakersort.Shakersorter2
+Sorting;1;Shaker Sort;en_US;Java;Qi ZHANG;generators.sorting.CocktailSortEnglish
+Sorting;1;Johnson [DE];de_DE;Pseudo-Code;Simone Baier;generators.sorting.JohnsonAlgoAPIGenerator
+Sorting;1;Tournament Sort;en_US;Java;ZHANG Qi;generators.sorting.TournamentSort
+Sorting;1;Bubble Sort;en_US;Pseudo-Code;Tanya Harizanova, Dimitar Dimitrov;generators.sorting.bubblesort.BubbleSort
+Sorting;1;Selection Sort;en_US;Java;Iliya Gurov, Vladislava Arabadzhieva;generators.sorting.selectionsort.SelectionSortGen
+Sorting;1;TopSort;de_DE;Pseudo-Code;Markus Ermuth, Alex Krause;generators.sorting.TopSort
+Sorting;1;Merge Sort;de_DE;Pseudo-Code;Theo Kischka;generators.sorting.MergeSortGenerator
+Sorting;1;Strand Sort;en_US;Java;Iliya Gurov, Vladislava Arabadzhieva;generators.sorting.StrandSortGen
+Sorting;1;Merge Sort;de_DE;Java;Patrick Hörmann, Jonas Kellert;generators.sorting.FlexCargo
+Sorting;1;DBSCAN;de_DE;Pseudo-Code;Daniel Dieth, Benedikt Wartusch;generators.sorting.DBSCAN
+Sorting;1;K-Means;de_DE;Pseudo-Code;Thomas Hartmann, Wail Shakir;generators.sorting.KMeans
+Sorting;1;Spaghetti Sort [DE];de_DE;Pseudo-Code;Pascal Schardt;generators.sorting.Spaghettisortgenerator
+Sorting;1;Cycle Sort;de_DE;Java;Pablo Hoch;generators.sorting.CycleSortGenerator
+Sorting;1;Bogosort;de;Java;Julian Klomp,Milan Schmittner;generators.sorting.bogosort.Bogosort
+Sorting;1;Bogobogosort;de_DE;Java;Julian Klomp,Milan Schmittner;generators.sorting.bogosort.Bogobogosort
+Sorting;1;Bubble Sort;de;Java;Christoph Schüßler, Marcel Frank;generators.sorting.Bubblesort
+Sorting;1;Quicksort;de;Java;Christoph Schüßler, Marcel Frank;generators.sorting.Quicksort
+Sorting;1;Ripplesort;de;Pseudo-Code;Erman Akca, Eugen Mesmer;generators.sorting.RippleSort
+Sorting;1;Bitonic Sort;en_US;Java;Tobias Becker;generators.sorting.BitonicSort
+Sorting;1;CocktailSort;de;Java;Sascha Dutschka;generators.sorting.CocktailSortDutschka
+Sorting;1;American Flag Sort;en;Java;Yadullah Duman;generators.sorting.AmericanFlagSortGenerator
+Sorting;1;Flash Sort;de;Java;Sarah Fischer, Anke Unger;generators.sorting.FlashSortWiz
+Sorting;1;Pigeonhole sort;en;Java;Tomasz Gasiorowski;generators.sorting.PigeonholeSort
+Sorting;1;Local Outlier Factor;de_DE;Java;Andre Challier, Christian Richter;generators.sorting.LocalOutlierFactor
+Sorting;1;Local Outlier Factor;en_US;Java;Andre Challier, Christian Richter;generators.sorting.LocalOutlierFactor
+Backtracking;256;Yue Hu, Xinyu Liu;en;Pseudo-Code;Patience Sort;generators.sorting.patienceSort.PatienceSort
+Sorting;1;TimSort;de;Java;Jessey Widhalm, Kevin Trometer;generators.sorting.TimSort2
+Sorting;1;TreeSort;de;Java;Patrick Weber;generators.sorting.TreeSort
+Sorting;1;Hybridsort;de;Pseudo-Code;Steffen Frank Schmidt;generators.sorting.HybridsortGenerator
+Sorting;1;Partitioning;de_DE;Java;Bekir �zkara;generators.sorting.PPBSGenerator
+Sorting;1;Partitioning;en_US;Java;Bekir �zkara;generators.sorting.PPBSGenerator
+Sorting;1;Smooth Sort;de;Java;Marko Dehmel, Dominik Hintersdorf;generators.sorting.SmoothSortGenerator
+Sorting;1;Sleepsort;de_DE;Java;Michael Piepel;generators.sorting.SLPGenerator
+Sorting;1;Sleepsort;en_US;Java;Michael Piepel;generators.sorting.SLPGenerator
+Sorting;1;SampleSort;en;Java;Laura Hofmann;generators.sorting.SampleSort
+More;1073741824;Library Sort;en;Pseudo-Code;Jan Rathjens;generators.sorting.LibGenerator
+Sorting;1;3-Way QuickSort (Dutch National Flag);de;Java;Donghyuck Son, Timur Levent G�rg�;generators.sorting.Generator_ThreeWaySort
+Sorting;1;Multi-Key Quicksort;en;Java;Nossair Ouladali, Zarina Catar;generators.sorting.MultiKeyQuicksortGenerator
+Sorting;1;Introsort;de_DE;Java;Simon Althaus, Florian Giger;generators.sorting.IntroSort
+Sorting;1;Introsort;en_US;Java;Simon Althaus, Florian Giger;generators.sorting.IntroSort
+Sorting;1;Postman's Sort;de;Java;Leon Würsching, Antonia Wüst;generators.sorting.PostmanSort
+Tree;4;Binärer Suchbaum;de_DE;Java;Ioannis Tsigaridas;generators.tree.EffectiveBinaryTree
+Tree;4;Heap Sort;de_DE;Pseudo-Code;Ioannis Tsigaridas;generators.tree.HeapTree
+Tree;4;AVL-Baum;de_DE;Java;Ioannis Tsigaridas;generators.tree.EffectiveAVLTree
+Tree;4;Tournament Sort;de_DE;Pseudo-Code;Ioannis Tsigaridas;generators.tree.TournamentSort
+Tree;4;IgnallSchrage;de_DE;Pseudo-Code;Alexander Pass;generators.tree.IgnallSchrage
+Tree;4;R-Tree Quadratic Node Spliting;en_US;Pseudo-Code;Dimitar Goshev;generators.tree.RTreeNodeSplit
+Tree;4;Quadtree;de_DE;Pseudo-Code;Alex Krause, Markus Ermuth;generators.tree.Quadtree
+Tree;4;Heap;de_DE;Java;Michael Sandforth;generators.tree.HeapExtractMinimum
+Tree;4;Heap;de_DE;Java;Michael Sandforth;generators.tree.HeapInsert
+Tree;4;Knuth Algorithm;de_DE;Java;Mohit Makhija, Eric Brüggemann;generators.tree.knuthlayout.KnuthLayout
+Tree;4;B-Baum;de_DE;Java;Kristoffer Braun, Philipp Rack;generators.tree.btree.insert.BTreeInsertGenerator
+Tree;4;B-Baum;de_DE;Pseudo-Code;Kristoffer Braun, Philipp Rack;generators.tree.btree.delete.BTreeDeleteGenerator
+Tree;4;Binärer Suchbaum;de_DE;Java;Sebastian Leipe;generators.tree.binarySearchTree.BinarySearchTreeGenerator
+Tree;4;Binärer Suchbaum;en_US;Java;Sebastian Leipe;generators.tree.binarySearchTree.BinarySearchTreeGeneratorEN
+Tree;4;BSTreeTraverse;en;Java;Farouk Houami,El bouabidi Fethi,Pascal Weisenburger;generators.tree.BSTreeTraverse
+Tree;4;OS-RANK;de_DE;Pseudo-Code;Florian Breitfelder, Patrick Jattke;generators.tree.OS_RANK_DE
+Tree;4;OS-SELECT;de_DE;Pseudo-Code;Florian Breitfelder, Patrick Jattke;generators.tree.OS_SELECT_DE
+Tree;4;KD-Tree;en_US;Pseudo-Code;David Steiner, Jens Krüger;generators.tree.KDTree
+Tree;4;KD-Tree;de_DE;Pseudo-Code;David Steiner, Jens Krüger;generators.tree.KDTree
+Tree;4;Red-Black Trees - Insert;en_US;Java;Maciej Aleksander Mokwinski + Julian Harbarth;generators.tree.RB_TREES_INSERT
+Tree;4;Rot-Schwarzbäume - Einfügen;de_DE;Java;Maciej Aleksander Mokwinski + Julian Harbarth;generators.tree.RB_TREES_INSERT
+Tree;4;Red-Black Trees - Delete;en_US;Java;Maciej Aleksander Mokwinski + Julian Harbarth;generators.tree.RB_TREES_DELETE
+Tree;4;Rot-Schwarzbäume - Löschen;de_DE;Java;Maciej Aleksander Mokwinski + Julian Harbarth;generators.tree.RB_TREES_DELETE
+Tree;4;Prüfer Code;en;Java;Edgardo Palza & Teh-Hai Julian Zheng;generators.tree.TreeLabeling
+Tree;4;Trie : Insert;en;Java;Jan-Henrik Kriechel;generators.tree.TrieInsert
+Tree;4;Trie : Search;en;Java;Jan-Henrik Kriechel;generators.tree.TrieSearch
+Tree;4;Aufbau eines Leonardo Heaps;de;Pseudo-Code;Marko Dehmel, Dominik Hintersdorf;generators.tree.LeonardoHeapGenerator
+Tree;4;BTree Search;en_US;Java;Fritz Beutel, Maxim Kuznetsov;generators.tree.BTreeSearchGenerator
+Tree;4;B-Baum Suche;de_DE;Java;Fritz Beutel, Maxim Kuznetsov;generators.tree.BTreeSearchGenerator
+Searching;2;Aho-Corasick-Algorithmus;de;Pseudo-Code;Adrian Lumpe, Chi Viet Vu;generators.tree.AhoCorasick
+Searching;2;Aho-Corasick-Algorithmus;de;Pseudo-Code;Adrian Lumpe, Chi Viet Vu;generators.tree.AhoCorasick
+Tree;4;Fitch-Algorithmus;de;Pseudo-Code;Peter Reinhardt;generators.tree.Fitch
+Tree;4;Rapidly-Exploring Random Tree (RRT);de_DE;Pseudo-Code;Jasper Suess;generators.tree.RRT
+Tree;4;Rapidly-Exploring Random Tree (RRT);en_US;Pseudo-Code;Jasper Suess;generators.tree.RRT
