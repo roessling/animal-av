@@ -251,23 +251,6 @@ public class GenGUI implements ListSelectionListener {
 //    summarize(generators);
   }
   
-  public static void main(String[] args) {
-    GenGUI g = new GenGUI();
-    System.err.println("Processing, this make take a moment...");
-    g.init();
-//    g.readAll();
-    g.processGenerators(g.generators);
-//    Vector<Generator> vc = g.seen.get("type.Network");
-//    for (Generator gen : vc)
-//      System.err.println("**" +gen.toString());
-    if (args.length>0 && "-dump".equals(args[0]))
-      for (Generator gen : g.generators) {
-        System.out.println(GeneratorType.getStringForType(gen.getGeneratorType().getType()) +";" +gen.getGeneratorType().getType() +";"
-            + gen.getAlgorithmName() +";"+gen.getContentLocale()+";"+gen.getOutputLanguage()
-            +";"+gen.getAnimationAuthor() +";" +gen.getClass().getName());
-      }
-    g.showFrame();
-  }
   @Override
   public void valueChanged(ListSelectionEvent e) {
     if (!e.getValueIsAdjusting()) {
@@ -287,4 +270,23 @@ public class GenGUI implements ListSelectionListener {
       infoPane.setCaretPosition(0);
     }
   }  
+
+  
+  public static void main(String[] args) {
+    GenGUI g = new GenGUI();
+//    System.err.println("Processing, this make take a moment...");
+    g.init();
+//    g.readAll();
+    g.processGenerators(g.generators);
+//    Vector<Generator> vc = g.seen.get("type.Network");
+//    for (Generator gen : vc)
+//      System.err.println("**" +gen.toString());
+    if (args.length>0 && "-dump".equals(args[0]))
+      for (Generator gen : g.generators) {
+        System.out.println(GeneratorType.getStringForType(gen.getGeneratorType().getType()) +";" +gen.getGeneratorType().getType() +";"
+            + gen.getAlgorithmName() +";"+gen.getContentLocale()+";"+gen.getOutputLanguage()
+            +";"+gen.getAnimationAuthor() +";" +gen.getClass().getName());
+      }
+    g.showFrame();
+  }
 }

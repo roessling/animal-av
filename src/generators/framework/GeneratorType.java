@@ -13,15 +13,18 @@ import animal.main.Animal;
 /**
  * GeneratorType is a class that helps organizing the different Generators into
  * categories like "Sort" or "Graph" algorithms. One Generator has one or many
- * categories at a time.<br><br>For setting the GeneratorType an integer is passed to
- * the constructor that represents the type(s). To create a Generator for a
- * Sort, Graph and Data-Structure algorithm, call<br>
+ * categories at a time.<br>
+ * <br>
+ * For setting the GeneratorType an integer is passed to the constructor that
+ * represents the type(s). To create a Generator for a Sort, Graph and
+ * Data-Structure algorithm, call<br>
  * <code>int aType =<br>GeneratorType.GENERATOR_TYPE_SORT |<br>
  * GeneratorType.GENERATOR_TYPE_DATA_STRUCTURE |<br>
  * GeneratorType.GENERATOR_TYPE_GRAPH;<br>GeneratorType gt = new
  * GeneratorType(aType);</code><br>
- * If a wrong number or no parameter is passed to the constructor the
- * category GENERATOR_TYPE_MORE is chosen.<br><br>
+ * If a wrong number or no parameter is passed to the constructor the category
+ * GENERATOR_TYPE_MORE is chosen.<br>
+ * <br>
  * If someone wants to change (add or remove) the Types, the <code>init</code>
  * methods need to be changed!
  * 
@@ -30,13 +33,13 @@ import animal.main.Animal;
 public class GeneratorType implements Comparable<GeneratorType> {
 
 	private static final int GENERATOR_TYPE_LOCAL = 0;
-	
+
 	/** Generator Type - Sort */
 	public static final int GENERATOR_TYPE_SORT = 1;
 
 	/** Generator Type - Search */
 	public static final int GENERATOR_TYPE_SEARCH = 2;
-	
+
 	/** Generator Type - Tree */
 	public static final int GENERATOR_TYPE_TREE = 4;
 
@@ -58,35 +61,32 @@ public class GeneratorType implements Comparable<GeneratorType> {
 	/** Generator Type - Backtracking */
 	public static final int GENERATOR_TYPE_BACKTRACKING = 256;
 
-  /** Generator Type - Backtracking */
-  public static final int GENERATOR_TYPE_MATHS = 512;
+	/** Generator Type - Backtracking */
+	public static final int GENERATOR_TYPE_MATHS = 512;
 
-  /** Generator Type - Backtracking */
-  public static final int GENERATOR_TYPE_HARDWARE = 1024;
-  
-  /** Generator Type - Networking */
-  public static final int GENERATOR_TYPE_NETWORK = 2048;
+	/** Generator Type - Backtracking */
+	public static final int GENERATOR_TYPE_HARDWARE = 1024;
 
-  /** Generator Type - Graphics */
-  public static final int GENERATOR_TYPE_GRAPHICS = 4096;
+	/** Generator Type - Networking */
+	public static final int GENERATOR_TYPE_NETWORK = 2048;
 
-  /** Generator Type - Interactive */
-  public static final int GENERATOR_TYPE_INTERACTIVE = 8192;
+	/** Generator Type - Graphics */
+	public static final int GENERATOR_TYPE_GRAPHICS = 4096;
 
-  /** Generator Type - More */
+	/** Generator Type - Interactive */
+	public static final int GENERATOR_TYPE_INTERACTIVE = 8192;
+
+	/** Generator Type - More */
 	public static final int GENERATOR_TYPE_MORE = 1073741824;
 
 	/** stores all the Generator Types and the according Strings */
-	private static TreeMap<Integer, String> mapStrings = 
-		new TreeMap<Integer, String>();
+	private static TreeMap<Integer, String> mapStrings = new TreeMap<Integer, String>();
 
 	/** stores to all Generator Types the position in the array */
-	private static HashMap<Integer, Integer> mapIndex = 
-		new HashMap<Integer, Integer>();
+	private static HashMap<Integer, Integer> mapIndex = new HashMap<Integer, Integer>();
 
 	/** stores the Type of this Generator Type */
 	private int myType;
-
 
 	/**
 	 * Constructor creates a new GeneratorType-Object.
@@ -95,23 +95,21 @@ public class GeneratorType implements Comparable<GeneratorType> {
 		this.myType = GENERATOR_TYPE_MORE;
 	}
 
-
 	/**
-	 * Constructor creates a new GeneratorType-Object. To create a Generator for
-	 * a Sort, Graph and Data-Structure algorithm, call<br>
+	 * Constructor creates a new GeneratorType-Object. To create a Generator for a
+	 * Sort, Graph and Data-Structure algorithm, call<br>
 	 * <code>int aType =<br>GeneratorType.GENERATOR_TYPE_SORT |<br>
 	 * GeneratorType.GENERATOR_TYPE_DATA_STRUCTURE |<br>
 	 * GeneratorType.GENERATOR_TYPE_GRAPH;<br>GeneratorType gt = new
 	 * GeneratorType(aType);</code><br>
-	 * If a wrong number or no parameter is passed to the constructor the
-	 * category GENERATOR_TYPE_MORE is chosen.
+	 * If a wrong number or no parameter is passed to the constructor the category
+	 * GENERATOR_TYPE_MORE is chosen.
 	 * 
 	 * @param newType The Generator Type that should be set.
 	 */
 	public GeneratorType(int newType) {
 		setType(newType);
 	}
-
 
 	/**
 	 * getNumberOfTypes returns the number of Generator Types.
@@ -122,7 +120,6 @@ public class GeneratorType implements Comparable<GeneratorType> {
 		init();
 		return mapStrings.size();
 	}
-
 
 	/**
 	 * getStringForType returns the String for the passed Generator Type. For
@@ -138,21 +135,20 @@ public class GeneratorType implements Comparable<GeneratorType> {
 			return "";
 		return retVal;
 	}
-	
-	
+
 	/**
-	 * getStringForArrayIndex returns the String for the passed Array Index.
-	 * This is useful if the have the array returned by <code>getTypes</code>.
+	 * getStringForArrayIndex returns the String for the passed Array Index. This is
+	 * useful if the have the array returned by <code>getTypes</code>.
 	 * 
 	 * @param index The yrray index.
 	 * @return The String for the array index.
 	 */
-	public static String getStringForArrayIndex(int index) {	
+	public static String getStringForArrayIndex(int index) {
 		init();
 		// iterate over the HashMap
 		for (Integer key : mapIndex.keySet()) {
-		  if (key.intValue() == index)
-		    return getStringForType(key.intValue());
+			if (key.intValue() == index)
+				return getStringForType(key.intValue());
 		}
 //		Iterator<Map.Entry<Integer, Integer>> iter = mapIndex.entrySet().iterator();
 //		while (iter.hasNext()) {
@@ -165,7 +161,6 @@ public class GeneratorType implements Comparable<GeneratorType> {
 		return "More";
 	}
 
-
 	/**
 	 * getType returns the Generator Type as an int.
 	 * 
@@ -175,10 +170,9 @@ public class GeneratorType implements Comparable<GeneratorType> {
 		return this.myType;
 	}
 
-
 	/**
-	 * setType sets the Generator Type. To set the type for a Generator of
-	 * a Sort, Graph and Data-Structure algorithm, call<br>
+	 * setType sets the Generator Type. To set the type for a Generator of a Sort,
+	 * Graph and Data-Structure algorithm, call<br>
 	 * <code>int aType =<br>GeneratorType.GENERATOR_TYPE_SORT |<br>
 	 * GeneratorType.GENERATOR_TYPE_DATA_STRUCTURE |<br>
 	 * GeneratorType.GENERATOR_TYPE_GRAPH;<br>aGeneratorType.setType(aType);
@@ -195,9 +189,9 @@ public class GeneratorType implements Comparable<GeneratorType> {
 		int typeValue;
 
 		for (Integer key : mapStrings.keySet()) {
-		  typeValue = key.intValue();
-		  if ((newType & typeValue) == typeValue)
-		    storeNewType |= typeValue;
+			typeValue = key.intValue();
+			if ((newType & typeValue) == typeValue)
+				storeNewType |= typeValue;
 		}
 //		Iterator<Map.Entry<Integer, String>> iter = mapStrings.entrySet().iterator();
 //		while (iter.hasNext()) {
@@ -215,7 +209,6 @@ public class GeneratorType implements Comparable<GeneratorType> {
 		this.myType = storeNewType;
 	}
 
-
 	/**
 	 * getTypes returns an int array with all the Generator Types.
 	 * 
@@ -227,8 +220,8 @@ public class GeneratorType implements Comparable<GeneratorType> {
 		int pos = 0;
 
 		// iterate over the TreeMap
-		for (Integer key: mapStrings.keySet())
-		  retVal[pos++] = key.intValue();
+		for (Integer key : mapStrings.keySet())
+			retVal[pos++] = key.intValue();
 //		Iterator iter = mapStrings.entrySet().iterator();
 //		while (iter.hasNext()) {
 //			Map.Entry e = (Map.Entry) iter.next();
@@ -238,16 +231,14 @@ public class GeneratorType implements Comparable<GeneratorType> {
 		return retVal;
 	}
 
-
 	/**
-	 * getArrayIndexes returns a Vector with Integers that specify the Positions
-	 * in the array that is returned by <code>getTypes</code>. Because a
-	 * Generator can have multiple Types we have a Vector instead of a single
-	 * value.
+	 * getArrayIndexes returns a Vector with Integers that specify the Positions in
+	 * the array that is returned by <code>getTypes</code>. Because a Generator can
+	 * have multiple Types we have a Vector instead of a single value.
 	 * 
 	 * @param type The Generator Type as an int.
-	 * @return A Vector with Integers that specify the Positions in the array
-	 * that is returned by <code>getTypes</code>.
+	 * @return A Vector with Integers that specify the Positions in the array that
+	 *         is returned by <code>getTypes</code>.
 	 */
 	public static Vector<Integer> getArrayIndexes(int type) {
 		Vector<Integer> v = new Vector<Integer>();
@@ -255,9 +246,9 @@ public class GeneratorType implements Comparable<GeneratorType> {
 		int typeValue;
 
 		for (Integer key : mapStrings.keySet()) {
-		  typeValue = key.intValue();
-		  if ((type & typeValue) == typeValue)
-		    v.add(Integer.valueOf(getArrayIndex(typeValue)));
+			typeValue = key.intValue();
+			if ((type & typeValue) == typeValue)
+				v.add(Integer.valueOf(getArrayIndex(typeValue)));
 		}
 //		Iterator iter = mapStrings.entrySet().iterator();
 //		while (iter.hasNext()) {
@@ -274,10 +265,9 @@ public class GeneratorType implements Comparable<GeneratorType> {
 		return v;
 	}
 
-
 	/**
-	 * getArrayIndex returns the position of type in the array that is returned
-	 * by <code>getTypes</code>.
+	 * getArrayIndex returns the position of type in the array that is returned by
+	 * <code>getTypes</code>.
 	 * 
 	 * @param type The Generator Type as an int.
 	 * @return The position in the <code>getTypes</code> array.
@@ -290,39 +280,35 @@ public class GeneratorType implements Comparable<GeneratorType> {
 		return intObj.intValue();
 	}
 
-
 	/**
-	 * init adds all the Generator Types and the according Strings into the
-	 * TreeMap. This is only done once.
+	 * init adds all the Generator Types and the according Strings into the TreeMap.
+	 * This is only done once.
 	 */
 	private static void init() {
 		if (mapStrings.isEmpty()) {
-			if(Animal.localGenerator!=null){
+			if (Animal.localGenerator != null) {
 				mapStrings.put(Integer.valueOf(GENERATOR_TYPE_LOCAL), "#Local");
 			}
 			mapStrings.put(Integer.valueOf(GENERATOR_TYPE_SORT), "Sorting");
 			mapStrings.put(Integer.valueOf(GENERATOR_TYPE_SEARCH), "Searching");
 			mapStrings.put(Integer.valueOf(GENERATOR_TYPE_TREE), "Tree");
 			mapStrings.put(Integer.valueOf(GENERATOR_TYPE_GRAPH), "Graph");
-			mapStrings.put(Integer.valueOf(GENERATOR_TYPE_DATA_STRUCTURE),
-					"DataStructures");
+			mapStrings.put(Integer.valueOf(GENERATOR_TYPE_DATA_STRUCTURE), "DataStructures");
 			mapStrings.put(Integer.valueOf(GENERATOR_TYPE_HASHING), "Hashing");
-			mapStrings.put(Integer.valueOf(GENERATOR_TYPE_COMPRESSION),
-					"Compression");
+			mapStrings.put(Integer.valueOf(GENERATOR_TYPE_COMPRESSION), "Compression");
 			mapStrings.put(Integer.valueOf(GENERATOR_TYPE_CRYPT), "Cryptography");
-			mapStrings.put(Integer.valueOf(GENERATOR_TYPE_BACKTRACKING),
-					"Backtracking");
-      mapStrings.put(Integer.valueOf(GENERATOR_TYPE_MATHS), "Maths");
-      mapStrings.put(Integer.valueOf(GENERATOR_TYPE_HARDWARE), "Hardware");
-      mapStrings.put(Integer.valueOf(GENERATOR_TYPE_NETWORK), "Network");
-      mapStrings.put(Integer.valueOf(GENERATOR_TYPE_GRAPHICS), "Graphics");
-      mapStrings.put(Integer.valueOf(GENERATOR_TYPE_INTERACTIVE), "Interactive");
+			mapStrings.put(Integer.valueOf(GENERATOR_TYPE_BACKTRACKING), "Backtracking");
+			mapStrings.put(Integer.valueOf(GENERATOR_TYPE_MATHS), "Maths");
+			mapStrings.put(Integer.valueOf(GENERATOR_TYPE_HARDWARE), "Hardware");
+			mapStrings.put(Integer.valueOf(GENERATOR_TYPE_NETWORK), "Network");
+			mapStrings.put(Integer.valueOf(GENERATOR_TYPE_GRAPHICS), "Graphics");
+			mapStrings.put(Integer.valueOf(GENERATOR_TYPE_INTERACTIVE), "Interactive");
 			mapStrings.put(Integer.valueOf(GENERATOR_TYPE_MORE), "More");
 
 			int pos = 0;
 
-			for (Integer key: mapStrings.keySet()) {
-			  mapIndex.put(key, Integer.valueOf(pos++));
+			for (Integer key : mapStrings.keySet()) {
+				mapIndex.put(key, Integer.valueOf(pos++));
 			}
 //			// iterate over the TreeMap
 //			Iterator iter = mapStrings.entrySet().iterator();
@@ -333,7 +319,6 @@ public class GeneratorType implements Comparable<GeneratorType> {
 		}
 	}
 
-
 	/**
 	 * (non-Javadoc)
 	 * 
@@ -342,9 +327,9 @@ public class GeneratorType implements Comparable<GeneratorType> {
 	public int compareTo(GeneratorType type) {
 //		if (o instanceof GeneratorType) {
 //			if (((GeneratorType) o).getType() == this.myType)
-	  if (type.getType() == myType)
-				return 0; // they are equal
-			return -1; // they differ
+		if (type.getType() == myType)
+			return 0; // they are equal
+		return -1; // they differ
 //		}
 //		return Integer.MIN_VALUE; // o is not a GeneratorType
 	}
