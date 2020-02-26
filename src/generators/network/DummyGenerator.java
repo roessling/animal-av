@@ -1,5 +1,8 @@
 package generators.network;
 
+import java.util.Locale;
+import java.util.Vector;
+
 import generators.framework.Generator;
 import generators.framework.GeneratorBundle;
 import generators.misc.FloydsTortoiseAndHare;
@@ -14,9 +17,6 @@ import generators.network.routing.DistanceVectorRouting;
 import generators.network.routing.VectorRoutingGenerator;
 import generators.network.routing.impl.dvr.DistanceVectorFactory;
 import generators.network.routing.impl.pvr.PathVectorFactory;
-
-import java.util.Locale;
-import java.util.Vector;
 
 /**
  * @author Marc Werner <mwerner@rbg.informatik.tu-darmstadt.de>
